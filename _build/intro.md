@@ -1,5 +1,5 @@
 ---
-title: 'Home'
+title: 'None'
 prev_page:
   url: 
   title: ''
