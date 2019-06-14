@@ -1,11 +1,11 @@
 ---
-title: 'Features'
+title: 'Features and customization'
 prev_page:
-  url: /features/notebooks
-  title: 'Notebooks'
+  url: /intro
+  title: 'Home'
 next_page:
-  url: 
-  title: ''
+  url: /features/markdown
+  title: 'Markdown files'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Features

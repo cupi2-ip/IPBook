@@ -2,13 +2,13 @@
 interact_link: content/features/notebooks.ipynb
 kernel_name: python3
 has_widgets: false
-title: 'Notebooks'
+title: 'Jupyter notebooks'
 prev_page:
   url: /features/markdown
-  title: 'Markdown'
+  title: 'Markdown files'
 next_page:
-  url: /features/features
-  title: 'Features'
+  url: 
+  title: ''
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 

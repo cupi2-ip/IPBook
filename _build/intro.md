@@ -1,11 +1,11 @@
 ---
-title: 'Intro'
+title: 'Home'
 prev_page:
   url: 
   title: ''
 next_page:
-  url: /LICENSE
-  title: 'License'
+  url: /features/features
+  title: 'Features and customization'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Introducción a la programación (en python)
