@@ -1,4 +1,5 @@
-jupyter-book build . --overwrite
-git add _build/
-git commit -m 'redeploy' 
-git push
+#rm -r _build/
+jupyter-book build . 
+#git add _build/
+#git commit -m 'redeploy' 
+#git push
