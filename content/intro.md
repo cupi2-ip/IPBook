@@ -4,6 +4,8 @@ Bienvenido!!
 
 ![](https://media.giphy.com/media/yoJC2A59OCZHs1LXvW/giphy.gif)
 
+Ahora?
+
 Jupyter Books lets you build an online book using a collection of Jupyter Notebooks
 and Markdown files. Its output is similar to the excellent [Bookdown](https://bookdown.org/yihui/bookdown/) tool,
 and adds extra functionality for people running a Jupyter stack.
