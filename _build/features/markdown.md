@@ -1,11 +1,11 @@
 ---
-title: 'Markdown files'
+title: 'Markdown'
 prev_page:
-  url: /features/features
-  title: 'Features and customization'
+  url: /LICENSE
+  title: 'License'
 next_page:
   url: /features/notebooks
-  title: 'Jupyter notebooks'
+  title: 'Notebooks'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Creating book content
