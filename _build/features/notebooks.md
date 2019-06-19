@@ -86,7 +86,7 @@ custom_lines = [Line2D([0], [0], color=cmap(0.), lw=4),
 
 fig, ax = plt.subplots(figsize=(10, 5))
 lines = ax.plot(data)
-ax.legend(custom_lines, ['Cold', 'Medium', 'Hot']);
+ax.legend(custom_lines, ['Frio', 'Tibio', 'Caliente']);
 
 ```
 </div>
