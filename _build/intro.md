@@ -48,6 +48,8 @@ Here are a few links of interest:
 
 * **A demo of the Jupyter Book** can be browsed via the sidebar to the left.
 
+* **[Prueba Markdown](features/prueba)** es una prueba de las características de Markdown soportadas por la herramienta.
+
 ## Installation
 
 Here's a brief rundown of how to create your own Jupyter Book using this site. For a more
