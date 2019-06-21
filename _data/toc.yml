@@ -45,6 +45,35 @@
 
 # A chapter w/ a collection of sections beneath it
 # - chapter: Tryout
+- title: Nivel 1
+  url: /nivel1/intro
+  # not_numbered: true
+  expand_sections: true
+  sections:
+  - title: Seccion 1 (n1)
+    url: /nivel1/seccion1-1
+  - title: Seccion 2 (n1)
+    url: /nivel1/seccion1-2
+  - title: Seccion 3 (n1)
+    url: /nivel1/seccion1-3
+  - title: Seccion 4 (n1)
+    url: /nivel1/seccion1-4
+
+- title: Nivel 2
+  url: /nivel2/intro
+  # not_numbered: true
+  # expand_sections: true
+  sections:
+  - title: Seccion 1 (n2)
+    url: /nivel2/seccion2-1
+  - title: Seccion 2 (n2)
+    url: /nivel2/seccion2-2
+  - title: Seccion 3 (n2)
+    url: /nivel2/seccion2-3
+  - title: Seccion 4 (n2)
+    url: /nivel2/seccion2-4
+
+
 - title: Features and customization
   url: /features/features
   # not_numbered: true

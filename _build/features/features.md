@@ -1,8 +1,8 @@
 ---
 title: 'Features and customization'
 prev_page:
-  url: /intro
-  title: 'None'
+  url: /nivel2/seccion2-4
+  title: 'Seccion 4 (n2)'
 next_page:
   url: /features/markdown
   title: 'Markdown files'
