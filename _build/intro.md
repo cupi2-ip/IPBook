@@ -50,6 +50,15 @@ Here are a few links of interest:
 
 * **[Prueba Markdown](features/prueba)** es una prueba de las características de Markdown soportadas por la herramienta.
 
+* **[Seccion 1](features/seccion1)**  ... seccion dummy 1
+
+* **[Seccion 2](features/seccion2)**  ... seccion dummy 2
+
+* **[Seccion 3](features/seccion3)**  ... seccion dummy 3
+
+* **[Seccion 4](features/seccion4)**  ... seccion dummy 4
+
+
 ## Installation
 
 Here's a brief rundown of how to create your own Jupyter Book using this site. For a more

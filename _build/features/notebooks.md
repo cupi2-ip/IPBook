@@ -4,8 +4,8 @@ kernel_name: python3
 has_widgets: false
 title: 'Jupyter notebooks'
 prev_page:
-  url: /features/markdown
-  title: 'Markdown files'
+  url: /features/seccion4
+  title: 'Seccion 4'
 next_page:
   url: /features/prueba
   title: 'Prueba Markdown'

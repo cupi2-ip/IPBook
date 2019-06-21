@@ -53,6 +53,16 @@
   - title: Markdown files
     url: /features/markdown
     # not_numbered: true
+
+  - title: Seccion 1
+    url: /features/seccion1
+  - title: Seccion 2
+    url: /features/seccion2
+  - title: Seccion 3
+    url: /features/seccion3
+  - title: Seccion 4
+    url: /features/seccion4
+
   - title: Jupyter notebooks
     url: /features/notebooks
     # not_numbered: true
