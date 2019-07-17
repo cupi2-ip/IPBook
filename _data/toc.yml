@@ -22,7 +22,7 @@
 # See the links below for an example.
 
 # Top-level page
-- title: Home
+- title: Inicio
   url: /intro
   not_numbered: true
 
@@ -40,8 +40,8 @@
 # - divider: true
 
 # Add a header and sample content section
-- header: Inicio
-  url: /intro
+# - header: Inicio
+#  url: /intro
 
 # A chapter w/ a collection of sections beneath it
 # - chapter: Tryout
@@ -51,7 +51,6 @@
   url: /introduccion/intro
   not_numbered: true
 
-
 - title: Nivel 1
   url: /nivel1/intro
   # not_numbered: true
@@ -59,6 +58,11 @@
   sections:
   - title: Un programa para leer
     url: /nivel1/seccion1-1
+    subsections:
+    - title: Experimentos
+      url: /nivel1/notebooks
+      not_numbered: true
+
   - title: Ambiente básico de trabajo
     url: /nivel1/seccion1-2
   - title: Variables y operadores
@@ -89,6 +93,13 @@
     url: /nivel2/seccion2-3
   - title: Seccion 4 (n2)
     url: /nivel2/seccion2-4
+
+- title: Nivel 3
+  url: /nivel2/intro
+
+- title: Nivel 4
+  url: /nivel2/intro
+
 
 
 - title: Features and customization

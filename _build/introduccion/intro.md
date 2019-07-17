@@ -2,7 +2,7 @@
 title: 'Introduccion'
 prev_page:
   url: /intro
-  title: 'None'
+  title: 'Inicio'
 next_page:
   url: /nivel1/intro
   title: 'Nivel 1'

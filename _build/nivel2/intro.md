@@ -1,11 +1,11 @@
 ---
-title: 'Nivel 2'
+title: 'Nivel 4'
 prev_page:
-  url: /nivel1/seccion1-9
-  title: 'Ejercicios adicionales'
+  url: /nivel2/intro
+  title: 'Nivel 3'
 next_page:
-  url: /nivel2/seccion2-1
-  title: 'Seccion 1 (n2)'
+  url: /features/features
+  title: 'Features and customization'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Nivel 2
