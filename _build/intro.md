@@ -1,8 +1,8 @@
 ---
 title: 'None'
 prev_page:
-  url: 
-  title: ''
+  url: /intro
+  title: 'Home'
 next_page:
   url: /introduccion/intro
   title: 'Introduccion'
