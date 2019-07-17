@@ -1,8 +1,8 @@
 ---
 title: 'Nivel 1'
 prev_page:
-  url: /intro
-  title: 'None'
+  url: /introduccion/intro
+  title: 'Introduccion'
 next_page:
   url: /nivel1/seccion1-1
   title: 'Un programa para leer'
