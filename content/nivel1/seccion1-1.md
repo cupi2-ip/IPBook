@@ -1,3 +1,3 @@
-# Sección 1
+# Un programa para leer
 
 ...

@@ -1,3 +1,3 @@
-# Sección 4
+# Valores y tipos de datos
 
 ...

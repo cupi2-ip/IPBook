@@ -1,3 +1,3 @@
-# Sección 2
+# Ambiente básico de trabajo
 
 ...

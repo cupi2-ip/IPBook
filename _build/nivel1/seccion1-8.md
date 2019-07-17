@@ -1,13 +1,13 @@
 ---
-title: 'Nivel 2'
+title: 'Lógica vs. Interacción'
 prev_page:
+  url: /nivel1/seccion1-7
+  title: 'Definición de funciones'
+next_page:
   url: /nivel1/seccion1-9
   title: 'Ejercicios adicionales'
-next_page:
-  url: /nivel2/seccion2-1
-  title: 'Seccion 1 (n2)'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# Nivel 2
+# Para no olvidar
 
-Esta es la introducción al nivel 2
+...

@@ -5,7 +5,7 @@ prev_page:
   title: 'None'
 next_page:
   url: /nivel1/seccion1-1
-  title: 'Seccion 1 (n1)'
+  title: 'Un programa para leer'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Nivel 1

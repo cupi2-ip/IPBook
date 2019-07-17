@@ -1,3 +1,3 @@
-# Sección 3
+# Variables y operadores
 
 ...
