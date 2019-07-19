@@ -5,6 +5,13 @@
 
 ## Principios fundamentales
 
+Hay que leer bien
+
+Hay que practicar
+
+Hay que leer código
+
+
 ## Sobre este libro
 
 

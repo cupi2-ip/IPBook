@@ -5,7 +5,7 @@ prev_page:
   title: ''
 next_page:
   url: /introduccion/intro
-  title: 'Introduccion'
+  title: 'Introducción'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Introducción a la programación (en python)

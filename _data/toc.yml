@@ -47,7 +47,7 @@
 # - chapter: Tryout
 
 
-- title: Introduccion
+- title: Introducción
   url: /introduccion/intro
   not_numbered: true
 
@@ -60,7 +60,7 @@
     url: /nivel1/seccion1-1
     subsections:
     - title: Experimentos
-      url: /nivel1/notebooks
+      url: /nivel1/ejercicio_inicial
       not_numbered: true
 
   - title: Ambiente básico de trabajo
