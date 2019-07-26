@@ -2,7 +2,7 @@
 title: 'Ejercicios adicionales'
 prev_page:
   url: /nivel1/seccion1-8
-  title: 'Lógica vs. Interacción'
+  title: 'Para no olvidar'
 next_page:
   url: /nivel2/intro
   title: 'Nivel 2'

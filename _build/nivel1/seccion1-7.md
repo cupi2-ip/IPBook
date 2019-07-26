@@ -1,11 +1,11 @@
 ---
-title: 'Definición de funciones'
+title: 'Lógica vs. Interacción'
 prev_page:
   url: /nivel1/seccion1-6
-  title: 'Funciones'
+  title: 'Definición de funciones'
 next_page:
   url: /nivel1/seccion1-8
-  title: 'Lógica vs. Interacción'
+  title: 'Para no olvidar'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 Versión borrador / preliminar |

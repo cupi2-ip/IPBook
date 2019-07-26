@@ -13,4 +13,22 @@ Este documento es una versión preliminar para uso interno. Si encuentra algún 
 literales
 
 
+Números enteros
+
+int('100', 2)
+0b100
+0x100
+
+
+Números decimales
+
+
+Cadenas de caracteres
+
+
+\n
+
+
+
+
 ...

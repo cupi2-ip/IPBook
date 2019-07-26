@@ -1,11 +1,11 @@
 ---
-title: 'Funciones'
+title: 'Definición de funciones'
 prev_page:
   url: /nivel1/seccion1-5
-  title: 'Valores y tipos de datos'
+  title: 'Funciones'
 next_page:
   url: /nivel1/seccion1-7
-  title: 'Definición de funciones'
+  title: 'Lógica vs. Interacción'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 Versión borrador / preliminar |
@@ -14,5 +14,13 @@ Este documento es una versión preliminar para uso interno. Si encuentra algún 
 
 
 # Definición de funciones
+
+
+
+```python
+def area_cuadrado(lado: int)-> int:
+   return lado * lado
+```
+
 
 ...

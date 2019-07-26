@@ -4,6 +4,15 @@ Este documento es una versión preliminar para uso interno. Si encuentra algún 
 
 
 
-# Nivel 1
+# Nivel 1: Descubriendo el mundo de la programación
 
-Esta es la introducción al nivel 1
+En este nivel se presentan en detalle los conceptos más básicos de cualquier lenguaje de programación. Aunque los conceptos se explican e ilustran usando el lenguaje de programación Python, la mayoría del contenido se aplica a muchos otros lenguajes de programación.
+
+Los conceptos principales que se estudian en este nivel son los siguientes:
+
+* Tipos de datos
+* Variables
+* Expresiones
+* Operadores
+* Funciones (definición e invocación)
+* Parámetros

@@ -5,4 +5,12 @@ Este documento es una versión preliminar para uso interno. Si encuentra algún 
 
 # Definición de funciones
 
+
+
+```python
+def area_cuadrado(lado: int)-> int:
+   return lado * lado
+```
+
+
 ...

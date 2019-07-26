@@ -5,7 +5,7 @@ prev_page:
   title: 'Variables y operadores'
 next_page:
   url: /nivel1/seccion1-5
-  title: 'Valores y tipos de datos'
+  title: 'Funciones'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 Versión borrador / preliminar |
@@ -255,23 +255,24 @@ En este siguiente ejemplo lo primero que se hace es evaluar la operación de exp
 
 1. ¿Cuáles de las siguientes líneas no son instrucciones válidas en Python? (suponga que las instrucciones se van ejecutando una después de la otra)
 
- * variable = 5
- * 5 = variable
- * var1 = var2 + 5
- * var1 = var1 + 5
- * var = var + 5
+	 * variable = 5
+	 * 5 = variable
+	 * var1 = var2 + 5
+	 * var1 = var1 + 5
+	 * var = var + 5
+
 
 2. ¿Qué resultados se obtendan al evaluar las siguientes expresiones en Python? Verifique los resultados evaluando las expresiones en el intérprete de Python.
 
- * 2 + 3 + 1 + 2
- * 2 + 3 * 1 + 2
- * (2 + 3) * 1 + 2
- * (2 + 3) * (1 + 2)
- * +---6
- * -+-+6
- * -3 / 2 - 1
- * -3 // 2 - 1
- * 3 % 2 - 1
+	 * 2 + 3 + 1 + 2
+	 * 2 + 3 * 1 + 2
+	 * (2 + 3) * 1 + 2
+	 * (2 + 3) * (1 + 2)
+	 * +---6
+	 * -+-+6
+	 * -3 / 2 - 1
+	 * -3 // 2 - 1
+	 * 3 % 2 - 1
 
 
 3. ¿Qué valor se mostrará en la pantalla después de ejecutar el siguiente código?
@@ -319,3 +320,4 @@ Si tenemos perfectamente claro todo lo expuesto en este capítulo, aplicar las m
 [^para]: Python, C, C++ y Java son algunos ejemplos muy populares de lenguajes de programación **imperativos**. En estos lenguajes las instrucciones de un programa sirven para darle órdenes al computador (por ejemplo, sume estos dos números, guarde el resultado en esta posición de memoria). Hay otros lenguajes de programación que siguen *paradigmas* diferentes, como el paradigma **lógico** o el **funcional**. En esos lenguajes las instrucciones de un programa no son órdenes sino expresiones lógicas que el computador debe resolver, o definiciones de funciones que el computador debe evaluar, por ejemplo. Después de adquirir una cierta destreza con algún lenguaje de programación particular es muy recomendable estudiar algún lenguaje basado en un paradigma diferente: está demostrado que aprender a resolver los mismos problemas utilizando herramientas y métodos completamente diferentes es parte de lo que hace a un experto.
 
 
+#### Notas 

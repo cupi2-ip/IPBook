@@ -15,6 +15,10 @@ Este documento es una versión preliminar para uso interno. Si encuentra algún 
 
 * las funciones se invocan con su nombre y los parámetros dentro de paréntesis
 
+* cuando se invoca una función, lo primero que hace Python es evaluar los parámetros
+
 * Es una buena práctica usar comentarios
+
+
 
 ...

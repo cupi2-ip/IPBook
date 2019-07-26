@@ -1,8 +1,8 @@
 ---
-title: 'Lógica vs. Interacción'
+title: 'Para no olvidar'
 prev_page:
   url: /nivel1/seccion1-7
-  title: 'Definición de funciones'
+  title: 'Lógica vs. Interacción'
 next_page:
   url: /nivel1/seccion1-9
   title: 'Ejercicios adicionales'
@@ -25,6 +25,10 @@ Este documento es una versión preliminar para uso interno. Si encuentra algún 
 
 * las funciones se invocan con su nombre y los parámetros dentro de paréntesis
 
+* cuando se invoca una función, lo primero que hace Python es evaluar los parámetros
+
 * Es una buena práctica usar comentarios
+
+
 
 ...
