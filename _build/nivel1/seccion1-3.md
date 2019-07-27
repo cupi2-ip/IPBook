@@ -1,11 +1,11 @@
 ---
-title: 'Variables y operadores'
+title: 'Valores y tipos de datos'
 prev_page:
   url: /nivel1/seccion1-2
   title: 'Ambiente básico de trabajo'
 next_page:
   url: /nivel1/seccion1-4
-  title: 'Valores y tipos de datos'
+  title: 'Variables, expresiones y operadores'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 Versión borrador / preliminar |

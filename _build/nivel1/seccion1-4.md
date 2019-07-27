@@ -1,8 +1,8 @@
 ---
-title: 'Valores y tipos de datos'
+title: 'Variables, expresiones y operadores'
 prev_page:
   url: /nivel1/seccion1-3
-  title: 'Variables y operadores'
+  title: 'Valores y tipos de datos'
 next_page:
   url: /nivel1/seccion1-5
   title: 'Funciones'

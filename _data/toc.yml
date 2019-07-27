@@ -65,9 +65,9 @@
 
   - title: Ambiente básico de trabajo
     url: /nivel1/seccion1-2
-  - title: Variables y operadores
-    url: /nivel1/seccion1-3
   - title: Valores y tipos de datos
+    url: /nivel1/seccion1-3
+  - title: Variables, expresiones y operadores
     url: /nivel1/seccion1-4
   - title: Funciones
     url: /nivel1/seccion1-5
@@ -85,14 +85,26 @@
   # not_numbered: true
   # expand_sections: true
   sections:
-  - title: Seccion 1 (n2)
+  - title: Un programa para leer
     url: /nivel2/seccion2-1
-  - title: Seccion 2 (n2)
+  - title: Lógica y valores de verdad
     url: /nivel2/seccion2-2
-  - title: Seccion 3 (n2)
+  - title: Instrucciones condicionales
     url: /nivel2/seccion2-3
-  - title: Seccion 4 (n2)
+  - title: Cadenas de caracteres
     url: /nivel2/seccion2-4
+  - title: Módulos
+    url: /nivel2/seccion2-5
+  - title: Diccionarios
+    url: /nivel2/seccion2-6
+  - title: Parámetros por valor y referencia
+    url: /nivel2/seccion2-7
+  - title: Dividir y conquistar
+    url: /nivel2/seccion2-8
+  - title: Para no olvidar
+    url: /nivel2/seccion2-9
+  - title: Ejercicios adicionales
+    url: /nivel2/seccion2-10
 
 - title: Nivel 3
   url: /nivel2/intro

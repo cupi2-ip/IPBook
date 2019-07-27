@@ -15,4 +15,28 @@ Este documento es una versión preliminar para uso interno. Si encuentra algún 
 
 # Lógica vs. Interacción
 
-...
+
+
+
+Archivos diferentes
+
+
+Funciones de la lógica del programa
+
+
+Funciones de la interfaz
+
+ - sin parámetros
+ 
+ - sin retorno
+
+
+
+
+## Más allá de Python
+
+
+
+
+#### Notas 
+

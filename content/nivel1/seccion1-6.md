@@ -13,4 +13,30 @@ def area_cuadrado(lado: int)-> int:
 ```
 
 
-...
+
+
+Definir vs. Invocar
+
+
+
+## Funciones sin parámetro o sin retorno
+
+
+
+
+
+## Sobre los *type-hints*
+
+
+
+## Ejercicios
+
+1. 
+
+
+## Más allá de Python
+
+
+
+
+#### Notas 

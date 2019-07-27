@@ -2,7 +2,7 @@
 title: 'Funciones'
 prev_page:
   url: /nivel1/seccion1-4
-  title: 'Valores y tipos de datos'
+  title: 'Variables, expresiones y operadores'
 next_page:
   url: /nivel1/seccion1-6
   title: 'Definición de funciones'

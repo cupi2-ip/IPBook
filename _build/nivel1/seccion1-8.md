@@ -30,5 +30,9 @@ Este documento es una versión preliminar para uso interno. Si encuentra algún 
 * Es una buena práctica usar comentarios
 
 
+* Definir vs. invocar
+
+
+
 
 ...
