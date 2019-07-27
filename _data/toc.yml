@@ -47,9 +47,9 @@
 # - chapter: Tryout
 
 
-- title: Introducción
-  url: /introduccion/intro
-  not_numbered: true
+# - title: Introducción
+#  url: /introduccion/intro
+#  not_numbered: true
 
 - title: Nivel 1
   url: /nivel1/intro

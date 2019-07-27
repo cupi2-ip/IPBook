@@ -4,8 +4,8 @@ prev_page:
   url: 
   title: ''
 next_page:
-  url: /introduccion/intro
-  title: 'Introducción'
+  url: /nivel1/intro
+  title: 'Nivel 1'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Introducción a la programación (en python)
