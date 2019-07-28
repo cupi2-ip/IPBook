@@ -37,7 +37,7 @@ A manera de ejemplo, consideremos la siguiente definición de una función:
 
 Esta definición expresa que existe una función llamada *f* y cuyo valor depende de dos parámetros llamados *x* y *y*: cuando se evalua la función, asignándole valores específicos a *x* y a *y*, el valor de *f* será igual al valor de calcular *x elevado a la y*. Por ejemplo, si evaluamos la función con los valores *x=2* y *y=3* el resultado será el número *8*. También sabemos que si el valor de *y* es 0, entonces el valor de evaluar la función siempre será *1* independiemente del valor de *x*. Finalmente es importante notar que el resultado de evaluar *f(x,y)* será siempre el mismo para cada combinación de valores de *x* y *y*: no es posible que *f(2,3)* algunas veces tenga el valor *8* y en otras ocasiones tenga un valor diferente.
 
-Una función tiene entonces un nombre, que en el ejemplo anterior era *f*, y un conjunto de parámetros[^param] a los que se les daben dar valores cuando se quiera evaluar la función. En lo posible, los nombres de las funciones y sus parámetros deberían ayudar a aclarar el objetivo de una función. Por ejemplo, la función anterior podría reescribirse de la siguiente manera y sería mucho más legible.
+Una función tiene entonces un nombre, que en el ejemplo anterior era *f*, y un conjunto de parámetros[^param] a los que se les daben dar valores cuando se quiera evaluar la función. En lo posible, los nombres de las funciones y sus parámetros deberían ayudar a aclarar el objetivo de una función. Por ejemplo, la función anterior podría reescribirse de la siguiente manera y sería mucho más legible:
 
  <math display="block">
     <mi>potencia(base, exponente)</mi>
@@ -51,9 +51,9 @@ Una función tiene entonces un nombre, que en el ejemplo anterior era *f*, y un 
 
 ## Funciones en Python
 
-El concepto matemático de función presentado en la sección anterior fue adoptado por Python, pero con unas pequeñas modificaciones que explicaremos en la siguiente sección. Por ahora, lo importante es que en Python es posible definir funciones dándoles un nombre, especificando sus parámetros, y explicando cómo se debe calcular un valor específico a partir de los parámetros. Como veremos en esta sección, Python cuenta con un buen número de funciones pre-definidas que podemos utilizar en nuestros programas. En la próxima sección estudiaremos cómo podemos hacer para definir nuestras propias funciones.
+El concepto matemático de función presentado en la sección anterior fue adoptado por Python, pero con unas pequeñas modificaciones que explicaremos en la siguiente sección. Por ahora, lo importante es que en Python es posible definir funciones dándoles un nombre, especificando sus parámetros, y explicando cómo se debe calcular un valor específico a partir de los parámetros. Como veremos en esta sección, Python cuenta con un gran número de funciones pre-definidas que podemos utilizar en nuestros programas. En la próxima sección estudiaremos cómo podemos hacer para definir nuestras propias funciones.
 
-La acción más interesante que podemos hacer sobre una función es *invocarla*. Esto es los mismo que *evaluarla* para poder saber cuál es sería su valor dados valores específicos para sus parámetros. Por ejemplo, en el siguiente fragmento de código vamos a invocar la función pre-definida llamada ```pow``` pasándole los valores 2 y 3.
+La acción más interesante que podemos hacer sobre una función es *invocarla*. Esto es lo mismo que *evaluarla* para poder saber cuál es sería su valor dados valores específicos para sus parámetros. Por ejemplo, en el siguiente fragmento de código vamos a invocar la función pre-definida llamada ```pow``` pasándole los valores 2 y 3 como *argumentos*.
 
 ```python
 >>> pow(2, 3)
@@ -68,22 +68,22 @@ El siguiente fragmento es similar al anterior, pero en este caso se inicia con u
 8
 ```
 
-Finalmente, el siguiente fragmento muestra dos ideas muy importantes sobre el uso y la evaluación de funciones. La primera, es que en Python es posible hacer composición de funciones: estamos llamando la función ```pow``` usando como segundo parámetro el resultado de evaluar esa función con los valores 2 y 2. 
+Finalmente, el siguiente fragmento muestra dos ideas muy importantes sobre el uso y la evaluación de funciones. La primera, es que en Python es posible hacer composición de funciones: estamos llamando la función ```pow``` usando como segundo argumento el resultado de evaluar esa función usando los valores 2 y 2. 
 
 ```python
 >>> var = pow(2, pow(2,1+1) )
 >>> var
 16
 ```
-La segunda idea es que en Python se deben conocer los valores de los parámetros de una función antes de que se pueda evaluar la función. Esto significa que el intérprete Python realizará las siguientes acciones para ejecutar la primera instrucción del fragmento:
+La segunda idea es que en Python se deben conocer los valores de los parámetros de una función *antes* de que se pueda evaluar la función. Esto significa que el intérprete Python realizará las siguientes acciones para ejecutar la primera instrucción del fragmento:
 
 1. Evaluar la expresión `1+1`. El resultado (2) se almacena temporalmente para usarse en el siguiente paso.
-2. Evaluar la función ```pow``` con los valores de parámetros 2 y 2. El resultado (4) se almacena temporalmente para usarse en el siguiente paso.
-3. Evaluar la función ```pow``` con los valores de parámetros 2 y 4. El resultado (16) se almacena temporalmente para usarse en el siguiente paso.
+2. Evaluar la función ```pow``` con los argumentos 2 y 2. El resultado (4) se almacena temporalmente para usarse en el siguiente paso.
+3. Evaluar la función ```pow``` con los argumentos 2 y 4. El resultado (16) se almacena temporalmente para usarse en el siguiente paso.
 4. Asignar el valor 16 a la variable ```var```.
 
 
-Una anotación muy importante para hacer en este punto es que el orden de los parámetros es extremadamente importante y se debe respetar. Así como en el ejemplo *matemático* el valor de *f(2,3)* es diferente al valor de *f(3,2)*, en Python también pasa lo mismo. Por eso es absolutamente fundamental saber en qué orden fueron definidos los parámetros.
+Una anotación muy importante para hacer en este punto es que el orden de los parámetros es extremadamente importante y se debe respetar. Así como en el ejemplo *matemático* el valor de *f(2,3)* es diferente al valor de *f(3,2)*, en Python también pasa lo mismo. Por eso es absolutamente fundamental saber en qué orden fueron definidos los parámetros cuando se creó la función.
 
 Si no se tiene acceso al código fuente, un mecanismo para consultar cuáles son los parámetros de una función es usar la función ```help```. Esta es otra función básica de Python y permite consultar la documentación de cualquier otra función. Por ejemplo, en el siguiente fragmento se usará la función ```help``` para consultar la documentación de la función ```pow```.
 

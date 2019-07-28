@@ -22,9 +22,9 @@
 # See the links below for an example.
 
 # Top-level page
-#- title: Inicio
-#  url: /intro
-#  not_numbered: true
+- title: Inicio
+  url: /intro
+  not_numbered: true
 
 # External link
 # - title: GitHub repository
