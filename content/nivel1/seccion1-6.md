@@ -270,7 +270,14 @@ En este libro vamos a usar *type-hints* en la definición de todas las funciones
 
 ## Ejercicios
 
-1. 
+1. Defina una función que permita convertir de grados Celsius a grados Fahrenheit.
+
+2. Defina una función que permita convertir de grados Fahrenheit a grados Celsius.
+
+3. Escriba un programa que le pida al usuario una temperatura en grados Celsius y le informe a cuánto equivaldría esa temperatura en grados Fahrenheit.
+
+4. Escriba un programa que le pida a un usuario una cantidad de días y le muestre la cantidad de años, meses y días equivalentes que han pasado. Suponga que todos los meses tienen 30 días.
+
 
 
 ## Más allá de Python
