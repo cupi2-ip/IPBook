@@ -178,31 +178,69 @@ def area_triangulo(base: int, altura: int)-> float:
 
 ## Definir vs. Invocar
 
-Hasta el momento hemos descrito en detalle solamente la forma en la que se define una función, pero no hemos estudiado cómo se invoca una función. Es muy importante tener muy clara la diferencia entre estas dos acciones: cuando definimos una función, sólo le estamos *enseñando* a Python cómo debería invocarse esa función y cómo debería comportarse un programa cuando la función se invoque; cuando invocamos una función, le estamos pidiendo a Python que *ejecute* el cuerpo de la función, dándole valores específicos para cada uno de sus parámetros.
+Hasta el momento hemos descrito en detalle solamente la forma en la que se define una función, pero no hemos estudiado cómo se invoca una función. Es muy importante tener muy clara la diferencia entre estas dos acciones: cuando definimos una función, sólo le estamos *enseñando* a Python cómo debería invocarse esa función y cómo debería comportarse un programa cuando la función se invoque; cuando invocamos una función, le estamos pidiendo a Python que *ejecute* el cuerpo de la función, dándole valores específicos a cada uno de sus parámetros.
 
-nombres de parámetros vs. argumentos
+Revisaremos a continuación la última parte del programa de ejemplo con el que inició esta sección. Para simplificar el ejemplo hemos eliminado la documentación de la función ```area_casa```.
 
-llamar funciones desde funciones
-
-usar funciones en los argumentos de invocaciones
-
-Variables locales
-
-Orden de ejecución?
 
 ```python
 def area_casa(frente: int, techo: int)-> float:
-    """
-        Calcula el área del dibujo de una casa que se forma con un cuadrado
-        y un triángulo encima (el techo).
-        El frente de la casa será igual al lado del cuadrado y a la base del triángulo.
-        La altura del techo será la altura del triángulo.
-    """
     cuadrado = area_cuadrado(frente)
     triangulo = area_triangulo(frente, techo)
     return cuadrado + triangulo
+    
+   
+medida_frente = 7
+medida_techo = 5
+resultado = area_casa(medida_frente, medida_techo)
+print("El área de una casa con", medida_frente, "metros de frente y un techo de",
+       medida_techo, "metros de alto es ", round(resultado, 2), "metros")    
 ```
 
+### Definición de la función
+
+Lo primero que se debe notar en este ejemplo es que las primeras 4 líneas hacen parte de la definición de la función ```area_casa``` mientras que el último bloque de instrucciones está por fuera de esta función. Esto es evidente gracias a la indentación: las instrucciones indentadas después de la signatura de la función, hacen parte del cuerpo de la función. Tan pronto encontramos instrucciones que no están indentadas significa que hemos encontrado el fin del cuerpo de la función.
+
+Con respecto a las funciones anteriormente estudiadas, la signatura de la función ```area_casa``` sólo tiene una pequeña diferencia: utiliza diferentes tipos de datos (sus parámetros son ```int``` y su resultado es ```float```).
+
+En cambio, el cuerpo de la función tiene un par de diferencias mucho más interesantes. La primera es que dentro de esta función se definen dos variables (```cuadrado``` y ```triangulo```). Estas variables son *locales*, lo cual significa que sólo existirán dentro del contexto de una invocación a la función. Si se habla de esas variables por fuera del cuerpo de la función, se producirá un error porque esos nombres sólo están definidos dentro del *alcance* de la función ```area_casa```.
+
+La segunda diferencia interesante tiene que ver con la forma en la que se le asignan valores a las nuevas variables. En el caso de la variable ```cuadrado```, se le está asignando el valor obtenido al invocar la función ```area_cuadrado``` utilizando como argumento el valor del parámetro ```frente```. En otras palabras, cuando se quiere calcular el área de una casa dada la medida de su frente y la altura de su techo, lo primero que se hace es calcular el área del cuadrado utilizando para eso la función ```area_cuadrado```, dándole a su parámetro ```lado``` el valor que se le haya dado al parámetro ```frente```.
+
+La segunda instrucción hace algo similar para darle un valor a la variable ```triangulo```. En este caso, la invocación se hace a la función ```area_triangulo``` y se utilizan como argumento los valores de los parámetros ```frente``` y ```techo```.
+
+La tercera instrucción de la función calcula la suma de las dos variables y retorna el resultado.
+
+<div class="cuidado">
+El nombre que se le da a un parámetro en la signatura de una función, sólo es importante dentro del cuerpo de esa función. En el caso del ejemplo, la función area_cuadrado tiene un parámetro llamado lado, pero quien invoca a esa función no tiene por qué usar el mismo nombre para sus propios parámetros o variables.
+</div>
+
+### Invocación de la función
+
+Si nuestro programa tuviera sólo las instrucciones que ya estudiamos, no veríamos nada pasando cada vez que lo corriéramos. Su ejecución se limitaría a definir las funciones una y otra vez, pero sin invocarlas ni una sola vez. En este contexto es que se vuelven interesantes las últimas instrucciones del archivo, las cuales repetimos a continuación:
+
+```python
+medida_frente = 7
+medida_techo = 5
+resultado = area_casa(medida_frente, medida_techo)
+print("El área de una casa con", medida_frente, "metros de frente y un techo de",
+       medida_techo, "metros de alto es ", round(resultado, 2), "metros")    
+```
+
+Recuerde que estas instrucciones no hacen parte de la definición de ninguna función, así que se ejecutarán cada vez que el programa se corra. Las dos primeras instrucciones hacen asignaciones sobre dos nuevas variables llamadas ```medida_frente``` y ```medida_techo``` con los valores 7 y 5.
+
+A continuación, se hace una nueva asignación pero esta vez el valor se calcula con una invocación a la función ```area_casa```. En esta ocasión la función sí se ejecuta, utilizando los valores 7 y 5 como argumentos de la invocación. Si nosotros no conociéramos el cuerpo de la función, lo único que podríamos ver es que el resultado de invocar la función quedaría asignado a la variable ```resultado```.
+
+En este caso, como sí conocemos el cuerpo de la función, sabemos que lo que ocurrirá es lo siguiente:
+
+1. Se invocará a la función ```area_cuadrado``` usando el valor 7 como valor para el parámetro ```lado```.
+2. Se calculará y retornará el valor de la expresión ```lado * lado``` que se encuentran en el cuerpo de ```area_cuadrado```. En este caso, el valor retornado será ```49``` y ese valor se almacerá en la variable temporal ```cuadrado```.
+3. Se invocará a la función ```area_triangulo``` usando los valores 7 y 5 como valores para los parámetros ```base``` y ```altura```. 
+4. Se calculará y retornará el valor de la expresión ```(base * altura) / 2``` que se encuentran en el cuerpo de ```area_triangulo ```. En este caso, el valor retornado será ```17.5``` y ese valor se almacerá en la variable temporal ```triangulo```.
+5. Se calculará la suma de ```cuadrado``` y ```triangulo``` y se retornará el valor. Las variables ```cuadrado``` y ```triangulo``` dejan de existir en este momento porque terminó la ejecución de la función en la que fueron definidas.
+6. El valor retornado se almacenará en la variable ```resultado```.
+
+Finalmente se debe ejecutar la última instrucción del programa, que en este caso es una invocación a la función ```print```. Como ya sabemos, esta función le mostrará al usuario los valores que se le pasen como parámetro, separándolos con un espacio. Sin embargo, los argumentos que se están usando para llamar a la función ```print``` incluyen la expresión ```round(resultado, 2)```. Esto quiere decir que antes de que se empiece a ejecutar la función ```print``` se llamará a la función ```round``` y se obtendrá un valor redondeado para la variable ```resultado```. Esto es un ejemplo del uso de invocaciones a funciones como argumentos de una invocación a otra función.
 
 
 ## Funciones sin parámetro o sin retorno
@@ -247,12 +285,12 @@ En este libro vamos a usar *type-hints* en la definición de todas las funciones
 
 ## Más allá de Python
 
-Contexto de ejecución: sólo los parámetros
+En esta sección utilizamos una definición de función relativamente *pura*, en la cual el resultado de su ejecución depende únicamente del valor que se le dé a sus parámetros. En otros contextos, y especialemente en otros lenguajes de programación, la ejecución de funciones, métodos o procedimientos depende de otros factores que no se ven explícitos en sus signaturas. Por ejemplo, en un lenguaje orientado a objetos como Java o C++, un método definido en una clase depende de los parámetros y del estado del objeto sobre el que se invoque el objeto. Esto hace mucho más complejo el comportamiento de un método y hace que ciertas acciones, como probar su corrección, sea más difícil que en funciones equivalente en Python.
 
-Tipos de parámetros y funciones - dynamic typing vs. strong typing
+La discusión sobre los *type-hints* tiene que ver con una discusión mucho más extensa sobre la conveniencia de tener *tipado dinámico* en los lenguajes de programación. Por un lado, cuando los lenguajes son fuertemente tipados se cometen menos errores o, al menos, las herramientas de edición capturan más errores de forma temprana. Por otro lado, cuando el tipado es dinámico los errores de tipo se capturan en tiempo de ejecución, pero el desarrollo de los programas es más rápido. En este momento hay fuertes discusiones sobre la conveniencia o no de cada sistema, pero hay un hecho que encontramos muy diciente: JavaScript, que tiene tipado dinámico, está incluyendo progresivamente más elementos para escribir programas fuertemente tipados, mientras que Python está empezando a incluir elementos para poder incluir verificaciones de tipos.
 
-Camel Case
+Python utiliza un estilo para el nombramiento de variables, funciones y parámetros que está descrito en la guía PEP8 (Style Guide for Python Code), bajo el título "Naming Conventions". El punto que vale más la pena resaltar es el que tiene que ver con la separación de palabras en un identificador: mientras que en Python podemos encontrar una función llamada ```area_casa```, en Java una función similar se llamaría ```areaCasa``` y en C# se llamaría ```AreaCasa```. Estas diferencias son en realidad minúsculas, pero es muy recomendable seguir las guías de estilo de la plataforma en la que se esté trabajando, para facilitar la lectura y evitar incompatibilidades.
 
-
+La guía de estilo oficial de Python, que todos los programadores deberían conocer e intentar aplicar, se encuentra en el siguiente vínculo: PEP8 -- Style Guide for Python Code: <https://www.python.org/dev/peps/pep-0008/>
 
 #### Notas 
