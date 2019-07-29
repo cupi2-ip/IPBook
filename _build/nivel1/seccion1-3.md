@@ -73,7 +73,7 @@ Desafortunadamente este truco no funciona cuando la cadena incluye comillas dobl
 
 La solución en este caso es utilizar expresiones especiales para representar las comillas dobles o las comillas sencillas. Es decir que en lugar de representar una comilla sencilla dentro de la cadea usando el caracter ```'``` se usaría la expresión ```\'```. También existe la expresión equivalente ```\"``` para las comillas dobles. Esto quiere decir que el literal para la cadena del ejemplo podría ser ```'She said to me "That\'s mine!"'``` o ```"She said to me \"That\'s mine!\""```.
 
-Veamos ahora la opción de las tres comillas sencillas o dobles, que resuelve una limitación importante que tienen las otras dos opciones: cuando se usan tres comillas, las cadenas pueden tener cambios de línea dentro de los literales. Considere el siguiente fragmento de código válido en Python que se visualiza tal como fue tecleado en el intérprete del lenguaje.
+Veamos ahora la opción de las tres comillas sencillas o dobles, que resuelve una limitación importante que tienen las otras dos opciones: cuando se usan tres comillas, las cadenas pueden tener cambios de línea dentro de los literales. Considere el siguiente fragmento de código válido en Python que se visualiza tal como fue tecleado en el intérprete del lenguaje [^haiku].
 
 ```python
 >>> """one foolish heart
@@ -112,3 +112,5 @@ En una de las próximas secciones estudiaremos más en detalle las funciones de 
 #### Notas
 
 [^bases]: Por defecto, los literales de números enteros asumen que se trata de números en base 10. Sin embargo, si se preceden los números con los caracteres '0b' o '0x' significaría que se trata de números binarios o hexadecimales, respectivamente. Por ejemplo, los tres literales 0b10110, 0x16 y 22 representarían el mismo valor (el número 22 en base 10).
+
+[^haiku]: El texto fue tomado de <http://shakespeareshaiku.blogspot.com/> y está basado en el Soneto 141 de William Shakespeare.
