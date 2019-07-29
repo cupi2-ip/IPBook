@@ -44,11 +44,14 @@ La instrucción que estamos analizando entonces se encarga de crear una variable
 [^tipos]: Si usted ha trabajado con otros lenguajes de programación, notará que en Python no se deben declarar las variables antes de usarlas, ni se debe indicar explícitamente su tipo. Esto se debe a que Python utiliza *tipado dinámico*, es decir que el intérprete infiere los tipos de variables y parámetros durante la ejecución. Veremos más adelante que, aunque en las versiones actuales no se puede *especificar* los tipos de nada, sí se pueden dar *hints* que sirven como comentarios para que los programadores puedan hacerle un mejor seguimiento a los programas.
 
 
-**Recuerde:** cuando se hace una asignación, el valor de la derecha se almacenará en la variable de la izquierda. Es un error bastante común entre principiantes escribir instrucciones como ```5 = v1 ```: esta instrucción no sería válida en Python y el intérprete mostraría un error similar al siguiente:
+<div class="cuidado">
+Cuando se hace una asignación, el valor de la derecha se almacenará en la variable de la izquierda. Es un error bastante común entre principiantes escribir instrucciones como ```5 = v1 ```: esta instrucción no sería válida en Python y el intérprete mostraría un error similar al siguiente:
 
 ```python
 SyntaxError: can't assign to literal
 ```
+</div>
+
 
 ## Operadores y expresiones
 
