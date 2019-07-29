@@ -18,14 +18,17 @@ Este documento es una versión preliminar para uso interno. Si encuentra algún 
 
 ## Línea de comandos o terminal
 
+![](./images/cmd.png)
 
+![](./images/terminal.png)
 
 ## REPL para Python
 
+![](./images/repl.png)
 
 ## IDE - Integrated Development Environment
 
-
+![](./images/spyder.png)
 
 
 #### Notas
