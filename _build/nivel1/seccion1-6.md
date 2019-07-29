@@ -123,16 +123,62 @@ Lo único diferente con respecto al primer ejemplo es que tenemos dos parámetro
 
 ### El cuerpo de una función
 
-indent
+Pasamos ahora a estudiar el cuerpo de la primera función y lo primero que debemos notar es que todo el cuerpo está **indentado**. Esto quiere decir, que todo lo que hace parte del cuerpo de la función está escrito con un margen hacia la derecha. En este ejemplo particular el margen se ha creado usando 4 caracteres en blanco, lo cual corresponde a las buenas prácticas recomendadas de la comunidad Python.
 
-La instrucción return
+```python
+def area_cuadrado(lado: int)-> int:
+    """
+       Calcula el área de un cuadrado dada la medida de su lado
+    """
+    return lado * lado
+```
 
-Variables locales
+<div class="cuidado">
+La indentación no es opcional en Python, sino obligatoria. El cuerpo de todas las funciones tiene que estar indentado y el margen utilizado debe ser consistente: si una línea usa un cierto margen y la siguiente tiene más o menos caracteres, se producirá un error. La recomendación en este libro será siempre utilizar 4 caracteres en blanco para la indentación.
+</div>
 
+Las primeras líneas del cuerpo de esta función nos muestran otra forma de introducir comentarios en un programa, esta vez asociados a una función. En Python, si la primera línea del cuerpo de una función inicia con una cadena de caracteres, esa cadena se convertirá en la documentación asociada a la función y aparecerá cuando alguien llame a la función ```help``` usando el nombre de nuestra función. 
+
+En general, siempre debería incluirse documentación en las funciones, por más sencillas y evidentes que sean. En este ejemplo se ha incluido sólo una documentación breve para la función ```area_cuadrado```, pero para casos más complejos habría sido conveniente documentar también los parámetros y el retorno de la función. Más adelante estudiaremos algunas buenas prácticas para completar la documentación de las funciones.
+
+Además de la documentación, el cuerpo de la función ```area_cuadrado``` sólo tiene una instrucción: 
+
+```python
+    return lado * lado
+```
+
+La interpretación de esta instrucción es muy sencilla: cuando se ejecute esta instrucción, la función deberá *retornar* el valor de la expresión ```lado * lado```. En el contexto de la ejecución de una función, retornar hace referencia a responderle con un valor a quien haya invocado la función. Esto quiere decir que cuando se llega a una instrucción ```return```, la ejecución de la función termina y se responde con un valor de acuerdo a lo especificado en la signatura de la función.
+
+Ahora bien, antes de retornar un valor, es necesario que Python evalue la expresión ```lado * lado``` y encuentre a qué valor equivale. Si no tuviéramos contexto, lo que podríamos suponer es que ```lado``` fuera el nombre de una variable y que la expresión está calculando el cuadrado de la variable. En realidad, no hemos definido ninguna variable con ese nombre, pero sí tenemos un *parámetro* con ese nombre en la signatura de la función. La expresión ```lado * lado``` está haciendo entonces referencia al parámetro que le pasen a la función cada vez que la invoquen.
+
+Viendo todo en conjunto, lo que pasará cuando alguien invoque a nuestra función es lo siguiente:
+
+1. El que invoque la función, tendrá que darle un valor al parámetro lado. La invocación podría ser algo como ```area_cuadrado(4)```.
+2. Nuestra función intentará ejecutar la instrucción ```return lado * lado```. Como la parte derecha es una expresión cuyo valor se desconoce, se tendrá que evaluar primero.
+3. Para evaluar la expresión ```lado * lado``` se debe conocer el valor de ```lado```. Como es un parámetro, entonces se tomará el valor que se le haya dado cuando se invocó a la función. En este caso, la expresión se convertiría en ```4 * 4```.
+4. Como la expresión sigue sin tener un valor, se ejecuta la operación de multiplicación y la expresión se convierte en el valor ```16```.
+5. Se ejecutará la instrucción ```return 16```: terminará la ejecución de la función y el valor 16 se le pasará al que haya invocado la función.
+
+
+#### Un segundo ejemplo
+
+Analizemos ahora la segunda función de nuestro ejemplo: 
+
+```python
+def area_triangulo(base: int, altura: int)-> float:
+    """
+        Calcula el área de un triángulo dada la medida de la base y de la altura.
+    """   
+    return (base * altura) / 2
+```
+
+* ¿Qué hace el cuerpo de esta función? 
+* ¿Qué diferencias tiene con respecto al cuerpo de la primera función?
 
 
 ## Definir vs. Invocar
 
+Hasta el momento hemos descrito en detalle solamente la forma en la que se define una función, pero no hemos estudiado cómo se invoca una función. Es muy importante tener muy clara la diferencia entre estas dos acciones: cuando definimos una función, sólo le estamos *enseñando* a Python cómo debería invocarse esa función y cómo debería comportarse un programa cuando la función se invoque; cuando invocamos una función, le estamos pidiendo a Python que *ejecute* el cuerpo de la función, dándole valores específicos para cada uno de sus parámetros.
 
 nombres de parámetros vs. argumentos
 
@@ -140,20 +186,58 @@ llamar funciones desde funciones
 
 usar funciones en los argumentos de invocaciones
 
+Variables locales
 
+Orden de ejecución?
 
-## Documentación de funciones
+```python
+def area_casa(frente: int, techo: int)-> float:
+    """
+        Calcula el área del dibujo de una casa que se forma con un cuadrado
+        y un triángulo encima (el techo).
+        El frente de la casa será igual al lado del cuadrado y a la base del triángulo.
+        La altura del techo será la altura del triángulo.
+    """
+    cuadrado = area_cuadrado(frente)
+    triangulo = area_triangulo(frente, techo)
+    return cuadrado + triangulo
+```
 
 
 
 ## Funciones sin parámetro o sin retorno
 
+Dos preguntas frecuentes entre los estudiantes son si una función siempre debe tener parámetros y si una función siempre debe retornar un valor. Si estas preguntas se hicieran en un contexto matemático, la respuesta sería negativa: las funciones establecen relaciones entre elementos de un conjunto y elementos de otro conjunto, así que siempre tienen al menos un parámetros y siempre tienen un resultado.
 
+En el contexto de Python, sí es posible tener funciones sin parámetros y funciones que no tengan un retorno, pero la realidad es que este tipo de funciones sólo deberían usarse en un contexto muy particular (interacción con el usuario). A continuación explicamos brevemente por qué, en general, no es una buena idea tener este tipo de funciones.
+
+### Funciones sin parámetros
+
+Si una función no tiene parámetros, en principio siempre va a retornar el mismo valor. Si esto fuera cierto, en lugar de tener una función para calcular el valor, se debería tener una variable donde ese valor estuviera disponible para utilizarlo cuando fuera necesario. 
+
+Python incluye algo así para almacenar el valor de Pi sin que sea necesario llamar cada vez a una función que lo calcule.
+
+Hay 3 casos relativamente sencillos en los cuales tendría sentido tener funciones sin parámetros:
+
+1. Cuando los datos para calcular el resultado de la función dependan de valores entregados por el usuario. En ese caso, aunque no se vería en la signatura, la función recibiría valores que cambiarían su resultado en cada ejecución.
+
+2. Cuando el resultado de la función pueda cambiar con el paso del tiempo. Por ejemplo, una función que calculara un valor aleatorio podría no requerir ningún parámetro para cambiar el valor que retorne cada vez.
+
+3. Cuando la función dependa de valores externos a ella, pero que no tengan que llegar por parámetro. Por ejemplo, una función podría depender de una variable global o de una condición del ambiente de ejecución, como la hora o la ruta desde la que se esté corriendo el programa.
+
+### Funciones sin retorno
+
+Si una función no tiene un retorno significa que el resultado de ejecutar sus instrucciones no es interesante para el resto del programa, o es interesante sólo por los efectos que haya podido tener en algún otro elemento del programa o del computador. Por ejemplo, una función sin retorno podría utilizarse para eliminar un archivo: la función eliminaría el archivo y no retornaría ningún valor.
+
+En general, las funciones podrían no tener retorno cuando representen acciones que quieren realizarse y no tengan ningún resultado que informar.
 
 
 
 ## Sobre los *type-hints*
 
+Si usted utiliza otros libros o si consulta en Internet, es muy posible que se encuentre con definiciones de funciones en las que no aparecen los tipos de los parámetros ni el tipo de los resultados. Esto se debe a que en Python el uso de estos elementos es opcional. De hecho, el nombre específico de estos elementos es *type-hints* y las herramientas (IDE, intérprete, compilador, etc.) los utilizan sólo como sugerencias.
+
+En este libro vamos a usar *type-hints* en la definición de todas las funciones y esperamos que usted haga uso de ellos también. Por una parte, esto le facilitará aprender a usar otros lenguajes de programación como C, C++, Java, o TypeScript. Por otro lado, razonar sobre los tipos de datos debería ayudarlo a estructurar mejor sus programas, especialmente mientras adquiere una cierta destreza programando.
 
 
 ## Ejercicios

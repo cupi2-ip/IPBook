@@ -25,6 +25,9 @@ Números decimales
 
 Cadenas de caracteres
 
+'
+'''
+"
 
 \n
 

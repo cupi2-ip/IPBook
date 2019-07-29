@@ -247,7 +247,7 @@ En este siguiente ejemplo lo primero que se hace es evaluar la operación de exp
 
 ## Reglas para identificadores
 
-los nombres de variables
+
 
 
 
