@@ -49,7 +49,7 @@
 
 - title: Introducción
   url: /introduccion/intro
-  expand_sections: true
+  expand_sections: false
   not_numbered: true
   sections:
   - title: Prácticas fundamentales
@@ -125,8 +125,6 @@
 
 - divider: true  # Will insert a divider in the sidebar
 
-# A chapter w/ a collection of sections beneath it
-- chapter: Anexos
 
 
 - title: Referencias
@@ -155,8 +153,7 @@
     url: /guias/terminal
 
 
-# A chapter w/ a collection of sections beneath it
-- chapter: Referencia Jupyter Books
+- divider: true  # Will insert a divider in the sidebar
 
 - title: Features and customization
   url: /features/features

@@ -241,6 +241,10 @@ Finalmente, si se quieren hacer combinaciones de tipos se deben utilizar parént
 
 En este siguiente ejemplo lo primero que se hace es evaluar la operación de exponenciación, luego se convierte el resultado a una cadena y finalmente se concatenan las dos cadenas.
 
+## Reglas para los nombres de variables
+
+
+
 ## Ejercicios
 
 1. ¿Cuáles de las siguientes líneas no son instrucciones válidas en Python? (suponga que las instrucciones se van ejecutando una después de la otra)
