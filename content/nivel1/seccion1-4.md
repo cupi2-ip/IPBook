@@ -45,12 +45,12 @@ La instrucción que estamos analizando entonces se encarga de crear una variable
 
 
 <div class="cuidado">
-Cuando se hace una asignación, el valor de la derecha se almacenará en la variable de la izquierda. Es un error bastante común entre principiantes escribir instrucciones como ```5 = v1 ```: esta instrucción no sería válida en Python y el intérprete mostraría un error similar al siguiente:
+Cuando se hace una asignación, el valor de la derecha se almacenará en la variable de la izquierda. Es un error bastante común entre principiantes escribir instrucciones como '5 = v1': esta instrucción no sería válida en Python y el intérprete mostraría un error similar al siguiente:
+</div>
 
 ```python
 SyntaxError: can't assign to literal
 ```
-</div>
 
 
 ## Operadores y expresiones
