@@ -4,8 +4,8 @@ prev_page:
   url: /features/notebooks
   title: 'Jupyter notebooks'
 next_page:
-  url: /referencias/intro
-  title: 'Referencias'
+  url: 
+  title: ''
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Sintaxis de Markdown

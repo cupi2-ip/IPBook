@@ -4,8 +4,8 @@ prev_page:
   url: /features/features
   title: 'Features and customization'
 next_page:
-  url: /features/seccion1
-  title: 'Seccion 1'
+  url: /features/notebooks
+  title: 'Jupyter notebooks'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Creating book content

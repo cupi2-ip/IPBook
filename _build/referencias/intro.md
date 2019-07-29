@@ -1,8 +1,8 @@
 ---
 title: 'Referencias'
 prev_page:
-  url: /features/prueba
-  title: 'Prueba Markdown'
+  url: /nivel2/intro
+  title: 'Nivel 4'
 next_page:
   url: /referencias/operadores
   title: 'Operadores'

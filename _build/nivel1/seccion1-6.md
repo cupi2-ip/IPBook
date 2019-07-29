@@ -87,16 +87,39 @@ Lo primero que nos encontramos es la palabra reservada[^reservada] de Python ```
 
 Después de la palabra ```def```, viene el nombre que le queremos dar a la función. En este caso escogimos ```area_cuadrado``` para expresar claramente su objetivo: será una función para calcular el área de un cuadrado. Como los nombres de las funciones no pueden tener espacios, hemos separado las dos palabras usando el símbolo ```_```[^estilo]. 
 
+El siguiente punto es la definición de los parámetros de la función, así que deberíamos hacernos la pregunta: ¿si queremos calcular el área de un cuadrado, qué información requerimos para poder hacer el cálculo? En este caso la respuesta es que sólo necesitamos la medida del lado del cuadrado. Es decir que necesitamos un parámetro en la función y que ese parámetro debería representar la longitud del lado del cuadrado. 
+
+En nuestro ejemplo, el parámetro está especificado en la parte que dice ```lado: int```. Esto significa que la función esperará un solo parámetro, que nos vamos a referir a ese parámetro como ```lado```, y que ese parámetro debería ser un número entero (```int```). Los parámetros siempre se especifican dentro de un par de paréntesis.
+
+Finalmente encontramos la especificación del resultado de la función. En nuestro ejemplo, la signatura especifica que su resultado será un número entero con el fragmento que dice ```-> int```.
+
+En resumen: la signatura de una función especifica cómo se debería invocar la funcón y qué se debería esperar como resultado. En nuestro caso de ejemplo, la función se invocará con el nombre ```area_cuadrado```, requerirá que se use un parámetro de tipo ```int``` y generará como resultado otro número entero (```int```).
 
 [^reservada]: Una palabra reservada significa que es una palabra que nosotros no podemos usar en nuestros programas para nuestros identificadores. Por ejemplo, no podemos tener ni una función ni una variable que se llamen ```def```. Python tiene varias palabras reservadas que iremos descubriendo, como return, del, import, pass, y raise, entre otras.
 
 [^estilo]: La regla que acabamos de ilustrar (separar palabras usando el símbolo ```_```) no es una regla sintáctica del lenguaje, sino es una regla de *estilo*. Es decir, nosotros podríamos haber llamado a la función ```areaCuadrado``` y el programa habría funcionado igual, pero no habría respetado las reglas de estilo que sirven para hacer los programas más legibles y consistentes. Si usted ha utilizado algún otro lenguaje de programación, es posible que el estilo al que esté acostumbrado le sugiera usar nombres como ```areaCuadrado``` o ```AreaCuadrado```.
 
+#### Un segundo ejemplo
 
+Analizemos ahora la segunda función de nuestro ejemplo: 
 
-Definición de parámetros
+```python
+def area_triangulo(base: int, altura: int)-> float:
+    """
+        Calcula el área de un triángulo dada la medida de la base y de la altura.
+    """   
+    return (base * altura) / 2
+```
 
-El tipo de retorno
+¿Qué nos dice la signatura con respecto a la función?
+
+  * ¿Cómo se llama la función?
+  * ¿Cuántos parámetros se requieren para su invocación?
+  * ¿De qué tipo son los parámetros?
+  * ¿De qué tipo será el resultado de la función?
+
+Lo único diferente con respecto al primer ejemplo es que tenemos dos parámetros en lugar de uno y que esos dos parámetros se separaron utilizando una coma.
+
 
 ### El cuerpo de una función
 

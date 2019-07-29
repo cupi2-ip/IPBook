@@ -1,8 +1,8 @@
 ---
 title: 'Features and customization'
 prev_page:
-  url: /nivel2/intro
-  title: 'Nivel 4'
+  url: /guias/terminal
+  title: 'Línea de comandos (Mac y Linux)'
 next_page:
   url: /features/markdown
   title: 'Markdown files'

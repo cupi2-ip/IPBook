@@ -4,8 +4,8 @@ prev_page:
   url: /nivel2/intro
   title: 'Nivel 3'
 next_page:
-  url: /features/features
-  title: 'Features and customization'
+  url: /referencias/intro
+  title: 'Referencias'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 Versión borrador / preliminar |

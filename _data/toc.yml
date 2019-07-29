@@ -49,7 +49,16 @@
 
 - title: Introducción
   url: /introduccion/intro
+  expand_sections: true
   not_numbered: true
+  sections:
+  - title: Prácticas fundamentales
+    url: /introduccion/practicas
+    not_numbered: true
+  - title: Sobre este libro
+    url: /introduccion/acerca
+    not_numbered: true
+
 
 - title: Nivel 1
   url: /nivel1/intro
@@ -114,30 +123,11 @@
 
 
 
-- title: Features and customization
-  url: /features/features
-  # not_numbered: true
-  # expand_sections: true
-  sections:
-  - title: Markdown files
-    url: /features/markdown
-    # not_numbered: true
+- divider: true  # Will insert a divider in the sidebar
 
-  - title: Seccion 1
-    url: /features/seccion1
-  - title: Seccion 2
-    url: /features/seccion2
-  - title: Seccion 3
-    url: /features/seccion3
-  - title: Seccion 4
-    url: /features/seccion4
+# A chapter w/ a collection of sections beneath it
+- chapter: Anexos
 
-  - title: Jupyter notebooks
-    url: /features/notebooks
-    # not_numbered: true
-  - title: Prueba Markdown
-    url: /features/prueba
-    # not_numbered: true
 
 - title: Referencias
   url: /referencias/intro
@@ -165,4 +155,20 @@
     url: /guias/terminal
 
 
+# A chapter w/ a collection of sections beneath it
+- chapter: Referencia Jupyter Books
 
+- title: Features and customization
+  url: /features/features
+  # not_numbered: true
+  # expand_sections: true
+  sections:
+  - title: Markdown files
+    url: /features/markdown
+    # not_numbered: true
+  - title: Jupyter notebooks
+    url: /features/notebooks
+    # not_numbered: true
+  - title: Prueba Markdown
+    url: /features/prueba
+    # not_numbered: true
