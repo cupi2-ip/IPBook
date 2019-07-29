@@ -14,7 +14,7 @@ Este libro ha sido concebido para acompañar el curso de Introducción a la Prog
 
 * **Libro básico, para aprender a programar:** A diferencia de otros libros que le enseñan Python a programadores que ya conozcan otros lenguajes, este libro no supone ningún conocimiento previo de programación.
 
-* **Libro soporte:** El libro está pensado para soportar y aclarar cualquier duda que haya quedado en el aula. Un estudiante del curso debería poder encontrar acá aclaraciones y ejercicios adicionales sobre cualquier tema.
+* **Libro soporte:** El libro está pensado para *soportar* y aclarar cualquier duda que haya quedado en el aula. Un estudiante del curso debería poder encontrar acá aclaraciones y ejercicios adicionales sobre cualquier tema. Sin embargo, el libro no siempre seguirá el mismo orden que se lleve en el aula de clase: en algunas secciones el libro presentará temas de forma completa desde el inicio, entrando en un mayor nivel de detalle del que normalmente se estudiaría la primera vez que se encuentrara ese tema.
 
 * **Python:** El curso está basado en Python, así que el libro también está basado en Python. Sin embargo, el libro hace un esfuerzo por identificar claramente los conceptos centrales que son aplicables a otros lenguajes de programación, en lugar de simplemente presentarlos como características del lenguaje.
 

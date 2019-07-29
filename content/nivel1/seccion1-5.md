@@ -93,7 +93,7 @@ En esta y las siguientes subsecciones describiremos varias funciones que son par
 
 La documentación completa y oficial de estas funciones se puede consultar en el siguiente link: <https://docs.python.org/3/library/functions.html>. Le recomendamos su consulta especialmente para que se familiarice con la estructura y el lenguaje de la documentación de Python.
 
-Empezaremos discutiremos las 3 funciones para convertir entre tipos de datos que se presentaron brevemente en una sección anterior.
+Empezaremos discutiendo las 3 funciones para convertir entre tipos de datos que se presentaron brevemente en una sección anterior.
 
 #### int(x)
 
