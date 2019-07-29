@@ -4,8 +4,8 @@ prev_page:
   url: /introduccion/practicas
   title: 'Prácticas fundamentales'
 next_page:
-  url: /nivel1/intro
-  title: 'Nivel 1'
+  url: /introduccion/imagenes
+  title: 'Atribuciones de las imágenes'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Sobre este libro
