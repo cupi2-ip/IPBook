@@ -254,7 +254,10 @@ Finalmente, si se quieren hacer combinaciones de tipos se deben utilizar parént
 
 En este siguiente ejemplo lo primero que se hace es evaluar la operación de exponenciación, luego se convierte el resultado a una cadena y finalmente se concatenan las dos cadenas.
 
-## Reglas para los nombres de variables
+
+## Reglas para identificadores
+
+los nombres de variables
 
 
 
