@@ -87,12 +87,14 @@
     url: /nivel1/seccion1-5
   - title: Definición de funciones
     url: /nivel1/seccion1-6
-  - title: Lógica vs. Interacción
+  - title: Un programa para leer (2)
     url: /nivel1/seccion1-7
-  - title: Para no olvidar
+  - title: Lógica vs. Interacción
     url: /nivel1/seccion1-8
-  - title: Ejercicios adicionales
+  - title: Para no olvidar
     url: /nivel1/seccion1-9
+  - title: Ejercicios adicionales
+    url: /nivel1/seccion1-10
 
 - title: Nivel 2
   url: /nivel2/intro

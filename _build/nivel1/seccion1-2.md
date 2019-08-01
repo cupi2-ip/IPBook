@@ -67,11 +67,21 @@ Para acceder al REPL de Python hay dos opciones básicas:
 2. Usar el IDE. En el caso de Spyder, hay una ventana con el título 'IPython Console' que nos permite interactuar directamente con el REPL.
 
 
-## Línea de comandos o terminal
+## Línea de comandos / terminal / consola
 
+La última herramienta que probablemente tenga que usar cuando esté programando es la línea de comandos del sistema operativo. Esto también se conoce como la terminal o la consola y es un ambiente *no gráfico* interactivo que le permite ejecutar comandos directamente sobre el sistema operativo. Entre otras muchas opciones, desde la línea de comandos usted puede ejecutar programas, trabajar con el sistema de archivos (crear, renombrar, mover, eliminar y hasta editar archivos) y utilizar una gran cantidad de utilidades.
+
+Para los que nunca la han utilizado, usar la línea de comandos suele parecer incómodo y difícil. La realidad es que su uso eficiente requiere un tiempo de práctica, pero después termina siendo mucho más rápido para hacer ciertas tareas que utilizar un ambiente gráfico y el mouse. Por ejemplo, imagine que en una carpeta suya hubiera una colección de 500 fotos y que usted quisiera tener versiones reducidas de esas imágenes (*previews*, *thumbnails*). Normalmente a usted le tomaría una buena cantidad de clicks abrir cada una de esas fotos y cambiarle el tamaño. Desde la línea de comandos de OS X usted simplemente puede usar el comando ```sips -Z 120 *.png``` y realizar la operación sobre todas las imágenes.
+
+El objetivo de esta sección no es explicar en detalle el funcionamiento de la línea de comandos de cada sistema operativo, sino mostrarle que existen y exhortarlo para que estudie por su cuenta su funcionamiento.
+
+En Windows, la línea de comandos se invoca corriendo el programa ```cmd```.
 ![CMD](./images/cmd.png)
 
+En OS X, la línea de comandos se invoca corriendo el programa ```Terminal```.
 ![Terminal](./images/terminal.png)
+
+En Linux, la línea de comandos suele estar corriendo todo el tiempo, pero dependiendo de la distribución que esté usando se llega a ella de formas diferentes.
 
 #### Notas
 
