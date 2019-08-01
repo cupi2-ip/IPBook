@@ -16,10 +16,7 @@ Este documento es una versión preliminar para uso interno. Si encuentra algún 
 # Lógica vs. Interacción
 
 
-
-<div class="importante">
-Archivos diferentes
-</div>
+Archivos diferentes / Módulos diferentes
 
 Funciones de la lógica del programa
 
@@ -31,6 +28,7 @@ Funciones de la interfaz
  - sin retorno
 
 
+modulos
 
 
 ## Más allá de Python

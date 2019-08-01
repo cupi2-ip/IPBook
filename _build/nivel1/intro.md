@@ -2,7 +2,7 @@
 title: 'Nivel 1'
 prev_page:
   url: /introduccion/imagenes
-  title: 'Atribuciones de las imágenes'
+  title: 'Créditos de las imágenes'
 next_page:
   url: /nivel1/seccion1-1
   title: 'Un programa para leer'

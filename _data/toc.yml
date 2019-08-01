@@ -58,7 +58,10 @@
   - title: Sobre este libro
     url: /introduccion/acerca
     not_numbered: true
-  - title: Atribuciones de las imágenes
+  - title: Estructura del libro
+    url: /introduccion/estructura
+    not_numbered: true
+  - title: Créditos de las imágenes
     url: /introduccion/imagenes
     not_numbered: true
 

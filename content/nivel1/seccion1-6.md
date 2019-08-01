@@ -11,7 +11,7 @@ Para empezar, presentamos un programa completo que al final de esta sección ust
 
 ![](./images/casita.png)
 
-```python
+```python 
 def area_cuadrado(lado: int)-> int:
     """
        Calcula el área de un cuadrado dada la medida de su lado
