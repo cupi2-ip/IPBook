@@ -61,6 +61,11 @@ Como en el caso de otros lenguajes interpretados, Python tiene ofrece una herram
 
 En la imagen anterior se demuestra el uso del REPL de Python con varios ciclos de ejecución. Cada vez que aparecen los caracteres ```>>>``` se le pidió al usuario que ingresara un comando. Lo que aparece en la siguiente línea es el resultado de cada una de las ejecuciones.
 
+Para acceder al REPL de Python hay dos opciones básicas:
+
+1. Ejecutar el comando ```python``` desde la línea de comandos o el terminal (ver siguiente sección).
+2. Usar el IDE. En el caso de Spyder, hay una ventana con el título 'IPython Console' que nos permite interactuar directamente con el REPL.
+
 
 ## Línea de comandos o terminal
 
