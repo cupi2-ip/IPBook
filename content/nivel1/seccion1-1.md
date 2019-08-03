@@ -6,7 +6,7 @@ Este documento es una versión preliminar para uso interno. Si encuentra algún 
 
 # Un programa para leer
 
-En esta sección vamos a presentar un primer programa escrito usando el lenguaje de programación Python. Si nunca antes ha programado o si nunca ha programado en Python, probablemente habrá cosas que no va a entender completamente. Sin embargo, el simple hecho de revisar de forma detenida este programa le dará un poco de contexto para todos los elementos que se van a ir introduciendo a lo largo de este nivel.
+En esta sección vamos a presentar un primer programa escrito usando el lenguaje de programación Python. Si nunca ha programado o si nunca ha programado en Python, probablemente habrá cosas que no va a entender completamente. Sin embargo, el simple hecho de revisar de forma detenida este programa le dará un poco de contexto para todos los elementos que se van a ir introduciendo a lo largo de este nivel.
 
 
 ## Por qué leer código de alguien más
@@ -32,7 +32,7 @@ El siguiente es un programa **completo** en Python que utiliza una buena parte d
 **Instrucciones:**
 Lea el siguiente programa con cuidado, intentando entender qué es lo que está haciendo. 
 
-* Observe los bloques en los que está dividido y tenga en cuenta que en en el lenguaje Python la *indentación* (la cantidad de espacios en blanco al inicio de cada línea, la sangría) es importante y sirve para definir bloques.
+* Observe los bloques en los que está dividido y tenga en cuenta que en el lenguaje Python la *indentación* (la cantidad de espacios en blanco al inicio de cada línea, la sangría) es importante y sirve para definir bloques.
 * Note que hay algunas palabras que se repiten.
 * Nota también que hay algunas cosas escritas en español y otras escritas en inglés.
 * Intente descubrir en qué orden se van a ejecutar cada una de las instrucciones del programa. *Ayuda:* Cada instrucción en este programa se va a ejecutar exactamente una vez.
@@ -62,7 +62,7 @@ print("El perímetro de un triángulo rectángulo que tenga catetos de longitud"
 
 ```
 
-A continuación se encuentra el mismo programa con una importante diferencia: esta vez se han incluído **comentarios**, es decir anotaciones que el programador dejó para que otras personas que quieran estudiar o modificar el programa puedan hacerlo con más facilidad. 
+A continuación, se encuentra el mismo programa con una importante diferencia: esta vez se han incluido **comentarios**, es decir anotaciones que el programador dejó para que otras personas que quieran estudiar o modificar el programa puedan hacerlo con más facilidad. 
 
 **Escribir** buenos comentarios en el código (cortos, útiles y precisos) y **leer** con cuidado los comentarios de otros son muy buenas prácticas de programación.
 

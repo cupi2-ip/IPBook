@@ -25,9 +25,9 @@ A manera de ejemplo, consideremos la siguiente definición de una función:
     <msup><mi>x</mi> <mi>y</mi> </msup>
 </math>
 
-Esta definición expresa que existe una función llamada *f* y cuyo valor depende de dos parámetros llamados *x* y *y*: cuando se evalua la función, asignándole valores específicos a *x* y a *y*, el valor de *f* será igual al valor de calcular *x elevado a la y*. Por ejemplo, si evaluamos la función con los valores *x=2* y *y=3* el resultado será el número *8*. También sabemos que si el valor de *y* es 0, entonces el valor de evaluar la función siempre será *1* independiemente del valor de *x*. Finalmente es importante notar que el resultado de evaluar *f(x,y)* será siempre el mismo para cada combinación de valores de *x* y *y*: no es posible que *f(2,3)* algunas veces tenga el valor *8* y en otras ocasiones tenga un valor diferente.
+Esta definición expresa que existe una función llamada *f* y cuyo valor depende de dos parámetros llamados *x* y *y*: cuando se evalúa la función, asignándole valores específicos a *x* y a *y*, el valor de *f* será igual al valor de calcular *x elevado a la y*. Por ejemplo, si evaluamos la función con los valores *x=2* y *y=3* el resultado será el número *8*. También sabemos que si el valor de *y* es 0, entonces el valor de evaluar la función siempre será *1* independientemente del valor de *x*. Finalmente es importante notar que el resultado de evaluar *f(x,y)* será siempre el mismo para cada combinación de valores de *x* y *y*: no es posible que *f(2,3)* algunas veces tenga el valor *8* y en otras ocasiones tenga un valor diferente.
 
-Una función tiene entonces un nombre, que en el ejemplo anterior era *f*, y un conjunto de parámetros[^param] a los que se les daben dar valores cuando se quiera evaluar la función. En lo posible, los nombres de las funciones y sus parámetros deberían ayudar a aclarar el objetivo de una función. Por ejemplo, la función anterior podría reescribirse de la siguiente manera y sería mucho más legible:
+Una función tiene entonces un nombre, que en el ejemplo anterior era *f*, y un conjunto de parámetros[^param] a los que se les deben dar valores cuando se quiera evaluar la función. En lo posible, los nombres de las funciones y sus parámetros deberían ayudar a aclarar el objetivo de una función. Por ejemplo, la función anterior podría reescribirse de la siguiente manera y sería mucho más legible:
 
  <math display="block">
     <mi>potencia(base, exponente)</mi>
@@ -35,7 +35,7 @@ Una función tiene entonces un nombre, que en el ejemplo anterior era *f*, y un 
     <msup><mi>base</mi> <mi>exponente</mi> </msup>
 </math>
 
-[^param]: Usamos acá el término *parámetro* para evitar confusiones que podrían aparecer si usaramos el término *variable*.
+[^param]: Usamos acá el término *parámetro* para evitar confusiones que podrían aparecer si usáramos el término *variable*.
 
 
 
@@ -50,7 +50,7 @@ La acción más interesante que podemos hacer sobre una función es *invocarla*.
 8
 ```
 El fragmento nos muestra que el resultado de evaluar la función es el entero 8. 
-El siguiente fragmento es similar al anterior, pero en este caso se inicia con una asignación: a la variable ```var``` se quiere dejar el valor de la expresión de la derecha. Como ya vimos, esto require que se *evalue* la parte derecha y, como en este caso tenemos una función, requiere la evaluación de la función con los parámetros dados. Al finalizar esta evaluación, en la variable ```var``` quedará el valor 8.
+El siguiente fragmento es similar al anterior, pero en este caso se inicia con una asignación: a la variable ```var``` se quiere dejar el valor de la expresión de la derecha. Como ya vimos, esto requiere que se *evalúe* la parte derecha y, como en este caso tenemos una función, requiere la evaluación de la función con los parámetros dados. Al finalizar esta evaluación, en la variable ```var``` quedará el valor 8.
 
 ```python
 >>> var = pow(2, 3)
@@ -101,7 +101,7 @@ La función[^funcion] ```int(x)``` convierte un valor ```x``` en un valor de tip
 
 * Si el parámetro ```x``` es de tipo ```float```, el resultado de aplicarle la función  ```int``` es la *parte entera* del valor. Es decir que el resultado de evaluar la expresión ```int(3.4)``` es ```3```, mientras que el resultado de evaluar la expresión ```int(-3.4)``` es ```-3```. La función ```int``` *no hace* una aproximación matemática, sino que *trunca* los decimales.
 
-* Si el parámetro ```x``` es de tipo ```str```, el resultado de aplicarle la función  ```int``` es el valor entero representado en la cadena de caracteres. Por ejemplo, si se evalua la expresión ```int('-3')``` el valor resultante será  el entero ```-3```. En algunos casos, la función intentará hacer la conversión ajustando la cadena (por ejemplo si se evalúa la expresión ```int('  -3 ')``` que tiene espacios adicionales), pero fallará si la cadena no representa un número entero. Por ejemplo, los siguientes casos producirán un error:
+* Si el parámetro ```x``` es de tipo ```str```, el resultado de aplicarle la función  ```int``` es el valor entero representado en la cadena de caracteres. Por ejemplo, si se evalúa la expresión ```int('-3')``` el valor resultante será  el entero ```-3```. En algunos casos, la función intentará hacer la conversión ajustando la cadena (por ejemplo si se evalúa la expresión ```int('  -3 ')``` que tiene espacios adicionales), pero fallará si la cadena no representa un número entero. Por ejemplo, los siguientes casos producirán un error:
   *  int('3.2')
   *  int(' - 3')
   *  int('3+2')
@@ -115,17 +115,17 @@ La función[^funcion] ```int(x)``` convierte un valor ```x``` en un valor de tip
 * Finalmente, si el parámetro ```x``` es de tipo ```int``` el resultado de aplicarle la función ```int``` es el mismo valor de ```x```.
 
 
-[^funcion]: En realidad ```int```, ```float``` y ```str``` son más que simples funciones. Sin embargo, para poder explicar todos sus detalles tendríamos que discutir antes lo que significa programación orientada a objetos y los conceptos de clase y constructor (que no se estudiarán en este libro). Para efectos prácticos, podemos suponer que se trata de 3 funciones y podemos utilizarlas como tal sin ningún problema.
+[^funcion]: En realidad, ```int```, ```float``` y ```str``` son más que simples funciones. Sin embargo, para poder explicar todos sus detalles tendríamos que discutir antes lo que significa programación orientada a objetos y los conceptos de clase y constructor (que no se estudiarán en este libro). Para efectos prácticos, podemos suponer que se trata de 3 funciones y podemos utilizarlas como tal sin ningún problema.
 
 [^base]: La función ```int``` también puede invocarse con un parámetro nombrado llamado ```base``` que tiene por defecto el valor ```10```. Este parámetro adicional sirve para indicar la base en la que está expresado el número, de tal forma que podamos hacer con facilidad conversiones de números. Más adelante estudiaremos los conceptos de parámetros nombrados y de parámetros con valor por defecto.
 
 #### float(x)
 
-La función[^funcion] ```float(x)``` convierte un valor ```x``` en un valor de tipo decimal. Esta función se puede llamar utilizando valores de tipo ```int``` o ```str```, entre otros, y se puede suponer que la función aplicará la conversión adecuada para cada caso.
+La función ```float(x)``` convierte un valor ```x``` en un valor de tipo decimal. Esta función se puede llamar utilizando valores de tipo ```int``` o ```str```, entre otros, y se puede suponer que la función aplicará la conversión adecuada para cada caso.
 
 * Si el parámetro ```x``` es de tipo ```int```, el resultado de aplicarle la función  ```float``` es el mismo número, pero representado como un número decimal. Es decir que el resultado de evaluar la expresión ```float(3)``` es ```3.0```, y que el resultado de evaluar la expresión ```float(-3)``` es ```-3.0```.
 
-* Si el parámetro ```x``` es de tipo ```str```, el resultado de aplicarle la función  ```float``` es el valor decimal representado en la cadena de caracteres. Por ejemplo, si se evalua la expresión ```float('-3.33')``` el valor resultante será  el número ```-3.33```. En algunos casos, la función intentará hacer la conversión ajustando la cadena (por ejemplo si se evalúa la expresión ```float('  -4 ')``` que tiene espacios adicionales y representa un entero), pero fallará si la cadena no representa un número. Por ejemplo, los siguientes casos producirán un error:
+* Si el parámetro ```x``` es de tipo ```str```, el resultado de aplicarle la función  ```float``` es el valor decimal representado en la cadena de caracteres. Por ejemplo, si se evalúa la expresión ```float('-3.33')``` el valor resultante será  el número ```-3.33```. En algunos casos, la función intentará hacer la conversión ajustando la cadena (por ejemplo si se evalúa la expresión ```float('  -4 ')``` que tiene espacios adicionales y representa un entero), pero fallará si la cadena no representa un número. Por ejemplo, los siguientes casos producirán un error:
   *  float('a')
   *  float('3+2')
 
@@ -150,7 +150,7 @@ La función ```str``` es una función tremendamente versátil que permite conver
 
 ### Funciones numéricas
 
-Las 3 funciones anteriores sirven para hacer conversiones entre tipos de datos. A continuación vamos a presentar unas funciones orientadas al trabajo con números.
+Las 3 funciones anteriores sirven para hacer conversiones entre tipos de datos. A continuación, vamos a presentar unas funciones orientadas al trabajo con números.
 
 
 #### abs(x)
@@ -223,13 +223,13 @@ La función ```pow``` se utiliza para calcular una potencia de un número. Es de
 
 ### Funciones de entrada y salida
 
-A continuación describiremos dos funciones que son tremendamente útiles para muchos programas y que son centrales para la interacción con el usuario. La primera función (print) servirá para mostrarle información a los usuarios, mientras que la segunda función (input) servirá para obtener información introducida por los usuarios del programa.
+A continuación, describiremos dos funciones que son tremendamente útiles para muchos programas y que son centrales para la interacción con el usuario. La primera función (print) servirá para mostrarle información a los usuarios, mientras que la segunda función (input) servirá para obtener información introducida por los usuarios del programa.
 
 #### print
 
 La función ```print``` ya la habíamos encontrado en secciones anteriores. Su objetivo es sencillamente imprimir información en la terminal o consola. Cuando se invoca la función, ella se encarga de imprimir el valor de cada uno de los parámetros separándolos con un espacio [^print]. 
 
-A continuación se muestra un ejemplo que además ilustra el hecho de que la cantidad de parámetros no es fija.
+El siguiente ejemplo además ilustra el hecho de que la cantidad de parámetros no es fija.
 
 ```python
 >>> print("Hola", "Mundo", "!")
@@ -273,7 +273,7 @@ En la segunda línea vemos que el programa imprimió el mensaje y vemos también
 
 ### Funciones sobre caracteres
 
-A continuación vamos a describir dos funciones que aunque no son utilizadas muy frecuentemente, resuelven problemáticas muy específicas e importantes.
+A continuación, vamos a describir dos funciones que, aunque no son utilizadas muy frecuentemente, resuelven problemáticas muy específicas e importantes.
 
 #### Sistemas ASCII y UNICODE
 
@@ -323,7 +323,7 @@ TypeError: ord() expected a character, but string of length 3 found
 
 
 
-2. Consulte cuáles serían los números correspondientes a los siguiente caracteres dentro del sistema Unicode.
+2. Consulte cuáles serían los números correspondientes a los siguientes caracteres dentro del sistema Unicode.
   * z
   * G
   * 0
@@ -354,4 +354,4 @@ Cuando se cambia de lenguaje de programación, una dificultad importante tiene q
 
 Aunque conceptualmente no sean difícil entender las diferencias y empezar a usar estas otras funciones, aprender todos esos pequeños detalles hace un poco más largo el proceso de pasar de un lenguaje a otro.
 
-En esta sección describimos también el mecanismo de evaluación de funciones, el cual es "eager", mientras que en otros lenguajes es "lazy" (perezoso): esto quiere decir que en esos lenguajes los valores de los parámetros se evaluan en el último momento posible, cuando realemente se necesite su valor. Esto no hace que Python sea malo o ineficiente, pero en algunas situaciones podría llevar a problemas con el desempeño de un programa. 
+En esta sección describimos también el mecanismo de evaluación de funciones, el cual es "eager", mientras que en otros lenguajes es "lazy" (perezoso): esto quiere decir que en esos lenguajes los valores de los parámetros se evalúan en el último momento posible, cuando realmente se necesite su valor. Esto no hace que Python sea malo o ineficiente, pero en algunas situaciones podría llevar a problemas con el desempeño de un programa. 

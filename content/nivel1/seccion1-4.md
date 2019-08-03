@@ -35,18 +35,16 @@ En la parte izquierda encontramos sólo el texto ```v1```. Como sabemos, este te
 
 Una **variable** es un espacio en la memoria del computador en el cual se puede almacenar un valor o del cual se puede leer un valor, mientras se ejecute el programa. Cuando un programador define una variable, le asigna un nombre o identificador para que sea fácil de recordar y utilizar en el resto del programa. En nuestro ejemplo, la variable tiene el nombre ```v1```.
 
-**Nota:** Se debe procurar que los nombres de las variables sean lo más descriptivos posibles para que su objetivo sea claro. En el ejemplo la variable tiene un nombre que no es muy explícito pero en las siguientes líneas quedará claro por qué se seleccionó el nombre ```v1```. En el programa completo del inicio del capítulo, una de las variables se llamaba ```hipotenusa```: sería difícil encontrar un nombre que expresara con más claridad el objetivo de esa variable.
+**Nota:** Se debe procurar que los nombres de las variables sean lo más descriptivos posibles para que su objetivo sea claro. En el ejemplo la variable tiene un nombre que no es muy explícito, pero en las siguientes líneas quedará claro por qué se seleccionó el nombre ```v1```. En el programa completo del inicio del capítulo, una de las variables se llamaba ```hipotenusa```: sería difícil encontrar un nombre que expresara con más claridad el objetivo de esa variable.
 
 Finalmente, volvamos al caracter ```=``` que separa la *variable* que se encuentra a la izquierda del *valor* que se encuentra a la derecha. En Python, el caracter ```=``` se utiliza para especificar que en un programa se debe hacer una **asignación**. Es decir, cuando se ejecute una instrucción con una asignación, el programa debe tomar el valor que se encuentra a la **derecha** del caracter y lo debe almacenar en la variable que se encuentra a la **izquierda**.
 
 La instrucción que estamos analizando entonces se encarga de crear una variable con el nombre ```v1``` y almacenar en ella el valor entero ```5```. En Python, el tipo de una variable depende del valor que esté almacenado en ella así que en este caso la variable será de tipo **int** [^tipos].
 
-[^tipos]: Si usted ha trabajado con otros lenguajes de programación, notará que en Python no se deben declarar las variables antes de usarlas, ni se debe indicar explícitamente su tipo. Esto se debe a que Python utiliza *tipado dinámico*, es decir que el intérprete infiere los tipos de variables y parámetros durante la ejecución. Veremos más adelante que, aunque en las versiones actuales no se puede *especificar* los tipos de nada, sí se pueden dar *hints* que sirven como comentarios para que los programadores puedan hacerle un mejor seguimiento a los programas.
+[^tipos]: Si usted ha trabajado con otros lenguajes de programación, notará que en Python no se deben declarar las variables antes de usarlas, ni se debe indicar explícitamente su tipo. Esto se debe a que Python utiliza *tipado dinámico*, es decir que el intérprete infiere los tipos de variables y parámetros durante la ejecución. Veremos más adelante que, aunque en las versiones actuales no se puede *especificar* los tipos de nada, sí se pueden dar *hints* que sirven como comentarios para que los programadores puedan hacer un mejor seguimiento a los programas.
 
+**Cuidado:** Cuando se hace una asignación, el valor de la derecha se almacenará en la variable de la izquierda. Es un error bastante común entre principiantes escribir instrucciones como '5 = v1': esta instrucción no sería válida en Python y el intérprete mostraría un error similar al siguiente:
 
-<div class="cuidado">
-Cuando se hace una asignación, el valor de la derecha se almacenará en la variable de la izquierda. Es un error bastante común entre principiantes escribir instrucciones como '5 = v1': esta instrucción no sería válida en Python y el intérprete mostraría un error similar al siguiente:
-</div>
 
 ```python
 SyntaxError: can't assign to literal
@@ -68,7 +66,7 @@ En Python, una **expresión** es una combinación de valores, literales, variabl
 
 ## Instrucciones con variables
 
-A continuación analizaremos las siguientes dos instrucciones del programa pero recordando un principio muy importante: para que estas instrucciones se ejecuten, se tienen que haber ejecutado antes las anteriores. Es decir, que cuando estas instrucciones se ejecuten ya se habrá creado la variable ```v1``` y se le habrá asignado el valor ```5``` y ya se habrá creado la variable ```v2``` y se le habrá asignado el valor ```3``` [^1].
+A continuación, analizaremos las siguientes dos instrucciones del programa, pero recordando un principio muy importante: para que estas instrucciones se ejecuten, se tienen que haber ejecutado antes las anteriores. Es decir, que cuando estas instrucciones se ejecuten ya se habrá creado la variable ```v1``` y se le habrá asignado el valor ```5``` y ya se habrá creado la variable ```v2``` y se le habrá asignado el valor ```3``` [^1].
 
 [^1]: Cuando se resuelven ejercicios de matemáticas o física aparecen conceptos similares a los que estamos trabajando y es normal que se escriban expresiones muy parecidas (por ejemplo: ```distancia = velocidad * x```). Sin embargo, en esos contextos las expresiones no se escriben necesariamente siempre en un orden estricto, porque es un humano el que las va a interpretar. Además, porque más que asignaciones, se trata de ecuaciones que describen una equivalencia entre valores.
 
@@ -77,7 +75,7 @@ A continuación analizaremos las siguientes dos instrucciones del programa pero 
 v3 = v1 + v2
 ```
 
-Esta instrucción es muy similar a la anterior: a la nueva variable ```v3``` se le debe asignar el valor resultado de evaluar la expresión de la derecha. La diferencia principal es que en este caso la expresión no está construída a partir de literales como 1 y 2, sino a partir de nombres de variables. Esto quiere decir que cuando llegue el momento de ejecutar la instrucción, Python tiene que evaluar la expresión de la derecha *antes* de poder hacer la asignación. 
+Esta instrucción es muy similar a la anterior: a la nueva variable ```v3``` se le debe asignar el valor resultado de evaluar la expresión de la derecha. La diferencia principal es que en este caso la expresión no está construida a partir de literales como 1 y 2, sino a partir de nombres de variables. Esto quiere decir que cuando llegue el momento de ejecutar la instrucción, Python tiene que evaluar la expresión de la derecha *antes* de poder hacer la asignación. 
 
 Ahora bien, ¿cómo puede calcular Python la suma de dos cosas que no son literales? La respuesta es que también tiene que evaluar esas dos cosas para averiguar qué valor tienen. Como ```v1``` y ```v2``` son variables, la evaluación es muy sencilla porque sólo requiere consultar cuál es el valor almacenado en esas variables. Eso quiere decir que, después de evaluar el valor de esas variables, Python está listo para hacer la siguiente asignación:
 
@@ -155,12 +153,12 @@ En este caso la invocación a la función se está haciendo con dos parámetros 
 
 Al igual que una asignación necesita calcular el valor de la derecha para que se pueda almacenar el valor en la variable, para hacer una invocación a una función se necesitan los valores de los parámetros. En nuestro caso, el primer parámetro es un literal así que su valor ya es conocido; como el segundo parámetro es una variable, Python buscará el valor que se había almacenado en la variable y lo usará para hacer la invocación.
 
-El último paso en la ejecución de nuestro programa no podemos verlo pero corresponde a la ejecución de las instrucciones que se encuentran dentro de la función ```print```, las cuales hacen que aparezcan los valores de los parámetros en la consola. Como esta es una función nativa del lenguaje, las instrucciones que la implementan son parte del código fuente del intérprete del lenguaje y no son fáciles de encontrar.
+El último paso en la ejecución de nuestro programa no podemos verlo: son las instrucciones que se encuentran dentro de la función ```print```, las cuales hacen que aparezcan los valores de los parámetros en la consola. Como esta es una función nativa del lenguaje, las instrucciones que la implementan son parte del código fuente del intérprete del lenguaje y no son fáciles de encontrar.
 
 
 ## Comentarios en Python
 
-El siguiente programa es exactamente equivalente al que hemos estado estudiando, con la diferencia de que se han incluído *comentarios*.
+El siguiente programa es exactamente equivalente al que hemos estado estudiando, con la diferencia de que se han incluido *comentarios*.
 
 ```python
 # Definir 4 variables (v1 hasta v4)
@@ -178,7 +176,7 @@ En el caso de nuestro ejemplo, los comentarios se ha incluido un número relativ
 
 ## Más operadores en Python
 
-En las secciones anteriores estudiamos sólo los operadores para sumar y dividir. A continuación describimos otras de las operaciones que es posible hacer en Python.
+En las secciones anteriores estudiamos sólo los operadores para sumar y dividir. A continuación, describimos otras de las operaciones que es posible hacer en Python.
 
 ### Operadores para números
 
@@ -198,7 +196,7 @@ Resta | - | Binario | 4 | 10 - 3 | 7 |
 
 (1) El término *aridad* hace referencia a la cantidad de operandos sobre los que se aplica el operador. Los operadores unarios sólo requieren un operador mientras que los binarios necesitan 2.
 
-(2) La precedencia de un operador indica en qué orden se evaluarón varios operadores en caso de que no haya paréntesis que permitan resolver el orden. En Python, el primer operador que se evaluará es el operador de exponenciación. En caso de que la precedencia de dos operadores sea la misma, los operadores se aplicarán de izquierda a derecha. Por ejemplo, en el caso de la expresión ```70 // 2**3 / 4``` primero se evaluará la operación de exponenciación (la de mayor precedencia), luego se evaluará la división entera y finalmente la división.
+(2) La precedencia de un operador indica en qué orden se evaluarán varios operadores en caso de que no haya paréntesis que permitan resolver el orden. En Python, el primer operador que se evaluará es el operador de exponenciación. En caso de que la precedencia de dos operadores sea la misma, los operadores se aplicarán de izquierda a derecha. Por ejemplo, en el caso de la expresión ```70 // 2**3 / 4``` primero se evaluará la operación de exponenciación (la de mayor precedencia), luego se evaluará la división entera y finalmente la división.
 
 (3) En Python, la división siempre produce un resultado de tipo float, el cual muchas veces se redondea automáticamente. En el caso del ejemplo, la división ```10/3``` tiene como resultado el número decimal ```3.3333333333333335```, que es la mejor aproximación que puede hacer Python del resultado real de la división. El valor de la expresión ```9/3```, aunque podría ser un número entero (int), es el número decimal (float) ```9.0```.
 
@@ -208,7 +206,7 @@ Para números negativos, el resultado es el mayor número entero menor o igual a
 
 (5) La operación módulo calcula el **residuo** de la división entera entre dos números. Por ejemplo, el valor de la expresión ```10%3``` es igual a ```1``` porque la división entera entre 10 y 3 tiene como resultado 3 con un residuo de 1 [^modneg].
 
-La operación módulo es muy utilizada para avariguar la paridad de un número: el resultado de la expresión ```x%2``` será 0 sólo cuando ```x``` sea un número par y será 1 cuando ```x``` sea impar.
+La operación módulo es muy utilizada para averiguar la paridad de un número: el resultado de la expresión ```x%2``` será 0 sólo cuando ```x``` sea un número par y será 1 cuando ```x``` sea impar.
 
 
 [^modneg]: Aunque también está definida para números negativos, no es muy recomendable aplicar la operación módulo sobre estos números debido a que no todos los lenguajes utilizan la misma definición. Esto podría dar lugar a errores graves y difíciles de detectar.
@@ -245,10 +243,6 @@ Finalmente, si se quieren hacer combinaciones de tipos se deben utilizar parént
 En este siguiente ejemplo lo primero que se hace es evaluar la operación de exponenciación, luego se convierte el resultado a una cadena y finalmente se concatenan las dos cadenas.
 
 
-## Reglas para identificadores
-
-
-
 
 
 ## Ejercicios
@@ -262,7 +256,7 @@ En este siguiente ejemplo lo primero que se hace es evaluar la operación de exp
 	 * var = var + 5
 
 
-2. ¿Qué resultados se obtendan al evaluar las siguientes expresiones en Python? Verifique los resultados evaluando las expresiones en el intérprete de Python.
+2. ¿Qué resultados se obtendrán al evaluar las siguientes expresiones en Python? Verifique los resultados evaluando las expresiones en el intérprete de Python.
 
 	 * 2 + 3 + 1 + 2
 	 * 2 + 3 * 1 + 2

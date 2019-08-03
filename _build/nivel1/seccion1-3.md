@@ -21,7 +21,7 @@ La razón de ser de cualquier programa es poder manipular, mostrar, calcular o g
 
 La pregunta natural que debería responderse ahora es: ¿Cómo se describe un valor dentro de un programa? En Python, la respuesta es que hay dos mecanismos básicos. El primero es a través de un *literal*, es decir que el valor se describe de forma directa siguiendo unas reglas dadas por el lenguaje. Por ejemplo, cuando en Python el literal ```3``` corresponde al valor entero *3*, el literal ```3.14``` corresponde al valor decimal *3.14* y el literal ```'Saludos'``` corresponde a la palabra *Saludos*. El segundo mecanismo para expresar un valor es a través de una *expresión* que tiene que ser evaluada de alguna forma para averiguar su valor. Algunas expresiones válidas en Python son ```1 + 2.22```, ```round(3.14, 2)``` y ```'Hola, ' + 'Mundo!'```. No se preocupe por entender estos ejemplos: las siguientes secciones se dedicarán a explicarlos en detalle.
 
-Python ofrece mecanismos para representar, interpretar y hacer operaciones sobre valores de varios tipos. Los más importantes son los que vamos a estudiar en esta sección: números enteros (int), números decimales (float) y cadenas de caracteres (st).
+Python ofrece mecanismos para representar, interpretar y hacer operaciones sobre valores de varios tipos. Los más importantes son los que vamos a estudiar en esta sección: números enteros (int), números decimales (float) y cadenas de caracteres (str).
 
 Adicionalmente, Python ofrece la función ```type``` que nos permite consultar de qué tipo es un determinado valor. Usaremos ahora esta función en tres ejemplos muy sencillos para introducir lo que se va a presentar en el resto de la sección y para observar el funcionamiento de la función misma.
 
@@ -43,6 +43,10 @@ El primer tipo que vamos a estudiar es el que nos permite representar números e
 
 En general, los números enteros se describen usando los literales a los que estamos acostumbrados: 0, 1, 2, 3, etc. Un número entero también puede ser negativo, así que los siguientes literales también son válidos: -1, -2, -3, etc. A diferencia de otros lenguajes, en Python no hay límites sobre los números enteros, así que cualquier número debería poder representarse sin problema [^bases].
 
+**Actividades:**
+
+1. Abra el REPL en su computador y escriba varios números enteros para verificar que sean válidos en Python. Use la función ```type``` para comprobar que sean de tipo ```int```.
+2. Compruebe usando un número muy grande (varias decenas de dígitos) que Python usa el tipo ```int``` incluso para números muy grandes.
 
 ## Números decimales (float)
 
@@ -52,6 +56,12 @@ En Python, los literales para representar números decimales utilizan un punto c
 
 Una característica interesante de Python que no está presente en muchos otros lenguajes es la conversión automática que hace de enteros a decimales, especialmente cuando se hacen operaciones de división.
 
+**Actividades:**
+
+1. Abra el REPL y pruebe ahora a escribir números con decimales. Utilice la función ```type``` para verificar el tipo obtenido.
+2. Escriba expresiones aritméticas para evaluar y revise el tipo resultado.
+3. Escriba números con una gran cantidad de decimales y revise qué pasa con el número cuando se hace la evaluación.
+ 
 
 ## Cadenas de caracteres (str)
 
@@ -71,7 +81,7 @@ De forma similar, si nuestra cadena tuviera comillas dobles dentro de ella, el l
 
 Desafortunadamente este truco no funciona cuando la cadena incluye comillas dobles y comillas sencillas. Por ejemplo, una cadena con el siguiente valor tendría este problema: She said to me "That's mine!".
 
-La solución en este caso es utilizar expresiones especiales para representar las comillas dobles o las comillas sencillas. Es decir que en lugar de representar una comilla sencilla dentro de la cadea usando el caracter ```'``` se usaría la expresión ```\'```. También existe la expresión equivalente ```\"``` para las comillas dobles. Esto quiere decir que el literal para la cadena del ejemplo podría ser ```'She said to me "That\'s mine!"'``` o ```"She said to me \"That\'s mine!\""```.
+La solución en este caso es utilizar expresiones especiales para representar las comillas dobles o las comillas sencillas. Es decir que en lugar de representar una comilla sencilla dentro de la cadena usando el caracter ```'``` se usaría la expresión ```\'```. También existe la expresión equivalente ```\"``` para las comillas dobles. Esto quiere decir que el literal para la cadena del ejemplo podría ser ```'She said to me "That\'s mine!"'``` o ```"She said to me \"That\'s mine!\""```.
 
 Veamos ahora la opción de las tres comillas sencillas o dobles, que resuelve una limitación importante que tienen las otras dos opciones: cuando se usan tres comillas, las cadenas pueden tener cambios de línea dentro de los literales. Considere el siguiente fragmento de código válido en Python que se visualiza tal como fue tecleado en el intérprete del lenguaje [^haiku].
 
@@ -98,6 +108,11 @@ Veamos entonces cómo se usaría dentro de un literal:
 >>> 'one foolish heart\nfive wits unswayed\na thousand errors note'
 ```
 
+**Actividades:**
+
+1. Practique en el REPL la definición de cadenas utilizando cada uno de los métodos descritos.
+
+
 ## Conversiones entre tipos de datos
 
 En Python es posible hacer conversiones entre diferentes tipos de datos para convertir, por ejemplo, una cadena en un número decimal, o un entero en una cadena. Esto sólo puede hacerse cuando tenga sentido y es útil para poder utilizar operadores de otros tipos de datos. Por ejemplo, no podemos convertir la cadena ```'abc'``` en un entero, pero sí podemos convertir la cadena ```'3.4'``` en un número decimal para después sumarlo al valor ```4.55```.
@@ -107,6 +122,16 @@ En una de las próximas secciones estudiaremos más en detalle las funciones de 
 * ```int(x)```: convierte el valor ```x``` a un entero. Por ejemplo, convierte el número ```3.14``` a ```3``` y la cadena ```'-4'``` a ```4```.
 * ```float(x)```: convierte el valor ```x``` a un número decimal. Por ejemplo, convierte el número entero ```3``` a ```3.0``` y la cadena ```'-4.5'``` a ```4.5```.
 * ```str(x)```: convierte el valor ```x``` a una cadena de caracteres. Por ejemplo, convierte el número entero ```3``` a la cadena ```'3'``` y al número decimal ```-4.5``` a la cadena ```'-4.5'```.
+
+**Actividades:**
+
+1. Use el REPL para convertir entre todos los tipos de datos:
+   * Convierta un entero a un flotante
+   * Convierta un flotante a un entero
+   * Convierta una cadena a un entero
+   * Convierta una cadena a un flotante
+   * Convierta un entero en una cadena
+   * Convierta un flotante a una cadena
 
 
 #### Notas

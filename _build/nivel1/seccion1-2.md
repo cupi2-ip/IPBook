@@ -52,10 +52,10 @@ Cada lenguaje de programación interpretado tiene su propio intérprete, e inclu
 
 ![REPL](./images/repl.png)
 
-Como en el caso de otros lenguajes interpretados, Python tiene ofrece una herramienta de tipo **REPL**, la cual permite que un usuario interactue con el lenguaje y vaya ejecutando instrucciones una por una. La sigla REPL hace referencia al orden en el que se van realizando las operaciones:
+Como en el caso de otros lenguajes interpretados, Python tiene ofrece una herramienta de tipo **REPL**, la cual permite que un usuario interactúe con el lenguaje y vaya ejecutando instrucciones una por una. La sigla REPL hace referencia al orden en el que se van realizando las operaciones:
 
-* **Read**. En primer lugar la herramienta lee lo que escribió el usuario y le informa si hay algún error.
-* **Evaluate**. Luego, la herramienta evalua lo que escribió el usuario usando el intérprete del lenguaje. Esto quiere decir que en este punto se ejecuta lo que el usuario haya escrito.
+* **Read**. En primer lugar, la herramienta lee lo que escribió el usuario y le informa si hay algún error.
+* **Evaluate**. Luego, la herramienta evalúa lo que escribió el usuario usando el intérprete del lenguaje. Esto quiere decir que en este punto se ejecuta lo que el usuario haya escrito.
 * **Print**. Se imprime en la herramienta el resultado de la ejecución para que el usuario lo pueda leer.
 * **Loop**. Se repite el proceso completo.
 
@@ -66,12 +66,19 @@ Para acceder al REPL de Python hay dos opciones básicas:
 1. Ejecutar el comando ```python``` desde la línea de comandos o el terminal (ver siguiente sección).
 2. Usar el IDE. En el caso de Spyder, hay una ventana con el título 'IPython Console' que nos permite interactuar directamente con el REPL.
 
+**Actividades:**
+
+1. Abra el REPL en su computador, copie las instrucciones del ejemplo y revise que el resultado sea similar.
+2. Evalúe en el REPL la instrucción ```10/3```. ¿Qué piensa del resultado? ¿Es el que usted esperaba?
+3. Escriba la instrucción que convierta 15 grados Celsius al equivalente en grados Fahrenheit. Recuerde que cada grado Fahrenheit equivale a 5 novenos de un grado Celsius y que la escala está desplazada 32 grados. Ayuda: 0 grados Celsius equivalen a -32 grados Fahrenheit, 37.5 (la temperatura aproximada de un cuerpo humano) equivalen a 99.5, y 15 grados Celsius equivalen a 59 grados Fahrenheit.
+
+
 
 ## Línea de comandos / terminal / consola
 
 La última herramienta que probablemente tenga que usar cuando esté programando es la línea de comandos del sistema operativo. Esto también se conoce como la terminal o la consola y es un ambiente *no gráfico* interactivo que le permite ejecutar comandos directamente sobre el sistema operativo. Entre otras muchas opciones, desde la línea de comandos usted puede ejecutar programas, trabajar con el sistema de archivos (crear, renombrar, mover, eliminar y hasta editar archivos) y utilizar una gran cantidad de utilidades.
 
-Para los que nunca la han utilizado, usar la línea de comandos suele parecer incómodo y difícil. La realidad es que su uso eficiente requiere un tiempo de práctica, pero después termina siendo mucho más rápido para hacer ciertas tareas que utilizar un ambiente gráfico y el mouse. Por ejemplo, imagine que en una carpeta suya hubiera una colección de 500 fotos y que usted quisiera tener versiones reducidas de esas imágenes (*previews*, *thumbnails*). Normalmente a usted le tomaría una buena cantidad de clicks abrir cada una de esas fotos y cambiarle el tamaño. Desde la línea de comandos de OS X usted simplemente puede usar el comando ```sips -Z 120 *.png``` y realizar la operación sobre todas las imágenes.
+Para los que nunca la han utilizado, usar la línea de comandos suele parecer incómodo y difícil. La realidad es que su uso eficiente requiere un tiempo de práctica, pero después termina siendo mucho más rápido para hacer ciertas tareas que utilizar un ambiente gráfico y el mouse. Por ejemplo, imagine que en una carpeta suya hubiera una colección de 500 fotos y que usted quisiera tener versiones reducidas de esas imágenes (*previews*, *thumbnails*). Normalmente a usted le tomaría una buena cantidad de clics abrir cada una de esas fotos y cambiarle el tamaño. Desde la línea de comandos de OS X usted simplemente puede usar el comando ```sips -Z 120 *.png``` y realizar la operación sobre todas las imágenes.
 
 El objetivo de esta sección no es explicar en detalle el funcionamiento de la línea de comandos de cada sistema operativo, sino mostrarle que existen y exhortarlo para que estudie por su cuenta su funcionamiento.
 
