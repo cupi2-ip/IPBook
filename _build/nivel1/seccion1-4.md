@@ -39,9 +39,9 @@ Analicemos ahora la primea instrucción del programa:
 v1 = 5
 ```
 
-Esta instrucción se puede dividir en dos partes dividas por el caracter ```=```. En la parte derecha, encontramos sólo el caracter ```5```, el cual expresa el **valor** que corresponde al número natural 5. 
+Esta instrucción se puede separar en dos partes dividas por el caracter ```=```. En la parte derecha, encontramos sólo el caracter ```5```, el cual expresa el **valor** que corresponde al número natural 5. 
 
-En la parte izquierda encontramos sólo el texto ```v1```. Como sabemos, este texto no puede expresar ninguno de los tipos de datos que ya conocemos (*int*, *float*, *str*) así que ```v1``` no puede ser un valor. En este caso, ```v1```representa entonces el nombre de una **variable** definida por el programador.
+En la parte izquierda encontramos sólo el texto ```v1```. Como sabemos, este texto no puede expresar ninguno de los tipos de datos que ya conocemos (*int*, *float*, *str*) así que ```v1``` no puede ser un valor. En este caso, ```v1``` representa entonces el nombre de una **variable** definida por el programador.
 
 Una **variable** es un espacio en la memoria del computador en el cual se puede almacenar un valor o del cual se puede leer un valor, mientras se ejecute el programa. Cuando un programador define una variable, le asigna un nombre o identificador para que sea fácil de recordar y utilizar en el resto del programa. En nuestro ejemplo, la variable tiene el nombre ```v1```.
 
@@ -145,7 +145,7 @@ Ahora bien, el operador de división en Python tiene la propiedad interesante de
 
 ## Otro tipo de instrucciones
 
-Si revisamos con cuidado las 4 instrucciones que hemos analizado, nos daremos cuenta que lo único la única orden que le hemos dado al programa es que almacene valores dentro de variables. Como vamos a ver a continuación, la última instrucción de nuestro programa es fundamentalmente diferente a las anteriores porque no hace ninguna asignación.
+Si revisamos con cuidado las 4 instrucciones que hemos analizado, nos daremos cuenta que la única orden que le hemos dado al programa es que almacene valores dentro de variables. Como vamos a ver a continuación, la última instrucción de nuestro programa es fundamentalmente diferente a las anteriores porque no hace ninguna asignación.
 
 ```python
 print("v4:", v4)
@@ -157,7 +157,7 @@ En primer lugar, revisemos qué pasa cuando se ejecuta esta línea. Suponiendo, 
 v4: 0.6
 ```
 
-Lo que hace nuestra instrucción es una invocación a una función básica de Python llamada ```print``` y le pasa dos parámetros ( ```"v4:"``` y ```v4```). Más adelante estudiaremos más a fondo la función ```print``` pero lo que nos interesa saber en este momento es que la función sirve para mostrarle al usuario los valores que hayamos usado como parámetros. Más adelante estudiaremos también cómo definir nuestras propias funciones.
+Lo que hace nuestra instrucción es una invocación a una función básica de Python llamada ```print``` y le pasa dos parámetros (```"v4:"``` y ```v4```). Más adelante estudiaremos más a fondo la función ```print``` pero lo que nos interesa saber en este momento es que la función sirve para mostrarle al usuario los valores que hayamos usado como parámetros. Más adelante estudiaremos también cómo definir nuestras propias funciones.
 
 En este caso la invocación a la función se está haciendo con dos parámetros que podemos identificar porque aparecen dentro de paréntesis y están separados por una coma. El primer parámetro (```"v4:"```) es un literal de tipo str (cadena de caracteres). El segundo parámetro (```v4```) es el nombre de la variable a la que se le asignó un valor en la instrucción anterior. Note que como estamos haciendo referencia a una variable, no se utilizan comillas sencillas ni dobles.
 
@@ -181,7 +181,7 @@ print("v4:", v4) # Mostrarle al usuario el valor de v4
 
 Un comentario en un programa es una anotación que dejó el programador para que otros programadores, o él mismo, puedan entender con más facilidad el objetivo de un programa o de un bloque de código. En el caso de Python, la forma más común de incluir comentarios es utilizando el caracter ```#```: todos los caracteres que se encuentren a la derecha de este caracter serán ignorados por el intérprete.
 
-En el caso de nuestro ejemplo, los comentarios se ha incluido un número relativamente grande de comentarios para un programa tan sencillo. Sin embargo, esto sirve para ilustrar un principio importante: ante la duda, es mejor tener más comentarios que menos comentarios en un programa.
+En el caso de nuestro ejemplo, se ha incluido un número relativamente grande de comentarios para un programa tan sencillo. Sin embargo, esto sirve para ilustrar un principio importante: ante la duda, es mejor tener más comentarios que menos comentarios en un programa.
  
 
 ## Más operadores en Python
@@ -199,7 +199,7 @@ Identidad |  +  | Unario | 2 | + 2 | +2 |
 Cambio de signo | - | Unario | 2 | -(-2) | +2 |
 Multiplicación | * | Binario | 3 | 10 * 3 | 30 |
 División (3) | / | Binario | 3 | 10 / 3 | 3.3333 |
-División entera (4) | // | Binario | 10 / 3 | 3 |
+División entera (4) | // | Binario | 3| 10 // 3 | 3 |
 Módulo (5) | % | Binario | 3 | 10 % 3 | 1 |
 Suma | + | Binario | 4 | 10 + 3 | 13 |
 Resta | - | Binario | 4 | 10 - 3 | 7 |

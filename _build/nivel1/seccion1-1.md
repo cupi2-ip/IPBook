@@ -30,7 +30,7 @@ En general, cuando se lee código escrito por alguien más se deben tener en cue
  
  - Hacer explícitas las cosas que se desconocen o son poco claras. A medida que se vaya haciendo la lectura aparecerán cosas desconocidas, muchas de las cuales se resolverán más adelante en el mismo programa. Es una buena idea entonces ir marcando cuáles son esas cosas desconocidas y luego hacer explícitos los puntos en los que se resuelvan esas preguntas. 
 
- - Identificar y apropiar estrategias para resolver problemas. A medida que aumenta su experiencia, cada programador va construyendo en su cabeza su propio conjunto de estrategias que aplicará para resolver problemas aparezcan frecuentemente. Debido a esto, dos programadores pueden llegar a soluciones *aparentemente* muy diferentes incluso aunque estén usando el mismo lenguaje y los mismos algoritmos. Leer con cuidado el código escrito por alguien más nos abre las puertas al conjunto de estrategias de otros programadores y deberíamos aprovecharlo para enriquecer nuestra propia caja de herramientas.
+ - Identificar y apropiar estrategias para resolver problemas. A medida que aumenta su experiencia, cada programador va construyendo en su cabeza un conjunto de estrategias que usará para resolver los problemas que encuentre más adelante. Debido a esto, dos programadores pueden llegar a soluciones *aparentemente* muy diferentes incluso aunque estén usando el mismo lenguaje y los mismos algoritmos. Leer con cuidado el código escrito por alguien más nos abre las puertas al conjunto de estrategias de otros programadores y deberíamos aprovecharlo para enriquecer nuestra propia caja de herramientas.
 
  - Diferenciar estilos. Cada programador tiene también un estilo propio que utiliza en la construcción de sus programas y que afecta la forma en la que se ven. Al leer programas escritos por alguien más se debería también observar con cuidado esas diferencias de estilo y evitar confundir diferencias de estilo (forma) con diferencias en las estrategias (fondo) o incluso diferencias algorítmicas.
 
@@ -44,7 +44,7 @@ Lea el siguiente programa con cuidado, intentando entender qué es lo que está 
 
 * Observe los bloques en los que está dividido y tenga en cuenta que en el lenguaje Python la *indentación* (la cantidad de espacios en blanco al inicio de cada línea, la sangría) es importante y sirve para definir bloques.
 * Note que hay algunas palabras que se repiten.
-* Nota también que hay algunas cosas escritas en español y otras escritas en inglés.
+* Note también que hay algunas cosas escritas en español y otras escritas en inglés.
 * Intente descubrir en qué orden se van a ejecutar cada una de las instrucciones del programa. *Ayuda:* Cada instrucción en este programa se va a ejecutar exactamente una vez.
 * Anote qué cosas del programa no sabe qué significan.
 
@@ -109,7 +109,7 @@ def calcular_hip(cateto1: float, cateto2: float)->float:
     # Sumar la longitud de los catetos elevados al cuadrado
     suma_cuadrados = (cateto1 ** 2) + (cateto2 ** 2)
     
-    # Calcular la raiz cuadrada de la suma usando la función pow y el exponente 0.5
+    # Calcular la raíz cuadrada de la suma usando la función pow y el exponente 0.5
     hipotenusa = pow(suma_cuadrados, 0.5)
     return hipotenusa
 
@@ -137,5 +137,5 @@ A partir de su lectura del programa, intente responder las siguientes preguntas.
 * ¿Qué información tendrá que suministrar el usuario que ejecute el programa?
 * ¿Cuál es el objetivo de cada bloque?
 * ¿Qué es lo que primero se ejecuta?
-* ¿Cual es la diferencia entre las cosas que están escritas en español y las que están escritas en inglés?
+* ¿Cuál es la diferencia entre las cosas que están escritas en español y las que están escritas en inglés?
 

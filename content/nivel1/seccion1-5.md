@@ -43,7 +43,7 @@ Una función tiene entonces un nombre, que en el ejemplo anterior era *f*, y un 
 
 El concepto matemático de función presentado en la sección anterior fue adoptado por Python, pero con unas pequeñas modificaciones que explicaremos en la siguiente sección. Por ahora, lo importante es que en Python es posible definir funciones dándoles un nombre, especificando sus parámetros, y explicando cómo se debe calcular un valor específico a partir de los parámetros. Como veremos en esta sección, Python cuenta con un gran número de funciones pre-definidas que podemos utilizar en nuestros programas. En la próxima sección estudiaremos cómo podemos hacer para definir nuestras propias funciones.
 
-La acción más interesante que podemos hacer sobre una función es *invocarla*. Esto es lo mismo que *evaluarla* para poder saber cuál es sería su valor dados valores específicos para sus parámetros. Por ejemplo, en el siguiente fragmento de código vamos a invocar la función pre-definida llamada ```pow``` pasándole los valores 2 y 3 como *argumentos*.
+La acción más interesante que podemos hacer sobre una función es *invocarla*. Esto es lo mismo que *evaluarla* para poder saber cuál sería su valor dados valores específicos para sus parámetros. Por ejemplo, en el siguiente fragmento de código vamos a invocar la función pre-definida llamada ```pow``` pasándole los valores 2 y 3 como *argumentos*.
 
 ```python
 >>> pow(2, 3)
@@ -89,7 +89,7 @@ pow(x, y, z=None, /)
 
 ### Funciones de conversión
 
-En esta y las siguientes subsecciones describiremos varias funciones que son parte del lenguaje mismo y que sirven para resolver problemas que aparecen recurrentemente. Es una muy recomendable conocer estas funciones para poderlas utilizar cada vez que sea necesario, en lugar de estar repitiendo una y otra vez código que ya los responsables del lenguaje hicieron por nosotros.
+En esta y las siguientes subsecciones describiremos varias funciones que son parte del lenguaje mismo y que sirven para resolver problemas que aparecen recurrentemente. Es muy recomendable conocer estas funciones para poderlas utilizar cada vez que sea necesario, en lugar de estar repitiendo una y otra vez código que ya los responsables del lenguaje hicieron por nosotros.
 
 La documentación completa y oficial de estas funciones se puede consultar en el siguiente link: <https://docs.python.org/3/library/functions.html>. Le recomendamos su consulta especialmente para que se familiarice con la estructura y el lenguaje de la documentación de Python.
 
@@ -197,7 +197,7 @@ Es importante notar que, a diferencia de la función ```int```, esta función s�
 
 #### min, max
 
-Las funciones ```min``` y ```max``` sirven para encontrar los valores mínimos y máximos de sus parámetros. El siguiente fragmento ilustra cuál sería el resultado de invocar estas funciones sobre 4 valores numéricos:
+Las funciones ```min``` y ```max``` sirven para encontrar los valores mínimos y máximos de sus parámetros. El siguiente fragmento ilustra cuál sería el resultado de invocar estas funciones sobre 5 valores numéricos:
 
 ```python
 >>> min(3,2,6,7,5)
@@ -290,9 +290,9 @@ Hoy en día no se utiliza propiamente la tabla ASCII en la mayoría de sistemas.
 
 #### Funciones chr y ord
 
-Después de haber presentado lo anterior, ahora sí podemos introducir las funciones ```chr``` y ```ord```. La función ```chr``` permite consultar cuál caracter le corresponde a un número específico dentro del sistema UNICODE. Por ejemplo, si evaluamos la expresión ```chr(97)``` el resultado será una cadena de caracteres con el caracter 'a'. La función ```ord``` tiene el objetivo opuesto: dado un caracter, indica cual es el número que le corresponde en el sistema UNICODE.
+Después de haber presentado lo anterior, ahora sí podemos introducir las funciones ```chr``` y ```ord```. La función ```chr``` permite consultar cuál caracter le corresponde a un número específico dentro del sistema UNICODE. Por ejemplo, si evaluamos la expresión ```chr(97)``` el resultado será una cadena de caracteres con el caracter 'a'. La función ```ord``` tiene el objetivo opuesto: dado un caracter, indica cuál es el número que le corresponde en el sistema UNICODE.
 
-Los siguientes son algunos ejemplos que permiten estudiar el uso de estas funciones. Dependiendo de la forma en la que esté visualizando este libro es posible que los ejemplos con caracteres especiales no aprecien correctamente.
+Los siguientes son algunos ejemplos que permiten estudiar el uso de estas funciones. Dependiendo de la forma en la que esté visualizando este libro es posible que los ejemplos con caracteres especiales no se aprecien correctamente.
 
 ```python
 >>> chr(98)
@@ -321,8 +321,6 @@ TypeError: ord() expected a character, but string of length 3 found
   * Convertir una cadena de caracteres a un número decimal.
   * Pedirle al usuario un número entero.
 
-
-
 2. Consulte cuáles serían los números correspondientes a los siguientes caracteres dentro del sistema Unicode.
   * z
   * G
@@ -338,9 +336,7 @@ TypeError: ord() expected a character, but string of length 3 found
   * El emoji para una bandera de Colombia.
   * El kanji japonés para representar la palabra árbol.
 
-
 4. Escriba un programa que pida al usuario una cantidad de pesos, una tasa de interés y un número de años. Muestre por pantalla en cuánto se habrá convertido el capital inicial transcurridos esos años si cada año se aplica la tasa de interés introducida. Recuerde que un capital de C pesos a un interés del x por cien durante n años se convierten en C(1 + x /100)n pesos. (Pruebe su programa sabiendo que una cantidad de 10,000 pesos al 4.5 % de interés anual se convierte en 24,117.14 pesos al cabo de 20 años)
-
 
 5. Escriba un programa que le pida al usuario 3 valores y los almacene en 3 variables enteras llamadas x1, x2 y x3. El programa luego debe rotar las variables de forma que al final x2 tenga el valor inicial de x1, x3 el de x2 y x1 el de x3.
 
@@ -354,4 +350,4 @@ Cuando se cambia de lenguaje de programación, una dificultad importante tiene q
 
 Aunque conceptualmente no sean difícil entender las diferencias y empezar a usar estas otras funciones, aprender todos esos pequeños detalles hace un poco más largo el proceso de pasar de un lenguaje a otro.
 
-En esta sección describimos también el mecanismo de evaluación de funciones, el cual es "eager", mientras que en otros lenguajes es "lazy" (perezoso): esto quiere decir que en esos lenguajes los valores de los parámetros se evalúan en el último momento posible, cuando realmente se necesite su valor. Esto no hace que Python sea malo o ineficiente, pero en algunas situaciones podría llevar a problemas con el desempeño de un programa. 
+En esta sección describimos también el mecanismo de evaluación de funciones, el cual es "eager" (entusiasta), mientras que en otros lenguajes es "lazy" (perezoso): esto quiere decir que en esos lenguajes los valores de los parámetros se evalúan en el último momento posible, cuando realmente se necesite su valor. Esto no hace que Python sea malo o ineficiente, pero en algunas situaciones podría llevar a problemas con el desempeño de un programa. 

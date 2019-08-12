@@ -80,7 +80,7 @@ A partir de su lectura del programa, intente responder las siguientes preguntas.
 * ¿Qué información tendrá que suministrar el usuario que ejecute el programa?
 * ¿Cuál es el objetivo de cada bloque?
 * ¿Qué es lo que primero se ejecuta?
-* ¿Cual es la diferencia entre las cosas que están escritas en español y las que están escritas en inglés?
+* ¿Cuál es la diferencia entre las cosas que están escritas en español y las que están escritas en inglés?
 * ¿Cuáles son los valores que tiene que proporcionar el usuario?
 * ¿Qué ve el usuario al finalizar la ejecución?
 

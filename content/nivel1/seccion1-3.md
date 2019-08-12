@@ -23,7 +23,7 @@ Adicionalmente, Python ofrece la función ```type``` que nos permite consultar d
 >>> type('Hola')
 <class 'str'>
 ```
-Usted puede probar estas mismas instrucciones escribiendo el ambiente de Python las instrucciones que se encuentran después de los caracteres ```>>>```.
+Usted puede probar estas mismas instrucciones escribiendo en el ambiente de Python las instrucciones que se encuentran después de los caracteres ```>>>```.
 
 
 
@@ -109,8 +109,8 @@ En Python es posible hacer conversiones entre diferentes tipos de datos para con
 
 En una de las próximas secciones estudiaremos más en detalle las funciones de conversión, pero por ahora usted debe saber que existen y cuál es su objetivo principal:
 
-* ```int(x)```: convierte el valor ```x``` a un entero. Por ejemplo, convierte el número ```3.14``` a ```3``` y la cadena ```'-4'``` a ```4```.
-* ```float(x)```: convierte el valor ```x``` a un número decimal. Por ejemplo, convierte el número entero ```3``` a ```3.0``` y la cadena ```'-4.5'``` a ```4.5```.
+* ```int(x)```: convierte el valor ```x``` a un entero. Por ejemplo, convierte el número ```3.14``` a ```3``` y la cadena ```'-4'``` a ```-4```.
+* ```float(x)```: convierte el valor ```x``` a un número decimal. Por ejemplo, convierte el número entero ```3``` a ```3.0``` y la cadena ```'-4.5'``` a ```-4.5```.
 * ```str(x)```: convierte el valor ```x``` a una cadena de caracteres. Por ejemplo, convierte el número entero ```3``` a la cadena ```'3'``` y al número decimal ```-4.5``` a la cadena ```'-4.5'```.
 
 **Actividades:**
@@ -120,7 +120,7 @@ En una de las próximas secciones estudiaremos más en detalle las funciones de 
    * Convierta un flotante a un entero
    * Convierta una cadena a un entero
    * Convierta una cadena a un flotante
-   * Convierta un entero en una cadena
+   * Convierta un entero a una cadena
    * Convierta un flotante a una cadena
 
 

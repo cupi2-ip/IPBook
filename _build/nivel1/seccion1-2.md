@@ -52,7 +52,7 @@ Cada lenguaje de programación interpretado tiene su propio intérprete, e inclu
 
 ![REPL](./images/repl.png)
 
-Como en el caso de otros lenguajes interpretados, Python tiene ofrece una herramienta de tipo **REPL**, la cual permite que un usuario interactúe con el lenguaje y vaya ejecutando instrucciones una por una. La sigla REPL hace referencia al orden en el que se van realizando las operaciones:
+Como en el caso de otros lenguajes interpretados, Python ofrece una herramienta de tipo **REPL**, la cual permite que un usuario interactúe con el lenguaje y vaya ejecutando instrucciones una por una. La sigla REPL hace referencia al orden en el que se van realizando las operaciones:
 
 * **Read**. En primer lugar, la herramienta lee lo que escribió el usuario y le informa si hay algún error.
 * **Evaluate**. Luego, la herramienta evalúa lo que escribió el usuario usando el intérprete del lenguaje. Esto quiere decir que en este punto se ejecuta lo que el usuario haya escrito.
@@ -80,7 +80,7 @@ La última herramienta que probablemente tenga que usar cuando esté programando
 
 Para los que nunca la han utilizado, usar la línea de comandos suele parecer incómodo y difícil. La realidad es que su uso eficiente requiere un tiempo de práctica, pero después termina siendo mucho más rápido para hacer ciertas tareas que utilizar un ambiente gráfico y el mouse. Por ejemplo, imagine que en una carpeta suya hubiera una colección de 500 fotos y que usted quisiera tener versiones reducidas de esas imágenes (*previews*, *thumbnails*). Normalmente a usted le tomaría una buena cantidad de clics abrir cada una de esas fotos y cambiarle el tamaño. Desde la línea de comandos de OS X usted simplemente puede usar el comando ```sips -Z 120 *.png``` y realizar la operación sobre todas las imágenes.
 
-El objetivo de esta sección no es explicar en detalle el funcionamiento de la línea de comandos de cada sistema operativo, sino mostrarle que existen y exhortarlo para que estudie por su cuenta su funcionamiento.
+El objetivo de esta sección no es explicar en detalle el funcionamiento de la línea de comandos de cada sistema operativo, sino mostrarle que existen e invitarlo para que estudie por su cuenta su funcionamiento.
 
 En Windows, la línea de comandos se invoca corriendo el programa ```cmd```.
 ![CMD](./images/cmd.png)

@@ -49,7 +49,7 @@ Esta coherencia (o cohesión) termina llevando a programas que son mucho más f�
 
 Otra ventaja de utilizar esta separación es que se vuelve más fácil probar la lógica de nuestros programas. Cuando la interfaz se mezcla con la lógica, para probar la corrección de un cálculo es necesario probar también la interfaz. Esto implica teclear datos cada vez y observar los resultados para compararlos con los esperados. Si la interfaz está separada de la lógica, podemos invocar directamente las funciones que hacen los cálculos, usando los mismos argumentos cada vez, es decir sin requerir la interacción con el usuario. 
 
-Otro motivo para hacer utilizar esta separación tiene que ver con la reutilización. Veremos más adelante que las interfaces de muchos programas son muy similares y que hay mucho código que fácilmente se puede adaptar para utilizar en un nuevo programa. Si la interfaz estuviera mezclada con la lógica, esta reutilización sería mucho más difícil.
+Otro motivo para utilizar esta separación tiene que ver con la reutilización. Veremos más adelante que las interfaces de muchos programas son muy similares y que hay mucho código que fácilmente se puede adaptar para utilizar en un nuevo programa. Si la interfaz estuviera mezclada con la lógica, esta reutilización sería mucho más difícil.
 
 ## Implementación de módulos separados
 
@@ -106,7 +106,7 @@ En la primera línea de este archivo encontramos un tipo de instrucción de Pyth
 import logica_saludar as logica
 ``` 
 
-Esta línea la usamos para *importar* un módulo para que podamos usarlo dentro de otro módulo. En este caso, estamos *importando* el módulo `logica_saludar` para que podamos usar las funciones allá definidas dentro del módulo  `interfaz_saludar`. Adicionalmente, nuestra instrucción también está indicando que queremos hacer referencia al módulo importado usando el alias 'logica'. Como veremos a continuación esto es muy útil cuando el nombre de un módulo importado es muy largo, o cuando queremos importar módulos diferentes que tienen el mismo nombre.
+Esta línea la usamos para *importar* un módulo para que podamos usarlo dentro de otro módulo. En este caso, estamos *importando* el módulo `logica_saludar` para que podamos usar las funciones definidas dentro del módulo  `interfaz_saludar`. Adicionalmente, nuestra instrucción también está indicando que queremos hacer referencia al módulo importado usando el alias 'logica'. Como veremos a continuación esto es muy útil cuando el nombre de un módulo importado es muy largo, o cuando queremos importar módulos diferentes que tienen el mismo nombre.
 
 Las siguientes líneas del programa son similares a las que ya habíamos estudiado excepto por la línea que dice:
 
@@ -210,10 +210,11 @@ Es indudable que la selección de los lenguajes de programación que se usen tie
 
 Esto no quiere decir que no se pueda usar Python exitosamente para proyectos grandes. Lo que queremos decir es que la selección del lenguaje de programación debe tener en cuenta una gran cantidad de factores que van mucho más allá de cuál es el lenguaje de moda, cuál es el lenguaje que conocemos o cuál es el lenguaje que nos gustaría aprender. Todos los lenguajes tienen ventajas y desventajas que se deben sopesar cuidadosamente, y después de tomar una decisión cualquier proyecto debería introducir instrumentos para mitigar los riesgos o el impacto cuando se materialicen esos riesgos.
 
-Por ejemplo, si se decide usar un lenguaje como Python o JavaScript para un gran proyecto, deberían definirse varias reglas desde el inicio para contrarrestar la dificultad para aplicar operaciones de *refactoring*.
+Por ejemplo, si se decide usar un lenguaje como Python o JavaScript para un gran proyecto, deberían definirse varias reglas desde el inicio para contrarrestar la dificultad para aplicar operaciones de *refactoring* [^refactor].
 
 En casi cualquier lenguaje de programación existen mecanismos similares a los módulos para descomponer programas y poder reutilizar bloques. Estos mecanismos también definen *espacios de nombres* (namespaces). Es decir que agrupan elementos para que los nombres no tengan que ser únicos dentro de todo el programa, y en lugar de eso sean únicos dentro de cada espacio de nombres. En Java y otros lenguajes orientados a objetos los mecanismos básicos de modularización son las clases, aunque también existen otros mecanismos como los paquetes y las librerías empaquetadas.
 
+[^refactor]: *Refactoring* es el término utilizado para procesos en los que el código fuente de un programa se restructura para mejorarlo pero sin cambiar su comportamiento. Por ejemplo, es común que se apliquen operaciones de *refactoring* para hacer que un programa sea mucho más fácil de mantener cambiando el nombre de las funciones para que sean naturales o para que se ajusten a estándares.
 
 #### Notas 
 

@@ -113,7 +113,7 @@ En nuestro ejemplo, el parámetro está especificado en la parte que dice ```lad
 
 Finalmente encontramos la especificación del resultado de la función. En nuestro ejemplo, la signatura especifica que su resultado será un número entero con el fragmento que dice ```-> int```.
 
-En resumen: la signatura de una función especifica cómo se debería invocar la funcón y qué se debería esperar como resultado. En nuestro caso de ejemplo, la función se invocará con el nombre ```area_cuadrado```, requerirá que se use un parámetro de tipo ```int``` y generará como resultado otro número entero (```int```).
+En resumen: la signatura de una función especifica cómo se debería invocar la función y qué se debería esperar como resultado. En nuestro caso de ejemplo, la función se invocará con el nombre ```area_cuadrado```, requerirá que se use un parámetro de tipo ```int``` y generará como resultado otro número entero (```int```).
 
 [^reservada]: Una palabra reservada significa que es una palabra que nosotros no podemos usar en nuestros programas para nuestros identificadores. Por ejemplo, no podemos tener ni una función ni una variable que se llamen ```def```. Python tiene varias palabras reservadas que iremos descubriendo, como return, del, import, pass, y raise, entre otras.
 
@@ -258,7 +258,7 @@ print("El área de una casa con", medida_frente, "metros de frente y un techo de
 
 Recuerde que estas instrucciones no hacen parte de la definición de ninguna función, así que se ejecutarán cada vez que el programa se corra. Las dos primeras instrucciones hacen asignaciones sobre dos nuevas variables llamadas ```medida_frente``` y ```medida_techo``` con los valores 7 y 5.
 
-A continuación, se hace una nueva asignación pero esta vez el valor se calcula con una invocación a la función ```area_casa```. En esta ocasión la función sí se ejecuta, utilizando los valores 7 y 5 como argumentos de la invocación. Si nosotros no conociéramos el cuerpo de la función, lo único que podríamos ver es que el resultado de invocar la función quedaría asignado a la variable ```resultado```.
+A continuación, se hace una nueva asignación, pero esta vez el valor se calcula con una invocación a la función ```area_casa```. En esta ocasión la función sí se ejecuta, utilizando los valores 7 y 5 como argumentos de la invocación. Si nosotros no conociéramos el cuerpo de la función, lo único que podríamos ver es que el resultado de invocar la función quedaría asignado a la variable ```resultado```.
 
 En este caso, como sí conocemos el cuerpo de la función, sabemos que lo que ocurrirá es lo siguiente:
 
@@ -296,9 +296,9 @@ Ahora analicemos lo que ocurrió en cada paso de la ejecución:
 4. Como terminó la definición de la función, Python almacena la definición en un registro por si más adelante alguien invoca a una función con ese nombre y ese número de parámetros. Note que hasta este punto la función **no se ha ejecutado**.
 5. Se revisa ahora lo siguiente en el archivo, que es una instrucción de asignación. Como sabemos, lo primero que se hace es evaluar la parte de la derecha que en este caso requiere invocar la función `input`. En la captura de pantalla vemos que el mensaje se imprimió para preguntarle al usuario por su nombre y que el usuario respondió con su nombre ('Alicia'). Finalmente, esta cadena queda almacenada en la variable `nombre`.
 6. La siguiente instrucción también es una asignación, así que se evalúa la parte derecha primero. En este caso se debe invocar la función `saludar`, usando como parámetro el valor almacenado en la variable `nombre`: es ahora cuando se ejecuta por primera vez nuestra función `saludar`.
-7. La siguiente instrucción que se ejecuta es la instrucción que se encuentra dentro del cuerpo de la función. Lo primero que hace esta función es calcular el valor de la expresión `"Hola " + nombre + "!"`. En el caso del ejemplo, el valor del parámetro `nombre` es la cadena `'Alicia'`, así que el valor de la expresión completa es la cadena `'Hola Alicia!`. Finalmente, se retorna esta cadena completa y termina la ejecución de la función.
+7. La siguiente instrucción que se ejecuta es la instrucción que se encuentra dentro del cuerpo de la función. Lo primero que hace esta función es calcular el valor de la expresión `"Hola " + nombre + "!"`. En el caso del ejemplo, el valor del parámetro `nombre` es la cadena `'Alicia'`, así que el valor de la expresión completa es la cadena `'Hola Alicia!'`. Finalmente, se retorna esta cadena completa y termina la ejecución de la función.
 8. De vuelta al programa principal, el resultado de la función se almacena en la variable `saludo`.
-9. Por último, se invoca la función `print` y se le pasa como argumento el valor contenido en la variable `saludo`. El programa imprime entonces `'Hola Alicia!` tal como se ve en la captura de pantalla.
+9. Por último, se invoca la función `print` y se le pasa como argumento el valor contenido en la variable `saludo`. El programa imprime entonces `Hola Alicia!` tal como se ve en la captura de pantalla.
 
 El siguiente es nuevamente el código de nuestro programa, pero esta vez hemos incluido unos comentarios adicionales que indican el orden en el que se van *ejecutando* las instrucciones.
 
@@ -318,7 +318,7 @@ print(saludo)                           #6
 
 ## Funciones sin parámetro o sin retorno
 
-Dos preguntas frecuentes entre los estudiantes son si una función siempre debe tener parámetros y si una función siempre debe retornar un valor. Si estas preguntas se hicieran en un contexto matemático, la respuesta sería negativa: las funciones establecen relaciones entre elementos de un conjunto y elementos de otro conjunto, así que siempre tienen al menos un parámetro y siempre tienen un resultado.
+Dos preguntas frecuentes entre los estudiantes son si una función siempre debe tener parámetros y si una función siempre debe retornar un valor. Si estas preguntas se hicieran en un contexto matemático, la respuesta sería positiva: las funciones establecen relaciones entre elementos de un conjunto y elementos de otro conjunto, así que siempre tienen al menos un parámetro y siempre tienen un resultado.
 
 En el contexto de Python, sí es posible tener funciones sin parámetros y funciones que no tengan un retorno, pero la realidad es que este tipo de funciones sólo deberían usarse en un contexto muy particular (interacción con el usuario). A continuación, explicamos brevemente por qué, en general, no es una buena idea tener este tipo de funciones.
 
