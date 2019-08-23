@@ -1,7 +1,7 @@
 ---
 title: 'Lógica vs. Interacción'
 prev_page:
-  url: /nivel1/seccion1-7
+  url: /nivel1/seccion1-7.html
   title: 'Un programa para leer (2)'
 next_page:
   url: 

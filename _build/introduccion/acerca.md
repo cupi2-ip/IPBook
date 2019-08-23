@@ -1,10 +1,10 @@
 ---
 title: 'Sobre este libro'
 prev_page:
-  url: /introduccion/practicas
+  url: /introduccion/practicas.html
   title: 'Prácticas fundamentales'
 next_page:
-  url: /introduccion/estructura
+  url: /introduccion/estructura.html
   title: 'Estructura del libro'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

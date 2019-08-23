@@ -1,10 +1,10 @@
 ---
 title: 'Definición de funciones'
 prev_page:
-  url: /nivel1/seccion1-5
+  url: /nivel1/seccion1-5.html
   title: 'Funciones'
 next_page:
-  url: /nivel1/seccion1-7
+  url: /nivel1/seccion1-7.html
   title: 'Un programa para leer (2)'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

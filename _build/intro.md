@@ -4,7 +4,7 @@ prev_page:
   url: 
   title: ''
 next_page:
-  url: /introduccion/intro
+  url: /introduccion/intro.html
   title: 'Introducción'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

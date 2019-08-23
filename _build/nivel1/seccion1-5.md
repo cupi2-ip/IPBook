@@ -1,10 +1,10 @@
 ---
 title: 'Funciones'
 prev_page:
-  url: /nivel1/seccion1-4
+  url: /nivel1/seccion1-4.html
   title: 'Variables, expresiones y operadores'
 next_page:
-  url: /nivel1/seccion1-6
+  url: /nivel1/seccion1-6.html
   title: 'Definición de funciones'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
