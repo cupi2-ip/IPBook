@@ -6,7 +6,7 @@ kernel_name: python3
 has_widgets: false
 title: 'Notebook test'
 prev_page:
-  url: /pdfTest/markdownTest.html
+  url: /pdfTest/markdownTest
   title: 'Markdown test'
 next_page:
   url: 

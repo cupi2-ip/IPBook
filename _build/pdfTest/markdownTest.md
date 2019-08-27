@@ -3,10 +3,10 @@ redirect_from:
   - "/pdftest/markdowntest"
 title: 'Markdown test'
 prev_page:
-  url: /pdfTest/intro.html
+  url: /pdfTest/intro
   title: 'Test'
 next_page:
-  url: /pdfTest/test.html
+  url: /pdfTest/test
   title: 'Notebook test'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

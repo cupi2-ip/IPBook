@@ -1,10 +1,10 @@
 ---
 title: 'Un programa para leer (2)'
 prev_page:
-  url: /nivel1/seccion1-6.html
+  url: /nivel1/seccion1-6
   title: 'Definición de funciones'
 next_page:
-  url: /nivel1/seccion1-8.html
+  url: /nivel1/seccion1-8
   title: 'Lógica vs. Interacción'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

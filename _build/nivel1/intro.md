@@ -1,10 +1,10 @@
 ---
 title: 'Nivel 1'
 prev_page:
-  url: /introduccion/imagenes.html
+  url: /introduccion/imagenes
   title: 'Créditos de las imágenes'
 next_page:
-  url: /nivel1/seccion1-1.html
+  url: /nivel1/seccion1-1
   title: 'Un programa para leer'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

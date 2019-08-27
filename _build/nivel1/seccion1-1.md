@@ -1,10 +1,10 @@
 ---
 title: 'Un programa para leer'
 prev_page:
-  url: /nivel1/intro.html
+  url: /nivel1/intro
   title: 'Nivel 1'
 next_page:
-  url: /nivel1/ejercicio_inicial.html
+  url: /nivel1/ejercicio_inicial
   title: 'Experimentos'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

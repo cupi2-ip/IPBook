@@ -1,10 +1,10 @@
 ---
 title: 'Estructura del libro'
 prev_page:
-  url: /introduccion/acerca.html
+  url: /introduccion/acerca
   title: 'Sobre este libro'
 next_page:
-  url: /introduccion/imagenes.html
+  url: /introduccion/imagenes
   title: 'Créditos de las imágenes'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

@@ -1,10 +1,10 @@
 ---
 title: 'Introducción'
 prev_page:
-  url: /intro.html
+  url: /intro
   title: 'Inicio'
 next_page:
-  url: /introduccion/practicas.html
+  url: /introduccion/practicas
   title: 'Prácticas fundamentales'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
