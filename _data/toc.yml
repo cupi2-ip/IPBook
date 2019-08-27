@@ -96,15 +96,3 @@
 #  - title: Ejercicios adicionales
 #    url: /nivel1/seccion1-10
 
-- title: Test
-  url: /pdfTest/intro
-  sections:
-  - title: Markdown test
-    url: /pdfTest/markdownTest
-    not_numbered: true
-  - title: Notebook test
-    url: /pdfTest/test
-    not_numbered: true
-
-
-

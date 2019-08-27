@@ -4,8 +4,8 @@ prev_page:
   url: /nivel1/seccion1-7
   title: 'Un programa para leer (2)'
 next_page:
-  url: /pdfTest/intro
-  title: 'Test'
+  url: 
+  title: ''
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 Versión borrador / preliminar |
