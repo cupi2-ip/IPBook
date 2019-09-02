@@ -1,11 +1,11 @@
 ---
-title: 'Nivel 4'
+title: 'Nivel 2'
 prev_page:
-  url: /nivel2/intro
-  title: 'Nivel 3'
+  url: /nivel1/seccion1-8
+  title: 'Lógica vs. Interacción'
 next_page:
-  url: /referencias/intro
-  title: 'Referencias'
+  url: /nivel2/seccion2-1
+  title: 'Un programa para leer'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 Versión borrador / preliminar |
@@ -16,6 +16,8 @@ Este documento es una versión preliminar para uso interno. Si encuentra algún 
 
 # Nivel 2: Tomando decisiones
 
+![](./images/N2_introduccion.jpg)
+
 En este nivel se presentan los conceptos necesarios para que un programa no siempre se ejecute de la misma manera, sino que pueda tomar decisiones dependiendo de las condiciones en que se ejecute y de los datos que proporcione el usuario. 
 
 Los conceptos principales que se estudian en este nivel son los siguientes:
@@ -25,4 +27,4 @@ Los conceptos principales que se estudian en este nivel son los siguientes:
 * Diccionarios
 * Paso de parámetros por valor y por referencia
 * Módulos adicionales
-* Estrategias de descomposición
+

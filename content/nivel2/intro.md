@@ -6,6 +6,8 @@ Este documento es una versión preliminar para uso interno. Si encuentra algún 
 
 # Nivel 2: Tomando decisiones
 
+![](./images/N2_introduccion.jpg)
+
 En este nivel se presentan los conceptos necesarios para que un programa no siempre se ejecute de la misma manera, sino que pueda tomar decisiones dependiendo de las condiciones en que se ejecute y de los datos que proporcione el usuario. 
 
 Los conceptos principales que se estudian en este nivel son los siguientes:
@@ -15,4 +17,4 @@ Los conceptos principales que se estudian en este nivel son los siguientes:
 * Diccionarios
 * Paso de parámetros por valor y por referencia
 * Módulos adicionales
-* Estrategias de descomposición
+

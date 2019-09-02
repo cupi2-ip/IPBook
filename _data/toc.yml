@@ -96,3 +96,21 @@
 #  - title: Ejercicios adicionales
 #    url: /nivel1/seccion1-10
 
+- title: Nivel 2
+  url: /nivel2/intro
+  # not_numbered: true
+  # expand_sections: true
+  sections:
+  - title: Un programa para leer
+    url: /nivel2/seccion2-1
+  - title: Lógica y valores de verdad
+    url: /nivel2/seccion2-2
+  - title: Valores de verdad en Python
+    url: /nivel2/seccion2-3
+  - title: Instrucciones condicionales
+    url: /nivel2/seccion2-4
+  - title: Cadenas de caracteres
+    url: /nivel2/seccion2-5
+  - title: Módulos de la librería estándar
+    url: /nivel2/seccion2-6
+
