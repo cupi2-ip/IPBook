@@ -6,10 +6,10 @@ kernel_name: python3
 has_widgets: false
 title: 'Experimentos'
 prev_page:
-  url: /nivel1/seccion1-1
+  url: /nivel1/seccion1-1.html
   title: 'Un programa para leer'
 next_page:
-  url: /nivel1/seccion1-2
+  url: /nivel1/seccion1-2.html
   title: 'Ambiente básico de trabajo'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

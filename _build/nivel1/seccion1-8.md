@@ -1,10 +1,10 @@
 ---
 title: 'Lógica vs. Interacción'
 prev_page:
-  url: /nivel1/seccion1-7
+  url: /nivel1/seccion1-7.html
   title: 'Un programa para leer (2)'
 next_page:
-  url: /nivel2/intro
+  url: /nivel2/intro.html
   title: 'Nivel 2'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

@@ -1,7 +1,7 @@
 ---
 title: 'Módulos de la librería estándar'
 prev_page:
-  url: /nivel2/seccion2-5
+  url: /nivel2/seccion2-5.html
   title: 'Cadenas de caracteres'
 next_page:
   url: 

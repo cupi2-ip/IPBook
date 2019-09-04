@@ -1,10 +1,10 @@
 ---
 title: 'Lógica y valores de verdad'
 prev_page:
-  url: /nivel2/seccion2-1
+  url: /nivel2/seccion2-1.html
   title: 'Un programa para leer'
 next_page:
-  url: /nivel2/seccion2-3
+  url: /nivel2/seccion2-3.html
   title: 'Valores de verdad en Python'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

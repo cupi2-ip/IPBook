@@ -1,10 +1,10 @@
 ---
 title: 'Variables, expresiones y operadores'
 prev_page:
-  url: /nivel1/seccion1-3
+  url: /nivel1/seccion1-3.html
   title: 'Valores y tipos de datos'
 next_page:
-  url: /nivel1/seccion1-5
+  url: /nivel1/seccion1-5.html
   title: 'Funciones'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

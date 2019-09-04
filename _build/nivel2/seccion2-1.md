@@ -1,10 +1,10 @@
 ---
 title: 'Un programa para leer'
 prev_page:
-  url: /nivel2/intro
+  url: /nivel2/intro.html
   title: 'Nivel 2'
 next_page:
-  url: /nivel2/seccion2-2
+  url: /nivel2/seccion2-2.html
   title: 'Lógica y valores de verdad'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

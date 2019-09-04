@@ -1,10 +1,10 @@
 ---
 title: 'Valores de verdad en Python'
 prev_page:
-  url: /nivel2/seccion2-2
+  url: /nivel2/seccion2-2.html
   title: 'Lógica y valores de verdad'
 next_page:
-  url: /nivel2/seccion2-4
+  url: /nivel2/seccion2-4.html
   title: 'Instrucciones condicionales'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

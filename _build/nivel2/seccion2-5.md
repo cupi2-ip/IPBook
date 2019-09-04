@@ -1,10 +1,10 @@
 ---
 title: 'Cadenas de caracteres'
 prev_page:
-  url: /nivel2/seccion2-4
+  url: /nivel2/seccion2-4.html
   title: 'Instrucciones condicionales'
 next_page:
-  url: /nivel2/seccion2-6
+  url: /nivel2/seccion2-6.html
   title: 'Módulos de la librería estándar'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

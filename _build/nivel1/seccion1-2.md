@@ -1,10 +1,10 @@
 ---
 title: 'Ambiente básico de trabajo'
 prev_page:
-  url: /nivel1/ejercicio_inicial
+  url: /nivel1/ejercicio_inicial.html
   title: 'Experimentos'
 next_page:
-  url: /nivel1/seccion1-3
+  url: /nivel1/seccion1-3.html
   title: 'Valores y tipos de datos'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

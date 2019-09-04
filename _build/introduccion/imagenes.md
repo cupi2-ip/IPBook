@@ -1,10 +1,10 @@
 ---
 title: 'Créditos de las imágenes'
 prev_page:
-  url: /introduccion/estructura
+  url: /introduccion/estructura.html
   title: 'Estructura del libro'
 next_page:
-  url: /nivel1/intro
+  url: /nivel1/intro.html
   title: 'Nivel 1'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

@@ -1,10 +1,10 @@
 ---
 title: 'Instrucciones condicionales'
 prev_page:
-  url: /nivel2/seccion2-3
+  url: /nivel2/seccion2-3.html
   title: 'Valores de verdad en Python'
 next_page:
-  url: /nivel2/seccion2-5
+  url: /nivel2/seccion2-5.html
   title: 'Cadenas de caracteres'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
