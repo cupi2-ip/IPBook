@@ -1,0 +1,118 @@
+---
+title: |-
+  Un programa para leer (2)
+prev_page:
+  url: /nivel1/seccion1-6.html
+  title: |-
+    Definición de funciones
+next_page:
+  url: /nivel1/seccion1-8.html
+  title: |-
+    Lógica vs. Interacción
+suffix: .md
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+<thead><tr>
+<th>Versión borrador / preliminar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="Un-programa-para-leer-(2)">Un programa para leer (2)<a class="anchor-link" href="#Un-programa-para-leer-(2)"> </a></h1><p>Volvemos ahora al programa completo que usted leyó al inicio del capítulo. Vuelva a leerlo detenidamente: todo lo que aparece en este programa ya lo estudiamos y usted debería estar en capacidad de entenderlo.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Este programa está escrito en el archivo perimetro.py</span>
+
+<span class="k">def</span> <span class="nf">perimetro_triangulo</span><span class="p">(</span><span class="n">cateto1</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">cateto2</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">float</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Esta función calcula el perímetro de un triángulo rectángulo</span>
+<span class="sd">    dada la longitud de sus dos catetos</span>
+<span class="sd">    Parámetros:</span>
+<span class="sd">      cateto1 (float): la longitud del primer cateto del triángulo</span>
+<span class="sd">      cateto2 (float): la longitud del segundo cateto del triángulo</span>
+<span class="sd">    Retorno</span>
+<span class="sd">      (float): la longitud del perímetro del triángulo</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Usar la función calcular_hip para calcular la longitud del lado faltante</span>
+    <span class="n">hipotenusa</span> <span class="o">=</span> <span class="n">calcular_hip</span><span class="p">(</span><span class="n">cateto1</span><span class="p">,</span> <span class="n">cateto2</span><span class="p">)</span>
+
+    <span class="c1"># Sumar los tres lados y convertirlos en la respuesta de la función</span>
+    <span class="k">return</span> <span class="n">cateto1</span> <span class="o">+</span> <span class="n">cateto2</span> <span class="o">+</span> <span class="n">hipotenusa</span>
+
+
+<span class="k">def</span> <span class="nf">calcular_hip</span><span class="p">(</span><span class="n">cateto1</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">cateto2</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">float</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Esta función calcula la longitud de la hipotenusa en un triángulo rectángulo</span>
+<span class="sd">    dada la longitud de sus dos catetos</span>
+<span class="sd">    Parámetros:</span>
+<span class="sd">      cateto1 (float): la longitud del primer cateto del triángulo</span>
+<span class="sd">      cateto2 (float): la longitud del segundo cateto del triángulo</span>
+<span class="sd">    Retorno</span>
+<span class="sd">      (float): la longitud de la hipotenusa</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Sumar la longitud de los catetos elevados al cuadrado</span>
+    <span class="n">suma_cuadrados</span> <span class="o">=</span> <span class="p">(</span><span class="n">cateto1</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">cateto2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># Calcular la raiz cuadrada de la suma usando la función pow y el exponente 0.5</span>
+    <span class="n">hipotenusa</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">suma_cuadrados</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">hipotenusa</span>
+
+
+<span class="c1"># Solicitarle al usuario la longitud de los dos catetos</span>
+<span class="n">cadena_cat_1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Indique la longitud del primer cateto: &quot;</span><span class="p">)</span>
+<span class="n">cadena_cat_2</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Indique la longitud del segundo cateto: &quot;</span><span class="p">)</span>
+
+<span class="c1"># Convertir los caracteres dados por el usuario en un número decimal</span>
+<span class="n">cat_1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">cadena_cat_1</span><span class="p">)</span>
+<span class="n">cat_2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">cadena_cat_2</span><span class="p">)</span>
+
+<span class="c1"># Llamar a la función con los valores recibidos</span>
+<span class="n">perimetro</span> <span class="o">=</span> <span class="n">perimetro_triangulo</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Mostrarle al usuario el resultado de la operación</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;El perímetro de un triángulo rectángulo que tenga catetos de longitud&quot;</span><span class="p">,</span> <span class="n">cat_1</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">cat_2</span><span class="p">,</span> <span class="s2">&quot;es&quot;</span><span class="p">,</span> <span class="n">perimetro</span><span class="p">)</span>
+</pre></div>
+<p><strong>Preguntas:</strong>
+A partir de su lectura del programa, intente responder las siguientes preguntas.</p>
+<ul>
+<li>¿Cuál es el objetivo del programa?</li>
+<li>¿Qué información tendrá que suministrar el usuario que ejecute el programa?</li>
+<li>¿Cuál es el objetivo de cada bloque?</li>
+<li>¿Qué es lo que primero se ejecuta?</li>
+<li>¿Cuál es la diferencia entre las cosas que están escritas en español y las que están escritas en inglés?</li>
+<li>¿Cuáles son los valores que tiene que proporcionar el usuario?</li>
+<li>¿Qué ve el usuario al finalizar la ejecución?</li>
+</ul>
+<h2 id="Ejercicios">Ejercicios<a class="anchor-link" href="#Ejercicios"> </a></h2><ol>
+<li><p>Copie el programa a su computador y ejecútelo. Hágale modificaciones y observe los cambios que se producen en sus resultados.</p>
+</li>
+<li><p>Escriba un programa completo que le pida al usuario la temperatura actual en grados Celsius y le informe cuál es esa temperatura en Fahrenheit.</p>
+</li>
+<li><p>Observe la siguiente figura:</p>
+</li>
+</ol>
+<p><img src="images/area.png" alt="Ejercicio Área"></p>
+<p>Construya un programa que le pida al usuario la medida del lado del cuadrado y le informe al usuario el tamaño del área de la zona negra.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

@@ -1,0 +1,424 @@
+---
+title: |-
+  Cadenas de caracteres
+prev_page:
+  url: /nivel2/seccion2-4.html
+  title: |-
+    Instrucciones condicionales
+next_page:
+  url: /nivel2/seccion2-6.html
+  title: |-
+    Módulos de la librería estándar
+suffix: .md
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+<thead><tr>
+<th>Versión borrador / preliminar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="M&#225;s-sobre-cadenas-de-caracteres">M&#225;s sobre cadenas de caracteres<a class="anchor-link" href="#M&#225;s-sobre-cadenas-de-caracteres"> </a></h1><blockquote><p>El objetivo de esta sección es explorar un poco más el tipo <code>str</code> y descubrir otras funcionalidades que ofrece Python para manipular cadenas de caracteres. Sin embargo, esta no pretende ser una guía exhaustiva sino un abrebocas para que el lector estudie la documentación Python y descubra muchas otras funcionalidades que están disponibles.</p>
+</blockquote>
+<p>Hace años, cuando se empezaron a construir los primeros computadores programables, el objetivo principal que tenían era permitir hacer cálculos numéricos (trayectorias de misiles, órbitas de naves espaciales, análisis de estructuras, cálculos financieros). Por este motivo, cuando se diseñaron los primeros lenguajes de programación, su diseño estuvo fuertemente influenciado por la necesidad de soportar con facilidad la expresión de cálculos numéricos cada vez más complicados. En esos lenguajes era prácticamente imposible representar una cadena de caracteres.</p>
+<p>Hoy en día la situación ha cambiado y la representación y manipulación de información textual es igual o más importante que los cálculos numéricos. Esto ha llevado a que cualquier lenguaje de programación moderno ofrezca sólidos tipos de datos para representar cadenas de caracteres, los cuales vienen acompañados de mecanismos que permiten manipular con facilidad estas cadenas de acuerdo con los requerimientos de cada aplicación. Por ejemplo, hoy en día es muy común que las aplicaciones tengan que incluir mecanismos de internacionalización (para traducir los mensajes a otros idiomas), varios alfabetos diferentes (cirílico, griego, kanjis japoneses y hasta <em>emojis</em>), sistemas de cifrado (para garantizar confidencialidad), y sistemas de búsqueda que encuentren términos rápidamente dentro de textos cada vez más grandes.</p>
+<p>En esta sección vamos a continuar con el estudio del tipo <code>str</code> de Python y vamos a ver algunos de los mecanismos que ofrece para manipular cadenas de caracteres de forma rápida y sencilla. Sin embargo, en esta sección no termina toda la presentación de <code>str</code>: en el siguiente capítulo presentaremos los mecanismos adicionales disponibles que requieren del estudio previo de secuencias e instrucciones repetitivas.</p>
+<h2 id="Aspectos-de-codificaci&#243;n-(encoding)">Aspectos de codificaci&#243;n (encoding)<a class="anchor-link" href="#Aspectos-de-codificaci&#243;n-(encoding)"> </a></h2><p>Si usted está leyendo este libro es muy posible que su lengua materna sea el español, que esté acostumbrado a escribir usando el alfabeto latino y que el teclado de su computador sea un teclado 'QWERTY'<sup class="footnote-ref" id="fnref-querty"><a href="#fn-querty">1</a></sup>. Por esto, además de necesitar los 127 caracteres básicos de ASCII, usted también necesita algunos caracteres adicionales, como <code>'ñ'</code>, <code>'Ñ'</code> y todas las vocales con tilde en mayúsculas y minúsculas.</p>
+<p>Si todo esto es cierto, muy posiblemente usted ha estado utilizando un conjunto de caracteres (encoding) que extiende al conjunto ASCII y que se conoce con el nombre ISO-8859-1: además de tener los 127 caracteres de ASCII, este conjunto incluye caracteres de uso frecuente en lenguajes originados principalmente en Europa occidental. Por ejemplo: á, Á, ñ, Ñ, ç, ü, ò <sup class="footnote-ref" id="fnref-error"><a href="#fn-error">2</a></sup>.</p>
+<p>Ahora bien, si usted intercambia información con personas que viven en países donde ISO-8859-1 no es de utilidad (por ejemplo, Rusia, Japón, o todo el Sudeste Asiático) tendrá que utilizar un conjunto de caracteres mucho más grande, como el ofrecido por el estándar UNICODE que describe muchos más caracteres incluyendo los cada vez más populares <em>emojis</em> - &#128512;. Sin embargo, si usted quiere usar caracteres definidos en UNICODE, los archivos o mensajes que usted escriba tendrán que utilizar bien sea el encoding <strong>UTF-8</strong> o el encoding <strong>UTF-16</strong> <sup class="footnote-ref" id="fnref-utf"><a href="#fn-utf">3</a></sup>.</p>
+<p>Si usted puede ver los siguientes tres caracteres (un kanji, un emoji y un caracter griego) significa que su navegador o el programa que está utilizando para leer este texto es compatible con UNICODE y con UTF-8:</p>
+<ul>
+<li>Kanji: &#23383; </li>
+<li>Emoji: &#128540; </li>
+<li>Caracter griego: &#916;.</li>
+</ul>
+<p>Con esta brevísima explicación no esperamos que usted sea ya un experto en sistemas de codificación de caracteres, pero sí que se dé cuenta que es un asunto más complicado de lo que parece a simple vista. Mientras que sus programas se limiten a usar caracteres que son normales en su idioma, probablemente no tendrá ningún problema. Pero si quiere que sus programas sean capaces de manejar caracteres de otros alfabetos, tendrá que ponerles atención a los asuntos de codificación si no quiere perder información o ver caracteres remplazados por marcas desconocidas.</p>
+<p>La buena noticia es que, por defecto, Python soporta cadenas UNICODE. Así que, si está teniendo problemas con caracteres extraños dentro de sus cadenas, probablemente el problema no sea de Python sino de algo más de lo que usted está haciendo.</p>
+<p>Otra cosa con la que usted tiene que tener cuidado es la codificación que utilice para los archivos .py en los que escriba sus programas. La recomendación que le hacemos es que se asegure de que los archivos se guarden con la codificación UTF-8. En Spyder esto se logra poniendo el siguiente comentario al principio de cada archivo:</p>
+<p>```# coding: utf-8</p>
+<p>Si lo hizo correctamente, en la esquina inferior derecha del ambiente debería ver una etiqueta que diga <em>Encoding: UTF-8</em>. Si en lugar de esto dice <em>Encoding: ASCII</em>, entonces cualquier caracter que usted escriba en su programa y que no sea parte de ASCII (por ejemplo 'á') se convertirá en basura cuando usted cierre el archivo y lo vuelva a abrir.</p>
+<p>Finalmente le hacemos una recomendación con respecto al uso de caracteres <em>no ASCOO</em> dentro de sus programas: está bien usar estos caracteres dentro de la documentación y comentarios, pero evite usarlos en los identificadores de variables, parámetros y nombres de funciones. Por ejemplo, en lugar de llamar a una función <code>calcular_año</code> use <code>calcular_anho</code>, y en lugar de usar la variable <code>máximo</code> use la variable <code>maximo</code>. Esta no es una regla escrita en piedra que usted tenga que seguir. Es sólo un consejo para evitar que se tope con problemas sencillos, pero a veces difíciles de diagnosticar.</p>
+<h2 id="Caracteres-de-control">Caracteres de control<a class="anchor-link" href="#Caracteres-de-control"> </a></h2><p>Además de los caracteres como los que se describieron en la sección anterior, una cadena de caracteres (<code>str</code>) también puede tener caracteres que son llamados caracteres de control. Estos caracteres se pueden usar como cualquier otro dentro de una cadena.</p>
+<p>A continuación, describimos los más importantes y que usted podría necesitar.</p>
+<table>
+<thead><tr>
+<th>Caracter</th>
+<th>Significado</th>
+<th>Ejemplo de uso</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\n</td>
+<td>Cambio de línea</td>
+<td>"Hola\nMundo!"</td>
+<td>Hola <br/> Mundo!</td>
+<td></td>
+</tr>
+<tr>
+<td>\t</td>
+<td>Tabulación</td>
+<td>"Hola\tMundo"</td>
+<td>Hola&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mundo</td>
+<td></td>
+</tr>
+<tr>
+<td>\</td>
+<td>Barra invertida</td>
+<td>"C:\usuarios\invitado"</td>
+<td>C:\usuarios\invitado</td>
+<td></td>
+</tr>
+<tr>
+<td>\'</td>
+<td>Comilla sencilla (2)</td>
+<td>"It\'s me!"</td>
+<td>It's me!</td>
+<td></td>
+</tr>
+<tr>
+<td>\"</td>
+<td>Comilla doble</td>
+<td>"A so called \"expert\""</td>
+<td>A so called "expert"</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Como es posible que con un ejemplo tan breve no se aprecie la importancia de la tabulación, a continuación presentamos un ejemplo un poco más complejo. 
+El uso del caracter de tabulación indica que se quiere dejar espacio hasta la siguiente tabulación, con el objetivo de armar columnas más o menos definidas.  Una tabulación típicamente equivale al espacio de 8 caracteres.</p>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;a</span><span class="se">\t</span><span class="s2">b</span><span class="se">\t</span><span class="s2">c&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;100</span><span class="se">\t</span><span class="s2">200</span><span class="se">\t</span><span class="s2">300&quot;</span><span class="p">)</span>
+</pre></div>
+<p>El resultado de ejecutar el programa anterior es el siguiente:</p>
+
+<pre><code>a   b   c
+100 200 300</code></pre>
+<h2 id="Funciones-y-operadores-sobre-cadenas-de-caracteres">Funciones y operadores sobre cadenas de caracteres<a class="anchor-link" href="#Funciones-y-operadores-sobre-cadenas-de-caracteres"> </a></h2><p>En la sección anterior estudiamos los operadores relacionales y vimos que pueden aplicarse a diferentes tipos de datos. En particular, vimos que los operadores &lt;, &gt;, &lt;=, &gt;= hacen comparaciones lexicográficas. De esta manera sabemos que las siguientes expresiones son todas verdaderas:</p>
+<ul>
+<li><code>"AB" &lt; "BC</code></li>
+<li><code>"AB" &lt; "ab"</code></li>
+<li><code>"234" &lt; "345"</code></li>
+<li><code>"!450" &lt; "345"</code></li>
+</ul>
+<p>Los otros operadores relacionales que podemos aplicar a las cadenas de caracteres son "==" y "!=", los cuales comparan las cadenas caracter por caracter. De esta manera, las siguientes expresiones son todas falsas:</p>
+<ul>
+<li><code>"ABC" == "abc"</code></li>
+<li><code>"ABC" == "ABC!"</code></li>
+<li><code>"3" == "1+2"</code></li>
+<li><code>"Hola, Mundo!" != "Hola, Mundo!"</code></li>
+</ul>
+<p>Dos nuevos operadores que también se pueden aplicar sobre cadenas de caracteres son <code>in</code> y <code>not in</code>. El primero permite revisar si una cadena está incluida en otra, mientras que el segundo hace exactamente lo contrario. Veamos un ejemplo de expresiones <strong>verdaderas</strong> basadas en estos operadores:</p>
+<ul>
+<li><code>"Mundo" in "Hola, Mundo!"</code></li>
+<li><code>"mundo" not in "Hola, Mundo!"</code></li>
+<li><code>"!" in "Hola, Mundo!"</code></li>
+<li><code>'?' not in "Hola, Mundo!"</code></li>
+<li><code>"Hola, Mundo!" in "Hola, Mundo!"</code></li>
+</ul>
+<p>Como vemos, estos operadores hacen comparaciones que distinguen entre mayúsculas y minúsculas. Esto debe tenerse en cuenta para evitar tener falsos negativos y falsos positivos.</p>
+<p>Finalmente, Python nos ofrece la función <code>len</code> que podemos utilizar para conocer el tamaño de una cadena.</p>
+<ul>
+<li><code>len("Hola, Mundo!")</code></li>
+<li><code>len("Hola,\nMundo!")</code></li>
+<li><code>len("")</code></li>
+<li><code>len(" ")</code></li>
+<li><code>len("\t")</code></li>
+</ul>
+<p>El resultado de las primeras dos invocaciones es el mismo (12). Esto porque el caracter de control <code>\n</code> es un solo caracter aunque se represente con dos.</p>
+<p>El resultado de la tercera invocación es 0, porque es una cadena vacía (no tiene ningún caracter).</p>
+<p>El resultado de las últimas invocaciones es 1 porque se trata de cadenas con sólo un caracter: la cuarta tiene sólo un espacio mientras que la quinta sólo tiene una tabulación.</p>
+<h2 id="M&#233;todos-sobre-cadenas-de-caracteres">M&#233;todos sobre cadenas de caracteres<a class="anchor-link" href="#M&#233;todos-sobre-cadenas-de-caracteres"> </a></h2><h3 id="M&#233;todos-versus-funciones">M&#233;todos versus funciones<a class="anchor-link" href="#M&#233;todos-versus-funciones"> </a></h3><p>Además de todo lo que ya hemos estudiado, el tipo <code>str</code> también ofrece una serie de funciones que pueden utilizarse para transformar cadenas de caracteres. Debido a la forma particular en la que estas funciones están declaradas dentro del módulo <code>str</code>, estas funciones se conocen usualmente como métodos y se pueden invocar de una forma diferente a como lo haríamos con funciones como las que ya conocíamos <sup class="footnote-ref" id="fnref-oo"><a href="#fn-oo">4</a></sup>.</p>
+<p>Para ilustrar este punto, estudiemos la función <code>lower</code> que está definida dentro del contexto del módulo <code>str</code>. En este módulo es donde se define el tipo que hemos estado usando para las cadenas de caracteres. Usando la función <code>help</code> podemos consultar la documentación de esta función:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span> <span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">)</span>
+<span class="n">Help</span> <span class="n">on</span> <span class="n">method_descriptor</span><span class="p">:</span>
+
+<span class="n">lower</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">/</span><span class="p">)</span>
+    <span class="n">Return</span> <span class="n">a</span> <span class="n">copy</span> <span class="n">of</span> <span class="n">the</span> <span class="n">string</span> <span class="n">converted</span> <span class="n">to</span> <span class="n">lowercase</span><span class="o">.</span>
+</pre></div>
+<p>Lo que esto nos dice es que si invocamos esta función usando como parámetro una cadena de caracteres vamos a recibir como respuesta <em>una copia</em> de la cadena en la cual las letras se habrán pasado todas a minúsculas. Veamos una prueba que nos ayuda a comprobar que esta interpretación es correcta:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="s1">&#39;ABcdEg&#39;</span><span class="p">)</span>
+<span class="s1">&#39;abcdeg&#39;</span>
+</pre></div>
+<p>Sin embargo, la documentación de la función también nos dice que esta función es un método, así que podemos invocarla de una forma un poco diferente que en la mayoría de los casos resulta más conveniente:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;ABcdEg&#39;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="s1">&#39;abcdeg&#39;</span>
+</pre></div>
+<p>Observe como el parámetro de la función pasó a ocupar el lugar frente al caracter <code>.</code>, dejando a la función sin parámetro.</p>
+<p>La pregunta que cabe hacer en este punto es ¿cómo sabe Python que la función está definida dentro del módulo <code>str</code>? La respuesta está en que Python primero va a verificar el tipo del valor <code>'ABcdEg'</code> y como el tipo es <code>str</code> significa que las funciones que se llamen sobre este valor tienen que estar implementadas en el módulo <code>str</code>.</p>
+<p>Hagamos ahora el mismo ejercicio con la función llamada <code>str.zfill</code>:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">)</span>
+<span class="n">Help</span> <span class="n">on</span> <span class="n">method_descriptor</span><span class="p">:</span>
+
+<span class="n">zfill</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="o">/</span><span class="p">)</span>
+    <span class="n">Pad</span> <span class="n">a</span> <span class="n">numeric</span> <span class="n">string</span> <span class="k">with</span> <span class="n">zeros</span> <span class="n">on</span> <span class="n">the</span> <span class="n">left</span><span class="p">,</span> <span class="n">to</span> <span class="n">fill</span> <span class="n">a</span> <span class="n">field</span> <span class="n">of</span> <span class="n">the</span> <span class="n">given</span> <span class="n">width</span><span class="o">.</span>
+
+    <span class="n">The</span> <span class="n">string</span> <span class="ow">is</span> <span class="n">never</span> <span class="n">truncated</span><span class="o">.</span>
+</pre></div>
+<p>La documentación nos dice que esta función le va a agregar ceros a la izquierda a una cadena, hasta lograr una cadena de la longitud indicada. La documentación también nos dice que esta función requiere dos parámetros (<em>self</em> y <em>width</em>). Como es un método, esta función podría llamarse sobre una cadena de la siguiente manera:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;abc&quot;</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="s1">&#39;0000000abc&#39;</span>
+</pre></div>
+<p>Si quisiéramos invocarla de la manera <em>normal</em>, tendríamos que convertir la cadena en el primer parámetro e indicar en qué módulo está definida la función. El resultado sería el siguiente:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="s1">&#39;0000000abc&#39;</span>
+</pre></div>
+<p>En resumen: el módulo <code>str</code> ofrece unas funciones llamadas métodos que implementan una gran cantidad de funcionalidades interesantes para trabajar con cadenas de caracteres. Estas funciones se pueden invocar de dos formas: <strong>como funciones</strong>, usando un llamado de la forma <code>str.funcion(cadena, ...otros parámetros ...)</code>, o <strong>como métodos</strong>, usando un llamado de la forma <code>cadena.metodo(... otros parámetros ...)</code>. De acá en adelante nosotros vamos a usar estas funciones de la segunda forma (como métodos).</p>
+<h3 id="Inmutabilidad">Inmutabilidad<a class="anchor-link" href="#Inmutabilidad"> </a></h3><p>Antes de presentar los métodos más utilizados de <code>str</code> es muy importante hablar de la <em>inmutabilidad</em> de las cadenas de caracteres en Python. Esto significa que cuando Python construye una cadena no puede modificarla para cambiar su contenido. Si queremos hacerle algún cambio a la cadena, lo único que Python puede hacer es construir una nueva cadena con los cambios requeridos.</p>
+<p>Observemos un ejemplo utilizando el método <code>lower</code> que ya estudiamos y los operadores <code>is</code> (comparación de identidad) y <code>==</code> (comparación de igualdad).</p>
+<div class="highlight"><pre><span></span><span class="n">original</span> <span class="o">=</span> <span class="s2">&quot;texto original&quot;</span>
+<span class="n">minusculas</span> <span class="o">=</span> <span class="n">original</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Son iguales:&quot;</span><span class="p">,</span> <span class="n">original</span> <span class="o">==</span> <span class="n">minusculas</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Son el mismo:&quot;</span><span class="p">,</span> <span class="n">original</span> <span class="ow">is</span> <span class="n">minusculas</span><span class="p">)</span>
+</pre></div>
+<p>El resultado de ejecutar este pequeño programa es el siguiente:</p>
+<div class="highlight"><pre><span></span><span class="n">Son</span> <span class="n">iguales</span><span class="p">:</span> <span class="bp">True</span>
+<span class="n">Son</span> <span class="n">el</span> <span class="n">mismo</span><span class="p">:</span> <span class="bp">False</span>
+</pre></div>
+<p>Lo que esto nos muestra es que, como dice la documentación del método, <code>lower()</code> retorna una <em>copia</em> de la cadena en la cual se hayan hecho las modificaciones para que todas las letras sean minúsculas. En el caso de nuestro ejemplo no hubo ninguna modificación (la comparación de igualdad es exitosa) y de todas maneras el método creó una copia de la cadena original.</p>
+<p><strong>Recuerde:</strong> Las cadenas de caracteres en Python son <em>inmutables</em>. Todas las operaciones que se realicen sobre una cadena siempre van a producir una <strong>cadena nueva</strong>.</p>
+<h3 id="M&#233;todos-de-str">M&#233;todos de str<a class="anchor-link" href="#M&#233;todos-de-str"> </a></h3><p>Los siguientes son algunos de los métodos de <code>str</code> que podría necesitar con más frecuencia cuando trabaje con cadenas de caracteres.</p>
+<h4 id="May&#250;sculas-y-min&#250;sculas">May&#250;sculas y min&#250;sculas<a class="anchor-link" href="#May&#250;sculas-y-min&#250;sculas"> </a></h4><table>
+<thead><tr>
+<th>Nombre</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lower</td>
+<td>Remplaza todas las mayúsculas por minúsculas</td>
+<td>"Hola, Mundo!".lower()</td>
+<td>'hola, mundo!'</td>
+<td></td>
+</tr>
+<tr>
+<td>upper</td>
+<td>Remplaza todas las minúsculas por mayúsculas</td>
+<td>"Hola, Mundo!". upper()</td>
+<td>'HOLA, MUNDO!'</td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>Le pone mayúscula inicial a todas las palabras de la cadena</td>
+<td>"Hola, Mundo!". title()</td>
+<td>'Hola, Mundo!'</td>
+<td></td>
+</tr>
+<tr>
+<td>swapcase</td>
+<td>Intercambia mayúsculas por minúsculas y viceversa</td>
+<td>"Hola, Mundo!". swapcase()</td>
+<td>'hOLA, mUNDO!'</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="An&#225;lisis-de-cadenas">An&#225;lisis de cadenas<a class="anchor-link" href="#An&#225;lisis-de-cadenas"> </a></h4><table>
+<thead><tr>
+<th>Nombre</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>find</td>
+<td>Busca la primera posición en la que aparezca la cadena buscada. Si no la encuentra retorna -1.</td>
+<td>"Hola, Mundo!".find('o')</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>rfind</td>
+<td>Busca la primera posición en la que aparezca la cadena buscada, empezando por la derecha. Si no la encuentra retorna -1.</td>
+<td>"Hola, Mundo!".find('o')</td>
+<td>10</td>
+<td></td>
+</tr>
+<tr>
+<td>count</td>
+<td>Cuenta cuántas veces está la cadena indicada en otra cadena. Si no la encuentra se produce un error.</td>
+<td>"Hola, Mundo!".find('o')</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>isnumeric</td>
+<td>Revisa si todos los caracteres de una cadena son números</td>
+<td>"Hola, Mundo!".isnumeric()</td>
+<td>False</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="Manipulaci&#243;n-de-cadenas">Manipulaci&#243;n de cadenas<a class="anchor-link" href="#Manipulaci&#243;n-de-cadenas"> </a></h4><table>
+<thead><tr>
+<th>Nombre</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>replace</td>
+<td>Remplaza algunos elementos de una cadena con otros elementos que llegan como parámetro. El reemplazo puede ser la cadena vacía para eliminar los elementos buscados.</td>
+<td>"Hola, Mundo!".replace('o', '67')</td>
+<td>'H67la, Mund67!'</td>
+<td></td>
+</tr>
+<tr>
+<td>strip</td>
+<td>Elimina espacios y cambios de línea al final de una cadena de caracteres. No elimina ningún elemento que no se encuentre al final de la cadena.</td>
+<td>"Hola, Mundo!   \n".strip()</td>
+<td>'Hola, Mundo!'</td>
+<td></td>
+</tr>
+<tr>
+<td>ljust</td>
+<td>Amplía la cadena hasta el ancho indicado, alinea el contenido a la izquierda y llena el espacio vacío con espacios.</td>
+<td>"Hola, Mundo!".ljust(15)</td>
+<td>'Hola, Mundo!&nbsp;&nbsp;&nbsp;&nbsp;'</td>
+<td></td>
+</tr>
+<tr>
+<td>rjust</td>
+<td>Amplía la cadena hasta el ancho indicado, alinea el contenido a la derecha y llena el espacio vacío con espacios</td>
+<td>"Hola, Mundo!".rjust(15)</td>
+<td>'&nbsp;&nbsp;&nbsp;Hola, Mundo!'</td>
+<td></td>
+</tr>
+<tr>
+<td>center</td>
+<td>Amplía la cadena hasta el ancho indicado y centra el contenido.</td>
+<td>"Hola, Mundo!".center(15)</td>
+<td>'&nbsp;&nbsp;Hola, Mundo!&nbsp;'</td>
+<td></td>
+</tr>
+<tr>
+<td>zfill</td>
+<td>Amplía la cadena hasta el ancho indicado, alinea el contenido a la derecha y llena el espacio vacío con caracteres <code>0</code>.</td>
+<td>"Hola, Mundo!".zfill(15)</td>
+<td>'000Hola, Mundo!'</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="El-resto-de-m&#233;todos">El resto de m&#233;todos<a class="anchor-link" href="#El-resto-de-m&#233;todos"> </a></h4><p>El módulo <code>str</code> ofrece una gran cantidad de métodos adicionales que no vamos a cubrir acá pero que sí están bien descritos en la documentación de Python: <a href="https://docs.python.org/3.6/library/stdtypes.html#string-methods">https://docs.python.org/3.6/library/stdtypes.html#string-methods</a></p>
+<p>Le recomendamos estudiar esa documentación y practicar con todos estos métodos para aprender a utilizarlos y agregarlos a su caja de herramientas de programación.</p>
+<h2 id="Format">Format<a class="anchor-link" href="#Format"> </a></h2><p>Las últimas funcionalidades de las cadenas de caracteres que vamos a estudiar tienen que ver con el método <code>format</code>. Este método es muy poderoso y permite utilizar repetidamente una cadena como plantilla para luego remplazar algunos fragmentos por valor particulares.</p>
+<p>Supongamos que tenemos que hacer un programa que sea capaz de generar las siguientes cadenas:</p>
+
+<pre><code>Un Lamborghini Aventador del 2016 con motor de 6.5 litros es capaz de pasar de 0 a 100 kph en 2.80 segundos
+Un Ferrari Enzo del 2002 con motor de 6.0 litros es capaz de pasar de 0 a 100 kph en 3.60 segundos
+Un Bugatti Veyron 16.4 del 2010 con motor de 8.0 litros es capaz de pasar de 0 a 100 kph en 2.50 segundos
+Un Porsche 911 GT3 del 2011 con motor de 4.0 litros es capaz de pasar de 0 a 100 kph en 3.80 segundos
+Un McLaren P1 del 2013 con motor de 3.8 litros es capaz de pasar de 0 a 100 kph en 2.80 segundos
+Un Pagani Huayra BC del 2017 con motor de 6.0 litros es capaz de pasar de 0 a 100 kph en 3.30 segundos</code></pre>
+<p>Todas estas cadenas tienen la misma estructura que incluye la marca del carro, el nombre del modelo, el año de lanzamiento, el tamaño del motor en litros usando una cifra decimal y el tiempo que necesita para pasar de 0 a 100 kilómetros por hora expresado en segundos con dos cifras decimales.</p>
+<p>Estas cadenas se podrían haber armado usando concatenaciones. Sin embargo, el método <code>format</code> ofrece características para estructurar las cadenas que son muy difíciles de replicar usando sólo concatenaciones.</p>
+<p>Tomemos como ejemplo la plantilla utilizada para generar los mensajes anteriores:</p>
+<div class="highlight"><pre><span></span><span class="n">plantilla</span> <span class="o">=</span> <span class="s2">&quot;Un {0} {1} del {2:d} con motor de {3:.1f} litros es capaz de pasar de 0 a 100 kph en {4:.2f} segundos&quot;</span>
+</pre></div>
+<p>En primer lugar, la plantilla es una cadena de caracteres que tiene marcas rodeadas por los caracteres <code>{</code> y <code>}</code> en los campos donde se tendrán que insertar valores. Aunque no es obligatorio, es recomendable numerar esos campos empezando desde el 0 y llegando, en este caso, hasta el 4.</p>
+<p>Además del número, cada campo también puede tener una especificación de su formato, la cual viene a continuación del caracter <code>:</code>. En nuestro caso, los campos 0 y 1 no tienen ningún formato, así que lo que metamos en esas posiciones se remplazará sin ningún cambio. Para el campo 2 sólo usamos el caracter <code>d</code> para indicar que se trataba de un número entero. Para los campos 3 y 4 especificamos que se trataban de números decimales y además dijimos que nos interesaba tener 1 dígito decimal en el primer caso y 2 dígitos decimales en el segundo. Esto quedó especificado usando los formatos <code>.1f</code> y <code>.2f</code> respectivamente.</p>
+<p>Para usar una plantilla se tiene que invocar el método <code>format</code> utilizando como parámetros los valores que queremos insertar en los campos. En nuestro caso, invocamos la función <code>format</code> con 5 parámetros:</p>
+<div class="highlight"><pre><span></span><span class="n">mensaje</span> <span class="o">=</span> <span class="n">plantilla</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">marca</span><span class="p">,</span> <span class="n">modelo</span><span class="p">,</span> <span class="n">anho</span><span class="p">,</span> <span class="n">cc</span><span class="p">,</span> <span class="n">sec</span><span class="p">)</span>
+</pre></div>
+<p>Acá puede verse la importancia de numerar los campos: el valor marca quedará en el campo marcado con el 0, el valor modelo en el campo marcado con el 1 y así sucesivamente. Esto significa que el orden en el que aparecen los campos en la plantilla no necesariamente es el mismo orden en que se deben pasar los argumentos. También significa que, si hubiéramos marcado dos campos con el mismo número, el valor correspondiente habría aparecido dos veces en el mensaje.</p>
+<p>Estudiemos ahora otros mensajes que tienen un poco más de complicaciones que no son fáciles de solucionar sólo usando concatenación de cadenas:</p>
+
+<pre><code>100 metros     5.3 s @ 126 kph
+500 metros    13.6 s @ 211 kph
+1000 metros   22.0 s @ 249 kph</code></pre>
+<p>Estos nuevos mensajes tienen una característica que no tenían los mensajes anteriores: los campos no están completamente llenos y están alineados a la derecha (columnas 2 y 3) o a la izquierda (columna 1). Analicemos entonces la plantilla que se utilizó en este caso</p>
+<div class="highlight"><pre><span></span><span class="n">plantilla2</span> <span class="o">=</span> <span class="s2">&quot;{0:&lt;14}{1:&gt;4.1f} s @ {2:&gt;3d} kph&quot;</span>
+</pre></div>
+<p>El formato para el primer campo dice <code>&lt;14</code>, lo cual se interpreta como que se debe alinear el contenido a la izquierda y que debe tener 14 caracteres de ancho en total. Si el contenido del campo es más corto que esto, se agregarán tantos espacios como haga falta <em>a la derecha del contenido</em>.</p>
+<p>El formato para el segundo campo dice <code>&gt;4.1f</code>. Como ya sabemos, <code>1.f</code> significa que se tratará de un número con exactamente un decimal. La otra parte, <code>&gt;4</code> indica que el número debe alinearse a la derecha y que debe ocupar, en total, el espacio de 4 caracteres. En este caso como el número está alineado a la derecha los caracteres faltantes se agregan a la <em>izquierda del contenido</em>.</p>
+<p>El formato para el tercer campo es muy similar: se espera un número entero que terminará alineado a la derecha en una columna de 3 caracteres de ancho.</p>
+<p>Finalmente, veamos cómo se generaron las 3 cadenas invocando el método <code>format</code> sobre la plantilla:</p>
+<div class="highlight"><pre><span></span><span class="n">plantilla2</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;100 metros&#39;</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">,</span> <span class="mi">126</span><span class="p">)</span>
+<span class="n">plantilla2</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;500 metros&#39;</span><span class="p">,</span> <span class="mf">13.6</span><span class="p">,</span> <span class="mi">211</span><span class="p">)</span>
+<span class="n">plantilla2</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;1000 metros&#39;</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">249</span><span class="p">)</span>
+</pre></div>
+<p>En resumen, cuando se construye una plantilla para usar con el método <code>format</code> se debe:</p>
+<ol>
+<li>Marcar los campos que se van a remplazar, numerándolos de cero en adelante.</li>
+<li>Para cada campo que se quiera alinear, indicar si la alineación debe ser a la izquierda (&lt;), derecha (&gt;) o el centro (^) y el ancho que debe tener el campo. También se puede especificar el caracter que se debe utilizar para los espacios vacíos (ver documentación).</li>
+<li>Especificar el formato, especialmente si se trata de números decimales.</li>
+</ol>
+<p>Se puede conseguir mucha más información sobre la especificación de plantillas usando el comando <code>help('FORMATTING')</code>. La documentación completa también está disponible en 
+<a href="https://docs.python.org/3.7/library/string.html#format-string-syntax">https://docs.python.org/3.7/library/string.html#format-string-syntax</a></p>
+<h2 id="Ejercicios">Ejercicios<a class="anchor-link" href="#Ejercicios"> </a></h2><ol>
+<li><p>Escriba una función que reciba una cadena de caracteres y una letra. Su función debe retornar la misma cadena que recibió, pero cambiando todas las vocales por la letra que también llegó por parámetro. Por ejemplo, si la cadena original era "Hola, Mundo!" y la letra entregada fue 'I', el resultado debería ser "HIlI, MIndI!".</p>
+</li>
+<li><p>Escriba una función que reciba dos cadenas de caracteres. La función debe retornar 1 si las cadenas son idénticas, 2 si las cadenas sólo se diferencian por las mayúsculas y minúsculas, o 0 de lo contrario.</p>
+</li>
+<li><p>Escriba una función que reciba dos cadenas de caracteres que sólo van a contener letras mayúsculas y minúsculas. La función debe retornar -1 si en un diccionario la primera cadena debería ir antes que la segunda, debe retornar 1 si la segunda cadena debe ir antes que la primera, o 0 si las dos cadenas son la misma (ignorando mayúsculas y minúsculas).</p>
+</li>
+<li><p>Escriba una función que reciba una cadena de caracteres y cuente las palabras que aparecen en la cadena. Usted puede suponer que la cadena tendrá letras (mayúsculas y minúsculas) y espacios, pero no tendrá ningún signo de puntuación ni espacios seguidos.</p>
+</li>
+<li><p>Tres equipos de futbol participaron en un pequeño torneo en que jugaron entre ellos 3 partidos. Escriba una función que reciba el nombre de los tres equipos y los marcadores de los tres partidos, y que retorne una tabla con las posiciones de los equipos al finalizar el torneo. La función recibirá entonces 9 parámetros: primero los nombres de los tres equipos y luego 6 enteros con los marcadores de los 3 partidos. Cada partido ganado entregaba 3 puntos y cada partido empatado entregaba 1 punto. La tabla con el resultado del torneo tiene que ser una cadena de caracteres con la información organizada en columnas bien alineadas. Las columnas deben estar organizadas de la siguiente forma:</p>
+<ul>
+<li>posición, </li>
+<li>nombre del equipo, </li>
+<li>puntos obtenidos, </li>
+<li>partidos jugados, </li>
+<li>partidos ganados, </li>
+<li>partidos empatados, </li>
+<li>partidos perdidos, </li>
+<li>goles a favor, </li>
+<li>goles en contra, </li>
+<li>diferencia de goles</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li>Escriba una función que, dada la altura de un edificio, retorne una cadena como en el siguiente ejemplo: <em>"Un objeto que cae de un edificio de 30 metros tarda 2.47 segundos en llegar al piso y alcanza una velocidad de 24.25 metros por segundo."</em> Su programa debe usar las funciones de formato de cadenas. </li>
+</ol>
+<p><strong>Ayuda:</strong> El tiempo que tarda la caída es igual a la raíz cuadrada de dos veces la altura sobre la aceleración de la gravedad (9.8 m/s<sup>2</sup>). La velocidad que alcanza el objeto es igual al tiempo de la caída multiplicado por la aceleración de la gravedad.</p>
+<ol>
+<li>Escriba una función que dados el nombre de un país, la cantidad de habitantes en millones y el Producto Interno Bruto en millones de USD,  retorne una cadena como en el siguiente ejemplo: "Colombia.................=<strong>***</strong>45 millones<strong>***</strong>=&nbsp;&nbsp;&nbsp;&nbsp;336599 USD Million". La primera columna debe estar alineada a la izquierda, debe tener 25 caracteres y ocupar los espacios vacíos con <code>.</code>; la segunda columna debe estar centrada, tener 25 caracteres y ocupar los espacios vacíos con <code>*</code>; la tercera columna debe estar alineada a la derecha, tener 10 caracteres más el espacio ocupado por <code>USD Million</code> y debe ocupar los espacios vacíos con espacios.</li>
+</ol>
+<h2 id="M&#225;s-all&#225;-de-Python">M&#225;s all&#225; de Python<a class="anchor-link" href="#M&#225;s-all&#225;-de-Python"> </a></h2><p>Las cadenas de caracteres son de muchísima importancia en prácticamente todos los lenguajes de programación, pero hay mucha variedad en los mecanismos para representarlos y manipularlos. Por ejemplo, en lenguajes como C y C++ el uso de cadenas de caracteres no es tan sencillo como en lenguajes más modernos puesto que se construyen sobre tipos más sencillos y requieren de particular cuidado para evitar problemas en la manipulación de la memoria. En lenguajes como Java y Python, estas limitaciones ya no existen y las cadenas se pueden usar con mucha más facilidad, aunque sigue siendo necesario poner mucha atención a ciertos detalles. Por ejemplo, en Java las cadenas de caracteres son objetos que aparentemente son como cualquier objeto otro, pero reciben un tratamiento <em>preferencial</em>: hay expresiones en el lenguaje específicas para trabajar con cadenas y el compilador procesa de forma diferente los objetos de tipo String que se construyan explícitamente dentro de un programa.</p>
+<p>Otro aspecto común en varios lenguajes es el que tiene que ver con la inmutabilidad de las cadenas de caracteres. Así como en Python, en Java y en otros lenguajes las cadenas de caracteres son inmutables: una vez se construyen no pueden cambiar su contenido. Esto se hace por motivos de eficiencia tanto en los cálculos como en el uso de memoria, pero podría llevar a errores si no se tiene en cuenta esta condición.</p>
+<p>En Python las cadenas de caracteres tienen otra propiedad muy interesante y es que son <em>secuencias</em>. Es decir que pueden manipularse igual que como se manipularían listas, diccionarios y otras estructuras de datos básicas del lenguaje. Este aspecto de las cadenas de caracteres se estudiará en el siguiente capítulo.</p>
+<h4 id="Notas">Notas<a class="anchor-link" href="#Notas"> </a></h4><div class="footnotes">
+<hr>
+<ol><li id="fn-querty"><p>QUERTY hace referencia a las primeras 5 letras de la fila de letras superior del teclado.<a href="#fnref-querty" class="footnote">&#8617;</a></p></li>
+<li id="fn-error"><p>Si usted no puede ver alguno de estos caracteres, significa que el encoding ISO-8859-1 no está soportado o no está activo en su navegador, en el visor que esté utilizando para leer el texto, o en su computador.<a href="#fnref-error" class="footnote">&#8617;</a></p></li>
+<li id="fn-utf"><p>Esta última parte puede ser un poco complicada de entender. pero no es crítico que entienda todos los detalles: UNICODE define cuáles son los caracteres, cómo deberían verse y qué número le corresponde a cada uno. UTF-8 define cómo se deben representar los caracteres UNICODE usando números binarios de 8, 16, 24 o 32 bits. UTF-16 define cómo representar esos caracteres usando 16 o 32 bits.<a href="#fnref-utf" class="footnote">&#8617;</a></p></li>
+<li id="fn-oo"><p>Siendo más precisos, <code>str</code> es en Python una <em>clase</em> y las clases definen un espacio de nombres dentro de los que están definidas un conjunto de funciones que son llamados métodos. Como se anunció en la introducción, en este libro no se tratará el tema de la programación orientada a objetos, así que no ahondaremos en el tema de la definición de clases y métodos. Sin embargo, para construir efectivamente programas Python, es necesario saber que existen librerías básicas basadas en clases, como el caso de <code>str</code>, y es necesario ser capaz de utilizar los métodos implementados en esas librerías.<a href="#fnref-oo" class="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
