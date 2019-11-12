@@ -1,9 +1,9 @@
 
 # Qué significa y qué se necesita para programar
 
-Programar es la acción de escribir un conjunto *instrucciones* (un *programa* )para que un computador las ejecute. Por ejemplo, el siguiente es el primer programa que la mayoría de programadores escribe:
+**Programar** es la acción de escribir un conjunto *instrucciones* (un *programa*) para que un computador las ejecute. Por ejemplo, el siguiente es el primer programa que la mayoría de programadores escribe:
 
-```python
+```python 
 print('Hola, mundo!')
 ```
 
