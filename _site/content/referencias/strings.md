@@ -1,0 +1,6 @@
+# Cadenas de caracteres
+
+## Métodos
+
+
+

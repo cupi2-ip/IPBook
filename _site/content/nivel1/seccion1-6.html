@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+  <title>Introducción a la Programación</title>
+  <meta name="description" content="Versión borrador / preliminar |-------------------|Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene...">
+
+  <link rel="canonical" href="http://0.0.0.0:4000//content/nivel1/seccion1-6.html">
+  <link rel="alternate" type="application/rss+xml" title="Introducción a la Programación" href="http://0.0.0.0:4000//feed.xml">
+
+  <meta property="og:url"         content="http://0.0.0.0:4000//content/nivel1/seccion1-6.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Introducción a la Programación" />
+<meta property="og:description" content="Versión borrador / preliminar |-------------------|Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene..." />
+<meta property="og:image"       content="http://0.0.0.0:4000/images/logo/uniandes_logo.jpeg" />
+
+<meta name="twitter:card" content="summary">
+
+
+  <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": "http://0.0.0.0:4000//content/nivel1/seccion1-6.html",
+  "headline": "Introducción a la Programación",
+  "datePublished": "2019-11-11T19:40:42-06:00",
+  "dateModified": "2019-11-11T19:40:42-06:00",
+  "description": "Versión borrador / preliminar |-------------------|Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene...",
+  "author": {
+    "@type": "Person",
+    "name": "YOUR AUTHOR NAME"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Data 100 at UC Berkeley",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://0.0.0.0:4000/",
+      "width": 60,
+      "height": 60
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "http://0.0.0.0:4000/",
+    "height": 60,
+    "width": 60
+  }
+}
+
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#efae0a"> -->
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#233947">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/images/logo/favicon.ico">
+
+  <!-- MathJax Config -->
+  <!-- Allow inline math using $ and automatically break long math lines -->
+<!-- (mostly) copied from nbconvert configuration -->
+<!-- https://github.com/jupyter/nbconvert/blob/master/nbconvert/templates/html/mathjax.tpl -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true },
+    }
+});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML' async></script>
+
+
+  <!-- DOM updating function -->
+  <script src="/assets/js/page/dom-update.js"></script>
+
+  <!-- Selectors for elements on the page -->
+  <script src="/assets/js/page/documentSelectors.js"></script>
+
+  <!-- Define some javascript variables that will be useful in other javascript -->
+  <script>
+    const site_basename = '/';
+  </script>
+
+  <!-- Add AnchorJS to let headers be linked -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js" async></script>
+  <script src="/assets/js/page/anchors.js" async></script>
+
+  <!-- Include Turbolinks to make page loads fast -->
+  <!-- https://github.com/turbolinks/turbolinks -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" async></script>
+  <meta name="turbolinks-cache-control" content="no-cache">
+
+  <!-- Load nbinteract for widgets -->
+  
+
+  <!-- Load Thebelab for interactive widgets -->
+  <!-- Include Thebelab for interactive code if it's enabled -->
+
+
+<!-- Display Thebelab button in each code cell -->
+<script>
+/**
+ * Set up thebelab button for code blocks
+ */
+
+const thebelabCellButton = id =>
+  `<a id="thebelab-cell-button-${id}" class="btn thebebtn o-tooltip--left" data-tooltip="Interactive Mode">
+    <img src="/assets/images/edit-button.svg" alt="Start thebelab interactive mode">
+  </a>`
+
+
+const addThebelabButtonToCodeCells =  () => {
+
+  const codeCells = document.querySelectorAll('div.input_area > div.highlight:not(.output) pre')
+  codeCells.forEach((codeCell, index) => {
+    const id = codeCellId(index)
+    codeCell.setAttribute('id', id)
+    if (document.getElementById("thebelab-cell-button-" + id) == null) {
+      codeCell.insertAdjacentHTML('afterend', thebelabCellButton(id));
+    }
+  })
+}
+
+initFunction(addThebelabButtonToCodeCells);
+</script>
+
+
+
+<script type="text/x-thebe-config">
+    {
+      requestKernel: true,
+      binderOptions: {
+        repo: 'cupi2-ip/IPBook',
+        ref: 'master',
+      },
+      codeMirrorConfig: {
+        theme: "abcdef"
+      },
+      kernelOptions: {
+        name: 'python3',
+      }
+    }
+</script>
+<script src="https://unpkg.com/thebelab@0.4.0/lib/index.js" async></script>
+<script>
+    /**
+     * Add attributes to Thebelab blocks
+     */
+
+    const initThebelab = () => {
+        const addThebelabToCodeCells = () => {
+            console.log("Adding thebelab to code cells...");
+            // If Thebelab hasn't loaded, wait a bit and try again. This
+            // happens because we load ClipboardJS asynchronously.
+            if (window.thebelab === undefined) {
+                setTimeout(addThebelabToCodeCells, 250)
+            return
+            }
+
+            // If we already detect a Thebelab cell, don't re-run
+            if (document.querySelectorAll('div.thebelab-cell').length > 0) {
+                return;
+            }
+
+            // Find all code cells, replace with Thebelab interactive code cells
+            const codeCells = document.querySelectorAll('.input_area pre')
+            codeCells.forEach((codeCell, index) => {
+                const id = codeCellId(index)
+                codeCell.setAttribute('data-executable', 'true')
+
+                // Figure out the language it uses and add this too
+                var parentDiv = codeCell.parentElement.parentElement;
+                var arrayLength = parentDiv.classList.length;
+                for (var ii = 0; ii < arrayLength; ii++) {
+                    var parts = parentDiv.classList[ii].split('language-');
+                    if (parts.length === 2) {
+                        // If found, assign dataLanguage and break the loop
+                        var dataLanguage = parts[1];
+                        break;
+                    }
+                }
+                codeCell.setAttribute('data-language', dataLanguage)
+
+                // If the code cell is hidden, show it
+                var inputCheckbox = document.querySelector(`input#hidebtn${codeCell.id}`);
+                if (inputCheckbox !== null) {
+                    setCodeCellVisibility(inputCheckbox, 'visible');
+                }
+            });
+
+            // Remove the event listener from the page so keyboard press doesn't
+            // Change page
+            document.removeEventListener('keydown', initPageNav)
+            keyboardListener = false;
+
+            // Init thebelab
+            thebelab.bootstrap();
+
+            // Remove copy buttons since they won't work anymore
+            const copyAndThebeButtons = document.querySelectorAll('.copybtn, .thebebtn')
+            copyAndThebeButtons.forEach((button, index) => {
+                button.remove();
+            });
+
+            // Remove outputs since they'll be stale
+            const outputs = document.querySelectorAll('.output *, .output')
+            outputs.forEach((output, index) => {
+                output.remove();
+            });
+
+            // Find any cells with an initialization tag and ask ThebeLab to run them when ready
+            var thebeInitCells = document.querySelectorAll('div.tag_thebelab-init');
+            thebeInitCells.forEach((cell) => {
+                console.log("Initializing ThebeLab with cell: " + cell.id);
+                cell.querySelector('.thebelab-run-button').click();
+            });
+        }
+
+        // Add event listener for the function to modify code cells
+        const thebelabButtons = document.querySelectorAll('[id^=thebelab], [id$=thebelab]')
+        thebelabButtons.forEach((thebelabButton,index) => {
+            if (thebelabButton === null) {
+                setTimeout(initThebelab, 250)
+                return
+            };
+            thebelabButton.addEventListener('click', addThebelabToCodeCells);
+        });
+    }
+
+    // Initialize Thebelab
+    initFunction(initThebelab);
+</script>
+
+
+
+  <!-- Load the auto-generating TOC (non-async otherwise the TOC won't load w/ turbolinks) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js" async></script>
+  <script src="/assets/js/page/tocbot.js"></script>
+
+  <!-- Google analytics -->
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+  <!-- Clipboard copy button -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" async></script>
+
+  <!-- Load custom website scripts -->
+  <script src="/assets/js/scripts.js" async></script>
+
+  <!-- Load custom user CSS and JS  -->
+  <script src="/assets/custom/custom.js" async></script>
+  <link rel="stylesheet" href="/assets/custom/custom.css">
+
+  <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
+  
+<script>
+/**
+  * To auto-embed hub URLs in interact links if given in a RESTful fashion
+ */
+
+function getJsonFromUrl(url) {
+  var query = url.split('?');
+  if (query.length < 2) {
+    // No queries so just return false
+    return false;
+  }
+  query = query[1];
+  // Collect REST params into a dictionary
+  var result = {};
+  query.split("&").forEach(function(part) {
+    var item = part.split("=");
+    result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+}
+    
+function dict2param(dict) {
+    params = Object.keys(dict).map(function(k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(dict[k])
+    });
+    return params.join('&')
+}
+
+// Parse a Binder URL, converting it to the string needed for JupyterHub
+function binder2Jupyterhub(url) {
+  newUrl = {};
+  parts = url.split('v2/gh/')[1];
+  // Grab the base repo information
+  repoinfo = parts.split('?')[0];
+  var [org, repo, ref] = repoinfo.split('/');
+  newUrl['repo'] = ['https://github.com', org, repo].join('/');
+  newUrl['branch'] = ref
+  // Grab extra parameters passed
+  params = getJsonFromUrl(url);
+  if (params['filepath'] !== undefined) {
+    newUrl['subPath'] = params['filepath']
+  }
+  return dict2param(newUrl);
+}
+
+// Filter out potentially unsafe characters to prevent xss
+function safeUrl(url)
+{
+   return String(encodeURIComponent(url))
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+}
+
+function addParamToInternalLinks(hub) {
+  var links = document.querySelectorAll("a").forEach(function(link) {
+    var href = link.href;
+    // If the link is an internal link...
+    if (href.search("http://0.0.0.0:4000") !== -1 || href.startsWith('/') || href.search("127.0.0.1:") !== -1) {
+      // Assume we're an internal link, add the hub param to it
+      var params = getJsonFromUrl(href);
+      if (params !== false) {
+        // We have REST params, so append a new one
+        params['jupyterhub'] = hub;
+      } else {
+        // Create the REST params
+        params = {'jupyterhub': hub};
+      }
+      // Update the link
+      var newHref = href.split('?')[0] + '?' + dict2param(params);
+      link.setAttribute('href', decodeURIComponent(newHref));
+    }
+  });
+  return false;
+}
+
+
+// Update interact links
+function updateInteractLink() {
+    // hack to make this work since it expects a ? in the URL
+    rest = getJsonFromUrl("?" + location.search.substr(1));
+    jupyterHubUrl = rest['jupyterhub'];
+    var hubType = null;
+    var hubUrl = null;
+    if (jupyterHubUrl !== undefined) {
+      hubType = 'jupyterhub';
+      hubUrl = jupyterHubUrl;
+    }
+
+    if (hubType !== null) {
+      // Sanitize the hubUrl
+      hubUrl = safeUrl(hubUrl);
+
+      // Add HTTP text if omitted
+      if (hubUrl.indexOf('http') < 0) {hubUrl = 'http://' + hubUrl;}
+      var interactButtons = document.querySelectorAll("button.interact-button")
+      var lastButton = interactButtons[interactButtons.length-1];
+      var link = lastButton.parentElement;
+
+      // If we've already run this, skip the link updating
+      if (link.nextElementSibling !== null) {
+        return;
+      }
+
+      // Update the link and add context div
+      var href = link.getAttribute('href');
+      if (lastButton.id === 'interact-button-binder') {
+        // If binder links exist, we need to re-work them for jupyterhub
+        if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+          // If localhost, assume we're working from a local Jupyter server and remove `/hub`
+          first = [hubUrl, 'git-sync'].join('/')
+        } else {
+          first = [hubUrl, 'hub', 'user-redirect', 'git-sync'].join('/')
+        }
+        href = first + '?' + binder2Jupyterhub(href);
+      } else {
+        // If interact button isn't binderhub, assume it's jupyterhub
+        // If JupyterHub links, we only need to replace the hub url
+        href = href.replace("", hubUrl);
+        if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+          // Assume we're working from a local Jupyter server and remove `/hub`
+          href = href.replace("/hub/user-redirect", "");
+        }
+      }
+      link.setAttribute('href', decodeURIComponent(href));
+
+      // Add text after interact link saying where we're launching
+      hubUrlNoHttp = decodeURIComponent(hubUrl).replace('http://', '').replace('https://', '');
+      link.insertAdjacentHTML('afterend', '<div class="interact-context">on ' + hubUrlNoHttp + '</div>');
+
+      // Update internal links so we retain the hub url
+      addParamToInternalLinks(hubUrl);
+    }
+}
+
+runWhenDOMLoaded(updateInteractLink)
+document.addEventListener('turbolinks:load', updateInteractLink)
+</script>
+
+
+  <!-- Lunr search code - will only be executed on the /search page -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js" async></script>
+  <script>var initQuery = function() {
+  // See if we have a search box
+  var searchInput = document.querySelector('input#lunr_search');
+  if (searchInput === null) {
+    return;
+  }
+
+  // Function to parse our lunr cache
+  var idx = lunr(function () {
+    this.field('title')
+    this.field('excerpt')
+    this.field('categories')
+    this.field('tags')
+    this.ref('id')
+
+    this.pipeline.remove(lunr.trimmer)
+
+    for (var item in store) {
+      this.add({
+        title: store[item].title,
+        excerpt: store[item].excerpt,
+        categories: store[item].categories,
+        tags: store[item].tags,
+        id: item
+      })
+    }
+  });
+
+  // Run search upon keyup
+  searchInput.addEventListener('keyup', function () {
+    var resultdiv = document.querySelector('#results');
+    var query = document.querySelector("input#lunr_search").value.toLowerCase();
+    var result =
+      idx.query(function (q) {
+        query.split(lunr.tokenizer.separator).forEach(function (term) {
+          q.term(term, { boost: 100 })
+          if(query.lastIndexOf(" ") != query.length-1){
+            q.term(term, {  usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 })
+          }
+          if (term != ""){
+            q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
+          }
+        })
+      });
+
+      // Empty the results div
+      while (resultdiv.firstChild) {
+        resultdiv.removeChild(resultdiv.firstChild);
+      }
+
+    resultdiv.insertAdjacentHTML('afterbegin', '<p class="results__found">'+result.length+' Result(s) found</p>');
+    for (var item in result) {
+      var ref = result[item].ref;
+      if(store[ref].teaser){
+        var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<div class="archive__item-teaser">'+
+                '<img src="'+store[ref].teaser+'" alt="">'+
+              '</div>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      else{
+    	  var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      resultdiv.insertAdjacentHTML('beforeend', searchitem);
+    }
+  });
+};
+
+initFunction(initQuery);
+</script>
+
+  <!-- Load JS that depends on site variables -->
+  <script src="/assets/js/page/copy-button.js" async></script>
+
+  <!-- Hide cell code -->
+  <script src="/assets/js/page/hide-cell.js" async></script>
+
+  <!-- Printing the screen -->
+  <!-- Include nbinteract for interactive widgets -->
+<script src="https://printjs-4de6.kxcdn.com/print.min.js" async></script>
+<script>
+printContent = () => {
+    // MathJax displays a second version of any math for assistive devices etc.
+    // This prevents double-rendering in the PDF output.
+    var ignoreAssistList = [];
+    assistives = document.querySelectorAll('.MathJax_Display span.MJX_Assistive_MathML').forEach((element, index) => {
+        var thisId = 'MathJax-assistive-' + index.toString();
+        element.setAttribute('id', thisId);
+        ignoreAssistList.push(thisId)
+    });
+
+    // Print the actual content object
+    printJS({
+        printable: 'textbook_content',
+        type: 'html',
+        css: "/assets/css/styles.css",
+        style: "#textbook_content {padding-top: 40px};",
+        scanStyles: false,
+        targetStyles: ["*"],
+        ignoreElements: ignoreAssistList,
+        documentTitle: "Made with Jupyter Book"
+    })
+};
+
+initPrint = () => {
+    document.querySelector('#interact-button-print').addEventListener('click', printContent)
+}
+
+initFunction(initPrint)
+</script>
+
+</head>
+
+  <body>
+    <!-- .js-show-sidebar shows sidebar by default -->
+    <div id="js-textbook" class="c-textbook js-show-sidebar">
+      
+
+
+
+<nav id="js-sidebar" class="c-textbook__sidebar">
+  <a href="https://uniandes.edu.co/"><img src="/images/logo/uniandes_logo.jpeg" class="textbook_logo" id="sidebar-logo" alt="textbook logo" data-turbolinks-permanent/></a>
+  <h2 class="c-sidebar__title">Introducción a la Programación</h2>
+  <ul class="c-sidebar__chapters">
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/intro.html"
+        >
+          
+          Inicio
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/introduccion/intro.html"
+        >
+          
+          Introducción
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/introduccion/practicas.html"
+                >
+                  
+                  Prácticas fundamentales
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/introduccion/acerca.html"
+                >
+                  
+                  Sobre este libro
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/introduccion/estructura.html"
+                >
+                  
+                  Estructura del libro
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/introduccion/imagenes.html"
+                >
+                  
+                  Créditos de las imágenes
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/nivel1/intro.html"
+        >
+          
+            1.
+          
+          Nivel 1
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections ">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel1/seccion1-1.html"
+                >
+                  
+                    1.1
+                  
+                  Un programa para leer
+                </a>
+
+                
+                
+                  
+                  
+
+                  <li class="c-sidebar__subsection">
+                    <a class="c-sidebar__entry "
+                      href="/nivel1/ejercicio_inicial.html"
+                    >
+                      
+                      Experimentos
+                    </a>
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel1/seccion1-2.html"
+                >
+                  
+                    1.2
+                  
+                  Ambiente básico de trabajo
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel1/seccion1-3.html"
+                >
+                  
+                    1.3
+                  
+                  Valores y tipos de datos
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel1/seccion1-4.html"
+                >
+                  
+                    1.4
+                  
+                  Variables, expresiones y operadores
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel1/seccion1-5.html"
+                >
+                  
+                    1.5
+                  
+                  Funciones
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry c-sidebar__entry--active"
+                  href="/nivel1/seccion1-6.html"
+                >
+                  
+                    1.6
+                  
+                  Definición de funciones
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel1/seccion1-7.html"
+                >
+                  
+                    1.7
+                  
+                  Un programa para leer (2)
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel1/seccion1-8.html"
+                >
+                  
+                    1.8
+                  
+                  Lógica vs. Interacción
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/nivel2/intro.html"
+        >
+          
+            2.
+          
+          Nivel 2
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel2/seccion2-1.html"
+                >
+                  
+                    2.1
+                  
+                  Un programa para leer
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel2/seccion2-2.html"
+                >
+                  
+                    2.2
+                  
+                  Lógica y valores de verdad
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel2/seccion2-3.html"
+                >
+                  
+                    2.3
+                  
+                  Valores de verdad en Python
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel2/seccion2-4.html"
+                >
+                  
+                    2.4
+                  
+                  Instrucciones condicionales
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel2/seccion2-5.html"
+                >
+                  
+                    2.5
+                  
+                  Cadenas de caracteres
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel2/seccion2-6.html"
+                >
+                  
+                    2.6
+                  
+                  Módulos de la librería estándar
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+  </ul>
+  <p class="sidebar_footer">Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a></p>
+</nav>
+
+      
+      <div class="c-topbar" id="top-navbar">
+  <!-- We show the sidebar by default so we use .is-active -->
+  <div class="c-topbar__buttons">
+    <button
+      id="js-sidebar-toggle"
+      class="hamburger hamburger--arrowalt is-active"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <div class="buttons">
+<div class="download-buttons-dropdown">
+    <button id="dropdown-button-trigger" class="interact-button"><img src="/assets/images/download-solid.svg" alt="Download" /></button>
+    <div class="download-buttons">
+        
+        <a id="interact-button-print"><button id="interact-button-download" class="interact-button">.pdf</button></a>
+    </div>
+</div>
+
+
+</div>
+
+  </div>
+  <!-- Empty sidebar placeholder that we'll auto-fill with javascript -->
+  <aside class="sidebar__right">
+    <header><h4 class="nav__title"><img src="/assets/images/list-solid.svg" alt="Search" />   On this page</h4></header>
+    <nav class="onthispage">
+    </nav>
+  </aside>
+  <a href="/search.html" class="topbar-right-button" id="search-button">
+    <img src="/assets/images/search-solid.svg" alt="Search" />
+  </a>
+</div>
+
+      <main class="c-textbook__page" tabindex="-1">
+            <div class="c-textbook__content" id="textbook_content">
+              <table>
+  <thead>
+    <tr>
+      <th>Versión borrador / preliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="definición-de-funciones">Definición de funciones</h1>
+
+<h2 id="antes-de-empezar-archivos-py">Antes de empezar: archivos .py</h2>
+
+<p>Hasta el momento sólo hemos trabajado con pequeños programas que se pueden ejecutar y probar fácilmente en el REPL. A partir de este momento vamos a construir programas mucho más grandes que esperaríamos ejecutar varias veces.</p>
+
+<p>En Python existe un concepto llamado <em>módulo</em>, que no es más que un archivo con definiciones de funciones e instrucciones adicionales. El nombre del archivo tiene que ser de la forma <code class="highlighter-rouge">nombre_modulo.py</code>, y todas las funciones que se definan dentro del archivo se considerarán parte del módulo.</p>
+
+<p>La forma más usual para ejecutar un módulo es utilizar la línea de comandos e invocar el programa Python con el nombre del archivo. Por ejemplo, para ejecutar el módulo definido en el archivo <code class="highlighter-rouge">hola_mundo.py</code> es necesario usar la siguiente instrucción en la línea de comandos:</p>
+
+<p><code class="highlighter-rouge">python hola_mundo.py</code>.</p>
+
+<p>Los módulos también se pueden ejecutar desde los IDEs, usando la funcionalidad que cada uno tiene para ello. En el caso de Spyder, lo que se tiene que hacer es ubicar el cursor sobre el archivo que contiene nuestro módulo, y presionar la tecla <strong>F9</strong>: veremos entonces el resultado de la ejecución en la ventana de la consola. También es posible ejecutar un módulo haciendo clic en el botón con un triángulo verde que se encuentra en la parte superior.</p>
+
+<p>Finalmente, veamos que ejecutar un programa es exactamente lo mismo que ejecutar un módulo. Lo único que se debe notar es que usualmente un programa involucra varios módulos y que para ejecutar el programa se debe saber cuál es el módulo que se debe usar para iniciar el programa.</p>
+
+<h2 id="un-ejemplo-completo">Un ejemplo completo</h2>
+
+<p>En la sección anterior definimos el concepto de función y lo ilustramos con varias funciones básicas del lenguaje Python. Como parte de esto, también se mostraron varios ejemplos de invocaciones a estas funciones y se presentaron las principales reglas para la evaluación de funciones. Esta sección completa la discusión sobre funciones en Python explicando cómo se pueden definir nuevas funciones.</p>
+
+<p>Para empezar, presentamos un programa completo que al final de esta sección usted debería ser capaz de explicar y reconstruir. Léalo con cuidado, teniendo en que cuenta que cuando se habla de “una casa” se hace referencia a un dibujo como el siguiente:</p>
+
+<p><img src="/content/nivel1/images/casita.png" alt="" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Este programa está en el archivo casa.py</span>
+
+<span class="k">def</span> <span class="nf">area_cuadrado</span><span class="p">(</span><span class="n">lado</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="s">"""
+       Calcula el área de un cuadrado dada la medida de su lado
+    """</span>
+    <span class="k">return</span> <span class="n">lado</span> <span class="o">*</span> <span class="n">lado</span>
+
+
+<span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">altura</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="s">"""
+        Calcula el área de un triángulo dada la medida de la base y de la altura.
+    """</span>   
+    <span class="k">return</span> <span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">altura</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+
+<span class="k">def</span> <span class="nf">area_casa</span><span class="p">(</span><span class="n">frente</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">techo</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="s">"""
+        Calcula el área del dibujo de una casa que se forma con un cuadrado
+        y un triángulo encima (el techo).
+        El frente de la casa será igual al lado del cuadrado y a la base del triángulo.
+        La altura del techo será la altura del triángulo.
+    """</span>
+    <span class="n">cuadrado</span> <span class="o">=</span> <span class="n">area_cuadrado</span><span class="p">(</span><span class="n">frente</span><span class="p">)</span>
+    <span class="n">triangulo</span> <span class="o">=</span> <span class="n">area_triangulo</span><span class="p">(</span><span class="n">frente</span><span class="p">,</span> <span class="n">techo</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cuadrado</span> <span class="o">+</span> <span class="n">triangulo</span>
+    
+<span class="n">medida_frente</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">medida_techo</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">area_casa</span><span class="p">(</span><span class="n">medida_frente</span><span class="p">,</span> <span class="n">medida_techo</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"El área de una casa con"</span><span class="p">,</span> <span class="n">medida_frente</span><span class="p">,</span> <span class="s">"metros de frente y un techo de"</span><span class="p">,</span>
+       <span class="n">medida_techo</span><span class="p">,</span> <span class="s">"metros de alto es "</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">resultado</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s">"metros"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Como siempre, no se preocupe si hay cosas en el programa anterior que no haya entendido: todo se irá aclarando a lo largo de la sección.</p>
+
+<h2 id="definición-de-funciones-en-python">Definición de funciones en Python</h2>
+
+<p>En la sección anterior vimos que Python incluye varias funciones que nosotros podemos utilizar aunque no sepamos cuáles sean exactamente las instrucciones que ejecuta cada una. Lo que conocemos nosotros de esas funciones es lo que llamamos <em>signatura</em>, la cual incluye el nombre, los parámetros que espera y su retorno. Lo que desconocemos es el <em>cuerpo</em> o <em>implementación</em> de las funciones, es decir las instrucciones que hacen que la función cumpla con lo que se espera de ella.</p>
+
+<h3 id="la-signatura-de-una-función">La signatura de una función</h3>
+
+<p>La signatura de una función puede verse como la especificación de las reglas para utilizar la función y está compuesta por tres cosas:</p>
+
+<ol>
+  <li>
+    <p><strong>El nombre</strong>. Este debería ser un nombre claro y fácil de recordar. Además, no debería estar repetido para que no haya ambigüedad cuando se quiera invocar a la función.</p>
+  </li>
+  <li>
+    <p><strong>Los parámetros</strong>. Estos son los valores que se le tienen que pasar a la función cuando se quiera invocar. Pueden verse como la información que tiene que proporcionar quien llame a la función para que se pueda cumplir con su objetivo. Una función puede tener uno o varios parámetros.</p>
+  </li>
+  <li>
+    <p><strong>El resultado</strong>. En tercer lugar, tenemos información sobre el resultado de la función que nos dice si será un número, una cadena de caracteres o cualquier otra cosa.</p>
+  </li>
+</ol>
+
+<p>Volvamos ahora al ejemplo para identificar estos elementos:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">area_cuadrado</span><span class="p">(</span><span class="n">lado</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="s">"""
+       Calcula el área de un cuadrado dada la medida de su lado
+    """</span>
+    <span class="k">return</span> <span class="n">lado</span> <span class="o">*</span> <span class="n">lado</span>
+</code></pre></div></div>
+
+<p>En este ejemplo, se está definiendo una función y se ha incluido tanto la signatura como el cuerpo. Por ahora vamos a analizar sólo la signatura, que en este caso corresponde a la primera línea del ejemplo.</p>
+
+<p>Lo primero que nos encontramos es la palabra reservada<sup id="fnref:reservada"><a href="#fn:reservada" class="footnote">1</a></sup> de Python <code class="highlighter-rouge">def</code> que nos marca el inicio de la definición de una función. La signatura de la función va hasta los dos puntos (<code class="highlighter-rouge">:</code>) que se encuentran al final de la línea.</p>
+
+<p>Después de la palabra <code class="highlighter-rouge">def</code>, viene el nombre que le queremos dar a la función. En este caso escogimos <code class="highlighter-rouge">area_cuadrado</code> para expresar claramente su objetivo: será una función para calcular el área de un cuadrado. Como los nombres de las funciones no pueden tener espacios, hemos separado las dos palabras usando el símbolo <code class="highlighter-rouge">_</code><sup id="fnref:estilo"><a href="#fn:estilo" class="footnote">2</a></sup>.</p>
+
+<p>El siguiente punto es la definición de los parámetros de la función, así que deberíamos hacernos la pregunta: ¿si queremos calcular el área de un cuadrado, qué información requerimos para poder hacer el cálculo? En este caso la respuesta es que sólo necesitamos la medida del lado del cuadrado. Es decir que necesitamos un parámetro en la función y que ese parámetro debería representar la longitud del lado del cuadrado.</p>
+
+<p>En nuestro ejemplo, el parámetro está especificado en la parte que dice <code class="highlighter-rouge">lado: int</code>. Esto significa que la función esperará un solo parámetro, que nos vamos a referir a ese parámetro como <code class="highlighter-rouge">lado</code>, y que ese parámetro debería ser un número entero (<code class="highlighter-rouge">int</code>). Los parámetros siempre se especifican dentro de un par de paréntesis.</p>
+
+<p>Finalmente encontramos la especificación del resultado de la función. En nuestro ejemplo, la signatura especifica que su resultado será un número entero con el fragmento que dice <code class="highlighter-rouge">-&gt; int</code>.</p>
+
+<p>En resumen: la signatura de una función especifica cómo se debería invocar la función y qué se debería esperar como resultado. En nuestro caso de ejemplo, la función se invocará con el nombre <code class="highlighter-rouge">area_cuadrado</code>, requerirá que se use un parámetro de tipo <code class="highlighter-rouge">int</code> y generará como resultado otro número entero (<code class="highlighter-rouge">int</code>).</p>
+
+<h4 id="un-segundo-ejemplo">Un segundo ejemplo</h4>
+
+<p>Analicemos ahora la segunda función de nuestro ejemplo:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">altura</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="s">"""
+        Calcula el área de un triángulo dada la medida de la base y de la altura.
+    """</span>   
+    <span class="k">return</span> <span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">altura</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+</code></pre></div></div>
+
+<p>¿Qué nos dice la signatura con respecto a la función?</p>
+
+<ul>
+  <li>¿Cómo se llama la función?</li>
+  <li>¿Cuántos parámetros se requieren para su invocación?</li>
+  <li>¿De qué tipo son los parámetros?</li>
+  <li>¿De qué tipo será el resultado de la función?</li>
+</ul>
+
+<p>Lo único diferente con respecto al primer ejemplo es que tenemos dos parámetros en lugar de uno y que esos dos parámetros se separaron utilizando una coma.</p>
+
+<p><strong>Actividades:</strong></p>
+
+<ol>
+  <li>Escriba la signatura de una función que sirva para calcular el área de un círculo dado su radio.</li>
+  <li>Escriba la signatura de una función que sirva para calcular la velocidad final de un objeto que tiene una velocidad inicial y acelera a una tasa constante durante una cierta cantidad de tiempo.</li>
+</ol>
+
+<h3 id="el-cuerpo-de-una-función">El cuerpo de una función</h3>
+
+<p>Pasamos ahora a estudiar el cuerpo de la primera función y lo primero que debemos notar es que todo el cuerpo está <strong>indentado</strong>. Esto quiere decir, que todo lo que hace parte del cuerpo de la función está escrito con un margen hacia la derecha. En este ejemplo particular el margen se ha creado usando 4 caracteres en blanco, lo cual corresponde a las buenas prácticas recomendadas de la comunidad Python.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">area_cuadrado</span><span class="p">(</span><span class="n">lado</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="s">"""
+       Calcula el área de un cuadrado dada la medida de su lado
+    """</span>
+    <span class="k">return</span> <span class="n">lado</span> <span class="o">*</span> <span class="n">lado</span>
+</code></pre></div></div>
+
+<p><strong>Cuidado</strong>: La indentación no es opcional en Python, sino obligatoria. El cuerpo de todas las funciones tiene que estar indentado y el margen utilizado debe ser consistente: si una línea usa un cierto margen y la siguiente tiene más o menos caracteres, se producirá un error. La recomendación en este libro será siempre utilizar 4 caracteres en blanco para la indentación.</p>
+
+<p>Las primeras líneas del cuerpo de esta función nos muestran otra forma de introducir comentarios en un programa, esta vez asociados a una función. En Python, si la primera línea del cuerpo de una función inicia con una cadena de caracteres, esa cadena se convertirá en la documentación asociada a la función y aparecerá cuando alguien llame a la función <code class="highlighter-rouge">help</code> usando el nombre de nuestra función.</p>
+
+<p>En general, siempre debería incluirse documentación en las funciones, por más sencillas y evidentes que sean. En este ejemplo se ha incluido sólo una documentación breve para la función <code class="highlighter-rouge">area_cuadrado</code>, pero para casos más complejos habría sido conveniente documentar también los parámetros y el retorno de la función. Más adelante estudiaremos algunas buenas prácticas para completar la documentación de las funciones.</p>
+
+<p>Además de la documentación, el cuerpo de la función <code class="highlighter-rouge">area_cuadrado</code> sólo tiene una instrucción:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">return</span> <span class="n">lado</span> <span class="o">*</span> <span class="n">lado</span>
+</code></pre></div></div>
+
+<p>La interpretación de esta instrucción es muy sencilla: cuando se ejecute esta instrucción, la función deberá <em>retornar</em> el valor de la expresión <code class="highlighter-rouge">lado * lado</code>. En el contexto de la ejecución de una función, retornar hace referencia a responderle con un valor a quien haya invocado la función. Esto quiere decir que cuando se llega a una instrucción <code class="highlighter-rouge">return</code>, la ejecución de la función termina y se responde con un valor de acuerdo a lo especificado en la signatura de la función.</p>
+
+<p>Ahora bien, antes de retornar un valor, es necesario que Python evalúe la expresión <code class="highlighter-rouge">lado * lado</code> y encuentre a qué valor equivale. Si no tuviéramos contexto, lo que podríamos suponer es que <code class="highlighter-rouge">lado</code> fuera el nombre de una variable y que la expresión está calculando el cuadrado de la variable. En realidad, no hemos definido ninguna variable con ese nombre, pero sí tenemos un <em>parámetro</em> con ese nombre en la signatura de la función. La expresión <code class="highlighter-rouge">lado * lado</code> está haciendo entonces referencia al parámetro que le pasen a la función cada vez que la invoquen.</p>
+
+<p>Viendo todo en conjunto, lo que pasará cuando alguien invoque a nuestra función es lo siguiente:</p>
+
+<ol>
+  <li>El que invoque la función, tendrá que darle un valor al parámetro lado. La invocación podría ser algo como <code class="highlighter-rouge">area_cuadrado(4)</code>.</li>
+  <li>Nuestra función intentará ejecutar la instrucción <code class="highlighter-rouge">return lado * lado</code>. Como la parte derecha es una expresión cuyo valor se desconoce, se tendrá que evaluar primero.</li>
+  <li>Para evaluar la expresión <code class="highlighter-rouge">lado * lado</code> se debe conocer el valor de <code class="highlighter-rouge">lado</code>. Como es un parámetro, entonces se tomará el valor que se le haya dado cuando se invocó a la función. En este caso, la expresión se convertiría en <code class="highlighter-rouge">4 * 4</code>.</li>
+  <li>Como la expresión sigue sin tener un valor, se ejecuta la operación de multiplicación y la expresión se convierte en el valor <code class="highlighter-rouge">16</code>.</li>
+  <li>Se ejecutará la instrucción <code class="highlighter-rouge">return 16</code>: terminará la ejecución de la función y el valor 16 se le pasará al que haya invocado la función.</li>
+</ol>
+
+<h4 id="un-segundo-ejemplo-1">Un segundo ejemplo</h4>
+
+<p>Analicemos ahora la segunda función de nuestro ejemplo:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">altura</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="s">"""
+        Calcula el área de un triángulo dada la medida de la base y de la altura.
+    """</span>   
+    <span class="k">return</span> <span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">altura</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+</code></pre></div></div>
+
+<ul>
+  <li>¿Qué hace el cuerpo de esta función?</li>
+  <li>¿Qué diferencias tiene con respecto al cuerpo de la primera función?</li>
+</ul>
+
+<p><strong>Actividades:</strong></p>
+
+<ol>
+  <li>Escriba el cuerpo de la función para calcular el área de un círculo dado su radio. Utilice la signatura que definió en la actividad anterior.</li>
+  <li>Escriba el cuerpo de la función para calcular la velocidad final de un objeto. Utilice la signatura que definió en la actividad anterior.</li>
+</ol>
+
+<h2 id="definir-vs-invocar">Definir vs. Invocar</h2>
+
+<p>Hasta el momento hemos descrito en detalle solamente la forma en la que se define una función, pero no hemos estudiado cómo se invoca una función. Es muy importante tener muy clara la diferencia entre estas dos acciones: cuando definimos una función, sólo le estamos <em>enseñando</em> a Python cómo debería invocarse esa función y cómo debería comportarse un programa cuando la función se invoque; cuando invocamos una función, le estamos pidiendo a Python que <em>ejecute</em> el cuerpo de la función, dándole valores específicos a cada uno de sus parámetros.</p>
+
+<p>Revisaremos a continuación la última parte del programa de ejemplo con el que inició esta sección. Para simplificar el ejemplo hemos eliminado la documentación de la función <code class="highlighter-rouge">area_casa</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">area_casa</span><span class="p">(</span><span class="n">frente</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">techo</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="n">cuadrado</span> <span class="o">=</span> <span class="n">area_cuadrado</span><span class="p">(</span><span class="n">frente</span><span class="p">)</span>
+    <span class="n">triangulo</span> <span class="o">=</span> <span class="n">area_triangulo</span><span class="p">(</span><span class="n">frente</span><span class="p">,</span> <span class="n">techo</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cuadrado</span> <span class="o">+</span> <span class="n">triangulo</span>
+    
+   
+<span class="n">medida_frente</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">medida_techo</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">area_casa</span><span class="p">(</span><span class="n">medida_frente</span><span class="p">,</span> <span class="n">medida_techo</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"El área de una casa con"</span><span class="p">,</span> <span class="n">medida_frente</span><span class="p">,</span> <span class="s">"metros de frente y un techo de"</span><span class="p">,</span>
+       <span class="n">medida_techo</span><span class="p">,</span> <span class="s">"metros de alto es "</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">resultado</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s">"metros"</span><span class="p">)</span>    
+</code></pre></div></div>
+
+<h3 id="definición-de-la-función">Definición de la función</h3>
+
+<p>Lo primero que se debe notar en este ejemplo es que las primeras 4 líneas hacen parte de la definición de la función <code class="highlighter-rouge">area_casa</code> mientras que el último bloque de instrucciones está por fuera de esta función. Esto es evidente gracias a la indentación: las instrucciones indentadas después de la signatura de la función, hacen parte del cuerpo de la función. Tan pronto encontramos instrucciones que no están indentadas significa que hemos encontrado el fin del cuerpo de la función.</p>
+
+<p>Con respecto a las funciones anteriormente estudiadas, la signatura de la función <code class="highlighter-rouge">area_casa</code> sólo tiene una pequeña diferencia: utiliza diferentes tipos de datos (sus parámetros son <code class="highlighter-rouge">int</code> y su resultado es <code class="highlighter-rouge">float</code>).</p>
+
+<p>En cambio, el cuerpo de la función tiene un par de diferencias mucho más interesantes. La primera es que dentro de esta función se definen dos variables (<code class="highlighter-rouge">cuadrado</code> y <code class="highlighter-rouge">triangulo</code>). Estas variables son <em>locales</em>, lo cual significa que sólo existirán dentro del contexto de una invocación a la función. Si se habla de esas variables por fuera del cuerpo de la función, se producirá un error porque esos nombres sólo están definidos dentro del <em>alcance</em> de la función <code class="highlighter-rouge">area_casa</code>.</p>
+
+<p>La segunda diferencia interesante tiene que ver con la forma en la que se le asignan valores a las nuevas variables. En el caso de la variable <code class="highlighter-rouge">cuadrado</code>, se le está asignando el valor obtenido al invocar la función <code class="highlighter-rouge">area_cuadrado</code> utilizando como argumento el valor del parámetro <code class="highlighter-rouge">frente</code>. En otras palabras, cuando se quiere calcular el área de una casa dada la medida de su frente y la altura de su techo, lo primero que se hace es calcular el área del cuadrado utilizando para eso la función <code class="highlighter-rouge">area_cuadrado</code>, dándole a su parámetro <code class="highlighter-rouge">lado</code> el valor que se le haya dado al parámetro <code class="highlighter-rouge">frente</code>.</p>
+
+<p>La segunda instrucción hace algo similar para darle un valor a la variable <code class="highlighter-rouge">triangulo</code>. En este caso, la invocación se hace a la función <code class="highlighter-rouge">area_triangulo</code> y se utilizan como argumento los valores de los parámetros <code class="highlighter-rouge">frente</code> y <code class="highlighter-rouge">techo</code>.</p>
+
+<p>La tercera instrucción de la función calcula la suma de las dos variables y retorna el resultado.</p>
+
+<p>El nombre que se le da a un parámetro en la signatura de una función sólo es importante dentro del cuerpo de esa función. En el caso del ejemplo, la función area_cuadrado tiene un parámetro llamado lado, pero quien invoca a esa función no tiene por qué usar el mismo nombre para sus propios parámetros o variables.</p>
+
+<h3 id="invocación-de-la-función">Invocación de la función</h3>
+
+<p>Si nuestro programa tuviera sólo las instrucciones que ya estudiamos, no veríamos nada pasando cada vez que lo corriéramos. Su ejecución se limitaría a definir las funciones una y otra vez, pero sin invocarlas ni una sola vez. En este contexto es que se vuelven interesantes las últimas instrucciones del archivo, las cuales repetimos a continuación:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">medida_frente</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">medida_techo</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">area_casa</span><span class="p">(</span><span class="n">medida_frente</span><span class="p">,</span> <span class="n">medida_techo</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"El área de una casa con"</span><span class="p">,</span> <span class="n">medida_frente</span><span class="p">,</span> <span class="s">"metros de frente y un techo de"</span><span class="p">,</span>
+       <span class="n">medida_techo</span><span class="p">,</span> <span class="s">"metros de alto es "</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">resultado</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s">"metros"</span><span class="p">)</span>    
+</code></pre></div></div>
+
+<p>Recuerde que estas instrucciones no hacen parte de la definición de ninguna función, así que se ejecutarán cada vez que el programa se corra. Las dos primeras instrucciones hacen asignaciones sobre dos nuevas variables llamadas <code class="highlighter-rouge">medida_frente</code> y <code class="highlighter-rouge">medida_techo</code> con los valores 7 y 5.</p>
+
+<p>A continuación, se hace una nueva asignación, pero esta vez el valor se calcula con una invocación a la función <code class="highlighter-rouge">area_casa</code>. En esta ocasión la función sí se ejecuta, utilizando los valores 7 y 5 como argumentos de la invocación. Si nosotros no conociéramos el cuerpo de la función, lo único que podríamos ver es que el resultado de invocar la función quedaría asignado a la variable <code class="highlighter-rouge">resultado</code>.</p>
+
+<p>En este caso, como sí conocemos el cuerpo de la función, sabemos que lo que ocurrirá es lo siguiente:</p>
+
+<ol>
+  <li>Se invocará a la función <code class="highlighter-rouge">area_cuadrado</code> usando el valor 7 como valor para el parámetro <code class="highlighter-rouge">lado</code>.</li>
+  <li>Se calculará y retornará el valor de la expresión <code class="highlighter-rouge">lado * lado</code> que se encuentran en el cuerpo de <code class="highlighter-rouge">area_cuadrado</code>. En este caso, el valor retornado será <code class="highlighter-rouge">49</code> y ese valor se almacenará en la variable temporal <code class="highlighter-rouge">cuadrado</code>.</li>
+  <li>Se invocará a la función <code class="highlighter-rouge">area_triangulo</code> usando los valores 7 y 5 como valores para los parámetros <code class="highlighter-rouge">base</code> y <code class="highlighter-rouge">altura</code>.</li>
+  <li>Se calculará y retornará el valor de la expresión <code class="highlighter-rouge">(base * altura) / 2</code> que se encuentran en el cuerpo de <code class="highlighter-rouge">area_triangulo</code>. En este caso, el valor retornado será <code class="highlighter-rouge">17.5</code> y ese valor se almacenará en la variable temporal <code class="highlighter-rouge">triangulo</code>.</li>
+  <li>Se calculará la suma de <code class="highlighter-rouge">cuadrado</code> y <code class="highlighter-rouge">triangulo</code> y se retornará el valor. Las variables <code class="highlighter-rouge">cuadrado</code> y <code class="highlighter-rouge">triangulo</code> dejan de existir en este momento porque terminó la ejecución de la función en la que fueron definidas.</li>
+  <li>El valor retornado se almacenará en la variable <code class="highlighter-rouge">resultado</code>.</li>
+</ol>
+
+<p>Finalmente se debe ejecutar la última instrucción del programa, que en este caso es una invocación a la función <code class="highlighter-rouge">print</code>. Como ya sabemos, esta función le mostrará al usuario los valores que se le pasen como parámetro, separándolos con un espacio. Sin embargo, los argumentos que se están usando para llamar a la función <code class="highlighter-rouge">print</code> incluyen la expresión <code class="highlighter-rouge">round(resultado, 2)</code>. Esto quiere decir que antes de que se empiece a ejecutar la función <code class="highlighter-rouge">print</code> se llamará a la función <code class="highlighter-rouge">round</code> y se obtendrá un valor redondeado para la variable <code class="highlighter-rouge">resultado</code>. Esto es un ejemplo del uso de invocaciones a funciones como argumentos de una invocación a otra función.</p>
+
+<h3 id="ejecución-de-un-programa">Ejecución de un programa</h3>
+
+<p>Volvamos ahora a la discusión del inicio de la sección sobre cómo se ejecuta un módulo y revisemos lo que pasa en cada paso. Para eso, tomemos como ejemplo el siguiente programa, que suponemos que está escrito en el archivo ‘saludar.py’:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">"Hola "</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="s">"!"</span>
+
+<span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"¿Cuál es su nombre? "</span><span class="p">)</span>
+<span class="n">saludo</span> <span class="o">=</span> <span class="n">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">)</span>
+</code></pre></div></div>
+<p>La siguiente imagen muestra cómo se ejecutó el programa y el resultado de la ejecución:</p>
+
+<p><img src="/content/nivel1/images/saludar.png" alt="" /></p>
+
+<p>Ahora analicemos lo que ocurrió en cada paso de la ejecución:</p>
+
+<ol>
+  <li>Al invocar al programa ‘python’ usando como parámetro el nombre de archivo ‘saludar.py’, el archivo se abre y Python empieza a revisarlo bloque por bloque e instrucción por instrucción.</li>
+  <li>En primer lugar, se encuentra con la definición de la función <code class="highlighter-rouge">saludar</code>. Python revisa que la signatura esté definida con la sintaxis correcta. Por ejemplo, si el parámetro dijera que es de tipo <code class="highlighter-rouge">srr</code> en lugar de <code class="highlighter-rouge">str</code>, habría aparecido un error diciendo <code class="highlighter-rouge">NameError: name 'srr' is not defined</code>.</li>
+  <li>Ahora Python revisa todas las instrucciones que se encuentran en el cuerpo de la función, que en este caso es solamente una. La revisión es, nuevamente, sintáctica (sólo está revisando que el código esté bien escrito, no que sea correcto).</li>
+  <li>Como terminó la definición de la función, Python almacena la definición en un registro por si más adelante alguien invoca a una función con ese nombre y ese número de parámetros. Note que hasta este punto la función <strong>no se ha ejecutado</strong>.</li>
+  <li>Se revisa ahora lo siguiente en el archivo, que es una instrucción de asignación. Como sabemos, lo primero que se hace es evaluar la parte de la derecha que en este caso requiere invocar la función <code class="highlighter-rouge">input</code>. En la captura de pantalla vemos que el mensaje se imprimió para preguntarle al usuario por su nombre y que el usuario respondió con su nombre (‘Alicia’). Finalmente, esta cadena queda almacenada en la variable <code class="highlighter-rouge">nombre</code>.</li>
+  <li>La siguiente instrucción también es una asignación, así que se evalúa la parte derecha primero. En este caso se debe invocar la función <code class="highlighter-rouge">saludar</code>, usando como parámetro el valor almacenado en la variable <code class="highlighter-rouge">nombre</code>: es ahora cuando se ejecuta por primera vez nuestra función <code class="highlighter-rouge">saludar</code>.</li>
+  <li>La siguiente instrucción que se ejecuta es la instrucción que se encuentra dentro del cuerpo de la función. Lo primero que hace esta función es calcular el valor de la expresión <code class="highlighter-rouge">"Hola " + nombre + "!"</code>. En el caso del ejemplo, el valor del parámetro <code class="highlighter-rouge">nombre</code> es la cadena <code class="highlighter-rouge">'Alicia'</code>, así que el valor de la expresión completa es la cadena <code class="highlighter-rouge">'Hola Alicia!'</code>. Finalmente, se retorna esta cadena completa y termina la ejecución de la función.</li>
+  <li>De vuelta al programa principal, el resultado de la función se almacena en la variable <code class="highlighter-rouge">saludo</code>.</li>
+  <li>Por último, se invoca la función <code class="highlighter-rouge">print</code> y se le pasa como argumento el valor contenido en la variable <code class="highlighter-rouge">saludo</code>. El programa imprime entonces <code class="highlighter-rouge">Hola Alicia!</code> tal como se ve en la captura de pantalla.</li>
+</ol>
+
+<p>El siguiente es nuevamente el código de nuestro programa, pero esta vez hemos incluido unos comentarios adicionales que indican el orden en el que se van <em>ejecutando</em> las instrucciones.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>         <span class="c">#1</span>
+   <span class="k">return</span> <span class="s">"Hola "</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="s">"!"</span>        <span class="c">#4</span>
+
+<span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"¿Cuál es su nombre? "</span><span class="p">)</span>  <span class="c">#2</span>
+<span class="n">saludo</span> <span class="o">=</span> <span class="n">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>                <span class="c">#3  #5</span>
+<span class="k">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">)</span>                           <span class="c">#6</span>
+</code></pre></div></div>
+
+<p><strong>Actividades:</strong></p>
+
+<ol>
+  <li>Cree el módulo “cuadrados.py” y defina una función que calcula el perímetro de un cuadrado y otra que calcula su área. Agregue al archivo las instrucciones para preguntarle al usuario por el lado de un cuadrado y luego mostrarle el perímetro y el área de un cuadrado con esa medida.</li>
+</ol>
+
+<h2 id="funciones-sin-parámetro-o-sin-retorno">Funciones sin parámetro o sin retorno</h2>
+
+<p>Dos preguntas frecuentes entre los estudiantes son si una función siempre debe tener parámetros y si una función siempre debe retornar un valor. Si estas preguntas se hicieran en un contexto matemático, la respuesta sería positiva: las funciones establecen relaciones entre elementos de un conjunto y elementos de otro conjunto, así que siempre tienen al menos un parámetro y siempre tienen un resultado.</p>
+
+<p>En el contexto de Python, sí es posible tener funciones sin parámetros y funciones que no tengan un retorno, pero la realidad es que este tipo de funciones sólo deberían usarse en un contexto muy particular (interacción con el usuario). A continuación, explicamos brevemente por qué, en general, no es una buena idea tener este tipo de funciones.</p>
+
+<h3 id="funciones-sin-parámetros">Funciones sin parámetros</h3>
+
+<p>Si una función no tiene parámetros, en principio siempre va a retornar el mismo valor. Si esto fuera cierto, en lugar de tener una función para calcular el valor, se debería tener una variable donde ese valor estuviera disponible para utilizarlo cuando fuera necesario.</p>
+
+<p>Python incluye algo así para almacenar el valor de Pi sin que sea necesario llamar cada vez a una función que lo calcule.</p>
+
+<p>Hay 3 casos relativamente sencillos en los cuales tendría sentido tener funciones sin parámetros:</p>
+
+<ol>
+  <li>
+    <p>Cuando los datos para calcular el resultado de la función dependan de valores entregados por el usuario. En ese caso, aunque no se vería en la signatura, la función recibiría valores que cambiarían su resultado en cada ejecución.</p>
+  </li>
+  <li>
+    <p>Cuando el resultado de la función pueda cambiar con el paso del tiempo. Por ejemplo, una función que calculara un valor aleatorio podría no requerir ningún parámetro para cambiar el valor que retorne cada vez.</p>
+  </li>
+  <li>
+    <p>Cuando la función dependa de valores externos a ella, pero que no tengan que llegar por parámetro. Por ejemplo, una función podría depender de una variable global o de una condición del ambiente de ejecución, como la hora o la ruta desde la que se esté corriendo el programa.</p>
+  </li>
+</ol>
+
+<h3 id="funciones-sin-retorno">Funciones sin retorno</h3>
+
+<p>Si una función no tiene un retorno significa que el resultado de ejecutar sus instrucciones no es interesante para el resto del programa, o es interesante sólo por los efectos que haya podido tener en algún otro elemento del programa o del computador. Por ejemplo, una función sin retorno podría utilizarse para eliminar un archivo: la función eliminaría el archivo y no retornaría ningún valor.</p>
+
+<p>En general, las funciones podrían no tener retorno cuando representen acciones que quieren realizarse y no tengan ningún resultado que informar.</p>
+
+<h2 id="sobre-los-type-hints">Sobre los <em>type-hints</em></h2>
+
+<p>Si usted utiliza otros libros o si consulta en Internet, es muy posible que se encuentre con definiciones de funciones en las que no aparecen los tipos de los parámetros ni el tipo de los resultados. Esto se debe a que en Python el uso de estos elementos es opcional. De hecho, el nombre específico de estos elementos es <em>type-hints</em> y las herramientas (IDE, intérprete, compilador, etc.) los utilizan sólo como sugerencias.</p>
+
+<p>En este libro vamos a usar <em>type-hints</em> en la definición de todas las funciones y esperamos que usted haga uso de ellos también. Por una parte, esto le facilitará aprender a usar otros lenguajes de programación como C, C++, Java, o TypeScript. Por otro lado, razonar sobre los tipos de datos debería ayudarlo a estructurar mejor sus programas, especialmente mientras adquiere una cierta destreza programando.</p>
+
+<h2 id="ejercicios">Ejercicios</h2>
+
+<ol>
+  <li>
+    <p>Defina una función que permita convertir de grados Celsius a grados Fahrenheit.</p>
+  </li>
+  <li>
+    <p>Defina una función que permita convertir de grados Fahrenheit a grados Celsius.</p>
+  </li>
+  <li>
+    <p>Escriba un programa que le pida al usuario una temperatura en grados Celsius y le informe a cuánto equivaldría esa temperatura en grados Fahrenheit.</p>
+  </li>
+  <li>
+    <p>Escriba un programa que le pida a un usuario una cantidad de días y le muestre la cantidad de años, meses y días equivalentes. Suponga que todos los meses tienen 30 días.</p>
+  </li>
+</ol>
+
+<h2 id="más-allá-de-python">Más allá de Python</h2>
+
+<p>En esta sección utilizamos una definición de función relativamente <em>pura</em>, en la cual el resultado de su ejecución depende únicamente del valor que se les dé a sus parámetros. En otros contextos, y especialmente en otros lenguajes de programación, la ejecución de funciones, métodos o procedimientos depende de otros factores que no se ven explícitos en sus signaturas. Por ejemplo, en un lenguaje orientado a objetos como Java o C++, un método definido en una clase depende de los parámetros y del estado del objeto sobre el que se invoque el objeto. Esto hace mucho más complejo el comportamiento de un método y hace que ciertas acciones, como probar su corrección, sea más difícil que en funciones equivalente en Python.</p>
+
+<p>La discusión sobre los <em>type-hints</em> tiene que ver con una discusión mucho más extensa sobre la conveniencia de tener <em>tipado dinámico</em> en los lenguajes de programación. Por un lado, cuando los lenguajes son fuertemente tipados se cometen menos errores o, al menos, las herramientas de edición capturan más errores de forma temprana. Por otro lado, cuando el tipado es dinámico los errores de tipo se capturan en tiempo de ejecución, pero el desarrollo de los programas es más rápido. En este momento hay fuertes discusiones sobre la conveniencia o no de cada sistema, pero hay un hecho que encontramos muy diciente: JavaScript, que tiene tipado dinámico, está incluyendo progresivamente más elementos para escribir programas fuertemente tipados, mientras que Python está empezando a incluir elementos para poder incluir verificaciones de tipos.</p>
+
+<p>Python utiliza un estilo para el nombramiento de variables, funciones y parámetros que está descrito en la guía PEP8 (Style Guide for Python Code), bajo el título “Naming Conventions”. El punto que vale más la pena resaltar es el que tiene que ver con la separación de palabras en un identificador: mientras que en Python podemos encontrar una función llamada <code class="highlighter-rouge">area_casa</code>, en Java una función similar se llamaría <code class="highlighter-rouge">areaCasa</code> y en C# se llamaría <code class="highlighter-rouge">AreaCasa</code>. Estas diferencias son en realidad minúsculas, pero es muy recomendable seguir las guías de estilo de la plataforma en la que se esté trabajando, para facilitar la lectura y evitar incompatibilidades.</p>
+
+<p>La guía de estilo oficial de Python, que todos los programadores deberían conocer e intentar aplicar, se encuentra en el siguiente vínculo: PEP8 – Style Guide for Python Code: <a href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a></p>
+
+<h4 id="notas">Notas</h4>
+<div class="footnotes">
+  <ol>
+    <li id="fn:reservada">
+      <p>Una palabra reservada significa que es una palabra que nosotros no podemos usar en nuestros programas para nuestros identificadores. Por ejemplo, no podemos tener ni una función ni una variable que se llamen <code class="highlighter-rouge">def</code>. Python tiene varias palabras reservadas que iremos descubriendo, como return, del, import, pass, y raise, entre otras. <a href="#fnref:reservada" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:estilo">
+      <p>La regla que acabamos de ilustrar (separar palabras usando el símbolo <code class="highlighter-rouge">_</code>) no es una regla sintáctica del lenguaje, sino es una regla de <em>estilo</em>. Es decir, nosotros podríamos haber llamado a la función <code class="highlighter-rouge">areaCuadrado</code> y el programa habría funcionado igual, pero no habría respetado las reglas de estilo que sirven para hacer los programas más legibles y consistentes. Si usted ha utilizado algún otro lenguaje de programación, es posible que el estilo al que esté acostumbrado le sugiera usar nombres como <code class="highlighter-rouge">areaCuadrado</code> o <code class="highlighter-rouge">AreaCuadrado</code>. <a href="#fnref:estilo" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+            <div class="c-textbook__footer" id="textbook_footer">
+              <nav class="c-page__nav">
+  
+
+  
+</nav>
+
+              <footer>
+  <p class="footer">This page was created by <a href="https://github.com/jupyter/jupyter-book/graphs/contributors">The Jupyter Book Community</a></p>
+</footer>
+
+            </div>
+
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

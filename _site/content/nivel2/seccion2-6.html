@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+  <title>Introducción a la Programación</title>
+  <meta name="description" content="Versión borrador / preliminar |-------------------|Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene...">
+
+  <link rel="canonical" href="http://0.0.0.0:4000//content/nivel2/seccion2-6.html">
+  <link rel="alternate" type="application/rss+xml" title="Introducción a la Programación" href="http://0.0.0.0:4000//feed.xml">
+
+  <meta property="og:url"         content="http://0.0.0.0:4000//content/nivel2/seccion2-6.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Introducción a la Programación" />
+<meta property="og:description" content="Versión borrador / preliminar |-------------------|Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene..." />
+<meta property="og:image"       content="http://0.0.0.0:4000/images/logo/uniandes_logo.jpeg" />
+
+<meta name="twitter:card" content="summary">
+
+
+  <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": "http://0.0.0.0:4000//content/nivel2/seccion2-6.html",
+  "headline": "Introducción a la Programación",
+  "datePublished": "2019-11-11T19:40:42-06:00",
+  "dateModified": "2019-11-11T19:40:42-06:00",
+  "description": "Versión borrador / preliminar |-------------------|Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene...",
+  "author": {
+    "@type": "Person",
+    "name": "YOUR AUTHOR NAME"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Data 100 at UC Berkeley",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://0.0.0.0:4000/",
+      "width": 60,
+      "height": 60
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "http://0.0.0.0:4000/",
+    "height": 60,
+    "width": 60
+  }
+}
+
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#efae0a"> -->
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#233947">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/images/logo/favicon.ico">
+
+  <!-- MathJax Config -->
+  <!-- Allow inline math using $ and automatically break long math lines -->
+<!-- (mostly) copied from nbconvert configuration -->
+<!-- https://github.com/jupyter/nbconvert/blob/master/nbconvert/templates/html/mathjax.tpl -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true },
+    }
+});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML' async></script>
+
+
+  <!-- DOM updating function -->
+  <script src="/assets/js/page/dom-update.js"></script>
+
+  <!-- Selectors for elements on the page -->
+  <script src="/assets/js/page/documentSelectors.js"></script>
+
+  <!-- Define some javascript variables that will be useful in other javascript -->
+  <script>
+    const site_basename = '/';
+  </script>
+
+  <!-- Add AnchorJS to let headers be linked -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js" async></script>
+  <script src="/assets/js/page/anchors.js" async></script>
+
+  <!-- Include Turbolinks to make page loads fast -->
+  <!-- https://github.com/turbolinks/turbolinks -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" async></script>
+  <meta name="turbolinks-cache-control" content="no-cache">
+
+  <!-- Load nbinteract for widgets -->
+  
+
+  <!-- Load Thebelab for interactive widgets -->
+  <!-- Include Thebelab for interactive code if it's enabled -->
+
+
+<!-- Display Thebelab button in each code cell -->
+<script>
+/**
+ * Set up thebelab button for code blocks
+ */
+
+const thebelabCellButton = id =>
+  `<a id="thebelab-cell-button-${id}" class="btn thebebtn o-tooltip--left" data-tooltip="Interactive Mode">
+    <img src="/assets/images/edit-button.svg" alt="Start thebelab interactive mode">
+  </a>`
+
+
+const addThebelabButtonToCodeCells =  () => {
+
+  const codeCells = document.querySelectorAll('div.input_area > div.highlight:not(.output) pre')
+  codeCells.forEach((codeCell, index) => {
+    const id = codeCellId(index)
+    codeCell.setAttribute('id', id)
+    if (document.getElementById("thebelab-cell-button-" + id) == null) {
+      codeCell.insertAdjacentHTML('afterend', thebelabCellButton(id));
+    }
+  })
+}
+
+initFunction(addThebelabButtonToCodeCells);
+</script>
+
+
+
+<script type="text/x-thebe-config">
+    {
+      requestKernel: true,
+      binderOptions: {
+        repo: 'cupi2-ip/IPBook',
+        ref: 'master',
+      },
+      codeMirrorConfig: {
+        theme: "abcdef"
+      },
+      kernelOptions: {
+        name: 'python3',
+      }
+    }
+</script>
+<script src="https://unpkg.com/thebelab@0.4.0/lib/index.js" async></script>
+<script>
+    /**
+     * Add attributes to Thebelab blocks
+     */
+
+    const initThebelab = () => {
+        const addThebelabToCodeCells = () => {
+            console.log("Adding thebelab to code cells...");
+            // If Thebelab hasn't loaded, wait a bit and try again. This
+            // happens because we load ClipboardJS asynchronously.
+            if (window.thebelab === undefined) {
+                setTimeout(addThebelabToCodeCells, 250)
+            return
+            }
+
+            // If we already detect a Thebelab cell, don't re-run
+            if (document.querySelectorAll('div.thebelab-cell').length > 0) {
+                return;
+            }
+
+            // Find all code cells, replace with Thebelab interactive code cells
+            const codeCells = document.querySelectorAll('.input_area pre')
+            codeCells.forEach((codeCell, index) => {
+                const id = codeCellId(index)
+                codeCell.setAttribute('data-executable', 'true')
+
+                // Figure out the language it uses and add this too
+                var parentDiv = codeCell.parentElement.parentElement;
+                var arrayLength = parentDiv.classList.length;
+                for (var ii = 0; ii < arrayLength; ii++) {
+                    var parts = parentDiv.classList[ii].split('language-');
+                    if (parts.length === 2) {
+                        // If found, assign dataLanguage and break the loop
+                        var dataLanguage = parts[1];
+                        break;
+                    }
+                }
+                codeCell.setAttribute('data-language', dataLanguage)
+
+                // If the code cell is hidden, show it
+                var inputCheckbox = document.querySelector(`input#hidebtn${codeCell.id}`);
+                if (inputCheckbox !== null) {
+                    setCodeCellVisibility(inputCheckbox, 'visible');
+                }
+            });
+
+            // Remove the event listener from the page so keyboard press doesn't
+            // Change page
+            document.removeEventListener('keydown', initPageNav)
+            keyboardListener = false;
+
+            // Init thebelab
+            thebelab.bootstrap();
+
+            // Remove copy buttons since they won't work anymore
+            const copyAndThebeButtons = document.querySelectorAll('.copybtn, .thebebtn')
+            copyAndThebeButtons.forEach((button, index) => {
+                button.remove();
+            });
+
+            // Remove outputs since they'll be stale
+            const outputs = document.querySelectorAll('.output *, .output')
+            outputs.forEach((output, index) => {
+                output.remove();
+            });
+
+            // Find any cells with an initialization tag and ask ThebeLab to run them when ready
+            var thebeInitCells = document.querySelectorAll('div.tag_thebelab-init');
+            thebeInitCells.forEach((cell) => {
+                console.log("Initializing ThebeLab with cell: " + cell.id);
+                cell.querySelector('.thebelab-run-button').click();
+            });
+        }
+
+        // Add event listener for the function to modify code cells
+        const thebelabButtons = document.querySelectorAll('[id^=thebelab], [id$=thebelab]')
+        thebelabButtons.forEach((thebelabButton,index) => {
+            if (thebelabButton === null) {
+                setTimeout(initThebelab, 250)
+                return
+            };
+            thebelabButton.addEventListener('click', addThebelabToCodeCells);
+        });
+    }
+
+    // Initialize Thebelab
+    initFunction(initThebelab);
+</script>
+
+
+
+  <!-- Load the auto-generating TOC (non-async otherwise the TOC won't load w/ turbolinks) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js" async></script>
+  <script src="/assets/js/page/tocbot.js"></script>
+
+  <!-- Google analytics -->
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+  <!-- Clipboard copy button -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" async></script>
+
+  <!-- Load custom website scripts -->
+  <script src="/assets/js/scripts.js" async></script>
+
+  <!-- Load custom user CSS and JS  -->
+  <script src="/assets/custom/custom.js" async></script>
+  <link rel="stylesheet" href="/assets/custom/custom.css">
+
+  <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
+  
+<script>
+/**
+  * To auto-embed hub URLs in interact links if given in a RESTful fashion
+ */
+
+function getJsonFromUrl(url) {
+  var query = url.split('?');
+  if (query.length < 2) {
+    // No queries so just return false
+    return false;
+  }
+  query = query[1];
+  // Collect REST params into a dictionary
+  var result = {};
+  query.split("&").forEach(function(part) {
+    var item = part.split("=");
+    result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+}
+    
+function dict2param(dict) {
+    params = Object.keys(dict).map(function(k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(dict[k])
+    });
+    return params.join('&')
+}
+
+// Parse a Binder URL, converting it to the string needed for JupyterHub
+function binder2Jupyterhub(url) {
+  newUrl = {};
+  parts = url.split('v2/gh/')[1];
+  // Grab the base repo information
+  repoinfo = parts.split('?')[0];
+  var [org, repo, ref] = repoinfo.split('/');
+  newUrl['repo'] = ['https://github.com', org, repo].join('/');
+  newUrl['branch'] = ref
+  // Grab extra parameters passed
+  params = getJsonFromUrl(url);
+  if (params['filepath'] !== undefined) {
+    newUrl['subPath'] = params['filepath']
+  }
+  return dict2param(newUrl);
+}
+
+// Filter out potentially unsafe characters to prevent xss
+function safeUrl(url)
+{
+   return String(encodeURIComponent(url))
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+}
+
+function addParamToInternalLinks(hub) {
+  var links = document.querySelectorAll("a").forEach(function(link) {
+    var href = link.href;
+    // If the link is an internal link...
+    if (href.search("http://0.0.0.0:4000") !== -1 || href.startsWith('/') || href.search("127.0.0.1:") !== -1) {
+      // Assume we're an internal link, add the hub param to it
+      var params = getJsonFromUrl(href);
+      if (params !== false) {
+        // We have REST params, so append a new one
+        params['jupyterhub'] = hub;
+      } else {
+        // Create the REST params
+        params = {'jupyterhub': hub};
+      }
+      // Update the link
+      var newHref = href.split('?')[0] + '?' + dict2param(params);
+      link.setAttribute('href', decodeURIComponent(newHref));
+    }
+  });
+  return false;
+}
+
+
+// Update interact links
+function updateInteractLink() {
+    // hack to make this work since it expects a ? in the URL
+    rest = getJsonFromUrl("?" + location.search.substr(1));
+    jupyterHubUrl = rest['jupyterhub'];
+    var hubType = null;
+    var hubUrl = null;
+    if (jupyterHubUrl !== undefined) {
+      hubType = 'jupyterhub';
+      hubUrl = jupyterHubUrl;
+    }
+
+    if (hubType !== null) {
+      // Sanitize the hubUrl
+      hubUrl = safeUrl(hubUrl);
+
+      // Add HTTP text if omitted
+      if (hubUrl.indexOf('http') < 0) {hubUrl = 'http://' + hubUrl;}
+      var interactButtons = document.querySelectorAll("button.interact-button")
+      var lastButton = interactButtons[interactButtons.length-1];
+      var link = lastButton.parentElement;
+
+      // If we've already run this, skip the link updating
+      if (link.nextElementSibling !== null) {
+        return;
+      }
+
+      // Update the link and add context div
+      var href = link.getAttribute('href');
+      if (lastButton.id === 'interact-button-binder') {
+        // If binder links exist, we need to re-work them for jupyterhub
+        if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+          // If localhost, assume we're working from a local Jupyter server and remove `/hub`
+          first = [hubUrl, 'git-sync'].join('/')
+        } else {
+          first = [hubUrl, 'hub', 'user-redirect', 'git-sync'].join('/')
+        }
+        href = first + '?' + binder2Jupyterhub(href);
+      } else {
+        // If interact button isn't binderhub, assume it's jupyterhub
+        // If JupyterHub links, we only need to replace the hub url
+        href = href.replace("", hubUrl);
+        if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+          // Assume we're working from a local Jupyter server and remove `/hub`
+          href = href.replace("/hub/user-redirect", "");
+        }
+      }
+      link.setAttribute('href', decodeURIComponent(href));
+
+      // Add text after interact link saying where we're launching
+      hubUrlNoHttp = decodeURIComponent(hubUrl).replace('http://', '').replace('https://', '');
+      link.insertAdjacentHTML('afterend', '<div class="interact-context">on ' + hubUrlNoHttp + '</div>');
+
+      // Update internal links so we retain the hub url
+      addParamToInternalLinks(hubUrl);
+    }
+}
+
+runWhenDOMLoaded(updateInteractLink)
+document.addEventListener('turbolinks:load', updateInteractLink)
+</script>
+
+
+  <!-- Lunr search code - will only be executed on the /search page -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js" async></script>
+  <script>var initQuery = function() {
+  // See if we have a search box
+  var searchInput = document.querySelector('input#lunr_search');
+  if (searchInput === null) {
+    return;
+  }
+
+  // Function to parse our lunr cache
+  var idx = lunr(function () {
+    this.field('title')
+    this.field('excerpt')
+    this.field('categories')
+    this.field('tags')
+    this.ref('id')
+
+    this.pipeline.remove(lunr.trimmer)
+
+    for (var item in store) {
+      this.add({
+        title: store[item].title,
+        excerpt: store[item].excerpt,
+        categories: store[item].categories,
+        tags: store[item].tags,
+        id: item
+      })
+    }
+  });
+
+  // Run search upon keyup
+  searchInput.addEventListener('keyup', function () {
+    var resultdiv = document.querySelector('#results');
+    var query = document.querySelector("input#lunr_search").value.toLowerCase();
+    var result =
+      idx.query(function (q) {
+        query.split(lunr.tokenizer.separator).forEach(function (term) {
+          q.term(term, { boost: 100 })
+          if(query.lastIndexOf(" ") != query.length-1){
+            q.term(term, {  usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 })
+          }
+          if (term != ""){
+            q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
+          }
+        })
+      });
+
+      // Empty the results div
+      while (resultdiv.firstChild) {
+        resultdiv.removeChild(resultdiv.firstChild);
+      }
+
+    resultdiv.insertAdjacentHTML('afterbegin', '<p class="results__found">'+result.length+' Result(s) found</p>');
+    for (var item in result) {
+      var ref = result[item].ref;
+      if(store[ref].teaser){
+        var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<div class="archive__item-teaser">'+
+                '<img src="'+store[ref].teaser+'" alt="">'+
+              '</div>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      else{
+    	  var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      resultdiv.insertAdjacentHTML('beforeend', searchitem);
+    }
+  });
+};
+
+initFunction(initQuery);
+</script>
+
+  <!-- Load JS that depends on site variables -->
+  <script src="/assets/js/page/copy-button.js" async></script>
+
+  <!-- Hide cell code -->
+  <script src="/assets/js/page/hide-cell.js" async></script>
+
+  <!-- Printing the screen -->
+  <!-- Include nbinteract for interactive widgets -->
+<script src="https://printjs-4de6.kxcdn.com/print.min.js" async></script>
+<script>
+printContent = () => {
+    // MathJax displays a second version of any math for assistive devices etc.
+    // This prevents double-rendering in the PDF output.
+    var ignoreAssistList = [];
+    assistives = document.querySelectorAll('.MathJax_Display span.MJX_Assistive_MathML').forEach((element, index) => {
+        var thisId = 'MathJax-assistive-' + index.toString();
+        element.setAttribute('id', thisId);
+        ignoreAssistList.push(thisId)
+    });
+
+    // Print the actual content object
+    printJS({
+        printable: 'textbook_content',
+        type: 'html',
+        css: "/assets/css/styles.css",
+        style: "#textbook_content {padding-top: 40px};",
+        scanStyles: false,
+        targetStyles: ["*"],
+        ignoreElements: ignoreAssistList,
+        documentTitle: "Made with Jupyter Book"
+    })
+};
+
+initPrint = () => {
+    document.querySelector('#interact-button-print').addEventListener('click', printContent)
+}
+
+initFunction(initPrint)
+</script>
+
+</head>
+
+  <body>
+    <!-- .js-show-sidebar shows sidebar by default -->
+    <div id="js-textbook" class="c-textbook js-show-sidebar">
+      
+
+
+
+<nav id="js-sidebar" class="c-textbook__sidebar">
+  <a href="https://uniandes.edu.co/"><img src="/images/logo/uniandes_logo.jpeg" class="textbook_logo" id="sidebar-logo" alt="textbook logo" data-turbolinks-permanent/></a>
+  <h2 class="c-sidebar__title">Introducción a la Programación</h2>
+  <ul class="c-sidebar__chapters">
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/intro.html"
+        >
+          
+          Inicio
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/introduccion/intro.html"
+        >
+          
+          Introducción
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/introduccion/practicas.html"
+                >
+                  
+                  Prácticas fundamentales
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/introduccion/acerca.html"
+                >
+                  
+                  Sobre este libro
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/introduccion/estructura.html"
+                >
+                  
+                  Estructura del libro
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/introduccion/imagenes.html"
+                >
+                  
+                  Créditos de las imágenes
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/nivel1/intro.html"
+        >
+          
+            1.
+          
+          Nivel 1
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel1/seccion1-1.html"
+                >
+                  
+                    1.1
+                  
+                  Un programa para leer
+                </a>
+
+                
+                
+                  
+                  
+
+                  <li class="c-sidebar__subsection">
+                    <a class="c-sidebar__entry "
+                      href="/nivel1/ejercicio_inicial.html"
+                    >
+                      
+                      Experimentos
+                    </a>
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel1/seccion1-2.html"
+                >
+                  
+                    1.2
+                  
+                  Ambiente básico de trabajo
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel1/seccion1-3.html"
+                >
+                  
+                    1.3
+                  
+                  Valores y tipos de datos
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel1/seccion1-4.html"
+                >
+                  
+                    1.4
+                  
+                  Variables, expresiones y operadores
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel1/seccion1-5.html"
+                >
+                  
+                    1.5
+                  
+                  Funciones
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel1/seccion1-6.html"
+                >
+                  
+                    1.6
+                  
+                  Definición de funciones
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel1/seccion1-7.html"
+                >
+                  
+                    1.7
+                  
+                  Un programa para leer (2)
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel1/seccion1-8.html"
+                >
+                  
+                    1.8
+                  
+                  Lógica vs. Interacción
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/nivel2/intro.html"
+        >
+          
+            2.
+          
+          Nivel 2
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections ">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel2/seccion2-1.html"
+                >
+                  
+                    2.1
+                  
+                  Un programa para leer
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel2/seccion2-2.html"
+                >
+                  
+                    2.2
+                  
+                  Lógica y valores de verdad
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel2/seccion2-3.html"
+                >
+                  
+                    2.3
+                  
+                  Valores de verdad en Python
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel2/seccion2-4.html"
+                >
+                  
+                    2.4
+                  
+                  Instrucciones condicionales
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/nivel2/seccion2-5.html"
+                >
+                  
+                    2.5
+                  
+                  Cadenas de caracteres
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry c-sidebar__entry--active"
+                  href="/nivel2/seccion2-6.html"
+                >
+                  
+                    2.6
+                  
+                  Módulos de la librería estándar
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+  </ul>
+  <p class="sidebar_footer">Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a></p>
+</nav>
+
+      
+      <div class="c-topbar" id="top-navbar">
+  <!-- We show the sidebar by default so we use .is-active -->
+  <div class="c-topbar__buttons">
+    <button
+      id="js-sidebar-toggle"
+      class="hamburger hamburger--arrowalt is-active"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <div class="buttons">
+<div class="download-buttons-dropdown">
+    <button id="dropdown-button-trigger" class="interact-button"><img src="/assets/images/download-solid.svg" alt="Download" /></button>
+    <div class="download-buttons">
+        
+        <a id="interact-button-print"><button id="interact-button-download" class="interact-button">.pdf</button></a>
+    </div>
+</div>
+
+
+</div>
+
+  </div>
+  <!-- Empty sidebar placeholder that we'll auto-fill with javascript -->
+  <aside class="sidebar__right">
+    <header><h4 class="nav__title"><img src="/assets/images/list-solid.svg" alt="Search" />   On this page</h4></header>
+    <nav class="onthispage">
+    </nav>
+  </aside>
+  <a href="/search.html" class="topbar-right-button" id="search-button">
+    <img src="/assets/images/search-solid.svg" alt="Search" />
+  </a>
+</div>
+
+      <main class="c-textbook__page" tabindex="-1">
+            <div class="c-textbook__content" id="textbook_content">
+              <table>
+  <thead>
+    <tr>
+      <th>Versión borrador / preliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="módulos-de-la-librería-estándar">Módulos de la librería estándar</h1>
+
+<blockquote>
+  <p>El objetivo de esta sección es presentar un par de módulos para ilustrar el poder de las funcionalidades que ya están disponibles en la librería estándar de Python.</p>
+</blockquote>
+
+<p>Afortunadamente vivimos en una época en la cual no tenemos que preocuparnos por programar absolutamente todo cada vez que queremos construir un nuevo programa. Por ejemplo, cuando en 1992 la compañía idSoftware empezó a trabajar en Wolfenstein 3D, tuvieron que construir desde cero todas las funcionalidades para representar espacios tridimensionales en la pantalla. Hoy en día, no sólo hay infinidad de librerías que hacen las mismas funcionalidades, sino que algunas de esas funcionalidades están implementadas dentro de las tarjetas de video para que su uso sea aún más fácil y su ejecución sea más rápida.</p>
+
+<p>Por otra parte, esta realidad hace que sea cada vez más importante tener la curiosidad de buscar librerías que puedan ayudarnos con nuestro trabajo y la habilidad para aprender a usarlas rápidamente.</p>
+
+<p>En esta sección enfrentamos esta realidad introduciendo dos módulos que hacen parte de la librería estándar de Python. Es decir, estos dos módulos hacen parte de la librería que debería acompañar a cualquier distribución de Python y que siempre deberíamos tener disponible. Esta librería incluye más de un centenar de módulos que cubren aspectos como procesamiento de texto, manipulación de fechas y calendarios, compresión de archivos, criptografía, comunicación por Internet e interacción con el sistema operativo.</p>
+
+<h2 id="el-módulo-math">El módulo math</h2>
+
+<p>El primer módulo que vamos a introducir es el módulo <code class="highlighter-rouge">math</code>, cuya documentación actual se puede encontrar en <a href="https://docs.python.org/3.7/library/math.html">https://docs.python.org/3.7/library/math.html</a>.</p>
+
+<p>El módulo math define funciones que permiten hacer con facilidad importantes operaciones matemáticas y definen también unas constantes de uso frecuente.</p>
+
+<p>La manera de importar todo lo que ofrece este módulo es a través de la instrucción <code class="highlighter-rouge">import math</code>.</p>
+
+<h3 id="funciones">Funciones</h3>
+
+<p>Las siguientes son algunas de las funciones que define el módulo y cuyo conocimiento podría ser de mucha utilidad.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">gcd(x, y)</code>: función para calcular el máximo común divisor de dos números (Gratest Common Denominator).</li>
+  <li><code class="highlighter-rouge">log(x, base)</code>: función para calcular el logaritmo de un número con respecto a una base.</li>
+  <li><code class="highlighter-rouge">log2(x)</code>: función para calcular el logaritmo de un número en base 2.</li>
+  <li><code class="highlighter-rouge">sqrt</code>: función para calcular la raíz cuadrada de un número.</li>
+  <li><code class="highlighter-rouge">sin</code>, <code class="highlighter-rouge">cos</code>, <code class="highlighter-rouge">tan</code>: funciones para calcular el seno, coseno y tangente de un ángulo medido en radianes.</li>
+  <li><code class="highlighter-rouge">degrees</code>: función para convertir un ángulo en radianes a un ángulo medido en grados.</li>
+  <li><code class="highlighter-rouge">radians</code>: función para convertir un ángulo medido en grados a un ángulo medido en radianes.</li>
+</ul>
+
+<h3 id="constantes">Constantes</h3>
+
+<p>Este módulo también define unas constantes que son de utilidad tanto para hacer otros cálculos como para detectar problemas con cálculos previos. Estos valores son:</p>
+
+<ul>
+  <li>PI</li>
+  <li>E (número de Euler)</li>
+  <li>INF, el valor que utiliza Python para representar el infinito.</li>
+  <li>NaN, el valor que utiliza Python para representar un número indefinido (NaN significa Not A Number).</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s">"El valor de pi:"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">El</span> <span class="n">valor</span> <span class="n">de</span> <span class="n">pi</span><span class="p">:</span> <span class="mf">3.141592653589793</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s">"El valor de e:"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">)</span>
+<span class="n">El</span> <span class="n">valor</span> <span class="n">de</span> <span class="n">e</span><span class="p">:</span> <span class="mf">2.718281828459045</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s">"El valor de infinito:"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+<span class="n">El</span> <span class="n">valor</span> <span class="n">de</span> <span class="n">infinito</span><span class="p">:</span> <span class="n">inf</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s">"El valor de un número indefinido:"</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">El</span> <span class="n">valor</span> <span class="n">de</span> <span class="n">un</span> <span class="n">n</span><span class="err">ú</span><span class="n">mero</span> <span class="n">indefinido</span><span class="p">:</span> <span class="n">nan</span>
+</code></pre></div></div>
+
+<h2 id="el-módulo-random">El módulo random</h2>
+
+<p>El segundo módulo que vamos a introducir es el módulo <code class="highlighter-rouge">random</code>, cuya documentación actual se puede encontrar en <a href="https://docs.python.org/3.7/library/random.html">https://docs.python.org/3.7/library/random.html</a>.</p>
+
+<p>El módulo random define funciones que generan números aleatorios de acuerdo con diferentes reglas. Por ejemplo, este módulo ofrece mecanismos para generar valores continuos, valores discretos y también valores que se ajusten a las principales distribuciones aleatorias.</p>
+
+<p>La manera de importar todo lo que ofrece este módulo es a través de la instrucción <code class="highlighter-rouge">import random</code>.</p>
+
+<h3 id="valores-continuos">Valores continuos</h3>
+
+<p>Una variable aleatoria continua es una variable que puede asumir cualquiera de los valores dentro de un rango determinado, con una probabilidad que depende de la distribución asociada a la variable.</p>
+
+<p>Dentro del módulo <code class="highlighter-rouge">random</code>, la función también llamada <code class="highlighter-rouge">random</code> es tal vez la más utilizada porque permite generar valores uniformemente distribuidos entre 0 y 1. Es decir, cada vez que se invoque la función <code class="highlighter-rouge">random.random()</code> se obtendrá un número entre 0 y 1, escogido de forma completamente aleatoria. Note que 0 es un valor posible, pero 1 está por fuera del intervalo considerado.</p>
+
+<p>La gran ventaja que tiene esta distribución es que multiplicar el resultado de la función por un valor ‘x’ hace que se encuentren valores uniformemente distribuidos entre 0 y ‘x’.</p>
+
+<p>Por ejemplo, si quisiéramos generar un valor aleatorio entre 0 y 7, podríamos ejecutar el siguiente código:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">valor</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">7</span>
+</code></pre></div></div>
+
+<p>Un efecto similar se puede lograr usando la función <code class="highlighter-rouge">uniform</code> que recibe dos parámetros ‘a’ y ‘b’ y genera un número aleatorio en el intervalo [a, b). Note que llamar <code class="highlighter-rouge">random.uniform(a, b)</code> es equivalente a invocar <code class="highlighter-rouge">random.random()*(b-a) + a</code>.</p>
+
+<h3 id="valores-discretos">Valores discretos</h3>
+
+<p>Una variable aleatoria discreta toma sólo valores discretos dentro de un rango determinado, con una probabilidad que depende de la distribución asociada a la variable. A diferencia de las variables continuas, cuando las variables son discretas los posibles valores que pueden asumir son enumerables.</p>
+
+<p>La principal función para generar variables aleatorias discretas se llama <code class="highlighter-rouge">randint</code> y sirve para generar valores enteros entre dos números ‘a’ y ‘b’. 
+En el siguiente programa se usa esta función para simular el lanzamiento de un dado:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">lanzamiento</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Una función relacionada es <code class="highlighter-rouge">randrange</code>, que genera valores enteros desde un número inicial (start), hasta un número final (stop), con un cierto intervalo (step). Por ejemplo, si queremos un número múltiplo de 3 entre 6 y 30 podemos usar la siguiente invocación:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numero</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Note que esta función puede generar el número ‘start’ pero nunca generará el valor ‘stop’.</p>
+
+<h3 id="variables-aleatorias">Variables aleatorias</h3>
+
+<p>Finalmente, el módulo random incluye funciones para generar valores siguiendo la distribución triangular, Beta, exponencial, Gamma, Normal, y Pareto, entre otras.</p>
+
+<p>Como esta no pretende ser una revisión exhaustiva sólo revisaremos la función <code class="highlighter-rouge">random.normalvariate</code>, que genera números distribuidos de acuerdo a una distribución normal.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">)</span>
+<span class="n">Help</span> <span class="n">on</span> <span class="n">method</span> <span class="n">normalvariate</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">random</span><span class="p">:</span>
+
+<span class="n">normalvariate</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span> <span class="n">method</span> <span class="n">of</span> <span class="n">random</span><span class="o">.</span><span class="n">Random</span> <span class="n">instance</span>
+    <span class="n">Normal</span> <span class="n">distribution</span><span class="o">.</span>
+
+    <span class="n">mu</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">mean</span><span class="p">,</span> <span class="ow">and</span> <span class="n">sigma</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">standard</span> <span class="n">deviation</span><span class="o">.</span>
+
+</code></pre></div></div>
+
+<p>Esta función requiere de un parámetro <code class="highlighter-rouge">mu</code> (el valor promedio de los valores en la distribución) y de un parámetro <code class="highlighter-rouge">sigma</code> (la desviación estándar de los valores) para generar valores que se distribuyan de forma normal de acuerdo con los parámetros. Los siguientes son 10 valores generados con esta función usando una media de 10 y una desviación estándar de 1.5:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># random.normalvariate(10,1.5)</span>
+<span class="mi">0</span> <span class="o">-</span> <span class="mf">9.74230603318132</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="mf">9.765339949262536</span>
+<span class="mi">2</span> <span class="o">-</span> <span class="mf">10.309760658154236</span>
+<span class="mi">3</span> <span class="o">-</span> <span class="mf">10.00652736167399</span>
+<span class="mi">4</span> <span class="o">-</span> <span class="mf">8.828709896119436</span>
+<span class="mi">5</span> <span class="o">-</span> <span class="mf">9.105408757081975</span>
+<span class="mi">6</span> <span class="o">-</span> <span class="mf">8.28137647679426</span>
+<span class="mi">7</span> <span class="o">-</span> <span class="mf">9.898607684096598</span>
+<span class="mi">8</span> <span class="o">-</span> <span class="mf">7.545894557163404</span>
+<span class="mi">9</span> <span class="o">-</span> <span class="mf">10.83177690308728</span>
+</code></pre></div></div>
+
+<h2 id="ejercicios">Ejercicios</h2>
+
+<ol>
+  <li>Usando la función <code class="highlighter-rouge">random.normalvariate</code> genere 15 números aleatorios con media 3.8 y desviación estándar de 1. Calcule ahora usted la media de los números generados y la desviación estándar. ¿Qué tan lejos están de la media y la desviación planeada? Ejecute su programa y observe cómo cambian los resultados con cada ejecución.</li>
+</ol>
+
+<h2 id="más-allá-de-python">Más allá de Python</h2>
+
+<p>Así como Python define una librería estándar con módulos para las tareas más comunes (¡y muchas tareas no tan comunes!), la mayoría de lenguajes de programación ofrecen su propia librería estándar que debería estar disponible para todos los que usen el lenguaje. A juzgar por las discusiones y procesos legales de los últimos años sobre la propiedad y la disponibilidad de las librerías estándar de Java, se podría creer que las librerías son incluso más importantes que el lenguaje mismo.</p>
+
+<p>Muchas veces, aprender a utilizar efectivamente las funcionalidades disponibles en las librerías estándar es más difícil y toma más tiempo que aprender a usar la sintaxis misma de un lenguaje. Por ejemplo, un programador experimentado debería ser capaz de dominar en un día la sintaxis del lenguaje de programación SmallTalk<sup id="fnref:st"><a href="#fn:st" class="footnote">1</a></sup> , pero seguramente le tomaría mucho más tiempo dominar las librerías estándar que son absolutamente imprescindibles para construir incluso programas sencillos con el lenguaje. Algo similar le pasa a los programadores que pasan de Java a C# y viceversa: hay muchísimos conceptos comunes pero la principal dificultad en el proceso de aprendizaje es aprender a utilizar las librerías principales.</p>
+
+<h4 id="notas">Notas</h4>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:st">
+      <p>SmallTalk es un lenguaje de programación muy poderoso, pero con una sintaxis extremadamente pequeña. Por ejemplo, en el lenguaje mismo no existen instrucciones condicionales, sino que estas están implementadas en las librerías estándar. <a href="#fnref:st" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+            <div class="c-textbook__footer" id="textbook_footer">
+              <nav class="c-page__nav">
+  
+
+  
+</nav>
+
+              <footer>
+  <p class="footer">This page was created by <a href="https://github.com/jupyter/jupyter-book/graphs/contributors">The Jupyter Book Community</a></p>
+</footer>
+
+            </div>
+
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
