@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Un programa para leer</title>
-  <meta name="description" content="            Versión borrador / preliminar                  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o ...">
+  <meta name="description" content="        Versión borrador / preliminarEste documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comenta...">
 
   <link rel="canonical" href="http://0.0.0.0:4000//nivel2/seccion2-1.html">
   <link rel="alternate" type="application/rss+xml" title="Introducción a la Programación" href="http://0.0.0.0:4000//feed.xml">
@@ -14,7 +14,7 @@
   <meta property="og:url"         content="http://0.0.0.0:4000//nivel2/seccion2-1.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Un programa para leer" />
-<meta property="og:description" content="            Versión borrador / preliminar                  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o ..." />
+<meta property="og:description" content="        Versión borrador / preliminarEste documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comenta..." />
 <meta property="og:image"       content="http://0.0.0.0:4000/images/logo/uniandes_logo.jpeg" />
 
 <meta name="twitter:card" content="summary">
@@ -26,9 +26,9 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "http://0.0.0.0:4000//nivel2/seccion2-1.html",
   "headline": "Un programa para leer",
-  "datePublished": "2019-11-11T19:45:05-06:00",
-  "dateModified": "2019-11-11T19:45:05-06:00",
-  "description": "            Versión borrador / preliminar                  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o ...",
+  "datePublished": "2019-11-11T19:57:00-06:00",
+  "dateModified": "2019-11-11T19:57:00-06:00",
+  "description": "        Versión borrador / preliminarEste documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comenta...",
   "author": {
     "@type": "Person",
     "name": "YOUR AUTHOR NAME"
@@ -1075,72 +1075,70 @@ initFunction(initPrint)
 
       <main class="c-textbook__page" tabindex="-1">
             <div class="c-textbook__content" id="textbook_content">
-              <table>
-  <thead>
-    <tr>
-      <th>Versión borrador / preliminar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores</td>
-    </tr>
-  </tbody>
+                  <main class="jupyter-page">
+    
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+<thead><tr>
+<th>Versión borrador / preliminar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores</td>
+<td></td>
+</tr>
+</tbody>
 </table>
-
-<h1 id="un-programa-para-leer">Un programa para leer</h1>
-
-<p>Como dijimos en el primer capítulo, una habilidad importante que se debe desarrollar es la capacidad para leer código escrito por alguien más. En esta sección presentamos un nuevo ejemplo para que se ejercite y para que también observe varias de las características de Python que se van a estudiar en este nivel.</p>
-
+<h1 id="Un-programa-para-leer">Un programa para leer<a class="anchor-link" href="#Un-programa-para-leer"> </a></h1><p>Como dijimos en el primer capítulo, una habilidad importante que se debe desarrollar es la capacidad para leer código escrito por alguien más. En esta sección presentamos un nuevo ejemplo para que se ejercite y para que también observe varias de las características de Python que se van a estudiar en este nivel.</p>
 <p>Al igual que en el nivel 1, el programa no tiene comentarios para que el ejercicio de lectura sea más exigente pero también más útil. Un programa tan largo como este normalmente tendría una buena cantidad de comentarios.</p>
-
-<h2 id="lógica-de-la-aplicación">Lógica de la aplicación</h2>
-
-<p>El siguiente es el contenido completo del módulo <code class="highlighter-rouge">logica_juego1</code>.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span>
+<h2 id="L&#243;gica-de-la-aplicaci&#243;n">L&#243;gica de la aplicaci&#243;n<a class="anchor-link" href="#L&#243;gica-de-la-aplicaci&#243;n"> </a></h2><p>El siguiente es el contenido completo del módulo <code>logica_juego1</code>.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="k">def</span> <span class="nf">mano_nueva</span><span class="p">()</span><span class="o">-&gt;</span><span class="nb">dict</span><span class="p">:</span>
-    <span class="n">mano</span> <span class="o">=</span> <span class="p">{</span><span class="s">'carta1'</span><span class="p">:</span> <span class="n">carta_nueva</span><span class="p">(),</span> <span class="s">'carta2'</span><span class="p">:</span> <span class="n">carta_nueva</span><span class="p">(),</span> <span class="s">'tam'</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+    <span class="n">mano</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;carta1&#39;</span><span class="p">:</span> <span class="n">carta_nueva</span><span class="p">(),</span> <span class="s1">&#39;carta2&#39;</span><span class="p">:</span> <span class="n">carta_nueva</span><span class="p">(),</span> <span class="s1">&#39;tam&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
     <span class="k">return</span> <span class="n">mano</span>
 
 <span class="k">def</span> <span class="nf">carta_nueva</span><span class="p">()</span><span class="o">-&gt;</span><span class="nb">dict</span><span class="p">:</span>
     <span class="n">palo</span> <span class="o">=</span> <span class="n">nombre_palo</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
     <span class="n">valor</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">)</span>
-    <span class="n">nombre_carta</span> <span class="o">=</span> <span class="s">"{} de {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre_valor</span><span class="p">(</span><span class="n">valor</span><span class="p">),</span> <span class="n">palo</span><span class="p">)</span>
-    <span class="n">carta</span> <span class="o">=</span> <span class="p">{</span><span class="s">"palo"</span><span class="p">:</span> <span class="n">palo</span><span class="p">,</span> <span class="s">"valor"</span><span class="p">:</span> <span class="n">valor</span><span class="p">,</span> <span class="s">"nombre"</span> <span class="p">:</span> <span class="n">nombre_carta</span><span class="p">}</span>
+    <span class="n">nombre_carta</span> <span class="o">=</span> <span class="s2">&quot;{} de {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre_valor</span><span class="p">(</span><span class="n">valor</span><span class="p">),</span> <span class="n">palo</span><span class="p">)</span>
+    <span class="n">carta</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;palo&quot;</span><span class="p">:</span> <span class="n">palo</span><span class="p">,</span> <span class="s2">&quot;valor&quot;</span><span class="p">:</span> <span class="n">valor</span><span class="p">,</span> <span class="s2">&quot;nombre&quot;</span> <span class="p">:</span> <span class="n">nombre_carta</span><span class="p">}</span>
     <span class="k">return</span> <span class="n">carta</span>
 
 <span class="k">def</span> <span class="nf">agregar_carta</span><span class="p">(</span><span class="n">mano</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">dict</span><span class="p">:</span>
-    <span class="n">tam_actual</span> <span class="o">=</span> <span class="n">mano</span><span class="p">[</span><span class="s">'tam'</span><span class="p">]</span>
+    <span class="n">tam_actual</span> <span class="o">=</span> <span class="n">mano</span><span class="p">[</span><span class="s1">&#39;tam&#39;</span><span class="p">]</span>
     <span class="n">nueva_carta</span> <span class="o">=</span> <span class="n">carta_nueva</span><span class="p">()</span>
-    <span class="n">nueva_llave</span> <span class="o">=</span> <span class="s">'carta{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tam_actual</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">nueva_llave</span> <span class="o">=</span> <span class="s1">&#39;carta{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tam_actual</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">mano</span><span class="p">[</span><span class="n">nueva_llave</span><span class="p">]</span> <span class="o">=</span> <span class="n">nueva_carta</span>
-    <span class="n">mano</span><span class="p">[</span><span class="s">'tam'</span><span class="p">]</span> <span class="o">=</span> <span class="n">tam_actual</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">mano</span><span class="p">[</span><span class="s1">&#39;tam&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tam_actual</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">nueva_carta</span>
 
 
 <span class="k">def</span> <span class="nf">nombre_palo</span><span class="p">(</span><span class="n">num_palo</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">str</span><span class="p">:</span>
-    <span class="n">nombre</span> <span class="o">=</span> <span class="s">"Picas"</span>
+    <span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Picas&quot;</span>
     <span class="k">if</span> <span class="n">num_palo</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="n">nombre</span> <span class="o">=</span> <span class="s">"Corazones"</span>
+        <span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Corazones&quot;</span>
     <span class="k">elif</span> <span class="n">num_palo</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="n">nombre</span> <span class="o">=</span> <span class="s">"Tréboles"</span>
+        <span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Tréboles&quot;</span>
     <span class="k">elif</span> <span class="n">num_palo</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
-        <span class="n">nombre</span> <span class="o">=</span> <span class="s">"Diamantes"</span>
+        <span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Diamantes&quot;</span>
     <span class="k">return</span> <span class="n">nombre</span>
 
 
 <span class="k">def</span> <span class="nf">nombre_valor</span><span class="p">(</span><span class="n">valor</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">str</span><span class="p">:</span>
     <span class="n">nombre</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">valor</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">nombre</span> <span class="o">=</span> <span class="s">"AS"</span>
+        <span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;AS&quot;</span>
     <span class="k">elif</span> <span class="n">valor</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
-        <span class="n">nombre</span> <span class="o">=</span> <span class="s">"J"</span>
+        <span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;J&quot;</span>
     <span class="k">elif</span> <span class="n">valor</span> <span class="o">==</span> <span class="mi">12</span><span class="p">:</span>
-        <span class="n">nombre</span> <span class="o">=</span> <span class="s">"Q"</span>
+        <span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Q&quot;</span>
     <span class="k">elif</span> <span class="n">valor</span> <span class="o">==</span> <span class="mi">13</span><span class="p">:</span>
-        <span class="n">nombre</span> <span class="o">=</span> <span class="s">"K"</span>
+        <span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;K&quot;</span>
     <span class="k">return</span> <span class="n">nombre</span>
 
 
@@ -1155,10 +1153,10 @@ initFunction(initPrint)
 
 <span class="k">def</span> <span class="nf">contar_puntos_carta</span><span class="p">(</span><span class="n">mano</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">numero_carta</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">int</span><span class="p">:</span>
     <span class="n">puntos</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">llave</span> <span class="o">=</span> <span class="s">"carta{}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">numero_carta</span><span class="p">)</span>
+    <span class="n">llave</span> <span class="o">=</span> <span class="s2">&quot;carta{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">numero_carta</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">llave</span> <span class="ow">in</span> <span class="n">mano</span><span class="p">:</span>
         <span class="n">carta</span> <span class="o">=</span> <span class="n">mano</span><span class="p">[</span><span class="n">llave</span><span class="p">]</span>
-        <span class="n">valor</span> <span class="o">=</span> <span class="n">carta</span><span class="p">[</span><span class="s">"valor"</span><span class="p">]</span>
+        <span class="n">valor</span> <span class="o">=</span> <span class="n">carta</span><span class="p">[</span><span class="s2">&quot;valor&quot;</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">valor</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="n">puntos</span> <span class="o">=</span> <span class="mi">11</span>
         <span class="k">elif</span> <span class="n">valor</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
@@ -1171,66 +1169,60 @@ initFunction(initPrint)
 <span class="k">def</span> <span class="nf">casa_debe_continuar</span><span class="p">(</span><span class="n">mano_casa</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
     <span class="n">puntos_casa</span> <span class="o">=</span> <span class="n">contar_puntos_mano</span><span class="p">(</span><span class="n">mano_casa</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">puntos_casa</span> <span class="o">&lt;</span> <span class="mi">16</span> <span class="ow">or</span> <span class="n">puntos_casa</span> <span class="o">&gt;</span> <span class="mi">21</span>
-</code></pre></div></div>
-
+</pre></div>
 <p><strong>Preguntas:</strong>
 A partir de su lectura del programa, intente responder las siguientes preguntas. No se preocupe si no está seguro de algo, al final del nivel todas sus dudas deberían haber quedado aclaradas.</p>
-
 <ul>
-  <li>¿Cuál cree que es el objetivo del programa?</li>
-  <li>¿Cuál es el objetivo de cada bloque?</li>
-  <li>¿Qué elementos de la sintaxis utilizada no conoce todavía?</li>
+<li>¿Cuál cree que es el objetivo del programa?</li>
+<li>¿Cuál es el objetivo de cada bloque?</li>
+<li>¿Qué elementos de la sintaxis utilizada no conoce todavía?</li>
 </ul>
-
-<h2 id="interfaz-de-la-aplicación">Interfaz de la aplicación</h2>
-
-<p>El siguiente es el contenido completo del módulo <code class="highlighter-rouge">interfaz_juego1</code>.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">logica_juego1</span> <span class="k">as</span> <span class="n">juego</span>
+<h2 id="Interfaz-de-la-aplicaci&#243;n">Interfaz de la aplicaci&#243;n<a class="anchor-link" href="#Interfaz-de-la-aplicaci&#243;n"> </a></h2><p>El siguiente es el contenido completo del módulo <code>interfaz_juego1</code>.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logica_juego1</span> <span class="kn">as</span> <span class="nn">juego</span>
 
 <span class="k">def</span> <span class="nf">mostrar_menu</span><span class="p">()</span><span class="o">-&gt;</span><span class="nb">int</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">¿Cómo quiere continuar?"</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"  1. Quiero otra carta"</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"  2. No quiero más cartas"</span><span class="p">)</span>
-    <span class="n">respuesta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Seleccione una opción: "</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">¿Cómo quiere continuar?&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;  1. Quiero otra carta&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;  2. No quiero más cartas&quot;</span><span class="p">)</span>
+    <span class="n">respuesta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Seleccione una opción: &quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">respuesta</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
         <span class="n">opcion</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">respuesta</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">opcion</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">opcion</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">"Sólo podía seleccionar 1 o 2. Suponemos que no quiere más cartas"</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Sólo podía seleccionar 1 o 2. Suponemos que no quiere más cartas&quot;</span><span class="p">)</span>
             <span class="n">opcion</span> <span class="o">=</span> <span class="mi">2</span>            
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"Sólo podía seleccionar 1 o 2. Suponemos que no quiere más cartas"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Sólo podía seleccionar 1 o 2. Suponemos que no quiere más cartas&quot;</span><span class="p">)</span>
         <span class="n">opcion</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="k">return</span> <span class="n">opcion</span>
 
 
 <span class="k">def</span> <span class="nf">mostrar_primera_carta</span><span class="p">(</span><span class="n">mano</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span><span class="o">-&gt;</span><span class="bp">None</span><span class="p">:</span>
-    <span class="n">plantilla</span> <span class="o">=</span> <span class="s">"La mano tiene {} cartas y está mostrando un {}"</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">plantilla</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mano</span><span class="p">[</span><span class="s">'tam'</span><span class="p">],</span> <span class="n">mano</span><span class="p">[</span><span class="s">'carta1'</span><span class="p">][</span><span class="s">'nombre'</span><span class="p">]))</span>
+    <span class="n">plantilla</span> <span class="o">=</span> <span class="s2">&quot;La mano tiene {} cartas y está mostrando un {}&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">plantilla</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mano</span><span class="p">[</span><span class="s1">&#39;tam&#39;</span><span class="p">],</span> <span class="n">mano</span><span class="p">[</span><span class="s1">&#39;carta1&#39;</span><span class="p">][</span><span class="s1">&#39;nombre&#39;</span><span class="p">]))</span>
 
 
 <span class="k">def</span> <span class="nf">mostrar_mano_abierta</span><span class="p">(</span><span class="n">mano</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span><span class="o">-&gt;</span><span class="bp">None</span><span class="p">:</span>
-    <span class="n">num_cartas</span> <span class="o">=</span> <span class="n">mano</span><span class="p">[</span><span class="s">'tam'</span><span class="p">]</span>
+    <span class="n">num_cartas</span> <span class="o">=</span> <span class="n">mano</span><span class="p">[</span><span class="s1">&#39;tam&#39;</span><span class="p">]</span>
     <span class="n">puntos_mano</span> <span class="o">=</span> <span class="n">juego</span><span class="o">.</span><span class="n">contar_puntos_mano</span><span class="p">(</span><span class="n">mano</span><span class="p">)</span>
-    <span class="n">plantilla</span> <span class="o">=</span> <span class="s">"La mano tiene {} cartas y vale {} puntos"</span>
+    <span class="n">plantilla</span> <span class="o">=</span> <span class="s2">&quot;La mano tiene {} cartas y vale {} puntos&quot;</span>
     <span class="k">print</span><span class="p">(</span><span class="n">plantilla</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num_cartas</span><span class="p">,</span> <span class="n">puntos_mano</span><span class="p">))</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"  La primera carta es: "</span><span class="p">,</span> <span class="n">mano</span><span class="p">[</span><span class="s">'carta1'</span><span class="p">][</span><span class="s">'nombre'</span><span class="p">])</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"  La segunda carta es: "</span><span class="p">,</span> <span class="n">mano</span><span class="p">[</span><span class="s">'carta2'</span><span class="p">][</span><span class="s">'nombre'</span><span class="p">])</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;  La primera carta es: &quot;</span><span class="p">,</span> <span class="n">mano</span><span class="p">[</span><span class="s1">&#39;carta1&#39;</span><span class="p">][</span><span class="s1">&#39;nombre&#39;</span><span class="p">])</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;  La segunda carta es: &quot;</span><span class="p">,</span> <span class="n">mano</span><span class="p">[</span><span class="s1">&#39;carta2&#39;</span><span class="p">][</span><span class="s1">&#39;nombre&#39;</span><span class="p">])</span>
 
     <span class="k">if</span> <span class="n">num_cartas</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"  La tercera carta es: "</span><span class="p">,</span> <span class="n">mano</span><span class="p">[</span><span class="s">'carta3'</span><span class="p">][</span><span class="s">'nombre'</span><span class="p">])</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;  La tercera carta es: &quot;</span><span class="p">,</span> <span class="n">mano</span><span class="p">[</span><span class="s1">&#39;carta3&#39;</span><span class="p">][</span><span class="s1">&#39;nombre&#39;</span><span class="p">])</span>
 
     <span class="k">if</span> <span class="n">num_cartas</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"  La cuarta carta es: "</span><span class="p">,</span> <span class="n">mano</span><span class="p">[</span><span class="s">'carta4'</span><span class="p">][</span><span class="s">'nombre'</span><span class="p">])</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;  La cuarta carta es: &quot;</span><span class="p">,</span> <span class="n">mano</span><span class="p">[</span><span class="s1">&#39;carta4&#39;</span><span class="p">][</span><span class="s1">&#39;nombre&#39;</span><span class="p">])</span>
 
     <span class="k">if</span> <span class="n">num_cartas</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"  La quinta carta es: "</span><span class="p">,</span> <span class="n">mano</span><span class="p">[</span><span class="s">'carta5'</span><span class="p">][</span><span class="s">'nombre'</span><span class="p">])</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;  La quinta carta es: &quot;</span><span class="p">,</span> <span class="n">mano</span><span class="p">[</span><span class="s1">&#39;carta5&#39;</span><span class="p">][</span><span class="s1">&#39;nombre&#39;</span><span class="p">])</span>
 
 
 <span class="k">def</span> <span class="nf">mostrar_juego_actual</span><span class="p">(</span><span class="n">mano_jugador</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">mano_casa</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">abrir_casa</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"MANO JUGADOR"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;MANO JUGADOR&quot;</span><span class="p">)</span>
     <span class="n">mostrar_mano_abierta</span><span class="p">(</span><span class="n">mano_jugador</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"MANO CASA"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;MANO CASA&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">abrir_casa</span><span class="p">:</span>
         <span class="n">mostrar_mano_abierta</span><span class="p">(</span><span class="n">mano_casa</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
@@ -1244,16 +1236,16 @@ A partir de su lectura del programa, intente responder las siguientes preguntas.
         <span class="n">continuar_juego</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">nueva</span> <span class="o">=</span> <span class="n">juego</span><span class="o">.</span><span class="n">agregar_carta</span><span class="p">(</span><span class="n">mano_jugador</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"Tu nueva carta es: "</span><span class="p">,</span> <span class="n">nueva</span><span class="p">[</span><span class="s">'nombre'</span><span class="p">])</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Tu nueva carta es: &quot;</span><span class="p">,</span> <span class="n">nueva</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">])</span>
         <span class="n">mostrar_juego_actual</span><span class="p">(</span><span class="n">mano_jugador</span><span class="p">,</span> <span class="n">mano_casa</span><span class="p">)</span>
         <span class="n">puntos_mano</span> <span class="o">=</span> <span class="n">juego</span><span class="o">.</span><span class="n">contar_puntos_mano</span><span class="p">(</span><span class="n">mano_jugador</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">puntos_mano</span> <span class="o">&gt;</span> <span class="mi">21</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Tienes más de 21 puntos: ¡Perdiste!"</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Tienes más de 21 puntos: ¡Perdiste!&quot;</span><span class="p">)</span>
             <span class="n">continuar_juego</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="k">elif</span> <span class="n">puntos_mano</span> <span class="o">==</span> <span class="mi">21</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Tienes exactamente 21 puntos: esperemos que la casa no tenga lo mismo.</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Tienes exactamente 21 puntos: esperemos que la casa no tenga lo mismo.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="n">continuar_juego</span> <span class="o">=</span> <span class="bp">False</span>
-            
+
     <span class="k">return</span> <span class="n">continuar_juego</span>
 
 
@@ -1261,22 +1253,22 @@ A partir de su lectura del programa, intente responder las siguientes preguntas.
     <span class="n">continuar_juego</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="n">puntos_casa</span> <span class="o">=</span> <span class="n">juego</span><span class="o">.</span><span class="n">contar_puntos_mano</span><span class="p">(</span><span class="n">mano_casa</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">puntos_casa</span> <span class="o">&gt;</span> <span class="n">puntos_jugador</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"La casa gana: {1} de la casa vs {0} del jugador"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">puntos_jugador</span><span class="p">,</span> <span class="n">puntos_casa</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;La casa gana: {1} de la casa vs {0} del jugador&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">puntos_jugador</span><span class="p">,</span> <span class="n">puntos_casa</span><span class="p">))</span>
         <span class="n">continuar_juego</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">juego</span><span class="o">.</span><span class="n">casa_debe_continuar</span><span class="p">(</span><span class="n">mano_casa</span><span class="p">):</span>
             <span class="n">nueva</span> <span class="o">=</span> <span class="n">juego</span><span class="o">.</span><span class="n">agregar_carta</span><span class="p">(</span><span class="n">mano_casa</span><span class="p">)</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">"La casa saca otra carta ... {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nueva</span><span class="p">[</span><span class="s">'nombre'</span><span class="p">]))</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;La casa saca otra carta ... {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nueva</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]))</span>
             <span class="n">mostrar_mano_abierta</span><span class="p">(</span><span class="n">mano_casa</span><span class="p">)</span>
-            
+
         <span class="n">puntos_casa</span> <span class="o">=</span> <span class="n">juego</span><span class="o">.</span><span class="n">contar_puntos_mano</span><span class="p">(</span><span class="n">mano_casa</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">puntos_casa</span> <span class="o">&gt;</span> <span class="mi">21</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">La casa tiene más de 21: ¡el jugador gana!</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">La casa tiene más de 21: ¡el jugador gana!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="n">continuar_juego</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="k">elif</span> <span class="n">puntos_casa</span> <span class="o">==</span> <span class="mi">21</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">La casa tiene 21: ¡la casa gana!</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">La casa tiene 21: ¡la casa gana!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="n">continuar_juego</span> <span class="o">=</span> <span class="bp">False</span>
-    
+
     <span class="k">return</span> <span class="n">continuar_juego</span>
 
 
@@ -1287,55 +1279,62 @@ A partir de su lectura del programa, intente responder las siguientes preguntas.
 
     <span class="n">continuar_juego</span> <span class="o">=</span> <span class="bp">True</span>
 
-    <span class="c"># tercera carta del jugador</span>
+    <span class="c1"># tercera carta del jugador</span>
     <span class="k">if</span> <span class="n">continuar_juego</span><span class="p">:</span>
         <span class="n">continuar_juego</span> <span class="o">=</span> <span class="n">turno_jugador</span><span class="p">(</span><span class="n">mano_jugador</span><span class="p">,</span> <span class="n">mano_casa</span><span class="p">)</span>
 
-    <span class="c"># cuarta carta del jugador</span>
+    <span class="c1"># cuarta carta del jugador</span>
     <span class="k">if</span> <span class="n">continuar_juego</span><span class="p">:</span>
         <span class="n">continuar_juego</span> <span class="o">=</span> <span class="n">turno_jugador</span><span class="p">(</span><span class="n">mano_jugador</span><span class="p">,</span> <span class="n">mano_casa</span><span class="p">)</span>
 
-    <span class="c"># quinta carta del jugador</span>
+    <span class="c1"># quinta carta del jugador</span>
     <span class="k">if</span> <span class="n">continuar_juego</span><span class="p">:</span>
         <span class="n">continuar_juego</span> <span class="o">=</span> <span class="n">turno_jugador</span><span class="p">(</span><span class="n">mano_jugador</span><span class="p">,</span> <span class="n">mano_casa</span><span class="p">)</span>
 
     <span class="n">puntos_jugador</span> <span class="o">=</span> <span class="n">juego</span><span class="o">.</span><span class="n">contar_puntos_mano</span><span class="p">(</span><span class="n">mano_jugador</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">puntos_jugador</span> <span class="o">&lt;=</span> <span class="mi">21</span><span class="p">:</span>
         <span class="n">mostrar_juego_actual</span><span class="p">(</span><span class="n">mano_jugador</span><span class="p">,</span> <span class="n">mano_casa</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Es el turno de la casa de jugar</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Es el turno de la casa de jugar</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">continuar_juego</span> <span class="o">=</span> <span class="bp">True</span>
-        
-    <span class="c"># tercera carta de la casa</span>
+
+    <span class="c1"># tercera carta de la casa</span>
     <span class="k">if</span> <span class="n">continuar_juego</span><span class="p">:</span>
         <span class="n">continuar_juego</span> <span class="o">=</span> <span class="n">turno_casa</span><span class="p">(</span><span class="n">puntos_jugador</span><span class="p">,</span> <span class="n">mano_casa</span><span class="p">)</span>
 
-    <span class="c"># cuarta carta de la casa</span>
+    <span class="c1"># cuarta carta de la casa</span>
     <span class="k">if</span> <span class="n">continuar_juego</span><span class="p">:</span>
         <span class="n">continuar_juego</span> <span class="o">=</span> <span class="n">turno_casa</span><span class="p">(</span><span class="n">puntos_jugador</span><span class="p">,</span> <span class="n">mano_casa</span><span class="p">)</span>
-    
-    <span class="c"># quinta carta de la casa</span>
+
+    <span class="c1"># quinta carta de la casa</span>
     <span class="k">if</span> <span class="n">continuar_juego</span><span class="p">:</span>
         <span class="n">continuar_juego</span> <span class="o">=</span> <span class="n">turno_casa</span><span class="p">(</span><span class="n">puntos_jugador</span><span class="p">,</span> <span class="n">mano_casa</span><span class="p">)</span>
 
     <span class="n">puntos_casa</span> <span class="o">=</span> <span class="n">juego</span><span class="o">.</span><span class="n">contar_puntos_mano</span><span class="p">(</span><span class="n">mano_casa</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">puntos_casa</span> <span class="o">&lt;</span> <span class="n">puntos_jugador</span> <span class="ow">and</span> <span class="n">puntos_jugador</span> <span class="o">&lt;=</span> <span class="mi">21</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"¡Ganaste!: tienes {} puntos vs {} puntos de la casa"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">puntos_jugador</span><span class="p">,</span> <span class="n">puntos_casa</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;¡Ganaste!: tienes {} puntos vs {} puntos de la casa&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">puntos_jugador</span><span class="p">,</span> <span class="n">puntos_casa</span><span class="p">))</span>
 
 
 <span class="n">iniciar_aplicacion</span><span class="p">()</span>
-</code></pre></div></div>
-
+</pre></div>
 <p><strong>Preguntas:</strong>
 A partir de su lectura del programa, intente responder las siguientes preguntas. No se preocupe si no está seguro de algo, al final del nivel todas sus dudas deberían haber quedado aclaradas.</p>
-
 <ul>
-  <li>¿Cuál cree que es el objetivo del programa?</li>
-  <li>¿Qué información tendrá que suministrar el usuario que ejecute el programa?</li>
-  <li>¿Cuál es el objetivo de cada bloque?</li>
-  <li>¿Qué es lo que primero se ejecuta?</li>
+<li>¿Cuál cree que es el objetivo del programa?</li>
+<li>¿Qué información tendrá que suministrar el usuario que ejecute el programa?</li>
+<li>¿Cuál es el objetivo de cada bloque?</li>
+<li>¿Qué es lo que primero se ejecuta?</li>
 </ul>
 
+</div>
+</div>
+</div>
+</div>
 
+ 
+
+
+    </main>
+    
             </div>
             <div class="c-textbook__footer" id="textbook_footer">
               <nav class="c-page__nav">

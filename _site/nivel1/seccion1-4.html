@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Variables, expresiones y operadores</title>
-  <meta name="description" content="            Versión borrador / preliminar                  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o ...">
+  <meta name="description" content="        Versión borrador / preliminarEste documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comenta...">
 
   <link rel="canonical" href="http://0.0.0.0:4000//nivel1/seccion1-4.html">
   <link rel="alternate" type="application/rss+xml" title="Introducción a la Programación" href="http://0.0.0.0:4000//feed.xml">
@@ -14,7 +14,7 @@
   <meta property="og:url"         content="http://0.0.0.0:4000//nivel1/seccion1-4.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Variables, expresiones y operadores" />
-<meta property="og:description" content="            Versión borrador / preliminar                  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o ..." />
+<meta property="og:description" content="        Versión borrador / preliminarEste documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comenta..." />
 <meta property="og:image"       content="http://0.0.0.0:4000/images/logo/uniandes_logo.jpeg" />
 
 <meta name="twitter:card" content="summary">
@@ -26,9 +26,9 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "http://0.0.0.0:4000//nivel1/seccion1-4.html",
   "headline": "Variables, expresiones y operadores",
-  "datePublished": "2019-11-11T19:45:05-06:00",
-  "dateModified": "2019-11-11T19:45:05-06:00",
-  "description": "            Versión borrador / preliminar                  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o ...",
+  "datePublished": "2019-11-11T19:57:00-06:00",
+  "dateModified": "2019-11-11T19:57:00-06:00",
+  "description": "        Versión borrador / preliminarEste documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comenta...",
   "author": {
     "@type": "Person",
     "name": "YOUR AUTHOR NAME"
@@ -1075,361 +1075,278 @@ initFunction(initPrint)
 
       <main class="c-textbook__page" tabindex="-1">
             <div class="c-textbook__content" id="textbook_content">
-              <table>
-  <thead>
-    <tr>
-      <th>Versión borrador / preliminar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores</td>
-    </tr>
-  </tbody>
+                  <main class="jupyter-page">
+    
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+<thead><tr>
+<th>Versión borrador / preliminar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores</td>
+<td></td>
+</tr>
+</tbody>
 </table>
-
-<h1 id="variables-expresiones-y-operadores">Variables, expresiones y operadores</h1>
-
-<blockquote>
-  <p>El objetivo de esta sección es introducir y discutir los conceptos de <em>instrucción</em>, <em>valor</em>, <em>variable</em>, <em>asignación</em>, <em>expresión</em> y <em>operador</em>.</p>
+<h1 id="Variables,-expresiones-y-operadores">Variables, expresiones y operadores<a class="anchor-link" href="#Variables,-expresiones-y-operadores"> </a></h1><blockquote><p>El objetivo de esta sección es introducir y discutir los conceptos de <em>instrucción</em>, <em>valor</em>, <em>variable</em>, <em>asignación</em>, <em>expresión</em> y <em>operador</em>.</p>
 </blockquote>
-
 <p>Para empezar, lea con cuidado el siguiente programa escrito con el lenguaje de programación Python. Aunque breve, ilustra los conceptos más básicos del lenguaje, empezando por el concepto de <strong>instrucción</strong>.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">v1</span> <span class="o">=</span> <span class="mi">5</span>
+<div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">v2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
 <span class="n">v3</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span>
 <span class="n">v4</span> <span class="o">=</span> <span class="n">v3</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"v4:"</span><span class="p">,</span> <span class="n">v4</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>Este programa está compuesto por 5 instrucciones, cada una de las cuales se escribió en una línea aparte. Como veremos, cada una de estas instrucciones le da una orden al computador y esa orden se tiene que terminar de ejecutar antes de que se pueda pasar a la siguiente instrucción. Esto quiere decir que podemos estar seguros de que la última instrucción (<code class="highlighter-rouge">print(v4)</code>) se va a ejecutar después de que se hayan ejecutado las 4 instrucciones anteriores. ¡Aunque puede parecer simple, este concepto es extremadamente importante!</p>
-
-<h2 id="analizando-la-primera-instrucción">Analizando la primera instrucción</h2>
-
-<p>Analicemos ahora la primea instrucción del programa:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">v1</span> <span class="o">=</span> <span class="mi">5</span>
-</code></pre></div></div>
-
-<p>Esta instrucción se puede separar en dos partes dividas por el caracter <code class="highlighter-rouge">=</code>. En la parte derecha, encontramos sólo el caracter <code class="highlighter-rouge">5</code>, el cual expresa el <strong>valor</strong> que corresponde al número natural 5.</p>
-
-<p>En la parte izquierda encontramos sólo el texto <code class="highlighter-rouge">v1</code>. Como sabemos, este texto no puede expresar ninguno de los tipos de datos que ya conocemos (<em>int</em>, <em>float</em>, <em>str</em>) así que <code class="highlighter-rouge">v1</code> no puede ser un valor. En este caso, <code class="highlighter-rouge">v1</code> representa entonces el nombre de una <strong>variable</strong> definida por el programador.</p>
-
-<p>Una <strong>variable</strong> es un espacio en la memoria del computador en el cual se puede almacenar un valor o del cual se puede leer un valor, mientras se ejecute el programa. Cuando un programador define una variable, le asigna un nombre o identificador para que sea fácil de recordar y utilizar en el resto del programa. En nuestro ejemplo, la variable tiene el nombre <code class="highlighter-rouge">v1</code>.</p>
-
-<p><strong>Nota:</strong> Se debe procurar que los nombres de las variables sean lo más descriptivos posibles para que su objetivo sea claro. En el ejemplo la variable tiene un nombre que no es muy explícito, pero en las siguientes líneas quedará claro por qué se seleccionó el nombre <code class="highlighter-rouge">v1</code>. En el programa completo del inicio del capítulo, una de las variables se llamaba <code class="highlighter-rouge">hipotenusa</code>: sería difícil encontrar un nombre que expresara con más claridad el objetivo de esa variable.</p>
-
-<p>Finalmente, volvamos al caracter <code class="highlighter-rouge">=</code> que separa la <em>variable</em> que se encuentra a la izquierda del <em>valor</em> que se encuentra a la derecha. En Python, el caracter <code class="highlighter-rouge">=</code> se utiliza para especificar que en un programa se debe hacer una <strong>asignación</strong>. Es decir, cuando se ejecute una instrucción con una asignación, el programa debe tomar el valor que se encuentra a la <strong>derecha</strong> del caracter y lo debe almacenar en la variable que se encuentra a la <strong>izquierda</strong>.</p>
-
-<p>La instrucción que estamos analizando entonces se encarga de crear una variable con el nombre <code class="highlighter-rouge">v1</code> y almacenar en ella el valor entero <code class="highlighter-rouge">5</code>. En Python, el tipo de una variable depende del valor que esté almacenado en ella así que en este caso la variable será de tipo <strong>int</strong> <sup id="fnref:tipos"><a href="#fn:tipos" class="footnote">1</a></sup>.</p>
-
-<p><strong>Cuidado:</strong> Cuando se hace una asignación, el valor de la derecha se almacenará en la variable de la izquierda. Es un error bastante común entre principiantes escribir instrucciones como ‘5 = v1’: esta instrucción no sería válida en Python y el intérprete mostraría un error similar al siguiente:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">SyntaxError</span><span class="p">:</span> <span class="n">can</span><span class="s">'t assign to literal</span><span class="err">
-</span></code></pre></div></div>
-
-<h2 id="operadores-y-expresiones">Operadores y expresiones</h2>
-
-<p>Si analizamos ahora la segunda línea del programa, veremos que tiene varios de los elementos que acabamos de estudiar:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">v2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
-</code></pre></div></div>
-
-<p>A la izquierda tenemos una variable llamada <code class="highlighter-rouge">v2</code> a la cual le vamos a asignar el valor que se encuentra a la derecha. La diferencia es que en este caso el valor no está definido usando un literal sino usando una <strong>expresión</strong>: <code class="highlighter-rouge">1 + 2</code>.</p>
-
-<p>En Python, una <strong>expresión</strong> es una combinación de valores, literales, variables, llamados y operadores, que al evaluarse produce un valor. Cuando escribimos una instrucción como la del ejemplo, le estamos indicando a Python que la expresión de la derecha debería evaluarse para producir un valor y que ese valor debería almacenarse en la variable. En nuestro ejemplo, el valor de la expresión de la derecha será <code class="highlighter-rouge">3</code>, es decir el resultado de usar el <strong>operador</strong> + a los dos literales <strong>1</strong> y <strong>2</strong>.</p>
-
-<h2 id="instrucciones-con-variables">Instrucciones con variables</h2>
-
-<p>A continuación, analizaremos las siguientes dos instrucciones del programa, pero recordando un principio muy importante: para que estas instrucciones se ejecuten, se tienen que haber ejecutado antes las anteriores. Es decir, que cuando estas instrucciones se ejecuten ya se habrá creado la variable <code class="highlighter-rouge">v1</code> y se le habrá asignado el valor <code class="highlighter-rouge">5</code> y ya se habrá creado la variable <code class="highlighter-rouge">v2</code> y se le habrá asignado el valor <code class="highlighter-rouge">3</code> <sup id="fnref:1"><a href="#fn:1" class="footnote">2</a></sup>.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">v3</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span>
-</code></pre></div></div>
-
-<p>Esta instrucción es muy similar a la anterior: a la nueva variable <code class="highlighter-rouge">v3</code> se le debe asignar el valor resultado de evaluar la expresión de la derecha. La diferencia principal es que en este caso la expresión no está construida a partir de literales como 1 y 2, sino a partir de nombres de variables. Esto quiere decir que cuando llegue el momento de ejecutar la instrucción, Python tiene que evaluar la expresión de la derecha <em>antes</em> de poder hacer la asignación.</p>
-
-<p>Ahora bien, ¿cómo puede calcular Python la suma de dos cosas que no son literales? La respuesta es que también tiene que evaluar esas dos cosas para averiguar qué valor tienen. Como <code class="highlighter-rouge">v1</code> y <code class="highlighter-rouge">v2</code> son variables, la evaluación es muy sencilla porque sólo requiere consultar cuál es el valor almacenado en esas variables. Eso quiere decir que, después de evaluar el valor de esas variables, Python está listo para hacer la siguiente asignación:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">v3</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span>
-</code></pre></div></div>
-<p>En este punto volvimos a una situación idéntica a la de la instrucción anterior y ya sabemos que se va a resolver dejando el valor entero <code class="highlighter-rouge">8</code> en la variable <code class="highlighter-rouge">v3</code>.</p>
-
-<p><strong>Nota:</strong> La evaluación de la instrucción anterior fue exitosa porque a las variables <code class="highlighter-rouge">v1</code> y <code class="highlighter-rouge">v2</code> ya se les había asignado un valor anteriormente. Si en lugar de <code class="highlighter-rouge">v1</code> hubiéramos escrito un nombre de variable inexistente, como <code class="highlighter-rouge">vv</code>, habríamos encontrado un error como el siguiente:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s">'vv'</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
-</code></pre></div></div>
-
-<h2 id="paréntesis-y-tipos-de-datos">Paréntesis y tipos de datos</h2>
-
-<p>Antes de pasar a la siguiente instrucción, observemos lo que responde Python cuando le preguntamos por los tipos de las variables <code class="highlighter-rouge">v1</code>, <code class="highlighter-rouge">v2</code> y <code class="highlighter-rouge">v3</code>.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
-<span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">int</span><span class="s">'&gt;</span><span class="err">
-</span><span class="s">&gt;&gt;&gt; type(v2)</span><span class="err">
-</span><span class="s">&lt;class '</span><span class="nb">int</span><span class="s">'&gt;</span><span class="err">
-</span><span class="s">&gt;&gt;&gt; type(v3)</span><span class="err">
-</span><span class="s">&lt;class '</span><span class="nb">int</span><span class="s">'&gt;</span><span class="err">
-</span></code></pre></div></div>
-
-<p>No es una sorpresa que <code class="highlighter-rouge">v1</code> sea de tipo int dado que la asignación se hizo con un literal. En el caso de <code class="highlighter-rouge">v2</code> y <code class="highlighter-rouge">v3</code> Python decidió que el tipo debía ser int dado que el valor se calculó a partir de la suma de valores de tipo int.</p>
-
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;v4:&quot;</span><span class="p">,</span> <span class="n">v4</span><span class="p">)</span>
+</pre></div>
+<p>Este programa está compuesto por 5 instrucciones, cada una de las cuales se escribió en una línea aparte. Como veremos, cada una de estas instrucciones le da una orden al computador y esa orden se tiene que terminar de ejecutar antes de que se pueda pasar a la siguiente instrucción. Esto quiere decir que podemos estar seguros de que la última instrucción (<code>print(v4)</code>) se va a ejecutar después de que se hayan ejecutado las 4 instrucciones anteriores. ¡Aunque puede parecer simple, este concepto es extremadamente importante!</p>
+<h2 id="Analizando-la-primera-instrucci&#243;n">Analizando la primera instrucci&#243;n<a class="anchor-link" href="#Analizando-la-primera-instrucci&#243;n"> </a></h2><p>Analicemos ahora la primea instrucción del programa:</p>
+<div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+<p>Esta instrucción se puede separar en dos partes dividas por el caracter <code>=</code>. En la parte derecha, encontramos sólo el caracter <code>5</code>, el cual expresa el <strong>valor</strong> que corresponde al número natural 5.</p>
+<p>En la parte izquierda encontramos sólo el texto <code>v1</code>. Como sabemos, este texto no puede expresar ninguno de los tipos de datos que ya conocemos (<em>int</em>, <em>float</em>, <em>str</em>) así que <code>v1</code> no puede ser un valor. En este caso, <code>v1</code> representa entonces el nombre de una <strong>variable</strong> definida por el programador.</p>
+<p>Una <strong>variable</strong> es un espacio en la memoria del computador en el cual se puede almacenar un valor o del cual se puede leer un valor, mientras se ejecute el programa. Cuando un programador define una variable, le asigna un nombre o identificador para que sea fácil de recordar y utilizar en el resto del programa. En nuestro ejemplo, la variable tiene el nombre <code>v1</code>.</p>
+<p><strong>Nota:</strong> Se debe procurar que los nombres de las variables sean lo más descriptivos posibles para que su objetivo sea claro. En el ejemplo la variable tiene un nombre que no es muy explícito, pero en las siguientes líneas quedará claro por qué se seleccionó el nombre <code>v1</code>. En el programa completo del inicio del capítulo, una de las variables se llamaba <code>hipotenusa</code>: sería difícil encontrar un nombre que expresara con más claridad el objetivo de esa variable.</p>
+<p>Finalmente, volvamos al caracter <code>=</code> que separa la <em>variable</em> que se encuentra a la izquierda del <em>valor</em> que se encuentra a la derecha. En Python, el caracter <code>=</code> se utiliza para especificar que en un programa se debe hacer una <strong>asignación</strong>. Es decir, cuando se ejecute una instrucción con una asignación, el programa debe tomar el valor que se encuentra a la <strong>derecha</strong> del caracter y lo debe almacenar en la variable que se encuentra a la <strong>izquierda</strong>.</p>
+<p>La instrucción que estamos analizando entonces se encarga de crear una variable con el nombre <code>v1</code> y almacenar en ella el valor entero <code>5</code>. En Python, el tipo de una variable depende del valor que esté almacenado en ella así que en este caso la variable será de tipo <strong>int</strong> <sup class="footnote-ref" id="fnref-tipos"><a href="#fn-tipos">1</a></sup>.</p>
+<p><strong>Cuidado:</strong> Cuando se hace una asignación, el valor de la derecha se almacenará en la variable de la izquierda. Es un error bastante común entre principiantes escribir instrucciones como '5 = v1': esta instrucción no sería válida en Python y el intérprete mostraría un error similar al siguiente:</p>
+<div class="highlight"><pre><span></span><span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">can</span><span class="s1">&#39;t assign to literal</span>
+</pre></div>
+<h2 id="Operadores-y-expresiones">Operadores y expresiones<a class="anchor-link" href="#Operadores-y-expresiones"> </a></h2><p>Si analizamos ahora la segunda línea del programa, veremos que tiene varios de los elementos que acabamos de estudiar:</p>
+<div class="highlight"><pre><span></span><span class="n">v2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+<p>A la izquierda tenemos una variable llamada <code>v2</code> a la cual le vamos a asignar el valor que se encuentra a la derecha. La diferencia es que en este caso el valor no está definido usando un literal sino usando una <strong>expresión</strong>: <code>1 + 2</code>.</p>
+<p>En Python, una <strong>expresión</strong> es una combinación de valores, literales, variables, llamados y operadores, que al evaluarse produce un valor. Cuando escribimos una instrucción como la del ejemplo, le estamos indicando a Python que la expresión de la derecha debería evaluarse para producir un valor y que ese valor debería almacenarse en la variable. En nuestro ejemplo, el valor de la expresión de la derecha será <code>3</code>, es decir el resultado de usar el <strong>operador</strong> + a los dos literales <strong>1</strong> y <strong>2</strong>.</p>
+<h2 id="Instrucciones-con-variables">Instrucciones con variables<a class="anchor-link" href="#Instrucciones-con-variables"> </a></h2><p>A continuación, analizaremos las siguientes dos instrucciones del programa, pero recordando un principio muy importante: para que estas instrucciones se ejecuten, se tienen que haber ejecutado antes las anteriores. Es decir, que cuando estas instrucciones se ejecuten ya se habrá creado la variable <code>v1</code> y se le habrá asignado el valor <code>5</code> y ya se habrá creado la variable <code>v2</code> y se le habrá asignado el valor <code>3</code> <sup class="footnote-ref" id="fnref-1"><a href="#fn-1">2</a></sup>.</p>
+<div class="highlight"><pre><span></span><span class="n">v3</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span>
+</pre></div>
+<p>Esta instrucción es muy similar a la anterior: a la nueva variable <code>v3</code> se le debe asignar el valor resultado de evaluar la expresión de la derecha. La diferencia principal es que en este caso la expresión no está construida a partir de literales como 1 y 2, sino a partir de nombres de variables. Esto quiere decir que cuando llegue el momento de ejecutar la instrucción, Python tiene que evaluar la expresión de la derecha <em>antes</em> de poder hacer la asignación.</p>
+<p>Ahora bien, ¿cómo puede calcular Python la suma de dos cosas que no son literales? La respuesta es que también tiene que evaluar esas dos cosas para averiguar qué valor tienen. Como <code>v1</code> y <code>v2</code> son variables, la evaluación es muy sencilla porque sólo requiere consultar cuál es el valor almacenado en esas variables. Eso quiere decir que, después de evaluar el valor de esas variables, Python está listo para hacer la siguiente asignación:</p>
+<div class="highlight"><pre><span></span><span class="n">v3</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+<p>En este punto volvimos a una situación idéntica a la de la instrucción anterior y ya sabemos que se va a resolver dejando el valor entero <code>8</code> en la variable <code>v3</code>.</p>
+<p><strong>Nota:</strong> La evaluación de la instrucción anterior fue exitosa porque a las variables <code>v1</code> y <code>v2</code> ya se les había asignado un valor anteriormente. Si en lugar de <code>v1</code> hubiéramos escrito un nombre de variable inexistente, como <code>vv</code>, habríamos encontrado un error como el siguiente:</p>
+<div class="highlight"><pre><span></span><span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;vv&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</pre></div>
+<h2 id="Par&#233;ntesis-y-tipos-de-datos">Par&#233;ntesis y tipos de datos<a class="anchor-link" href="#Par&#233;ntesis-y-tipos-de-datos"> </a></h2><p>Antes de pasar a la siguiente instrucción, observemos lo que responde Python cuando le preguntamos por los tipos de las variables <code>v1</code>, <code>v2</code> y <code>v3</code>.</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">int</span><span class="s1">&#39;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">int</span><span class="s1">&#39;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">v3</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">int</span><span class="s1">&#39;&gt;</span>
+</pre></div>
+<p>No es una sorpresa que <code>v1</code> sea de tipo int dado que la asignación se hizo con un literal. En el caso de <code>v2</code> y <code>v3</code> Python decidió que el tipo debía ser int dado que el valor se calculó a partir de la suma de valores de tipo int.</p>
 <p>Pasemos ahora a la siguiente instrucción, en la que nuevamente tenemos una asignación y una expresión con operadores a la derecha.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">v4</span> <span class="o">=</span> <span class="n">v3</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>Lo primero que tenemos que notar es que en este caso se utilizaron paréntesis, los cuales tienen el mismo efecto que tendrían si estuviéramos resolviendo un ejercicio de matemáticas. En este caso los paréntesis son obligatorios porque en Python los operadores matemáticos siguen las reglas de precedencia tradicionales. Es decir que la expresión <code class="highlighter-rouge">v3 / (4 + 1)</code> tiene un valor diferente al de la expresión <code class="highlighter-rouge">v3 / 4 + 1</code> porque el operador de división (<code class="highlighter-rouge">/</code>) tiene mayor precedencia que el operador de suma (<code class="highlighter-rouge">+</code>). Debido a esto, lo primero que va a hacer Python cuando empiece a evaluar la expresión de la derecha es encontrar el valor para lo que estaba dentro de los paréntesis y reescribirá la instrucción como:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">v4</span> <span class="o">=</span> <span class="n">v3</span> <span class="o">/</span> <span class="mi">5</span>
-</code></pre></div></div>
-
-<p>Ahora lo que Python tiene que hacer es evaluar la expresión de la derecha, pero para eso primero debe consultar el valor de la variable <code class="highlighter-rouge">v3</code>. Después de hacer esto, la instrucción se reescribirá como:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">v4</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">/</span> <span class="mi">5</span>
-</code></pre></div></div>
-
-<p>Finalmente tenemos una instrucción que sólo tiene literales y el operador de división, así que la expresión de la derecha se puede obtener simplemente calculando la división entre 8 y 5, para luego asignárselo a la variable <code class="highlighter-rouge">v4</code>.</p>
-
-<p>Ahora bien, el operador de división en Python tiene la propiedad interesante de que su resultado es de tipo <strong>float</strong>. Es decir que independientemente del valor de v3, el valor de la variable <code class="highlighter-rouge">v4</code> va a ser un número decimal. Esto lo podemos comprobar si le preguntamos a Python por el tipo de la variable:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">v4</span><span class="p">)</span>
-<span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">float</span><span class="s">'&gt;</span><span class="err">
-</span></code></pre></div></div>
-
-<h2 id="otro-tipo-de-instrucciones">Otro tipo de instrucciones</h2>
-
-<p>Si revisamos con cuidado las 4 instrucciones que hemos analizado, nos daremos cuenta que la única orden que le hemos dado al programa es que almacene valores dentro de variables. Como vamos a ver a continuación, la última instrucción de nuestro programa es fundamentalmente diferente a las anteriores porque no hace ninguna asignación.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"v4:"</span><span class="p">,</span> <span class="n">v4</span><span class="p">)</span>
-</code></pre></div></div>
-
+<div class="highlight"><pre><span></span><span class="n">v4</span> <span class="o">=</span> <span class="n">v3</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+<p>Lo primero que tenemos que notar es que en este caso se utilizaron paréntesis, los cuales tienen el mismo efecto que tendrían si estuviéramos resolviendo un ejercicio de matemáticas. En este caso los paréntesis son obligatorios porque en Python los operadores matemáticos siguen las reglas de precedencia tradicionales. Es decir que la expresión <code>v3 / (4 + 1)</code> tiene un valor diferente al de la expresión <code>v3 / 4 + 1</code> porque el operador de división (<code>/</code>) tiene mayor precedencia que el operador de suma (<code>+</code>). Debido a esto, lo primero que va a hacer Python cuando empiece a evaluar la expresión de la derecha es encontrar el valor para lo que estaba dentro de los paréntesis y reescribirá la instrucción como:</p>
+<div class="highlight"><pre><span></span><span class="n">v4</span> <span class="o">=</span> <span class="n">v3</span> <span class="o">/</span> <span class="mi">5</span>
+</pre></div>
+<p>Ahora lo que Python tiene que hacer es evaluar la expresión de la derecha, pero para eso primero debe consultar el valor de la variable <code>v3</code>. Después de hacer esto, la instrucción se reescribirá como:</p>
+<div class="highlight"><pre><span></span><span class="n">v4</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">/</span> <span class="mi">5</span>
+</pre></div>
+<p>Finalmente tenemos una instrucción que sólo tiene literales y el operador de división, así que la expresión de la derecha se puede obtener simplemente calculando la división entre 8 y 5, para luego asignárselo a la variable <code>v4</code>.</p>
+<p>Ahora bien, el operador de división en Python tiene la propiedad interesante de que su resultado es de tipo <strong>float</strong>. Es decir que independientemente del valor de v3, el valor de la variable <code>v4</code> va a ser un número decimal. Esto lo podemos comprobar si le preguntamos a Python por el tipo de la variable:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">v4</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">float</span><span class="s1">&#39;&gt;</span>
+</pre></div>
+<h2 id="Otro-tipo-de-instrucciones">Otro tipo de instrucciones<a class="anchor-link" href="#Otro-tipo-de-instrucciones"> </a></h2><p>Si revisamos con cuidado las 4 instrucciones que hemos analizado, nos daremos cuenta que la única orden que le hemos dado al programa es que almacene valores dentro de variables. Como vamos a ver a continuación, la última instrucción de nuestro programa es fundamentalmente diferente a las anteriores porque no hace ninguna asignación.</p>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;v4:&quot;</span><span class="p">,</span> <span class="n">v4</span><span class="p">)</span>
+</pre></div>
 <p>En primer lugar, revisemos qué pasa cuando se ejecuta esta línea. Suponiendo, como siempre, que ya se habían ejecutado las líneas anteriores del programa, al ejecutar esta línea lo que debería ver el usuario en la consola es lo siguiente.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">v4</span><span class="p">:</span> <span class="mf">0.6</span>
-</code></pre></div></div>
-
-<p>Lo que hace nuestra instrucción es una invocación a una función básica de Python llamada <code class="highlighter-rouge">print</code> y le pasa dos parámetros (<code class="highlighter-rouge">"v4:"</code> y <code class="highlighter-rouge">v4</code>). Más adelante estudiaremos más a fondo la función <code class="highlighter-rouge">print</code> pero lo que nos interesa saber en este momento es que la función sirve para mostrarle al usuario los valores que hayamos usado como parámetros. Más adelante estudiaremos también cómo definir nuestras propias funciones.</p>
-
-<p>En este caso la invocación a la función se está haciendo con dos parámetros que podemos identificar porque aparecen dentro de paréntesis y están separados por una coma. El primer parámetro (<code class="highlighter-rouge">"v4:"</code>) es un literal de tipo str (cadena de caracteres). El segundo parámetro (<code class="highlighter-rouge">v4</code>) es el nombre de la variable a la que se le asignó un valor en la instrucción anterior. Note que como estamos haciendo referencia a una variable, no se utilizan comillas sencillas ni dobles.</p>
-
+<div class="highlight"><pre><span></span><span class="n">v4</span><span class="p">:</span> <span class="mf">0.6</span>
+</pre></div>
+<p>Lo que hace nuestra instrucción es una invocación a una función básica de Python llamada <code>print</code> y le pasa dos parámetros (<code>"v4:"</code> y <code>v4</code>). Más adelante estudiaremos más a fondo la función <code>print</code> pero lo que nos interesa saber en este momento es que la función sirve para mostrarle al usuario los valores que hayamos usado como parámetros. Más adelante estudiaremos también cómo definir nuestras propias funciones.</p>
+<p>En este caso la invocación a la función se está haciendo con dos parámetros que podemos identificar porque aparecen dentro de paréntesis y están separados por una coma. El primer parámetro (<code>"v4:"</code>) es un literal de tipo str (cadena de caracteres). El segundo parámetro (<code>v4</code>) es el nombre de la variable a la que se le asignó un valor en la instrucción anterior. Note que como estamos haciendo referencia a una variable, no se utilizan comillas sencillas ni dobles.</p>
 <p>Al igual que una asignación necesita calcular el valor de la derecha para que se pueda almacenar el valor en la variable, para hacer una invocación a una función se necesitan los valores de los parámetros. En nuestro caso, el primer parámetro es un literal así que su valor ya es conocido; como el segundo parámetro es una variable, Python buscará el valor que se había almacenado en la variable y lo usará para hacer la invocación.</p>
-
-<p>El último paso en la ejecución de nuestro programa no podemos verlo: son las instrucciones que se encuentran dentro de la función <code class="highlighter-rouge">print</code>, las cuales hacen que aparezcan los valores de los parámetros en la consola. Como esta es una función nativa del lenguaje, las instrucciones que la implementan son parte del código fuente del intérprete del lenguaje y no son fáciles de encontrar.</p>
-
-<h2 id="comentarios-en-python">Comentarios en Python</h2>
-
-<p>El siguiente programa es exactamente equivalente al que hemos estado estudiando, con la diferencia de que se han incluido <em>comentarios</em>.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Definir 4 variables (v1 hasta v4)</span>
+<p>El último paso en la ejecución de nuestro programa no podemos verlo: son las instrucciones que se encuentran dentro de la función <code>print</code>, las cuales hacen que aparezcan los valores de los parámetros en la consola. Como esta es una función nativa del lenguaje, las instrucciones que la implementan son parte del código fuente del intérprete del lenguaje y no son fáciles de encontrar.</p>
+<h2 id="Comentarios-en-Python">Comentarios en Python<a class="anchor-link" href="#Comentarios-en-Python"> </a></h2><p>El siguiente programa es exactamente equivalente al que hemos estado estudiando, con la diferencia de que se han incluido <em>comentarios</em>.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Definir 4 variables (v1 hasta v4)</span>
 <span class="n">v1</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">v2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
-<span class="n">v3</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span> <span class="c"># El valor de v3 es de tipo int porque es la suma de dos int</span>
-<span class="n">v4</span> <span class="o">=</span> <span class="n">v3</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c"># El valor de v4 va a ser de tipo float</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"v4:"</span><span class="p">,</span> <span class="n">v4</span><span class="p">)</span> <span class="c"># Mostrarle al usuario el valor de v4</span>
-</code></pre></div></div>
-
-<p>Un comentario en un programa es una anotación que dejó el programador para que otros programadores, o él mismo, puedan entender con más facilidad el objetivo de un programa o de un bloque de código. En el caso de Python, la forma más común de incluir comentarios es utilizando el caracter <code class="highlighter-rouge">#</code>: todos los caracteres que se encuentren a la derecha de este caracter serán ignorados por el intérprete.</p>
-
+<span class="n">v3</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span> <span class="c1"># El valor de v3 es de tipo int porque es la suma de dos int</span>
+<span class="n">v4</span> <span class="o">=</span> <span class="n">v3</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># El valor de v4 va a ser de tipo float</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;v4:&quot;</span><span class="p">,</span> <span class="n">v4</span><span class="p">)</span> <span class="c1"># Mostrarle al usuario el valor de v4</span>
+</pre></div>
+<p>Un comentario en un programa es una anotación que dejó el programador para que otros programadores, o él mismo, puedan entender con más facilidad el objetivo de un programa o de un bloque de código. En el caso de Python, la forma más común de incluir comentarios es utilizando el caracter <code>#</code>: todos los caracteres que se encuentren a la derecha de este caracter serán ignorados por el intérprete.</p>
 <p>En el caso de nuestro ejemplo, se ha incluido un número relativamente grande de comentarios para un programa tan sencillo. Sin embargo, esto sirve para ilustrar un principio importante: ante la duda, es mejor tener más comentarios que menos comentarios en un programa.</p>
-
-<h2 id="más-operadores-en-python">Más operadores en Python</h2>
-
-<p>En las secciones anteriores estudiamos sólo los operadores para sumar y dividir. A continuación, describimos otras de las operaciones que es posible hacer en Python.</p>
-
-<h3 id="operadores-para-números">Operadores para números</h3>
-
-<p>Los siguientes son los operadores disponibles para hacer operaciones con números. Es decir que estos operadores pueden aplicarse sólo sobre datos que sean de tipo <strong>int</strong> o <strong>float</strong>.</p>
-
+<h2 id="M&#225;s-operadores-en-Python">M&#225;s operadores en Python<a class="anchor-link" href="#M&#225;s-operadores-en-Python"> </a></h2><p>En las secciones anteriores estudiamos sólo los operadores para sumar y dividir. A continuación, describimos otras de las operaciones que es posible hacer en Python.</p>
+<h3 id="Operadores-para-n&#250;meros">Operadores para n&#250;meros<a class="anchor-link" href="#Operadores-para-n&#250;meros"> </a></h3><p>Los siguientes son los operadores disponibles para hacer operaciones con números. Es decir que estos operadores pueden aplicarse sólo sobre datos que sean de tipo <strong>int</strong> o <strong>float</strong>.</p>
 <table>
-  <thead>
-    <tr>
-      <th>Operación</th>
-      <th>Operador</th>
-      <th>Aridad (1)</th>
-      <th>Precedencia (2)</th>
-      <th>Ejemplo</th>
-      <th>Valor</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Exponenciación</td>
-      <td>**</td>
-      <td>Binario</td>
-      <td>1</td>
-      <td>10 ** 3</td>
-      <td>1000</td>
-    </tr>
-    <tr>
-      <td>Identidad</td>
-      <td>+</td>
-      <td>Unario</td>
-      <td>2</td>
-      <td>+ 2</td>
-      <td>+2</td>
-    </tr>
-    <tr>
-      <td>Cambio de signo</td>
-      <td>-</td>
-      <td>Unario</td>
-      <td>2</td>
-      <td>-(-2)</td>
-      <td>+2</td>
-    </tr>
-    <tr>
-      <td>Multiplicación</td>
-      <td>*</td>
-      <td>Binario</td>
-      <td>3</td>
-      <td>10 * 3</td>
-      <td>30</td>
-    </tr>
-    <tr>
-      <td>División (3)</td>
-      <td>/</td>
-      <td>Binario</td>
-      <td>3</td>
-      <td>10 / 3</td>
-      <td>3.3333</td>
-    </tr>
-    <tr>
-      <td>División entera (4)</td>
-      <td>//</td>
-      <td>Binario</td>
-      <td>3</td>
-      <td>10 // 3</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Módulo (5)</td>
-      <td>%</td>
-      <td>Binario</td>
-      <td>3</td>
-      <td>10 % 3</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Suma</td>
-      <td>+</td>
-      <td>Binario</td>
-      <td>4</td>
-      <td>10 + 3</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <td>Resta</td>
-      <td>-</td>
-      <td>Binario</td>
-      <td>4</td>
-      <td>10 - 3</td>
-      <td>7</td>
-    </tr>
-  </tbody>
+<thead><tr>
+<th>Operación</th>
+<th>Operador</th>
+<th>Aridad (1)</th>
+<th>Precedencia (2)</th>
+<th>Ejemplo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exponenciación</td>
+<td>**</td>
+<td>Binario</td>
+<td>1</td>
+<td>10 ** 3</td>
+<td>1000</td>
+<td></td>
+</tr>
+<tr>
+<td>Identidad</td>
+<td>+</td>
+<td>Unario</td>
+<td>2</td>
+<td>+ 2</td>
+<td>+2</td>
+<td></td>
+</tr>
+<tr>
+<td>Cambio de signo</td>
+<td>-</td>
+<td>Unario</td>
+<td>2</td>
+<td>-(-2)</td>
+<td>+2</td>
+<td></td>
+</tr>
+<tr>
+<td>Multiplicación</td>
+<td>*</td>
+<td>Binario</td>
+<td>3</td>
+<td>10 * 3</td>
+<td>30</td>
+<td></td>
+</tr>
+<tr>
+<td>División (3)</td>
+<td>/</td>
+<td>Binario</td>
+<td>3</td>
+<td>10 / 3</td>
+<td>3.3333</td>
+<td></td>
+</tr>
+<tr>
+<td>División entera (4)</td>
+<td>//</td>
+<td>Binario</td>
+<td>3</td>
+<td>10 // 3</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>Módulo (5)</td>
+<td>%</td>
+<td>Binario</td>
+<td>3</td>
+<td>10 % 3</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>Suma</td>
+<td>+</td>
+<td>Binario</td>
+<td>4</td>
+<td>10 + 3</td>
+<td>13</td>
+<td></td>
+</tr>
+<tr>
+<td>Resta</td>
+<td>-</td>
+<td>Binario</td>
+<td>4</td>
+<td>10 - 3</td>
+<td>7</td>
+<td></td>
+</tr>
+</tbody>
 </table>
-
 <p>(1) El término <em>aridad</em> hace referencia a la cantidad de operandos sobre los que se aplica el operador. Los operadores unarios sólo requieren un operador mientras que los binarios necesitan 2.</p>
-
-<p>(2) La precedencia de un operador indica en qué orden se evaluarán varios operadores en caso de que no haya paréntesis que permitan resolver el orden. En Python, el primer operador que se evaluará es el operador de exponenciación. En caso de que la precedencia de dos operadores sea la misma, los operadores se aplicarán de izquierda a derecha. Por ejemplo, en el caso de la expresión <code class="highlighter-rouge">70 // 2**3 / 4</code> primero se evaluará la operación de exponenciación (la de mayor precedencia), luego se evaluará la división entera y finalmente la división.</p>
-
-<p>(3) En Python, la división siempre produce un resultado de tipo float, el cual muchas veces se redondea automáticamente. En el caso del ejemplo, la división <code class="highlighter-rouge">10/3</code> tiene como resultado el número decimal <code class="highlighter-rouge">3.3333333333333335</code>, que es la mejor aproximación que puede hacer Python del resultado real de la división. El valor de la expresión <code class="highlighter-rouge">9/3</code>, aunque podría ser un número entero (int), es el número decimal (float) <code class="highlighter-rouge">9.0</code>.</p>
-
-<p>(4) Para valores positivos, la operación de <em>división entera</em> calcula la parte entera del resultado de la división y por ende siempre es un número entero. En el caso de la expresión <code class="highlighter-rouge">10//3</code> el valor es el número entero (int) <code class="highlighter-rouge">3</code>.</p>
-
-<p>Para números negativos, el resultado es el mayor número entero menor o igual al resultado de la división. Es decir que para el valor de la expresión <code class="highlighter-rouge">-10//3</code> es el número entero <code class="highlighter-rouge">-4</code></p>
-
-<p>(5) La operación módulo calcula el <strong>residuo</strong> de la división entera entre dos números. Por ejemplo, el valor de la expresión <code class="highlighter-rouge">10%3</code> es igual a <code class="highlighter-rouge">1</code> porque la división entera entre 10 y 3 tiene como resultado 3 con un residuo de 1 <sup id="fnref:modneg"><a href="#fn:modneg" class="footnote">3</a></sup>.</p>
-
-<p>La operación módulo es muy utilizada para averiguar la paridad de un número: el resultado de la expresión <code class="highlighter-rouge">x%2</code> será 0 sólo cuando <code class="highlighter-rouge">x</code> sea un número par y será 1 cuando <code class="highlighter-rouge">x</code> sea impar.</p>
-
-<h3 id="operadores-para-cadenas-de-caracteres">Operadores para cadenas de caracteres</h3>
-
-<p>Python sólo ofrece dos operadores que se pueden aplicar sobre cadenas de caracteres.</p>
-
+<p>(2) La precedencia de un operador indica en qué orden se evaluarán varios operadores en caso de que no haya paréntesis que permitan resolver el orden. En Python, el primer operador que se evaluará es el operador de exponenciación. En caso de que la precedencia de dos operadores sea la misma, los operadores se aplicarán de izquierda a derecha. Por ejemplo, en el caso de la expresión <code>70 // 2**3 / 4</code> primero se evaluará la operación de exponenciación (la de mayor precedencia), luego se evaluará la división entera y finalmente la división.</p>
+<p>(3) En Python, la división siempre produce un resultado de tipo float, el cual muchas veces se redondea automáticamente. En el caso del ejemplo, la división <code>10/3</code> tiene como resultado el número decimal <code>3.3333333333333335</code>, que es la mejor aproximación que puede hacer Python del resultado real de la división. El valor de la expresión <code>9/3</code>, aunque podría ser un número entero (int), es el número decimal (float) <code>9.0</code>.</p>
+<p>(4) Para valores positivos, la operación de <em>división entera</em> calcula la parte entera del resultado de la división y por ende siempre es un número entero. En el caso de la expresión <code>10//3</code> el valor es el número entero (int) <code>3</code>.</p>
+<p>Para números negativos, el resultado es el mayor número entero menor o igual al resultado de la división. Es decir que para el valor de la expresión <code>-10//3</code> es el número entero <code>-4</code></p>
+<p>(5) La operación módulo calcula el <strong>residuo</strong> de la división entera entre dos números. Por ejemplo, el valor de la expresión <code>10%3</code> es igual a <code>1</code> porque la división entera entre 10 y 3 tiene como resultado 3 con un residuo de 1 <sup class="footnote-ref" id="fnref-modneg"><a href="#fn-modneg">3</a></sup>.</p>
+<p>La operación módulo es muy utilizada para averiguar la paridad de un número: el resultado de la expresión <code>x%2</code> será 0 sólo cuando <code>x</code> sea un número par y será 1 cuando <code>x</code> sea impar.</p>
+<h3 id="Operadores-para-cadenas-de-caracteres">Operadores para cadenas de caracteres<a class="anchor-link" href="#Operadores-para-cadenas-de-caracteres"> </a></h3><p>Python sólo ofrece dos operadores que se pueden aplicar sobre cadenas de caracteres.</p>
 <table>
-  <thead>
-    <tr>
-      <th>Operación</th>
-      <th>Operador</th>
-      <th>Aridad (1)</th>
-      <th>Precedencia (2)</th>
-      <th>Ejemplo</th>
-      <th>Valor</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Concatenación</td>
-      <td>+</td>
-      <td>Binario</td>
-      <td>1</td>
-      <td>‘abc’ + ‘def’</td>
-      <td>‘abcdef’</td>
-    </tr>
-    <tr>
-      <td>Repetición</td>
-      <td>*</td>
-      <td>Binario</td>
-      <td>1</td>
-      <td>‘ab’ * 3</td>
-      <td>‘ababab’</td>
-    </tr>
-  </tbody>
+<thead><tr>
+<th>Operación</th>
+<th>Operador</th>
+<th>Aridad (1)</th>
+<th>Precedencia (2)</th>
+<th>Ejemplo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Concatenación</td>
+<td>+</td>
+<td>Binario</td>
+<td>1</td>
+<td>'abc' + 'def'</td>
+<td>'abcdef'</td>
+<td></td>
+</tr>
+<tr>
+<td>Repetición</td>
+<td>*</td>
+<td>Binario</td>
+<td>1</td>
+<td>'ab' * 3</td>
+<td>'ababab'</td>
+<td></td>
+</tr>
+</tbody>
 </table>
-
 <p>El operador de concatenación se utiliza para unir dos cadenas de caracteres y convertirlas en una sola.</p>
-
 <p>El operador de repetición se aplica sobre dos operandos de diferente tipo: una cadena de caracteres y un entero. El resultado será una cadena de caracteres que será el resultado de repetir la cadena tantas veces como indique el número.</p>
-
-<h3 id="expresiones-con-múltiples-tipos-de-datos">Expresiones con múltiples tipos de datos</h3>
-
-<p>En Python no es posible escribir expresiones que combinen valores de diferentes tipos a menos que se hagan conversiones explícitamente. Por ejemplo, para construir una cadena que combine caracteres y números se debe hacer una conversión como en el siguiente ejemplo:</p>
-
-<p><code class="highlighter-rouge">'El salón asignado es el ' + str(614) + ' del edificio ML'</code></p>
-
+<h3 id="Expresiones-con-m&#250;ltiples-tipos-de-datos">Expresiones con m&#250;ltiples tipos de datos<a class="anchor-link" href="#Expresiones-con-m&#250;ltiples-tipos-de-datos"> </a></h3><p>En Python no es posible escribir expresiones que combinen valores de diferentes tipos a menos que se hagan conversiones explícitamente. Por ejemplo, para construir una cadena que combine caracteres y números se debe hacer una conversión como en el siguiente ejemplo:</p>
+<p><code>'El salón asignado es el ' str(614) del edificio ML'</code></p>
 <p>Por otro lado, para hacer operaciones numéricas con valores almacenados en una cadena se debe convertir esa cadena a un número como en el siguiente ejemplo:</p>
-
-<p><code class="highlighter-rouge">1 + float('2.3') + 3</code></p>
-
+<p><code>1 + float('2.3') + 3</code></p>
 <p>Finalmente, si se quieren hacer combinaciones de tipos se deben utilizar paréntesis que eliminen los posibles problemas.</p>
-
-<p><code class="highlighter-rouge">'El resultado es ' + str(2**3)</code></p>
-
+<p><code>'El resultado es ' + str(2**3)</code></p>
 <p>En este siguiente ejemplo lo primero que se hace es evaluar la operación de exponenciación, luego se convierte el resultado a una cadena y finalmente se concatenan las dos cadenas.</p>
-
-<h2 id="ejercicios">Ejercicios</h2>
-
+<h2 id="Ejercicios">Ejercicios<a class="anchor-link" href="#Ejercicios"> </a></h2><ol>
+<li><p>¿Cuáles de las siguientes líneas no son instrucciones válidas en Python? (suponga que las instrucciones se van ejecutando una después de la otra)</p>
+<ul>
+<li>variable = 5</li>
+<li>5 = variable</li>
+<li>var1 = var2 + 5</li>
+<li>var1 = var1 + 5</li>
+<li>var = var + 5</li>
+</ul>
+</li>
+</ol>
 <ol>
-  <li>
-    <p>¿Cuáles de las siguientes líneas no son instrucciones válidas en Python? (suponga que las instrucciones se van ejecutando una después de la otra)</p>
-
-    <ul>
-      <li>variable = 5</li>
-      <li>5 = variable</li>
-      <li>var1 = var2 + 5</li>
-      <li>var1 = var1 + 5</li>
-      <li>var = var + 5</li>
-    </ul>
-  </li>
-  <li>
-    <p>¿Qué resultados se obtendrán al evaluar las siguientes expresiones en Python? Verifique los resultados evaluando las expresiones en el intérprete de Python.</p>
-
-    <ul>
-      <li>2 + 3 + 1 + 2</li>
-      <li>2 + 3 * 1 + 2</li>
-      <li>(2 + 3) * 1 + 2</li>
-      <li>(2 + 3) * (1 + 2)</li>
-      <li>+—6</li>
-      <li>-+-+6</li>
-      <li>-3 / 2 - 1</li>
-      <li>-3 // 2 - 1</li>
-      <li>3 % 2 - 1</li>
-    </ul>
-  </li>
-  <li>
-    <p>¿Qué valor se mostrará en la pantalla después de ejecutar el siguiente código?</p>
-
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">z</span> <span class="o">=</span> <span class="mi">1</span>
+<li><p>¿Qué resultados se obtendrán al evaluar las siguientes expresiones en Python? Verifique los resultados evaluando las expresiones en el intérprete de Python.</p>
+<ul>
+<li>2 + 3 + 1 + 2</li>
+<li>2 + 3 * 1 + 2</li>
+<li>(2 + 3) * 1 + 2</li>
+<li>(2 + 3) * (1 + 2)</li>
+<li>+---6</li>
+<li>-+-+6</li>
+<li>-3 / 2 - 1</li>
+<li>-3 // 2 - 1</li>
+<li>3 % 2 - 1</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li><p>¿Qué valor se mostrará en la pantalla después de ejecutar el siguiente código?</p>
+<div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span>
  <span class="n">z</span> <span class="o">+=</span> <span class="mi">2</span>
  <span class="n">z</span> <span class="o">*=</span> <span class="mi">2</span>
  <span class="n">z</span> <span class="o">//=</span> <span class="mi">2</span>
@@ -1438,51 +1355,48 @@ initFunction(initPrint)
  <span class="n">z</span> <span class="o">**</span> <span class="mi">2</span>
  <span class="n">z</span> <span class="o">/=</span> <span class="mi">2</span>
  <span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>¿Qué resultado se obtendrá al evaluar la siguiente expresión en Python?</p>
-
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="s">'a'</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="s">'/*'</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="s">'abc'</span> <span class="o">+</span> <span class="s">'+'</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>¿Qué resultado se obtendrá al evaluar las siguientes expresiones en Python?</p>
-
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="mi">25</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">//</span> <span class="mi">2</span>
+</pre></div>
+</li>
+</ol>
+<ol>
+<li><p>¿Qué resultado se obtendrá al evaluar la siguiente expresión en Python?</p>
+<div class="highlight"><pre><span></span><span class="s1">&#39;a&#39;</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="s1">&#39;/*&#39;</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="s1">&#39;abc&#39;</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span>
+</pre></div>
+</li>
+</ol>
+<ol>
+<li><p>¿Qué resultado se obtendrá al evaluar las siguientes expresiones en Python?</p>
+<div class="highlight"><pre><span></span><span class="mi">25</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">//</span> <span class="mi">2</span>
  <span class="mi">25</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
  <span class="p">(</span><span class="mi">25</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
  <span class="mi">25</span> <span class="o">//</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span>
  <span class="mi">25</span> <span class="o">//</span> <span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
  <span class="p">(</span><span class="mi">25</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
-</code></pre></div>    </div>
-  </li>
+</pre></div>
+</li>
 </ol>
-
-<h2 id="más-allá-de-python">Más allá de Python</h2>
-
-<p>Esta sección presentó en detalle los detalles más importantes de la sintaxis de Python. Sin embargo, los conceptos presentados son comunes a la mayoría de lenguajes de programación <em>imperativos</em> <sup id="fnref:para"><a href="#fn:para" class="footnote">4</a></sup>. Aunque puede parecer que las diferencias entre Python y otros lenguajes son muy grandes, en realidad los conceptos que se manejan son básicamente los mismos: todos los lenguajes tienen literales, tienen variables para almacenar temporalmente valores, tienen expresiones que se tienen que evaluar, y tienen mecanismos para invocar fragmentos de código definidos en algún otro lugar.</p>
-
+<h2 id="M&#225;s-all&#225;-de-Python">M&#225;s all&#225; de Python<a class="anchor-link" href="#M&#225;s-all&#225;-de-Python"> </a></h2><p>Esta sección presentó en detalle los detalles más importantes de la sintaxis de Python. Sin embargo, los conceptos presentados son comunes a la mayoría de lenguajes de programación <em>imperativos</em> <sup class="footnote-ref" id="fnref-para"><a href="#fn-para">4</a></sup>. Aunque puede parecer que las diferencias entre Python y otros lenguajes son muy grandes, en realidad los conceptos que se manejan son básicamente los mismos: todos los lenguajes tienen literales, tienen variables para almacenar temporalmente valores, tienen expresiones que se tienen que evaluar, y tienen mecanismos para invocar fragmentos de código definidos en algún otro lugar.</p>
 <p>Si tenemos perfectamente claro todo lo expuesto en este capítulo, aplicar las mismas ideas a otros lenguajes debería ser muy sencillo.</p>
-
-<h4 id="notas">Notas</h4>
+<h4 id="Notas">Notas<a class="anchor-link" href="#Notas"> </a></h4><p>```</p>
 <div class="footnotes">
-  <ol>
-    <li id="fn:tipos">
-      <p>Si usted ha trabajado con otros lenguajes de programación, notará que en Python no se deben declarar las variables antes de usarlas, ni se debe indicar explícitamente su tipo. Esto se debe a que Python utiliza <em>tipado dinámico</em>, es decir que el intérprete infiere los tipos de variables y parámetros durante la ejecución. Veremos más adelante que, aunque en las versiones actuales no se puede <em>especificar</em> los tipos de nada, sí se pueden dar <em>hints</em> que sirven como comentarios para que los programadores puedan hacer un mejor seguimiento a los programas. <a href="#fnref:tipos" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:1">
-      <p>Cuando se resuelven ejercicios de matemáticas o física aparecen conceptos similares a los que estamos trabajando y es normal que se escriban expresiones muy parecidas (por ejemplo: <code class="highlighter-rouge">distancia = velocidad * x</code>). Sin embargo, en esos contextos las expresiones no se escriben necesariamente siempre en un orden estricto, porque es un humano el que las va a interpretar. Además, porque más que asignaciones, se trata de ecuaciones que describen una equivalencia entre valores. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:modneg">
-      <p>Aunque también está definida para números negativos, no es muy recomendable aplicar la operación módulo sobre estos números debido a que no todos los lenguajes utilizan la misma definición. Esto podría dar lugar a errores graves y difíciles de detectar. <a href="#fnref:modneg" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:para">
-      <p>Python, C, C++ y Java son algunos ejemplos muy populares de lenguajes de programación <strong>imperativos</strong>. En estos lenguajes las instrucciones de un programa sirven para darle órdenes al computador (por ejemplo, sume estos dos números, guarde el resultado en esta posición de memoria). Hay otros lenguajes de programación que siguen <em>paradigmas</em> diferentes, como el paradigma <strong>lógico</strong> o el <strong>funcional</strong>. En esos lenguajes las instrucciones de un programa no son órdenes sino expresiones lógicas que el computador debe resolver, o definiciones de funciones que el computador debe evaluar, por ejemplo. Después de adquirir una cierta destreza con algún lenguaje de programación particular es muy recomendable estudiar algún lenguaje basado en un paradigma diferente: está demostrado que aprender a resolver los mismos problemas utilizando herramientas y métodos completamente diferentes es parte de lo que hace a un experto. <a href="#fnref:para" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
+<hr>
+<ol><li id="fn-tipos"><p>Si usted ha trabajado con otros lenguajes de programación, notará que en Python no se deben declarar las variables antes de usarlas, ni se debe indicar explícitamente su tipo. Esto se debe a que Python utiliza <em>tipado dinámico</em>, es decir que el intérprete infiere los tipos de variables y parámetros durante la ejecución. Veremos más adelante que, aunque en las versiones actuales no se puede <em>especificar</em> los tipos de nada, sí se pueden dar <em>hints</em> que sirven como comentarios para que los programadores puedan hacer un mejor seguimiento a los programas.<a href="#fnref-tipos" class="footnote">&#8617;</a></p></li>
+<li id="fn-1"><p>Cuando se resuelven ejercicios de matemáticas o física aparecen conceptos similares a los que estamos trabajando y es normal que se escriban expresiones muy parecidas (por ejemplo: <code>distancia = velocidad * x</code>). Sin embargo, en esos contextos las expresiones no se escriben necesariamente siempre en un orden estricto, porque es un humano el que las va a interpretar. Además, porque más que asignaciones, se trata de ecuaciones que describen una equivalencia entre valores.<a href="#fnref-1" class="footnote">&#8617;</a></p></li>
+<li id="fn-modneg"><p>Aunque también está definida para números negativos, no es muy recomendable aplicar la operación módulo sobre estos números debido a que no todos los lenguajes utilizan la misma definición. Esto podría dar lugar a errores graves y difíciles de detectar.<a href="#fnref-modneg" class="footnote">&#8617;</a></p></li>
+<li id="fn-para"><p>Python, C, C++ y Java son algunos ejemplos muy populares de lenguajes de programación <strong>imperativos</strong>. En estos lenguajes las instrucciones de un programa sirven para darle órdenes al computador (por ejemplo, sume estos dos números, guarde el resultado en esta posición de memoria). Hay otros lenguajes de programación que siguen <em>paradigmas</em> diferentes, como el paradigma <strong>lógico</strong> o el <strong>funcional</strong>. En esos lenguajes las instrucciones de un programa no son órdenes sino expresiones lógicas que el computador debe resolver, o definiciones de funciones que el computador debe evaluar, por ejemplo. Después de adquirir una cierta destreza con algún lenguaje de programación particular es muy recomendable estudiar algún lenguaje basado en un paradigma diferente: está demostrado que aprender a resolver los mismos problemas utilizando herramientas y métodos completamente diferentes es parte de lo que hace a un experto.<a href="#fnref-para" class="footnote">&#8617;</a></p></li>
+</ol>
 </div>
 
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
             </div>
             <div class="c-textbook__footer" id="textbook_footer">
               <nav class="c-page__nav">

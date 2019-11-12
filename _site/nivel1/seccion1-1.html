@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Un programa para leer</title>
-  <meta name="description" content="            Versión borrador / preliminar                  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o ...">
+  <meta name="description" content="        Versión borrador / preliminarEste documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comenta...">
 
   <link rel="canonical" href="http://0.0.0.0:4000//nivel1/seccion1-1.html">
   <link rel="alternate" type="application/rss+xml" title="Introducción a la Programación" href="http://0.0.0.0:4000//feed.xml">
@@ -14,7 +14,7 @@
   <meta property="og:url"         content="http://0.0.0.0:4000//nivel1/seccion1-1.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Un programa para leer" />
-<meta property="og:description" content="            Versión borrador / preliminar                  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o ..." />
+<meta property="og:description" content="        Versión borrador / preliminarEste documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comenta..." />
 <meta property="og:image"       content="http://0.0.0.0:4000/images/logo/uniandes_logo.jpeg" />
 
 <meta name="twitter:card" content="summary">
@@ -26,9 +26,9 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "http://0.0.0.0:4000//nivel1/seccion1-1.html",
   "headline": "Un programa para leer",
-  "datePublished": "2019-11-11T19:45:05-06:00",
-  "dateModified": "2019-11-11T19:45:05-06:00",
-  "description": "            Versión borrador / preliminar                  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o ...",
+  "datePublished": "2019-11-11T19:57:00-06:00",
+  "dateModified": "2019-11-11T19:57:00-06:00",
+  "description": "        Versión borrador / preliminarEste documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comenta...",
   "author": {
     "@type": "Person",
     "name": "YOUR AUTHOR NAME"
@@ -1075,62 +1075,50 @@ initFunction(initPrint)
 
       <main class="c-textbook__page" tabindex="-1">
             <div class="c-textbook__content" id="textbook_content">
-              <table>
-  <thead>
-    <tr>
-      <th>Versión borrador / preliminar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores</td>
-    </tr>
-  </tbody>
+                  <main class="jupyter-page">
+    
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+<thead><tr>
+<th>Versión borrador / preliminar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores</td>
+<td></td>
+</tr>
+</tbody>
 </table>
-
-<h1 id="un-programa-para-leer">Un programa para leer</h1>
-
-<p>En esta sección vamos a presentar un primer programa escrito usando el lenguaje de programación Python. Si nunca ha programado o si nunca ha programado en Python, probablemente habrá cosas que no va a entender completamente. Sin embargo, el simple hecho de revisar de forma detenida este programa le dará un poco de contexto para todos los elementos que se van a ir introduciendo a lo largo de este nivel.</p>
-
-<h2 id="por-qué-leer-código-de-alguien-más">Por qué leer código de alguien más</h2>
-<p>Una habilidad muy importante para cualquier programador es la habilidad de leer código escrito por alguien más. Si dependemos de las explicaciones de alguien más para aprender un nuevo concepto o entender cómo utilizar una nueva herramienta o librería, será muy difícil que nos convirtamos en buenos programadores o el aprendizaje será muy lento. Por el contrario, la habilidad de leer el código de otros nos da una ventaja enorme y multiplica las fuentes de las que podemos aprender. En lugar de tener disponibles miles de libros, vamos a poder utilizar miles de millones de programas y de ejemplos que se encuentran disponibles en línea.</p>
-
+<h1 id="Un-programa-para-leer">Un programa para leer<a class="anchor-link" href="#Un-programa-para-leer"> </a></h1><p>En esta sección vamos a presentar un primer programa escrito usando el lenguaje de programación Python. Si nunca ha programado o si nunca ha programado en Python, probablemente habrá cosas que no va a entender completamente. Sin embargo, el simple hecho de revisar de forma detenida este programa le dará un poco de contexto para todos los elementos que se van a ir introduciendo a lo largo de este nivel.</p>
+<h2 id="Por-qu&#233;-leer-c&#243;digo-de-alguien-m&#225;s">Por qu&#233; leer c&#243;digo de alguien m&#225;s<a class="anchor-link" href="#Por-qu&#233;-leer-c&#243;digo-de-alguien-m&#225;s"> </a></h2><p>Una habilidad muy importante para cualquier programador es la habilidad de leer código escrito por alguien más. Si dependemos de las explicaciones de alguien más para aprender un nuevo concepto o entender cómo utilizar una nueva herramienta o librería, será muy difícil que nos convirtamos en buenos programadores o el aprendizaje será muy lento. Por el contrario, la habilidad de leer el código de otros nos da una ventaja enorme y multiplica las fuentes de las que podemos aprender. En lugar de tener disponibles miles de libros, vamos a poder utilizar miles de millones de programas y de ejemplos que se encuentran disponibles en línea.</p>
 <p>En general, cuando se lee código escrito por alguien más se deben tener en cuenta las siguientes recomendaciones:</p>
-
 <ul>
-  <li>
-    <p>Hacer una lectura reflexiva, en varias pasadas. Es muy difícil asimilar con una sola lectura el objetivo general o los detalles de un programa que nunca habíamos visto. Además, los programas no se ejecutan en orden desde la primera línea hasta la última: como veremos más adelante, usualmente se definen bloques que se invocan desde otros lugares y que cambian completamente el orden de cualquier ejecución. La lectura se tiene que hacer entonces en varias pasadas, buscando diferentes cosas cada vez. Por otro lado, la lectura de código no es igual a la lectura de un texto cualquiera: se tiene que hacer de forma <em>lenta y cuidadosa</em>, evaluando constantemente qué es lo que se tiene claro y qué es lo que queda por descubrir.</p>
-  </li>
-  <li>
-    <p>Buscar una comprensión global vs una comprensión de los detalles. No es lo mismo leer un programa buscando tener una idea global de cuál es su objetivo o cómo está estructurado, que leer un programa para entender en profundidad un detalle particular. Antes de empezar cada lectura se tiene que definir el objetivo que se va a buscar.</p>
-  </li>
-  <li>
-    <p>Hacer explícitas las cosas que se desconocen o son poco claras. A medida que se vaya haciendo la lectura aparecerán cosas desconocidas, muchas de las cuales se resolverán más adelante en el mismo programa. Es una buena idea entonces ir marcando cuáles son esas cosas desconocidas y luego hacer explícitos los puntos en los que se resuelvan esas preguntas.</p>
-  </li>
-  <li>
-    <p>Identificar y apropiar estrategias para resolver problemas. A medida que aumenta su experiencia, cada programador va construyendo en su cabeza un conjunto de estrategias que usará para resolver los problemas que encuentre más adelante. Debido a esto, dos programadores pueden llegar a soluciones <em>aparentemente</em> muy diferentes incluso aunque estén usando el mismo lenguaje y los mismos algoritmos. Leer con cuidado el código escrito por alguien más nos abre las puertas al conjunto de estrategias de otros programadores y deberíamos aprovecharlo para enriquecer nuestra propia caja de herramientas.</p>
-  </li>
-  <li>
-    <p>Diferenciar estilos. Cada programador tiene también un estilo propio que utiliza en la construcción de sus programas y que afecta la forma en la que se ven. Al leer programas escritos por alguien más se debería también observar con cuidado esas diferencias de estilo y evitar confundir diferencias de estilo (forma) con diferencias en las estrategias (fondo) o incluso diferencias algorítmicas.</p>
-  </li>
+<li><p>Hacer una lectura reflexiva, en varias pasadas. Es muy difícil asimilar con una sola lectura el objetivo general o los detalles de un programa que nunca habíamos visto. Además, los programas no se ejecutan en orden desde la primera línea hasta la última: como veremos más adelante, usualmente se definen bloques que se invocan desde otros lugares y que cambian completamente el orden de cualquier ejecución. La lectura se tiene que hacer entonces en varias pasadas, buscando diferentes cosas cada vez. Por otro lado, la lectura de código no es igual a la lectura de un texto cualquiera: se tiene que hacer de forma <em>lenta y cuidadosa</em>, evaluando constantemente qué es lo que se tiene claro y qué es lo que queda por descubrir.</p>
+</li>
+<li><p>Buscar una comprensión global vs una comprensión de los detalles. No es lo mismo leer un programa buscando tener una idea global de cuál es su objetivo o cómo está estructurado, que leer un programa para entender en profundidad un detalle particular. Antes de empezar cada lectura se tiene que definir el objetivo que se va a buscar.</p>
+</li>
+<li><p>Hacer explícitas las cosas que se desconocen o son poco claras. A medida que se vaya haciendo la lectura aparecerán cosas desconocidas, muchas de las cuales se resolverán más adelante en el mismo programa. Es una buena idea entonces ir marcando cuáles son esas cosas desconocidas y luego hacer explícitos los puntos en los que se resuelvan esas preguntas.</p>
+</li>
+<li><p>Identificar y apropiar estrategias para resolver problemas. A medida que aumenta su experiencia, cada programador va construyendo en su cabeza un conjunto de estrategias que usará para resolver los problemas que encuentre más adelante. Debido a esto, dos programadores pueden llegar a soluciones <em>aparentemente</em> muy diferentes incluso aunque estén usando el mismo lenguaje y los mismos algoritmos. Leer con cuidado el código escrito por alguien más nos abre las puertas al conjunto de estrategias de otros programadores y deberíamos aprovecharlo para enriquecer nuestra propia caja de herramientas.</p>
+</li>
+<li><p>Diferenciar estilos. Cada programador tiene también un estilo propio que utiliza en la construcción de sus programas y que afecta la forma en la que se ven. Al leer programas escritos por alguien más se debería también observar con cuidado esas diferencias de estilo y evitar confundir diferencias de estilo (forma) con diferencias en las estrategias (fondo) o incluso diferencias algorítmicas.</p>
+</li>
 </ul>
-
-<h2 id="el-primer-programa-en-python">El primer programa en Python</h2>
-
-<p>El siguiente es un programa <strong>completo</strong> en Python que utiliza una buena parte de los conceptos que se presentarán dentro de este nivel. Cuando haya terminado el nivel podrá regresar a este programa para volver a estudiarlo: ¡Todo debería ser claro en esta nueva oportunidad!</p>
-
+<h2 id="El-primer-programa-en-Python">El primer programa en Python<a class="anchor-link" href="#El-primer-programa-en-Python"> </a></h2><p>El siguiente es un programa <strong>completo</strong> en Python que utiliza una buena parte de los conceptos que se presentarán dentro de este nivel. Cuando haya terminado el nivel podrá regresar a este programa para volver a estudiarlo: ¡Todo debería ser claro en esta nueva oportunidad!</p>
 <p><strong>Instrucciones:</strong>
 Lea el siguiente programa con cuidado, intentando entender qué es lo que está haciendo.</p>
-
 <ul>
-  <li>Observe los bloques en los que está dividido y tenga en cuenta que en el lenguaje Python la <em>indentación</em> (la cantidad de espacios en blanco al inicio de cada línea, la sangría) es importante y sirve para definir bloques.</li>
-  <li>Note que hay algunas palabras que se repiten.</li>
-  <li>Note también que hay algunas cosas escritas en español y otras escritas en inglés.</li>
-  <li>Intente descubrir en qué orden se van a ejecutar cada una de las instrucciones del programa. <em>Ayuda:</em> Cada instrucción en este programa se va a ejecutar exactamente una vez.</li>
-  <li>Anote qué cosas del programa no sabe qué significan.</li>
+<li>Observe los bloques en los que está dividido y tenga en cuenta que en el lenguaje Python la <em>indentación</em> (la cantidad de espacios en blanco al inicio de cada línea, la sangría) es importante y sirve para definir bloques.</li>
+<li>Note que hay algunas palabras que se repiten.</li>
+<li>Note también que hay algunas cosas escritas en español y otras escritas en inglés.</li>
+<li>Intente descubrir en qué orden se van a ejecutar cada una de las instrucciones del programa. <em>Ayuda:</em> Cada instrucción en este programa se va a ejecutar exactamente una vez.</li>
+<li>Anote qué cosas del programa no sabe qué significan.</li>
 </ul>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">perimetro_triangulo</span><span class="p">(</span><span class="n">cateto1</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">cateto2</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">float</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">perimetro_triangulo</span><span class="p">(</span><span class="n">cateto1</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">cateto2</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">float</span><span class="p">:</span>
     <span class="n">hipotenusa</span> <span class="o">=</span> <span class="n">calcular_hip</span><span class="p">(</span><span class="n">cateto1</span><span class="p">,</span> <span class="n">cateto2</span><span class="p">)</span>    
     <span class="k">return</span> <span class="n">cateto1</span> <span class="o">+</span> <span class="n">cateto2</span> <span class="o">+</span> <span class="n">hipotenusa</span>
 
@@ -1141,87 +1129,89 @@ Lea el siguiente programa con cuidado, intentando entender qué es lo que está 
     <span class="k">return</span> <span class="n">hipotenusa</span>
 
 
-<span class="n">cadena_cat_1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Indique la longitud del primer cateto: "</span><span class="p">)</span>
-<span class="n">cadena_cat_2</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Indique la longitud del segundo cateto: "</span><span class="p">)</span>
+<span class="n">cadena_cat_1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Indique la longitud del primer cateto: &quot;</span><span class="p">)</span>
+<span class="n">cadena_cat_2</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Indique la longitud del segundo cateto: &quot;</span><span class="p">)</span>
 <span class="n">cat_1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">cadena_cat_1</span><span class="p">)</span>
 <span class="n">cat_2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">cadena_cat_2</span><span class="p">)</span>
 
 <span class="n">perimetro</span> <span class="o">=</span> <span class="n">perimetro_triangulo</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">"El perímetro de un triángulo rectángulo que tenga catetos de longitud"</span><span class="p">,</span>
-      <span class="n">cat_1</span><span class="p">,</span> <span class="s">"y"</span><span class="p">,</span> <span class="n">cat_2</span><span class="p">,</span> <span class="s">"es"</span><span class="p">,</span> <span class="n">perimetro</span><span class="p">)</span>
-
-</code></pre></div></div>
-
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;El perímetro de un triángulo rectángulo que tenga catetos de longitud&quot;</span><span class="p">,</span>
+      <span class="n">cat_1</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">cat_2</span><span class="p">,</span> <span class="s2">&quot;es&quot;</span><span class="p">,</span> <span class="n">perimetro</span><span class="p">)</span>
+</pre></div>
 <p>A continuación, se encuentra el mismo programa con una importante diferencia: esta vez se han incluido <strong>comentarios</strong>, es decir anotaciones que el programador dejó para que otras personas que quieran estudiar o modificar el programa puedan hacerlo con más facilidad.</p>
-
 <p><strong>Escribir</strong> buenos comentarios en el código (cortos, útiles y precisos) y <strong>leer</strong> con cuidado los comentarios de otros son muy buenas prácticas de programación.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Este programa está escrito en el archivo perimetro.py</span>
+<div class="highlight"><pre><span></span><span class="c1"># Este programa está escrito en el archivo perimetro.py</span>
 
 <span class="k">def</span> <span class="nf">perimetro_triangulo</span><span class="p">(</span><span class="n">cateto1</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">cateto2</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">float</span><span class="p">:</span>
-    <span class="s">"""
-    Esta función calcula el perímetro de un triángulo rectángulo
-    dada la longitud de sus dos catetos
-    Parámetros:
-      cateto1 (float): la longitud del primer cateto del triángulo
-      cateto2 (float): la longitud del segundo cateto del triángulo
-    Retorno
-      (float): la longitud del perímetro del triángulo
-    """</span>
-    <span class="c"># Usar la función calcular_hip para calcular la longitud del lado faltante</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Esta función calcula el perímetro de un triángulo rectángulo</span>
+<span class="sd">    dada la longitud de sus dos catetos</span>
+<span class="sd">    Parámetros:</span>
+<span class="sd">      cateto1 (float): la longitud del primer cateto del triángulo</span>
+<span class="sd">      cateto2 (float): la longitud del segundo cateto del triángulo</span>
+<span class="sd">    Retorno</span>
+<span class="sd">      (float): la longitud del perímetro del triángulo</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Usar la función calcular_hip para calcular la longitud del lado faltante</span>
     <span class="n">hipotenusa</span> <span class="o">=</span> <span class="n">calcular_hip</span><span class="p">(</span><span class="n">cateto1</span><span class="p">,</span> <span class="n">cateto2</span><span class="p">)</span>
-    
-    <span class="c"># Sumar los tres lados y convertirlos en la respuesta de la función</span>
+
+    <span class="c1"># Sumar los tres lados y convertirlos en la respuesta de la función</span>
     <span class="k">return</span> <span class="n">cateto1</span> <span class="o">+</span> <span class="n">cateto2</span> <span class="o">+</span> <span class="n">hipotenusa</span>
 
 
 <span class="k">def</span> <span class="nf">calcular_hip</span><span class="p">(</span><span class="n">cateto1</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">cateto2</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">float</span><span class="p">:</span>
-    <span class="s">"""
-    Esta función calcula la longitud de la hipotenusa en un triángulo rectángulo
-    dada la longitud de sus dos catetos
-    Parámetros:
-      cateto1 (float): la longitud del primer cateto del triángulo
-      cateto2 (float): la longitud del segundo cateto del triángulo
-    Retorno
-      (float): la longitud de la hipotenusa
-    """</span>
-    <span class="c"># Sumar la longitud de los catetos elevados al cuadrado</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Esta función calcula la longitud de la hipotenusa en un triángulo rectángulo</span>
+<span class="sd">    dada la longitud de sus dos catetos</span>
+<span class="sd">    Parámetros:</span>
+<span class="sd">      cateto1 (float): la longitud del primer cateto del triángulo</span>
+<span class="sd">      cateto2 (float): la longitud del segundo cateto del triángulo</span>
+<span class="sd">    Retorno</span>
+<span class="sd">      (float): la longitud de la hipotenusa</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Sumar la longitud de los catetos elevados al cuadrado</span>
     <span class="n">suma_cuadrados</span> <span class="o">=</span> <span class="p">(</span><span class="n">cateto1</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">cateto2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
-    
-    <span class="c"># Calcular la raíz cuadrada de la suma usando la función pow y el exponente 0.5</span>
+
+    <span class="c1"># Calcular la raíz cuadrada de la suma usando la función pow y el exponente 0.5</span>
     <span class="n">hipotenusa</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">suma_cuadrados</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">hipotenusa</span>
 
 
-<span class="c"># Solicitarle al usuario la longitud de los dos catetos</span>
-<span class="n">cadena_cat_1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Indique la longitud del primer cateto: "</span><span class="p">)</span>
-<span class="n">cadena_cat_2</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Indique la longitud del segundo cateto: "</span><span class="p">)</span>
+<span class="c1"># Solicitarle al usuario la longitud de los dos catetos</span>
+<span class="n">cadena_cat_1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Indique la longitud del primer cateto: &quot;</span><span class="p">)</span>
+<span class="n">cadena_cat_2</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Indique la longitud del segundo cateto: &quot;</span><span class="p">)</span>
 
-<span class="c"># Convertir los caracteres dados por el usuario en un número decimal</span>
+<span class="c1"># Convertir los caracteres dados por el usuario en un número decimal</span>
 <span class="n">cat_1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">cadena_cat_1</span><span class="p">)</span>
 <span class="n">cat_2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">cadena_cat_2</span><span class="p">)</span>
 
-<span class="c"># Llamar a la función con los valores recibidos</span>
+<span class="c1"># Llamar a la función con los valores recibidos</span>
 <span class="n">perimetro</span> <span class="o">=</span> <span class="n">perimetro_triangulo</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 
-<span class="c"># Mostrarle al usuario el resultado de la operación</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"El perímetro de un triángulo rectángulo que tenga catetos de longitud"</span><span class="p">,</span> <span class="n">cat_1</span><span class="p">,</span> <span class="s">"y"</span><span class="p">,</span> <span class="n">cat_2</span><span class="p">,</span> <span class="s">"es"</span><span class="p">,</span> <span class="n">perimetro</span><span class="p">)</span>
-
-</code></pre></div></div>
-
+<span class="c1"># Mostrarle al usuario el resultado de la operación</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;El perímetro de un triángulo rectángulo que tenga catetos de longitud&quot;</span><span class="p">,</span> <span class="n">cat_1</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">cat_2</span><span class="p">,</span> <span class="s2">&quot;es&quot;</span><span class="p">,</span> <span class="n">perimetro</span><span class="p">)</span>
+</pre></div>
 <p><strong>Preguntas:</strong>
 A partir de su lectura del programa, intente responder las siguientes preguntas. No se preocupe si no está seguro de algo, al final del nivel todas sus dudas deberían haber quedado aclaradas.</p>
-
 <ul>
-  <li>¿Cuál es el objetivo del programa?</li>
-  <li>¿Qué información tendrá que suministrar el usuario que ejecute el programa?</li>
-  <li>¿Cuál es el objetivo de cada bloque?</li>
-  <li>¿Qué es lo que primero se ejecuta?</li>
-  <li>¿Cuál es la diferencia entre las cosas que están escritas en español y las que están escritas en inglés?</li>
+<li>¿Cuál es el objetivo del programa?</li>
+<li>¿Qué información tendrá que suministrar el usuario que ejecute el programa?</li>
+<li>¿Cuál es el objetivo de cada bloque?</li>
+<li>¿Qué es lo que primero se ejecuta?</li>
+<li>¿Cuál es la diferencia entre lo que está escrito en español y lo que está escrito en inglés?</li>
 </ul>
 
+</div>
+</div>
+</div>
+</div>
 
+ 
+
+
+    </main>
+    
             </div>
             <div class="c-textbook__footer" id="textbook_footer">
               <nav class="c-page__nav">
