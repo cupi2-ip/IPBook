@@ -8,7 +8,11 @@ Este documento es una versión preliminar para uso interno. Si encuentra algún 
 
 ![](./images/N1_introduccion.jpg)
 
-En este nivel se presentan en detalle los conceptos más básicos de cualquier lenguaje de programación. Aunque los conceptos se explican e ilustran usando el lenguaje de programación Python, la mayoría del contenido se aplica a muchos otros lenguajes de programación.
+> Computers are good at following instructions, but not at reading your mind.
+> 
+> Donald Knuth 
+
+En este nivel se presentan en detalle los conceptos más básicos de cualquier lenguaje de programación: aunque se explican e ilustran usando el lenguaje de programación Python, la mayoría del contenido se aplica a muchos otros lenguajes de programación.
 
 Los conceptos principales que se estudian en este nivel son los siguientes:
 
