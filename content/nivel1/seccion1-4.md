@@ -183,16 +183,16 @@ En las secciones anteriores estudiamos sólo los operadores para sumar y dividir
 Los siguientes son los operadores disponibles para hacer operaciones con números. Es decir que estos operadores pueden aplicarse sólo sobre datos que sean de tipo **int** o **float**.
 
 Operación | Operador | Aridad (1) | Precedencia (2) | Ejemplo | Valor |
-----------|----------|--------|-------------|---------|-------|
-Exponenciación |  **  | Binario | 1 | 10 ** 3 | 1000 |
-Identidad |  +  | Unario | 2 | + 2 | +2 |
-Cambio de signo | - | Unario | 2 | -(-2) | +2 |
-Multiplicación | * | Binario | 3 | 10 * 3 | 30 |
-División (3) | / | Binario | 3 | 10 / 3 | 3.3333 |
-División entera (4) | // | Binario | 3| 10 // 3 | 3 |
-Módulo (5) | % | Binario | 3 | 10 % 3 | 1 |
-Suma | + | Binario | 4 | 10 + 3 | 13 |
-Resta | - | Binario | 4 | 10 - 3 | 7 |
+----------|:----------:|:--------:|:-------------:|---------|-------|
+Exponenciación |  **  | Binario | 1 | 10 ** 3 | 1000 
+Identidad |  +  | Unario | 2 | + 2 | +2 
+Cambio de signo | - | Unario | 2 | -(-2) | +2 
+Multiplicación | * | Binario | 3 | 10 * 3 | 30 
+División (3) | / | Binario | 3 | 10 / 3 | 3.3333 
+División entera (4) | // | Binario | 3| 10 // 3 | 3 
+Módulo (5) | % | Binario | 3 | 10 % 3 | 1 
+Suma | + | Binario | 4 | 10 + 3 | 13 
+Resta | - | Binario | 4 | 10 - 3 | 7 
 
 (1) El término *aridad* hace referencia a la cantidad de operandos sobre los que se aplica el operador. Los operadores unarios sólo requieren un operador mientras que los binarios necesitan 2.
 
@@ -217,7 +217,7 @@ La operación módulo es muy utilizada para averiguar la paridad de un número: 
 Python sólo ofrece dos operadores que se pueden aplicar sobre cadenas de caracteres.
 
 Operación | Operador | Aridad (1) | Precedencia (2) | Ejemplo | Valor |
-----------|----------|--------|-------------|---------|-------|
+----------|:----------:|:--------:|:-------------:|---------|-------|
 Concatenación |  +  | Binario | 1 | 'abc' + 'def' | 'abcdef' |
 Repetición |  *  | Binario | 1 | 'ab' * 3 | 'ababab' |
 
