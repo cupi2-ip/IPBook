@@ -68,8 +68,8 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 </pre></div>
 <p>En este punto volvimos a una situación idéntica a la de la instrucción anterior y ya sabemos que se va a resolver dejando el valor entero <code>8</code> en la variable <code>v3</code>.</p>
 <p><strong>Nota:</strong> La evaluación de la instrucción anterior fue exitosa porque a las variables <code>v1</code> y <code>v2</code> ya se les había asignado un valor anteriormente. Si en lugar de <code>v1</code> hubiéramos escrito un nombre de variable inexistente, como <code>vv</code>, habríamos encontrado un error como el siguiente:</p>
-<div class="highlight"><pre><span></span><span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;vv&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
-</pre></div>
+
+<pre><code>NameError: name 'vv' is not defined</code></pre>
 <h2 id="Par&#233;ntesis-y-tipos-de-datos">Par&#233;ntesis y tipos de datos<a class="anchor-link" href="#Par&#233;ntesis-y-tipos-de-datos"> </a></h2><p>Antes de pasar a la siguiente instrucción, observemos lo que responde Python cuando le preguntamos por los tipos de las variables <code>v1</code>, <code>v2</code> y <code>v3</code>.</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
 <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">int</span><span class="s1">&#39;&gt;</span>
@@ -202,7 +202,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 </table>
 <p>(1) El término <em>aridad</em> hace referencia a la cantidad de operandos sobre los que se aplica el operador. Los operadores unarios sólo requieren un operador mientras que los binarios necesitan 2.</p>
 <p>(2) La precedencia de un operador indica en qué orden se evaluarán varios operadores en caso de que no haya paréntesis que permitan resolver el orden. En Python, el primer operador que se evaluará es el operador de exponenciación. En caso de que la precedencia de dos operadores sea la misma, los operadores se aplicarán de izquierda a derecha. Por ejemplo, en el caso de la expresión <code>70 // 2**3 / 4</code> primero se evaluará la operación de exponenciación (la de mayor precedencia), luego se evaluará la división entera y finalmente la división.</p>
-<p>(3) En Python, la división siempre produce un resultado de tipo float, el cual muchas veces se redondea automáticamente. En el caso del ejemplo, la división <code>10/3</code> tiene como resultado el número decimal <code>3.3333333333333335</code>, que es la mejor aproximación que puede hacer Python del resultado real de la división. El valor de la expresión <code>9/3</code>, aunque podría ser un número entero (int), es el número decimal (float) <code>9.0</code>.</p>
+<p>(3) En Python, la división siempre produce un resultado de tipo float, el cual muchas veces se redondea automáticamente. En el caso del ejemplo, la división <code>10/3</code> tiene como resultado el número decimal <code>3.3333333333333335</code>, que es la mejor aproximación que puede hacer Python del resultado real de la división. El valor de la expresión <code>9/3</code>, aunque podría ser un número entero (int), es el número decimal (float) <code>3.0</code>.</p>
 <p>(4) Para valores positivos, la operación de <em>división entera</em> calcula la parte entera del resultado de la división y por ende siempre es un número entero. En el caso de la expresión <code>10//3</code> el valor es el número entero (int) <code>3</code>.</p>
 <p>Para números negativos, el resultado es el mayor número entero menor o igual al resultado de la división. Es decir que para el valor de la expresión <code>-10//3</code> es el número entero <code>-4</code></p>
 <p>(5) La operación módulo calcula el <strong>residuo</strong> de la división entera entre dos números. Por ejemplo, el valor de la expresión <code>10%3</code> es igual a <code>1</code> porque la división entera entre 10 y 3 tiene como resultado 3 con un residuo de 1 <sup class="footnote-ref" id="fnref-modneg"><a href="#fn-modneg">3</a></sup>.</p>
@@ -225,8 +225,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <td style="text-align:center">Binario</td>
 <td style="text-align:center">1</td>
 <td>'abc' + 'def'</td>
-<td>'abcdef'</td>
-<td></td>
+<td>'abcdef' </td>
 </tr>
 <tr>
 <td>Repetición</td>
@@ -234,20 +233,22 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <td style="text-align:center">Binario</td>
 <td style="text-align:center">1</td>
 <td>'ab' * 3</td>
-<td>'ababab'</td>
-<td></td>
+<td>'ababab' </td>
 </tr>
 </tbody>
 </table>
 <p>El operador de concatenación se utiliza para unir dos cadenas de caracteres y convertirlas en una sola.</p>
 <p>El operador de repetición se aplica sobre dos operandos de diferente tipo: una cadena de caracteres y un entero. El resultado será una cadena de caracteres que será el resultado de repetir la cadena tantas veces como indique el número.</p>
 <h3 id="Expresiones-con-m&#250;ltiples-tipos-de-datos">Expresiones con m&#250;ltiples tipos de datos<a class="anchor-link" href="#Expresiones-con-m&#250;ltiples-tipos-de-datos"> </a></h3><p>En Python no es posible escribir expresiones que combinen valores de diferentes tipos a menos que se hagan conversiones explícitamente. Por ejemplo, para construir una cadena que combine caracteres y números se debe hacer una conversión como en el siguiente ejemplo:</p>
-<p><code>'El salón asignado es el ' str(614) del edificio ML'</code></p>
+<div class="highlight"><pre><span></span><span class="s1">&#39;El salón asignado es el &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">614</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; del edificio ML&#39;</span>
+</pre></div>
 <p>Por otro lado, para hacer operaciones numéricas con valores almacenados en una cadena se debe convertir esa cadena a un número como en el siguiente ejemplo:</p>
-<p><code>1 + float('2.3') + 3</code></p>
+<div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;2.3&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
 <p>Finalmente, si se quieren hacer combinaciones de tipos se deben utilizar paréntesis que eliminen los posibles problemas.</p>
-<p><code>'El resultado es ' + str(2**3)</code></p>
-<p>En este siguiente ejemplo lo primero que se hace es evaluar la operación de exponenciación, luego se convierte el resultado a una cadena y finalmente se concatenan las dos cadenas.</p>
+<div class="highlight"><pre><span></span><span class="s1">&#39;El resultado es &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+<p>En el ejemplo anterior lo primero que se hace es evaluar la operación de exponenciación, luego se convierte el resultado a una cadena y finalmente se concatenan las dos cadenas.</p>
 <h2 id="Ejercicios">Ejercicios<a class="anchor-link" href="#Ejercicios"> </a></h2><ol>
 <li><p>¿Cuáles de las siguientes líneas no son instrucciones válidas en Python? (suponga que las instrucciones se van ejecutando una después de la otra)</p>
 <ul>
@@ -307,8 +308,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 </ol>
 <h2 id="M&#225;s-all&#225;-de-Python">M&#225;s all&#225; de Python<a class="anchor-link" href="#M&#225;s-all&#225;-de-Python"> </a></h2><p>Esta sección presentó en detalle los detalles más importantes de la sintaxis de Python. Sin embargo, los conceptos presentados son comunes a la mayoría de lenguajes de programación <em>imperativos</em> <sup class="footnote-ref" id="fnref-para"><a href="#fn-para">4</a></sup>. Aunque puede parecer que las diferencias entre Python y otros lenguajes son muy grandes, en realidad los conceptos que se manejan son básicamente los mismos: todos los lenguajes tienen literales, tienen variables para almacenar temporalmente valores, tienen expresiones que se tienen que evaluar, y tienen mecanismos para invocar fragmentos de código definidos en algún otro lugar.</p>
 <p>Si tenemos perfectamente claro todo lo expuesto en este capítulo, aplicar las mismas ideas a otros lenguajes debería ser muy sencillo.</p>
-<h4 id="Notas">Notas<a class="anchor-link" href="#Notas"> </a></h4><p>```</p>
-<div class="footnotes">
+<h4 id="Notas">Notas<a class="anchor-link" href="#Notas"> </a></h4><div class="footnotes">
 <hr>
 <ol><li id="fn-tipos"><p>Si usted ha trabajado con otros lenguajes de programación, notará que en Python no se deben declarar las variables antes de usarlas, ni se debe indicar explícitamente su tipo. Esto se debe a que Python utiliza <em>tipado dinámico</em>, es decir que el intérprete infiere los tipos de variables y parámetros durante la ejecución. Veremos más adelante que, aunque en las versiones actuales no se puede <em>especificar</em> los tipos de nada, sí se pueden dar <em>hints</em> que sirven como comentarios para que los programadores puedan hacer un mejor seguimiento a los programas.<a href="#fnref-tipos" class="footnote">&#8617;</a></p></li>
 <li id="fn-1"><p>Cuando se resuelven ejercicios de matemáticas o física aparecen conceptos similares a los que estamos trabajando y es normal que se escriban expresiones muy parecidas (por ejemplo: <code>distancia = velocidad * x</code>). Sin embargo, en esos contextos las expresiones no se escriben necesariamente siempre en un orden estricto, porque es un humano el que las va a interpretar. Además, porque más que asignaciones, se trata de ecuaciones que describen una equivalencia entre valores.<a href="#fnref-1" class="footnote">&#8617;</a></p></li>

@@ -34,11 +34,13 @@ La buena noticia es que, por defecto, Python soporta cadenas UNICODE. Así que, 
 
 Otra cosa con la que usted tiene que tener cuidado es la codificación que utilice para los archivos .py en los que escriba sus programas. La recomendación que le hacemos es que se asegure de que los archivos se guarden con la codificación UTF-8. En Spyder esto se logra poniendo el siguiente comentario al principio de cada archivo:
 
-```# -*- coding: utf-8 -*-```
+```python
+# -*- coding: utf-8 -*-
+```
 
 Si lo hizo correctamente, en la esquina inferior derecha del ambiente debería ver una etiqueta que diga *Encoding: UTF-8*. Si en lugar de esto dice *Encoding: ASCII*, entonces cualquier caracter que usted escriba en su programa y que no sea parte de ASCII (por ejemplo 'á') se convertirá en basura cuando usted cierre el archivo y lo vuelva a abrir.
 
-Finalmente le hacemos una recomendación con respecto al uso de caracteres *no ASCOO* dentro de sus programas: está bien usar estos caracteres dentro de la documentación y comentarios, pero evite usarlos en los identificadores de variables, parámetros y nombres de funciones. Por ejemplo, en lugar de llamar a una función ```calcular_año``` use ```calcular_anho```, y en lugar de usar la variable ```máximo``` use la variable ```maximo```. Esta no es una regla escrita en piedra que usted tenga que seguir. Es sólo un consejo para evitar que se tope con problemas sencillos, pero a veces difíciles de diagnosticar.
+Finalmente le hacemos una recomendación con respecto al uso de caracteres *no ASCII* dentro de sus programas: está bien usar estos caracteres dentro de la documentación y comentarios, pero evite usarlos en los identificadores de variables, parámetros y nombres de funciones. Por ejemplo, en lugar de llamar a una función ```calcular_año``` use ```calcular_anho```, y en lugar de usar la variable ```máximo``` use la variable ```maximo```. Esta no es una regla escrita en piedra que usted tenga que seguir. Es sólo un consejo para evitar que se tope con problemas sencillos, pero a veces difíciles de diagnosticar.
 
 
 [^error]: Si usted no puede ver alguno de estos caracteres, significa que el encoding ISO-8859-1 no está soportado o no está activo en su navegador, en el visor que esté utilizando para leer el texto, o en su computador.
@@ -55,12 +57,12 @@ Además de los caracteres como los que se describieron en la sección anterior, 
 A continuación, describimos los más importantes y que usted podría necesitar.
 
 Caracter | Significado | Ejemplo de uso | Resultado |
----------|-------------|----------------|-----------|
-\n       | Cambio de línea | "Hola\nMundo!"| Hola <br/> Mundo! |
-\t  | Tabulación | "Hola\tMundo" | Hola&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mundo |
-\\  | Barra invertida | "C:\\usuarios\\invitado" | C:\usuarios\invitado |
-\'  | Comilla sencilla (2) | "It\'s me!" | It's me! |
-\"  | Comilla doble | "A so called \"expert\"" | A so called "expert" |
+:---------:|:-------------|:----------------|:-----------|
+\n       | Cambio de línea | "Hola\nMundo!"| Hola <br/> Mundo!
+\t  | Tabulación | "Hola\tMundo" | Hola&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mundo
+\\\\  | Barra invertida | "C:\\\\usuarios\\\\invitado" | C:\usuarios\invitado
+\'  | Comilla sencilla (2) | "It\'s me!" | It's me!
+\"  | Comilla doble | "A so called \"expert\"" | A so called "expert"
 
 Como es posible que con un ejemplo tan breve no se aprecie la importancia de la tabulación, a continuación presentamos un ejemplo un poco más complejo. 
 El uso del caracter de tabulación indica que se quiere dejar espacio hasta la siguiente tabulación, con el objetivo de armar columnas más o menos definidas.  Una tabulación típicamente equivale al espacio de 8 caracteres.
@@ -214,33 +216,33 @@ Los siguientes son algunos de los métodos de ```str``` que podría necesitar co
 #### Mayúsculas y minúsculas
 
 Nombre | Descripción  |  Ejemplo  |  Resultado  |
--------|--------------|-----------|-------------|
-lower  | Remplaza todas las mayúsculas por minúsculas | "Hola, Mundo!".lower()  | 'hola, mundo!' |
-upper  | Remplaza todas las minúsculas por mayúsculas | "Hola, Mundo!". upper()  | 'HOLA, MUNDO!' |
-title  | Le pone mayúscula inicial a todas las palabras de la cadena | "Hola, Mundo!". title()  | 'Hola, Mundo!' |
-swapcase  | Intercambia mayúsculas por minúsculas y viceversa | "Hola, Mundo!". swapcase()  | 'hOLA, mUNDO!' |
+:-------|:--------------|:-----------|:-------------|
+lower  | Remplaza todas las mayúsculas por minúsculas | "Hola, Mundo!".lower()  | 'hola, mundo!'
+upper  | Remplaza todas las minúsculas por mayúsculas | "Hola, Mundo!". upper()  | 'HOLA, MUNDO!'
+title  | Le pone mayúscula inicial a todas las palabras de la cadena | "Hola, Mundo!". title()  | 'Hola, Mundo!'
+swapcase  | Intercambia mayúsculas por minúsculas y viceversa | "Hola, Mundo!". swapcase()  | 'hOLA, mUNDO!'
 
 
 #### Análisis de cadenas
 
 Nombre | Descripción  |  Ejemplo  |  Resultado  |
--------|--------------|-----------|-------------|
-find   | Busca la primera posición en la que aparezca la cadena buscada. Si no la encuentra retorna -1. | "Hola, Mundo!".find('o')  | 1 |
-rfind  | Busca la primera posición en la que aparezca la cadena buscada, empezando por la derecha. Si no la encuentra retorna -1. | "Hola, Mundo!".find('o')  | 10 |
-count  | Cuenta cuántas veces está la cadena indicada en otra cadena. Si no la encuentra se produce un error. | "Hola, Mundo!".find('o')  | 2 |
-isnumeric  | Revisa si todos los caracteres de una cadena son números | "Hola, Mundo!".isnumeric()  | False |
+:-------|:--------------|:-----------|:-------------|
+find   | Busca la primera posición en la que aparezca la cadena buscada. Si no la encuentra retorna -1. | "Hola, Mundo!".find('o')  | 1
+rfind  | Busca la primera posición en la que aparezca la cadena buscada, empezando por la derecha. Si no la encuentra retorna -1. | "Hola, Mundo!".rfind('o')  | 10
+count  | Cuenta cuántas veces está la cadena indicada en otra cadena. Si no la encuentra se produce un error. | "Hola, Mundo!".count('o')  | 2
+isnumeric  | Revisa si todos los caracteres de una cadena son números | "Hola, Mundo!".isnumeric()  | False 
 
 
 #### Manipulación de cadenas
 
 Nombre | Descripción  |  Ejemplo  |  Resultado  |
--------|--------------|-----------|-------------|
-replace   | Remplaza algunos elementos de una cadena con otros elementos que llegan como parámetro. El reemplazo puede ser la cadena vacía para eliminar los elementos buscados. | "Hola, Mundo!".replace('o', '67')  | 'H67la, Mund67!' |
-strip   | Elimina espacios y cambios de línea al final de una cadena de caracteres. No elimina ningún elemento que no se encuentre al final de la cadena. | "Hola, Mundo!   \n".strip()  | 'Hola, Mundo!' |
-ljust   | Amplía la cadena hasta el ancho indicado, alinea el contenido a la izquierda y llena el espacio vacío con espacios. | "Hola, Mundo!".ljust(15)  | 'Hola, Mundo!&nbsp;&nbsp;&nbsp;&nbsp;' |
-rjust   | Amplía la cadena hasta el ancho indicado, alinea el contenido a la derecha y llena el espacio vacío con espacios | "Hola, Mundo!".rjust(15)  | '&nbsp;&nbsp;&nbsp;Hola, Mundo!' |
-center   | Amplía la cadena hasta el ancho indicado y centra el contenido. | "Hola, Mundo!".center(15)  | '&nbsp;&nbsp;Hola, Mundo!&nbsp;' |
-zfill   | Amplía la cadena hasta el ancho indicado, alinea el contenido a la derecha y llena el espacio vacío con caracteres ```0```. | "Hola, Mundo!".zfill(15)  | '000Hola, Mundo!' |
+:-------|:--------------|:-----------|:-------------|
+replace   | Remplaza algunos elementos de una cadena con otros elementos que llegan como parámetro. El reemplazo puede ser la cadena vacía para eliminar los elementos buscados. | "Hola, Mundo!".replace('o', '67')  | 'H67la, Mund67!'
+strip   | Elimina espacios y cambios de línea al final de una cadena de caracteres. No elimina ningún elemento que no se encuentre al final de la cadena. | "Hola, Mundo!   \n".strip()  | 'Hola, Mundo!'
+ljust   | Amplía la cadena hasta el ancho indicado, alinea el contenido a la izquierda y llena el espacio vacío con espacios. | "Hola, Mundo!".ljust(15)  | 'Hola, Mundo!&nbsp;&nbsp;&nbsp;&nbsp;'
+rjust   | Amplía la cadena hasta el ancho indicado, alinea el contenido a la derecha y llena el espacio vacío con espacios | "Hola, Mundo!".rjust(15)  | '&nbsp;&nbsp;&nbsp;Hola, Mundo!'
+center   | Amplía la cadena hasta el ancho indicado y centra el contenido. | "Hola, Mundo!".center(15)  | '&nbsp;&nbsp;Hola, Mundo!&nbsp;'
+zfill   | Amplía la cadena hasta el ancho indicado, alinea el contenido a la derecha y llena el espacio vacío con caracteres ```0```. | "Hola, Mundo!".zfill(15)  | '000Hola, Mundo!'
 
 
 #### El resto de métodos
@@ -304,7 +306,7 @@ plantilla2 = "{0:<14}{1:>4.1f} s @ {2:>3d} kph"
 
 El formato para el primer campo dice `<14`, lo cual se interpreta como que se debe alinear el contenido a la izquierda y que debe tener 14 caracteres de ancho en total. Si el contenido del campo es más corto que esto, se agregarán tantos espacios como haga falta *a la derecha del contenido*.
 
-El formato para el segundo campo dice `>4.1f`. Como ya sabemos, `1.f` significa que se tratará de un número con exactamente un decimal. La otra parte, `>4` indica que el número debe alinearse a la derecha y que debe ocupar, en total, el espacio de 4 caracteres. En este caso como el número está alineado a la derecha los caracteres faltantes se agregan a la *izquierda del contenido*.
+El formato para el segundo campo dice `>4.1f`. Como ya sabemos, `.1f` significa que se tratará de un número con exactamente un decimal. La otra parte, `>4` indica que el número debe alinearse a la derecha y que debe ocupar, en total, el espacio de 4 caracteres. En este caso como el número está alineado a la derecha los caracteres faltantes se agregan a la *izquierda del contenido*.
 
 El formato para el tercer campo es muy similar: se espera un número entero que terminará alineado a la derecha en una columna de 3 caracteres de ancho.  
 

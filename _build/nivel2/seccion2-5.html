@@ -49,54 +49,50 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <p>Con esta brevísima explicación no esperamos que usted sea ya un experto en sistemas de codificación de caracteres, pero sí que se dé cuenta que es un asunto más complicado de lo que parece a simple vista. Mientras que sus programas se limiten a usar caracteres que son normales en su idioma, probablemente no tendrá ningún problema. Pero si quiere que sus programas sean capaces de manejar caracteres de otros alfabetos, tendrá que ponerles atención a los asuntos de codificación si no quiere perder información o ver caracteres remplazados por marcas desconocidas.</p>
 <p>La buena noticia es que, por defecto, Python soporta cadenas UNICODE. Así que, si está teniendo problemas con caracteres extraños dentro de sus cadenas, probablemente el problema no sea de Python sino de algo más de lo que usted está haciendo.</p>
 <p>Otra cosa con la que usted tiene que tener cuidado es la codificación que utilice para los archivos .py en los que escriba sus programas. La recomendación que le hacemos es que se asegure de que los archivos se guarden con la codificación UTF-8. En Spyder esto se logra poniendo el siguiente comentario al principio de cada archivo:</p>
-<p>```# coding: utf-8</p>
+<div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+</pre></div>
 <p>Si lo hizo correctamente, en la esquina inferior derecha del ambiente debería ver una etiqueta que diga <em>Encoding: UTF-8</em>. Si en lugar de esto dice <em>Encoding: ASCII</em>, entonces cualquier caracter que usted escriba en su programa y que no sea parte de ASCII (por ejemplo 'á') se convertirá en basura cuando usted cierre el archivo y lo vuelva a abrir.</p>
-<p>Finalmente le hacemos una recomendación con respecto al uso de caracteres <em>no ASCOO</em> dentro de sus programas: está bien usar estos caracteres dentro de la documentación y comentarios, pero evite usarlos en los identificadores de variables, parámetros y nombres de funciones. Por ejemplo, en lugar de llamar a una función <code>calcular_año</code> use <code>calcular_anho</code>, y en lugar de usar la variable <code>máximo</code> use la variable <code>maximo</code>. Esta no es una regla escrita en piedra que usted tenga que seguir. Es sólo un consejo para evitar que se tope con problemas sencillos, pero a veces difíciles de diagnosticar.</p>
+<p>Finalmente le hacemos una recomendación con respecto al uso de caracteres <em>no ASCII</em> dentro de sus programas: está bien usar estos caracteres dentro de la documentación y comentarios, pero evite usarlos en los identificadores de variables, parámetros y nombres de funciones. Por ejemplo, en lugar de llamar a una función <code>calcular_año</code> use <code>calcular_anho</code>, y en lugar de usar la variable <code>máximo</code> use la variable <code>maximo</code>. Esta no es una regla escrita en piedra que usted tenga que seguir. Es sólo un consejo para evitar que se tope con problemas sencillos, pero a veces difíciles de diagnosticar.</p>
 <h2 id="Caracteres-de-control">Caracteres de control<a class="anchor-link" href="#Caracteres-de-control"> </a></h2><p>Además de los caracteres como los que se describieron en la sección anterior, una cadena de caracteres (<code>str</code>) también puede tener caracteres que son llamados caracteres de control. Estos caracteres se pueden usar como cualquier otro dentro de una cadena.</p>
 <p>A continuación, describimos los más importantes y que usted podría necesitar.</p>
 <table>
 <thead><tr>
-<th>Caracter</th>
-<th>Significado</th>
-<th>Ejemplo de uso</th>
-<th>Resultado</th>
+<th style="text-align:center">Caracter</th>
+<th style="text-align:left">Significado</th>
+<th style="text-align:left">Ejemplo de uso</th>
+<th style="text-align:left">Resultado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>\n</td>
-<td>Cambio de línea</td>
-<td>"Hola\nMundo!"</td>
-<td>Hola <br/> Mundo!</td>
-<td></td>
+<td style="text-align:center">\n</td>
+<td style="text-align:left">Cambio de línea</td>
+<td style="text-align:left">"Hola\nMundo!"</td>
+<td style="text-align:left">Hola <br/> Mundo!</td>
 </tr>
 <tr>
-<td>\t</td>
-<td>Tabulación</td>
-<td>"Hola\tMundo"</td>
-<td>Hola&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mundo</td>
-<td></td>
+<td style="text-align:center">\t</td>
+<td style="text-align:left">Tabulación</td>
+<td style="text-align:left">"Hola\tMundo"</td>
+<td style="text-align:left">Hola&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mundo</td>
 </tr>
 <tr>
-<td>\</td>
-<td>Barra invertida</td>
-<td>"C:\usuarios\invitado"</td>
-<td>C:\usuarios\invitado</td>
-<td></td>
+<td style="text-align:center">\\</td>
+<td style="text-align:left">Barra invertida</td>
+<td style="text-align:left">"C:\\usuarios\\invitado"</td>
+<td style="text-align:left">C:\usuarios\invitado</td>
 </tr>
 <tr>
-<td>\'</td>
-<td>Comilla sencilla (2)</td>
-<td>"It\'s me!"</td>
-<td>It's me!</td>
-<td></td>
+<td style="text-align:center">\'</td>
+<td style="text-align:left">Comilla sencilla (2)</td>
+<td style="text-align:left">"It\'s me!"</td>
+<td style="text-align:left">It's me!</td>
 </tr>
 <tr>
-<td>\"</td>
-<td>Comilla doble</td>
-<td>"A so called \"expert\""</td>
-<td>A so called "expert"</td>
-<td></td>
+<td style="text-align:center">\"</td>
+<td style="text-align:left">Comilla doble</td>
+<td style="text-align:left">"A so called \"expert\""</td>
+<td style="text-align:left">A so called "expert"</td>
 </tr>
 </tbody>
 </table>
@@ -194,132 +190,118 @@ El uso del caracter de tabulación indica que se quiere dejar espacio hasta la s
 <h3 id="M&#233;todos-de-str">M&#233;todos de str<a class="anchor-link" href="#M&#233;todos-de-str"> </a></h3><p>Los siguientes son algunos de los métodos de <code>str</code> que podría necesitar con más frecuencia cuando trabaje con cadenas de caracteres.</p>
 <h4 id="May&#250;sculas-y-min&#250;sculas">May&#250;sculas y min&#250;sculas<a class="anchor-link" href="#May&#250;sculas-y-min&#250;sculas"> </a></h4><table>
 <thead><tr>
-<th>Nombre</th>
-<th>Descripción</th>
-<th>Ejemplo</th>
-<th>Resultado</th>
+<th style="text-align:left">Nombre</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:left">Ejemplo</th>
+<th style="text-align:left">Resultado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>lower</td>
-<td>Remplaza todas las mayúsculas por minúsculas</td>
-<td>"Hola, Mundo!".lower()</td>
-<td>'hola, mundo!'</td>
-<td></td>
+<td style="text-align:left">lower</td>
+<td style="text-align:left">Remplaza todas las mayúsculas por minúsculas</td>
+<td style="text-align:left">"Hola, Mundo!".lower()</td>
+<td style="text-align:left">'hola, mundo!'</td>
 </tr>
 <tr>
-<td>upper</td>
-<td>Remplaza todas las minúsculas por mayúsculas</td>
-<td>"Hola, Mundo!". upper()</td>
-<td>'HOLA, MUNDO!'</td>
-<td></td>
+<td style="text-align:left">upper</td>
+<td style="text-align:left">Remplaza todas las minúsculas por mayúsculas</td>
+<td style="text-align:left">"Hola, Mundo!". upper()</td>
+<td style="text-align:left">'HOLA, MUNDO!'</td>
 </tr>
 <tr>
-<td>title</td>
-<td>Le pone mayúscula inicial a todas las palabras de la cadena</td>
-<td>"Hola, Mundo!". title()</td>
-<td>'Hola, Mundo!'</td>
-<td></td>
+<td style="text-align:left">title</td>
+<td style="text-align:left">Le pone mayúscula inicial a todas las palabras de la cadena</td>
+<td style="text-align:left">"Hola, Mundo!". title()</td>
+<td style="text-align:left">'Hola, Mundo!'</td>
 </tr>
 <tr>
-<td>swapcase</td>
-<td>Intercambia mayúsculas por minúsculas y viceversa</td>
-<td>"Hola, Mundo!". swapcase()</td>
-<td>'hOLA, mUNDO!'</td>
-<td></td>
+<td style="text-align:left">swapcase</td>
+<td style="text-align:left">Intercambia mayúsculas por minúsculas y viceversa</td>
+<td style="text-align:left">"Hola, Mundo!". swapcase()</td>
+<td style="text-align:left">'hOLA, mUNDO!'</td>
 </tr>
 </tbody>
 </table>
 <h4 id="An&#225;lisis-de-cadenas">An&#225;lisis de cadenas<a class="anchor-link" href="#An&#225;lisis-de-cadenas"> </a></h4><table>
 <thead><tr>
-<th>Nombre</th>
-<th>Descripción</th>
-<th>Ejemplo</th>
-<th>Resultado</th>
+<th style="text-align:left">Nombre</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:left">Ejemplo</th>
+<th style="text-align:left">Resultado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>find</td>
-<td>Busca la primera posición en la que aparezca la cadena buscada. Si no la encuentra retorna -1.</td>
-<td>"Hola, Mundo!".find('o')</td>
-<td>1</td>
-<td></td>
+<td style="text-align:left">find</td>
+<td style="text-align:left">Busca la primera posición en la que aparezca la cadena buscada. Si no la encuentra retorna -1.</td>
+<td style="text-align:left">"Hola, Mundo!".find('o')</td>
+<td style="text-align:left">1</td>
 </tr>
 <tr>
-<td>rfind</td>
-<td>Busca la primera posición en la que aparezca la cadena buscada, empezando por la derecha. Si no la encuentra retorna -1.</td>
-<td>"Hola, Mundo!".find('o')</td>
-<td>10</td>
-<td></td>
+<td style="text-align:left">rfind</td>
+<td style="text-align:left">Busca la primera posición en la que aparezca la cadena buscada, empezando por la derecha. Si no la encuentra retorna -1.</td>
+<td style="text-align:left">"Hola, Mundo!".rfind('o')</td>
+<td style="text-align:left">10</td>
 </tr>
 <tr>
-<td>count</td>
-<td>Cuenta cuántas veces está la cadena indicada en otra cadena. Si no la encuentra se produce un error.</td>
-<td>"Hola, Mundo!".find('o')</td>
-<td>2</td>
-<td></td>
+<td style="text-align:left">count</td>
+<td style="text-align:left">Cuenta cuántas veces está la cadena indicada en otra cadena. Si no la encuentra se produce un error.</td>
+<td style="text-align:left">"Hola, Mundo!".count('o')</td>
+<td style="text-align:left">2</td>
 </tr>
 <tr>
-<td>isnumeric</td>
-<td>Revisa si todos los caracteres de una cadena son números</td>
-<td>"Hola, Mundo!".isnumeric()</td>
-<td>False</td>
-<td></td>
+<td style="text-align:left">isnumeric</td>
+<td style="text-align:left">Revisa si todos los caracteres de una cadena son números</td>
+<td style="text-align:left">"Hola, Mundo!".isnumeric()</td>
+<td style="text-align:left">False </td>
 </tr>
 </tbody>
 </table>
 <h4 id="Manipulaci&#243;n-de-cadenas">Manipulaci&#243;n de cadenas<a class="anchor-link" href="#Manipulaci&#243;n-de-cadenas"> </a></h4><table>
 <thead><tr>
-<th>Nombre</th>
-<th>Descripción</th>
-<th>Ejemplo</th>
-<th>Resultado</th>
+<th style="text-align:left">Nombre</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:left">Ejemplo</th>
+<th style="text-align:left">Resultado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>replace</td>
-<td>Remplaza algunos elementos de una cadena con otros elementos que llegan como parámetro. El reemplazo puede ser la cadena vacía para eliminar los elementos buscados.</td>
-<td>"Hola, Mundo!".replace('o', '67')</td>
-<td>'H67la, Mund67!'</td>
-<td></td>
+<td style="text-align:left">replace</td>
+<td style="text-align:left">Remplaza algunos elementos de una cadena con otros elementos que llegan como parámetro. El reemplazo puede ser la cadena vacía para eliminar los elementos buscados.</td>
+<td style="text-align:left">"Hola, Mundo!".replace('o', '67')</td>
+<td style="text-align:left">'H67la, Mund67!'</td>
 </tr>
 <tr>
-<td>strip</td>
-<td>Elimina espacios y cambios de línea al final de una cadena de caracteres. No elimina ningún elemento que no se encuentre al final de la cadena.</td>
-<td>"Hola, Mundo!   \n".strip()</td>
-<td>'Hola, Mundo!'</td>
-<td></td>
+<td style="text-align:left">strip</td>
+<td style="text-align:left">Elimina espacios y cambios de línea al final de una cadena de caracteres. No elimina ningún elemento que no se encuentre al final de la cadena.</td>
+<td style="text-align:left">"Hola, Mundo!   \n".strip()</td>
+<td style="text-align:left">'Hola, Mundo!'</td>
 </tr>
 <tr>
-<td>ljust</td>
-<td>Amplía la cadena hasta el ancho indicado, alinea el contenido a la izquierda y llena el espacio vacío con espacios.</td>
-<td>"Hola, Mundo!".ljust(15)</td>
-<td>'Hola, Mundo!&nbsp;&nbsp;&nbsp;&nbsp;'</td>
-<td></td>
+<td style="text-align:left">ljust</td>
+<td style="text-align:left">Amplía la cadena hasta el ancho indicado, alinea el contenido a la izquierda y llena el espacio vacío con espacios.</td>
+<td style="text-align:left">"Hola, Mundo!".ljust(15)</td>
+<td style="text-align:left">'Hola, Mundo!&nbsp;&nbsp;&nbsp;&nbsp;'</td>
 </tr>
 <tr>
-<td>rjust</td>
-<td>Amplía la cadena hasta el ancho indicado, alinea el contenido a la derecha y llena el espacio vacío con espacios</td>
-<td>"Hola, Mundo!".rjust(15)</td>
-<td>'&nbsp;&nbsp;&nbsp;Hola, Mundo!'</td>
-<td></td>
+<td style="text-align:left">rjust</td>
+<td style="text-align:left">Amplía la cadena hasta el ancho indicado, alinea el contenido a la derecha y llena el espacio vacío con espacios</td>
+<td style="text-align:left">"Hola, Mundo!".rjust(15)</td>
+<td style="text-align:left">'&nbsp;&nbsp;&nbsp;Hola, Mundo!'</td>
 </tr>
 <tr>
-<td>center</td>
-<td>Amplía la cadena hasta el ancho indicado y centra el contenido.</td>
-<td>"Hola, Mundo!".center(15)</td>
-<td>'&nbsp;&nbsp;Hola, Mundo!&nbsp;'</td>
-<td></td>
+<td style="text-align:left">center</td>
+<td style="text-align:left">Amplía la cadena hasta el ancho indicado y centra el contenido.</td>
+<td style="text-align:left">"Hola, Mundo!".center(15)</td>
+<td style="text-align:left">'&nbsp;&nbsp;Hola, Mundo!&nbsp;'</td>
 </tr>
 <tr>
-<td>zfill</td>
-<td>Amplía la cadena hasta el ancho indicado, alinea el contenido a la derecha y llena el espacio vacío con caracteres <code>0</code>.</td>
-<td>"Hola, Mundo!".zfill(15)</td>
-<td>'000Hola, Mundo!'</td>
-<td></td>
+<td style="text-align:left">zfill</td>
+<td style="text-align:left">Amplía la cadena hasta el ancho indicado, alinea el contenido a la derecha y llena el espacio vacío con caracteres <code>0</code>.</td>
+<td style="text-align:left">"Hola, Mundo!".zfill(15)</td>
+<td style="text-align:left">'000Hola, Mundo!'</td>
 </tr>
 </tbody>
 </table>
@@ -354,7 +336,7 @@ Un Pagani Huayra BC del 2017 con motor de 6.0 litros es capaz de pasar de 0 a 10
 <div class="highlight"><pre><span></span><span class="n">plantilla2</span> <span class="o">=</span> <span class="s2">&quot;{0:&lt;14}{1:&gt;4.1f} s @ {2:&gt;3d} kph&quot;</span>
 </pre></div>
 <p>El formato para el primer campo dice <code>&lt;14</code>, lo cual se interpreta como que se debe alinear el contenido a la izquierda y que debe tener 14 caracteres de ancho en total. Si el contenido del campo es más corto que esto, se agregarán tantos espacios como haga falta <em>a la derecha del contenido</em>.</p>
-<p>El formato para el segundo campo dice <code>&gt;4.1f</code>. Como ya sabemos, <code>1.f</code> significa que se tratará de un número con exactamente un decimal. La otra parte, <code>&gt;4</code> indica que el número debe alinearse a la derecha y que debe ocupar, en total, el espacio de 4 caracteres. En este caso como el número está alineado a la derecha los caracteres faltantes se agregan a la <em>izquierda del contenido</em>.</p>
+<p>El formato para el segundo campo dice <code>&gt;4.1f</code>. Como ya sabemos, <code>.1f</code> significa que se tratará de un número con exactamente un decimal. La otra parte, <code>&gt;4</code> indica que el número debe alinearse a la derecha y que debe ocupar, en total, el espacio de 4 caracteres. En este caso como el número está alineado a la derecha los caracteres faltantes se agregan a la <em>izquierda del contenido</em>.</p>
 <p>El formato para el tercer campo es muy similar: se espera un número entero que terminará alineado a la derecha en una columna de 3 caracteres de ancho.</p>
 <p>Finalmente, veamos cómo se generaron las 3 cadenas invocando el método <code>format</code> sobre la plantilla:</p>
 <div class="highlight"><pre><span></span><span class="n">plantilla2</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;100 metros&#39;</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">,</span> <span class="mi">126</span><span class="p">)</span>

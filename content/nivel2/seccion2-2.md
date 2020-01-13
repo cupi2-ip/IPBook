@@ -109,16 +109,16 @@ Consideremos la tabla más sencilla posible, en la cual sólo tenemos la proposi
 
 
 P   | &not; P |
-----|------|
-  T |  F  |
-F   |  T  |
+:----:|:------:|
+  T |  F  
+F   |  T  
 
 Aunque sencilla, esta tabla es interesante porque nos muestra todos los posibles valores de la expresión **P** y los valores correspondientes que tendría la expresión **&not; P**. También nos muestra que las dos expresiones no pueden ser verdaderas simultáneamente, sino que tienen valores opuestos. Si extendemos la tabla con un par de expresiones encontraremos dos principios muy importantes:
 
 P   | &not; P | P &and; &not; P | P &or; &not; P |
-----|------|-----|-----|
-T   |   F  |  F  |  T  |
-F   |   T  |  F  |  T  |
+:----:|:------:|:-----:|:-----:|
+T   |   F  |  F  |  T  
+F   |   T  |  F  |  T  
 
 En primer lugar, vemos que la expresión **P &and; &not; P** siempre es falsa. Esto quiere decir que no es posible que una proposición sea simultáneamente verdadera y falsa, lo cual usualmente se conoce como el principio de no contradicción.
 
@@ -127,11 +127,11 @@ En segundo lugar, vemos que la expresión **P &or; &not; P** siempre es verdader
 La siguiente tabla de verdad es un poco más compleja porque involucra dos proposiciones.
 
 P   |  Q  |  P &and; Q  |  P &or; Q  |
-----|-----|-----------|----------|
-T   |  T  |     T     |    T     |
-T   |  F  |     F     |    T     |
-F   |  T  |     F     |    T     |
-F   |  F  |     F     |    F     |
+:----:|:-----:|:-----------:|:----------:|
+T   |  T  |     T     |    T     
+T   |  F  |     F     |    T     
+F   |  T  |     F     |    T     
+F   |  F  |     F     |    F     
 
 Acá podemos ver, de otra manera, lo que ya sabíamos sobre la conjunción y la disyunción: una conjunción es verdadera sólo cuando los dos operandos son verdaderos y una disyunción es falsa sólo cuando los dos operandos son falsos.
 

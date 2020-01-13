@@ -86,7 +86,7 @@ En este punto volvimos a una situación idéntica a la de la instrucción anteri
 
 **Nota:** La evaluación de la instrucción anterior fue exitosa porque a las variables ```v1``` y ```v2``` ya se les había asignado un valor anteriormente. Si en lugar de ```v1``` hubiéramos escrito un nombre de variable inexistente, como ```vv```, habríamos encontrado un error como el siguiente:
 
-```python
+```
 NameError: name 'vv' is not defined
 ```
 
@@ -189,7 +189,7 @@ Identidad |  +  | Unario | 2 | + 2 | +2
 Cambio de signo | - | Unario | 2 | -(-2) | +2 
 Multiplicación | * | Binario | 3 | 10 * 3 | 30 
 División (3) | / | Binario | 3 | 10 / 3 | 3.3333 
-División entera (4) | // | Binario | 3| 10 // 3 | 3 
+División entera (4) | // | Binario | 3 | 10 // 3 | 3 
 Módulo (5) | % | Binario | 3 | 10 % 3 | 1 
 Suma | + | Binario | 4 | 10 + 3 | 13 
 Resta | - | Binario | 4 | 10 - 3 | 7 
@@ -198,7 +198,7 @@ Resta | - | Binario | 4 | 10 - 3 | 7
 
 (2) La precedencia de un operador indica en qué orden se evaluarán varios operadores en caso de que no haya paréntesis que permitan resolver el orden. En Python, el primer operador que se evaluará es el operador de exponenciación. En caso de que la precedencia de dos operadores sea la misma, los operadores se aplicarán de izquierda a derecha. Por ejemplo, en el caso de la expresión ```70 // 2**3 / 4``` primero se evaluará la operación de exponenciación (la de mayor precedencia), luego se evaluará la división entera y finalmente la división.
 
-(3) En Python, la división siempre produce un resultado de tipo float, el cual muchas veces se redondea automáticamente. En el caso del ejemplo, la división ```10/3``` tiene como resultado el número decimal ```3.3333333333333335```, que es la mejor aproximación que puede hacer Python del resultado real de la división. El valor de la expresión ```9/3```, aunque podría ser un número entero (int), es el número decimal (float) ```9.0```.
+(3) En Python, la división siempre produce un resultado de tipo float, el cual muchas veces se redondea automáticamente. En el caso del ejemplo, la división ```10/3``` tiene como resultado el número decimal ```3.3333333333333335```, que es la mejor aproximación que puede hacer Python del resultado real de la división. El valor de la expresión ```9/3```, aunque podría ser un número entero (int), es el número decimal (float) ```3.0```.
 
 (4) Para valores positivos, la operación de *división entera* calcula la parte entera del resultado de la división y por ende siempre es un número entero. En el caso de la expresión ```10//3``` el valor es el número entero (int) ```3```. 
 
@@ -218,8 +218,8 @@ Python sólo ofrece dos operadores que se pueden aplicar sobre cadenas de caract
 
 Operación | Operador | Aridad (1) | Precedencia (2) | Ejemplo | Valor |
 ----------|:----------:|:--------:|:-------------:|---------|-------|
-Concatenación |  +  | Binario | 1 | 'abc' + 'def' | 'abcdef' |
-Repetición |  *  | Binario | 1 | 'ab' * 3 | 'ababab' |
+Concatenación |  +  | Binario | 1 | 'abc' + 'def' | 'abcdef' 
+Repetición |  *  | Binario | 1 | 'ab' * 3 | 'ababab' 
 
 El operador de concatenación se utiliza para unir dos cadenas de caracteres y convertirlas en una sola.
 
@@ -230,17 +230,23 @@ El operador de repetición se aplica sobre dos operandos de diferente tipo: una 
 
 En Python no es posible escribir expresiones que combinen valores de diferentes tipos a menos que se hagan conversiones explícitamente. Por ejemplo, para construir una cadena que combine caracteres y números se debe hacer una conversión como en el siguiente ejemplo:
 
-```'El salón asignado es el ' + str(614) + ' del edificio ML'```
+```python
+'El salón asignado es el ' + str(614) + ' del edificio ML'
+```
 
 Por otro lado, para hacer operaciones numéricas con valores almacenados en una cadena se debe convertir esa cadena a un número como en el siguiente ejemplo:
 
-```1 + float('2.3') + 3```
+```python
+1 + float('2.3') + 3
+```
 
 Finalmente, si se quieren hacer combinaciones de tipos se deben utilizar paréntesis que eliminen los posibles problemas.
 
-```'El resultado es ' + str(2**3)```
+```python
+'El resultado es ' + str(2**3)
+```
 
-En este siguiente ejemplo lo primero que se hace es evaluar la operación de exponenciación, luego se convierte el resultado a una cadena y finalmente se concatenan las dos cadenas.
+En el ejemplo anterior lo primero que se hace es evaluar la operación de exponenciación, luego se convierte el resultado a una cadena y finalmente se concatenan las dos cadenas.
 
 
 

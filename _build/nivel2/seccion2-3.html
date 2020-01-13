@@ -32,11 +32,11 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 </tr>
 </tbody>
 </table>
-<h1 id="Valores-de-verdad-en-Python">Valores de verdad en Python<a class="anchor-link" href="#Valores-de-verdad-en-Python"> </a></h1><blockquote><p>El objetivo de esta sección es mostrar como se representan y operan valores de verdad dentro de un lenguaje de programación. Los conceptos que se estudiarán en esta sección son aplicables directamente a la mayoría de lenguajes de programación.</p>
+<h1 id="Valores-de-verdad-en-Python">Valores de verdad en Python<a class="anchor-link" href="#Valores-de-verdad-en-Python"> </a></h1><blockquote><p>El objetivo de esta sección es mostrar cómo se representan y operan valores de verdad dentro de un lenguaje de programación. Los conceptos que se estudian en esta sección son aplicables directamente a la mayoría de lenguajes de programación.</p>
 </blockquote>
 <p>En la sección pasada trabajamos con valores de verdad y con proposiciones. En esta sección veremos que Python tiene un tipo de datos específico para este tipo de valores (bool) y que permite también la construcción de expresiones lógicas usando conjunciones, disyunciones y negaciones. También aprenderemos a escribir expresiones lógicas usando operadores relacionales sobre valores de todos los tipos que conocemos hasta el momento (números, cadenas y valores de verdad). En la próxima sección usaremos todos estos conceptos para construir expresiones condicionales.</p>
 <h2 id="El-tipo-bool-en-Python">El tipo bool en Python<a class="anchor-link" href="#El-tipo-bool-en-Python"> </a></h2><p>En el nivel 1 nos encontramos ya con los tipos que Python utiliza para manejar valores numéricos (<code>int</code> y <code>float</code>) y cadenas de caracteres (<code>str</code>). Ahora vamos a introducir el tipo <code>bool</code>, que se utiliza para representar valores de verdad y puede utilizarse en variables, parámetros, llamados de funciones y otras expresiones.</p>
-<p>En comparación con los tipos que ya conocíamos, <code>bool</code> es mucho más sencillo puesto que sólo hay dos literales: <code>True</code>, que se utiliza para expresar un valor verdadero, y <code>False</code>, que se usa para expresar un valor falso [^sobre]. Ponga atención al uso de minúsculas y mayúsculas, puesto que los dos literales se deben escribir exactamente así.</p>
+<p>En comparación con los tipos que ya conocíamos, <code>bool</code> es mucho más sencillo puesto que sólo hay dos literales: <code>True</code>, que se utiliza para expresar un valor verdadero, y <code>False</code>, que se usa para expresar un valor falso. Ponga atención al uso de minúsculas y mayúsculas, puesto que los dos literales se deben escribir exactamente así.</p>
 <p>También note que no es lo mismo <code>'True'</code> que <code>True</code>. El primer valor es una cadena de caracteres, mientras que el segundo es un valor de verdad:</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="s1">&#39;True&#39;</span><span class="p">)</span>
 <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">str</span><span class="s1">&#39;&gt;</span>
@@ -80,7 +80,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <h3 id="Conjunci&#243;n-(and)">Conjunci&#243;n (and)<a class="anchor-link" href="#Conjunci&#243;n-(and)"> </a></h3><p>La operación lógica de conjunción se expresa en Python usando la palabra reservada <code>and</code>. Cuando se tiene en un programa Python una expresión de la forma <code>p and q</code> se sabe entonces que tendrá un valor verdadero sólo si la expresión <code>p</code> y la expresión <code>q</code> tienen simultáneamente un valor verdadero. Además, el operador <code>and</code> es asociativo, así que se pueden escribir expresiones como <code>w and x and y and z</code> sin tener que usar paréntesis y sin riesgos de que cambie el resultado.</p>
 <p>Ahora bien, hay una pequeña pero muy significativa diferencia entre el operador <code>and</code> y la operación lógica de conjunción. Para estudiarla, tomemos como ejemplo la expresión  <code>w and x and y and z</code>. Si se tratara de una expresión lógica, la podríamos haber escrito en cualquier orden y el resultado sería siempre el mismo debido a la conmutatividad de la conjunción. Es decir que para nosotros sería exactamente lo mismo escribir <code>z and x and w and y</code>.</p>
 <p>En el caso de la expresión Python entran a jugar también consideraciones prácticas. Por ejemplo, suponga que <code>x</code> es un valor de verdad extremadamente difícil de calcular <sup class="footnote-ref" id="fnref-lento"><a href="#fn-lento">2</a></sup> y suponga también que sabemos que <code>w</code> es una expresión falsa. No tendría sentido buscar el valor de <code>x</code> puesto que sabríamos de antemano que la expresión completa sería falsa.</p>
-<p>La diferencia entonces entre el operador <code>and</code> de Python y la operación de conjunción es que Python se aprovecha de las propiedades de identidad y dominancia de la conjunción ( <em>p&and;Verdadero=p</em> y *p&or;Falso=Falso) para evitar calcular más términos de lo que necesario.</p>
+<p>La diferencia entonces entre el operador <code>and</code> de Python y la operación de conjunción es que Python se aprovecha de las propiedades de identidad y dominancia de la conjunción ( <em>p&and;Verdadero=p</em> y *p&or;Falso=Falso) para evitar calcular más términos de los necesarios.</p>
 <p>Esto quiere decir que cuando se tiene una operación de conjunción primero se evalúa sólo el primer término: si su valor es falso, se sabe que toda la expresión será falsa y no tiene sentido seguir avanzando. Pero si el valor del término es verdadero, entonces se puede concluir que el valor de la expresión será igual al valor de la parte restante de la expresión.</p>
 <p>Apliquemos esto a nuestro ejemplo <code>w and x and y and z</code>:</p>
 <ul>
@@ -232,68 +232,60 @@ True</code></pre>
 <p>La siguiente tabla resume los operadores disponibles en Python para hacer comparaciones entre valores. Estos operadores pueden aplicarse a  cualquier tipo de valor, aunque no necesariamente el resultado tendrá un sentido muy evidente. Por ejemplo, la expresión <code>True &lt; False</code> es falsa, pero no es fácil imaginarse una razón para comparar dos valores booleanos usando ese operador.</p>
 <table>
 <thead><tr>
-<th>Operador</th>
-<th>Significado</th>
-<th>Ejemplo</th>
-<th>Resultado</th>
+<th style="text-align:center">Operador</th>
+<th style="text-align:left">Significado</th>
+<th style="text-align:center">Ejemplo</th>
+<th style="text-align:left">Resultado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>&lt;</td>
-<td>Es menor que ...</td>
-<td>4 &lt; 7</td>
-<td>True</td>
-<td></td>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:left">Es menor que ...</td>
+<td style="text-align:center">4 &lt; 7</td>
+<td style="text-align:left">True</td>
 </tr>
 <tr>
-<td>&lt;=</td>
-<td>Es menor o igual que ...</td>
-<td>"Ab" &lt;= "ab"</td>
-<td>True</td>
-<td></td>
+<td style="text-align:center">&lt;=</td>
+<td style="text-align:left">Es menor o igual que ...</td>
+<td style="text-align:center">"Ab" &lt;= "ab"</td>
+<td style="text-align:left">True </td>
 </tr>
 <tr>
-<td>&gt;</td>
-<td>Es mayor que ...</td>
-<td>4.5 &gt; 7.1</td>
-<td>False</td>
-<td></td>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:left">Es mayor que ...</td>
+<td style="text-align:center">4.5 &gt; 7.1</td>
+<td style="text-align:left">False </td>
 </tr>
 <tr>
-<td>&gt;=</td>
-<td>Es mayor o igual que ...</td>
-<td>'1A' &gt;= 'A1'</td>
-<td>False</td>
-<td></td>
+<td style="text-align:center">&gt;=</td>
+<td style="text-align:left">Es mayor o igual que ...</td>
+<td style="text-align:center">'1A' &gt;= 'A1'</td>
+<td style="text-align:left">False </td>
 </tr>
 <tr>
-<td>==</td>
-<td>Es igual a ...</td>
-<td>"abc" == "ab" + "c"</td>
-<td>True</td>
-<td></td>
+<td style="text-align:center">==</td>
+<td style="text-align:left">Es igual a ...</td>
+<td style="text-align:center">"abc" == "ab" + "c"</td>
+<td style="text-align:left">True </td>
 </tr>
 <tr>
-<td>!=</td>
-<td>Es diferente de ...</td>
-<td>4 != 7</td>
-<td>True</td>
-<td></td>
+<td style="text-align:center">!=</td>
+<td style="text-align:left">Es diferente de ...</td>
+<td style="text-align:center">4 != 7</td>
+<td style="text-align:left">True </td>
 </tr>
 <tr>
-<td>is</td>
-<td>Dos <em>objetos</em> son el mismo</td>
-<td>4 is 7</td>
-<td>False</td>
-<td></td>
+<td style="text-align:center">is</td>
+<td style="text-align:left">Dos <em>objetos</em> son el mismo</td>
+<td style="text-align:center">4 is 7</td>
+<td style="text-align:left">False </td>
 </tr>
 <tr>
-<td>is not</td>
-<td>Dos <em>objetos</em> no son el mismo</td>
-<td>4 is not 7</td>
-<td>True</td>
-<td></td>
+<td style="text-align:center">is not</td>
+<td style="text-align:left">Dos <em>objetos</em> no son el mismo</td>
+<td style="text-align:center">4 is not 7</td>
+<td style="text-align:left">True </td>
 </tr>
 </tbody>
 </table>
@@ -307,7 +299,7 @@ True</code></pre>
     <span class="k">return</span> <span class="n">positivo</span>
 
 <span class="k">def</span> <span class="nf">es_negativo</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
-    <span class="n">negativo</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="n">negativo</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span>
     <span class="k">return</span> <span class="n">negativo</span>
 
 <span class="k">def</span> <span class="nf">es_cero</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>

@@ -5,7 +5,7 @@ Este documento es una versión preliminar para uso interno. Si encuentra algún 
 
 # Valores de verdad en Python
 
-> El objetivo de esta sección es mostrar como se representan y operan valores de verdad dentro de un lenguaje de programación. Los conceptos que se estudiarán en esta sección son aplicables directamente a la mayoría de lenguajes de programación.
+> El objetivo de esta sección es mostrar cómo se representan y operan valores de verdad dentro de un lenguaje de programación. Los conceptos que se estudian en esta sección son aplicables directamente a la mayoría de lenguajes de programación.
 
 En la sección pasada trabajamos con valores de verdad y con proposiciones. En esta sección veremos que Python tiene un tipo de datos específico para este tipo de valores (bool) y que permite también la construcción de expresiones lógicas usando conjunciones, disyunciones y negaciones. También aprenderemos a escribir expresiones lógicas usando operadores relacionales sobre valores de todos los tipos que conocemos hasta el momento (números, cadenas y valores de verdad). En la próxima sección usaremos todos estos conceptos para construir expresiones condicionales.
 
@@ -14,7 +14,7 @@ En la sección pasada trabajamos con valores de verdad y con proposiciones. En e
 
 En el nivel 1 nos encontramos ya con los tipos que Python utiliza para manejar valores numéricos (```int``` y ```float```) y cadenas de caracteres (```str```). Ahora vamos a introducir el tipo ```bool```, que se utiliza para representar valores de verdad y puede utilizarse en variables, parámetros, llamados de funciones y otras expresiones.
 
-En comparación con los tipos que ya conocíamos, ```bool``` es mucho más sencillo puesto que sólo hay dos literales: ```True```, que se utiliza para expresar un valor verdadero, y ```False```, que se usa para expresar un valor falso [^sobre]. Ponga atención al uso de minúsculas y mayúsculas, puesto que los dos literales se deben escribir exactamente así. 
+En comparación con los tipos que ya conocíamos, ```bool``` es mucho más sencillo puesto que sólo hay dos literales: ```True```, que se utiliza para expresar un valor verdadero, y ```False```, que se usa para expresar un valor falso. Ponga atención al uso de minúsculas y mayúsculas, puesto que los dos literales se deben escribir exactamente así. 
 
 También note que no es lo mismo ```'True'``` que ```True```. El primer valor es una cadena de caracteres, mientras que el segundo es un valor de verdad:
 
@@ -84,7 +84,7 @@ Ahora bien, hay una pequeña pero muy significativa diferencia entre el operador
 
 En el caso de la expresión Python entran a jugar también consideraciones prácticas. Por ejemplo, suponga que ```x``` es un valor de verdad extremadamente difícil de calcular [^lento] y suponga también que sabemos que ```w``` es una expresión falsa. No tendría sentido buscar el valor de ```x``` puesto que sabríamos de antemano que la expresión completa sería falsa.
 
-La diferencia entonces entre el operador ```and``` de Python y la operación de conjunción es que Python se aprovecha de las propiedades de identidad y dominancia de la conjunción ( *p&and;Verdadero=p* y *p&or;Falso=Falso) para evitar calcular más términos de lo que necesario.
+La diferencia entonces entre el operador ```and``` de Python y la operación de conjunción es que Python se aprovecha de las propiedades de identidad y dominancia de la conjunción ( *p&and;Verdadero=p* y *p&or;Falso=Falso) para evitar calcular más términos de los necesarios.
 
 Esto quiere decir que cuando se tiene una operación de conjunción primero se evalúa sólo el primer término: si su valor es falso, se sabe que toda la expresión será falsa y no tiene sentido seguir avanzando. Pero si el valor del término es verdadero, entonces se puede concluir que el valor de la expresión será igual al valor de la parte restante de la expresión.
 
@@ -282,15 +282,15 @@ Hasta este momento todas las operaciones que hemos visto cuyo resultado es un va
 La siguiente tabla resume los operadores disponibles en Python para hacer comparaciones entre valores. Estos operadores pueden aplicarse a  cualquier tipo de valor, aunque no necesariamente el resultado tendrá un sentido muy evidente. Por ejemplo, la expresión ```True < False``` es falsa, pero no es fácil imaginarse una razón para comparar dos valores booleanos usando ese operador.
 
 Operador | Significado | Ejemplo | Resultado |
----------|-------------|---------|-----------|
-<        | Es menor que ... | 4 < 7 | True |
-<=       | Es menor o igual que ... | "Ab" <= "ab" | True |
-\>       | Es mayor que ... | 4.5 > 7.1 | False |
-\>=      | Es mayor o igual que ... | '1A' >= 'A1' | False |
-==       | Es igual a ... | "abc" == "ab" + "c" | True |
-!=       | Es diferente de ... | 4 != 7 | True |
-is       | Dos *objetos* son el mismo | 4 is 7 | False |
-is not   | Dos *objetos* no son el mismo  | 4 is not 7 | True |
+:---------:|:-------------|:---------:|:-----------|
+<        | Es menor que ... | 4 < 7 | True
+<=       | Es menor o igual que ... | "Ab" <= "ab" | True 
+\>       | Es mayor que ... | 4.5 > 7.1 | False 
+\>=      | Es mayor o igual que ... | '1A' >= 'A1' | False 
+==       | Es igual a ... | "abc" == "ab" + "c" | True 
+!=       | Es diferente de ... | 4 != 7 | True 
+is       | Dos *objetos* son el mismo | 4 is 7 | False 
+is not   | Dos *objetos* no son el mismo  | 4 is not 7 | True 
 
 
 ### Operadores de orden
@@ -311,7 +311,7 @@ def es_positivo(x: int)->bool:
     return positivo
 
 def es_negativo(x: int)->bool:
-    negativo = x > 0
+    negativo = x < 0
     return negativo
     
 def es_cero(x: int)->bool:
