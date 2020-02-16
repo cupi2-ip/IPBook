@@ -55,7 +55,7 @@ cadena_cat_2 = input("Indique la longitud del segundo cateto: ")
 cat_1 = float(cadena_cat_1)
 cat_2 = float(cadena_cat_2)
 
-perimetro = perimetro_triangulo(3,4)
+perimetro = perimetro_triangulo(cat_1, cat_2)
 
 print("El perímetro de un triángulo rectángulo que tenga catetos de longitud",
       cat_1, "y", cat_2, "es", perimetro)

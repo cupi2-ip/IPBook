@@ -271,9 +271,10 @@ En el ejemplo anterior lo primero que se hace es evaluar la operación de expone
 	 * +---6
 	 * -+-+6
 	 * -3 / 2 - 1
-	 * -3 // 2 - 1
+	 * -3 // 2 - 1 [^divEnteraNegativa]
 	 * 3 % 2 - 1
 
+[^divEnteraNegativa]: Tenga cuidado con aplicando el operador de división entera sobre números negativos: si uno de los dos operandos es negativo, el resultado será el mismo de aplicar la función `piso` al resultado de la división (es decir, se retorna el mayor entero que sea menor que el resultado).
 
 3. ¿Qué valor se mostrará en la pantalla después de ejecutar el siguiente código?
 
