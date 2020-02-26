@@ -16,7 +16,7 @@ div.jb_cell {
     width: 100%;
 }
 
-.output_png {
+.output_png img {
     max-width: 900px;
 }
 
