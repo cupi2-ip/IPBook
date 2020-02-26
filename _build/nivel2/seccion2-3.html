@@ -169,7 +169,7 @@ g: 1
 g: 2
 g: 3
 False</code></pre>
-<p>En el primer caso, vemos que Python inmediatamente idéntica que el primer término tiene valor verdadero. Esto implica que la expresión completa tendrá valor verdadero y la evaluación termina sin tener que evaluar los otros términos.</p>
+<p>En el primer caso, vemos que Python inmediatamente identifica que el primer término tiene valor verdadero. Esto implica que la expresión completa tendrá valor verdadero y la evaluación termina sin tener que evaluar los otros términos.</p>
 <p>En el segundo caso pasa algo exactamente igual: a pesar de que los otros términos tienen valores diferentes, es suficiente con evaluar el primer término para saber cuál será el valor de toda la expresión.</p>
 <p>En el tercer caso lo que vemos es que se evalúa el primer término que, como sabemos por la definición de la función, es falso. Python tiene entonces que recurrir al segundo término, que en este caso es verdadero. Esto hace que la expresión completa sea verdadera y no sea necesario seguir con el resto de la evaluación.</p>
 <p>Sólo en el cuarto caso se evalúan los tres términos: el primero es falso, obligando a la evaluación del segundo, que también es falso. Finalmente se evalúa el tercer término y, como también es falso se concluye que la expresión completa era falsa.</p>

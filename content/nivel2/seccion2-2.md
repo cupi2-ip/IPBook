@@ -145,8 +145,8 @@ Así como en el álgebra elemental hay algunas leyes muy importantes y conocidas
 2. **Asociatividad**: Tanto la conjunción como la disyunción son asociativas, así que **A &or; (B &or; C)** es equivalente a **(A &or; B) &or; C**. Además, **A &and; (B &and; C)** es equivalente a **(A &and; B) &and; C** [^assoc].
 
 3. **Distribución**: en el álgebra Booleana, la conjunción distribuye sobre la disyunción y viceversa [^dist]. Esto quiere decir que:
-    * **A &and; (B &or; C) &equiv; (A &and; B) &or; (A &and; B)**
-    * **A &or; (B &and; C) &equiv; (A &or; B) &and; (A &or; B)**  
+    * **A &and; (B &or; C) &equiv; (A &and; B) &or; (A &and; C)**
+    * **A &or; (B &and; C) &equiv; (A &or; B) &and; (A &or; C)**  
 
 
 4. **Identidad de la conjunción**: si se hace una conjunción con el valor verdadero, el resultado es el mismo. Es decir que **A &and; Verdadero &equiv; A** [^ident].

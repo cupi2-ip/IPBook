@@ -56,7 +56,7 @@ cat_1 = float(cadena_cat_1)
 cat_2 = float(cadena_cat_2)
 
 # Llamar a la función con los valores recibidos
-perimetro = perimetro_triangulo(3,4)
+perimetro = perimetro_triangulo(cat_1, cat_2)
 
 # Mostrarle al usuario el resultado de la operación
 print("El perímetro de un triángulo rectángulo que tenga catetos de longitud", cat_1, "y", cat_2, "es", perimetro)
@@ -70,7 +70,7 @@ A partir de su lectura del programa, intente responder las siguientes preguntas.
 * ¿Qué información tendrá que suministrar el usuario que ejecute el programa?
 * ¿Cuál es el objetivo de cada bloque?
 * ¿Qué es lo que primero se ejecuta?
-* ¿Cuál es la diferencia entre las cosas que están escritas en español y las que están escritas en inglés?
+* ¿Cual es la diferencia entre las cosas que están escritas en español y las que están escritas en inglés?
 * ¿Cuáles son los valores que tiene que proporcionar el usuario?
 * ¿Qué ve el usuario al finalizar la ejecución?
 

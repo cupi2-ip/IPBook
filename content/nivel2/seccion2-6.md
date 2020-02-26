@@ -39,10 +39,12 @@ Las siguientes son algunas de las funciones que define el módulo y cuyo conocim
 
 Este módulo también define unas constantes que son de utilidad tanto para hacer otros cálculos como para detectar problemas con cálculos previos. Estos valores son:
 
-* PI
-* E (número de Euler)
-* INF, el valor que utiliza Python para representar el infinito.
-* NaN, el valor que utiliza Python para representar un número indefinido (NaN significa Not A Number).
+* &#960;
+* e (número de Euler)
+* inf, el valor que utiliza Python para representar el infinito.
+* nan, el valor que utiliza Python para representar un número indefinido (NaN significa Not A Number).
+
+Tenga cuidado: aunque en la mayoría de lenguajes las constantes se suelen expresar con mayúsculas, en el módulo `math` las constantes tienen nombres en minúsculas, como se ve en el siguiente fragmento:
 
 ```python
 >>> print("El valor de pi:", math.pi)

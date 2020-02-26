@@ -195,7 +195,7 @@ g: 3
 False
 ```
 
-En el primer caso, vemos que Python inmediatamente idéntica que el primer término tiene valor verdadero. Esto implica que la expresión completa tendrá valor verdadero y la evaluación termina sin tener que evaluar los otros términos.
+En el primer caso, vemos que Python inmediatamente identifica que el primer término tiene valor verdadero. Esto implica que la expresión completa tendrá valor verdadero y la evaluación termina sin tener que evaluar los otros términos.
 
 En el segundo caso pasa algo exactamente igual: a pesar de que los otros términos tienen valores diferentes, es suficiente con evaluar el primer término para saber cuál será el valor de toda la expresión.
 
