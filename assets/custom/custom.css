@@ -16,6 +16,11 @@ div.jb_cell {
     width: 100%;
 }
 
+.output_png {
+    max-width: 900px;
+}
+
+
 .c-textbook__content, .c-textbook__footer {
     max-width: 900px;
 }
