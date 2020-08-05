@@ -220,7 +220,7 @@
         </li>
     
         <li class="nav-item toc-entry toc-h3">
-            <a href="#paso-por-referencia-al-objeto" class="nav-link">Paso por referencia al objeto</a>
+            <a href="#paso-por-referencia-al-objeto" class="nav-link">Paso por “referencia al objeto”</a>
         </li>
     
         <li class="nav-item toc-entry toc-h3">
@@ -234,7 +234,15 @@
             <a href="#parametros-en-python" class="nav-link">Parámetros en Python</a><ul class="nav section-nav flex-column">
                 
         <li class="nav-item toc-entry toc-h3">
-            <a href="#id1" class="nav-link">Ejercicios</a>
+            <a href="#parametros-nombrados" class="nav-link">Parámetros nombrados</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#parametros-por-defecto-opcionales" class="nav-link">Parámetros por defecto / opcionales</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#id2" class="nav-link">Ejercicios</a>
         </li>
     
             </ul>
@@ -331,7 +339,23 @@ Usar estas características es totalmente opcional y, como usualmente no están 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Después de llamar a la función: &quot;</span><span class="p">,</span> <span class="n">cadena</span><span class="p">,</span> <span class="n">diccionario</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<p>En las líneas 1 a 10 se define una nueva función que explicaremos más adelante. En las líneas 12 y 13 se definen dos variables: la primera es de tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> y tiene como valor <code class="docutils literal notranslate"><span class="pre">&quot;cadena</span> <span class="pre">inicial&quot;</span></code>; la segunda es de tipo <code class="docutils literal notranslate"><span class="pre">dict</span></code> y tiene como valor un diccionario qué únicamente tiene una llave (“<code class="docutils literal notranslate"><span class="pre">inicial&quot;</span></code>) con el valor <code class="docutils literal notranslate"><span class="pre">0</span></code> asociado.</p>
+<p>El siguiente bloque muestra el resultado completo de ejecutar el programa.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Antes</span> <span class="n">de</span> <span class="n">llamar</span> <span class="n">a</span> <span class="n">la</span> <span class="n">función</span><span class="p">:</span>  <span class="n">cadena</span> <span class="n">inicial</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+<span class="o">--&gt;</span> <span class="n">Valores</span> <span class="n">recibidos</span><span class="p">:</span> <span class="n">cadena</span> <span class="n">inicial</span> <span class="n">cadena</span> <span class="n">inicial</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+<span class="o">--&gt;</span> <span class="n">Comparar</span> <span class="n">las</span> <span class="n">cadenas</span><span class="p">:</span> <span class="kc">True</span>
+<span class="o">--&gt;</span> <span class="n">Comparar</span> <span class="n">los</span> <span class="n">diccionarios</span><span class="p">:</span> <span class="kc">True</span> <span class="kc">True</span>
+<span class="o">--&gt;</span> <span class="n">Valores</span> <span class="n">modificados</span><span class="p">:</span> <span class="n">nueva</span> <span class="n">cadena</span> <span class="n">cadena</span> <span class="n">inicial</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;nuevo valor&#39;</span><span class="p">:</span> <span class="mi">99</span><span class="p">}</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;nuevo valor&#39;</span><span class="p">:</span> <span class="mi">99</span><span class="p">}</span>
+<span class="o">--&gt;</span> <span class="n">Valores</span> <span class="n">modificados</span> <span class="n">de</span> <span class="n">nuevo</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;ultimo&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;nuevo valor&#39;</span><span class="p">:</span> <span class="mi">99</span><span class="p">}</span>
+<span class="n">Después</span> <span class="n">de</span> <span class="n">llamar</span> <span class="n">a</span> <span class="n">la</span> <span class="n">función</span><span class="p">:</span>  <span class="n">cadena</span> <span class="n">inicial</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;nuevo valor&#39;</span><span class="p">:</span> <span class="mi">99</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Estudiemos ahora, paso por paso, lo que hace el programa. En las líneas 1 a 10 se define una nueva función que no se ejecutará por ahora. En las líneas 12 y 13 se definen dos variables: la primera es de tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> y tiene como valor <code class="docutils literal notranslate"><span class="pre">&quot;cadena</span> <span class="pre">inicial&quot;</span></code>; la segunda es de tipo <code class="docutils literal notranslate"><span class="pre">dict</span></code> y tiene como valor un diccionario qué únicamente tiene una llave (“<code class="docutils literal notranslate"><span class="pre">inicial&quot;</span></code>) con el valor <code class="docutils literal notranslate"><span class="pre">0</span></code> asociado.</p>
 <p>En la 15 se imprime un mensaje en la consola que muestra el valor de las dos variables: <code class="docutils literal notranslate"><span class="pre">Antes</span> <span class="pre">de</span> <span class="pre">llamar</span> <span class="pre">a</span> <span class="pre">la</span> <span class="pre">función:</span>&#160; <span class="pre">cadena</span> <span class="pre">inicial</span> <span class="pre">{'inicial':</span> <span class="pre">0}</span></code>. En el bloque de código que se encuentra más abajo se puede ver todo lo que imprime el programa.</p>
 <p>Luego, en la línea 16 se invoca a la función: la variable <code class="docutils literal notranslate"><span class="pre">cadena</span></code> se usa para los parámetros <code class="docutils literal notranslate"><span class="pre">p1</span></code> y <code class="docutils literal notranslate"><span class="pre">p2</span></code>; la variable <code class="docutils literal notranslate"><span class="pre">diccionario</span></code> se asigna a los parámetros <code class="docutils literal notranslate"><span class="pre">p3</span></code> y <code class="docutils literal notranslate"><span class="pre">p4</span></code>.</p>
 <p>La función que definimos imprime los parámetros que recibimos (línea 1), imprime el resultado de comparar <code class="docutils literal notranslate"><span class="pre">p1</span></code> y <code class="docutils literal notranslate"><span class="pre">p2</span></code> (línea 3), e imprime el resultado de comparar <code class="docutils literal notranslate"><span class="pre">p3</span></code> y <code class="docutils literal notranslate"><span class="pre">p4</span></code> usando tanto <code class="docutils literal notranslate"><span class="pre">==</span></code> como <code class="docutils literal notranslate"><span class="pre">is</span></code>. Como es de esperarse, en todos los casos el resultado que se muestra en la consola es <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
@@ -354,28 +378,12 @@ Usar estas características es totalmente opcional y, como usualmente no están 
 <li><p>La variable <code class="docutils literal notranslate"><span class="pre">cadena</span></code> sigue teniendo el mismo valor asociado. A pesar de que la función modificó a <code class="docutils literal notranslate"><span class="pre">p1</span></code>, el valor de <code class="docutils literal notranslate"><span class="pre">cadena</span></code> no cambió. Esto pasa porque, para efectos prácticos, <code class="docutils literal notranslate"><span class="pre">p1</span></code> y <code class="docutils literal notranslate"><span class="pre">p2</span></code> eran <em>copias</em> de <code class="docutils literal notranslate"><span class="pre">cadena</span></code>.</p></li>
 <li><p>La variable <code class="docutils literal notranslate"><span class="pre">diccionario</span></code> muestra que la primera modificación al diccionario <code class="docutils literal notranslate"><span class="pre">p3</span></code> quedó registrada, pero no la segunda. Esto pasa porque el diccionario inicial se pasó como parámetro a la función y nunca se creó una copia de él. Cuando modificamos a <code class="docutils literal notranslate"><span class="pre">p3</span></code> en la línea 7 estábamos modificando el diccionario inicial. Luego, en la línea 9 se creó un nuevo diccionario y ese se asignó a la variable <code class="docutils literal notranslate"><span class="pre">p3</span></code>, pero eso no tiene por qué tener ningún efecto en el diccionario al que señalaba <code class="docutils literal notranslate"><span class="pre">p4</span></code> y mucho menos al que señalaba la variable <code class="docutils literal notranslate"><span class="pre">diccionario</span></code>.</p></li>
 </ul>
-<p>El siguiente bloque muestra el resultado completo de ejecutar el programa.</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Antes</span> <span class="n">de</span> <span class="n">llamar</span> <span class="n">a</span> <span class="n">la</span> <span class="n">función</span><span class="p">:</span>  <span class="n">cadena</span> <span class="n">inicial</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
-<span class="o">--&gt;</span> <span class="n">Valores</span> <span class="n">recibidos</span><span class="p">:</span> <span class="n">cadena</span> <span class="n">inicial</span> <span class="n">cadena</span> <span class="n">inicial</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
-<span class="o">--&gt;</span> <span class="n">Comparar</span> <span class="n">las</span> <span class="n">cadenas</span><span class="p">:</span> <span class="kc">True</span>
-<span class="o">--&gt;</span> <span class="n">Comparar</span> <span class="n">los</span> <span class="n">diccionarios</span><span class="p">:</span> <span class="kc">True</span> <span class="kc">True</span>
-<span class="o">--&gt;</span> <span class="n">Valores</span> <span class="n">modificados</span><span class="p">:</span> <span class="n">nueva</span> <span class="n">cadena</span> <span class="n">cadena</span> <span class="n">inicial</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;nuevo valor&#39;</span><span class="p">:</span> <span class="mi">99</span><span class="p">}</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;nuevo valor&#39;</span><span class="p">:</span> <span class="mi">99</span><span class="p">}</span>
-<span class="o">--&gt;</span> <span class="n">Valores</span> <span class="n">modificados</span> <span class="n">de</span> <span class="n">nuevo</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;ultimo&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;nuevo valor&#39;</span><span class="p">:</span> <span class="mi">99</span><span class="p">}</span>
-<span class="n">Después</span> <span class="n">de</span> <span class="n">llamar</span> <span class="n">a</span> <span class="n">la</span> <span class="n">función</span><span class="p">:</span>  <span class="n">cadena</span> <span class="n">inicial</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;nuevo valor&#39;</span><span class="p">:</span> <span class="mi">99</span><span class="p">}</span>
-</pre></div>
-</td></tr></table></div>
 </div>
 <div class="section" id="parametros-por-valor-y-por-referencia">
 <h3>Parámetros por valor y por referencia<a class="headerlink" href="#parametros-por-valor-y-por-referencia" title="Permalink to this headline">¶</a></h3>
-<p>Después de estudiar el ejemplo anterior, ya podemos explicar bien el significado de pasar parámetros por valor y por referencia cuando se invoca una función.</p>
+<p>Después de estudiar el ejemplo anterior, podemos explicar mejor el significado de pasar parámetros por valor y por referencia cuando se invoca una función.</p>
 <p>Un parámetro se pasa <strong>por valor</strong>, cuando el valor se copia para que se utilice dentro de la función. Esto es lo que ocurre con algunos tipos básicos como <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> y <code class="docutils literal notranslate"><span class="pre">bool</span></code>, y también con tipos inmutables como <code class="docutils literal notranslate"><span class="pre">str</span></code> y <code class="docutils literal notranslate"><span class="pre">tuple</span></code> (que estudiaremos más adelante).</p>
-<p>Por otro lado, un parámetro se pasa <strong>por referencia</strong>, cuando lo que se hace es entregarle a la función una referencia al elemento, sin copiarlo. Esto quiere decir que si la función hace cambios al elemento, esos cambios los podrá ver quien haya invocado a la función. Esto va a ocurrir en Python con tipos de datos como los diccionarios (<code class="docutils literal notranslate"><span class="pre">dict</span></code> que ya estudiamos, y las listas <code class="docutils literal notranslate"><span class="pre">list</span></code> que estudiaremos en el siguiente nivel).</p>
+<p>Por otro lado, un parámetro se pasa <strong>por referencia</strong>, cuando lo que se hace es entregarle a la función una referencia al elemento, sin copiarlo <a class="footnote-reference brackets" href="#cpp" id="id1">1</a> . Esto quiere decir que si la función hace cambios al elemento, esos cambios los podrá ver quien haya invocado a la función. Esto va a ocurrir en Python con tipos de datos como los diccionarios (<code class="docutils literal notranslate"><span class="pre">dict</span></code> que ya estudiamos, y las listas <code class="docutils literal notranslate"><span class="pre">list</span></code> que estudiaremos en el siguiente nivel).</p>
 <p>Veamos un último ejemplo para ilustrar ese punto:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -395,7 +403,7 @@ Usar estas características es totalmente opcional y, como usualmente no están 
 <p>En este programa se crea un diccionario con 3 elementos y luego se pasa <strong>por referencia</strong> a la función <code class="docutils literal notranslate"><span class="pre">limpiar_diccionario</span></code>, que llama el método <code class="docutils literal notranslate"><span class="pre">clear</span></code> sobre el diccionario que recibe por parámetro. Cuando imprimamos de nuevo el diccionario <code class="docutils literal notranslate"><span class="pre">d</span></code>, este va a estar vacío porque la función lo limpió. Si los diccionarios se pasaran por valor (es decir que se crearan copias en cada invocación), no veríamos ningún cambio sobre el diccionario después de la invocación.</p>
 </div>
 <div class="section" id="paso-por-referencia-al-objeto">
-<h3>Paso por referencia al objeto<a class="headerlink" href="#paso-por-referencia-al-objeto" title="Permalink to this headline">¶</a></h3>
+<h3>Paso por “referencia al objeto”<a class="headerlink" href="#paso-por-referencia-al-objeto" title="Permalink to this headline">¶</a></h3>
 <p>La realidad del paso de parámetros en Python es más complicada de lo presentada en las secciones anteriores. En Python, los parámetros se dice que pasan como <em>referencia a los objetos</em>. Esto quiere decir que, incluso los tipos que parece que se pasan por valor, se pasan como referencia. Esto tiene como consecuencias principales un minúsculo ahorro en el <em>uso de la memoria</em> y una mejora posiblemente imperceptible en el <em>desempeño</em> de los programas.</p>
 <p>No ahondaremos en la explicación porque no vale la pena entrar en una exposición más compleja sobre la mecánica del paso de parámetros por referencia a objetos, ni sobre las estrategias que utiliza Python para representar datos en memoria, ni mucho menos sobre el hecho de que en Python todo es un <em>objeto</em>. La conclusión importante es que para efectos prácticos los valores inmutables se comportan como si se pasaran por valor y los mutables como si se pasaran por referencia.</p>
 <div class="warning admonition important">
@@ -416,21 +424,68 @@ Usar estas características es totalmente opcional y, como usualmente no están 
 </div>
 <div class="section" id="parametros-en-python">
 <h2>Parámetros en Python<a class="headerlink" href="#parametros-en-python" title="Permalink to this headline">¶</a></h2>
-<p>Estas características usualmente no están disponibles en otros lenguajes.</p>
-<p>parámetros nombrados: orden vs. nombre
-The Java version is more implicit. The Python version is more explicit.</p>
-<p>parámetros por defecto / Opcionales:
-usados con los nombres</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">S</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">sub</span><span class="p">[,</span> <span class="n">start</span><span class="p">[,</span> <span class="n">end</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span>
-<span class="n">S</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">sub</span><span class="p">[,</span> <span class="n">start</span><span class="p">[,</span> <span class="n">end</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+<p>A continuación estudiaremos dos características adicionales de Python que permiten manejar con un poco más de flexibilidad los parámetros de las funciones que se definan y se invoquen. Estas características usualmente no están disponibles en otros lenguajes.</p>
+<div class="section" id="parametros-nombrados">
+<h3>Parámetros nombrados<a class="headerlink" href="#parametros-nombrados" title="Permalink to this headline">¶</a></h3>
+<p>La primera característica para estudiar tiene que ver con la forma de hacer referencia a los parámetros de una función en el momento de la invocación. Hasta ahora, siempre hemos utilizado el mecanismo basado en la posición: el primer valor en la invocación corresponde al primer parámetro, el segundo valor en la invocación corresponde al segundo parámetro, y así sucesivamente. Sin embargo, en Python es posible hacer explícito el nombre de los parámetros en el momento de la invocación de tal forma que se puedan invocar en un orden diferente al que se tiene en la declaración.</p>
+<p>Veamos un ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">imprimir_nombre</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">apellido</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nombre</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">apellido</span><span class="p">)</span>
 
-
-<span class="s1">&#39;Coordinates: </span><span class="si">{latitude}</span><span class="s1">, </span><span class="si">{longitude}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="s1">&#39;37.24N&#39;</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="s1">&#39;-115.81W&#39;</span><span class="p">)</span>
-<span class="s1">&#39;Coordinates: 37.24N, -115.81W&#39;</span>
+<span class="n">imprimir_nombre</span><span class="p">(</span><span class="s2">&quot;Juan&quot;</span><span class="p">,</span> <span class="s2">&quot;Perez&quot;</span><span class="p">)</span>  <span class="c1"># Imprime &quot;Juan Perez&quot;</span>
+<span class="n">imprimir_nombre</span><span class="p">(</span><span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Juan&quot;</span><span class="p">,</span> <span class="n">apellido</span> <span class="o">=</span> <span class="s2">&quot;Perez&quot;</span><span class="p">)</span>  <span class="c1"># Imprime &quot;Juan Perez&quot;</span>
+<span class="n">imprimir_nombre</span><span class="p">(</span><span class="n">apellido</span> <span class="o">=</span> <span class="s2">&quot;Perez&quot;</span><span class="p">,</span> <span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Juan&quot;</span><span class="p">)</span>  <span class="c1"># Imprime &quot;Juan Perez&quot;</span>
 </pre></div>
 </div>
-<div class="section" id="id1">
-<h3>Ejercicios<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>En este ejemplo hacemos tres invocaciones a la función:</p>
+<ol class="simple">
+<li><p>En la primera no se usan los nombres de los parámetros, así que la invocación se hace por posición.</p></li>
+<li><p>En la segunda se usan los nombres de los parámetros, en el mismo orden en el que están definidos.</p></li>
+<li><p>En la tercera también se usan los nombres pero un orden diferente al de la definición. En este caso el resultado es el esperado porque gracias al nombre la función puede reconocer a qué parámetro corresponde cada valor.</p></li>
+</ol>
+<p>Veamos ahora unos ejemplos en los que no se utilicen los nombres de todos los parámetros:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">imprimir_nombre</span><span class="p">(</span><span class="n">apellido</span> <span class="o">=</span> <span class="s2">&quot;Perez&quot;</span><span class="p">,</span> <span class="s2">&quot;Juan&quot;</span><span class="p">)</span>  <span class="c1"># Falla</span>
+<span class="n">imprimir_nombre</span><span class="p">(</span><span class="s2">&quot;Perez&quot;</span><span class="p">,</span> <span class="n">nombre</span><span class="o">=</span><span class="s2">&quot;Juan&quot;</span><span class="p">)</span>  <span class="c1"># Falla</span>
+<span class="n">imprimir_nombre</span><span class="p">(</span><span class="s2">&quot;Juan&quot;</span><span class="p">,</span> <span class="n">apellido</span> <span class="o">=</span> <span class="s2">&quot;Perez&quot;</span><span class="p">)</span>  <span class="c1"># Imprime &quot;Juan Perez&quot;</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>En el primer caso, se presentará el error <code class="docutils literal notranslate"><span class="pre">SyntaxError:</span> <span class="pre">positional</span> <span class="pre">argument</span> <span class="pre">follows</span> <span class="pre">keyword</span> <span class="pre">argument</span></code>. Este error nos indica que los valores <em>sin nombre</em> no deberían ir después de valores con nombre.</p></li>
+<li><p>En el segundo caso, se presentará el error <code class="docutils literal notranslate"><span class="pre">imprimir_nombre()</span> <span class="pre">got</span> <span class="pre">multiple</span> <span class="pre">values</span> <span class="pre">for</span> <span class="pre">argument</span> <span class="pre">'nombre'</span></code>. Este error nos indica que Python intentó asignarle el primer valor al primer parámetro (<code class="docutils literal notranslate"><span class="pre">nombre</span></code>) y luego le intentó asignar el valor nombrado al mismo parámetro. Como resultado, el parámetro <code class="docutils literal notranslate"><span class="pre">nombre</span></code> recibió múltiples valores mientras que <code class="docutils literal notranslate"><span class="pre">apellido</span></code> no recibió ninguno.</p></li>
+<li><p>El tercer caso es exitoso: el primer valor se asigna al primer parámetro y el segundo valor se asigna al parámetro <code class="docutils literal notranslate"><span class="pre">apellido</span></code>. El resultado es que todos los parámetros de la función reciben un valor y por ende se puede hacer la invocación.</p></li>
+</ol>
+<p>El uso de parámetros nombrados no es obligatorio, pero puede ayudar a hacer más legible el código, especialmente cuando no hay un orden en los parámetros que sea fácil de predecir. Por ejemplo, si tuviéramos una función para evaluar un polinomio de la forma <span class="math notranslate nohighlight">\(a \cdot x^{2} + b \cdot x + c\)</span>, la función se invocaría como <code class="docutils literal notranslate"><span class="pre">evaluar_polinomio(3,</span> <span class="pre">5,</span> <span class="pre">7)</span></code> o como evaluar_polinomio(7, 5, 3)? Para evitar la confusión se podría hacer uso de los nombres de los parámetros: <code class="docutils literal notranslate"><span class="pre">evaluar_polinomio(a=3,</span> <span class="pre">b=5,</span> <span class="pre">c=7)</span></code>.</p>
+</div>
+<div class="section" id="parametros-por-defecto-opcionales">
+<h3>Parámetros por defecto / opcionales<a class="headerlink" href="#parametros-por-defecto-opcionales" title="Permalink to this headline">¶</a></h3>
+<p>La segunda característica que queremos que usted conozca es la posibilidad de definir valores por defecto para los parámetros. Esto hace posible hacer llamados a funciones utilizando sólo algunos de los parámetros y, en conjunto con los parámetros nombrados, puede hacer que el código de un programa sea mucho más sencillo.</p>
+<p>Por ejemplo, veamos la definición de la función <code class="docutils literal notranslate"><span class="pre">count</span></code> de <code class="docutils literal notranslate"><span class="pre">str</span></code> que nos permite contar cuántas veces aparece una subcadena en otra:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+<span class="go">S.count(sub[, start[, end]]) -&gt; int</span>
+</pre></div>
+</div>
+<p>Lo que esta definición nos dice es que el parámetro <code class="docutils literal notranslate"><span class="pre">sub</span></code> es obligatorio, y puede estar seguido de un segundo parámetro (<code class="docutils literal notranslate"><span class="pre">start</span></code>), el cual podría estar seguido de un tercer parámetro (<code class="docutils literal notranslate"><span class="pre">end</span></code>). Aunque no lo podemos ver, en esta función <code class="docutils literal notranslate"><span class="pre">start</span></code> y  <code class="docutils literal notranslate"><span class="pre">end</span></code> tienen valores por defecto: <code class="docutils literal notranslate"><span class="pre">start</span></code> tiene el valor 0 mientras que <code class="docutils literal notranslate"><span class="pre">end</span></code> tiene un valor igual a la longitud de la cadena. De esta forma, si no se especifica un inicio se empezará desde el primer caracter, y si se especifica un inicio pero no un fin, se irá hasta el final de la cadena.</p>
+<p>Veamos ahora un pequeño ejemplo para ilustrar la sintaxis:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">replicar</span> <span class="p">(</span><span class="n">cadena</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cantidad</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+  <span class="k">return</span> <span class="n">cadena</span> <span class="o">*</span> <span class="n">cantidad</span>
+</pre></div>
+</div>
+<p>En este caso, estamos definiendo una función con dos parámetros: el primero es obligatorio, pero el segundo puede hacerse explícito o no. Si no se incluye al hacer una invocación, su valor por defecto será 2. Note que para parámetro <code class="docutils literal notranslate"><span class="pre">cantidad</span></code> se ha indicado primero el tipo (<code class="docutils literal notranslate"><span class="pre">int</span></code>) y luego el valor por defecto.</p>
+<div class="warning admonition">
+<p class="admonition-title">Warning</p>
+<p>Use valores por defecto para los parámetros únicamente cuando
+sea evidente cuál debería ser el valor por defecto del parámetro.
+Si el que invoque la función tiene que pensar mucho sobre el valor
+por defecto del parámetro, posiblemente haya sido un error ponerle
+un valor por defecto.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>Use parámetros por defecto para simplificar el llamado a funciones que tengan una gran flexibilidad a través de un gran número de parámetros. Por ejemplo, hay librerías con funciones que esperan más de 10 parámetros pero el hecho de que todos tengan valores por defecto hace que cualquier invocación pueda concentrarse en los parámetros que realmente valgan la pena.</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Ejercicios<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Construya una función que reciba dos números enteros como parámetros: si el primer número es par, la función debe retornar la suma de los dos números; de lo contrario, debe retornar la multiplicación de los dos números.</p></li>
 <li><p>Invoque su función con varias parejas de números igual que como lo ha estado haciendo hasta el momento.</p></li>
@@ -444,21 +499,30 @@ usados con los nombres</p>
 </div>
 <div class="section" id="mas-alla-de-python">
 <h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
-<p>valor, referencia, referencia al objeto</p>
-<p>Tradicionalmente, los valores con los que se invoca una función se asignan a los parámetros con base en la posición. Esto</p>
-<p>…
-Named parameters: Scala, Kotlin,
-def printName(first: String, last: String): Unit = {
-println(first + ” ” + last)
-}</p>
-<p>printName(“John”, “Smith”)  // Prints “John Smith”
-printName(first = “John”, last = “Smith”)  // Prints “John Smith”
-printName(last = “Smith”, first = “John”)  // Prints “John Smith”</p>
-<p>The Java version is more implicit. The Python version is more explicit.</p>
-<p>Default:
-C++ sí
-Java no
-JavaScript sí</p>
+<p>A lo largo de los años, diferentes lenguajes han experimentado con diversas mecanismos para el paso de parámetros. Aunque puede parecer un asunto sencillo, escoger un método particular puede tener un impacto muy importante en el desempeño de una aplicación. Por ejemplo, en el caso de Java en todos los llamados los parámetros se pasan por valor: esto quiere decir que siempre se hacen copias, aunque cuando se trata de objetos (tipos no simples) se hacen copias de las refencias a los objetos. Esto le permite a Java tener un mecanismo homogéneo de invocación y paso de parámetros, simplificar el manejo de la pila de ejecución y aumentar la seguridad del lenguaje a través de la protección de los apuntadores.</p>
+<p>Tradicionalmente, los valores con los que se invoca una función (o método) se asignan a los parámetros con base en la posición. Esto es algo que viene del cálculo: si tenemos definida la función <span class="math notranslate nohighlight">\(f(x, y)\)</span>, cuando evaluemos la función (por ejemplo <span class="math notranslate nohighlight">\(f(2,3)\)</span>), estamos acostumbrados a que el valor 2 se use para <span class="math notranslate nohighlight">\(x\)</span> y el valor 3 se use para <span class="math notranslate nohighlight">\(y\)</span>. Sin embargo, el uso de parámetros nombrados ha empezado a hacerse más popular y es una característica de varios lenguajes <em>modernos</em> como Scala o Kotlin.</p>
+<div class="highlight-scala notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="n">imprimirNombre</span><span class="o">(</span><span class="n">nombre</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">apellido</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="n">println</span><span class="o">(</span><span class="n">nombre</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">apellido</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="n">imprimirNombre</span><span class="o">(</span><span class="s">&quot;Juan&quot;</span><span class="o">,</span> <span class="s">&quot;Perez&quot;</span><span class="o">)</span>  <span class="c1">// Imprime &quot;Juan Perez&quot;</span>
+<span class="n">imprimirNombre</span><span class="o">(</span><span class="n">nombre</span> <span class="k">=</span> <span class="s">&quot;Juan&quot;</span><span class="o">,</span> <span class="n">apellido</span> <span class="k">=</span> <span class="s">&quot;Perez&quot;</span><span class="o">)</span>  <span class="c1">// Imprime &quot;Juan Perez&quot;</span>
+<span class="n">imprimirNombre</span><span class="o">(</span><span class="n">apellido</span> <span class="k">=</span> <span class="s">&quot;Perez&quot;</span><span class="o">,</span> <span class="n">nombre</span> <span class="k">=</span> <span class="s">&quot;Juan&quot;</span><span class="o">)</span>  <span class="c1">// Imprime &quot;Juan Perez&quot;</span>
+</pre></div>
+</div>
+<p>Finalmente, tenemos a continuación un pequeño ejemplo de <strong>Smalltalk</strong>, un lenguaje diseñado hace cerca de 40 años. En Smalltalk todos los parámetros son nombrados porque hacen parte del nombre mismo de los métodos. En el siguiente bloque mostramos la definición del método <code class="docutils literal notranslate"><span class="pre">imprimirNombre:apellido:</span></code>, que recibe dos parámetros y luego los imprime como en el ejemplo anterior en Scala.</p>
+<div class="highlight-Smalltalk notranslate"><div class="highlight"><pre><span></span><span class="nf">imprimirNombre:</span> <span class="nv">elNombre</span> <span class="nf">apellido:</span> <span class="nv">elApellido</span>
+
+<span class="nc">Transcript</span> <span class="nf">show:</span> <span class="nv">elNombre</span><span class="nf">,</span> <span class="s">&#39; &#39;</span><span class="nf">,</span> <span class="nv">elApellido</span>
+</pre></div>
+</div>
+<p>Con respecto a los valores por defecto para los parámetros, encontramos que es posible asignar valores por defecto en lenguajes como C++ o JavaScript, pero no en Java. Al igual que en Python, se debe tener cuidado de asignarle valores por defecto a los últimos parámetros de una función para que esos parámetros sean realmente opcionales.</p>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="cpp"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>En un lenguaje como C o C++, que tienen acceso de bajo nivel a la memoria, el paso por referencia se basa en el paso de apuntadores. Esto hace posible modificar los apuntadores desde adentro de la función (método), lo cual no es posible en Python. Para no complicar más la explicación, hemos ajustado la definición de paso por referencia a lo que tendría sentido para Python.</p>
+</dd>
+</dl>
 </div>
 </div>
 
