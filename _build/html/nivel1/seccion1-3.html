@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Valores y tipos de datos &#8212; Introducción a la Programación</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel1/seccion1-3.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Variables, expresiones y operadores" href="seccion1-4.html" />
+    <link rel="prev" title="Ambiente básico de trabajo" href="seccion1-2.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="http://cupi2-ip.github.io/IPBook/nivel1/seccion1-3.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Valores y tipos de datos" />
+<meta property="og:description" content="Valores y tipos de datos  Objetivo de la sección  El objetivo de esta sección es introducir y discutir los conceptos de  valor, literal, y tipo de datos. Trabaj" />
+<meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/uniandes_logo.jpeg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introducción a la Programación</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="../portada.html">1. Portada</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Antes de empezar</p>
+</li>
+  <li class="">
+    <a href="../introduccion/index.html">2. Introducción</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 1</p>
+</li>
+  <li class="active">
+    <a href="intro.html">3. Empezando a programar</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="seccion1-1.html">3.1 Un programa para leer</a>
+    </li>
+    <li class="">
+      <a href="seccion1-2.html">3.2 Ambiente básico de trabajo</a>
+    </li>
+    <li class="active">
+      <a href="">3.3 Valores y tipos de datos</a>
+    </li>
+    <li class="">
+      <a href="seccion1-4.html">3.4 Variables, expresiones y operadores</a>
+    </li>
+    <li class="">
+      <a href="seccion1-5.html">3.5 Funciones</a>
+    </li>
+    <li class="">
+      <a href="seccion1-6.html">3.6 Definición de funciones</a>
+    </li>
+    <li class="">
+      <a href="seccion1-7.html">3.7 Estilo de programación</a>
+    </li>
+    <li class="">
+      <a href="seccion1-8.html">3.8 Un programa para leer (2)</a>
+    </li>
+    <li class="">
+      <a href="seccion1-9.html">3.9 Lógica vs. Interacción</a>
+    </li>
+    <li class="">
+      <a href="seccion1-10.html">3.10 Errores frecuentes</a>
+    </li>
+    <li class="">
+      <a href="seccion1-11.html">3.11 Ejercicios adicionales</a>
+    </li>
+  </ul>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 1</p>
+</li>
+  <li class="">
+    <a href="../nivel01a/index.html">4. Descomposición de programas</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 2</p>
+</li>
+  <li class="">
+    <a href="../nivel2/intro.html">5. Tomando decisiones</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 2</p>
+</li>
+  <li class="">
+    <a href="../nivel02a/index.html">6. Plan de Pruebas</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 3</p>
+</li>
+  <li class="">
+    <a href="../nivel3/intro.html">7. Repitiendo acciones</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 3</p>
+</li>
+  <li class="">
+    <a href="../nivel03a/index.html">8. Dividir y  Conquistar</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 4</p>
+</li>
+  <li class="">
+    <a href="../nivel4/intro.html">9. Matrices y Librerías</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/nivel1/seccion1-3.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#numeros-enteros-int" class="nav-link">Números enteros (int)</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#numeros-decimales-float" class="nav-link">Números decimales (float)</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#cadenas-de-caracteres-str" class="nav-link">Cadenas de caracteres (str)</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#conversiones-entre-tipos-de-datos" class="nav-link">Conversiones entre tipos de datos</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#ejercicios" class="nav-link">Ejercicios</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="warning admonition">
+<p class="admonition-title">Versión borrador / preliminar</p>
+<p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
+</div>
+<div class="section" id="valores-y-tipos-de-datos">
+<h1>Valores y tipos de datos<a class="headerlink" href="#valores-y-tipos-de-datos" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-objetivo-de-la-seccion admonition">
+<p class="admonition-title">Objetivo de la sección</p>
+<p>El objetivo de esta sección es introducir y discutir los conceptos de  <em>valor</em>, <em>literal</em>, y <em>tipo de datos</em>. Trabajaremos además con los tipos básicos <em>int</em>, <em>str</em> y <em>float</em> de Python.</p>
+</div>
+<p>La razón de ser de cualquier programa es poder manipular, mostrar, calcular o guardar <em>valores</em>. Estos valores podrían representar cosas que existan en una realidad, como por ejemplo la temperatura en una ciudad, la cantidad de dinero en una cuenta, el nombre de una persona, o la fecha actual. La naturaleza de los valores hace necesario separarlos en categorías porque en muchos casos no tiene sentido operarlos entre ellos. Por ejemplo, si sabemos que vamos a hacer una operación de multiplicación, no tiene sentido que mezclemos números con palabras. Estas categorías que se usan para separar los valores usualmente reciben el nombre de <em>tipos de datos</em>.</p>
+<p>La pregunta natural que debería responderse ahora es: ¿Cómo se describe un valor dentro de un programa? En Python, la respuesta es que hay dos mecanismos básicos. El primero es a través de un <em>literal</em>, es decir que el valor se describe de forma directa siguiendo unas reglas dadas por el lenguaje. Por ejemplo, cuando en Python el literal <code class="docutils literal notranslate"><span class="pre">3</span></code> corresponde al valor entero <em>3</em>, el literal <code class="docutils literal notranslate"><span class="pre">3.14</span></code> corresponde al valor decimal <em>3.14</em> y el literal <code class="docutils literal notranslate"><span class="pre">'Saludos'</span></code> corresponde a la palabra <em>Saludos</em>. El segundo mecanismo para expresar un valor es a través de una <em>expresión</em> que tiene que ser evaluada de alguna forma para averiguar su valor. Algunas expresiones válidas en Python son <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2.22</span></code>, <code class="docutils literal notranslate"><span class="pre">round(3.14,</span> <span class="pre">2)</span></code> y <code class="docutils literal notranslate"><span class="pre">'Hola,</span> <span class="pre">'</span> <span class="pre">+</span> <span class="pre">'Mundo!'</span></code>. No se preocupe por entender estos ejemplos: las siguientes secciones se dedicarán a explicarlos en detalle.</p>
+<p>Python ofrece mecanismos para representar, interpretar y hacer operaciones sobre valores de varios tipos. Los más importantes son los que vamos a estudiar en esta sección: números enteros (<code class="docutils literal notranslate"><span class="pre">int</span></code>), números decimales (<code class="docutils literal notranslate"><span class="pre">float</span></code>) y cadenas de caracteres (<code class="docutils literal notranslate"><span class="pre">str</span></code>).</p>
+<p>Adicionalmente, Python ofrece la función <code class="docutils literal notranslate"><span class="pre">type</span></code> que nos permite consultar de qué tipo es un determinado valor. Usaremos ahora esta función en tres ejemplos muy sencillos para introducir lo que se va a presentar en el resto de la sección y para observar el funcionamiento de la función misma.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="go">&lt;class &#39;int&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
+<span class="go">&lt;class &#39;float&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;Hola&#39;</span><span class="p">)</span>
+<span class="go">&lt;class &#39;str&#39;&gt;</span>
+</pre></div>
+</div>
+<p>Usted puede probar estas mismas instrucciones escribiendo el ambiente de Python las instrucciones que se encuentran después de los caracteres <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>.</p>
+<div class="section" id="numeros-enteros-int">
+<h2>Números enteros (int)<a class="headerlink" href="#numeros-enteros-int" title="Permalink to this headline">¶</a></h2>
+<p>El primer tipo que vamos a estudiar es el que nos permite representar números enteros, positivos y negativos, y que en Python recibe el nombre de <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<p>En general, los números enteros se describen usando los literales a los que estamos acostumbrados: 0, 1, 2, 3, etc. Un número entero también puede ser negativo, así que los siguientes literales también son válidos: -1, -2, -3, etc. A diferencia de otros lenguajes, en Python no hay límites sobre los números enteros, así que cualquier número debería poder representarse sin problema <a class="footnote-reference brackets" href="#bases" id="id1">1</a>.</p>
+</div>
+<div class="section" id="numeros-decimales-float">
+<h2>Números decimales (float)<a class="headerlink" href="#numeros-decimales-float" title="Permalink to this headline">¶</a></h2>
+<p>Como complemento al tipo <code class="docutils literal notranslate"><span class="pre">int</span></code>, Python también ofrece el tipo <code class="docutils literal notranslate"><span class="pre">float</span></code> que permite representar números con decimales. Es importante notar que, debido a restricciones técnicas, Python frecuentemente tiene que redondear números decimales. A manera de ejemplo, consideremos el resultado de hacer la división <code class="docutils literal notranslate"><span class="pre">10/3</span></code> que resulta en <code class="docutils literal notranslate"><span class="pre">3.3333333333333335</span></code> en lugar del resultado esperado.</p>
+<p>En Python, los literales para representar números decimales utilizan un punto como separador. Es decir que los siguientes son todos números de tipo float: 0.0, -1.1, 2.33, -4.5555557.</p>
+<p>Una característica interesante de Python que no está presente en muchos otros lenguajes es la conversión automática que hace de enteros a decimales, especialmente cuando se hacen operaciones de división.</p>
+<div class="important admonition">
+<p class="admonition-title">Importante</p>
+<p>Use siempre un punto y no una coma para separar la parte entera de la parte decimal en un <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+</div>
+</div>
+<div class="section" id="cadenas-de-caracteres-str">
+<h2>Cadenas de caracteres (str)<a class="headerlink" href="#cadenas-de-caracteres-str" title="Permalink to this headline">¶</a></h2>
+<p>Las cadenas de caracteres son un tipo de dato muy importante dentro de Python y se denotan como de tipo <code class="docutils literal notranslate"><span class="pre">str</span></code>. Una cadena de caracteres es mucho más que una palabra. Una cadena de caracteres es una secuencia de símbolos que puede incluir letras (minúsculas y mayúsculas), números, signos de puntuación, espacios y hasta <em>emojis</em>. Es decir que una cadena de caracteres puede servirnos para representar cosas como un nombre, un número serial o un texto completo.</p>
+<p>En Python hay 3 formas de representar literales que sean de tipo <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+<ol class="simple">
+<li><p><strong>Rodeándolos con comillas <em>sencillas</em></strong>. Es decir que los siguientes son 3 ejemplos de cadenas de caracteres válidas: ‘abc’, ‘a1 b2 c3’, ‘¡Hola, Mundo!’.</p></li>
+<li><p><strong>Rodeándolos con comillas <em>dobles</em></strong>. Es decir que los siguientes son 3 ejemplos de cadenas de caracteres válidas: “abc”, “a1 b2 c3”, “¡Hola, Mundo!”.</p></li>
+<li><p><strong>Rodeándolos con <em>tres comillas</em> sencillas o dobles</strong>. Es decir que los siguientes son 3 ejemplos de cadenas de caracteres válidas: “””abc”””, ‘’’a1 b2 c3’’’, “””¡Hola, Mundo!”””.</p></li>
+</ol>
+<p>Puede parecer una exageración tener 3 opciones diferentes, pero hay motivos claros para esto. Consideremos por ejemplo una cadena con un texto en inglés que tenga el siguiente valor: It’s today!</p>
+<p>Si quisiéramos representar la cadena usando comillas sencillas sí tendríamos un problema: ¿Si el literal fuera <code class="docutils literal notranslate"><span class="pre">'It's</span> <span class="pre">today!'</span></code> cómo podría hacer Python para saber que la cadena termina en la tercera comilla y no en la segunda? La solución más fácil para este problema es representar la misma cadena usando comillas dobles: <code class="docutils literal notranslate"><span class="pre">&quot;It's</span> <span class="pre">today!&quot;</span></code>. De esta forma se elimina la ambigüedad sin tener que recurrir a soluciones más complicadas.</p>
+<p>De forma similar, si nuestra cadena tuviera comillas dobles dentro de ella, el literal se podría escribir con comillas sencillas y también se resolvería el problema. Desafortunadamente este truco no funciona cuando la cadena incluye comillas dobles y comillas sencillas. Por ejemplo, una cadena con el siguiente valor tendría este problema: She said to me “That’s mine!”.</p>
+<p>La solución en este caso es utilizar expresiones especiales para representar las comillas dobles o las comillas sencillas. Es decir que en lugar de representar una comilla sencilla dentro de la cadena usando el caracter <code class="docutils literal notranslate"><span class="pre">'</span></code> se usaría la expresión <code class="docutils literal notranslate"><span class="pre">\'</span></code>. También existe la expresión equivalente <code class="docutils literal notranslate"><span class="pre">\&quot;</span></code> para las comillas dobles. Esto quiere decir que el literal para la cadena del ejemplo podría ser <code class="docutils literal notranslate"><span class="pre">'She</span> <span class="pre">said</span> <span class="pre">to</span> <span class="pre">me</span> <span class="pre">&quot;That\'s</span> <span class="pre">mine!&quot;'</span></code> o <code class="docutils literal notranslate"><span class="pre">&quot;She</span> <span class="pre">said</span> <span class="pre">to</span> <span class="pre">me</span> <span class="pre">\&quot;That\'s</span> <span class="pre">mine!\&quot;&quot;</span></code>.</p>
+<p>Veamos ahora la opción de las tres comillas sencillas o dobles, que resuelve una limitación importante que tienen las otras dos opciones: cuando se usan tres comillas, las cadenas pueden tener cambios de línea dentro de los literales. Considere el siguiente fragmento de código válido en Python que se visualiza tal como fue tecleado en el intérprete del lenguaje <a class="footnote-reference brackets" href="#haiku" id="id2">2</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="sd">&quot;&quot;&quot;one foolish heart</span>
+<span class="gp">... </span><span class="sd">five wits unswayed</span>
+<span class="gp">... </span><span class="sd">a thousand errors note&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Por el contrario, si se usara una sola comilla sencilla o una sola comilla doble para iniciar el literal, se produciría un error como el siguiente al terminar la primera línea:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;one foolish heart</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>
+    <span class="s1">&#39;one foolish heart</span>
+                     <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">EOL while scanning string literal</span>
+</pre></div>
+</div>
+<p>Esto no quiere decir que una cadena descrita usando los dos primeros métodos no pueda tener cambios de línea. Lo que pasa es que en este caso se debe utilizar una expresión especial para representar ese cambio de línea: <code class="docutils literal notranslate"><span class="pre">\n</span></code>. Esta expresión se conoce como un caracter de control y es utilizada en la mayoría de lenguajes de programación para hacer referencia a un cambio de línea al final de un párrafo (es lo que su teclado envía cuando usted presiona la tecla <em>enter</em>).</p>
+<p>Veamos entonces cómo se usaría dentro de un literal:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;one foolish heart</span><span class="se">\n</span><span class="s1">five wits unswayed</span><span class="se">\n</span><span class="s1">a thousand errors note&#39;</span>
+</pre></div>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Importante</p>
+<p>Para representar cambios de línea dentro de una cadena de caracteres debe usarse la combinación <code class="docutils literal notranslate"><span class="pre">\n</span></code>.</p>
+</div>
+</div>
+<div class="section" id="conversiones-entre-tipos-de-datos">
+<h2>Conversiones entre tipos de datos<a class="headerlink" href="#conversiones-entre-tipos-de-datos" title="Permalink to this headline">¶</a></h2>
+<p>En Python es posible hacer conversiones entre diferentes tipos de datos para convertir, por ejemplo, una cadena en un número decimal, o un entero en una cadena. Esto sólo puede hacerse cuando tenga sentido y es útil para poder utilizar operadores de otros tipos de datos. Por ejemplo, no podemos convertir la cadena <code class="docutils literal notranslate"><span class="pre">'abc'</span></code> en un entero, pero sí podemos convertir la cadena <code class="docutils literal notranslate"><span class="pre">'3.4'</span></code> en un número decimal para después sumarlo al valor <code class="docutils literal notranslate"><span class="pre">4.55</span></code>.</p>
+<p>En una de las próximas secciones estudiaremos más en detalle las funciones de conversión, pero por ahora usted debe saber que existen y cuál es su objetivo principal:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int(x)</span></code>: convierte el valor <code class="docutils literal notranslate"><span class="pre">x</span></code> a un entero. Por ejemplo, convierte el número <code class="docutils literal notranslate"><span class="pre">3.14</span></code> a <code class="docutils literal notranslate"><span class="pre">3</span></code> y la cadena <code class="docutils literal notranslate"><span class="pre">'-4'</span></code> a <code class="docutils literal notranslate"><span class="pre">-4</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float(x)</span></code>: convierte el valor <code class="docutils literal notranslate"><span class="pre">x</span></code> a un número decimal. Por ejemplo, convierte el número entero <code class="docutils literal notranslate"><span class="pre">3</span></code> a <code class="docutils literal notranslate"><span class="pre">3.0</span></code> y la cadena <code class="docutils literal notranslate"><span class="pre">'-4.5'</span></code> a <code class="docutils literal notranslate"><span class="pre">-4.5</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str(x)</span></code>: convierte el valor <code class="docutils literal notranslate"><span class="pre">x</span></code> a una cadena de caracteres. Por ejemplo, convierte el número entero <code class="docutils literal notranslate"><span class="pre">3</span></code> a la cadena <code class="docutils literal notranslate"><span class="pre">'3'</span></code> y al número decimal <code class="docutils literal notranslate"><span class="pre">-4.5</span></code> a la cadena <code class="docutils literal notranslate"><span class="pre">'-4.5'</span></code>.</p></li>
+</ul>
+<div class="warning admonition">
+<p class="admonition-title">Cuidado</p>
+<p>Si usted intenta convertir valores de forma equivocada obtendrá un error y su programa posiblemente se detendrá. En general, usted debería verificar los valores para asegurarse que no vaya a tener problemas antes de intentar hacer una conversión de tipos. Más adelante veremos cómo se puede lograr esto.</p>
+</div>
+</div>
+<div class="section" id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Abra el intérprete de Python e intente convertir a entero las siguientes cadenas. ¿Qué resultado obtiene?</p>
+<ul class="simple">
+<li><p>‘1’</p></li>
+<li><p>‘1.1’</p></li>
+<li><p>‘-3’</p></li>
+<li><p>‘a’</p></li>
+</ul>
+</li>
+<li><p>Abra el intérprete de Python e intente convertir a entero sos siguientes números. ¿Qué resultado obtiene?</p>
+<ul class="simple">
+<li><p>3</p></li>
+<li><p>2.86</p></li>
+<li><p>2,86</p></li>
+<li><p>3.4</p></li>
+<li><p>-3.4</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="bases"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Por defecto, los literales de números enteros asumen que se trata de números en base 10. Sin embargo, si se preceden los números con los caracteres ‘0b’ o ‘0x’ significaría que se trata de números binarios o hexadecimales, respectivamente. Por ejemplo, los tres literales 0b10110, 0x16 y 22 representarían el mismo valor (el número 22 en base 10).</p>
+</dd>
+<dt class="label" id="haiku"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>El texto fue tomado de <a class="reference external" href="http://shakespeareshaiku.blogspot.com/">http://shakespeareshaiku.blogspot.com/</a> y está basado en el Soneto 141 de William Shakespeare.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="seccion1-2.html" title="previous page">Ambiente básico de trabajo</a>
+    <a class='right-next' id="next-link" href="seccion1-4.html" title="next page">Variables, expresiones y operadores</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Mario Sánchez<br/>
+        
+            &copy; Copyright Agosto de 2020.<br/>
+          <div class="extra_footer">
+            <a href="http://sistemas.uniandes.edu.co">Departamento de Ingeniería de Sistemas y Computación</a> - Universidad de los Andes
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

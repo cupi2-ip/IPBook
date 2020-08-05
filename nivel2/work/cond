@@ -1,0 +1,34 @@
+def f():
+    valor_producto = 14000
+    if valor_producto > 10000:
+        impuestos = valor_producto * 0.19
+    else:
+        impuestos = valor_producto * 0.1
+    valor_factura = valor_producto + impuestos
+    print("El valor de la factura es", valor_factura)
+
+
+
+
+
+### Variables en bloques condicionales
+
+Otro punto muy importante para recordar es el que tiene que ver con el alcance de las variables en Python y su uso dentro bloques condicionales. Para esto, observe con detenimiento el siguiente programa e intente deducir por qué fallará al momento de la ejecución:
+
+```python
+valor_producto = 14000
+
+if valor_producto > 10000:
+    impuestos = valor_producto * 0.19
+else:
+    impuestos = valor_producto * 0.1
+
+valor_factura = valor_producto + impuestos
+print("El valor de la factura es", valor_factura)
+```
+
+
+Ejemplo de 
+
+variables
+

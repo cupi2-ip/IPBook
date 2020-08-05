@@ -1,0 +1,87 @@
+- file: portada
+  title: Inicio
+
+- header: Antes de empezar
+- file: introduccion/index
+  title: Introducción
+  sections:
+  - file: introduccion/programar
+  - file: introduccion/practicas
+  - file: introduccion/acerca
+  - file: introduccion/lenguaje
+  - file: introduccion/estructura
+  - file: introduccion/imagenes    
+
+- header: Nivel 1
+- file: nivel1/intro
+  title: Empezando a programar
+  sections:
+  - file: nivel1/seccion1-1
+  - file: nivel1/seccion1-2
+  - file: nivel1/seccion1-3
+  - file: nivel1/seccion1-4
+  - file: nivel1/seccion1-5
+  - file: nivel1/seccion1-6
+  - file: nivel1/seccion1-7
+  - file: nivel1/seccion1-8
+  - file: nivel1/seccion1-9
+  - file: nivel1/seccion1-10
+  - file: nivel1/seccion1-11
+
+- header: Interludio 1
+- file: nivel01a/index
+  title: Descomposición de programas
+
+- header: Nivel 2
+- file: nivel2/intro
+  title: Tomando decisiones
+  sections:
+  - file: nivel2/seccion2-1
+  - file: nivel2/seccion2-2
+  - file: nivel2/seccion2-3
+  - file: nivel2/seccion2-4
+  - file: nivel2/seccion2-5
+  - file: nivel2/seccion2-6
+  - file: nivel2/seccion2-7
+  - file: nivel2/seccion2-8
+  - file: nivel2/seccion2-9
+  - file: nivel2/seccion2-10
+
+- header: Interludio 2
+- file: nivel02a/index
+  title: Plan de Pruebas
+
+- header: Nivel 3
+- file: nivel3/intro
+  title: Repitiendo acciones
+  sections:
+  - file: nivel3/seccion3-1
+  - file: nivel3/seccion3-2
+  - file: nivel3/seccion3-3
+  - file: nivel3/seccion3-4
+  - file: nivel3/seccion3-5
+  - file: nivel3/seccion3-6
+  - file: nivel3/seccion3-7
+  - file: nivel3/seccion3-8
+  - file: nivel3/seccion3-9
+  - file: nivel3/seccion3-10
+  - file: nivel3/seccion3-11
+  - file: nivel3/seccion3-12
+
+- header: Interludio 3
+- file: nivel03a/index
+  title: Dividir y  Conquistar
+
+- header: Nivel 4
+- file: nivel4/intro
+  title: Matrices y Librerías
+  sections:
+  - file: nivel4/seccion4-1
+  - file: nivel4/seccion4-2
+  - file: nivel4/seccion4-3
+  - file: nivel4/seccion4-4
+  - file: nivel4/seccion4-5
+  - file: nivel4/seccion4-6
+  - file: nivel4/seccion4-7
+  - file: nivel4/seccion4-8
+  - file: nivel4/seccion4-9

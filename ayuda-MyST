@@ -1,0 +1,71 @@
+```{admonition} Versión borrador / preliminar
+:class: warning
+Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.
+```
+
+```{admonition} Nota
+:class: note
+nota...
+```
+
+
+```{admonition} Cuidado
+:class: warning
+cuidado
+```
+
+```{admonition} Tip
+:class: tip
+tip
+```
+
+
+```{admonition} Objetivo de la sección
+El objetivo de esta sección es ...
+```
+
+
+{numref}`figura {number} <slicing>`
+
+
+```{figure} ./images/slicing.png
+---
+width: 100%
+name: slicing
+---
+Posiciones numeradas en una cadena
+```
+
+
+Attention
+Caution
+Danger
+Error
+Hint
+Important
+Note
+Tip
+Warning
+....
+
+
+
+```{code-block} python
+---
+lineno-start: 1
+emphasize-lines: 1, 3
+caption: Programa con problemas
+---
+def calcular_tiempo_descarga(velocidad: int, tamanio_archivo: int)->int:
+    """ Tiempo de descarga
+    Parámetros:
+      velocidad (int): Velocidad de descarga de la red, en Mbps
+      tamanio_archivo (int): Tamaño del archivo a descargar, en GB
+    Retorno:
+      int: Tiempo estimado en minutos que toma la descarga del archivo
+    """
+    gb_megas = tamanio_archivo * 1000
+    v = velocidad * 8
+    tiempo = gb_megas / v
+    return round(tiempo)
+```

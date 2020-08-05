@@ -1,0 +1,470 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Estilo de programación &#8212; Introducción a la Programación</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel1/seccion1-7.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Un programa para leer (2)" href="seccion1-8.html" />
+    <link rel="prev" title="Definición de funciones" href="seccion1-6.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="http://cupi2-ip.github.io/IPBook/nivel1/seccion1-7.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Estilo de programación" />
+<meta property="og:description" content="Estilo de programación  Versión borrador / preliminar  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tien" />
+<meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/uniandes_logo.jpeg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introducción a la Programación</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="../portada.html">1. Portada</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Antes de empezar</p>
+</li>
+  <li class="">
+    <a href="../introduccion/index.html">2. Introducción</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 1</p>
+</li>
+  <li class="active">
+    <a href="intro.html">3. Empezando a programar</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="seccion1-1.html">3.1 Un programa para leer</a>
+    </li>
+    <li class="">
+      <a href="seccion1-2.html">3.2 Ambiente básico de trabajo</a>
+    </li>
+    <li class="">
+      <a href="seccion1-3.html">3.3 Valores y tipos de datos</a>
+    </li>
+    <li class="">
+      <a href="seccion1-4.html">3.4 Variables, expresiones y operadores</a>
+    </li>
+    <li class="">
+      <a href="seccion1-5.html">3.5 Funciones</a>
+    </li>
+    <li class="">
+      <a href="seccion1-6.html">3.6 Definición de funciones</a>
+    </li>
+    <li class="active">
+      <a href="">3.7 Estilo de programación</a>
+    </li>
+    <li class="">
+      <a href="seccion1-8.html">3.8 Un programa para leer (2)</a>
+    </li>
+    <li class="">
+      <a href="seccion1-9.html">3.9 Lógica vs. Interacción</a>
+    </li>
+    <li class="">
+      <a href="seccion1-10.html">3.10 Errores frecuentes</a>
+    </li>
+    <li class="">
+      <a href="seccion1-11.html">3.11 Ejercicios adicionales</a>
+    </li>
+  </ul>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 1</p>
+</li>
+  <li class="">
+    <a href="../nivel01a/index.html">4. Descomposición de programas</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 2</p>
+</li>
+  <li class="">
+    <a href="../nivel2/intro.html">5. Tomando decisiones</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 2</p>
+</li>
+  <li class="">
+    <a href="../nivel02a/index.html">6. Plan de Pruebas</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 3</p>
+</li>
+  <li class="">
+    <a href="../nivel3/intro.html">7. Repitiendo acciones</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 3</p>
+</li>
+  <li class="">
+    <a href="../nivel03a/index.html">8. Dividir y  Conquistar</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 4</p>
+</li>
+  <li class="">
+    <a href="../nivel4/intro.html">9. Matrices y Librerías</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/nivel1/seccion1-7.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#nombramiento-de-variables-y-funciones" class="nav-link">Nombramiento de variables y funciones</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#documentacion-de-funciones" class="nav-link">Documentación de funciones</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#descomposicion-de-funciones" class="nav-link">Descomposición de funciones</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#complejidad-de-las-instrucciones" class="nav-link">Complejidad de las instrucciones</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#tipado-de-funciones" class="nav-link">Tipado de funciones</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#ejercicios" class="nav-link">Ejercicios</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#mas-alla-de-python" class="nav-link">Más allá de Python</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="estilo-de-programacion">
+<h1>Estilo de programación<a class="headerlink" href="#estilo-de-programacion" title="Permalink to this headline">¶</a></h1>
+<div class="warning admonition">
+<p class="admonition-title">Versión borrador / preliminar</p>
+<p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
+</div>
+<div class="admonition-objetivo-de-la-seccion admonition">
+<p class="admonition-title">Objetivo de la sección</p>
+<p>El objetivo de esta sección es introducir algunos elementos que no son obligatorios al programar pero que hacen el código mucho más comprensible y fácil de mantener.</p>
+</div>
+<p>En las secciones anteriores hemos empezado a estudiar la <em>sintaxis</em> de Python, es decir las reglas que define el lenguaje y que deben respetarse en todos los programas que se escriban con él: si las reglas sintácticas no se cumplen, el intérprete de Python no podrá entender lo que quiere decir el programa y no podrá ejecutarlo. Sin embargo, la sintaxis no lo es todo en un lenguaje de programación. También es importante pensar en el <em>estilo</em>.</p>
+<p>Si bien las reglas de Python parecen muy estrictas, hay infinidad de formas diferentes en las que se puede escribir el mismo programa. Esto incluye desde cambios menores, como incluir líneas en blanco o comentarios adicionales, hasta cambiar la descomposición en funciones, pasando por cambios en los nombres de las variables y de las funciones. Es decir que dos personas que escriban el mismo programa Python pueden terminar escribiendo programas muy diferentes sólo por utilizar un <em>estilo</em> diferente.</p>
+<p>El problema con esta gran libertad es que las decisiones que tomemos con respecto al <em>estilo</em> del código que escribamos hoy posiblemente nos van a acompañar durante mucho tiempo. La mayoría de los programas se escriben en un tiempo relativamente corto (días o semanas) y luego se utilizan, se corrigen y se actualizan durante meses o años. Si hoy tomamos decisiones que parecen fáciles (como utilizar nombres de variables cortísimos o no descomponer una función muy complicada), es posible que más adelante sea más difícil arreglar un problema porque no podremos entender con facilidad nuestro propio código.</p>
+<blockquote class="epigraph">
+<div><p>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</p>
+<p class="attribution">—Martin Fowler</p>
+</div></blockquote>
+<p>Para ilustrar este punto, revisemos el siguiente programa basado en las funciones que usamos en la sección anterior:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">area_cuadrado</span><span class="p">(</span><span class="n">lado</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">       Calcula el área de un cuadrado dada la medida de su lado</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">lado</span> <span class="o">*</span> <span class="n">lado</span>
+
+
+<span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">altura</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calcula el área de un triángulo dada la medida de la base y de la altura.</span>
+<span class="sd">    &quot;&quot;&quot;</span>   
+    <span class="k">return</span> <span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">altura</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+
+<span class="k">def</span> <span class="nf">area_casa</span><span class="p">(</span><span class="n">frente</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">techo</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calcula el área del dibujo de una casa que se forma con un cuadrado</span>
+<span class="sd">        y un triángulo encima (el techo).</span>
+<span class="sd">        El frente de la casa será igual al lado del cuadrado y a la base del triángulo.</span>
+<span class="sd">        La altura del techo será la altura del triángulo.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cuadrado</span> <span class="o">=</span> <span class="n">area_cuadrado</span><span class="p">(</span><span class="n">frente</span><span class="p">)</span>
+    <span class="n">triangulo</span> <span class="o">=</span> <span class="n">area_triangulo</span><span class="p">(</span><span class="n">frente</span><span class="p">,</span> <span class="n">techo</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cuadrado</span> <span class="o">+</span> <span class="n">triangulo</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">area_casa</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<p>Ahora revisemos un segundo programa:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">v</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>    
+</pre></div>
+</td></tr></table></div>
+<p>Aunque a primera vista no es evidente, los dos programas son equivalentes en el sentido de que al ejecutarlos el resultado será el mismo: imprimirán el valor <code class="docutils literal notranslate"><span class="pre">125.0</span></code> en la consola. Evidentemente el segundo programa es mucho más corto que el primero, pero esto no necesariamente es una ventaja. Particularmente, en este caso es difícil entender que la función <code class="docutils literal notranslate"><span class="pre">f</span></code> sirve para calcular el área del dibujo de la casa y requiere como parámetro las medidas del frente y del techo, en ese orden.</p>
+<p>Podemos decir que las diferencias entre los dos programas se reducen a los siguientes 5 aspectos:</p>
+<ol class="simple">
+<li><p>Utilizar nombres claros para las variables, las funciones y los parámetros.</p></li>
+<li><p>Documentar el objetivo de cada función</p></li>
+<li><p>Descomponer las funciones para que cumplan objetivos precisos</p></li>
+<li><p>Complejidad de las instrucciones</p></li>
+<li><p>Indicar los tipos de los parámetros y retornos de las funciones</p></li>
+</ol>
+<p>A continuación revisaremos cada uno de estos puntos con un poco más de detalle.</p>
+<div class="section" id="nombramiento-de-variables-y-funciones">
+<h2>Nombramiento de variables y funciones<a class="headerlink" href="#nombramiento-de-variables-y-funciones" title="Permalink to this headline">¶</a></h2>
+<p>Uno de los factores que más incide en la facilidad para comprender un programa es la selección de nombres para variables y funciones: si el nombre que utilizamos para una variable o una función es bueno, no tendremos que pensar mucho para recordar qué rol tiene dentro del programa y podremos concentrarnos en los aspectos importantes.</p>
+<p>En el ejemplo que presentamos antes podemos ver esto claramente:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">altura</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="hll">    <span class="k">return</span> <span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">altura</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+</span>
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<span class="hll">    <span class="k">return</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Las dos funciones anteriores hacen los mismos cálculos,</p>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>Para las variables, utilice nombres que indiquen con claridad qué es lo que va a guardar dentro de ellas. Evite nombres cortos a menos que no haya ninguna ambigüedad posible.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>Para las funciones, utilice nombres que indiquen qué es lo que hará la función.
+Incluya verbos en los nombres de funciones (ej. <code class="docutils literal notranslate"><span class="pre">guardar_resultado</span></code> ), a menos que se pueda sobreentender con facilidad (ej. <code class="docutils literal notranslate"><span class="pre">calcular_area_triangulo</span></code> vs. <code class="docutils literal notranslate"><span class="pre">area_triangulo</span></code>).</p>
+</div>
+<p>estándares (snake_case, mayúsculas, minúsculas)</p>
+</div>
+<div class="section" id="documentacion-de-funciones">
+<h2>Documentación de funciones<a class="headerlink" href="#documentacion-de-funciones" title="Permalink to this headline">¶</a></h2>
+<p>docstring</p>
+</div>
+<div class="section" id="descomposicion-de-funciones">
+<h2>Descomposición de funciones<a class="headerlink" href="#descomposicion-de-funciones" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="complejidad-de-las-instrucciones">
+<h2>Complejidad de las instrucciones<a class="headerlink" href="#complejidad-de-las-instrucciones" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="tipado-de-funciones">
+<h2>Tipado de funciones<a class="headerlink" href="#tipado-de-funciones" title="Permalink to this headline">¶</a></h2>
+<p>Sobre los <em>type-hints</em></p>
+<p>Si usted utiliza otros libros o si consulta en Internet, es muy posible que se encuentre con definiciones de funciones en las que no aparecen los tipos de los parámetros ni el tipo de los resultados. Esto se debe a que en Python el uso de estos elementos es opcional. De hecho, el nombre específico de estos elementos es <em>type-hints</em> y las herramientas (IDE, intérprete, compilador, etc.) los utilizan sólo como sugerencias.</p>
+<p>En este libro vamos a usar <em>type-hints</em> en la definición de todas las funciones y esperamos que usted haga uso de ellos también. Por una parte, esto le facilitará aprender a usar otros lenguajes de programación como C, C++, Java, o TypeScript. Por otro lado, razonar sobre los tipos de datos debería ayudarlo a estructurar mejor sus programas, especialmente mientras adquiere una cierta destreza programando.</p>
+</div>
+<div class="section" id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Revise detenidamente la siguiente función para descubrir su objetivo. Reescríbalo aplicando las recomendaciones que se estudiaron en esta sección.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vc</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mf">3.14159</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">a</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Revise detenidamente la siguiente función para descubrir su objetivo. Reescríbalo aplicando las recomendaciones que se estudiaron en esta sección.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">v</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+    <span class="n">vf</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mf">9.8</span><span class="o">*</span><span class="n">d</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">vf</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mas-alla-de-python">
+<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
+<p>Estándares de documentación</p>
+<p>La discusión sobre los <em>type-hints</em> tiene que ver con una discusión mucho más extensa sobre la conveniencia de tener <em>tipado dinámico</em> en los lenguajes de programación. Por un lado, cuando los lenguajes son fuertemente tipados se cometen menos errores o, al menos, las herramientas de edición capturan más errores de forma temprana. Por otro lado, cuando el tipado es dinámico los errores de tipo se capturan en tiempo de ejecución, pero el desarrollo de los programas es más rápido. En este momento hay fuertes discusiones sobre la conveniencia o no de cada sistema, pero hay un hecho que encontramos muy diciente: JavaScript, que tiene tipado dinámico, está incluyendo progresivamente más elementos para escribir programas fuertemente tipados (el crecimiento de TypeScript es evidencia indiscutible), mientras que Python está empezando a incluir elementos para poder incluir verificaciones de tipos.</p>
+<p>PEP8</p>
+<p>PEP8 – Style Guide for Python Code: <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a></p>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="seccion1-6.html" title="previous page">Definición de funciones</a>
+    <a class='right-next' id="next-link" href="seccion1-8.html" title="next page">Un programa para leer (2)</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Mario Sánchez<br/>
+        
+            &copy; Copyright Agosto de 2020.<br/>
+          <div class="extra_footer">
+            <a href="http://sistemas.uniandes.edu.co">Departamento de Ingeniería de Sistemas y Computación</a> - Universidad de los Andes
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

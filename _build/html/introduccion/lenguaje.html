@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>El lenguaje de programación Python &#8212; Introducción a la Programación</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/introduccion/lenguaje.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Estructura del libro" href="estructura.html" />
+    <link rel="prev" title="Sobre este libro" href="acerca.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="http://cupi2-ip.github.io/IPBook/introduccion/lenguaje.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="El lenguaje de programación Python" />
+<meta property="og:description" content="El lenguaje de programación Python  Simple is better than complex.  Tim Peters, The Zen of Python  Como ya dijimos, para este libro (y para el curso de Introduc" />
+<meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/uniandes_logo.jpeg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introducción a la Programación</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="../portada.html">1. Portada</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Antes de empezar</p>
+</li>
+  <li class="active">
+    <a href="index.html">2. Introducción</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="programar.html">2.1 ¿Qué es programar?</a>
+    </li>
+    <li class="">
+      <a href="practicas.html">2.2 Prácticas fundamentales</a>
+    </li>
+    <li class="">
+      <a href="acerca.html">2.3 Sobre este libro</a>
+    </li>
+    <li class="active">
+      <a href="">2.4 El lenguaje de programación Python</a>
+    </li>
+    <li class="">
+      <a href="estructura.html">2.5 Estructura del libro</a>
+    </li>
+    <li class="">
+      <a href="imagenes.html">2.6 Créditos de las imágenes</a>
+    </li>
+  </ul>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 1</p>
+</li>
+  <li class="">
+    <a href="../nivel1/intro.html">3. Empezando a programar</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 1</p>
+</li>
+  <li class="">
+    <a href="../nivel01a/index.html">4. Descomposición de programas</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 2</p>
+</li>
+  <li class="">
+    <a href="../nivel2/intro.html">5. Tomando decisiones</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 2</p>
+</li>
+  <li class="">
+    <a href="../nivel02a/index.html">6. Plan de Pruebas</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 3</p>
+</li>
+  <li class="">
+    <a href="../nivel3/intro.html">7. Repitiendo acciones</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 3</p>
+</li>
+  <li class="">
+    <a href="../nivel03a/index.html">8. Dividir y  Conquistar</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 4</p>
+</li>
+  <li class="">
+    <a href="../nivel4/intro.html">9. Matrices y Librerías</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/introduccion/lenguaje.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#python" class="nav-link">Python</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#python-para-introduccion-a-la-programacion" class="nav-link">Python para Introducción a la Programación</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="el-lenguaje-de-programacion-python">
+<h1>El lenguaje de programación Python<a class="headerlink" href="#el-lenguaje-de-programacion-python" title="Permalink to this headline">¶</a></h1>
+<blockquote class="epigraph">
+<div><p>Simple is better than complex.</p>
+<p class="attribution">—Tim Peters, The Zen of Python</p>
+</div></blockquote>
+<p>Como ya dijimos, para este libro (y para el curso de <strong>Introducción a la Programación</strong> del <a class="reference external" href="http://sistemas.uniandes.edu.co">Departamento de Ingeniería de Sistemas</a> de la Universidad de los Andes), el lenguaje de programación que usaremos es Python o más precisamente Python 3 <a class="footnote-reference brackets" href="#python3" id="id1">1</a>.</p>
+<p>Python es uno de miles de lenguajes de programación existentes en el mundo. Es posible que usted haya escuchado hablar o haya usado alguno de los siguientes: C, C++, Java, Kotlin, Scala, JavaScript, TypeScript, C#, PHP, Ruby, Visual Basic, Pascal, Basic, Logo, Cobol, Fortran, LISP. Además, hay ambientes de trabajo especializados que tienen sus propios lenguajes de programación, como R (para estadística), MathLab (para aplicaciones científicas) o Swift (para aplicaciones en iOS y MacOS).</p>
+<p>Seleccionar un lenguaje de programación no es una tarea fácil: todos tienen ventajas y desventajas que van mucho más allá de lo que puede y no puede hacerse. Algunos lenguajes están diseñados o son particularmente buenos para construir cierto tipo de aplicaciones (por ejemplo, JavaScript para aplicaciones que corren en navegadores web, Swift para aplicaciones en iOS, Visual Basic para aplicaciones en Office, C/C++ para aplicaciones de bajo nivel o que requieran un altísimo desempeño) así que sería difícil usarlos en otros contextos o reemplazarlos por otros. Más allá de esto, casi cualquier lenguaje puede utilizarse para resolver cualquier problema.</p>
+<p>Otra diferencia importante entre lenguajes es la disponibilidad de ayuda (manuales, ejemplos, foros, cursos, etc.), librerías (programas que resuelvan problemas específicos que podamos reutilizar en nuestros propios programas) y herramientas de desarrollo. Seguramente será más díficil empezar a usar un lenguaje <em>esotérico</em>, usado por pocas personas en el mundo, que un lenguaje muy popular para el cual haya una gran cantidad de recursos disponibles y un público creciente que produzca cada vez más material de soporte. Sin embargo, debe ser claro que popularidad no implica calidad: hay lenguajes que han sido extraordinariamente populares a pesar de la gran cantidad de problemas de fondo que tenían. Además, la popularidad cambia con el tiempo: los lenguajes que hoy en día encabezan las listas eran prácticamente desconocidos hace 10 años y posiblemente serán remplazados dentro de los siguientes 10 años.</p>
+<p>Finalmente, hay diferencias importantes en la complejidad misma de los lenguajes y de los programas que se construyen con ellos. El programa que en un lenguaje puede requerir unas pocas líneas de código, en otro lenguaje puede requerir diez o más veces la cantidad de líneas de código <a class="footnote-reference brackets" href="#helloworld" id="id2">2</a>. Además, en algunos lenguajes pueden escribirse programas crípticos, cuyo funcionamiento puede ser imposible de entender sin ayuda del autor, mientras que otros lenguajes fomentan que los programas sean sencillos y fáciles de entender y de mantener, sin sacrificar las funcionalidades.</p>
+<div class="section" id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<p>Comparado con otros lenguajes, Python tiene algunas limitaciones evidentes, pero que no son relevantes para este libro. Por el contrario, Python tiene varias características que lo hacen un lenguaje muy adecuado, en este momento, para aprender a programar. Las más importante es que Python comparte muchos conceptos y estructuras con muchos otros lenguajes, así que debería ser fácil aprender uno de estos lenguajes después de aprender a programar en Python.</p>
+<p>La segunda razón es que la filosofía detrás del diseño del lenguaje buscaba la simplicidad y la claridad. El texto “The Zen of Python”, de Tim Peters, resume esta filosofía en 19 aforismos de los cuales quisiéramos destacar los siguientes tres porque deberíamos aplicarlos a nuestros propios programas:</p>
+<ul class="simple">
+<li><p><strong>Explicit is better than implicit (Explícito es mejor que implícito).</strong> ¿Recuerda cuando su profesor de matemáticas en el colegio le decía que el procedimiento para resolver un examen tenía que quedar escrito? Con esto su profesor buscaba entender qué era lo que estaba haciendo y cómo estaba llegando a la respuesta. Si en algún punto del procedimiento usted tenía un error, su profesor probablemente le corrigió el error y siguió aplicando el procedimiento para llegar a la respuesta correcta. Lo mismo ocurre al programar: es mejor hacer explícito lo que se está haciendo, en pequeños pasos, para que sea más fácil encontrar errores o implementar nuevas funcionalidades.</p></li>
+<li><p><strong>Simple is better than complex (Simple es mejor que complejo).</strong> Cuando tenga que resolver un problema, le recomendamos que busque la solución más simple que pueda funcionar: entre más complicada sea una solución, más difícil será construirla, corregirla o mejorarla.</p></li>
+<li><p><strong>Readability counts (La facilidad de lectura es importante).</strong> Parafraseando al profesor Harold Abelson, los programas se deben construir pensando primero en que humanos van a leerlos y luego en que un computador va a ejecutarlos. Además, el primer humano que va a leer nuestros programas somos nosotros mismos: deberíamos hacernos el favor de siempre escribir código que podamos leer con facilidad.</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>En este libro vamos a incluir frecuentemente anotaciones para reforzar estas ideas y, dentro del nivel 1, una sección dedicada enteramente a estos temas. Por favor no los olvide.</p>
+</div>
+<p>Para acceder al texto completo de “The Zen of Python” basta escribir <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">this</span></code> en un intérprete de Python. El resultado debería ser el siguiente:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">this</span>
+<span class="go">The Zen of Python, by Tim Peters</span>
+
+<span class="go">Beautiful is better than ugly.</span>
+<span class="go">Explicit is better than implicit.</span>
+<span class="go">Simple is better than complex.</span>
+<span class="go">Complex is better than complicated.</span>
+<span class="go">Flat is better than nested.</span>
+<span class="go">Sparse is better than dense.</span>
+<span class="go">Readability counts.</span>
+<span class="go">Special cases aren&#39;t special enough to break the rules.</span>
+<span class="go">Although practicality beats purity.</span>
+<span class="go">Errors should never pass silently.</span>
+<span class="go">Unless explicitly silenced.</span>
+<span class="go">In the face of ambiguity, refuse the temptation to guess.</span>
+<span class="go">There should be one-- and preferably only one --obvious way to do it.</span>
+<span class="go">Although that way may not be obvious at first unless you&#39;re Dutch.</span>
+<span class="go">Now is better than never.</span>
+<span class="go">Although never is often better than *right* now.</span>
+<span class="go">If the implementation is hard to explain, it&#39;s a bad idea.</span>
+<span class="go">If the implementation is easy to explain, it may be a good idea.</span>
+<span class="go">Namespaces are one honking great idea -- let&#39;s do more of those!</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="python-para-introduccion-a-la-programacion">
+<h2>Python para Introducción a la Programación<a class="headerlink" href="#python-para-introduccion-a-la-programacion" title="Permalink to this headline">¶</a></h2>
+<p>Para concluir esta sección, vamos a resumir los principales motivos detrás de la decisión que tomamos de usar el lenguaje Python en el curso Introducción a la Programación de la Universidad de los Andes.</p>
+<ol class="simple">
+<li><p><strong>Facilidad.</strong> El primer punto tuvo que ver con las características del lenguaje que lo hacen fácil de aprender para los que nunca antes han programado. En particular, para nosotros era importante que no fuera obligatorio utilizar los conceptos de programación orientada a objetos para poder construir programas interesantes y relativamente complejos.</p></li>
+<li><p><strong>Uso actual en cursos posteriores.</strong> Introducción a la Programación es el primer curso donde los estudiantes de nuestra Universidad tienen que programar, pero no es el único. Cada vez más programas y facultades tienen cursos donde la programación es un elemento central y en varios de estos cursos Python ya había sido adoptado.</p></li>
+<li><p><strong>Compatibilidad.</strong> Como dijimos antes, Python se basa en conceptos que son comunes a muchos lenguajes de programación, así que la transición a otros lenguajes debería ser relativamente fácil. Nosotros creemos que al utilizar Python vamos a lograr que nuestros estudiantes desarrollen las habilidades de programación fundamentales que les permitan desempeñarse satisfactoriamente en tanto en cursos posteriores como en sus profesiones.</p></li>
+</ol>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="python3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Desafortunadamente, Python tiene una historia larga de problemas de versiones. En Diciembre de 2008 apareció oficialmente Python 3.0, lo cual debería haber logrado que las versiones anteriores fueran consideradas <em>obsoletas</em>. El problema es que había tantos programas y librerías construidas sobre las versiones <em>2.x</em> que la transición completa ha tardado más de 10 años en ocurrir. El resultado de esto es que todavía sea fácil encontrar instalaciones de Python 2.7 como por ejemplo en las instalaciones por defecto del sistema operativo MacOS. Para efectos de este libro, cuando corra el intérprete de Python, tenga siempre cuidado de que sea una versión mayor a la 3.6.</p>
+</dd>
+<dt class="label" id="helloworld"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Un buen ejemplo de esto se encuentra en <a class="reference external" href="http://helloworldcollection.de/">The Hello World Collection</a>, donde hay más de 600 implementaciones del programa para escribir “Hola, Mundo!”</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="acerca.html" title="previous page">Sobre este libro</a>
+    <a class='right-next' id="next-link" href="estructura.html" title="next page">Estructura del libro</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Mario Sánchez<br/>
+        
+            &copy; Copyright Agosto de 2020.<br/>
+          <div class="extra_footer">
+            <a href="http://sistemas.uniandes.edu.co">Departamento de Ingeniería de Sistemas y Computación</a> - Universidad de los Andes
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

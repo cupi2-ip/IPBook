@@ -1,0 +1,430 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tuplas &#8212; Introducción a la Programación</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel4/seccion4-2.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Matrices" href="seccion4-3.html" />
+    <link rel="prev" title="Un programa para leer" href="seccion4-1.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="http://cupi2-ip.github.io/IPBook/nivel4/seccion4-2.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Tuplas" />
+<meta property="og:description" content="Tuplas  Objetivo de la sección  El objetivo de esta sección es presentar el tipo de dato tupla y explicar cuáles son las ventajas que trae su uso en casos muy p" />
+<meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/uniandes_logo.jpeg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introducción a la Programación</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="../portada.html">1. Portada</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Antes de empezar</p>
+</li>
+  <li class="">
+    <a href="../introduccion/index.html">2. Introducción</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 1</p>
+</li>
+  <li class="">
+    <a href="../nivel1/intro.html">3. Empezando a programar</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 1</p>
+</li>
+  <li class="">
+    <a href="../nivel01a/index.html">4. Descomposición de programas</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 2</p>
+</li>
+  <li class="">
+    <a href="../nivel2/intro.html">5. Tomando decisiones</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 2</p>
+</li>
+  <li class="">
+    <a href="../nivel02a/index.html">6. Plan de Pruebas</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 3</p>
+</li>
+  <li class="">
+    <a href="../nivel3/intro.html">7. Repitiendo acciones</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 3</p>
+</li>
+  <li class="">
+    <a href="../nivel03a/index.html">8. Dividir y  Conquistar</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 4</p>
+</li>
+  <li class="active">
+    <a href="intro.html">9. Matrices y Librerías</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="seccion4-1.html">9.1 Un programa para leer</a>
+    </li>
+    <li class="active">
+      <a href="">9.2 Tuplas</a>
+    </li>
+    <li class="">
+      <a href="seccion4-3.html">9.3 Matrices</a>
+    </li>
+    <li class="">
+      <a href="seccion4-4.html">9.4 Imágenes RGB</a>
+    </li>
+    <li class="">
+      <a href="seccion4-5.html">9.5 Análisis de datos con Pandas</a>
+    </li>
+    <li class="">
+      <a href="seccion4-6.html">9.6 Gráficas usando Pandas</a>
+    </li>
+    <li class="">
+      <a href="seccion4-7.html">9.7 Un programa para leer (2)</a>
+    </li>
+    <li class="">
+      <a href="seccion4-8.html">9.8 Errores frecuentes</a>
+    </li>
+    <li class="">
+      <a href="seccion4-9.html">9.9 Ejercicios adicionales</a>
+    </li>
+  </ul>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/nivel4/seccion4-2.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#el-tipo-tuple-en-python" class="nav-link">El tipo tuple en Python</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#empaquetado-y-desempaquetado" class="nav-link">Empaquetado y desempaquetado</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#uso-de-tuplas" class="nav-link">Uso de tuplas</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#creacion-de-rectangulos" class="nav-link">Creación de rectángulos</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#estadisticas-de-una-lista" class="nav-link">Estadísticas de una lista</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#ejercicios" class="nav-link">Ejercicios</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#mas-alla-de-python" class="nav-link">Más allá de Python</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="warning admonition">
+<p class="admonition-title">Versión borrador / preliminar</p>
+<p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
+</div>
+<div class="section" id="tuplas">
+<h1>Tuplas<a class="headerlink" href="#tuplas" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-objetivo-de-la-seccion admonition">
+<p class="admonition-title">Objetivo de la sección</p>
+<p>El objetivo de esta sección es presentar el tipo de dato <em>tupla</em> y explicar cuáles son las ventajas que trae su uso en casos muy particulares.</p>
+</div>
+<p>Al inicio de este libro presentamos los tipos <strong>str</strong>, <strong>int</strong>, <strong>float</strong> y <strong>bool</strong>. Todos estos son tipos en los cuales hay un único valor que nos interese. Luego estudiamos los tipos <strong>dict</strong> y <strong>list</strong>, que sirven para representar valores múltiples con muchísima libertad: una lista puede tener cualquier cantidad de elementos, así como un diccionario puede tener cualquier cantidad de llaves. Todos estos tipos son de utilidad en muchísimos casos, pero tienen una limitación: no nos sirven en casos en los que se quiera tener un conjunto limitado de valores.</p>
+<p>Par ilustrar el problema, tomemos el caso de una coordenada cartesiana <em>(x,y)</em>. Si queremos representar esta coordenada, podríamos utilizar dos variables de tipo <strong>float</strong>, o podríamos utilizar una lista con dos números flotantes. En el primer caso, el problema es que estaríamos usando dos valores para representar una sola coordenada. Así, consturir una función que retornara una coordenada sería un problema porque una función sólo puede retornar un valor. En el segundo caso, tendríamos una sola lista con los dos valores así que el problema del retorno no se presentaría. El problema acá sería que no habría ninguna garantía de que la lista retornada tenga exactamente 2 posiciones: podría tener 1, 2, 3, más de 3 o incluso podría ser una lista vacía. Aunque nosotros podríamos verificar el tamaño, sería mucho más conveniente tener un tipo de dato que nos permita agrupar múltiples valores y al mismo tiempo nos dé un poco más de garantía con respecto a la cantidad y a su orden.</p>
+<p>En Python, esto lo vamos a lograr con el tipo de dato <strong>tuple</strong>, llamado <em>tupla</em> en español, el cual sirve para representar una secuencia inmutable de valores. A continuación estudiaremos este tipo de datos e ilustraremos su uso con varios ejemplos.</p>
+<div class="section" id="el-tipo-tuple-en-python">
+<h2>El tipo tuple en Python<a class="headerlink" href="#el-tipo-tuple-en-python" title="Permalink to this headline">¶</a></h2>
+<p>Para ilustrar el uso del tipo <strong>tuple</strong>, usaremos el ejemplo de las coordenadas cartesianas que introducimos más arriba.</p>
+<p>En primer lugar, veamos que la construcción de una nueva tupla requiere que se especifique desde el inicio cuáles van a ser sus valores:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">coordenada</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">coordenada</span><span class="p">))</span>
+<span class="go">&lt;class &#39;tuple&#39;&gt;</span>
+</pre></div>
+</div>
+<p>Como se ve en este ejemplo, una tupla se crea usando paréntesis redondos, a diferencia de los cuadrados que se usan para las listas, y las llaves que se usan para los diccionarios. Los valores que irán dentro de la tupla se separan siempre usando comas y, al igual que en las listas, se organizan dentro de la tupla en el orden en que se especifican iniciando con la posición 0.</p>
+<p>Si queremos consultar los valores dentro de una tupla tenemos que usar la posición al igual que como se hace en una lista:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">coordenada</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">coordenada</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="go">3 - 4.5</span>
+</pre></div>
+</div>
+<p>Las tuplas también se pueden recorrer exactamente igual a como se recorrería una lista:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">valor</span> <span class="ow">in</span> <span class="n">coordenada</span><span class="p">:</span>
+<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
+<span class="go">3</span>
+<span class="go">4.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">coordenada</span><span class="p">)):</span>
+<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">coordenada</span><span class="p">[</span><span class="n">pos</span><span class="p">])</span>
+<span class="gp">...</span>
+<span class="go">0 - 3</span>
+<span class="go">1 - 4.5</span>
+</pre></div>
+</div>
+<p>La gran diferencia entre las tuplas y las listas es que las tuplas son <strong>inmutables</strong>. Esto quiere decir que después de que una tupla se haya creado, es imposible modificar los valores que contiene. Esto quiere decir que no existen métodos equivalentes a <code class="docutils literal notranslate"><span class="pre">append</span></code> e <code class="docutils literal notranslate"><span class="pre">insert</span></code>, y que no es posible hacer una asignación a una tupla ya creada.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">coordenada</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">&#39;tuple&#39; object does not support item assignment</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="empaquetado-y-desempaquetado">
+<h2>Empaquetado y desempaquetado<a class="headerlink" href="#empaquetado-y-desempaquetado" title="Permalink to this headline">¶</a></h2>
+<p>Una característica muy útil de las tuplas en Python es que permiten hacer lo que denomina <em>empaquetado</em> y <em>desempaquetado</em> de valores. <em>Empaquetado</em> hace referencia a lo que ya vimos: tomar varios valores y agruparlos en una única tupla. El <em>desempaquetado</em> es el proceso inverso de tomar los valores contenidos en una tupla y dejarlos en variables separadas. Lo que hace esto  interesante es que, en lugar de requerir varias instrucciones con asignaciones, se puede hacer en una sola instrucción.</p>
+<p>El siguiente fragmento muestra cómo se podrían desempaquetar los valores de una coordenada sin tener que acceder a cada una de las posiciones en la tupla:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">coordenada</span>
+</pre></div>
+</div>
+<p>Si no se usara la capacidad de desempaquetar, el código habría tenido que ser el siguiente.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">coordenada</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">coordenada</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="uso-de-tuplas">
+<h2>Uso de tuplas<a class="headerlink" href="#uso-de-tuplas" title="Permalink to this headline">¶</a></h2>
+<p>Las tuplas en Python pueden utilizarse en muchas situaciones diferente en las que también podrían utilizarse listas. Sin embargo, es recomendable que se usen cuando se requieran las siguientes características:</p>
+<ul class="simple">
+<li><p>Agrupar varios valores, asegurando la cantidad de valores</p></li>
+<li><p>Inmutabilidad</p></li>
+</ul>
+<p>Como ya vimos antes, un uso muy común para las tuplas es servir para agrupar y organizar valores retornados por una función. En este caso, el uso de tuplas nos ayuda a garantizar que los valores retornados por la función estén siempre en el orden que se espera y que no sean modificados más adelante.</p>
+<p>Otro uso muy común es agrupar valores que siempre deberían estar juntos. Por ejemplo, si se está trabajando con coordenadas cartesianas las tuplas servirán para agrupar los valores para cada uno de los ejes.</p>
+<p>Veamos a continuación otros ejemplos de uso de tuplas.</p>
+<div class="section" id="creacion-de-rectangulos">
+<h3>Creación de rectángulos<a class="headerlink" href="#creacion-de-rectangulos" title="Permalink to this headline">¶</a></h3>
+<p>En este caso tenemos una función que recibe las coordenadas <em>(x,y)</em> de dos puntos y encuentra el rectángulo delimitado por esos puntos. Para esto, la función busca la esquina del rectángulo con menor coordenadas <em>x</em> y <em>y</em>, y calcula el ancho y alto del rectángulo.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">crear_rectangulo</span><span class="p">(</span><span class="n">punto1</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">punto2</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+  <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">punto1</span>
+  <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">punto2</span>
+  <span class="n">ancho</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span>
+  <span class="n">alto</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y2</span><span class="p">)</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ancho</span><span class="p">,</span> <span class="n">alto</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A continuación vemos cómo se puede utilizar el mecanismo de desempaquetado para llamar a la función y almacenar el resultado en cuatro variables.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ancho</span><span class="p">,</span> <span class="n">alto</span> <span class="o">=</span> <span class="n">crear_rectangulo</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="estadisticas-de-una-lista">
+<h3>Estadísticas de una lista<a class="headerlink" href="#estadisticas-de-una-lista" title="Permalink to this headline">¶</a></h3>
+<p>En este caso tenemos una función que calcula 3 estadísticas sobre una lista: el menor valor, el mayor valor y el valor promedio. Esta función recibe la lista de valores y retorna una tupla con los tres números calculados. Lo interesante de este ejemplo es que normalmente se habrían necesitado 3 funciones, cada una con su propio recorrido sobre la lista, para calular los tres valores. En este caso estamos aprovechando para calcular todo lo que necesitamos con un único recorrido.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">estadisticas</span><span class="p">(</span><span class="n">valores</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+  <span class="n">mayor</span> <span class="o">=</span> <span class="n">valores</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="n">menor</span> <span class="o">=</span> <span class="n">valores</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">for</span> <span class="n">valor</span> <span class="ow">in</span> <span class="n">valores</span><span class="p">:</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">valor</span>
+    <span class="k">if</span> <span class="n">valor</span> <span class="o">&gt;</span> <span class="n">mayor</span><span class="p">:</span>
+      <span class="n">mayor</span> <span class="o">=</span> <span class="n">valor</span>
+    <span class="k">elif</span> <span class="n">valor</span> <span class="o">&lt;</span> <span class="n">menor</span><span class="p">:</span>
+      <span class="n">menor</span> <span class="o">=</span> <span class="n">valor</span>
+  <span class="n">promedio</span> <span class="o">=</span> <span class="n">total</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">menor</span><span class="p">,</span> <span class="n">mayor</span><span class="p">,</span> <span class="n">promedio</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A continuación vemos cómo se puede utilizar el mecanismo de desempaquetado para llamar a la función y almacenar el resultado en tres variables.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">menor</span><span class="p">,</span> <span class="n">mayor</span><span class="p">,</span> <span class="n">promedio</span> <span class="o">=</span> <span class="n">estadisticas</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Construya una función que reciba dos vectores y retorne un nuevo vector que sea la suma de los dos vectores recibidos. Cada vector debe recibirse como una tupla con dos valores flotantes.</p></li>
+<li><p>Construya una función que reciba una cadena de caracteres y retorne una lista de parejas (tuplas) donde la primera posición corresponda a una palabra que aparezca en la cadena y la segunda posición corresponda a la cantidad de veces que aparece la palabra en la cadena. La lista retornada tiene que tener tatas parejas como palabras <em>diferentes</em> haya en la cadena original.</p></li>
+<li><p>En este ejercicio vamos a construir un rudimentario algoritmo de compresión que nos va a servir para reducir cadenas de ceros y unos. Lo que va a hacer el algoritmo es encontrar las posiciones en las que haya secuencias de uno o más unos y retornar una lista con la posición y tamaño de cada secuencia. Usted tiene que construir entonces una función llamada <code class="docutils literal notranslate"><span class="pre">comprimir</span></code> que reciba una cadena de caracteres (que podemos asumir que va a tener sólo los caracteres <code class="docutils literal notranslate"><span class="pre">'0'</span></code> o <code class="docutils literal notranslate"><span class="pre">'1'</span></code>) y que retorne una tupla con dos elementos: el primer elemento, será la longitud original de la cadena; el segundo elemento será una lista de tuplas, donde cada tupla tiene primero el valor de una posición en la que había un <code class="docutils literal notranslate"><span class="pre">'1'</span></code> en la cadena original y luego tiene la cantidad de unos seguidos que había a partir de esa posición. Por ejemplo, si la cadena de entrada fuera <code class="docutils literal notranslate"><span class="pre">'101101111000110'</span></code>, el resultado debería ser <code class="docutils literal notranslate"><span class="pre">(15,</span> <span class="pre">[(0,</span> <span class="pre">1),</span> <span class="pre">(2,</span> <span class="pre">2),</span> <span class="pre">(5,</span> <span class="pre">4),</span> <span class="pre">(12,</span> <span class="pre">2)])</span></code> porque la cadena original tenía 15 caracteres y porque había 4 secuencias de unos.</p></li>
+<li><p>En este ejercicio usted debe construir la función llamada <code class="docutils literal notranslate"><span class="pre">descomprimir</span></code>, que debe ser capaz de tomar el resultado de la función <code class="docutils literal notranslate"><span class="pre">comprimir</span></code> y producir la cadena original. Es decir, si la función <code class="docutils literal notranslate"><span class="pre">descomprimir</span></code> recibe la tupla <code class="docutils literal notranslate"><span class="pre">(15,</span> <span class="pre">[(0,</span> <span class="pre">1),</span> <span class="pre">(2,</span> <span class="pre">2),</span> <span class="pre">(5,</span> <span class="pre">4),</span> <span class="pre">(12,</span> <span class="pre">2)])</span></code>, el resultado debería ser la cadena <code class="docutils literal notranslate"><span class="pre">'101101111000110'</span></code>.</p></li>
+<li><p>Una universidad tiene información sobre la cantidad de estudiantes inscritos en cada curso y sobre los salones (edificio y código de salón) donde se deben dictar las clases. Dada esta información, el departamento de seguridad de la Universidad está interesado en saber cuántos estudiantes debería haber dentro de cada edificio en caso de que se tenga que realizar una evacuación. Usted debe crear una función llamada <code class="docutils literal notranslate"><span class="pre">contar_estudiantes</span></code> que reciba la información de los cursos y un horario y retorne la cantidad de estudiantes por edificio. Las entradas de la función serán las siguientes: 1) un diccionario donde las llaves serán los nombres de los cursos y los valores serán también diccionarios con tres llaves: <code class="docutils literal notranslate"><span class="pre">'inscritos'</span></code> para indicar el número de estudiantes inscritos en el curso, <code class="docutils literal notranslate"><span class="pre">'horario'</span></code> para indicar el horario en el que se dicta el curso, y <code class="docutils literal notranslate"><span class="pre">'ubicacion'</span></code> para indicar el salón donde se dicta el curso. El horario de un curso se representa con una tupla que tiene en la primera posición el día de la semana (‘lunes’, ‘martes’, etc. ) y en la segunda posición tiene una cadena con la franja horaria (‘10:00 - 11:30’, ‘11:30 - 13:00’, etc.). La ubicación de un curso se representa también con una tupla que tiene en la primera posición el nombre de un edificio y en la segunda posición el código del salón (ambos son cadenas de caracteres). 2) El segundo parámetro de la función será el horario en el que se quieren contar los estudiantes (también se expresa con una tupla de número de día y franja horaria). Se puede asumir que las franjas horarias en las que se va a hacer la consulta son las mismas franjas horarias de los cursos. La función debe retornar una lista de tuplas donde cada tupla tendrá en la primera posición el nombre de un edificio y en la segunda posición la cantidad de estudiantes que deberían estar dentro del edificio en el horario consultado.</p></li>
+</ol>
+</div>
+<div class="section" id="mas-alla-de-python">
+<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
+<p>No es usual que los lenguajes de programación ofrezcan un tipo básico para manejar tuplas, así que aprender a utilizar este nuevo tipo no necesariamente será de utilidad en otros lenguajes. Sin embargo, muchas librerías de Python utilizan tuplas de forma frecuente, así que es conveniente adquirir destreza en  su uso.</p>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="seccion4-1.html" title="previous page">Un programa para leer</a>
+    <a class='right-next' id="next-link" href="seccion4-3.html" title="next page">Matrices</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Mario Sánchez<br/>
+        
+            &copy; Copyright Agosto de 2020.<br/>
+          <div class="extra_footer">
+            <a href="http://sistemas.uniandes.edu.co">Departamento de Ingeniería de Sistemas y Computación</a> - Universidad de los Andes
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
