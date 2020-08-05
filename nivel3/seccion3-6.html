@@ -1,0 +1,459 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Más algorítmica &#8212; Introducción a la Programación</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel3/seccion3-6.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Archivos" href="seccion3-7.html" />
+    <link rel="prev" title="Recorrido de secuencias" href="seccion3-5.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="http://cupi2-ip.github.io/IPBook/nivel3/seccion3-6.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Más algorítmica" />
+<meta property="og:description" content="Más algorítmica  Objetivo de la sección  El objetivo de esta sección es …  Complexity has and will maintain a strong fascination for many people. It is true tha" />
+<meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/uniandes_logo.jpeg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introducción a la Programación</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="../portada.html">1. Portada</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Antes de empezar</p>
+</li>
+  <li class="">
+    <a href="../introduccion/index.html">2. Introducción</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 1</p>
+</li>
+  <li class="">
+    <a href="../nivel1/intro.html">3. Empezando a programar</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 1</p>
+</li>
+  <li class="">
+    <a href="../nivel01a/index.html">4. Descomposición de programas</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 2</p>
+</li>
+  <li class="">
+    <a href="../nivel2/intro.html">5. Tomando decisiones</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 2</p>
+</li>
+  <li class="">
+    <a href="../nivel02a/index.html">6. Plan de Pruebas</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 3</p>
+</li>
+  <li class="active">
+    <a href="intro.html">7. Repitiendo acciones</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="seccion3-1.html">7.1 Un programa para leer</a>
+    </li>
+    <li class="">
+      <a href="seccion3-2.html">7.2 Instrucciones repetidas</a>
+    </li>
+    <li class="">
+      <a href="seccion3-3.html">7.3 Listas</a>
+    </li>
+    <li class="">
+      <a href="seccion3-4.html">7.4 Slicing</a>
+    </li>
+    <li class="">
+      <a href="seccion3-5.html">7.5 Recorrido de secuencias</a>
+    </li>
+    <li class="active">
+      <a href="">7.6 Más algorítmica</a>
+    </li>
+    <li class="">
+      <a href="seccion3-7.html">7.7 Archivos</a>
+    </li>
+    <li class="">
+      <a href="seccion3-8.html">7.8 Nociones de complejidad</a>
+    </li>
+    <li class="">
+      <a href="seccion3-9.html">7.9 Un programa para leer (2)</a>
+    </li>
+    <li class="">
+      <a href="seccion3-10.html">7.10 Más sobre parámetros en Python</a>
+    </li>
+    <li class="">
+      <a href="seccion3-11.html">7.11 Errores frecuentes</a>
+    </li>
+    <li class="">
+      <a href="seccion3-12.html">7.12 Ejercicios adicionales</a>
+    </li>
+  </ul>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 3</p>
+</li>
+  <li class="">
+    <a href="../nivel03a/index.html">8. Dividir y  Conquistar</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 4</p>
+</li>
+  <li class="">
+    <a href="../nivel4/intro.html">9. Matrices y Librerías</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/nivel3/seccion3-6.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#recorridos-totales" class="nav-link">Recorridos totales</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#recorridos-parciales" class="nav-link">Recorridos parciales</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#recorridos-dobles" class="nav-link">Recorridos dobles</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#recorridos-con-acumulaciones" class="nav-link">Recorridos con acumulaciones</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#soluciones-recurrentes" class="nav-link">Soluciones recurrentes</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#contar" class="nav-link">Contar</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#buscar" class="nav-link">Buscar</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#encontrar-el-mayor-menor" class="nav-link">Encontrar el mayor / menor</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#contar-apariciones-histograma" class="nav-link">Contar apariciones (histograma)</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#filtrar" class="nav-link">Filtrar</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#map" class="nav-link">Map</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#ejercicios" class="nav-link">Ejercicios</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#mas-alla-de-python" class="nav-link">Más allá de Python</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="warning admonition">
+<p class="admonition-title">Versión borrador / preliminar</p>
+<p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
+</div>
+<div class="section" id="mas-algoritmica">
+<h1>Más algorítmica<a class="headerlink" href="#mas-algoritmica" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-objetivo-de-la-seccion admonition">
+<p class="admonition-title">Objetivo de la sección</p>
+<p>El objetivo de esta sección es …</p>
+</div>
+<blockquote class="epigraph">
+<div><p>Complexity has and will maintain a strong fascination for many people. It is true that we live in a complex world and strive to solve inherently complex problems, which often do require complex mechanisms. However, this should not diminish our desire for elegant solutions, which convince by their clarity and effectiveness. Simple, elegant solutions are more effective, but they are harder to find than complex ones, and they require more time, which we too often believe to be unaffordable</p>
+<p class="attribution">—Niklaus Wirth </p>
+</div></blockquote>
+<p>Introducción a la algorítmica:</p>
+<ul class="simple">
+<li><p>Siempre hay varias opciones</p></li>
+<li><p>Recetas</p></li>
+<li><p>Arsenal propio</p></li>
+</ul>
+<div class="section" id="recorridos-totales">
+<h2>Recorridos totales<a class="headerlink" href="#recorridos-totales" title="Permalink to this headline">¶</a></h2>
+<p>while, for-in</p>
+<p>sumar todos los elementos</p>
+<p>cuántos hay que ….</p>
+</div>
+<div class="section" id="recorridos-parciales">
+<h2>Recorridos parciales<a class="headerlink" href="#recorridos-parciales" title="Permalink to this headline">¶</a></h2>
+<p>while, no for-in</p>
+<p>buscar un elemento</p>
+<p>hay alguno que …
+Ej: hay una vocal mayúscula en esta cadena</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hay__vocal_mayuscula</span><span class="p">(</span><span class="n">cadena</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+  <span class="n">hay_mayuscula</span> <span class="o">=</span> <span class="kc">False</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">cadena</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">hay_mayuscula</span><span class="p">:</span>
+    <span class="n">letra_i</span> <span class="o">=</span> <span class="n">cadena</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">letra_i</span> <span class="ow">in</span> <span class="s2">&quot;AEIOU&quot;</span><span class="p">:</span>
+      <span class="n">hay_mayuscula</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+  
+  <span class="k">return</span> <span class="n">hay_mayuscula</span>
+</pre></div>
+</div>
+<p>Ej 2: en qué posición aparece la primera mayúscula</p>
+</div>
+<div class="section" id="recorridos-dobles">
+<h2>Recorridos dobles<a class="headerlink" href="#recorridos-dobles" title="Permalink to this headline">¶</a></h2>
+<p>totales
+parciales</p>
+<p>hay repetidos
+contar repetidos</p>
+<p>Ej 2: en qué posiciones hay la vocales mayúsculas</p>
+</div>
+<div class="section" id="recorridos-con-acumulaciones">
+<h2>Recorridos con acumulaciones<a class="headerlink" href="#recorridos-con-acumulaciones" title="Permalink to this headline">¶</a></h2>
+<p>promedio</p>
+<p>mayor</p>
+<p>histograma</p>
+</div>
+<div class="section" id="soluciones-recurrentes">
+<h2>Soluciones recurrentes<a class="headerlink" href="#soluciones-recurrentes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="contar">
+<h3>Contar<a class="headerlink" href="#contar" title="Permalink to this headline">¶</a></h3>
+<p><em>Cuál es el problema base</em></p>
+<p><em>Sólución típica</em></p>
+<p><em>Problemas relacionados</em></p>
+</div>
+<div class="section" id="buscar">
+<h3>Buscar<a class="headerlink" href="#buscar" title="Permalink to this headline">¶</a></h3>
+<p><em>Cuál es el problema base</em>
+en qué posición está el primero que cumple</p>
+<p><em>Sólución típica</em></p>
+<p><em>Problemas relacionados</em>
+si hay
+si todos cumplen
+todos los que cumplen</p>
+</div>
+<div class="section" id="encontrar-el-mayor-menor">
+<h3>Encontrar el mayor / menor<a class="headerlink" href="#encontrar-el-mayor-menor" title="Permalink to this headline">¶</a></h3>
+<p><em>Cuál es el problema base</em></p>
+<p><em>Sólución típica</em></p>
+<p><em>Problemas relacionados</em></p>
+</div>
+<div class="section" id="contar-apariciones-histograma">
+<h3>Contar apariciones (histograma)<a class="headerlink" href="#contar-apariciones-histograma" title="Permalink to this headline">¶</a></h3>
+<p><em>Cuál es el problema base</em></p>
+<p><em>Sólución típica</em></p>
+<p><em>Problemas relacionados</em></p>
+</div>
+<div class="section" id="filtrar">
+<h3>Filtrar<a class="headerlink" href="#filtrar" title="Permalink to this headline">¶</a></h3>
+<p><em>Cuál es el problema base</em></p>
+<p><em>Sólución típica</em></p>
+<p><em>Problemas relacionados</em></p>
+</div>
+<div class="section" id="map">
+<h3>Map<a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h3>
+<p><em>Cuál es el problema base</em></p>
+<p><em>Sólución típica</em></p>
+<p><em>Problemas relacionados</em></p>
+</div>
+</div>
+<div class="section" id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Buscar el segundo mayor</p></li>
+<li><p>Hay dos seguidos tales que</p></li>
+<li><p>Están ordenados</p></li>
+<li><p>Hay dos que sumen al menos X</p></li>
+<li><p>Hay tres que sumen exactamente X</p></li>
+<li><p>Buscar mediana: contar cuántos menores que cada uno</p></li>
+<li><p>Contar inversiones: distancia entre …</p></li>
+<li><p>Es anagrama</p></li>
+<li></li>
+</ol>
+</div>
+<div class="section" id="mas-alla-de-python">
+<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
+<p>Además de …</p>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="seccion3-5.html" title="previous page">Recorrido de secuencias</a>
+    <a class='right-next' id="next-link" href="seccion3-7.html" title="next page">Archivos</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Mario Sánchez<br/>
+        
+            &copy; Copyright Agosto de 2020.<br/>
+          <div class="extra_footer">
+            <a href="http://sistemas.uniandes.edu.co">Departamento de Ingeniería de Sistemas y Computación</a> - Universidad de los Andes
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,471 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Lógica vs. Interacción &#8212; Introducción a la Programación</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel1/seccion1-9.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Errores frecuentes" href="seccion1-10.html" />
+    <link rel="prev" title="Un programa para leer (2)" href="seccion1-8.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="http://cupi2-ip.github.io/IPBook/nivel1/seccion1-9.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Lógica vs. Interacción" />
+<meta property="og:description" content="Lógica vs. Interacción  Versión borrador / preliminar  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tien" />
+<meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/uniandes_logo.jpeg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introducción a la Programación</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="../portada.html">1. Portada</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Antes de empezar</p>
+</li>
+  <li class="">
+    <a href="../introduccion/index.html">2. Introducción</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 1</p>
+</li>
+  <li class="active">
+    <a href="intro.html">3. Empezando a programar</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="seccion1-1.html">3.1 Un programa para leer</a>
+    </li>
+    <li class="">
+      <a href="seccion1-2.html">3.2 Ambiente básico de trabajo</a>
+    </li>
+    <li class="">
+      <a href="seccion1-3.html">3.3 Valores y tipos de datos</a>
+    </li>
+    <li class="">
+      <a href="seccion1-4.html">3.4 Variables, expresiones y operadores</a>
+    </li>
+    <li class="">
+      <a href="seccion1-5.html">3.5 Funciones</a>
+    </li>
+    <li class="">
+      <a href="seccion1-6.html">3.6 Definición de funciones</a>
+    </li>
+    <li class="">
+      <a href="seccion1-7.html">3.7 Estilo de programación</a>
+    </li>
+    <li class="">
+      <a href="seccion1-8.html">3.8 Un programa para leer (2)</a>
+    </li>
+    <li class="active">
+      <a href="">3.9 Lógica vs. Interacción</a>
+    </li>
+    <li class="">
+      <a href="seccion1-10.html">3.10 Errores frecuentes</a>
+    </li>
+    <li class="">
+      <a href="seccion1-11.html">3.11 Ejercicios adicionales</a>
+    </li>
+  </ul>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 1</p>
+</li>
+  <li class="">
+    <a href="../nivel01a/index.html">4. Descomposición de programas</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 2</p>
+</li>
+  <li class="">
+    <a href="../nivel2/intro.html">5. Tomando decisiones</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 2</p>
+</li>
+  <li class="">
+    <a href="../nivel02a/index.html">6. Plan de Pruebas</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 3</p>
+</li>
+  <li class="">
+    <a href="../nivel3/intro.html">7. Repitiendo acciones</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 3</p>
+</li>
+  <li class="">
+    <a href="../nivel03a/index.html">8. Dividir y  Conquistar</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 4</p>
+</li>
+  <li class="">
+    <a href="../nivel4/intro.html">9. Matrices y Librerías</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/nivel1/seccion1-9.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#separacion-de-la-logica-y-la-interfaz" class="nav-link">Separación de la lógica y la interfaz</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#implementacion-de-modulos-separados" class="nav-link">Implementación de módulos separados</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#funciones-de-la-interfaz" class="nav-link">Funciones de la interfaz</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#funciones-sin-parametros" class="nav-link">Funciones sin parámetros</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#funciones-sin-retorno" class="nav-link">Funciones sin retorno</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#ejercicios" class="nav-link">Ejercicios</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#mas-alla-de-python" class="nav-link">Más allá de Python</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="logica-vs-interaccion">
+<h1>Lógica vs. Interacción<a class="headerlink" href="#logica-vs-interaccion" title="Permalink to this headline">¶</a></h1>
+<div class="warning admonition">
+<p class="admonition-title">Versión borrador / preliminar</p>
+<p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
+</div>
+<div class="admonition-objetivo-de-la-seccion admonition">
+<p class="admonition-title">Objetivo de la sección</p>
+<p>El objetivo de esta sección es presentar recomendaciones metodológicas para manejar la parte de los programas que se encarga de la interacción con los usuarios y la parte que se encarga de hacer los cálculos y otras operaciones.</p>
+</div>
+<p>Usualmente la preocupación más importante cuando se construye un programa es que sea correcto, es decir que sus cálculos y la forma en la que manipule la información que le dé un usuario sea correcta. Por ejemplo, lo más importante del sistema que manipula el dinero en un banco es que lleve correctamente las cuentas: nadie puede perder dinero, deben cobrar lo correcto por cada operación, el descuento de impuestos debe ajustarse a la ley y deben abonar los intereses correctamente calculados.</p>
+<p>Además de la corrección,  hay otras preocupaciones para tener en cuenta cuando se desarrolla un nuevo programa. Para un usuario, las preocupaciones comunes tienen que ver con la seguridad, el desempeño (qué tan rápido es el sistema) y la usabilidad (qué tan fácil de usar es). Desde el punto de vista de quien desarrolla un sistema, otras preocupaciones importantes son la escalabilidad (qué tan bien funcionará el sistema cuando tenga muchos usuarios o muchos datos), la tolerancia a fallos (cómo se comporta el sistema cuando ocurren ciertos problemas), o la interoperabilidad (qué tan fácil es que el sistema intercambie información con otros sistemas que ya existan) <a class="footnote-reference brackets" href="#ac" id="id1">1</a>.</p>
+<p>Sin embargo, la mayor preocupación para quien desarrolla un sistema debería ser la <em>mantenibilidad</em>. Esto quiere decir: qué tan fácil es hacerle un cambio a un sistema (ej. agregarle alguna funcionalidad, corregir algún error, mejorar su apariencia). Cuando se está aprendiendo a programar puede parecer que esta no es una cuestión importante y que lo prioritario son la corrección y el desempeño. La realidad es que una vez se empieza a usar un programa, siempre es necesario hacerle modificaciones, especialmente cuando es muy exitoso. Sólo piense en la cantidad de actualizaciones que tiene que instalar permanentemente en su computador o en su celular: con casi total seguridad usted no está utilizando la primera versión (1.0) de ninguna aplicación <a class="footnote-reference brackets" href="#mant" id="id2">2</a>.</p>
+<p>La pregunta natural que debería surgir es entonces: ¿cómo logramos que un programa sea mantenible? Ya en este capítulo discutimos la primera recomendación: documentando el código. Cuando el código está documentado es más fácil que otros programadores o nosotros mismos podamos hacer mejoras o correcciones a nuestros programas.</p>
+<p>La segunda recomendación es incluso más importante: estructurando el programa de tal forma que sea fácil de entender. Esto significa que queremos que sea fácil entender cómo está organizado para que cuando haya un error sea fácil encontrar donde se debería corregir, o para que cuando se quiera agregar nuevas funcionalidades no se necesite una gran reestructuración.</p>
+<p>Es posible que en este momento sea difícil para usted imaginarse la complejidad de un gran desarrollo porque hasta ahora sólo ha trabajado con pequeños programas. Con el tiempo se dará cuenta que las recomendaciones para organizar sus programas son tremendamente valiosas y que le ahorrarán mucho trabajo en el futuro. <strong>Acostúmbrese a estructurar bien sus programas mientras sean pequeños, para que sea natural hacerlo cuando sean grandes.</strong></p>
+<p>En esta sección estudiaremos una primera técnica para propiciar la mantenibilidad de los programas. Incidentalmente, para explicar esta técnica tendremos que introducir el concepto de <em>módulo</em> en Python.</p>
+<div class="section" id="separacion-de-la-logica-y-la-interfaz">
+<h2>Separación de la lógica y la interfaz<a class="headerlink" href="#separacion-de-la-logica-y-la-interfaz" title="Permalink to this headline">¶</a></h2>
+<p>Como hasta el momento hemos construido programas relativamente pequeños, hemos usado un solo archivo para cada uno. A partir de este momento vamos a empezar a separar programa en dos módulos: uno para manejar la interacción con el usuario (pedirle datos, mostrarle información, etc.) y otro para manejar todo lo que consideramos la lógica del programa, es decir las instrucciones que son realmente el centro conceptual del programa.</p>
+<p>Consideremos a modo de ejemplo, un programa que sirva para procesar información de un censo de población. El módulo con la interfaz de este programa servirá para que el usuario seleccione qué información quiere consultar y le mostrará las gráficas y tablas correspondientes. Por otro lado, la lógica del programa se encargará de calcular estadísticas, procesar los archivos y generar (¡no visualizar!) las gráficas que requiera el usuario.</p>
+<p>Hay múltiples razones por los cuales esta separación es adecuada para programas como los que vamos a construir en este curso. La primera tiene que ver con el tipo de cosas que se hace en cada parte: mientras que en la interfaz todas las acciones deberían estar orientadas a interactuar con el usuario, en la lógica del programa hacemos cosas mucho más variadas. Con esto logramos que en cada módulo todo lo que hacemos esté relacionado: en lugar de tener funciones que le pidan información al usuario, hagan cálculos complejos y luego muestren el resultado, podemos tener en un módulo funciones dedicadas a la interacción y en otro módulo funciones dedicadas a hacer los cálculos.</p>
+<p>Esta coherencia (o cohesión) termina llevando a programas que son mucho más fáciles de mantener porque dependiendo del tipo de error que se presente sabremos mejor dónde se debe corregir el código. La coherencia también se puede ver en el tipo de funciones que se utilizan: mientras en una interfaz basada en consola encontraremos muchos llamados a las funciones <code class="docutils literal notranslate"><span class="pre">print</span></code> e <code class="docutils literal notranslate"><span class="pre">input</span></code>, dentro de la lógica del programa encontraremos llamados muy diferentes que dependerán del problema que estemos resolviendo.</p>
+<p>Otra ventaja de utilizar esta separación es que se vuelve más fácil probar la lógica de nuestros programas. Cuando la interfaz se mezcla con la lógica, para probar la corrección de un cálculo es necesario probar también la interfaz. Esto implica teclear datos cada vez y observar los resultados para compararlos con los esperados. Si la interfaz está separada de la lógica, podemos invocar directamente las funciones que hacen los cálculos, usando los mismos argumentos cada vez, es decir sin requerir la interacción con el usuario.</p>
+<p>Otro motivo para utilizar esta separación tiene que ver con la reutilización. Veremos más adelante que las interfaces de muchos programas son muy similares y que hay mucho código que fácilmente se puede adaptar para utilizar en un nuevo programa. Si la interfaz estuviera mezclada con la lógica, esta reutilización sería mucho más difícil.</p>
+</div>
+<div class="section" id="implementacion-de-modulos-separados">
+<h2>Implementación de módulos separados<a class="headerlink" href="#implementacion-de-modulos-separados" title="Permalink to this headline">¶</a></h2>
+<p>Veamos ahora cómo se implementa en Python la separación  entre la interfaz y la lógica de los programas. Para esto, tomaremos el programa ‘saludar.py’ que ya conocemos de una sección anterior:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span>
+
+<span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;¿Cuál es su nombre? &quot;</span><span class="p">)</span>
+<span class="n">saludo</span> <span class="o">=</span> <span class="n">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Empezaremos primero con la creación del archivo con la lógica, al cual llamaremos ‘logica_saludar.py’.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Esto está en el archivo logica_saludar.py</span>
+
+<span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span>
+</pre></div>
+</div>
+<p>Como se puede ver, en este archivo únicamente dejamos la función que hace los “cálculos” del programa y crea un mensaje para saludar. Aunque el ejemplo es extremadamente sencillo, es importante notar que en este archivo no se está usando ni la función <code class="docutils literal notranslate"><span class="pre">print</span></code> ni la función <code class="docutils literal notranslate"><span class="pre">input</span></code>.</p>
+<p>Otra cosa importante para analizar es lo que pasaría si decidiéramos ejecutar este módulo usando la siguiente instrucción en la línea de comandos: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">logica_saludar.py</span></code>.</p>
+<p><img alt="" src="../_images/logica_saludar.png" /></p>
+<p>Como se ve en la captura de pantalla, no hay ninguna evidencia en la consola de lo que sucedió y parecería que nada hubiera pasado. En realidad, lo que hizo el intérprete de Python fue lo siguiente:</p>
+<ol class="simple">
+<li><p>Abrió el archivo</p></li>
+<li><p>Leyó la signatura de la función <code class="docutils literal notranslate"><span class="pre">saludar</span></code> y revisó que fuera sintácticamente correcta.</p></li>
+<li><p>Revisó el cuerpo de la función <code class="docutils literal notranslate"><span class="pre">saludar</span></code> y revisó que fuera sintácticamente correcto.</p></li>
+<li><p>Como no había errores, agregó la función a la lista de funciones que se podrían invocar.</p></li>
+<li><p>Terminó la ejecución.</p></li>
+</ol>
+<p>Es decir que, aunque se leyó la definición de la función, no hubo ninguna invocación ni se ejecutó ninguna instrucción.</p>
+<p>Pasemos ahora al módulo en el que vamos a implementar la interfaz de la aplicación. El archivo que usaremos se llamará ‘interfaz_saludar.py’ y estará ubicado en <em>la misma carpeta</em> que el archivo ‘logica_saludar.py’. Si los archivos están en carpetas diferentes, no funcionará todo lo que explicaremos a continuación.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Esto está en el archivo interfaz_saludar.py</span>
+<span class="kn">import</span> <span class="nn">logica_saludar</span> <span class="k">as</span> <span class="nn">logica</span>
+
+<span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;¿Cuál es su nombre? &quot;</span><span class="p">)</span>
+<span class="n">saludo</span> <span class="o">=</span> <span class="n">logica</span><span class="o">.</span><span class="n">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>En la primera línea de este archivo encontramos un tipo de instrucción de Python que no habíamos usado hasta el momento:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logica_saludar</span> <span class="k">as</span> <span class="nn">logica</span>
+</pre></div>
+</div>
+<p>Esta línea la usamos para <em>importar</em> un módulo para que podamos usarlo dentro de otro módulo. En este caso, estamos <em>importando</em> el módulo <code class="docutils literal notranslate"><span class="pre">logica_saludar</span></code> para que podamos usar las funciones definidas dentro del módulo  <code class="docutils literal notranslate"><span class="pre">interfaz_saludar</span></code>. Adicionalmente, nuestra instrucción también está indicando que queremos hacer referencia al módulo importado usando el alias ‘logica’. Como veremos a continuación esto es muy útil cuando el nombre de un módulo importado es muy largo, o cuando queremos importar módulos diferentes que tienen el mismo nombre.</p>
+<p>Las siguientes líneas del programa son similares a las que ya habíamos estudiado excepto por la línea que dice:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">saludo</span> <span class="o">=</span> <span class="n">logica</span><span class="o">.</span><span class="n">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>La diferencia en este caso es que hemos usado el prefijo <code class="docutils literal notranslate"><span class="pre">logica.</span></code> para invocar la función <code class="docutils literal notranslate"><span class="pre">saludar</span></code>. Lo que esto significa es que se debe invocar la función <code class="docutils literal notranslate"><span class="pre">saludar</span></code> que está definida en el módulo que se importó con el nombre <code class="docutils literal notranslate"><span class="pre">logica</span></code>.</p>
+<p>Si el módulo lo hubiéramos importado usando la instrucción</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logica_saludar</span> <span class="k">as</span> <span class="nn">l</span>
+</pre></div>
+</div>
+<p>la invocación a la función habría sido</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">saludo</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finalmente, si sólo hubiéramos importado el módulo usando</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logica_saludar</span>
+</pre></div>
+</div>
+<p>la invocación a la función habría sido</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">saludo</span> <span class="o">=</span> <span class="n">logica_saludar</span><span class="o">.</span><span class="n">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Esto muestra que, si no se le da un alias al módulo al importarlo, se debe utilizar el nombre completo del módulo para invocar sus funciones.</p>
+<p>Finalmente tenemos la captura de pantalla que muestra lo que pasa cuando se ejecuta el programa ‘interfaz_saludar.py’.</p>
+<p><img alt="" src="../_images/interfaz_saludar.png" /></p>
+</div>
+<div class="section" id="funciones-de-la-interfaz">
+<h2>Funciones de la interfaz<a class="headerlink" href="#funciones-de-la-interfaz" title="Permalink to this headline">¶</a></h2>
+<p>En una sección anterior hablamos de la conveniencia de tener funciones sin parámetros o funciones sin retorno. En esta sección podemos retomar la discusión puesto que es precisamente en el módulo que implementa la interfaz de un programa donde tiene más sentido incluir este tipo de funciones.</p>
+<div class="section" id="funciones-sin-parametros">
+<h3>Funciones sin parámetros<a class="headerlink" href="#funciones-sin-parametros" title="Permalink to this headline">¶</a></h3>
+<p>Como dijimos antes, una función sin parámetros no tendría sentido dentro de la definición matemática de función. En el caso de Python, una función cuyo resultado no dependiera de ningún valor externo tampoco tendría mucho sentido; sería mucho más eficiente y claro implementarlo como una constante.</p>
+<p>Sin embargo, dentro del módulo de la interfaz sí puede ser conveniente tener funciones sin parámetros. Tomemos como ejemplo el siguiente fragmento de código:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">libreria</span>
+
+<span class="k">def</span> <span class="nf">calcular_area_cuadrado</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="n">str_lado</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Por favor indique el lado del cuadrado: &quot;</span><span class="p">)</span>
+    <span class="n">lado</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">str_lado</span><span class="p">)</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">libreria</span><span class="o">.</span><span class="n">calcular_area</span><span class="p">(</span><span class="n">lado</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">area</span>
+</pre></div>
+</div>
+<p>En este programa tenemos una función sin parámetros que retorna un número decimal, pero ese número puede variar con cada ejecución. De hecho, el resultado de esta función depende completamente de algo externo: el valor que el usuario teclee cuando se ejecute la función.</p>
+<p>Esta situación es muy frecuente dentro de los módulos que implementan la interfaz y que reciben información del usuario. Desconfíe de una función que no reciba parámetros y se encuentre mezclada con funciones que tengan que ver con la lógica de la aplicación: probablemente sea un error de diseño y sea necesario cambiar la signatura de la función.</p>
+</div>
+<div class="section" id="funciones-sin-retorno">
+<h3>Funciones sin retorno<a class="headerlink" href="#funciones-sin-retorno" title="Permalink to this headline">¶</a></h3>
+<p>En el módulo donde se implementa la interfaz también es posible tener funciones que no tengan un retorno. Estas funciones se suelen llamar <em>procedimientos</em> porque no cumplen con la característica básica de una función de producir un resultado.</p>
+<p>El siguiente fragmento nos muestra una función de la interfaz que no tiene un retorno:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mostrar_resultado</span><span class="p">(</span><span class="n">resultado</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El resultado es:&quot;</span><span class="p">,</span> <span class="n">resultado</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Observe que a diferencia de casi todas las funciones que hemos visto hasta ahora, esta no incluye una instrucción de tipo <code class="docutils literal notranslate"><span class="pre">return</span></code>. Esto quiere decir que, si alguien invoca a esa función, no va a recibir un resultado. Para expresar esto en la signatura, el tipo de retorno de la función se ha declarado como <code class="docutils literal notranslate"><span class="pre">None</span></code>. Más adelante veremos que <code class="docutils literal notranslate"><span class="pre">None</span></code> se utiliza para varias cosas en Python.</p>
+<p>El cuerpo de la función sólo tiene un llamado a la función <code class="docutils literal notranslate"><span class="pre">print</span></code>. Esta función, que sirve para mostrar algún texto en la consola, es la que está produciendo un resultado, aunque no sea un resultado que se pueda utilizar dentro del programa en instrucciones siguientes <a class="footnote-reference brackets" href="#borde" id="id3">3</a>.</p>
+</div>
+</div>
+<div class="section" id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>¿Sólo con base en la signatura y lo que sabe hasta ahora, usted pondría las siguientes funciones en el módulo de la interfaz o en la librería de su programa?</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">funcion(param1:</span> <span class="pre">int,</span> <span class="pre">param2:</span> <span class="pre">int)</span> <span class="pre">-&gt;</span> <span class="pre">int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">funcion()</span> <span class="pre">-&gt;</span> <span class="pre">int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">funcion(param1:</span> <span class="pre">int)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">funcion(param1:</span> <span class="pre">int)</span> <span class="pre">-&gt;</span> <span class="pre">int</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="mas-alla-de-python">
+<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
+<p>La primera parte de esta sección introdujo algunos temas relativamente avanzados que tienen que ver con una gran área de trabajo dentro de la informática llamada <em>Ingeniería de Software</em>. La principal preocupación de esta área es cómo hacer para construir de forma eficiente software con calidad, lo cual implica considerar aspectos como la forma de estructurar el software, las metodologías de trabajo en los proyectos de desarrollo, las técnicas para diseñar interfaces que ofrezcan una buena experiencia a los usuarios, y hasta la psicología de los desarrolladores.</p>
+<p>Es indudable que la selección de los lenguajes de programación que se usen tiene un impacto en muchos de los otros aspectos que son de interés para la Ingeniería de Software. Por ejemplo, el uso de un lenguaje como Python parece acelerar el desarrollo de programas pequeños, pero complica el mantenimiento de programas grandes debido a factores como el uso de un sistema de tipado dinámico.</p>
+<p>Esto no quiere decir que no se pueda usar Python exitosamente para proyectos grandes. Lo que queremos decir es que la selección del lenguaje de programación debe tener en cuenta una gran cantidad de factores que van mucho más allá de cuál es el lenguaje de moda, cuál es el lenguaje que conocemos o cuál es el lenguaje que nos gustaría aprender. Todos los lenguajes tienen ventajas y desventajas que se deben sopesar cuidadosamente, y después de tomar una decisión cualquier proyecto debería introducir instrumentos para mitigar los riesgos o el impacto cuando se materialicen esos riesgos.</p>
+<p>Por ejemplo, si se decide usar un lenguaje como Python o JavaScript para un gran proyecto, deberían definirse varias reglas desde el inicio para contrarrestar la dificultad para aplicar operaciones de <em>refactoring</em> <a class="footnote-reference brackets" href="#refactor" id="id4">4</a>.</p>
+<p>En casi cualquier lenguaje de programación existen mecanismos similares a los módulos para descomponer programas y poder reutilizar bloques. Estos mecanismos también definen <em>espacios de nombres</em> (namespaces). Es decir que agrupan elementos para que los nombres no tengan que ser únicos dentro de todo el programa, y en lugar de eso sean únicos dentro de cada espacio de nombres. En Java y otros lenguajes orientados a objetos los mecanismos básicos de modularización son las clases, aunque también existen otros mecanismos como los paquetes y las librerías empaquetadas.</p>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="ac"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Las preocupaciones de las que hemos estado hablando se conocen usualmente como <em>Requerimientos No Funcionales</em> o como <em>Atributos de Calidad</em>. Aunque usualmente son un tema que se estudia más adelante, no está de más empezar a usar esta terminología y empezar a tener una sensibilidad hacia estas problemáticas. Pensar únicamente en la corrección del software y en construir programas lo más rápidamente posible nos ha llevado a una situación en la que tenemos cada vez más software que es inútil y tiene que botarse a la caneca y reconstruirse.</p>
+</dd>
+<dt class="label" id="mant"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Si se compara el tiempo que toma el desarrollo inicial de un software y el tiempo que dura su mantenimiento posterior, en la mayoría de casos de software exitoso se va a encontrar que el mantenimiento se lleva la mayor parte del tiempo. Por ejemplo, el software que utilizan muchos bancos del mundo en su <em>core</em>, o el software que usan las aerolíneas para el control de vuelos y reservas, o el software que utilizan las empresas de telecomunicaciones para hacer conexiones entre redes, se construyó hace decenas de años, usando tecnologías que hoy ni siquiera se enseñan ya. La tecnología y las necesidades, especialmente de integración, han cambiado, lo cual ha obligado a hacerles actualizaciones permanentes a estos sistemas: si no fuera porque estos sistemas se construyeron para garantizar su mantenibilidad, hace muchos años que habrían tenido que ser remplazados y las empresas que los usan habrían tenido que incurrir en costos altísimos que podrían hasta haberlas quebrado.</p>
+</dd>
+<dt class="label" id="borde"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Esto es lo que se conoce como un efecto de borde de un programa. Otros efectos de borde típicos son escribir en un archivo y enviar un mensaje por la red.</p>
+</dd>
+<dt class="label" id="refactor"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dd><p><em>Refactoring</em> es el término utilizado para procesos en los que el código fuente de un programa se restructura para mejorarlo pero sin cambiar su comportamiento. Por ejemplo, es común que se apliquen operaciones de <em>refactoring</em> para hacer que un programa sea mucho más fácil de mantener cambiando el nombre de las funciones para que sean naturales o para que se ajusten a estándares.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="seccion1-8.html" title="previous page">Un programa para leer (2)</a>
+    <a class='right-next' id="next-link" href="seccion1-10.html" title="next page">Errores frecuentes</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Mario Sánchez<br/>
+        
+            &copy; Copyright Agosto de 2020.<br/>
+          <div class="extra_footer">
+            <a href="http://sistemas.uniandes.edu.co">Departamento de Ingeniería de Sistemas y Computación</a> - Universidad de los Andes
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Gráficas usando Pandas &#8212; Introducción a la Programación</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel4/seccion4-6.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Un programa para leer (2)" href="seccion4-7.html" />
+    <link rel="prev" title="Análisis de datos con Pandas" href="seccion4-5.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="http://cupi2-ip.github.io/IPBook/nivel4/seccion4-6.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Gráficas usando Pandas" />
+<meta property="og:description" content="Gráficas usando Pandas  Objetivo de la sección  El objetivo de esta sección es …  Conceptos básicos  matplotlib.pyplot plt  figure show  Tipos de gráficas  Gráf" />
+<meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/uniandes_logo.jpeg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introducción a la Programación</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="../portada.html">1. Portada</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Antes de empezar</p>
+</li>
+  <li class="">
+    <a href="../introduccion/index.html">2. Introducción</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 1</p>
+</li>
+  <li class="">
+    <a href="../nivel1/intro.html">3. Empezando a programar</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 1</p>
+</li>
+  <li class="">
+    <a href="../nivel01a/index.html">4. Descomposición de programas</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 2</p>
+</li>
+  <li class="">
+    <a href="../nivel2/intro.html">5. Tomando decisiones</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 2</p>
+</li>
+  <li class="">
+    <a href="../nivel02a/index.html">6. Plan de Pruebas</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 3</p>
+</li>
+  <li class="">
+    <a href="../nivel3/intro.html">7. Repitiendo acciones</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Interludio 3</p>
+</li>
+  <li class="">
+    <a href="../nivel03a/index.html">8. Dividir y  Conquistar</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Nivel 4</p>
+</li>
+  <li class="active">
+    <a href="intro.html">9. Matrices y Librerías</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="seccion4-1.html">9.1 Un programa para leer</a>
+    </li>
+    <li class="">
+      <a href="seccion4-2.html">9.2 Tuplas</a>
+    </li>
+    <li class="">
+      <a href="seccion4-3.html">9.3 Matrices</a>
+    </li>
+    <li class="">
+      <a href="seccion4-4.html">9.4 Imágenes RGB</a>
+    </li>
+    <li class="">
+      <a href="seccion4-5.html">9.5 Análisis de datos con Pandas</a>
+    </li>
+    <li class="active">
+      <a href="">9.6 Gráficas usando Pandas</a>
+    </li>
+    <li class="">
+      <a href="seccion4-7.html">9.7 Un programa para leer (2)</a>
+    </li>
+    <li class="">
+      <a href="seccion4-8.html">9.8 Errores frecuentes</a>
+    </li>
+    <li class="">
+      <a href="seccion4-9.html">9.9 Ejercicios adicionales</a>
+    </li>
+  </ul>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/nivel4/seccion4-6.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#conceptos-basicos" class="nav-link">Conceptos básicos</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#tipos-de-graficas" class="nav-link">Tipos de gráficas</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#graficas-de-lineas" class="nav-link">Gráficas de líneas</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#graficas-de-barras" class="nav-link">Gráficas de barras</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#histogramas" class="nav-link">Histogramas</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#boxplots-diagramas-de-bigotes" class="nav-link">Boxplots (diagramas de bigotes)</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#graficas-de-dispersion" class="nav-link">Gráficas de dispersión</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#graficas-de-pastel" class="nav-link">Gráficas de pastel</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#otras-librerias" class="nav-link">Otras librerías</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#ejercicios" class="nav-link">Ejercicios</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#mas-alla-de-python" class="nav-link">Más allá de Python</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="warning admonition">
+<p class="admonition-title">Versión borrador / preliminar</p>
+<p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
+</div>
+<div class="section" id="graficas-usando-pandas">
+<h1>Gráficas usando Pandas<a class="headerlink" href="#graficas-usando-pandas" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-objetivo-de-la-seccion admonition">
+<p class="admonition-title">Objetivo de la sección</p>
+<p>El objetivo de esta sección es …</p>
+</div>
+<div class="section" id="conceptos-basicos">
+<h2>Conceptos básicos<a class="headerlink" href="#conceptos-basicos" title="Permalink to this headline">¶</a></h2>
+<p>matplotlib.pyplot plt</p>
+<p>figure
+show</p>
+</div>
+<div class="section" id="tipos-de-graficas">
+<h2>Tipos de gráficas<a class="headerlink" href="#tipos-de-graficas" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="graficas-de-lineas">
+<h3>Gráficas de líneas<a class="headerlink" href="#graficas-de-lineas" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="graficas-de-barras">
+<h3>Gráficas de barras<a class="headerlink" href="#graficas-de-barras" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="histogramas">
+<h3>Histogramas<a class="headerlink" href="#histogramas" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="boxplots-diagramas-de-bigotes">
+<h3>Boxplots (diagramas de bigotes)<a class="headerlink" href="#boxplots-diagramas-de-bigotes" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="graficas-de-dispersion">
+<h3>Gráficas de dispersión<a class="headerlink" href="#graficas-de-dispersion" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="graficas-de-pastel">
+<h3>Gráficas de pastel<a class="headerlink" href="#graficas-de-pastel" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="otras-librerias">
+<h2>Otras librerías<a class="headerlink" href="#otras-librerias" title="Permalink to this headline">¶</a></h2>
+<p>matplotlib
+seaborn
+plot.ly</p>
+</div>
+<div class="section" id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>…</p></li>
+</ol>
+</div>
+<div class="section" id="mas-alla-de-python">
+<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
+<p>Además de …</p>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="seccion4-5.html" title="previous page">Análisis de datos con Pandas</a>
+    <a class='right-next' id="next-link" href="seccion4-7.html" title="next page">Un programa para leer (2)</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Mario Sánchez<br/>
+        
+            &copy; Copyright Agosto de 2020.<br/>
+          <div class="extra_footer">
+            <a href="http://sistemas.uniandes.edu.co">Departamento de Ingeniería de Sistemas y Computación</a> - Universidad de los Andes
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
