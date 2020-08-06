@@ -201,9 +201,16 @@
 
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#solucion-de-problemas" class="nav-link">Solución de problemas</a>
+        </li>
     
     </ul>
 </nav>
@@ -222,13 +229,40 @@
 <p class="admonition-title">Versión borrador / preliminar</p>
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
 </div>
-<p>N2 Cartas</p>
-<p>Clave válida: (Password valido)</p>
-<p>Clave válida: (PIN valido)</p>
-<p>Línea recta: dados tres puntos (pueden ser 3 diccionarios), decir si forman una línea recta</p>
-<p>Random mano de cartas</p>
-<p>Picas y Fijas</p>
-<p>…<span class="xref myst"></span></p>
+<div class="section" id="solucion-de-problemas">
+<h2>Solución de problemas<a class="headerlink" href="#solucion-de-problemas" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p><strong>Enunciado:</strong> Durante un juego de cartas, un apostador principiante desea hacer algo de trampa para mejorar su juego. Para esto tiene dos cartas escondidas y podrá tomar una de ellas dependiendo de la carta que ya tenga en la mano. Para escoger la carta con la que hará trampa, el apostador comparará la carta que tiene en la mano (<code class="docutils literal notranslate"><span class="pre">carta_mano</span></code>) con las dos opciones de cambio (<code class="docutils literal notranslate"><span class="pre">opcion_1</span></code> y <code class="docutils literal notranslate"><span class="pre">opcion_2</span></code>). Al apostador le serviría una carta que tenga el mismo número de la carta que tiene en la mano o una que tenga el mismo palo.</p>
+<ul class="simple">
+<li><p>Si las dos cartas escondidas le sirven, el apostador siempre escogerá la primera opción.</p></li>
+<li><p>Si ninguna de las dos cartas escondidas tiene el mismo número o el mismo palo que la de la mano, entonces el apostador no hará trampa.</p></li>
+</ul>
+<p>Usted debe construir una función que indique la opción que debería escoger el apostador: <code class="docutils literal notranslate"><span class="pre">1</span></code> para la primera carta escondida, <code class="docutils literal notranslate"><span class="pre">2</span></code> para la segunda carta escondida, o <code class="docutils literal notranslate"><span class="pre">0</span></code> si ninguna carta le ayuda al apostador. Cada carta será representada por un diccionario con las llaves <code class="docutils literal notranslate"><span class="pre">&quot;numero&quot;</span></code> y <code class="docutils literal notranslate"><span class="pre">&quot;palo&quot;</span></code>. Tenga en cuenta que la llave <code class="docutils literal notranslate"><span class="pre">&quot;numero&quot;</span></code> también puede tener asociadas las letras <code class="docutils literal notranslate"><span class="pre">'J'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Q'</span></code>, <code class="docutils literal notranslate"><span class="pre">'K'</span></code> y <code class="docutils literal notranslate"><span class="pre">'A'</span></code>.</p>
+</li>
+<li><p><strong>Enunciado:</strong> Los cajeros automáticos usualmente tienen restricciones sobre las claves (numéricas) que pueden usarse para retirar. Usted debe construir una función que diga si una clave dada (un número entero con 4 dígitos cuyo primer dígito no es el 0) es permitida de acuerdo a las siguientes reglas:</p>
+<ul class="simple">
+<li><p>El mismo dígito no puede aparecer más de dos veces.</p></li>
+<li><p>No puede haber dígitos consecutivos.</p></li>
+<li><p>No puede haber números que empiecen por <code class="docutils literal notranslate"><span class="pre">19</span></code>, <code class="docutils literal notranslate"><span class="pre">200</span></code> ni <code class="docutils literal notranslate"><span class="pre">201</span></code>.</p></li>
+<li><p>El número debe tener al menos tres dígitos diferentes.</p></li>
+</ul>
+</li>
+<li><p><strong>Enunciado:</strong> Usted ha sido encargado de escribir una función que decida si una contraseña es lo suficientemente segura para un nuevo sistema. Una contraseña segura debe tener al menos 10 caracteres y cumplir con al menos 3 de las siguientes restricciones adicionales:</p>
+<ul class="simple">
+<li><p>Debe tener al menos una letra mayúscula y una letra minúscula.</p></li>
+<li><p>Debe tener al menos un dígito.</p></li>
+<li><p>Debe tener al menos uno de los siguientes caracteres: <code class="docutils literal notranslate"><span class="pre">!&quot;&#64;$</span> <span class="pre">%&amp;/()=?#</span></code></p></li>
+<li><p>No puede empezar ni terminar con un espacio.</p></li>
+</ul>
+</li>
+<li><p><strong>Enunciado:</strong> Escriba una función que reciba 3 diccionarios que representen las coordenadas de 3 puntos en el espacio. Cada diccionario tendrá dos llaves, <code class="docutils literal notranslate"><span class="pre">&quot;x&quot;</span></code> y  <code class="docutils literal notranslate"><span class="pre">&quot;y&quot;</span></code>, que tendrán asociadas los respectivos componentes de cada coordenada. Su función debe retornar un valor de verdad que indique si los tres puntos se encuentran sobre la misma recta o no.</p></li>
+<li><p><strong>Enunciado:</strong>  El juego de las Picas y Fijas es un juego matemático muy sencillo, que consiste en adivinar un número de 4 cifras cuyos dígitos son todos diferentes. Para esto, el jugador que intenta adivinar deberá decir el número que cree está escondiendo el otro, y este deberá responder el número de picas y fijas que tiene ahora el jugador.</p>
+<p>Una <em>pica</em> es un dígito que se encuentra en el número a adivinar pero no está en el lugar correcto, y una <em>fija</em> es un dígito correctamente colocado.</p>
+<p>Por ejemplo, si el número a adivinar es <code class="docutils literal notranslate"><span class="pre">1234</span></code>, y otro jugador dice <code class="docutils literal notranslate"><span class="pre">1325</span></code>, tendrá dos picas y una fija.</p>
+<p>Usted debe crear una función que devuelva un diccionario con las llaves <code class="docutils literal notranslate"><span class="pre">&quot;PICAS&quot;</span></code> y <code class="docutils literal notranslate"><span class="pre">&quot;FIJAS&quot;</span></code> que represente el resultado de la jugada si un jugador trata de adivinar el <code class="docutils literal notranslate"><span class="pre">numero_secreto</span></code> con el número <code class="docutils literal notranslate"><span class="pre">intento</span></code>.</p>
+</li>
+</ol>
+</div>
 </div>
 
 
