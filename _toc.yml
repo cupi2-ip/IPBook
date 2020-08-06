@@ -28,9 +28,6 @@
   - file: nivel1/seccion1-10
   - file: nivel1/seccion1-11
 
-- header: Interludio 1
-- file: nivel01a/index
-  title: Descomposición de programas
 
 - header: Nivel 2
 - file: nivel2/intro
@@ -47,41 +44,12 @@
   - file: nivel2/seccion2-9
   - file: nivel2/seccion2-10
 
-- header: Interludio 2
-- file: nivel02a/index
-  title: Plan de Pruebas
-
 - header: Nivel 3
 - file: nivel3/intro
   title: Repitiendo acciones
-  sections:
-  - file: nivel3/seccion3-1
-  - file: nivel3/seccion3-2
-  - file: nivel3/seccion3-3
-  - file: nivel3/seccion3-4
-  - file: nivel3/seccion3-5
-  - file: nivel3/seccion3-6
-  - file: nivel3/seccion3-7
-  - file: nivel3/seccion3-8
-  - file: nivel3/seccion3-9
-  - file: nivel3/seccion3-10
-  - file: nivel3/seccion3-11
-  - file: nivel3/seccion3-12
 
-- header: Interludio 3
-- file: nivel03a/index
-  title: Dividir y  Conquistar
 
 - header: Nivel 4
 - file: nivel4/intro
   title: Matrices y Librerías
-  sections:
-  - file: nivel4/seccion4-1
-  - file: nivel4/seccion4-2
-  - file: nivel4/seccion4-3
-  - file: nivel4/seccion4-4
-  - file: nivel4/seccion4-5
-  - file: nivel4/seccion4-6
-  - file: nivel4/seccion4-7
-  - file: nivel4/seccion4-8
-  - file: nivel4/seccion4-9
+

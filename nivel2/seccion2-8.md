@@ -73,7 +73,23 @@ funcion(cadena, cadena, diccionario, diccionario)
 print("Después de llamar a la función: ", cadena, diccionario)
 ```
 
-En las líneas 1 a 10 se define una nueva función que explicaremos más adelante. En las líneas 12 y 13 se definen dos variables: la primera es de tipo `str` y tiene como valor `"cadena inicial"`; la segunda es de tipo `dict` y tiene como valor un diccionario qué únicamente tiene una llave ("`inicial"`) con el valor `0` asociado.
+
+El siguiente bloque muestra el resultado completo de ejecutar el programa.
+
+```{code-block} python
+---
+lineno-start: 1
+---
+Antes de llamar a la función:  cadena inicial {'inicial': 0}
+--> Valores recibidos: cadena inicial cadena inicial {'inicial': 0} {'inicial': 0}
+--> Comparar las cadenas: True
+--> Comparar los diccionarios: True True
+--> Valores modificados: nueva cadena cadena inicial {'inicial': 0, 'nuevo valor': 99} {'inicial': 0, 'nuevo valor': 99}
+--> Valores modificados de nuevo: {'ultimo': 1} {'inicial': 0, 'nuevo valor': 99}
+Después de llamar a la función:  cadena inicial {'inicial': 0, 'nuevo valor': 99}
+```
+
+Estudiemos ahora, paso por paso, lo que hace el programa. En las líneas 1 a 10 se define una nueva función que no se ejecutará por ahora. En las líneas 12 y 13 se definen dos variables: la primera es de tipo `str` y tiene como valor `"cadena inicial"`; la segunda es de tipo `dict` y tiene como valor un diccionario qué únicamente tiene una llave ("`inicial"`) con el valor `0` asociado.
 
 En la 15 se imprime un mensaje en la consola que muestra el valor de las dos variables: `Antes de llamar a la función:  cadena inicial {'inicial': 0}`. En el bloque de código que se encuentra más abajo se puede ver todo lo que imprime el programa.
 
@@ -104,29 +120,17 @@ Este último resultado nos muestra lo siguiente:
 * La variable `diccionario` muestra que la primera modificación al diccionario `p3` quedó registrada, pero no la segunda. Esto pasa porque el diccionario inicial se pasó como parámetro a la función y nunca se creó una copia de él. Cuando modificamos a `p3` en la línea 7 estábamos modificando el diccionario inicial. Luego, en la línea 9 se creó un nuevo diccionario y ese se asignó a la variable `p3`, pero eso no tiene por qué tener ningún efecto en el diccionario al que señalaba `p4` y mucho menos al que señalaba la variable `diccionario`.
 
 
-El siguiente bloque muestra el resultado completo de ejecutar el programa.
-
-```{code-block} python
----
-lineno-start: 1
----
-Antes de llamar a la función:  cadena inicial {'inicial': 0}
---> Valores recibidos: cadena inicial cadena inicial {'inicial': 0} {'inicial': 0}
---> Comparar las cadenas: True
---> Comparar los diccionarios: True True
---> Valores modificados: nueva cadena cadena inicial {'inicial': 0, 'nuevo valor': 99} {'inicial': 0, 'nuevo valor': 99}
---> Valores modificados de nuevo: {'ultimo': 1} {'inicial': 0, 'nuevo valor': 99}
-Después de llamar a la función:  cadena inicial {'inicial': 0, 'nuevo valor': 99}
-```
-
 
 ### Parámetros por valor y por referencia
 
-Después de estudiar el ejemplo anterior, ya podemos explicar bien el significado de pasar parámetros por valor y por referencia cuando se invoca una función.
+Después de estudiar el ejemplo anterior, podemos explicar mejor el significado de pasar parámetros por valor y por referencia cuando se invoca una función.
 
 Un parámetro se pasa **por valor**, cuando el valor se copia para que se utilice dentro de la función. Esto es lo que ocurre con algunos tipos básicos como `int`, `float` y `bool`, y también con tipos inmutables como `str` y `tuple` (que estudiaremos más adelante).
 
-Por otro lado, un parámetro se pasa **por referencia**, cuando lo que se hace es entregarle a la función una referencia al elemento, sin copiarlo. Esto quiere decir que si la función hace cambios al elemento, esos cambios los podrá ver quien haya invocado a la función. Esto va a ocurrir en Python con tipos de datos como los diccionarios (`dict` que ya estudiamos, y las listas `list` que estudiaremos en el siguiente nivel).
+Por otro lado, un parámetro se pasa **por referencia**, cuando lo que se hace es entregarle a la función una referencia al elemento, sin copiarlo [^cpp] . Esto quiere decir que si la función hace cambios al elemento, esos cambios los podrá ver quien haya invocado a la función. Esto va a ocurrir en Python con tipos de datos como los diccionarios (`dict` que ya estudiamos, y las listas `list` que estudiaremos en el siguiente nivel).
+
+[^cpp]: En un lenguaje como C o C++, que tienen acceso de bajo nivel a la memoria, el paso por referencia se basa en el paso de apuntadores. Esto hace posible modificar los apuntadores desde adentro de la función (método), lo cual no es posible en Python. Para no complicar más la explicación, hemos ajustado la definición de paso por referencia a lo que tendría sentido para Python.
+ 
 
 Veamos un último ejemplo para ilustrar ese punto:
 
@@ -145,7 +149,7 @@ print(d)
 En este programa se crea un diccionario con 3 elementos y luego se pasa **por referencia** a la función `limpiar_diccionario`, que llama el método `clear` sobre el diccionario que recibe por parámetro. Cuando imprimamos de nuevo el diccionario `d`, este va a estar vacío porque la función lo limpió. Si los diccionarios se pasaran por valor (es decir que se crearan copias en cada invocación), no veríamos ningún cambio sobre el diccionario después de la invocación.
 
 
-### Paso por referencia al objeto
+### Paso por "referencia al objeto"
 
 La realidad del paso de parámetros en Python es más complicada de lo presentada en las secciones anteriores. En Python, los parámetros se dice que pasan como *referencia a los objetos*. Esto quiere decir que, incluso los tipos que parece que se pasan por valor, se pasan como referencia. Esto tiene como consecuencias principales un minúsculo ahorro en el *uso de la memoria* y una mejora posiblemente imperceptible en el *desempeño* de los programas.
 
@@ -174,30 +178,86 @@ Para cada uno de los ejercicios asegúrese de imprimir los valores que use para 
 
 ## Parámetros en Python
 
+A continuación estudiaremos dos características adicionales de Python que permiten manejar con un poco más de flexibilidad los parámetros de las funciones que se definan y se invoquen. Estas características usualmente no están disponibles en otros lenguajes.
 
+### Parámetros nombrados
 
-Estas características usualmente no están disponibles en otros lenguajes.
+La primera característica para estudiar tiene que ver con la forma de hacer referencia a los parámetros de una función en el momento de la invocación. Hasta ahora, siempre hemos utilizado el mecanismo basado en la posición: el primer valor en la invocación corresponde al primer parámetro, el segundo valor en la invocación corresponde al segundo parámetro, y así sucesivamente. Sin embargo, en Python es posible hacer explícito el nombre de los parámetros en el momento de la invocación de tal forma que se puedan invocar en un orden diferente al que se tiene en la declaración.
 
-
-
-parámetros nombrados: orden vs. nombre
-The Java version is more implicit. The Python version is more explicit. 
-
-parámetros por defecto / Opcionales:
-usados con los nombres
-
-
+Veamos un ejemplo:
 
 ```{code-block} python
-S.find(sub[, start[, end]]) -> int
-S.count(sub[, start[, end]]) -> int
+def imprimir_nombre(nombre: str, apellido: str) -> None:
+    print(nombre + " " + apellido)
 
-
-'Coordinates: {latitude}, {longitude}'.format(latitude='37.24N', longitude='-115.81W')
-'Coordinates: 37.24N, -115.81W'
+imprimir_nombre("Juan", "Perez")  # Imprime "Juan Perez"
+imprimir_nombre(nombre = "Juan", apellido = "Perez")  # Imprime "Juan Perez"
+imprimir_nombre(apellido = "Perez", nombre = "Juan")  # Imprime "Juan Perez"
 ```
 
+En este ejemplo hacemos tres invocaciones a la función:
 
+1. En la primera no se usan los nombres de los parámetros, así que la invocación se hace por posición.
+
+2. En la segunda se usan los nombres de los parámetros, en el mismo orden en el que están definidos.
+
+3. En la tercera también se usan los nombres pero un orden diferente al de la definición. En este caso el resultado es el esperado porque gracias al nombre la función puede reconocer a qué parámetro corresponde cada valor.
+
+Veamos ahora unos ejemplos en los que no se utilicen los nombres de todos los parámetros:
+
+```{code-block} python
+imprimir_nombre(apellido = "Perez", "Juan")  # Falla
+imprimir_nombre("Perez", nombre="Juan")  # Falla
+imprimir_nombre("Juan", apellido = "Perez")  # Imprime "Juan Perez"
+```
+
+1. En el primer caso, se presentará el error `SyntaxError: positional argument follows keyword argument`. Este error nos indica que los valores *sin nombre* no deberían ir después de valores con nombre.
+
+2. En el segundo caso, se presentará el error `imprimir_nombre() got multiple values for argument 'nombre'`. Este error nos indica que Python intentó asignarle el primer valor al primer parámetro (`nombre`) y luego le intentó asignar el valor nombrado al mismo parámetro. Como resultado, el parámetro `nombre` recibió múltiples valores mientras que `apellido` no recibió ninguno.
+
+3. El tercer caso es exitoso: el primer valor se asigna al primer parámetro y el segundo valor se asigna al parámetro `apellido`. El resultado es que todos los parámetros de la función reciben un valor y por ende se puede hacer la invocación.
+
+El uso de parámetros nombrados no es obligatorio, pero puede ayudar a hacer más legible el código, especialmente cuando no hay un orden en los parámetros que sea fácil de predecir. Por ejemplo, si tuviéramos una función para evaluar un polinomio de la forma $a \cdot x^{2} + b \cdot x + c$, la función se invocaría como `evaluar_polinomio(3, 5, 7)` o como evaluar_polinomio(7, 5, 3)? Para evitar la confusión se podría hacer uso de los nombres de los parámetros: `evaluar_polinomio(a=3, b=5, c=7)`.
+
+
+### Parámetros por defecto / opcionales
+
+La segunda característica que queremos que usted conozca es la posibilidad de definir valores por defecto para los parámetros. Esto hace posible hacer llamados a funciones utilizando sólo algunos de los parámetros y, en conjunto con los parámetros nombrados, puede hacer que el código de un programa sea mucho más sencillo.
+
+Por ejemplo, veamos la definición de la función `count` de `str` que nos permite contar cuántas veces aparece una subcadena en otra:
+
+```{code-block} python
+>>> help(str.count)
+S.count(sub[, start[, end]]) -> int
+```
+
+Lo que esta definición nos dice es que el parámetro `sub` es obligatorio, y puede estar seguido de un segundo parámetro (`start`), el cual podría estar seguido de un tercer parámetro (`end`). Aunque no lo podemos ver, en esta función `start` y  `end` tienen valores por defecto: `start` tiene el valor 0 mientras que `end` tiene un valor igual a la longitud de la cadena. De esta forma, si no se especifica un inicio se empezará desde el primer caracter, y si se especifica un inicio pero no un fin, se irá hasta el final de la cadena.
+
+Veamos ahora un pequeño ejemplo para ilustrar la sintaxis:
+
+```{code-block} python
+def replicar (cadena: str, cantidad: int = 2) -> str:
+  return cadena * cantidad
+```
+
+En este caso, estamos definiendo una función con dos parámetros: el primero es obligatorio, pero el segundo puede hacerse explícito o no. Si no se incluye al hacer una invocación, su valor por defecto será 2. Note que para parámetro `cantidad` se ha indicado primero el tipo (`int`) y luego el valor por defecto.
+
+
+```{warning} Parámetros por defecto
+:class: warning
+
+Use valores por defecto para los parámetros únicamente cuando 
+sea evidente cuál debería ser el valor por defecto del parámetro.
+Si el que invoque la función tiene que pensar mucho sobre el valor
+por defecto del parámetro, posiblemente haya sido un error ponerle
+un valor por defecto.
+```
+
+```{tip} Simplificar con parámetros por defecto
+:class: tip
+
+Use parámetros por defecto para simplificar el llamado a funciones que tengan una gran flexibilidad a través de un gran número de parámetros. Por ejemplo, hay librerías con funciones que esperan más de 10 parámetros pero el hecho de que todos tengan valores por defecto hace que cualquier invocación pueda concentrarse en los parámetros que realmente valgan la pena.
+```
 
 ### Ejercicios
 
@@ -221,28 +281,28 @@ S.count(sub[, start[, end]]) -> int
 
 ## Más allá de Python
 
-valor, referencia, referencia al objeto
+A lo largo de los años, diferentes lenguajes han experimentado con diversas mecanismos para el paso de parámetros. Aunque puede parecer un asunto sencillo, escoger un método particular puede tener un impacto muy importante en el desempeño de una aplicación. Por ejemplo, en el caso de Java en todos los llamados los parámetros se pasan por valor: esto quiere decir que siempre se hacen copias, aunque cuando se trata de objetos (tipos no simples) se hacen copias de las refencias a los objetos. Esto le permite a Java tener un mecanismo homogéneo de invocación y paso de parámetros, simplificar el manejo de la pila de ejecución y aumentar la seguridad del lenguaje a través de la protección de los apuntadores.
 
+Tradicionalmente, los valores con los que se invoca una función (o método) se asignan a los parámetros con base en la posición. Esto es algo que viene del cálculo: si tenemos definida la función $f(x, y)$, cuando evaluemos la función (por ejemplo $f(2,3)$), estamos acostumbrados a que el valor 2 se use para $x$ y el valor 3 se use para $y$. Sin embargo, el uso de parámetros nombrados ha empezado a hacerse más popular y es una característica de varios lenguajes *modernos* como Scala o Kotlin.
 
-
-Tradicionalmente, los valores con los que se invoca una función se asignan a los parámetros con base en la posición. Esto 
-
-...
-Named parameters: Scala, Kotlin, 
-def printName(first: String, last: String): Unit = {
-  println(first + " " + last)
+```{code-block} scala
+def imprimirNombre(nombre: String, apellido: String): Unit = {
+  println(nombre + " " + apellido)
 }
 
-printName("John", "Smith")  // Prints "John Smith"
-printName(first = "John", last = "Smith")  // Prints "John Smith"
-printName(last = "Smith", first = "John")  // Prints "John Smith"
+imprimirNombre("Juan", "Perez")  // Imprime "Juan Perez"
+imprimirNombre(nombre = "Juan", apellido = "Perez")  // Imprime "Juan Perez"
+imprimirNombre(apellido = "Perez", nombre = "Juan")  // Imprime "Juan Perez"
+```
 
-The Java version is more implicit. The Python version is more explicit. 
+Finalmente, tenemos a continuación un pequeño ejemplo de **Smalltalk**, un lenguaje diseñado hace cerca de 40 años. En Smalltalk todos los parámetros son nombrados porque hacen parte del nombre mismo de los métodos. En el siguiente bloque mostramos la definición del método `imprimirNombre:apellido:`, que recibe dos parámetros y luego los imprime como en el ejemplo anterior en Scala.
 
+```{code-block} Smalltalk
+imprimirNombre: elNombre apellido: elApellido
 
-Default:
-C++ sí
-Java no
-JavaScript sí
+Transcript show: elNombre, ' ', elApellido
+```
+
+Con respecto a los valores por defecto para los parámetros, encontramos que es posible asignar valores por defecto en lenguajes como C++ o JavaScript, pero no en Java. Al igual que en Python, se debe tener cuidado de asignarle valores por defecto a los últimos parámetros de una función para que esos parámetros sean realmente opcionales.
 
 
