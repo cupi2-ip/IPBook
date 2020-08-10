@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Funciones &#8212; Introducción a la Programación</title>
+    <title>2.5. Funciones &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,11 +31,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel1/seccion1-5.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Definición de funciones" href="seccion1-6.html" />
-    <link rel="prev" title="Variables, expresiones y operadores" href="seccion1-4.html" />
+    <link rel="next" title="2.6. Definición de funciones" href="seccion1-6.html" />
+    <link rel="prev" title="2.4. Variables, expresiones y operadores" href="seccion1-4.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -47,7 +55,7 @@
 <meta property="og:description" content="Funciones  Versión borrador / preliminar  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comen" />
 <meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -76,77 +84,108 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../portada.html">1. Portada</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Antes de empezar</p>
-</li>
-  <li class="">
-    <a href="../introduccion/index.html">2. Introducción</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 1</p>
-</li>
-  <li class="active">
-    <a href="intro.html">3. Empezando a programar</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="seccion1-1.html">3.1 Un programa para leer</a>
-    </li>
-    <li class="">
-      <a href="seccion1-2.html">3.2 Ambiente básico de trabajo</a>
-    </li>
-    <li class="">
-      <a href="seccion1-3.html">3.3 Valores y tipos de datos</a>
-    </li>
-    <li class="">
-      <a href="seccion1-4.html">3.4 Variables, expresiones y operadores</a>
-    </li>
-    <li class="active">
-      <a href="">3.5 Funciones</a>
-    </li>
-    <li class="">
-      <a href="seccion1-6.html">3.6 Definición de funciones</a>
-    </li>
-    <li class="">
-      <a href="seccion1-7.html">3.7 Estilo de programación</a>
-    </li>
-    <li class="">
-      <a href="seccion1-8.html">3.8 Un programa para leer (2)</a>
-    </li>
-    <li class="">
-      <a href="seccion1-9.html">3.9 Lógica vs. Interacción</a>
-    </li>
-    <li class="">
-      <a href="seccion1-10.html">3.10 Errores frecuentes</a>
-    </li>
-    <li class="">
-      <a href="seccion1-11.html">3.11 Ejercicios adicionales</a>
-    </li>
-  </ul>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 2</p>
-</li>
-  <li class="">
-    <a href="../nivel2/intro.html">4. Tomando decisiones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 3</p>
-</li>
-  <li class="">
-    <a href="../nivel3/intro.html">5. Repitiendo acciones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 4</p>
-</li>
-  <li class="">
-    <a href="../nivel4/intro.html">6. Matrices y Librerías</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portada.html">
+   Portada
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Contenido
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduccion/index.html">
+   1. Nivel 0 - Antes de empezar
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   2. Nivel 1 - Empezando a programar
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-1.html">
+     2.1. Un programa para leer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-2.html">
+     2.2. Ambiente básico de trabajo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-3.html">
+     2.3. Valores y tipos de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-4.html">
+     2.4. Variables, expresiones y operadores
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.5. Funciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-6.html">
+     2.6. Definición de funciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-7.html">
+     2.7. Estilo de programación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-8.html">
+     2.8. Un programa para leer (2)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-9.html">
+     2.9. Lógica vs. Interacción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-10.html">
+     2.10. Errores frecuentes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-10.html#para-no-olvidar">
+     2.11. Para no olvidar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-11.html">
+     2.12. Ejercicios adicionales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel2/intro.html">
+   3. Nivel 2 - Tomando decisiones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel3/intro.html">
+   4. Nivel 3 - Repitiendo acciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel4/intro.html">
+   5. Nivel 4 - Matrices y Librerías
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -203,108 +242,127 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
-
-<nav id="bd-toc-nav">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-concepto-de-funcion">
+   2.5.1. El concepto de función
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funciones-en-python">
+   2.5.2. Funciones en Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funciones-de-conversion-int-float-y-str">
+     2.5.2.1. Funciones de conversión: int, float y str
+    </a>
     <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#el-concepto-de-funcion" class="nav-link">El concepto de función</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#funciones-en-python" class="nav-link">Funciones en Python</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#funciones-de-conversion-int-float-y-str" class="nav-link">Funciones de conversión: int, float y str</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#int-x" class="nav-link">int(x)</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#float-x" class="nav-link">float(x)</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#str-x" class="nav-link">str(x)</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#funciones-numericas-abs-round-min-max-pow" class="nav-link">Funciones numéricas: abs, round, min, max, pow</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#abs-x" class="nav-link">abs(x)</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#round-n-digits" class="nav-link">round(n, digits)</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#round-n" class="nav-link">round(n)</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#min-max" class="nav-link">min, max</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#pow-x-y" class="nav-link">pow(x, y)</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#funciones-de-entrada-y-salida-print-input" class="nav-link">Funciones de entrada y salida: print, input</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#print" class="nav-link">print</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#input" class="nav-link">input</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#funciones-sobre-caracteres-chr-ord" class="nav-link">Funciones sobre caracteres: chr, ord</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#sistemas-ascii-y-unicode" class="nav-link">Sistemas ASCII y UNICODE</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#funciones-chr-y-ord" class="nav-link">Funciones chr y ord</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#ejercicios" class="nav-link">Ejercicios</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#mas-alla-de-python" class="nav-link">Más allá de Python</a>
-        </li>
-    
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#int-x">
+       2.5.2.1.1. int(x)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#float-x">
+       2.5.2.1.2. float(x)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#str-x">
+       2.5.2.1.3. str(x)
+      </a>
+     </li>
     </ul>
-</nav>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funciones-numericas-abs-round-min-max-pow">
+     2.5.2.2. Funciones numéricas: abs, round, min, max, pow
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#abs-x">
+       2.5.2.2.1. abs(x)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#round-n-digits">
+       2.5.2.2.2. round(n, digits)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#round-n">
+       2.5.2.2.3. round(n)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#min-max">
+       2.5.2.2.4. min, max
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pow-x-y">
+       2.5.2.2.5. pow(x, y)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funciones-de-entrada-y-salida-print-input">
+     2.5.2.3. Funciones de entrada y salida: print, input
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#print">
+       2.5.2.3.1. print
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#input">
+       2.5.2.3.2. input
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funciones-sobre-caracteres-chr-ord">
+     2.5.2.4. Funciones sobre caracteres: chr, ord
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sistemas-ascii-y-unicode">
+       2.5.2.4.1. Sistemas ASCII y UNICODE
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#funciones-chr-y-ord">
+       2.5.2.4.2. Funciones chr y ord
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   2.5.3. Ejercicios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mas-alla-de-python">
+   2.5.4. Más allá de Python
+  </a>
+ </li>
+</ul>
 
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -313,7 +371,7 @@
               <div>
                 
   <div class="section" id="funciones">
-<h1>Funciones<a class="headerlink" href="#funciones" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.5. </span>Funciones<a class="headerlink" href="#funciones" title="Permalink to this headline">¶</a></h1>
 <div class="warning admonition">
 <p class="admonition-title">Versión borrador / preliminar</p>
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
@@ -325,7 +383,7 @@
 <p>En esta sección estudiaremos el concepto de <strong>función</strong>, que en Python es el principal mecanismo para estructurar un programa: en lugar de escribir todas las instrucciones de un programa una después de la otra en un mismo archivo, usando funciones es posible organizar las instrucciones en bloques de código que tengan un objetivo preciso y que puedan ser reutilizados.</p>
 <p>Por ahora introduciremos los conceptos principales y los ilustraremos usando funciones que son parte de Python. La siguiente sección mostrará como definir nuevas funciones.</p>
 <div class="section" id="el-concepto-de-funcion">
-<h2>El concepto de función<a class="headerlink" href="#el-concepto-de-funcion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5.1. </span>El concepto de función<a class="headerlink" href="#el-concepto-de-funcion" title="Permalink to this headline">¶</a></h2>
 <p>En términos matemáticos, una función es una relación entre valores de tal forma que para cada combinación de los valores <em>de entrada</em> haya sólo un valor <em>de salida</em>. Además, las funciones se suelen describir usando una fórmula, de tal forma que dados unos valores de entrada sea sencillo calcular el valor de salida.</p>
 <p>A manera de ejemplo, consideremos la siguiente definición de una función:</p>
 <div class="math notranslate nohighlight">
@@ -340,7 +398,7 @@ potencia(base, exponente) = base^{exponente}
 \]</div>
 </div>
 <div class="section" id="funciones-en-python">
-<h2>Funciones en Python<a class="headerlink" href="#funciones-en-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5.2. </span>Funciones en Python<a class="headerlink" href="#funciones-en-python" title="Permalink to this headline">¶</a></h2>
 <p>El concepto matemático de función presentado en la sección anterior fue adoptado por Python, pero con unas pequeñas modificaciones que explicaremos en la siguiente sección. Por ahora, lo importante es que en Python es posible definir funciones dándoles un nombre, especificando sus parámetros, y explicando cómo se debe calcular un valor específico a partir de los parámetros. Como veremos en esta sección, Python cuenta con un gran número de funciones pre-definidas que podemos utilizar en nuestros programas. En la próxima sección estudiaremos cómo podemos hacer para definir nuestras propias funciones.</p>
 <p>La acción más interesante que podemos hacer sobre una función es <em>invocarla</em>. Esto es lo mismo que <em>evaluarla</em> para poder saber cuál es sería su valor dados valores específicos para sus parámetros. Por ejemplo, en el siguiente fragmento de código vamos a invocar la función pre-definida llamada <code class="docutils literal notranslate"><span class="pre">pow</span></code> pasándole los valores 2 y 3 como <em>argumentos</em>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -378,12 +436,12 @@ El siguiente fragmento es similar al anterior, pero en este caso se inicia con u
 </pre></div>
 </div>
 <div class="section" id="funciones-de-conversion-int-float-y-str">
-<h3>Funciones de conversión: int, float y str<a class="headerlink" href="#funciones-de-conversion-int-float-y-str" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.5.2.1. </span>Funciones de conversión: int, float y str<a class="headerlink" href="#funciones-de-conversion-int-float-y-str" title="Permalink to this headline">¶</a></h3>
 <p>En esta y las siguientes subsecciones describiremos varias funciones que son parte del lenguaje mismo y que sirven para resolver problemas que aparecen recurrentemente. Es una muy recomendable conocer estas funciones para poderlas utilizar cada vez que sea necesario, en lugar de estar repitiendo una y otra vez código que ya los responsables del lenguaje hicieron por nosotros.</p>
 <p>La documentación completa y oficial de estas funciones se puede consultar en el siguiente link: <a class="reference external" href="https://docs.python.org/3/library/functions.html">https://docs.python.org/3/library/functions.html</a>. Le recomendamos su consulta especialmente para que se familiarice con la estructura y el lenguaje de la documentación de Python.</p>
 <p>Empezaremos discutiendo las 3 funciones para convertir entre tipos de datos que se presentaron brevemente en una sección anterior.</p>
 <div class="section" id="int-x">
-<h4>int(x)<a class="headerlink" href="#int-x" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.5.2.1.1. </span>int(x)<a class="headerlink" href="#int-x" title="Permalink to this headline">¶</a></h4>
 <p>La función<a class="footnote-reference brackets" href="#funcion" id="id2">2</a> <code class="docutils literal notranslate"><span class="pre">int(x)</span></code> convierte un valor <code class="docutils literal notranslate"><span class="pre">x</span></code> en un valor de tipo entero. La función <code class="docutils literal notranslate"><span class="pre">int</span></code> intenta ser tan versátil como sea posible y no requiere que <code class="docutils literal notranslate"><span class="pre">x</span></code> sea de un sólo tipo específico. Por eso es posible llamar a la función utilizando valores de tipo <code class="docutils literal notranslate"><span class="pre">float</span></code> o <code class="docutils literal notranslate"><span class="pre">str</span></code>, entre otros, y se puede suponer que la función aplicará la conversión adecuada para cada caso<a class="footnote-reference brackets" href="#base" id="id3">3</a>.</p>
 <ul>
 <li><p>Si el parámetro <code class="docutils literal notranslate"><span class="pre">x</span></code> es de tipo <code class="docutils literal notranslate"><span class="pre">float</span></code>, el resultado de aplicarle la función  <code class="docutils literal notranslate"><span class="pre">int</span></code> es la <em>parte entera</em> del valor. Es decir que el resultado de evaluar la expresión <code class="docutils literal notranslate"><span class="pre">int(3.4)</span></code> es <code class="docutils literal notranslate"><span class="pre">3</span></code>, mientras que el resultado de evaluar la expresión <code class="docutils literal notranslate"><span class="pre">int(-3.4)</span></code> es <code class="docutils literal notranslate"><span class="pre">-3</span></code>. La función <code class="docutils literal notranslate"><span class="pre">int</span></code> <em>no hace</em> una aproximación matemática, sino que <em>trunca</em> los decimales.</p></li>
@@ -402,7 +460,7 @@ El siguiente fragmento es similar al anterior, pero en este caso se inicia con u
 </ul>
 </div>
 <div class="section" id="float-x">
-<h4>float(x)<a class="headerlink" href="#float-x" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.5.2.1.2. </span>float(x)<a class="headerlink" href="#float-x" title="Permalink to this headline">¶</a></h4>
 <p>La función<a class="footnote-reference brackets" href="#funcion" id="id4">2</a> <code class="docutils literal notranslate"><span class="pre">float(x)</span></code> convierte un valor <code class="docutils literal notranslate"><span class="pre">x</span></code> en un valor de tipo decimal. Esta función se puede llamar utilizando valores de tipo <code class="docutils literal notranslate"><span class="pre">int</span></code> o <code class="docutils literal notranslate"><span class="pre">str</span></code>, entre otros, y se puede suponer que la función aplicará la conversión adecuada para cada caso.</p>
 <ul>
 <li><p>Si el parámetro <code class="docutils literal notranslate"><span class="pre">x</span></code> es de tipo <code class="docutils literal notranslate"><span class="pre">int</span></code>, el resultado de aplicarle la función  <code class="docutils literal notranslate"><span class="pre">float</span></code> es el mismo número, pero representado como un número decimal. Es decir que el resultado de evaluar la expresión <code class="docutils literal notranslate"><span class="pre">float(3)</span></code> es <code class="docutils literal notranslate"><span class="pre">3.0</span></code>, y que el resultado de evaluar la expresión <code class="docutils literal notranslate"><span class="pre">float(-3)</span></code> es <code class="docutils literal notranslate"><span class="pre">-3.0</span></code>.</p></li>
@@ -420,7 +478,7 @@ El siguiente fragmento es similar al anterior, pero en este caso se inicia con u
 </ul>
 </div>
 <div class="section" id="str-x">
-<h4>str(x)<a class="headerlink" href="#str-x" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.5.2.1.3. </span>str(x)<a class="headerlink" href="#str-x" title="Permalink to this headline">¶</a></h4>
 <p>La función <code class="docutils literal notranslate"><span class="pre">str</span></code> es una función tremendamente versátil que permite convertir un valor de cualquier tipo a una cadena de caracteres. Los siguientes son algunos ejemplos de invocaciones a la función <code class="docutils literal notranslate"><span class="pre">str</span></code> que se podrían hacer junto con el valor que calcularía la función.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">str(1)</span></code>, valor <code class="docutils literal notranslate"><span class="pre">'1'</span></code></p></li>
@@ -431,10 +489,10 @@ El siguiente fragmento es similar al anterior, pero en este caso se inicia con u
 </div>
 </div>
 <div class="section" id="funciones-numericas-abs-round-min-max-pow">
-<h3>Funciones numéricas: abs, round, min, max, pow<a class="headerlink" href="#funciones-numericas-abs-round-min-max-pow" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.5.2.2. </span>Funciones numéricas: abs, round, min, max, pow<a class="headerlink" href="#funciones-numericas-abs-round-min-max-pow" title="Permalink to this headline">¶</a></h3>
 <p>Las 3 funciones anteriores sirven para hacer conversiones entre tipos de datos. A continuación vamos a presentar unas funciones orientadas al trabajo con números.</p>
 <div class="section" id="abs-x">
-<h4>abs(x)<a class="headerlink" href="#abs-x" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.5.2.2.1. </span>abs(x)<a class="headerlink" href="#abs-x" title="Permalink to this headline">¶</a></h4>
 <p>La función <code class="docutils literal notranslate"><span class="pre">abs(x)</span></code> sirve para calcular el valor absoluto de un número. Esto quiere decir que si <code class="docutils literal notranslate"><span class="pre">x</span></code> es un número positivo, el resultado será el mismo <code class="docutils literal notranslate"><span class="pre">x</span></code>. En cambio, si <code class="docutils literal notranslate"><span class="pre">x</span></code> es un número negativo, el resultado será <code class="docutils literal notranslate"><span class="pre">-x</span></code>.</p>
 <p>Si la función <code class="docutils literal notranslate"><span class="pre">abs</span></code> se invoca sobre algo que no sea un número, se producirá un error similar al siguiente:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span><span class="p">:</span> <span class="n">bad</span> <span class="n">operand</span> <span class="nb">type</span> <span class="k">for</span> <span class="nb">abs</span><span class="p">():</span> <span class="s1">&#39;str&#39;</span>
@@ -442,7 +500,7 @@ El siguiente fragmento es similar al anterior, pero en este caso se inicia con u
 </div>
 </div>
 <div class="section" id="round-n-digits">
-<h4>round(n, digits)<a class="headerlink" href="#round-n-digits" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.5.2.2.2. </span>round(n, digits)<a class="headerlink" href="#round-n-digits" title="Permalink to this headline">¶</a></h4>
 <p>La función <code class="docutils literal notranslate"><span class="pre">round(n,</span> <span class="pre">digits)</span></code> sirve para redondear un número para que sólo tenga la cantidad de decimales que nosotros le indiquemos. En este caso, el parámetro <code class="docutils literal notranslate"><span class="pre">n</span></code> hace referencia al número que queremos redondear, mientras que el parámetro <code class="docutils literal notranslate"><span class="pre">digits</span></code> especifica cuántos dígitos decimales queremos que tenga el resultado.</p>
 <p>Los siguientes son algunos ejemplos del resultado de evaluar la función:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="mf">3.14159</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -470,7 +528,7 @@ El siguiente fragmento es similar al anterior, pero en este caso se inicia con u
 </div>
 </div>
 <div class="section" id="round-n">
-<h4>round(n)<a class="headerlink" href="#round-n" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.5.2.2.3. </span>round(n)<a class="headerlink" href="#round-n" title="Permalink to this headline">¶</a></h4>
 <p>La función <code class="docutils literal notranslate"><span class="pre">round</span></code> también se puede utilizar con un sólo parámetro (el número <code class="docutils literal notranslate"><span class="pre">n</span></code>), en cuyo caso el resultado será un valor entero.</p>
 <p>Los siguientes son algunos ejemplos del resultado de evaluar la función:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="mf">3.14159</span><span class="p">)</span>
@@ -485,7 +543,7 @@ El siguiente fragmento es similar al anterior, pero en este caso se inicia con u
 </div>
 </div>
 <div class="section" id="min-max">
-<h4>min, max<a class="headerlink" href="#min-max" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.5.2.2.4. </span>min, max<a class="headerlink" href="#min-max" title="Permalink to this headline">¶</a></h4>
 <p>Las funciones <code class="docutils literal notranslate"><span class="pre">min</span></code> y <code class="docutils literal notranslate"><span class="pre">max</span></code> sirven para encontrar los valores mínimos y máximos de sus parámetros. El siguiente fragmento ilustra cuál sería el resultado de invocar estas funciones sobre 4 valores numéricos:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">min</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 <span class="go">2</span>
@@ -495,7 +553,7 @@ El siguiente fragmento es similar al anterior, pero en este caso se inicia con u
 </div>
 </div>
 <div class="section" id="pow-x-y">
-<h4>pow(x, y)<a class="headerlink" href="#pow-x-y" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.5.2.2.5. </span>pow(x, y)<a class="headerlink" href="#pow-x-y" title="Permalink to this headline">¶</a></h4>
 <p>La función <code class="docutils literal notranslate"><span class="pre">pow</span></code> se utiliza para calcular una potencia de un número. Es decir que <code class="docutils literal notranslate"><span class="pre">pow(x,</span> <span class="pre">y)</span></code> es equivalente a <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**</span> <span class="pre">y</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="go">4</span>
@@ -508,10 +566,10 @@ El siguiente fragmento es similar al anterior, pero en este caso se inicia con u
 </div>
 </div>
 <div class="section" id="funciones-de-entrada-y-salida-print-input">
-<h3>Funciones de entrada y salida: print, input<a class="headerlink" href="#funciones-de-entrada-y-salida-print-input" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.5.2.3. </span>Funciones de entrada y salida: print, input<a class="headerlink" href="#funciones-de-entrada-y-salida-print-input" title="Permalink to this headline">¶</a></h3>
 <p>A continuación describiremos dos funciones que son tremendamente útiles para muchos programas y que son centrales para la interacción con el usuario. La primera función (print) servirá para mostrarle información a los usuarios, mientras que la segunda función (input) servirá para obtener información introducida por los usuarios del programa.</p>
 <div class="section" id="print">
-<h4>print<a class="headerlink" href="#print" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.5.2.3.1. </span>print<a class="headerlink" href="#print" title="Permalink to this headline">¶</a></h4>
 <p>La función <code class="docutils literal notranslate"><span class="pre">print</span></code> ya la habíamos encontrado en secciones anteriores. Su objetivo es sencillamente imprimir información en la terminal o consola. Cuando se invoca la función, ella se encarga de imprimir el valor de cada uno de los parámetros separándolos con un espacio <a class="footnote-reference brackets" href="#id7" id="id5">4</a>.</p>
 <p>A continuación se muestra un ejemplo que además ilustra el hecho de que la cantidad de parámetros no es fija.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola&quot;</span><span class="p">,</span> <span class="s2">&quot;Mundo&quot;</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">)</span>
@@ -527,7 +585,7 @@ El siguiente fragmento es similar al anterior, pero en este caso se inicia con u
 <p>Un detalle importante de esta función es que permite combinar parámetros de diferentes tipos y todos los imprime. Para lograr esto, la función llama dentro de ella a la función <code class="docutils literal notranslate"><span class="pre">str</span></code> para cada uno de los parámetros.</p>
 </div>
 <div class="section" id="input">
-<h4>input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.5.2.3.2. </span>input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h4>
 <p>La función <code class="docutils literal notranslate"><span class="pre">input</span></code> tiene como objetivo permitirle al usuario ingresar información para que el programa la utilice. Para esto la función primero le muestra al usuario un mensaje solicitándole la información y luego se queda esperando a que el usuario ingrese la información solicitada y presione la tecla <em>return</em>. Lo que haya tecleado el usuario se convierte en el valor de la invocación a la función.</p>
 <p>El siguiente ejemplo ilustra el uso de la función:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">valor</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Por favor ingrese el valor: &quot;</span><span class="p">)</span>
@@ -546,17 +604,17 @@ El siguiente fragmento es similar al anterior, pero en este caso se inicia con u
 </div>
 </div>
 <div class="section" id="funciones-sobre-caracteres-chr-ord">
-<h3>Funciones sobre caracteres: chr, ord<a class="headerlink" href="#funciones-sobre-caracteres-chr-ord" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.5.2.4. </span>Funciones sobre caracteres: chr, ord<a class="headerlink" href="#funciones-sobre-caracteres-chr-ord" title="Permalink to this headline">¶</a></h3>
 <p>A continuación vamos a describir dos funciones que aunque no son utilizadas muy frecuentemente, resuelven problemáticas muy específicas e importantes.</p>
 <div class="section" id="sistemas-ascii-y-unicode">
-<h4>Sistemas ASCII y UNICODE<a class="headerlink" href="#sistemas-ascii-y-unicode" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.5.2.4.1. </span>Sistemas ASCII y UNICODE<a class="headerlink" href="#sistemas-ascii-y-unicode" title="Permalink to this headline">¶</a></h4>
 <p>Como el objetivo de esta sección no es hacer una descripción completa y pormenorizada de los sistemas ASCII y UNICODE, de su historia y de su uso para representar caracteres, vamos sólo a explicar lo mínimo necesario para entender esos mecanismos. El sistema ASCII se basa en una tabla que le asigna un número entre 0 y 127 a un conjunto de caracteres. Por ejemplo, la tabla dice que al caracter ‘A’ le corresponde el número 65, que al caracter ‘a’ le corresponde el 97, al caracter ‘7’ le corresponde el 55, y al caracter ‘!’ le corresponde el 33.</p>
 <p>Además de caracteres básicos (los que se podrían escribir con un teclado occidental), la tabla ASCII también incluye caracteres de control: como veremos, algunos son importantísimos mientras que otros están obsoletos y tenían sentido para cosas como controlar una impresora de punto.</p>
 <p>El caracter de control más importante de todos es el que expresa un fin de línea y que en Python se representa como ‘\n’. En la tabla ASCII, este caracter tiene asignado el número 10. Otros caracteres de control importantes son el número 9 que representa una tabulación (‘\t’, el caracter que se introduce cuando se presiona la tecla TAB en un teclado) y el caracter 13 que representa un “retorno de carro” que en Python se representa usando ‘\r’. Aunque ya no tiene ninguna utilidad real, los computadores basados en el sistema operativo Windows aún representan el fin de línea usando la combinación de caracteres ‘\r\n’ <a class="footnote-reference brackets" href="#beep" id="id6">5</a>.</p>
 <p>Hoy en día no se utiliza propiamente la tabla ASCII en la mayoría de sistemas. Se usa en cambio UNICODE, que extiende ASCII y sirve para representar más de 137.000 caracteres incluyendo emoticons, kanjis y letras de alfabetos como el cirílico, árabe, hebreo o tailandés. El hecho de que sea una extensión significa que los primeros elementos de UNICODE son los mismos caracteres del sistema ASCII. Es decir que el caracter número 97 en UNICODE también es el caracter ‘a’.</p>
 </div>
 <div class="section" id="funciones-chr-y-ord">
-<h4>Funciones chr y ord<a class="headerlink" href="#funciones-chr-y-ord" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.5.2.4.2. </span>Funciones chr y ord<a class="headerlink" href="#funciones-chr-y-ord" title="Permalink to this headline">¶</a></h4>
 <p>Después de haber presentado lo anterior, ahora sí podemos introducir las funciones <code class="docutils literal notranslate"><span class="pre">chr</span></code> y <code class="docutils literal notranslate"><span class="pre">ord</span></code>. La función <code class="docutils literal notranslate"><span class="pre">chr</span></code> permite consultar cuál caracter le corresponde a un número específico dentro del sistema UNICODE. Por ejemplo, si evaluamos la expresión <code class="docutils literal notranslate"><span class="pre">chr(97)</span></code> el resultado será una cadena de caracteres con el caracter ‘a’. La función <code class="docutils literal notranslate"><span class="pre">ord</span></code> tiene el objetivo opuesto: dado un caracter, indica cual es el número que le corresponde en el sistema UNICODE.</p>
 <p>Los siguientes son algunos ejemplos que permiten estudiar el uso de estas funciones. Dependiendo de la forma en la que esté visualizando este libro es posible que los ejemplos con caracteres especiales no aprecien correctamente.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">chr</span><span class="p">(</span><span class="mi">98</span><span class="p">)</span>
@@ -579,7 +637,7 @@ El siguiente fragmento es similar al anterior, pero en este caso se inicia con u
 </div>
 </div>
 <div class="section" id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5.3. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>¿Qué función básica del lenguaje utilizaría para realizar las siguientes actividades?</p>
 <ul class="simple">
@@ -611,7 +669,7 @@ El siguiente fragmento es similar al anterior, pero en este caso se inicia con u
 </ol>
 </div>
 <div class="section" id="mas-alla-de-python">
-<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5.4. </span>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
 <p>Esta sección se concentró en la definición de función que utiliza Python y en la descripción de funciones básicas que hacen parte de la librería fundamental del lenguaje. En otros lenguajes de programación el concepto de función es idéntico, mientras que en otros es mucho menos importante. Por ejemplo, en Java o en C++ el concepto que se usa para agrupar instrucciones, nombrarlas y poder invocarlas es el concepto de método. En Python existe también un concepto similar, pero es este libro no lo estudiaremos puesto que está atado al concepto de clase.</p>
 <p>Cuando se cambia de lenguaje de programación, una dificultad importante tiene que ver con aprender el nombre y la forma de usar una buena cantidad de elementos básicos del lenguaje, similares a las funciones que estudiamos en esta sección. Por ejemplo, mientras que en Python se usa la función <code class="docutils literal notranslate"><span class="pre">print</span></code> para mostrar algo en la consola, en C tendría que usarse <code class="docutils literal notranslate"><span class="pre">printf</span></code> y en Java tendría que usarse el método <code class="docutils literal notranslate"><span class="pre">println</span></code> del objeto <code class="docutils literal notranslate"><span class="pre">System.out</span></code>.</p>
 <p>Aunque conceptualmente no sean difícil entender las diferencias y empezar a usar estas otras funciones, aprender todos esos pequeños detalles hace un poco más largo el proceso de pasar de un lenguaje a otro.</p>
@@ -637,6 +695,25 @@ El siguiente fragmento es similar al anterior, pero en este caso se inicia con u
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nivel1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -646,8 +723,8 @@ El siguiente fragmento es similar al anterior, pero en este caso se inicia con u
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="seccion1-4.html" title="previous page">Variables, expresiones y operadores</a>
-    <a class='right-next' id="next-link" href="seccion1-6.html" title="next page">Definición de funciones</a>
+    <a class='left-prev' id="prev-link" href="seccion1-4.html" title="previous page"><span class="section-number">2.4. </span>Variables, expresiones y operadores</a>
+    <a class='right-next' id="next-link" href="seccion1-6.html" title="next page"><span class="section-number">2.6. </span>Definición de funciones</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

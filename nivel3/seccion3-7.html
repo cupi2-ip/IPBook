@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Archivos &#8212; Introducción a la Programación</title>
+    <title>4.7. Archivos &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,9 +31,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel3/seccion3-7.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.8. Nociones de complejidad" href="seccion3-8.html" />
+    <link rel="prev" title="4.6. Más algorítmica" href="seccion3-6.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -45,7 +55,7 @@
 <meta property="og:description" content="Archivos  Objetivo de la sección  El objetivo de esta sección es …  Persistencia  Formatos de archivos  texto, imagenes, pdf office  Archivos CSV  ojo: , y ;  L" />
 <meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -74,42 +84,113 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../portada.html">1. Portada</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Antes de empezar</p>
-</li>
-  <li class="">
-    <a href="../introduccion/index.html">2. Introducción</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 1</p>
-</li>
-  <li class="">
-    <a href="../nivel1/intro.html">3. Empezando a programar</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 2</p>
-</li>
-  <li class="">
-    <a href="../nivel2/intro.html">4. Tomando decisiones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 3</p>
-</li>
-  <li class="">
-    <a href="intro.html">5. Repitiendo acciones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 4</p>
-</li>
-  <li class="">
-    <a href="../nivel4/intro.html">6. Matrices y Librerías</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portada.html">
+   Portada
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Contenido
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduccion/index.html">
+   1. Nivel 0 - Antes de empezar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel1/intro.html">
+   2. Nivel 1 - Empezando a programar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel2/intro.html">
+   3. Nivel 2 - Tomando decisiones
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   4. Nivel 3 - Repitiendo acciones
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion3-1.html">
+     4.1. Un programa para leer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion3-2.html">
+     4.2. Instrucciones repetidas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion3-3.html">
+     4.3. Listas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion3-4.html">
+     4.4. Slicing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion3-5.html">
+     4.5. Recorrido de secuencias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion3-6.html">
+     4.6. Más algorítmica
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.7. Archivos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion3-8.html">
+     4.8. Nociones de complejidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion3-9.html">
+     4.9. Un programa para leer (2)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion3-10.html">
+     4.10. Más sobre parámetros en Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion3-11.html">
+     4.11. Errores frecuentes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion3-11.html#para-no-olvidar">
+     4.12. Para no olvidar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion3-12.html">
+     4.13. Ejercicios adicionales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel4/intro.html">
+   5. Nivel 4 - Matrices y Librerías
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -166,44 +247,49 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formatos-de-archivos">
+   4.7.1. Formatos de archivos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#archivos-csv">
+     4.7.1.1. Archivos CSV
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lectura-de-archivos">
+   4.7.2. Lectura de archivos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#escritura-de-archivos">
+   4.7.3. Escritura de archivos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   4.7.4. Ejercicios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mas-alla-de-python">
+   4.7.5. Más allá de Python
+  </a>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#formatos-de-archivos" class="nav-link">Formatos de archivos</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#archivos-csv" class="nav-link">Archivos CSV</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#lectura-de-archivos" class="nav-link">Lectura de archivos</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#escritura-de-archivos" class="nav-link">Escritura de archivos</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#ejercicios" class="nav-link">Ejercicios</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#mas-alla-de-python" class="nav-link">Más allá de Python</a>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -216,43 +302,62 @@
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
 </div>
 <div class="section" id="archivos">
-<h1>Archivos<a class="headerlink" href="#archivos" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.7. </span>Archivos<a class="headerlink" href="#archivos" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-objetivo-de-la-seccion admonition">
 <p class="admonition-title">Objetivo de la sección</p>
 <p>El objetivo de esta sección es …</p>
 </div>
 <p>Persistencia</p>
 <div class="section" id="formatos-de-archivos">
-<h2>Formatos de archivos<a class="headerlink" href="#formatos-de-archivos" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.7.1. </span>Formatos de archivos<a class="headerlink" href="#formatos-de-archivos" title="Permalink to this headline">¶</a></h2>
 <p>texto,
 imagenes,
 pdf
 office</p>
 <div class="section" id="archivos-csv">
-<h3>Archivos CSV<a class="headerlink" href="#archivos-csv" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.7.1.1. </span>Archivos CSV<a class="headerlink" href="#archivos-csv" title="Permalink to this headline">¶</a></h3>
 <p>ojo: , y ;</p>
 </div>
 </div>
 <div class="section" id="lectura-de-archivos">
-<h2>Lectura de archivos<a class="headerlink" href="#lectura-de-archivos" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.7.2. </span>Lectura de archivos<a class="headerlink" href="#lectura-de-archivos" title="Permalink to this headline">¶</a></h2>
 <p>codigo_estudiante, nombre, curso, creditos, actividad, porcentaje, nota</p>
 </div>
 <div class="section" id="escritura-de-archivos">
-<h2>Escritura de archivos<a class="headerlink" href="#escritura-de-archivos" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.7.3. </span>Escritura de archivos<a class="headerlink" href="#escritura-de-archivos" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.7.4. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Construya …</p></li>
 <li><p>En un …</p></li>
 </ol>
 </div>
 <div class="section" id="mas-alla-de-python">
-<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.7.5. </span>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
 <p>Además de …</p>
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nivel3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -262,6 +367,8 @@ office</p>
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="seccion3-6.html" title="previous page"><span class="section-number">4.6. </span>Más algorítmica</a>
+    <a class='right-next' id="next-link" href="seccion3-8.html" title="next page"><span class="section-number">4.8. </span>Nociones de complejidad</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

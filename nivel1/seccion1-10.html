@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Errores frecuentes &#8212; Introducción a la Programación</title>
+    <title>2.10. Errores frecuentes &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,11 +31,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel1/seccion1-10.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Ejercicios adicionales" href="seccion1-11.html" />
-    <link rel="prev" title="Lógica vs. Interacción" href="seccion1-9.html" />
+    <link rel="next" title="2.12. Ejercicios adicionales" href="seccion1-11.html" />
+    <link rel="prev" title="2.9. Lógica vs. Interacción" href="seccion1-9.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -47,7 +55,7 @@
 <meta property="og:description" content="Errores frecuentes  Versión borrador / preliminar  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene al" />
 <meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -76,77 +84,108 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../portada.html">1. Portada</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Antes de empezar</p>
-</li>
-  <li class="">
-    <a href="../introduccion/index.html">2. Introducción</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 1</p>
-</li>
-  <li class="active">
-    <a href="intro.html">3. Empezando a programar</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="seccion1-1.html">3.1 Un programa para leer</a>
-    </li>
-    <li class="">
-      <a href="seccion1-2.html">3.2 Ambiente básico de trabajo</a>
-    </li>
-    <li class="">
-      <a href="seccion1-3.html">3.3 Valores y tipos de datos</a>
-    </li>
-    <li class="">
-      <a href="seccion1-4.html">3.4 Variables, expresiones y operadores</a>
-    </li>
-    <li class="">
-      <a href="seccion1-5.html">3.5 Funciones</a>
-    </li>
-    <li class="">
-      <a href="seccion1-6.html">3.6 Definición de funciones</a>
-    </li>
-    <li class="">
-      <a href="seccion1-7.html">3.7 Estilo de programación</a>
-    </li>
-    <li class="">
-      <a href="seccion1-8.html">3.8 Un programa para leer (2)</a>
-    </li>
-    <li class="">
-      <a href="seccion1-9.html">3.9 Lógica vs. Interacción</a>
-    </li>
-    <li class="active">
-      <a href="">3.10 Errores frecuentes</a>
-    </li>
-    <li class="">
-      <a href="seccion1-11.html">3.11 Ejercicios adicionales</a>
-    </li>
-  </ul>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 2</p>
-</li>
-  <li class="">
-    <a href="../nivel2/intro.html">4. Tomando decisiones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 3</p>
-</li>
-  <li class="">
-    <a href="../nivel3/intro.html">5. Repitiendo acciones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 4</p>
-</li>
-  <li class="">
-    <a href="../nivel4/intro.html">6. Matrices y Librerías</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portada.html">
+   Portada
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Contenido
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduccion/index.html">
+   1. Nivel 0 - Antes de empezar
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   2. Nivel 1 - Empezando a programar
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-1.html">
+     2.1. Un programa para leer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-2.html">
+     2.2. Ambiente básico de trabajo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-3.html">
+     2.3. Valores y tipos de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-4.html">
+     2.4. Variables, expresiones y operadores
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-5.html">
+     2.5. Funciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-6.html">
+     2.6. Definición de funciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-7.html">
+     2.7. Estilo de programación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-8.html">
+     2.8. Un programa para leer (2)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-9.html">
+     2.9. Lógica vs. Interacción
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.10. Errores frecuentes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#para-no-olvidar">
+     2.11. Para no olvidar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-11.html">
+     2.12. Ejercicios adicionales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel2/intro.html">
+   3. Nivel 2 - Tomando decisiones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel3/intro.html">
+   4. Nivel 3 - Repitiendo acciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel4/intro.html">
+   5. Nivel 4 - Matrices y Librerías
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -203,112 +242,120 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#errores-con-variables-y-asignaciones">
+   2.10.1. Errores con variables y asignaciones
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#confundir-una-variable-con-una-cadena">
+     2.10.1.1. Confundir una variable con una cadena
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utilizar-el-valor-de-una-variable-a-la-que-no-se-le-ha-asignado-un-valor">
+     2.10.1.2. Utilizar el valor de una variable a la que no se le ha asignado un valor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#suponer-que-una-asignacion-es-tambien-una-ecuacion">
+     2.10.1.3. Suponer que una asignación es también una ecuación
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#intentar-hacer-una-asignacion-de-izquierda-a-derecha">
+     2.10.1.4. Intentar hacer una asignación de izquierda a derecha
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#errores-definiendo-funciones">
+   2.10.2. Errores definiendo funciones
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#no-respetar-la-indentacion">
+     2.10.2.1. No respetar la indentación
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usar-tabs-en-lugar-de-espacios">
+     2.10.2.2. Usar tabs en lugar de espacios
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usar-en-una-funcion-una-variable-definida-en-otra-funcion">
+     2.10.2.3. Usar en una función una variable definida en otra función
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usar-en-una-funcion-una-variable-definida-por-fuera-de-la-funcion">
+     2.10.2.4. Usar en una función una variable definida por fuera de la función
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ponerle-a-una-variable-el-mismo-nombre-de-una-funcion">
+     2.10.2.5. Ponerle a una variable el mismo nombre de una función
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#redefinir-funcions-nativas">
+     2.10.2.6. Redefinir funcions nativas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#errores-con-el-retorno">
+   2.10.3. Errores con el retorno
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#incluir-una-instruccion-return-en-una-funcion-de-tipo-none">
+     2.10.3.1. Incluir una instrucción return en una función de tipo None
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#no-retornar-en-una-funcion">
+     2.10.3.2. No retornar en una función
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#escribir-instrucciones-despues-del-retorno">
+     2.10.3.3. Escribir instrucciones después del retorno
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#otros-errores">
+   2.10.4. Otros errores
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#olvidar-el-operador-de-multiplicacion">
+     2.10.4.1. Olvidar el operador de multiplicación
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#confundir-la-concatenacion-de-cadenas-con-la-creacion-de-tuplas">
+     2.10.4.2. Confundir la concatenación de cadenas con la creación de tuplas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#" class="nav-link">Errores frecuentes</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#errores-con-variables-y-asignaciones" class="nav-link">Errores con variables y asignaciones</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#confundir-una-variable-con-una-cadena" class="nav-link">Confundir una variable con una cadena</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#utilizar-el-valor-de-una-variable-a-la-que-no-se-le-ha-asignado-un-valor" class="nav-link">Utilizar el valor de una variable a la que no se le ha asignado un valor</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#suponer-que-una-asignacion-es-tambien-una-ecuacion" class="nav-link">Suponer que una asignación es también una ecuación</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#intentar-hacer-una-asignacion-de-izquierda-a-derecha" class="nav-link">Intentar hacer una asignación de izquierda a derecha</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#errores-definiendo-funciones" class="nav-link">Errores definiendo funciones</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#no-respetar-la-indentacion" class="nav-link">No respetar la indentación</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#usar-tabs-en-lugar-de-espacios" class="nav-link">Usar tabs en lugar de espacios</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#usar-en-una-funcion-una-variable-definida-en-otra-funcion" class="nav-link">Usar en una función una variable definida en otra función</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#usar-en-una-funcion-una-variable-definida-por-fuera-de-la-funcion" class="nav-link">Usar en una función una variable definida por fuera de la función</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#ponerle-a-una-variable-el-mismo-nombre-de-una-funcion" class="nav-link">Ponerle a una variable el mismo nombre de una función</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#redefinir-funcions-nativas" class="nav-link">Redefinir funcions nativas</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#errores-con-el-retorno" class="nav-link">Errores con el retorno</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#incluir-una-instruccion-return-en-una-funcion-de-tipo-none" class="nav-link">Incluir una instrucción return en una función de tipo None</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#no-retornar-en-una-funcion" class="nav-link">No retornar en una función</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#escribir-instrucciones-despues-del-retorno" class="nav-link">Escribir instrucciones después del retorno</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#otros-errores" class="nav-link">Otros errores</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#olvidar-el-operador-de-multiplicacion" class="nav-link">Olvidar el operador de multiplicación</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#confundir-la-concatenacion-de-cadenas-con-la-creacion-de-tuplas" class="nav-link">Confundir la concatenación de cadenas con la creación de tuplas</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#para-no-olvidar" class="nav-link">Para no olvidar</a>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -317,16 +364,16 @@
               <div>
                 
   <div class="section" id="errores-frecuentes">
-<h1>Errores frecuentes<a class="headerlink" href="#errores-frecuentes" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.10. </span>Errores frecuentes<a class="headerlink" href="#errores-frecuentes" title="Permalink to this headline">¶</a></h1>
 <div class="warning admonition">
 <p class="admonition-title">Versión borrador / preliminar</p>
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
 </div>
 <p>En esta sección presentamos algunos de los errores que encontramos frecuentemente en los programas de muchos estudiantes. Revíselos con cuidado y asegúrese de entenderlos para no cometer esos mismos errores.</p>
 <div class="section" id="errores-con-variables-y-asignaciones">
-<h2>Errores con variables y asignaciones<a class="headerlink" href="#errores-con-variables-y-asignaciones" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.10.1. </span>Errores con variables y asignaciones<a class="headerlink" href="#errores-con-variables-y-asignaciones" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="confundir-una-variable-con-una-cadena">
-<h3>Confundir una variable con una cadena<a class="headerlink" href="#confundir-una-variable-con-una-cadena" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.10.1.1. </span>Confundir una variable con una cadena<a class="headerlink" href="#confundir-una-variable-con-una-cadena" title="Permalink to this headline">¶</a></h3>
 <p>Cuando se empieza a programa, es habitual confundir el nombre de una variable con el valor de una cadena. Recuerde que el nombre de una variable nunca lleva comillas mientras que cualquier cosa entre comillas será un literal.</p>
 <p>Considere el siguiente programa. Es más complicado, pero ha sido construido buscando para reflejar la confusión común.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -352,7 +399,7 @@
 </ul>
 </div>
 <div class="section" id="utilizar-el-valor-de-una-variable-a-la-que-no-se-le-ha-asignado-un-valor">
-<h3>Utilizar el valor de una variable a la que no se le ha asignado un valor<a class="headerlink" href="#utilizar-el-valor-de-una-variable-a-la-que-no-se-le-ha-asignado-un-valor" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.10.1.2. </span>Utilizar el valor de una variable a la que no se le ha asignado un valor<a class="headerlink" href="#utilizar-el-valor-de-una-variable-a-la-que-no-se-le-ha-asignado-un-valor" title="Permalink to this headline">¶</a></h3>
 <p>Para poder utilizar el valor contenido en una variable, se le debe haber asignado antes un valor. En este contexto, <em>utilizar</em> hace referencia a cualquier operación que dependa del valor que tenga una variable. Por ejemplo, en el siguiente programa las dos primeras instrucciones producirían un error mientras que la tercera no tendría ningún problema (suponiendo que antes de ejecutar el programa no exista la variable <code class="docutils literal notranslate"><span class="pre">v</span></code>).</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -369,7 +416,7 @@
 </div>
 </div>
 <div class="section" id="suponer-que-una-asignacion-es-tambien-una-ecuacion">
-<h3>Suponer que una asignación es también una ecuación<a class="headerlink" href="#suponer-que-una-asignacion-es-tambien-una-ecuacion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.10.1.3. </span>Suponer que una asignación es también una ecuación<a class="headerlink" href="#suponer-que-una-asignacion-es-tambien-una-ecuacion" title="Permalink to this headline">¶</a></h3>
 <p>En un ejercicio de cálculo o de física es común que se usen ecuaciones para expresar el valor de una variable. Por ejemplo, la siguiente ecuación expresa el valor de la posición <span class="math notranslate nohighlight">\(y\)</span> en términos de la posición inicial <span class="math notranslate nohighlight">\(y_{0}\)</span>, la velocidad inicial <span class="math notranslate nohighlight">\(v_{0y}\)</span>, la aceleración <span class="math notranslate nohighlight">\(a_{y}\)</span> y el tiempo transcurrido:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -386,21 +433,21 @@ y = y_{0} + v_{0y} \cdot t + \frac{1}{2} \cdot a_{y} \cdot t^{2}
 <p>Si lo interpretamos como lo que es, un programa escrito en Python, la situación es muy diferente. Después de ejecutar la línea 1, la variable <code class="docutils literal notranslate"><span class="pre">x</span></code> asume el valor <code class="docutils literal notranslate"><span class="pre">27</span></code>. Luego ejecutamos la línea 2 y le asignamos a <code class="docutils literal notranslate"><span class="pre">x</span></code> un valor que dependerá del valor de <code class="docutils literal notranslate"><span class="pre">y</span></code>. Si <code class="docutils literal notranslate"><span class="pre">y</span></code> tenía el valor <code class="docutils literal notranslate"><span class="pre">5</span></code>, entonces el nuevo valor de <code class="docutils literal notranslate"><span class="pre">x</span></code> será 125 y el valor anterior se habrá perdido.</p>
 </div>
 <div class="section" id="intentar-hacer-una-asignacion-de-izquierda-a-derecha">
-<h3>Intentar hacer una asignación de izquierda a derecha<a class="headerlink" href="#intentar-hacer-una-asignacion-de-izquierda-a-derecha" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.10.1.4. </span>Intentar hacer una asignación de izquierda a derecha<a class="headerlink" href="#intentar-hacer-una-asignacion-de-izquierda-a-derecha" title="Permalink to this headline">¶</a></h3>
 <p>Las asignaciones en Python se hacen de derecha a izquierda: el valor que se encuentre a la derecha del símbolo <code class="docutils literal notranslate"><span class="pre">=</span></code> se almacenará en la variable que se encuentre a la izquierda del símbolo. Si lo que hay a la izquierda no es una variable, se producirá un error. Si lo que hay a la derecha es una expresión, entonces se hará la evaluación de la expresión antes de almacenar el valor en la variable.</p>
 </div>
 </div>
 <div class="section" id="errores-definiendo-funciones">
-<h2>Errores definiendo funciones<a class="headerlink" href="#errores-definiendo-funciones" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.10.2. </span>Errores definiendo funciones<a class="headerlink" href="#errores-definiendo-funciones" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="no-respetar-la-indentacion">
-<h3>No respetar la indentación<a class="headerlink" href="#no-respetar-la-indentacion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.10.2.1. </span>No respetar la indentación<a class="headerlink" href="#no-respetar-la-indentacion" title="Permalink to this headline">¶</a></h3>
 <p>Python es estricto con respecto a la indentación y exige consistencia: si en una función las instrucciones se indentan de forma diferente se producirá un error como el siguiente:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ne">IndentationError</span><span class="p">:</span> <span class="n">unexpected</span> <span class="n">indent</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="usar-tabs-en-lugar-de-espacios">
-<h3>Usar tabs en lugar de espacios<a class="headerlink" href="#usar-tabs-en-lugar-de-espacios" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.10.2.2. </span>Usar tabs en lugar de espacios<a class="headerlink" href="#usar-tabs-en-lugar-de-espacios" title="Permalink to this headline">¶</a></h3>
 <p>Una forma común (y fácil) de introducir el error de intentación es usar un caracter de tabulación en lugar de espacios. En este caso, Python nos anunciará algo similar a lo siguiente:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ne">TabError</span><span class="p">:</span> <span class="n">inconsistent</span> <span class="n">use</span> <span class="n">of</span> <span class="n">tabs</span> <span class="ow">and</span> <span class="n">spaces</span> <span class="ow">in</span> <span class="n">indentation</span>
 </pre></div>
@@ -408,7 +455,7 @@ y = y_{0} + v_{0y} \cdot t + \frac{1}{2} \cdot a_{y} \cdot t^{2}
 <p>Este error se introduce con facilidad al presionar la tecla <strong>tab</strong> pero no se detecta fácilmente porque para nuestros ojos una tabulación se ve igual que 4 u 8 espacios. Afortunadamente hoy en día muchos editores de código remplazan automáticamente las tabulaciones por 4 espacios, así que este error se presenta cada vez menos frecuentemente.</p>
 </div>
 <div class="section" id="usar-en-una-funcion-una-variable-definida-en-otra-funcion">
-<h3>Usar en una función una variable definida en otra función<a class="headerlink" href="#usar-en-una-funcion-una-variable-definida-en-otra-funcion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.10.2.3. </span>Usar en una función una variable definida en otra función<a class="headerlink" href="#usar-en-una-funcion-una-variable-definida-en-otra-funcion" title="Permalink to this headline">¶</a></h3>
 <p>Considere el siguiente programa donde se definen dos funciones:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -432,7 +479,7 @@ y = y_{0} + v_{0y} \cdot t + \frac{1}{2} \cdot a_{y} \cdot t^{2}
 </div>
 </div>
 <div class="section" id="usar-en-una-funcion-una-variable-definida-por-fuera-de-la-funcion">
-<h3>Usar en una función una variable definida por fuera de la función<a class="headerlink" href="#usar-en-una-funcion-una-variable-definida-por-fuera-de-la-funcion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.10.2.4. </span>Usar en una función una variable definida por fuera de la función<a class="headerlink" href="#usar-en-una-funcion-una-variable-definida-por-fuera-de-la-funcion" title="Permalink to this headline">¶</a></h3>
 <p>A continuación presentamos algo que técnicamente no es un error pero es generalmente considerado una mala práctica de programación porque es fácil que lleve a errores muy difíciles de encontrar y resolver.</p>
 <p>Considere el siguiente programa:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -460,7 +507,7 @@ y = y_{0} + v_{0y} \cdot t + \frac{1}{2} \cdot a_{y} \cdot t^{2}
 <p>Aunque no son los únicos argumentos posibles, por ahora deberían ser suficientes para mostrar que escribir funciones que dependan de valores definidos por fuera de la función es una mala idea (salvo casos muy especiales).</p>
 </div>
 <div class="section" id="ponerle-a-una-variable-el-mismo-nombre-de-una-funcion">
-<h3>Ponerle a una variable el mismo nombre de una función<a class="headerlink" href="#ponerle-a-una-variable-el-mismo-nombre-de-una-funcion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.10.2.5. </span>Ponerle a una variable el mismo nombre de una función<a class="headerlink" href="#ponerle-a-una-variable-el-mismo-nombre-de-una-funcion" title="Permalink to this headline">¶</a></h3>
 <p>Es un reflejo común usar el nombre de una función para una variable en la que se almacene el resultado de la función, como en este ejemplo:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -485,7 +532,7 @@ y = y_{0} + v_{0y} \cdot t + \frac{1}{2} \cdot a_{y} \cdot t^{2}
 <p>En la siguiente línea se intenta hacer una invocación a <code class="docutils literal notranslate"><span class="pre">sumatoria</span></code>, pero Python lo último que vio con ese nombre no era una función sino una variable de tipo <code class="docutils literal notranslate"><span class="pre">int</span></code>, por lo cual genera el error diciendo que no es posible hacer una invocación sobre un entero.</p>
 </div>
 <div class="section" id="redefinir-funcions-nativas">
-<h3>Redefinir funcions nativas<a class="headerlink" href="#redefinir-funcions-nativas" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.10.2.6. </span>Redefinir funcions nativas<a class="headerlink" href="#redefinir-funcions-nativas" title="Permalink to this headline">¶</a></h3>
 <p>A menos que haya alguna necesidad muy especial, nunca se deberían redefinir las funciones nativas de Python, tales como float, int, str, min, max y abs, entre otras. Sin embargo, en Python esto es realmente muy fácil de hacer y por lo tanto ocurre con frecuencia cuando se está empezando a programar.</p>
 <p>Considere el siguiente ejemplo:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -509,25 +556,25 @@ y = y_{0} + v_{0y} \cdot t + \frac{1}{2} \cdot a_{y} \cdot t^{2}
 </div>
 </div>
 <div class="section" id="errores-con-el-retorno">
-<h2>Errores con el retorno<a class="headerlink" href="#errores-con-el-retorno" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.10.3. </span>Errores con el retorno<a class="headerlink" href="#errores-con-el-retorno" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="incluir-una-instruccion-return-en-una-funcion-de-tipo-none">
-<h3>Incluir una instrucción return en una función de tipo None<a class="headerlink" href="#incluir-una-instruccion-return-en-una-funcion-de-tipo-none" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.10.3.1. </span>Incluir una instrucción return en una función de tipo None<a class="headerlink" href="#incluir-una-instruccion-return-en-una-funcion-de-tipo-none" title="Permalink to this headline">¶</a></h3>
 <p>Si en la signatira de una función se declara que la función es de tipo <code class="docutils literal notranslate"><span class="pre">None</span></code>, no debería haber una instrucción <code class="docutils literal notranslate"><span class="pre">return</span></code> dentro de la función.</p>
 </div>
 <div class="section" id="no-retornar-en-una-funcion">
-<h3>No retornar en una función<a class="headerlink" href="#no-retornar-en-una-funcion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.10.3.2. </span>No retornar en una función<a class="headerlink" href="#no-retornar-en-una-funcion" title="Permalink to this headline">¶</a></h3>
 <p>Fuera de las funciones que declaren en la signatura que son de tipo <code class="docutils literal notranslate"><span class="pre">None</span></code>, todas las funciones deberían incluir una instrucción <code class="docutils literal notranslate"><span class="pre">return</span></code>. Es recomendable, aunque no obligatorio, que sólo haya una instrucción <code class="docutils literal notranslate"><span class="pre">return</span></code> al final de la función.</p>
 </div>
 <div class="section" id="escribir-instrucciones-despues-del-retorno">
-<h3>Escribir instrucciones después del retorno<a class="headerlink" href="#escribir-instrucciones-despues-del-retorno" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.10.3.3. </span>Escribir instrucciones después del retorno<a class="headerlink" href="#escribir-instrucciones-despues-del-retorno" title="Permalink to this headline">¶</a></h3>
 <p>Las instrucciones que se escriban después de la instrucción <code class="docutils literal notranslate"><span class="pre">return</span></code> no se ejecutarán en un programa
 escribir instrucciones después del retorno</p>
 </div>
 </div>
 <div class="section" id="otros-errores">
-<h2>Otros errores<a class="headerlink" href="#otros-errores" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.10.4. </span>Otros errores<a class="headerlink" href="#otros-errores" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="olvidar-el-operador-de-multiplicacion">
-<h3>Olvidar el operador de multiplicación<a class="headerlink" href="#olvidar-el-operador-de-multiplicacion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.10.4.1. </span>Olvidar el operador de multiplicación<a class="headerlink" href="#olvidar-el-operador-de-multiplicacion" title="Permalink to this headline">¶</a></h3>
 <p>Considere el siguiente programa:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">m</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
@@ -537,7 +584,7 @@ escribir instrucciones después del retorno</p>
 <p>Probablemente el que escribió la primera línea quería realizar el mismo cálculo que en la línea 2 pero se le olvidó incluir el operador de multiplicación. Eso quiere decir que en la primera línea Python va a intentar invocar a la función <code class="docutils literal notranslate"><span class="pre">m</span></code> pasándole como parámetro el valor de <code class="docutils literal notranslate"><span class="pre">m+1</span></code>. Muy posiblemente esto no va a funcionar.</p>
 </div>
 <div class="section" id="confundir-la-concatenacion-de-cadenas-con-la-creacion-de-tuplas">
-<h3>Confundir la concatenación de cadenas con la creación de tuplas<a class="headerlink" href="#confundir-la-concatenacion-de-cadenas-con-la-creacion-de-tuplas" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.10.4.2. </span>Confundir la concatenación de cadenas con la creación de tuplas<a class="headerlink" href="#confundir-la-concatenacion-de-cadenas-con-la-creacion-de-tuplas" title="Permalink to this headline">¶</a></h3>
 <p>Más adelante en este libro estudiaremos un tipo de datos llamado tupla. Por ahora es suficiente decir que las tuplas son el tipo que uno usaría para representar cosas como coordenadas en un plano cartesiano (que tienen varias partes). En el siguiente código, en la primera línea se define una coordenada usando una tupla: note el uso de los paréntesis y de la coma para separar los valores 3 y 5.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -553,7 +600,7 @@ escribir instrucciones después del retorno</p>
 </div>
 </div>
 <div class="section" id="para-no-olvidar">
-<h1>Para no olvidar<a class="headerlink" href="#para-no-olvidar" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.11. </span>Para no olvidar<a class="headerlink" href="#para-no-olvidar" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p><strong>Cada línea en programa debería tener una instrucción</strong>. Es más fácil de leer, entender, mantener y corregir un programa que tenga varias instrucciones sencillas, en lugar de uno donde cada línea intenta hacer varias cosas a la vez.</p></li>
 <li><p><strong>Las instrucciones de un mismo bloque se ejecutan una por una</strong>. Un bloque hace referencia a las instrucciones que están contenidas dentro del mismo módulo o de la misma función y que tienen el mismo nivel de indentación. Las instrucciones de un bloque se ejecutan desde la primera línea hasta la última, una por una. No son ecuaciones que tengan que ser ciertas todas a la vez.</p></li>
@@ -582,6 +629,25 @@ escribir instrucciones después del retorno</p>
 </ul>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nivel1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -591,8 +657,8 @@ escribir instrucciones después del retorno</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="seccion1-9.html" title="previous page">Lógica vs. Interacción</a>
-    <a class='right-next' id="next-link" href="seccion1-11.html" title="next page">Ejercicios adicionales</a>
+    <a class='left-prev' id="prev-link" href="seccion1-9.html" title="previous page"><span class="section-number">2.9. </span>Lógica vs. Interacción</a>
+    <a class='right-next' id="next-link" href="seccion1-11.html" title="next page"><span class="section-number">2.12. </span>Ejercicios adicionales</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

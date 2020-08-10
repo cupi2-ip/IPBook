@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Definición de funciones &#8212; Introducción a la Programación</title>
+    <title>2.6. Definición de funciones &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,11 +31,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel1/seccion1-6.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Estilo de programación" href="seccion1-7.html" />
-    <link rel="prev" title="Funciones" href="seccion1-5.html" />
+    <link rel="next" title="2.7. Estilo de programación" href="seccion1-7.html" />
+    <link rel="prev" title="2.5. Funciones" href="seccion1-5.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -47,7 +55,7 @@
 <meta property="og:description" content="Definición de funciones  Versión borrador / preliminar  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tie" />
 <meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -76,77 +84,108 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../portada.html">1. Portada</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Antes de empezar</p>
-</li>
-  <li class="">
-    <a href="../introduccion/index.html">2. Introducción</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 1</p>
-</li>
-  <li class="active">
-    <a href="intro.html">3. Empezando a programar</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="seccion1-1.html">3.1 Un programa para leer</a>
-    </li>
-    <li class="">
-      <a href="seccion1-2.html">3.2 Ambiente básico de trabajo</a>
-    </li>
-    <li class="">
-      <a href="seccion1-3.html">3.3 Valores y tipos de datos</a>
-    </li>
-    <li class="">
-      <a href="seccion1-4.html">3.4 Variables, expresiones y operadores</a>
-    </li>
-    <li class="">
-      <a href="seccion1-5.html">3.5 Funciones</a>
-    </li>
-    <li class="active">
-      <a href="">3.6 Definición de funciones</a>
-    </li>
-    <li class="">
-      <a href="seccion1-7.html">3.7 Estilo de programación</a>
-    </li>
-    <li class="">
-      <a href="seccion1-8.html">3.8 Un programa para leer (2)</a>
-    </li>
-    <li class="">
-      <a href="seccion1-9.html">3.9 Lógica vs. Interacción</a>
-    </li>
-    <li class="">
-      <a href="seccion1-10.html">3.10 Errores frecuentes</a>
-    </li>
-    <li class="">
-      <a href="seccion1-11.html">3.11 Ejercicios adicionales</a>
-    </li>
-  </ul>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 2</p>
-</li>
-  <li class="">
-    <a href="../nivel2/intro.html">4. Tomando decisiones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 3</p>
-</li>
-  <li class="">
-    <a href="../nivel3/intro.html">5. Repitiendo acciones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 4</p>
-</li>
-  <li class="">
-    <a href="../nivel4/intro.html">6. Matrices y Librerías</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portada.html">
+   Portada
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Contenido
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduccion/index.html">
+   1. Nivel 0 - Antes de empezar
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   2. Nivel 1 - Empezando a programar
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-1.html">
+     2.1. Un programa para leer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-2.html">
+     2.2. Ambiente básico de trabajo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-3.html">
+     2.3. Valores y tipos de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-4.html">
+     2.4. Variables, expresiones y operadores
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-5.html">
+     2.5. Funciones
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.6. Definición de funciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-7.html">
+     2.7. Estilo de programación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-8.html">
+     2.8. Un programa para leer (2)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-9.html">
+     2.9. Lógica vs. Interacción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-10.html">
+     2.10. Errores frecuentes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-10.html#para-no-olvidar">
+     2.11. Para no olvidar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-11.html">
+     2.12. Ejercicios adicionales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel2/intro.html">
+   3. Nivel 2 - Tomando decisiones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel3/intro.html">
+   4. Nivel 3 - Repitiendo acciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel4/intro.html">
+   5. Nivel 4 - Matrices y Librerías
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -203,80 +242,93 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#antes-de-empezar-modulos-y-archivos-py">
+   2.6.1. Antes de empezar: módulos y archivos .py
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#un-ejemplo-completo-el-programa-de-la-casa">
+   2.6.2. Un ejemplo completo: el programa de la casa
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definicion-de-funciones-en-python">
+   2.6.3. Definición de funciones en Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-signatura-de-una-funcion">
+     2.6.3.1. La signatura de una función
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#el-cuerpo-de-una-funcion">
+     2.6.3.2. El cuerpo de una función
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definir-vs-invocar">
+   2.6.4. Definir vs. Invocar
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definicion-de-la-funcion">
+     2.6.4.1. Definición de la función
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#invocacion-de-la-funcion">
+     2.6.4.2. Invocación de la función
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejecucion-de-un-programa">
+     2.6.4.3. Ejecución de un programa
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funciones-sin-parametro-o-sin-retorno">
+   2.6.5. Funciones sin parámetro o sin retorno
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funciones-sin-parametros">
+     2.6.5.1. Funciones sin parámetros
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funciones-sin-retorno">
+     2.6.5.2. Funciones sin retorno
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   2.6.6. Ejercicios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mas-alla-de-python">
+   2.6.7. Más allá de Python
+  </a>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#antes-de-empezar-modulos-y-archivos-py" class="nav-link">Antes de empezar: módulos y archivos .py</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#un-ejemplo-completo-el-programa-de-la-casa" class="nav-link">Un ejemplo completo: el programa de la casa</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#definicion-de-funciones-en-python" class="nav-link">Definición de funciones en Python</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#la-signatura-de-una-funcion" class="nav-link">La signatura de una función</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#el-cuerpo-de-una-funcion" class="nav-link">El cuerpo de una función</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#definir-vs-invocar" class="nav-link">Definir vs. Invocar</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#definicion-de-la-funcion" class="nav-link">Definición de la función</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#invocacion-de-la-funcion" class="nav-link">Invocación de la función</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#ejecucion-de-un-programa" class="nav-link">Ejecución de un programa</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#funciones-sin-parametro-o-sin-retorno" class="nav-link">Funciones sin parámetro o sin retorno</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#funciones-sin-parametros" class="nav-link">Funciones sin parámetros</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#funciones-sin-retorno" class="nav-link">Funciones sin retorno</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#ejercicios" class="nav-link">Ejercicios</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#mas-alla-de-python" class="nav-link">Más allá de Python</a>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -285,7 +337,7 @@
               <div>
                 
   <div class="section" id="definicion-de-funciones">
-<h1>Definición de funciones<a class="headerlink" href="#definicion-de-funciones" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.6. </span>Definición de funciones<a class="headerlink" href="#definicion-de-funciones" title="Permalink to this headline">¶</a></h1>
 <div class="warning admonition">
 <p class="admonition-title">Versión borrador / preliminar</p>
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
@@ -295,7 +347,7 @@
 <p>El objetivo de esta sección es seguir explorando el concepto de función y aprender a definir nuevas funciones.</p>
 </div>
 <div class="section" id="antes-de-empezar-modulos-y-archivos-py">
-<h2>Antes de empezar: módulos y archivos .py<a class="headerlink" href="#antes-de-empezar-modulos-y-archivos-py" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6.1. </span>Antes de empezar: módulos y archivos .py<a class="headerlink" href="#antes-de-empezar-modulos-y-archivos-py" title="Permalink to this headline">¶</a></h2>
 <p>Hasta el momento sólo hemos trabajado con pequeños programas que se pueden ejecutar y probar fácilmente en el REPL. A partir de este momento vamos a construir programas mucho más grandes que esperaríamos ejecutar varias veces.</p>
 <p>En Python existe un concepto llamado <em>módulo</em>, que no es más que un archivo con definiciones de funciones e instrucciones adicionales. El nombre del archivo tiene que ser de la forma <code class="docutils literal notranslate"><span class="pre">nombre_modulo.py</span></code>, y todas las funciones que se definan dentro del archivo se considerarán parte del módulo.</p>
 <p>La forma más usual para ejecutar un módulo es utilizar la línea de comandos e invocar el programa Python con el nombre del archivo. Por ejemplo, para ejecutar el módulo definido en el archivo <code class="docutils literal notranslate"><span class="pre">hola_mundo.py</span></code> es necesario usar la siguiente instrucción en la línea de comandos:</p>
@@ -304,12 +356,12 @@
 <p>Finalmente, veamos que ejecutar un programa es exactamente lo mismo que ejecutar un módulo. Lo único que se debe notar es que usualmente un programa involucra varios módulos y que para ejecutar el programa se debe saber cuál es el módulo que se debe usar para iniciar el programa.</p>
 </div>
 <div class="section" id="un-ejemplo-completo-el-programa-de-la-casa">
-<h2>Un ejemplo completo: el programa de la casa<a class="headerlink" href="#un-ejemplo-completo-el-programa-de-la-casa" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6.2. </span>Un ejemplo completo: el programa de la casa<a class="headerlink" href="#un-ejemplo-completo-el-programa-de-la-casa" title="Permalink to this headline">¶</a></h2>
 <p>En la sección anterior definimos el concepto de función y lo ilustramos con varias funciones básicas del lenguaje Python. Como parte de esto, también se mostraron varios ejemplos de invocaciones a estas funciones y se presentaron las principales reglas para la evaluación de funciones. Esta sección completa la discusión sobre funciones en Python explicando cómo se pueden definir nuevas funciones.</p>
 <p>Para empezar, presentamos un programa completo que al final de esta sección usted debería ser capaz de explicar y reconstruir. Léalo con cuidado, teniendo en que cuenta que cuando se habla de “una casa” se hace referencia a un dibujo como el siguiente:</p>
 <div class="figure align-default" id="casita">
 <img alt="../_images/casita.png" src="../_images/casita.png" />
-<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Representación básica de una casa.</span><a class="headerlink" href="#casita" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.13 </span><span class="caption-text">Representación básica de una casa.</span><a class="headerlink" href="#casita" title="Permalink to this image">¶</a></p>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Este programa está en el archivo casa.py</span>
 
@@ -348,10 +400,10 @@
 <p>Como siempre, no se preocupe si hay cosas en el programa anterior que no haya entendido: todo se irá aclarando a lo largo de la sección.</p>
 </div>
 <div class="section" id="definicion-de-funciones-en-python">
-<h2>Definición de funciones en Python<a class="headerlink" href="#definicion-de-funciones-en-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6.3. </span>Definición de funciones en Python<a class="headerlink" href="#definicion-de-funciones-en-python" title="Permalink to this headline">¶</a></h2>
 <p>En la sección anterior vimos que Python incluye varias funciones que nosotros podemos utilizar aunque no sepamos cuáles sean exactamente las instrucciones que ejecuta cada una. Lo que conocemos nosotros de esas funciones es lo que llamamos <em>signatura</em>, la cual incluye el nombre, los parámetros que espera y su retorno. Lo que desconocemos es el <em>cuerpo</em> o <em>implementación</em> de las funciones, es decir las instrucciones que hacen que la función cumpla con lo que se espera de ella.</p>
 <div class="section" id="la-signatura-de-una-funcion">
-<h3>La signatura de una función<a class="headerlink" href="#la-signatura-de-una-funcion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.6.3.1. </span>La signatura de una función<a class="headerlink" href="#la-signatura-de-una-funcion" title="Permalink to this headline">¶</a></h3>
 <p>La signatura de una función puede verse como la especificación de las reglas para utilizar la función y está compuesta por tres cosas:</p>
 <ol class="simple">
 <li><p><strong>El nombre</strong>. Este debería ser un nombre claro y fácil de recordar. Además, no debería estar repetido para que no haya ambigüedad cuando se quiera invocar a la función.</p></li>
@@ -373,10 +425,10 @@
 <p>En nuestro ejemplo, el parámetro está especificado en la parte que dice <code class="docutils literal notranslate"><span class="pre">lado:</span> <span class="pre">int</span></code>. Esto significa que la función esperará un solo parámetro, que nos vamos a referir a ese parámetro como <code class="docutils literal notranslate"><span class="pre">lado</span></code>, y que ese parámetro debería ser un número entero (<code class="docutils literal notranslate"><span class="pre">int</span></code>). Los parámetros siempre se especifican dentro de paréntesis redondos.</p>
 <p>Finalmente encontramos la especificación del resultado de la función. En nuestro ejemplo, la signatura especifica que su resultado será un número entero con el fragmento que dice <code class="docutils literal notranslate"><span class="pre">-&gt;</span> <span class="pre">int</span></code>.</p>
 <p>En resumen: la signatura de una función especifica cómo se debería invocar la función y qué se debería esperar como resultado. En nuestro caso de ejemplo, la función se invocará con el nombre <code class="docutils literal notranslate"><span class="pre">area_cuadrado</span></code>, requerirá que se use un parámetro de tipo <code class="docutils literal notranslate"><span class="pre">int</span></code> y generará como resultado otro número entero (<code class="docutils literal notranslate"><span class="pre">int</span></code>).</p>
-<p>La <a class="reference internal" href="#cuadrado1"><span class="std std-numref">figura 19</span></a> presenta de manera gráfica esta misma información: la función <code class="docutils literal notranslate"><span class="pre">area_cuadrado</span></code> requiere una entrada de tipo <code class="docutils literal notranslate"><span class="pre">int</span></code> y produce un resultado también de tipo <code class="docutils literal notranslate"><span class="pre">int</span></code>. Más adelante exploraremos qué es lo que pasa dentro de la función que convierte la entrada <code class="docutils literal notranslate"><span class="pre">lado</span></code> en un resultado.</p>
+<p>La <a class="reference internal" href="#cuadrado1"><span class="std std-numref">figura 2.14</span></a> presenta de manera gráfica esta misma información: la función <code class="docutils literal notranslate"><span class="pre">area_cuadrado</span></code> requiere una entrada de tipo <code class="docutils literal notranslate"><span class="pre">int</span></code> y produce un resultado también de tipo <code class="docutils literal notranslate"><span class="pre">int</span></code>. Más adelante exploraremos qué es lo que pasa dentro de la función que convierte la entrada <code class="docutils literal notranslate"><span class="pre">lado</span></code> en un resultado.</p>
 <div class="figure align-default" id="cuadrado1">
 <img alt="../_images/fig_cuadrado1.png" src="../_images/fig_cuadrado1.png" />
-<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Representación gráfica de la signatura de la función area_cuadrado</span><a class="headerlink" href="#cuadrado1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.14 </span><span class="caption-text">Representación gráfica de la signatura de la función area_cuadrado</span><a class="headerlink" href="#cuadrado1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="warning admonition">
 <p class="admonition-title">Cuidado</p>
@@ -400,7 +452,7 @@
 <p>Lo único diferente con respecto al primer ejemplo es que tenemos dos parámetros en lugar de uno y que esos dos parámetros se separaron utilizando una coma.</p>
 <div class="figure align-default" id="triangulo1">
 <img alt="../_images/fig_triangulo1.png" src="../_images/fig_triangulo1.png" />
-<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Representación gráfica de la signatura de la función area_triangulo</span><a class="headerlink" href="#triangulo1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.15 </span><span class="caption-text">Representación gráfica de la signatura de la función area_triangulo</span><a class="headerlink" href="#triangulo1" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Actividades:</strong></p>
 <ol class="simple">
@@ -410,7 +462,7 @@
 </ol>
 </div>
 <div class="section" id="el-cuerpo-de-una-funcion">
-<h3>El cuerpo de una función<a class="headerlink" href="#el-cuerpo-de-una-funcion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.6.3.2. </span>El cuerpo de una función<a class="headerlink" href="#el-cuerpo-de-una-funcion" title="Permalink to this headline">¶</a></h3>
 <p>Pasamos ahora a estudiar el cuerpo de la primera función y lo primero que debemos notar es que todo el cuerpo está <strong>indentado</strong>. Esto quiere decir, que todo lo que hace parte del cuerpo de la función está escrito con un margen hacia la derecha. En este ejemplo particular el margen se ha creado usando 4 caracteres en blanco, lo cual corresponde a las buenas prácticas recomendadas de la comunidad Python.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">area_cuadrado</span><span class="p">(</span><span class="n">lado</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -431,10 +483,10 @@
 </div>
 <p>La interpretación de esta instrucción es muy sencilla: cuando se ejecute esta instrucción, la función deberá <em>retornar</em> el valor de la expresión <code class="docutils literal notranslate"><span class="pre">lado</span> <span class="pre">*</span> <span class="pre">lado</span></code>. En el contexto de la ejecución de una función, retornar hace referencia a responderle con un valor a quien haya invocado la función. Esto quiere decir que cuando se llega a una instrucción <code class="docutils literal notranslate"><span class="pre">return</span></code>, la ejecución de la función termina y se responde con un valor de acuerdo a lo especificado en la signatura de la función.</p>
 <p>Ahora bien, antes de retornar un valor, es necesario que Python evalúe la expresión <code class="docutils literal notranslate"><span class="pre">lado</span> <span class="pre">*</span> <span class="pre">lado</span></code> y encuentre a qué valor equivale. Si no tuviéramos contexto, lo que podríamos suponer es que <code class="docutils literal notranslate"><span class="pre">lado</span></code> fuera el nombre de una variable y que la expresión está calculando el cuadrado de la variable. En realidad, no hemos definido ninguna variable con ese nombre, pero sí tenemos un <em>parámetro</em> con ese nombre en la signatura de la función. La expresión <code class="docutils literal notranslate"><span class="pre">lado</span> <span class="pre">*</span> <span class="pre">lado</span></code> está haciendo entonces referencia al parámetro que le pasen a la función cada vez que la invoquen.</p>
-<p>La <a class="reference internal" href="#cuadrado2"><span class="std std-numref">figura 21</span></a> representa esto mismo gráficamente. Note que ahora sí incluimos elementos dentro de la función (ya no es una caja negra) y que el valor que entra como parámetro <code class="docutils literal notranslate"><span class="pre">lado</span></code> se usa dentro de la expresión <code class="docutils literal notranslate"><span class="pre">lado</span> <span class="pre">*</span> <span class="pre">lado</span></code>.</p>
+<p>La <a class="reference internal" href="#cuadrado2"><span class="std std-numref">figura 2.16</span></a> representa esto mismo gráficamente. Note que ahora sí incluimos elementos dentro de la función (ya no es una caja negra) y que el valor que entra como parámetro <code class="docutils literal notranslate"><span class="pre">lado</span></code> se usa dentro de la expresión <code class="docutils literal notranslate"><span class="pre">lado</span> <span class="pre">*</span> <span class="pre">lado</span></code>.</p>
 <div class="figure align-default" id="cuadrado2">
 <img alt="../_images/fig_cuadrado2.png" src="../_images/fig_cuadrado2.png" />
-<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Representación gráfica de la función area_cuadrado, incluyendo su implementación</span><a class="headerlink" href="#cuadrado2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.16 </span><span class="caption-text">Representación gráfica de la función area_cuadrado, incluyendo su implementación</span><a class="headerlink" href="#cuadrado2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Viendo todo en conjunto, lo que pasará cuando alguien invoque a nuestra función es lo siguiente:</p>
 <ol class="simple">
@@ -458,7 +510,7 @@
 </ul>
 <div class="figure align-default" id="triangulo2">
 <img alt="../_images/fig_triangulo2.png" src="../_images/fig_triangulo2.png" />
-<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Representación gráfica de la función area_triangulo, incluyendo su implementación.</span><a class="headerlink" href="#triangulo2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.17 </span><span class="caption-text">Representación gráfica de la función area_triangulo, incluyendo su implementación.</span><a class="headerlink" href="#triangulo2" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Actividades:</strong></p>
 <ol class="simple">
@@ -469,7 +521,7 @@
 </div>
 </div>
 <div class="section" id="definir-vs-invocar">
-<h2>Definir vs. Invocar<a class="headerlink" href="#definir-vs-invocar" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6.4. </span>Definir vs. Invocar<a class="headerlink" href="#definir-vs-invocar" title="Permalink to this headline">¶</a></h2>
 <p>Hasta el momento hemos descrito en detalle solamente la forma en la que se define una función, pero no hemos estudiado cómo se invoca una función. Es muy importante tener muy clara la diferencia entre estas dos acciones: cuando definimos una función, sólo le estamos <em>enseñando</em> a Python cómo debería invocarse esa función y cómo debería comportarse un programa cuando la función se invoque; cuando invocamos una función, le estamos pidiendo a Python que <em>ejecute</em> el cuerpo de la función, dándole valores específicos a cada uno de sus parámetros.</p>
 <p>Revisaremos a continuación la última parte del programa de ejemplo con el que inició esta sección. Para simplificar el ejemplo hemos eliminado la documentación de la función <code class="docutils literal notranslate"><span class="pre">area_casa</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">area_casa</span><span class="p">(</span><span class="n">frente</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">techo</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
@@ -486,12 +538,12 @@
 </pre></div>
 </div>
 <div class="section" id="definicion-de-la-funcion">
-<h3>Definición de la función<a class="headerlink" href="#definicion-de-la-funcion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.6.4.1. </span>Definición de la función<a class="headerlink" href="#definicion-de-la-funcion" title="Permalink to this headline">¶</a></h3>
 <p>Lo primero que se debe notar en este ejemplo es que las primeras 4 líneas hacen parte de la definición de la función <code class="docutils literal notranslate"><span class="pre">area_casa</span></code> mientras que el último bloque de instrucciones está por fuera de esta función. Esto es evidente gracias a la <strong>indentación</strong>: las instrucciones indentadas después de la signatura de la función, hacen parte del cuerpo de la función. Tan pronto encontramos instrucciones que no están indentadas significa que hemos encontrado el fin del cuerpo de la función.</p>
 <p>Con respecto a las funciones anteriormente estudiadas, la signatura de la función <code class="docutils literal notranslate"><span class="pre">area_casa</span></code> sólo tiene una pequeña diferencia: utiliza diferentes tipos de datos (sus parámetros son <code class="docutils literal notranslate"><span class="pre">int</span></code> y su resultado es <code class="docutils literal notranslate"><span class="pre">float</span></code>).</p>
 <div class="figure align-default" id="casa1">
 <img alt="../_images/fig_casa1.png" src="../_images/fig_casa1.png" />
-<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Representación gráfica de la signatura de la función area_casa.</span><a class="headerlink" href="#casa1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.18 </span><span class="caption-text">Representación gráfica de la signatura de la función area_casa.</span><a class="headerlink" href="#casa1" title="Permalink to this image">¶</a></p>
 </div>
 <p>En cambio, el cuerpo de la función tiene un par de diferencias mucho más interesantes. La primera es que dentro de esta función se definen dos variables (<code class="docutils literal notranslate"><span class="pre">cuadrado</span></code> y <code class="docutils literal notranslate"><span class="pre">triangulo</span></code>). Estas variables son <em>locales</em>, lo cual significa que sólo existirán dentro del contexto de una invocación a la función. Si se habla de esas variables por fuera del cuerpo de la función, se producirá un error porque esos nombres sólo están definidos dentro del <em>alcance</em> de la función <code class="docutils literal notranslate"><span class="pre">area_casa</span></code>.</p>
 <div class="warning admonition">
@@ -502,14 +554,14 @@
 <p>La segunda diferencia interesante tiene que ver con la forma en la que se le asignan valores a las nuevas variables. En el caso de la variable <code class="docutils literal notranslate"><span class="pre">cuadrado</span></code>, se le está asignando el valor obtenido al invocar la función <code class="docutils literal notranslate"><span class="pre">area_cuadrado</span></code> utilizando como argumento el valor del parámetro <code class="docutils literal notranslate"><span class="pre">frente</span></code>. En otras palabras, cuando se quiere calcular el área de una casa dada la medida de su frente y la altura de su techo, lo primero que se hace es calcular el área del cuadrado utilizando para eso la función <code class="docutils literal notranslate"><span class="pre">area_cuadrado</span></code>, dándole a su parámetro <code class="docutils literal notranslate"><span class="pre">lado</span></code> el valor que se le haya dado al parámetro <code class="docutils literal notranslate"><span class="pre">frente</span></code>.</p>
 <p>La segunda instrucción hace algo similar para darle un valor a la variable <code class="docutils literal notranslate"><span class="pre">triangulo</span></code>. En este caso, la invocación se hace a la función <code class="docutils literal notranslate"><span class="pre">area_triangulo</span></code> y se utilizan como argumento los valores de los parámetros <code class="docutils literal notranslate"><span class="pre">frente</span></code> y <code class="docutils literal notranslate"><span class="pre">techo</span></code>.</p>
 <p>La tercera instrucción de la función calcula la suma de las dos variables y retorna el resultado.</p>
-<p>La <a class="reference internal" href="#casa2"><span class="std std-numref">figura 24</span></a> muestra todo esto de manera gráfica: la función <code class="docutils literal notranslate"><span class="pre">area_casa</span></code> requiere dos entradas (<code class="docutils literal notranslate"><span class="pre">frente</span></code> y <code class="docutils literal notranslate"><span class="pre">techo</span></code>), las cuales se usan en invocaciones a las funciones <code class="docutils literal notranslate"><span class="pre">area_cuadrado</span></code> y <code class="docutils literal notranslate"><span class="pre">area_triangulo</span></code>. Los resultados de estas invocaciones se guardan en dos variables (<code class="docutils literal notranslate"><span class="pre">cuadrado</span></code> y <code class="docutils literal notranslate"><span class="pre">triangulo</span></code>), que finalmente se suman para producir el resultado de la función</p>
+<p>La <a class="reference internal" href="#casa2"><span class="std std-numref">figura 2.19</span></a> muestra todo esto de manera gráfica: la función <code class="docutils literal notranslate"><span class="pre">area_casa</span></code> requiere dos entradas (<code class="docutils literal notranslate"><span class="pre">frente</span></code> y <code class="docutils literal notranslate"><span class="pre">techo</span></code>), las cuales se usan en invocaciones a las funciones <code class="docutils literal notranslate"><span class="pre">area_cuadrado</span></code> y <code class="docutils literal notranslate"><span class="pre">area_triangulo</span></code>. Los resultados de estas invocaciones se guardan en dos variables (<code class="docutils literal notranslate"><span class="pre">cuadrado</span></code> y <code class="docutils literal notranslate"><span class="pre">triangulo</span></code>), que finalmente se suman para producir el resultado de la función</p>
 <div class="figure align-default" id="casa2">
 <a class="reference internal image-reference" href="../_images/fig_casa2.png"><img alt="../_images/fig_casa2.png" src="../_images/fig_casa2.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Representación gráfica de la función area_casa.</span><a class="headerlink" href="#casa2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.19 </span><span class="caption-text">Representación gráfica de la función area_casa.</span><a class="headerlink" href="#casa2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="important admonition">
 <p class="admonition-title">Importante</p>
-<p>La <a class="reference internal" href="#casa2"><span class="std std-numref">figura 24</span></a> muestra a las funciones  <code class="docutils literal notranslate"><span class="pre">area_cuadrado</span></code> y <code class="docutils literal notranslate"><span class="pre">area_triangulo</span></code> como caja negra para ilustrar un concepto muy importante: cuando se invoca una función, lo único que interesa son su nombre, sus entradas y su salida. Los detalles sobre su implementación (lo que pasa dentro de la caja negra) no nos importa.</p>
+<p>La <a class="reference internal" href="#casa2"><span class="std std-numref">figura 2.19</span></a> muestra a las funciones  <code class="docutils literal notranslate"><span class="pre">area_cuadrado</span></code> y <code class="docutils literal notranslate"><span class="pre">area_triangulo</span></code> como caja negra para ilustrar un concepto muy importante: cuando se invoca una función, lo único que interesa son su nombre, sus entradas y su salida. Los detalles sobre su implementación (lo que pasa dentro de la caja negra) no nos importa.</p>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Tip</p>
@@ -517,7 +569,7 @@
 </div>
 </div>
 <div class="section" id="invocacion-de-la-funcion">
-<h3>Invocación de la función<a class="headerlink" href="#invocacion-de-la-funcion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.6.4.2. </span>Invocación de la función<a class="headerlink" href="#invocacion-de-la-funcion" title="Permalink to this headline">¶</a></h3>
 <p>Si nuestro programa tuviera sólo las instrucciones que ya estudiamos, no veríamos nada pasando cada vez que lo corriéramos. Su ejecución se limitaría a definir las funciones una y otra vez, pero sin invocarlas ni una sola vez. En este contexto es que se vuelven interesantes las últimas instrucciones del archivo, las cuales repetimos a continuación:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">medida_frente</span> <span class="o">=</span> <span class="mi">7</span>
 <span class="n">medida_techo</span> <span class="o">=</span> <span class="mi">5</span>
@@ -528,10 +580,10 @@
 </div>
 <p>Recuerde que estas instrucciones no hacen parte de la definición de ninguna función, así que se ejecutarán cada vez que el programa se corra. Las dos primeras instrucciones hacen asignaciones sobre dos nuevas variables llamadas <code class="docutils literal notranslate"><span class="pre">medida_frente</span></code> y <code class="docutils literal notranslate"><span class="pre">medida_techo</span></code> con los valores 7 y 5.</p>
 <p>A continuación, se hace una nueva asignación, pero esta vez el valor se calcula con una invocación a la función <code class="docutils literal notranslate"><span class="pre">area_casa</span></code>. En esta ocasión la función sí se ejecuta, utilizando los valores 7 y 5 como argumentos de la invocación. Si nosotros no conociéramos el cuerpo de la función, lo único que podríamos ver es que el resultado de invocar la función quedaría asignado a la variable <code class="docutils literal notranslate"><span class="pre">resultado</span></code>.</p>
-<p>La <a class="reference internal" href="#casa3"><span class="std std-numref">figura 25</span></a> representa gráficamente esta situación: las dos variables se usan como parámetros para la función <code class="docutils literal notranslate"><span class="pre">area_casa</span></code> y el resultado de la invocación se almacena en la variable <code class="docutils literal notranslate"><span class="pre">resultado</span></code>. La función aparece representada como una caja negra porque en el momento de la invocación, sólo nos importan los parámetros de entrada y su resultado.</p>
+<p>La <a class="reference internal" href="#casa3"><span class="std std-numref">figura 2.20</span></a> representa gráficamente esta situación: las dos variables se usan como parámetros para la función <code class="docutils literal notranslate"><span class="pre">area_casa</span></code> y el resultado de la invocación se almacena en la variable <code class="docutils literal notranslate"><span class="pre">resultado</span></code>. La función aparece representada como una caja negra porque en el momento de la invocación, sólo nos importan los parámetros de entrada y su resultado.</p>
 <div class="figure align-default" id="casa3">
 <a class="reference internal image-reference" href="../_images/fig_casa3.png"><img alt="../_images/fig_casa3.png" src="../_images/fig_casa3.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Representación gráfica del programa, incluyendo la invocación a la función <code class="docutils literal notranslate"><span class="pre">area_casa</span></code>.</span><a class="headerlink" href="#casa3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.20 </span><span class="caption-text">Representación gráfica del programa, incluyendo la invocación a la función <code class="docutils literal notranslate"><span class="pre">area_casa</span></code>.</span><a class="headerlink" href="#casa3" title="Permalink to this image">¶</a></p>
 </div>
 <p>Como nosotros sí conocemos el cuerpo de la función, sabemos que lo que ocurrirá es lo siguiente:</p>
 <ol class="simple">
@@ -545,7 +597,7 @@
 <p>Finalmente se debe ejecutar la última instrucción del programa, que en este caso es una invocación a la función <code class="docutils literal notranslate"><span class="pre">print</span></code>. Como ya sabemos, esta función le mostrará al usuario los valores que se le pasen como parámetro, separándolos con un espacio. Sin embargo, los argumentos que se están usando para llamar a la función <code class="docutils literal notranslate"><span class="pre">print</span></code> incluyen la expresión <code class="docutils literal notranslate"><span class="pre">round(resultado,</span> <span class="pre">2)</span></code>. Esto quiere decir que antes de que se empiece a ejecutar la función <code class="docutils literal notranslate"><span class="pre">print</span></code> se llamará a la función <code class="docutils literal notranslate"><span class="pre">round</span></code> y se obtendrá un valor redondeado para la variable <code class="docutils literal notranslate"><span class="pre">resultado</span></code>. Esto es un ejemplo del uso de invocaciones a funciones como argumentos de una invocación a otra función.</p>
 </div>
 <div class="section" id="ejecucion-de-un-programa">
-<h3>Ejecución de un programa<a class="headerlink" href="#ejecucion-de-un-programa" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.6.4.3. </span>Ejecución de un programa<a class="headerlink" href="#ejecucion-de-un-programa" title="Permalink to this headline">¶</a></h3>
 <p>Volvamos ahora a la discusión del inicio de la sección sobre cómo se ejecuta un módulo y revisemos lo que pasa en cada paso. Para eso, tomemos como ejemplo el siguiente programa, que suponemos que está escrito en el archivo ‘saludar.py’:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
    <span class="k">return</span> <span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span>
@@ -585,11 +637,11 @@
 </div>
 </div>
 <div class="section" id="funciones-sin-parametro-o-sin-retorno">
-<h2>Funciones sin parámetro o sin retorno<a class="headerlink" href="#funciones-sin-parametro-o-sin-retorno" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6.5. </span>Funciones sin parámetro o sin retorno<a class="headerlink" href="#funciones-sin-parametro-o-sin-retorno" title="Permalink to this headline">¶</a></h2>
 <p>Dos preguntas frecuentes entre los estudiantes son si una función siempre debe tener parámetros y si una función siempre debe retornar un valor. Si estas preguntas se hicieran en un contexto matemático, la respuesta sería afirmativa: las funciones establecen relaciones entre elementos de un conjunto y elementos de otro conjunto, así que siempre tienen al menos un parámetro y siempre tienen un resultado.</p>
 <p>En el contexto de Python, sí es posible tener funciones sin parámetros y funciones que no tengan un retorno, pero la realidad es que este tipo de funciones sólo deberían usarse en un contexto muy particular (interacción con el usuario). A continuación, explicamos brevemente por qué, en general, no es una buena idea tener este tipo de funciones.</p>
 <div class="section" id="funciones-sin-parametros">
-<h3>Funciones sin parámetros<a class="headerlink" href="#funciones-sin-parametros" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.6.5.1. </span>Funciones sin parámetros<a class="headerlink" href="#funciones-sin-parametros" title="Permalink to this headline">¶</a></h3>
 <p>Si una función no tiene parámetros, en principio siempre va a retornar el mismo valor. Si esto fuera cierto, en lugar de tener una función para calcular el valor, se debería tener una variable donde ese valor estuviera disponible para utilizarlo cuando fuera necesario.</p>
 <p>Python incluye algo así para almacenar el valor de Pi sin que sea necesario llamar cada vez a una función que lo calcule.</p>
 <p>Hay 3 casos relativamente sencillos en los cuales tendría sentido tener funciones sin parámetros:</p>
@@ -600,13 +652,13 @@
 </ol>
 </div>
 <div class="section" id="funciones-sin-retorno">
-<h3>Funciones sin retorno<a class="headerlink" href="#funciones-sin-retorno" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.6.5.2. </span>Funciones sin retorno<a class="headerlink" href="#funciones-sin-retorno" title="Permalink to this headline">¶</a></h3>
 <p>Si una función no tiene un retorno significa que el resultado de ejecutar sus instrucciones no es interesante para el resto del programa, o es interesante sólo por los efectos que haya podido tener en algún otro elemento del programa o del computador. Por ejemplo, una función sin retorno podría utilizarse para eliminar un archivo: la función eliminaría el archivo y no retornaría ningún valor.</p>
 <p>En general, las funciones podrían no tener retorno cuando representen acciones que quieren realizarse y no tengan ningún resultado que informar.</p>
 </div>
 </div>
 <div class="section" id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6.6. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Defina una función que permita convertir de grados Celsius a grados Fahrenheit.</p></li>
 <li><p>Defina una función que permita convertir de grados Fahrenheit a grados Celsius.</p></li>
@@ -615,7 +667,7 @@
 </ol>
 </div>
 <div class="section" id="mas-alla-de-python">
-<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6.7. </span>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
 <p>En esta sección utilizamos una definición de función relativamente <em>pura</em>, en la cual el resultado de su ejecución depende únicamente del valor que se les dé a sus parámetros. En otros contextos, y especialmente en otros lenguajes de programación, la ejecución de funciones, métodos o procedimientos depende de otros factores que no se ven explícitos en sus signaturas. Por ejemplo, en un lenguaje orientado a objetos como Java o C++, un método definido en una clase depende de los parámetros y del estado del objeto sobre el que se invoque el objeto. Esto hace mucho más complejo el comportamiento de un método y hace que ciertas acciones, como probar su corrección, sea más difícil que en funciones equivalente en Python.</p>
 <p>Python utiliza un estilo para el nombramiento de variables, funciones y parámetros que está descrito en la guía PEP8 (Style Guide for Python Code), bajo el título “Naming Conventions”. El punto que vale más la pena resaltar es el que tiene que ver con la separación de palabras en un identificador: mientras que en Python podemos encontrar una función llamada <code class="docutils literal notranslate"><span class="pre">area_casa</span></code>, en Java una función similar se llamaría <code class="docutils literal notranslate"><span class="pre">areaCasa</span></code> y en C# se llamaría <code class="docutils literal notranslate"><span class="pre">AreaCasa</span></code>. Estas diferencias son en realidad minúsculas, pero es muy recomendable seguir las guías de estilo de la plataforma en la que se esté trabajando, para facilitar la lectura y evitar incompatibilidades.</p>
 <p>La guía de estilo oficial de Python, que todos los programadores deberían conocer e intentar aplicar, se encuentra en el siguiente vínculo: PEP8 – Style Guide for Python Code: <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a></p>
@@ -634,6 +686,25 @@
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nivel1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -643,8 +714,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="seccion1-5.html" title="previous page">Funciones</a>
-    <a class='right-next' id="next-link" href="seccion1-7.html" title="next page">Estilo de programación</a>
+    <a class='left-prev' id="prev-link" href="seccion1-5.html" title="previous page"><span class="section-number">2.5. </span>Funciones</a>
+    <a class='right-next' id="next-link" href="seccion1-7.html" title="next page"><span class="section-number">2.7. </span>Estilo de programación</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

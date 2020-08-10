@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Variables, expresiones y operadores &#8212; Introducción a la Programación</title>
+    <title>2.4. Variables, expresiones y operadores &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,11 +31,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel1/seccion1-4.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Funciones" href="seccion1-5.html" />
-    <link rel="prev" title="Valores y tipos de datos" href="seccion1-3.html" />
+    <link rel="next" title="2.5. Funciones" href="seccion1-5.html" />
+    <link rel="prev" title="2.3. Valores y tipos de datos" href="seccion1-3.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -47,7 +55,7 @@
 <meta property="og:description" content="Variables, expresiones y operadores  Objetivo de la sección  El objetivo de esta sección es introducir y discutir los conceptos de instrucción, valor, variable," />
 <meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -76,77 +84,108 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../portada.html">1. Portada</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Antes de empezar</p>
-</li>
-  <li class="">
-    <a href="../introduccion/index.html">2. Introducción</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 1</p>
-</li>
-  <li class="active">
-    <a href="intro.html">3. Empezando a programar</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="seccion1-1.html">3.1 Un programa para leer</a>
-    </li>
-    <li class="">
-      <a href="seccion1-2.html">3.2 Ambiente básico de trabajo</a>
-    </li>
-    <li class="">
-      <a href="seccion1-3.html">3.3 Valores y tipos de datos</a>
-    </li>
-    <li class="active">
-      <a href="">3.4 Variables, expresiones y operadores</a>
-    </li>
-    <li class="">
-      <a href="seccion1-5.html">3.5 Funciones</a>
-    </li>
-    <li class="">
-      <a href="seccion1-6.html">3.6 Definición de funciones</a>
-    </li>
-    <li class="">
-      <a href="seccion1-7.html">3.7 Estilo de programación</a>
-    </li>
-    <li class="">
-      <a href="seccion1-8.html">3.8 Un programa para leer (2)</a>
-    </li>
-    <li class="">
-      <a href="seccion1-9.html">3.9 Lógica vs. Interacción</a>
-    </li>
-    <li class="">
-      <a href="seccion1-10.html">3.10 Errores frecuentes</a>
-    </li>
-    <li class="">
-      <a href="seccion1-11.html">3.11 Ejercicios adicionales</a>
-    </li>
-  </ul>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 2</p>
-</li>
-  <li class="">
-    <a href="../nivel2/intro.html">4. Tomando decisiones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 3</p>
-</li>
-  <li class="">
-    <a href="../nivel3/intro.html">5. Repitiendo acciones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 4</p>
-</li>
-  <li class="">
-    <a href="../nivel4/intro.html">6. Matrices y Librerías</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portada.html">
+   Portada
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Contenido
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduccion/index.html">
+   1. Nivel 0 - Antes de empezar
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   2. Nivel 1 - Empezando a programar
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-1.html">
+     2.1. Un programa para leer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-2.html">
+     2.2. Ambiente básico de trabajo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-3.html">
+     2.3. Valores y tipos de datos
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.4. Variables, expresiones y operadores
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-5.html">
+     2.5. Funciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-6.html">
+     2.6. Definición de funciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-7.html">
+     2.7. Estilo de programación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-8.html">
+     2.8. Un programa para leer (2)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-9.html">
+     2.9. Lógica vs. Interacción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-10.html">
+     2.10. Errores frecuentes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-10.html#para-no-olvidar">
+     2.11. Para no olvidar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-11.html">
+     2.12. Ejercicios adicionales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel2/intro.html">
+   3. Nivel 2 - Tomando decisiones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel3/intro.html">
+   4. Nivel 3 - Repitiendo acciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel4/intro.html">
+   5. Nivel 4 - Matrices y Librerías
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -203,78 +242,91 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
-
-<nav id="bd-toc-nav">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analizando-la-primera-instruccion">
+   2.4.1. Analizando la primera instrucción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operadores-y-expresiones">
+   2.4.2. Operadores y expresiones
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instrucciones-con-variables">
+   2.4.3. Instrucciones con variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parentesis-y-tipos-de-datos">
+   2.4.4. Paréntesis y tipos de datos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#otro-tipo-de-instrucciones">
+   2.4.5. Otro tipo de instrucciones
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comentarios-en-python">
+   2.4.6. Comentarios en Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mas-operadores-en-python">
+   2.4.7. Más operadores en Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operadores-para-numeros">
+     2.4.7.1. Operadores para números
+    </a>
     <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#analizando-la-primera-instruccion" class="nav-link">Analizando la primera instrucción</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#operadores-y-expresiones" class="nav-link">Operadores y expresiones</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#instrucciones-con-variables" class="nav-link">Instrucciones con variables</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#parentesis-y-tipos-de-datos" class="nav-link">Paréntesis y tipos de datos</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#otro-tipo-de-instrucciones" class="nav-link">Otro tipo de instrucciones</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#comentarios-en-python" class="nav-link">Comentarios en Python</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#mas-operadores-en-python" class="nav-link">Más operadores en Python</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#operadores-para-numeros" class="nav-link">Operadores para números</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#el-operador-modulo" class="nav-link">El operador módulo (%)</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#operadores-para-cadenas-de-caracteres" class="nav-link">Operadores para cadenas de caracteres</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#operadores-con-acumulacion" class="nav-link">Operadores con acumulación</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#expresiones-con-multiples-tipos-de-datos" class="nav-link">Expresiones con múltiples tipos de datos</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#ejercicios" class="nav-link">Ejercicios</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#mas-alla-de-python" class="nav-link">Más allá de Python</a>
-        </li>
-    
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#el-operador-modulo">
+       2.4.7.1.1. El operador módulo (%)
+      </a>
+     </li>
     </ul>
-</nav>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operadores-para-cadenas-de-caracteres">
+     2.4.7.2. Operadores para cadenas de caracteres
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operadores-con-acumulacion">
+     2.4.7.3. Operadores con acumulación
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expresiones-con-multiples-tipos-de-datos">
+     2.4.7.4. Expresiones con múltiples tipos de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   2.4.8. Ejercicios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mas-alla-de-python">
+   2.4.9. Más allá de Python
+  </a>
+ </li>
+</ul>
 
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -287,7 +339,7 @@
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
 </div>
 <div class="section" id="variables-expresiones-y-operadores">
-<h1>Variables, expresiones y operadores<a class="headerlink" href="#variables-expresiones-y-operadores" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.4. </span>Variables, expresiones y operadores<a class="headerlink" href="#variables-expresiones-y-operadores" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-objetivo-de-la-seccion admonition">
 <p class="admonition-title">Objetivo de la sección</p>
 <p>El objetivo de esta sección es introducir y discutir los conceptos de <em>instrucción</em>, <em>valor</em>, <em>variable</em>, <em>asignación</em>, <em>expresión</em> y <em>operador</em>.</p>
@@ -302,7 +354,7 @@
 </div>
 <p>Este programa está compuesto por 5 instrucciones, cada una de las cuales se escribió en una línea aparte. Como veremos, cada una de estas instrucciones le da una orden al computador y esa orden se tiene que terminar de ejecutar antes de que se pueda pasar a la siguiente instrucción. Esto quiere decir que podemos estar seguros de que la última instrucción (<code class="docutils literal notranslate"><span class="pre">print(v4)</span></code>) se va a ejecutar después de que se hayan ejecutado las 4 instrucciones anteriores. ¡Aunque puede parecer simple, este concepto es extremadamente importante!</p>
 <div class="section" id="analizando-la-primera-instruccion">
-<h2>Analizando la primera instrucción<a class="headerlink" href="#analizando-la-primera-instruccion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.1. </span>Analizando la primera instrucción<a class="headerlink" href="#analizando-la-primera-instruccion" title="Permalink to this headline">¶</a></h2>
 <p>Analicemos ahora la primera instrucción del programa:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="mi">5</span>
 </pre></div>
@@ -318,7 +370,7 @@
 <p>La instrucción que estamos analizando entonces se encarga de crear una variable con el nombre <code class="docutils literal notranslate"><span class="pre">v1</span></code> y almacenar en ella el valor entero <code class="docutils literal notranslate"><span class="pre">5</span></code>. En Python, el tipo de una variable depende del valor que esté almacenado en ella así que en este caso la variable será de tipo <strong>int</strong> <a class="footnote-reference brackets" href="#tipos" id="id1">2</a>.</p>
 <div class="figure align-default" id="v1">
 <img alt="../_images/fig_v1.png" src="../_images/fig_v1.png" />
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Representación gráfica de la variable v1 que contiene el valor 5 que es de tipo <code class="docutils literal notranslate"><span class="pre">int</span></code></span><a class="headerlink" href="#v1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.9 </span><span class="caption-text">Representación gráfica de la variable v1 que contiene el valor 5 que es de tipo <code class="docutils literal notranslate"><span class="pre">int</span></code></span><a class="headerlink" href="#v1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="warning admonition">
 <p class="admonition-title">Cuidado</p>
@@ -327,7 +379,7 @@
 </div>
 </div>
 <div class="section" id="operadores-y-expresiones">
-<h2>Operadores y expresiones<a class="headerlink" href="#operadores-y-expresiones" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.2. </span>Operadores y expresiones<a class="headerlink" href="#operadores-y-expresiones" title="Permalink to this headline">¶</a></h2>
 <p>Si analizamos ahora la segunda línea del programa, veremos que tiene varios de los elementos que acabamos de estudiar:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
 </pre></div>
@@ -336,11 +388,11 @@
 <p>En Python, una <strong>expresión</strong> es una combinación de valores, literales, variables, llamados y operadores, que al evaluarse produce un valor. Cuando escribimos una instrucción como la del ejemplo, le estamos indicando a Python que la expresión de la derecha debería evaluarse para producir un valor y que ese valor debería almacenarse en la variable. En nuestro ejemplo, el valor de la expresión de la derecha será <code class="docutils literal notranslate"><span class="pre">3</span></code>, es decir el resultado de usar el <strong>operador</strong> + a los dos literales <strong>1</strong> y <strong>2</strong>.</p>
 <div class="figure align-default" id="v2">
 <img alt="../_images/fig_v2.png" src="../_images/fig_v2.png" />
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Representación gráfica de la variable v2 y de cómo se calcula su valor.</span><a class="headerlink" href="#v2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.10 </span><span class="caption-text">Representación gráfica de la variable v2 y de cómo se calcula su valor.</span><a class="headerlink" href="#v2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="instrucciones-con-variables">
-<h2>Instrucciones con variables<a class="headerlink" href="#instrucciones-con-variables" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.3. </span>Instrucciones con variables<a class="headerlink" href="#instrucciones-con-variables" title="Permalink to this headline">¶</a></h2>
 <p>A continuación, analizaremos las siguientes dos instrucciones del programa, pero recordando un principio muy importante: para que estas instrucciones se ejecuten, se tienen que haber ejecutado antes las anteriores. Es decir, que cuando estas instrucciones se ejecuten ya se habrá creado la variable <code class="docutils literal notranslate"><span class="pre">v1</span></code> y se le habrá asignado el valor <code class="docutils literal notranslate"><span class="pre">5</span></code> y ya se habrá creado la variable <code class="docutils literal notranslate"><span class="pre">v2</span></code> y se le habrá asignado el valor <code class="docutils literal notranslate"><span class="pre">3</span></code> <a class="footnote-reference brackets" href="#id6" id="id2">3</a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v3</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span>
 </pre></div>
@@ -353,7 +405,7 @@
 <p>En este punto volvimos a una situación idéntica a la de la instrucción anterior y ya sabemos que se va a resolver dejando el valor entero <code class="docutils literal notranslate"><span class="pre">8</span></code> en la variable <code class="docutils literal notranslate"><span class="pre">v3</span></code>.</p>
 <div class="figure align-default" id="v3">
 <img alt="../_images/fig_v3.png" src="../_images/fig_v3.png" />
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Representación gráfica de la variable v3</span><a class="headerlink" href="#v3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.11 </span><span class="caption-text">Representación gráfica de la variable v3</span><a class="headerlink" href="#v3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="note admonition">
 <p class="admonition-title">Nota</p>
@@ -362,7 +414,7 @@
 </div>
 </div>
 <div class="section" id="parentesis-y-tipos-de-datos">
-<h2>Paréntesis y tipos de datos<a class="headerlink" href="#parentesis-y-tipos-de-datos" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.4. </span>Paréntesis y tipos de datos<a class="headerlink" href="#parentesis-y-tipos-de-datos" title="Permalink to this headline">¶</a></h2>
 <p>Antes de pasar a la siguiente instrucción, observemos lo que responde Python cuando le preguntamos por los tipos de las variables <code class="docutils literal notranslate"><span class="pre">v1</span></code>, <code class="docutils literal notranslate"><span class="pre">v2</span></code> y <code class="docutils literal notranslate"><span class="pre">v3</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
 <span class="go">&lt;class &#39;int&#39;&gt;</span>
@@ -389,7 +441,7 @@
 <p>Finalmente tenemos una instrucción que sólo tiene literales y el operador de división, así que la expresión de la derecha se puede obtener simplemente calculando la división entre 8 y 5, para luego asignárselo a la variable <code class="docutils literal notranslate"><span class="pre">v4</span></code>.</p>
 <div class="figure align-default" id="v4">
 <img alt="../_images/fig_v4.png" src="../_images/fig_v4.png" />
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Representación gráfica de la variable v4</span><a class="headerlink" href="#v4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.12 </span><span class="caption-text">Representación gráfica de la variable v4</span><a class="headerlink" href="#v4" title="Permalink to this image">¶</a></p>
 </div>
 <p>Ahora bien, el operador de división en Python tiene la propiedad interesante de que su resultado es de tipo <strong>float</strong>. Es decir que independientemente del valor de v3, el valor de la variable <code class="docutils literal notranslate"><span class="pre">v4</span></code> va a ser un número decimal. Esto lo podemos comprobar si le preguntamos a Python por el tipo de la variable:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">v4</span><span class="p">)</span>
@@ -398,7 +450,7 @@
 </div>
 </div>
 <div class="section" id="otro-tipo-de-instrucciones">
-<h2>Otro tipo de instrucciones<a class="headerlink" href="#otro-tipo-de-instrucciones" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.5. </span>Otro tipo de instrucciones<a class="headerlink" href="#otro-tipo-de-instrucciones" title="Permalink to this headline">¶</a></h2>
 <p>Si revisamos con cuidado las 4 instrucciones que hemos analizado, nos daremos cuenta que la única orden que le hemos dado al programa es que almacene valores dentro de variables. Como vamos a ver a continuación, la última instrucción de nuestro programa es fundamentalmente diferente a las anteriores porque no hace ninguna asignación.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;v4:&quot;</span><span class="p">,</span> <span class="n">v4</span><span class="p">)</span>
 </pre></div>
@@ -413,7 +465,7 @@
 <p>El último paso en la ejecución de nuestro programa no podemos verlo: son las instrucciones que se encuentran dentro de la función <code class="docutils literal notranslate"><span class="pre">print</span></code>, las cuales hacen que aparezcan los valores de los parámetros en la consola. Como esta es una función nativa del lenguaje, las instrucciones que la implementan son parte del código fuente del intérprete del lenguaje y no son fáciles de encontrar.</p>
 </div>
 <div class="section" id="comentarios-en-python">
-<h2>Comentarios en Python<a class="headerlink" href="#comentarios-en-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.6. </span>Comentarios en Python<a class="headerlink" href="#comentarios-en-python" title="Permalink to this headline">¶</a></h2>
 <p>El siguiente programa es exactamente equivalente al que hemos estado estudiando, con la diferencia de que se han incluido <em>comentarios</em>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definir 4 variables (v1 hasta v4)</span>
 <span class="n">v1</span> <span class="o">=</span> <span class="mi">5</span>
@@ -431,10 +483,10 @@
 </div>
 </div>
 <div class="section" id="mas-operadores-en-python">
-<h2>Más operadores en Python<a class="headerlink" href="#mas-operadores-en-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.7. </span>Más operadores en Python<a class="headerlink" href="#mas-operadores-en-python" title="Permalink to this headline">¶</a></h2>
 <p>En las secciones anteriores estudiamos sólo los operadores para sumar y dividir. A continuación, describimos otras de las operaciones que es posible hacer en Python.</p>
 <div class="section" id="operadores-para-numeros">
-<h3>Operadores para números<a class="headerlink" href="#operadores-para-numeros" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.4.7.1. </span>Operadores para números<a class="headerlink" href="#operadores-para-numeros" title="Permalink to this headline">¶</a></h3>
 <p>Los siguientes son los operadores disponibles para hacer operaciones con números. Es decir que estos operadores pueden aplicarse sólo sobre datos que sean de tipo <strong>int</strong> o <strong>float</strong>.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -518,7 +570,7 @@
 <p>(4) Para valores positivos, la operación de <em>división entera</em> calcula la parte entera del resultado de la división y por ende siempre es un número entero. En el caso de la expresión <code class="docutils literal notranslate"><span class="pre">10//3</span></code> el valor es el número entero (int) <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p>
 <p>Para números negativos, el resultado es el mayor número entero menor o igual al resultado de la división. Es decir que para el valor de la expresión <code class="docutils literal notranslate"><span class="pre">-10//3</span></code> es el número entero <code class="docutils literal notranslate"><span class="pre">-4</span></code></p>
 <div class="section" id="el-operador-modulo">
-<h4>El operador módulo (%)<a class="headerlink" href="#el-operador-modulo" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.4.7.1.1. </span>El operador módulo (%)<a class="headerlink" href="#el-operador-modulo" title="Permalink to this headline">¶</a></h4>
 <p>La operación módulo calcula el <strong>residuo</strong> de la división entera entre dos números. Por ejemplo, el valor de la expresión <code class="docutils literal notranslate"><span class="pre">10%3</span></code> es igual a <code class="docutils literal notranslate"><span class="pre">1</span></code> porque la división entera entre 10 y 3 tiene como resultado 3 con un residuo de 1 <a class="footnote-reference brackets" href="#modneg" id="id3">4</a>.</p>
 <p>La operación módulo y la división entera se complementan. Cuando se está aprendiendo a dividir, es común que el resultado de una división se exprese como un valor y su residuo. Así, <code class="docutils literal notranslate"><span class="pre">27</span> <span class="pre">dividido</span> <span class="pre">10</span></code> es igual a <code class="docutils literal notranslate"><span class="pre">2</span></code> con un residuo de <code class="docutils literal notranslate"><span class="pre">7</span></code>. En Python, esto se puede calcular usando los operadores <code class="docutils literal notranslate"><span class="pre">//</span></code> y <code class="docutils literal notranslate"><span class="pre">%</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">entero</span> <span class="o">=</span> <span class="mi">27</span> <span class="o">//</span> <span class="mi">10</span>
@@ -531,7 +583,7 @@
 </div>
 </div>
 <div class="section" id="operadores-para-cadenas-de-caracteres">
-<h3>Operadores para cadenas de caracteres<a class="headerlink" href="#operadores-para-cadenas-de-caracteres" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.4.7.2. </span>Operadores para cadenas de caracteres<a class="headerlink" href="#operadores-para-cadenas-de-caracteres" title="Permalink to this headline">¶</a></h3>
 <p>Python sólo ofrece dos operadores que se pueden aplicar sobre cadenas de caracteres.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -564,7 +616,7 @@
 <p>El operador de repetición se aplica sobre dos operandos de diferente tipo: una cadena de caracteres y un entero. El resultado será una cadena de caracteres que será el resultado de repetir la cadena tantas veces como indique el número.</p>
 </div>
 <div class="section" id="operadores-con-acumulacion">
-<h3>Operadores con acumulación<a class="headerlink" href="#operadores-con-acumulacion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.4.7.3. </span>Operadores con acumulación<a class="headerlink" href="#operadores-con-acumulacion" title="Permalink to this headline">¶</a></h3>
 <p>En Python existen también versiones alternativas de algunos de los operadores presentados que permiten acumular los valores. Veamos primero un ejemplo de esto:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">+=</span> <span class="mi">2</span>
@@ -584,7 +636,7 @@
 <p>Como se puede ver, la única diferencia significativa es que el primer programa es un poco más corto. Otros operadores con acumulación disponibles incluyen <code class="docutils literal notranslate"><span class="pre">-=</span></code>, <code class="docutils literal notranslate"><span class="pre">*=</span></code>, <code class="docutils literal notranslate"><span class="pre">/=</span></code>, <code class="docutils literal notranslate"><span class="pre">//=</span></code>, <code class="docutils literal notranslate"><span class="pre">%=</span></code>, <code class="docutils literal notranslate"><span class="pre">**=</span></code>. Note que cuando el operador <code class="docutils literal notranslate"><span class="pre">+=</span></code> se aplica sobre cadenas de caracteres, la operación realizada es la concatenación.</p>
 </div>
 <div class="section" id="expresiones-con-multiples-tipos-de-datos">
-<h3>Expresiones con múltiples tipos de datos<a class="headerlink" href="#expresiones-con-multiples-tipos-de-datos" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.4.7.4. </span>Expresiones con múltiples tipos de datos<a class="headerlink" href="#expresiones-con-multiples-tipos-de-datos" title="Permalink to this headline">¶</a></h3>
 <p>En Python no es posible escribir expresiones que combinen valores de diferentes tipos a menos que se hagan conversiones explícitamente. Por ejemplo, para construir una cadena que combine caracteres y números se debe hacer una conversión como en el siguiente ejemplo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;El salón asignado es el &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">614</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; del edificio ML&#39;</span>
 </pre></div>
@@ -601,7 +653,7 @@
 </div>
 </div>
 <div class="section" id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.8. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 <ol>
 <li><p>¿Cuáles de las siguientes líneas no son instrucciones válidas en Python? (suponga que las instrucciones se van ejecutando una después de la otra)</p>
 <ul class="simple">
@@ -656,7 +708,7 @@
 </ol>
 </div>
 <div class="section" id="mas-alla-de-python">
-<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.9. </span>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
 <p>Esta sección presentó en detalle los detalles más importantes de la sintaxis de Python. Sin embargo, los conceptos presentados son comunes a la mayoría de lenguajes de programación <em>imperativos</em> <a class="footnote-reference brackets" href="#para" id="id5">6</a>. Aunque puede parecer que las diferencias entre Python y otros lenguajes son muy grandes, en realidad los conceptos que se manejan son básicamente los mismos: todos los lenguajes tienen literales, tienen variables para almacenar temporalmente valores, tienen expresiones que se tienen que evaluar, y tienen mecanismos para invocar fragmentos de código definidos en algún otro lugar.</p>
 <p>Si tenemos perfectamente claro todo lo expuesto en este capítulo, aplicar las mismas ideas a otros lenguajes debería ser muy sencillo.</p>
 <hr class="docutils" />
@@ -680,6 +732,25 @@
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nivel1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -689,8 +760,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="seccion1-3.html" title="previous page">Valores y tipos de datos</a>
-    <a class='right-next' id="next-link" href="seccion1-5.html" title="next page">Funciones</a>
+    <a class='left-prev' id="prev-link" href="seccion1-3.html" title="previous page"><span class="section-number">2.3. </span>Valores y tipos de datos</a>
+    <a class='right-next' id="next-link" href="seccion1-5.html" title="next page"><span class="section-number">2.5. </span>Funciones</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
