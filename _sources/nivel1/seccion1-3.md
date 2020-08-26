@@ -126,7 +126,7 @@ Si usted intenta convertir valores de forma equivocada obtendrá un error y su p
 	 * '-3'
 	 * 'a'
 
-2. Abra el intérprete de Python e intente convertir a entero sos siguientes números. ¿Qué resultado obtiene?
+2. Abra el intérprete de Python e intente convertir a entero los siguientes números. ¿Qué resultado obtiene?
 
 	 * 3
 	 * 2.86

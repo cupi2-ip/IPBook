@@ -140,7 +140,7 @@ En Linux, la línea de comandos suele estar corriendo todo el tiempo, pero depen
 
 En el mundo de la programación, una de las cosas más complejas de manejar son las dependencias hacia otros programas. En este libro veremos cómo nuestros programas poco a poco van a volverse más complicados y vamos a empezar a integrar programas construidos por otros desarrolladores. Para lidiar con esa complejidad existen herramientas llamadas *manejadores de paquetes*. 
 
-En el mundo de Python hay dos manejadores de paquetes que se usan principalmente. El primero se llama ```pip``` [https://pypi.org/](https://pypi.org/) y es capaz de buscar, instalar, actualizar y desinstalar paquetes disponibles en el Python Package Index [https://pypi.org/](https://pypi.org/). Como se ve en la {numref}`figura {number} <pip>`, usando ```pip``` es posible instalar un paquete y todas sus dependencias utilizando un solo comando.
+En el mundo de Python hay dos manejadores de paquetes que se usan principalmente. El primero se llama ```pip``` y es capaz de buscar, instalar, actualizar y desinstalar paquetes disponibles en el Python Package Index [https://pypi.org/](https://pypi.org/). Como se ve en la {numref}`figura {number} <pip>`, usando ```pip``` es posible instalar un paquete y todas sus dependencias utilizando un solo comando.
 
 ```{figure} ./images/pip.png
 ---
