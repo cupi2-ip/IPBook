@@ -196,7 +196,7 @@ Sin embargo, el eror se introdujo realmente en la línea anterior. Analicemos co
 En la siguiente línea se intenta hacer una invocación a `sumatoria`, pero Python lo último que vio con ese nombre no era una función sino una variable de tipo `int`, por lo cual genera el error diciendo que no es posible hacer una invocación sobre un entero.
 
 
-### Redefinir funcions nativas
+### Redefinir funciones nativas
 
 A menos que haya alguna necesidad muy especial, nunca se deberían redefinir las funciones nativas de Python, tales como float, int, str, min, max y abs, entre otras. Sin embargo, en Python esto es realmente muy fácil de hacer y por lo tanto ocurre con frecuencia cuando se está empezando a programar.
 

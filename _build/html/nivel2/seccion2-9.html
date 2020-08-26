@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Errores frecuentes &#8212; Introducción a la Programación</title>
+    <title>3.9. Errores frecuentes &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,11 +31,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel2/seccion2-9.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Ejercicios adicionales" href="seccion2-10.html" />
-    <link rel="prev" title="Paso de parámetros" href="seccion2-8.html" />
+    <link rel="next" title="3.11. Ejercicios adicionales" href="seccion2-10.html" />
+    <link rel="prev" title="3.8. Paso de parámetros" href="seccion2-8.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -47,7 +55,7 @@
 <meta property="og:description" content="Errores frecuentes  Versión borrador / preliminar  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene al" />
 <meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -76,92 +84,103 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../portada.html">1. Portada</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Antes de empezar</p>
-</li>
-  <li class="">
-    <a href="../introduccion/index.html">2. Introducción</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 1</p>
-</li>
-  <li class="">
-    <a href="../nivel1/intro.html">3. Empezando a programar</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 1</p>
-</li>
-  <li class="">
-    <a href="../nivel01a/index.html">4. Descomposición de programas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 2</p>
-</li>
-  <li class="active">
-    <a href="intro.html">5. Tomando decisiones</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="seccion2-1.html">5.1 Un programa para leer</a>
-    </li>
-    <li class="">
-      <a href="seccion2-2.html">5.2 Lógica y valores de verdad</a>
-    </li>
-    <li class="">
-      <a href="seccion2-3.html">5.3 Valores de verdad en Python</a>
-    </li>
-    <li class="">
-      <a href="seccion2-4.html">5.4 Instrucciones condicionales</a>
-    </li>
-    <li class="">
-      <a href="seccion2-5.html">5.5 Más sobre cadenas de caracteres</a>
-    </li>
-    <li class="">
-      <a href="seccion2-6.html">5.6 Módulos de la librería estándar</a>
-    </li>
-    <li class="">
-      <a href="seccion2-7.html">5.7 Diccionarios</a>
-    </li>
-    <li class="">
-      <a href="seccion2-8.html">5.8 Paso de parámetros</a>
-    </li>
-    <li class="active">
-      <a href="">5.9 Errores frecuentes</a>
-    </li>
-    <li class="">
-      <a href="seccion2-10.html">5.10 Ejercicios adicionales</a>
-    </li>
-  </ul>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 2</p>
-</li>
-  <li class="">
-    <a href="../nivel02a/index.html">6. Plan de Pruebas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 3</p>
-</li>
-  <li class="">
-    <a href="../nivel3/intro.html">7. Repitiendo acciones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 3</p>
-</li>
-  <li class="">
-    <a href="../nivel03a/index.html">8. Dividir y  Conquistar</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 4</p>
-</li>
-  <li class="">
-    <a href="../nivel4/intro.html">9. Matrices y Librerías</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portada.html">
+   Portada
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Contenido
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduccion/index.html">
+   1. Nivel 0 - Antes de empezar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel1/intro.html">
+   2. Nivel 1 - Empezando a programar
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   3. Nivel 2 - Tomando decisiones
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-1.html">
+     3.1. Un programa para leer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-2.html">
+     3.2. Lógica y valores de verdad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-3.html">
+     3.3. Valores de verdad en Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-4.html">
+     3.4. Instrucciones condicionales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-5.html">
+     3.5. Más sobre cadenas de caracteres
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-6.html">
+     3.6. Módulos de la librería estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-7.html">
+     3.7. Diccionarios
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-8.html">
+     3.8. Paso de parámetros
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.9. Errores frecuentes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#para-no-olvidar">
+     3.10. Para no olvidar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-10.html">
+     3.11. Ejercicios adicionales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel3/intro.html">
+   4. Nivel 3 - Repitiendo acciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel4/intro.html">
+   5. Nivel 4 - Matrices y Librerías
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -218,26 +237,47 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#confundir-los-nombres-de-las-variables-con-los-nombres-de-las-llaves-en-un-diccionario">
+   3.9.1. Confundir los nombres de las variables con los nombres de las llaves en un diccionario
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intentar-extraer-una-llave-que-no-existe">
+   3.9.2. Intentar extraer una llave que no existe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reemplazar-un-valor-por-accidente">
+   3.9.3. Reemplazar un valor por accidente
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modificar-un-diccionario-dentro-de-una-funcion">
+   3.9.4. Modificar un diccionario dentro de una función
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reemplazar-un-diccionario-dentro-de-la-funcion">
+   3.9.5. Reemplazar un diccionario dentro de la función
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#copias-superficiales-vs-copias-profundas">
+   3.9.6. Copias superficiales vs. copias profundas
+  </a>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#" class="nav-link">Errores frecuentes</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#para-no-olvidar" class="nav-link">Para no olvidar</a>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -246,28 +286,120 @@
               <div>
                 
   <div class="section" id="errores-frecuentes">
-<h1>Errores frecuentes<a class="headerlink" href="#errores-frecuentes" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.9. </span>Errores frecuentes<a class="headerlink" href="#errores-frecuentes" title="Permalink to this headline">¶</a></h1>
 <div class="warning admonition">
 <p class="admonition-title">Versión borrador / preliminar</p>
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
 </div>
-<p>confundir los nombres de las variables con los nombres de las llaves en un diccionario</p>
-<p>intentar extraer una llave que no existe (mejor usar get)</p>
-<p>reemplazar un valor por accidente (la llave ya existía)</p>
-<p>modificar un diccionario dentro de una función</p>
-<p>reemplazar un diccionario dentro de la función (no hay cambio afuera)</p>
-<p>copias superficiales</p>
+<p>En esta sección presentamos algunos de los errores que encontramos frecuentemente en los programas de muchos estudiantes. Revíselos con cuidado y asegúrese de entenderlos para no cometer esos mismos errores</p>
+<div class="section" id="confundir-los-nombres-de-las-variables-con-los-nombres-de-las-llaves-en-un-diccionario">
+<h2><span class="section-number">3.9.1. </span>Confundir los nombres de las variables con los nombres de las llaves en un diccionario<a class="headerlink" href="#confundir-los-nombres-de-las-variables-con-los-nombres-de-las-llaves-en-un-diccionario" title="Permalink to this headline">¶</a></h2>
+<p>Si utilizamos una variable para indicar una llave en un diccionario, lo único que nos interesa es el valor asociado a la variable y no el nombre utilizado para la variable. Frecuentemente se encuentran confusiones como las del siguiente programa:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">diccionario</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;llave&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;mensaje&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="n">llave</span> <span class="o">=</span> <span class="s2">&quot;mensaje&quot;</span>
+<span class="n">mensaje</span> <span class="o">=</span> <span class="n">diccionario</span><span class="p">[</span><span class="n">llave</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">diccionario</span><span class="p">[</span><span class="n">mensaje</span><span class="p">])</span>
+</pre></div>
+</td></tr></table></div>
+<p>En la línea 1, se crea un nuevo diccionario con dos llaves de tipo <code class="docutils literal notranslate"><span class="pre">str</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;llave&quot;</span></code> y <code class="docutils literal notranslate"><span class="pre">&quot;mensaje&quot;</span></code>. En la línea 2 se crea una variable llamda <code class="docutils literal notranslate"><span class="pre">llave</span></code> cuyo valor es la cadena <code class="docutils literal notranslate"><span class="pre">&quot;mensaje&quot;</span></code>.</p>
+<p>En la línea 3 se extrae el valor asociado a la llave almacenada en la variable <code class="docutils literal notranslate"><span class="pre">llave</span></code>. La llave es la cadena <code class="docutils literal notranslate"><span class="pre">&quot;mensaje&quot;</span></code>, así que del diccionario se extrae el valor <code class="docutils literal notranslate"><span class="pre">1</span></code> y se almacena en la variable <code class="docutils literal notranslate"><span class="pre">mensaje</span></code>.</p>
+<p>En la línea 4 se intenta extraer el valor asociado a la llave almacenada en la variable <code class="docutils literal notranslate"><span class="pre">mensaje</span></code>. Sin embargo, el valor asociado es el entero <code class="docutils literal notranslate"><span class="pre">1</span></code> y, como esa llave no existe en el diccionario, se produce un error.</p>
+</div>
+<div class="section" id="intentar-extraer-una-llave-que-no-existe">
+<h2><span class="section-number">3.9.2. </span>Intentar extraer una llave que no existe<a class="headerlink" href="#intentar-extraer-una-llave-que-no-existe" title="Permalink to this headline">¶</a></h2>
+<p>Intentar extraer el valor asociado a una llave de un diccionario producirá un error cuando la llave no exista. Las dos formas posibles de evitar esta situación son:</p>
+<ol class="simple">
+<li><p>Preguntar si la llave existe, usando el operador <code class="docutils literal notranslate"><span class="pre">in</span></code>, antes de intentar el valor.</p></li>
+<li><p>Utilizar el método <code class="docutils literal notranslate"><span class="pre">get</span></code> para no producir el error y obtener en cambio un valor por defecto si la llave no existe en el diccionario.</p></li>
+</ol>
+</div>
+<div class="section" id="reemplazar-un-valor-por-accidente">
+<h2><span class="section-number">3.9.3. </span>Reemplazar un valor por accidente<a class="headerlink" href="#reemplazar-un-valor-por-accidente" title="Permalink to this headline">¶</a></h2>
+<p>Como en Python se usa la misma sintaxis para asignarle un valor a una llave en un diccionario y para <em>actualizar</em> el valor, es fácil reemplazar un valor por accidente. La principal forma de evitar este problema es averiguar si el valor ya existía antes de hacer la modificación utilizando el operador <code class="docutils literal notranslate"><span class="pre">in</span></code>.</p>
+<p>Consideremos por ejemplo el siguiente programa donde la función <code class="docutils literal notranslate"><span class="pre">incrementar_contadores</span></code> se utiliza para construir un histograma de valores:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">incrementar_contadores</span><span class="p">(</span><span class="n">histograma</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">valor</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">histograma</span><span class="p">[</span><span class="n">valor</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Esta función siempre le asociará el valor <code class="docutils literal notranslate"><span class="pre">1</span></code> a la llave. En realidad se debería haber preguntado si la llave existía antes de hacer la modificación:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">incrementar_contadores</span><span class="p">(</span><span class="n">histograma</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">valor</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">valor</span> <span class="ow">in</span> <span class="n">histograma</span><span class="p">:</span>
+        <span class="n">histograma</span><span class="p">[</span><span class="n">valor</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">histograma</span><span class="p">[</span><span class="n">valor</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Otra solución posible se podría construir usando el método <code class="docutils literal notranslate"><span class="pre">get</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">incrementar_contadores</span><span class="p">(</span><span class="n">histograma</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">valor</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">histograma</span><span class="p">[</span><span class="n">valor</span><span class="p">]</span> <span class="o">=</span> <span class="n">histograma</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">valor</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="modificar-un-diccionario-dentro-de-una-funcion">
+<h2><span class="section-number">3.9.4. </span>Modificar un diccionario dentro de una función<a class="headerlink" href="#modificar-un-diccionario-dentro-de-una-funcion" title="Permalink to this headline">¶</a></h2>
+<p>Cuando se use un diccionario como parámetro de una función, el cuerpo de la función tendrá acceso al diccionario a través del parámetro. Si el diccionario se modifica dentro de la función, estos cambios serán visibles para quien haya hecho la invocación de la función.</p>
+<p>Observemos un ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funcion</span><span class="p">(</span><span class="n">histograma</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">histograma</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">histograma</span><span class="p">[</span><span class="s2">&quot;llave_inicial&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>La función mostrada producirá el siguiente efecto sobre cualquier diccionario que se use como parámetro en una invocación a la función:</p>
+<ol class="simple">
+<li><p>Eliminará todos los elementos del diccionario</p></li>
+<li><p>Le asignará el valor <code class="docutils literal notranslate"><span class="pre">0</span></code> a la llave <code class="docutils literal notranslate"><span class="pre">&quot;llave_inicial&quot;</span></code>.</p></li>
+</ol>
+</div>
+<div class="section" id="reemplazar-un-diccionario-dentro-de-la-funcion">
+<h2><span class="section-number">3.9.5. </span>Reemplazar un diccionario dentro de la función<a class="headerlink" href="#reemplazar-un-diccionario-dentro-de-la-funcion" title="Permalink to this headline">¶</a></h2>
+<p>Cuando se use un diccionario como parámetro de una función, el cuerpo de la función tendrá acceso al diccionario a través del parámetro. Sin embargo, si se modifica el parámetro reemplazándolo por un nuevo diccionario, el diccionario que se pasó como parámetro no se verá afectado.</p>
+<p>Observemos un ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funcion</span><span class="p">(</span><span class="n">histograma</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">histograma</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;llave_inicial&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>En esta función se recibe un diccionario como parámetro, posiblemente inicializado con algunos valores. En la única línea del cuerpo de la función, se crea un nuevo diccionario y se asocia al identificador <code class="docutils literal notranslate"><span class="pre">histograma</span></code>. Aunque parece que estamos reemplazando el valor del parámetro, en realidad estamos creando una nueva variable con el mismo nombre que el parámetro y le estamos asociando como valor un nuevo diccionario.</p>
+<p>El diccionario original que se haya usado al invocar la función no se verá afectado de ninguna manera por esta función.</p>
+</div>
+<div class="section" id="copias-superficiales-vs-copias-profundas">
+<h2><span class="section-number">3.9.6. </span>Copias superficiales vs. copias profundas<a class="headerlink" href="#copias-superficiales-vs-copias-profundas" title="Permalink to this headline">¶</a></h2>
+<p>Cuando se usa el método <code class="docutils literal notranslate"><span class="pre">copy</span></code> de un diccionario, se hace una copia <em>superficial</em> en lugar de una copia <em>profunda</em>: si el diccionario contenía valores que no fueran valores numéricos (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>), booleanos (<code class="docutils literal notranslate"><span class="pre">bool</span></code>) o cadenas (<code class="docutils literal notranslate"><span class="pre">str</span></code>), la copia del diccionario incluirá referencias a los valores originales.</p>
+<p>Por ejemplo, si teníamos un diccionario dentro de un diccionario y copiamos el diccionario contenedor, obtendremos un nuevo diccionario contenedor con dentro el mismo diccionario que tenía el contenedor original.</p>
+</div>
 </div>
 <div class="section" id="para-no-olvidar">
-<h1>Para no olvidar<a class="headerlink" href="#para-no-olvidar" title="Permalink to this headline">¶</a></h1>
-<p>el operador in</p>
-<p>el método get</p>
-<p>usar diccioanrios como histogramas</p>
-<p>los diccionarios se pasan por referencia y son mutables</p>
-<p>copias de diccionarios</p>
-<p>…</p>
+<h1><span class="section-number">3.10. </span>Para no olvidar<a class="headerlink" href="#para-no-olvidar" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><strong>Use el operador <code class="docutils literal notranslate"><span class="pre">in</span></code> para saber si una llave existe en un diccionario.</strong> Es mucho mejor revisar si una llave existe antes de intentar extraerla, que intentar sacar el valor con la llave y obtener un error.</p></li>
+<li><p><strong>Use el método <code class="docutils literal notranslate"><span class="pre">get</span></code> para obtener un valor por defecto cuando no exista una llave.</strong> Si tiene sentido obtener un valor por defecto, use <code class="docutils literal notranslate"><span class="pre">get</span></code> para extraer un valor de un diccionario.</p></li>
+<li><p><strong>Los diccionarios pueden usarse como histogramas.</strong> Debido a su eficiencia para encontrar un valor asociado a una llave, los diccionarios son muy útiles para construir histogramas. Además, el uso del método <code class="docutils literal notranslate"><span class="pre">get</span></code> hace que la construcción de un histograma sea muy sencilla.</p></li>
+<li><p><strong>Cuando se usen en los parámetros de una función, los diccionarios se pasan por referencia y son mutables.</strong> Por este motivo, los cambios que se hagan al diccionario desde adentro de la función serán visibles para el que hizo la invocación.</p></li>
+<li><p><strong>El método <code class="docutils literal notranslate"><span class="pre">copy</span></code> crea una copia de un diccionario.</strong> Sin embargo debe tener cuidado: será una copy <em>superficial</em>.</p></li>
+</ul>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nivel2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -277,8 +409,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="seccion2-8.html" title="previous page">Paso de parámetros</a>
-    <a class='right-next' id="next-link" href="seccion2-10.html" title="next page">Ejercicios adicionales</a>
+    <a class='left-prev' id="prev-link" href="seccion2-8.html" title="previous page"><span class="section-number">3.8. </span>Paso de parámetros</a>
+    <a class='right-next' id="next-link" href="seccion2-10.html" title="next page"><span class="section-number">3.11. </span>Ejercicios adicionales</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

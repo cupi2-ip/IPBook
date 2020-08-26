@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Un programa para leer &#8212; Introducción a la Programación</title>
+    <title>3.1. Un programa para leer &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,11 +31,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel2/seccion2-1.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lógica y valores de verdad" href="seccion2-2.html" />
-    <link rel="prev" title="Introducción" href="intro.html" />
+    <link rel="next" title="3.2. Lógica y valores de verdad" href="seccion2-2.html" />
+    <link rel="prev" title="3. Introducción" href="intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -47,7 +55,7 @@
 <meta property="og:description" content="Un programa para leer  Versión borrador / preliminar  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene" />
 <meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -76,92 +84,103 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../portada.html">1. Portada</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Antes de empezar</p>
-</li>
-  <li class="">
-    <a href="../introduccion/index.html">2. Introducción</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 1</p>
-</li>
-  <li class="">
-    <a href="../nivel1/intro.html">3. Empezando a programar</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 1</p>
-</li>
-  <li class="">
-    <a href="../nivel01a/index.html">4. Descomposición de programas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 2</p>
-</li>
-  <li class="active">
-    <a href="intro.html">5. Tomando decisiones</a>
-  <ul class="nav sidenav_l2">
-    <li class="active">
-      <a href="">5.1 Un programa para leer</a>
-    </li>
-    <li class="">
-      <a href="seccion2-2.html">5.2 Lógica y valores de verdad</a>
-    </li>
-    <li class="">
-      <a href="seccion2-3.html">5.3 Valores de verdad en Python</a>
-    </li>
-    <li class="">
-      <a href="seccion2-4.html">5.4 Instrucciones condicionales</a>
-    </li>
-    <li class="">
-      <a href="seccion2-5.html">5.5 Más sobre cadenas de caracteres</a>
-    </li>
-    <li class="">
-      <a href="seccion2-6.html">5.6 Módulos de la librería estándar</a>
-    </li>
-    <li class="">
-      <a href="seccion2-7.html">5.7 Diccionarios</a>
-    </li>
-    <li class="">
-      <a href="seccion2-8.html">5.8 Paso de parámetros</a>
-    </li>
-    <li class="">
-      <a href="seccion2-9.html">5.9 Errores frecuentes</a>
-    </li>
-    <li class="">
-      <a href="seccion2-10.html">5.10 Ejercicios adicionales</a>
-    </li>
-  </ul>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 2</p>
-</li>
-  <li class="">
-    <a href="../nivel02a/index.html">6. Plan de Pruebas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 3</p>
-</li>
-  <li class="">
-    <a href="../nivel3/intro.html">7. Repitiendo acciones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 3</p>
-</li>
-  <li class="">
-    <a href="../nivel03a/index.html">8. Dividir y  Conquistar</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 4</p>
-</li>
-  <li class="">
-    <a href="../nivel4/intro.html">9. Matrices y Librerías</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portada.html">
+   Portada
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Contenido
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduccion/index.html">
+   1. Nivel 0 - Antes de empezar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel1/intro.html">
+   2. Nivel 1 - Empezando a programar
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   3. Nivel 2 - Tomando decisiones
+  </a>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.1. Un programa para leer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-2.html">
+     3.2. Lógica y valores de verdad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-3.html">
+     3.3. Valores de verdad en Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-4.html">
+     3.4. Instrucciones condicionales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-5.html">
+     3.5. Más sobre cadenas de caracteres
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-6.html">
+     3.6. Módulos de la librería estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-7.html">
+     3.7. Diccionarios
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-8.html">
+     3.8. Paso de parámetros
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-9.html">
+     3.9. Errores frecuentes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-9.html#para-no-olvidar">
+     3.10. Para no olvidar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-10.html">
+     3.11. Ejercicios adicionales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel3/intro.html">
+   4. Nivel 3 - Repitiendo acciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel4/intro.html">
+   5. Nivel 4 - Matrices y Librerías
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -218,26 +237,27 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logica-de-la-aplicacion">
+   3.1.1. Lógica de la aplicación
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interfaz-de-la-aplicacion">
+   3.1.2. Interfaz de la aplicación
+  </a>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#logica-de-la-aplicacion" class="nav-link">Lógica de la aplicación</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#interfaz-de-la-aplicacion" class="nav-link">Interfaz de la aplicación</a>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -246,7 +266,7 @@
               <div>
                 
   <div class="section" id="un-programa-para-leer">
-<h1>Un programa para leer<a class="headerlink" href="#un-programa-para-leer" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.1. </span>Un programa para leer<a class="headerlink" href="#un-programa-para-leer" title="Permalink to this headline">¶</a></h1>
 <div class="warning admonition">
 <p class="admonition-title">Versión borrador / preliminar</p>
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
@@ -254,7 +274,7 @@
 <p>Como dijimos en el primer capítulo, una habilidad importante que se debe desarrollar es la capacidad para leer código escrito por alguien más. En esta sección presentamos un nuevo ejemplo para que se ejercite y para que también observe varias de las características de Python que se van a estudiar en este nivel.</p>
 <p>Al igual que en el nivel 1, el programa no tiene comentarios para que el ejercicio de lectura sea más exigente pero también más útil. Un programa tan largo como este normalmente tendría una buena cantidad de comentarios.</p>
 <div class="section" id="logica-de-la-aplicacion">
-<h2>Lógica de la aplicación<a class="headerlink" href="#logica-de-la-aplicacion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.1. </span>Lógica de la aplicación<a class="headerlink" href="#logica-de-la-aplicacion" title="Permalink to this headline">¶</a></h2>
 <p>El siguiente es el contenido completo del módulo <code class="docutils literal notranslate"><span class="pre">logica_juego1</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
@@ -340,7 +360,7 @@ A partir de su lectura del programa, intente responder las siguientes preguntas.
 </ul>
 </div>
 <div class="section" id="interfaz-de-la-aplicacion">
-<h2>Interfaz de la aplicación<a class="headerlink" href="#interfaz-de-la-aplicacion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.2. </span>Interfaz de la aplicación<a class="headerlink" href="#interfaz-de-la-aplicacion" title="Permalink to this headline">¶</a></h2>
 <p>El siguiente es el contenido completo del módulo <code class="docutils literal notranslate"><span class="pre">interfaz_juego1</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logica_juego1</span> <span class="k">as</span> <span class="nn">juego</span>
 
@@ -492,6 +512,25 @@ A partir de su lectura del programa, intente responder las siguientes preguntas.
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nivel2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -501,8 +540,8 @@ A partir de su lectura del programa, intente responder las siguientes preguntas.
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Introducción</a>
-    <a class='right-next' id="next-link" href="seccion2-2.html" title="next page">Lógica y valores de verdad</a>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page"><span class="section-number">3. </span>Introducción</a>
+    <a class='right-next' id="next-link" href="seccion2-2.html" title="next page"><span class="section-number">3.2. </span>Lógica y valores de verdad</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

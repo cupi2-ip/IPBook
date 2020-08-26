@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>El lenguaje de programación Python &#8212; Introducción a la Programación</title>
+    <title>1.4. El lenguaje de programación Python &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,11 +31,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/introduccion/lenguaje.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Estructura del libro" href="estructura.html" />
-    <link rel="prev" title="Sobre este libro" href="acerca.html" />
+    <link rel="next" title="1.5. Estructura del libro" href="estructura.html" />
+    <link rel="prev" title="1.3. Sobre este libro" href="acerca.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -47,7 +55,7 @@
 <meta property="og:description" content="El lenguaje de programación Python  Simple is better than complex.  Tim Peters, The Zen of Python  Como ya dijimos, para este libro (y para el curso de Introduc" />
 <meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -76,80 +84,78 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../portada.html">1. Portada</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Antes de empezar</p>
-</li>
-  <li class="active">
-    <a href="index.html">2. Introducción</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="programar.html">2.1 ¿Qué es programar?</a>
-    </li>
-    <li class="">
-      <a href="practicas.html">2.2 Prácticas fundamentales</a>
-    </li>
-    <li class="">
-      <a href="acerca.html">2.3 Sobre este libro</a>
-    </li>
-    <li class="active">
-      <a href="">2.4 El lenguaje de programación Python</a>
-    </li>
-    <li class="">
-      <a href="estructura.html">2.5 Estructura del libro</a>
-    </li>
-    <li class="">
-      <a href="imagenes.html">2.6 Créditos de las imágenes</a>
-    </li>
-  </ul>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 1</p>
-</li>
-  <li class="">
-    <a href="../nivel1/intro.html">3. Empezando a programar</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 1</p>
-</li>
-  <li class="">
-    <a href="../nivel01a/index.html">4. Descomposición de programas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 2</p>
-</li>
-  <li class="">
-    <a href="../nivel2/intro.html">5. Tomando decisiones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 2</p>
-</li>
-  <li class="">
-    <a href="../nivel02a/index.html">6. Plan de Pruebas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 3</p>
-</li>
-  <li class="">
-    <a href="../nivel3/intro.html">7. Repitiendo acciones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 3</p>
-</li>
-  <li class="">
-    <a href="../nivel03a/index.html">8. Dividir y  Conquistar</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 4</p>
-</li>
-  <li class="">
-    <a href="../nivel4/intro.html">9. Matrices y Librerías</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portada.html">
+   Portada
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Contenido
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="index.html">
+   1. Nivel 0 - Antes de empezar
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="programar.html">
+     1.1. ¿Qué es programar?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="practicas.html">
+     1.2. Prácticas fundamentales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="acerca.html">
+     1.3. Sobre este libro
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.4. El lenguaje de programación Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="estructura.html">
+     1.5. Estructura del libro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="imagenes.html">
+     1.6. Créditos de las imágenes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel1/intro.html">
+   2. Nivel 1 - Empezando a programar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel2/intro.html">
+   3. Nivel 2 - Tomando decisiones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel3/intro.html">
+   4. Nivel 3 - Repitiendo acciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel4/intro.html">
+   5. Nivel 4 - Matrices y Librerías
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -206,26 +212,27 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python">
+   1.4.1. Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-para-introduccion-a-la-programacion">
+   1.4.2. Python para Introducción a la Programación
+  </a>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#python" class="nav-link">Python</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#python-para-introduccion-a-la-programacion" class="nav-link">Python para Introducción a la Programación</a>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -234,7 +241,7 @@
               <div>
                 
   <div class="section" id="el-lenguaje-de-programacion-python">
-<h1>El lenguaje de programación Python<a class="headerlink" href="#el-lenguaje-de-programacion-python" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1.4. </span>El lenguaje de programación Python<a class="headerlink" href="#el-lenguaje-de-programacion-python" title="Permalink to this headline">¶</a></h1>
 <blockquote class="epigraph">
 <div><p>Simple is better than complex.</p>
 <p class="attribution">—Tim Peters, The Zen of Python</p>
@@ -245,7 +252,7 @@
 <p>Otra diferencia importante entre lenguajes es la disponibilidad de ayuda (manuales, ejemplos, foros, cursos, etc.), librerías (programas que resuelvan problemas específicos que podamos reutilizar en nuestros propios programas) y herramientas de desarrollo. Seguramente será más díficil empezar a usar un lenguaje <em>esotérico</em>, usado por pocas personas en el mundo, que un lenguaje muy popular para el cual haya una gran cantidad de recursos disponibles y un público creciente que produzca cada vez más material de soporte. Sin embargo, debe ser claro que popularidad no implica calidad: hay lenguajes que han sido extraordinariamente populares a pesar de la gran cantidad de problemas de fondo que tenían. Además, la popularidad cambia con el tiempo: los lenguajes que hoy en día encabezan las listas eran prácticamente desconocidos hace 10 años y posiblemente serán remplazados dentro de los siguientes 10 años.</p>
 <p>Finalmente, hay diferencias importantes en la complejidad misma de los lenguajes y de los programas que se construyen con ellos. El programa que en un lenguaje puede requerir unas pocas líneas de código, en otro lenguaje puede requerir diez o más veces la cantidad de líneas de código <a class="footnote-reference brackets" href="#helloworld" id="id2">2</a>. Además, en algunos lenguajes pueden escribirse programas crípticos, cuyo funcionamiento puede ser imposible de entender sin ayuda del autor, mientras que otros lenguajes fomentan que los programas sean sencillos y fáciles de entender y de mantener, sin sacrificar las funcionalidades.</p>
 <div class="section" id="python">
-<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4.1. </span>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
 <p>Comparado con otros lenguajes, Python tiene algunas limitaciones evidentes, pero que no son relevantes para este libro. Por el contrario, Python tiene varias características que lo hacen un lenguaje muy adecuado, en este momento, para aprender a programar. Las más importante es que Python comparte muchos conceptos y estructuras con muchos otros lenguajes, así que debería ser fácil aprender uno de estos lenguajes después de aprender a programar en Python.</p>
 <p>La segunda razón es que la filosofía detrás del diseño del lenguaje buscaba la simplicidad y la claridad. El texto “The Zen of Python”, de Tim Peters, resume esta filosofía en 19 aforismos de los cuales quisiéramos destacar los siguientes tres porque deberíamos aplicarlos a nuestros propios programas:</p>
 <ul class="simple">
@@ -284,7 +291,7 @@
 </div>
 </div>
 <div class="section" id="python-para-introduccion-a-la-programacion">
-<h2>Python para Introducción a la Programación<a class="headerlink" href="#python-para-introduccion-a-la-programacion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4.2. </span>Python para Introducción a la Programación<a class="headerlink" href="#python-para-introduccion-a-la-programacion" title="Permalink to this headline">¶</a></h2>
 <p>Para concluir esta sección, vamos a resumir los principales motivos detrás de la decisión que tomamos de usar el lenguaje Python en el curso Introducción a la Programación de la Universidad de los Andes.</p>
 <ol class="simple">
 <li><p><strong>Facilidad.</strong> El primer punto tuvo que ver con las características del lenguaje que lo hacen fácil de aprender para los que nunca antes han programado. En particular, para nosotros era importante que no fuera obligatorio utilizar los conceptos de programación orientada a objetos para poder construir programas interesantes y relativamente complejos.</p></li>
@@ -303,6 +310,25 @@
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./introduccion"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -312,8 +338,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="acerca.html" title="previous page">Sobre este libro</a>
-    <a class='right-next' id="next-link" href="estructura.html" title="next page">Estructura del libro</a>
+    <a class='left-prev' id="prev-link" href="acerca.html" title="previous page"><span class="section-number">1.3. </span>Sobre este libro</a>
+    <a class='right-next' id="next-link" href="estructura.html" title="next page"><span class="section-number">1.5. </span>Estructura del libro</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

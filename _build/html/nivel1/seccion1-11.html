@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Ejercicios adicionales &#8212; Introducción a la Programación</title>
+    <title>2.12. Ejercicios adicionales &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,11 +31,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel1/seccion1-11.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Interludio 1: Descomposición" href="../nivel01a/index.html" />
-    <link rel="prev" title="Errores frecuentes" href="seccion1-10.html" />
+    <link rel="next" title="3. Introducción" href="../nivel2/intro.html" />
+    <link rel="prev" title="2.10. Errores frecuentes" href="seccion1-10.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -47,7 +55,7 @@
 <meta property="og:description" content="Ejercicios adicionales  Versión borrador / preliminar  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tien" />
 <meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -76,95 +84,108 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../portada.html">1. Portada</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Antes de empezar</p>
-</li>
-  <li class="">
-    <a href="../introduccion/index.html">2. Introducción</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 1</p>
-</li>
-  <li class="active">
-    <a href="intro.html">3. Empezando a programar</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="seccion1-1.html">3.1 Un programa para leer</a>
-    </li>
-    <li class="">
-      <a href="seccion1-2.html">3.2 Ambiente básico de trabajo</a>
-    </li>
-    <li class="">
-      <a href="seccion1-3.html">3.3 Valores y tipos de datos</a>
-    </li>
-    <li class="">
-      <a href="seccion1-4.html">3.4 Variables, expresiones y operadores</a>
-    </li>
-    <li class="">
-      <a href="seccion1-5.html">3.5 Funciones</a>
-    </li>
-    <li class="">
-      <a href="seccion1-6.html">3.6 Definición de funciones</a>
-    </li>
-    <li class="">
-      <a href="seccion1-7.html">3.7 Estilo de programación</a>
-    </li>
-    <li class="">
-      <a href="seccion1-8.html">3.8 Un programa para leer (2)</a>
-    </li>
-    <li class="">
-      <a href="seccion1-9.html">3.9 Lógica vs. Interacción</a>
-    </li>
-    <li class="">
-      <a href="seccion1-10.html">3.10 Errores frecuentes</a>
-    </li>
-    <li class="active">
-      <a href="">3.11 Ejercicios adicionales</a>
-    </li>
-  </ul>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 1</p>
-</li>
-  <li class="">
-    <a href="../nivel01a/index.html">4. Descomposición de programas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 2</p>
-</li>
-  <li class="">
-    <a href="../nivel2/intro.html">5. Tomando decisiones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 2</p>
-</li>
-  <li class="">
-    <a href="../nivel02a/index.html">6. Plan de Pruebas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 3</p>
-</li>
-  <li class="">
-    <a href="../nivel3/intro.html">7. Repitiendo acciones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 3</p>
-</li>
-  <li class="">
-    <a href="../nivel03a/index.html">8. Dividir y  Conquistar</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 4</p>
-</li>
-  <li class="">
-    <a href="../nivel4/intro.html">9. Matrices y Librerías</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portada.html">
+   Portada
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Contenido
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduccion/index.html">
+   1. Nivel 0 - Antes de empezar
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   2. Nivel 1 - Empezando a programar
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-1.html">
+     2.1. Un programa para leer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-2.html">
+     2.2. Ambiente básico de trabajo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-3.html">
+     2.3. Valores y tipos de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-4.html">
+     2.4. Variables, expresiones y operadores
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-5.html">
+     2.5. Funciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-6.html">
+     2.6. Definición de funciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-7.html">
+     2.7. Estilo de programación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-8.html">
+     2.8. Un programa para leer (2)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-9.html">
+     2.9. Lógica vs. Interacción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-10.html">
+     2.10. Errores frecuentes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-10.html#para-no-olvidar">
+     2.11. Para no olvidar
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.12. Ejercicios adicionales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel2/intro.html">
+   3. Nivel 2 - Tomando decisiones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel3/intro.html">
+   4. Nivel 3 - Repitiendo acciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel4/intro.html">
+   5. Nivel 4 - Matrices y Librerías
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -221,48 +242,54 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conceptos-basicos">
+   2.12.1. Conceptos básicos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lectura-de-programas">
+   2.12.2. Lectura de programas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#busqueda-de-errores">
+   2.12.3. Búsqueda de errores
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tiempo-de-descarga">
+     2.12.3.1. Tiempo de descarga
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iva-y-propina">
+     2.12.3.2. IVA y propina
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#saludo-prolongado">
+     2.12.3.3. Saludo prolongado
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solucion-de-problemas">
+   2.12.4. Solución de problemas
+  </a>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#conceptos-basicos" class="nav-link">Conceptos básicos</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#lectura-de-programas" class="nav-link">Lectura de programas</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#busqueda-de-errores" class="nav-link">Búsqueda de errores</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#tiempo-de-descarga" class="nav-link">Tiempo de descarga</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#iva-y-propina" class="nav-link">IVA y propina</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#saludo-prolongado" class="nav-link">Saludo prolongado</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#solucion-de-problemas" class="nav-link">Solución de problemas</a>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -271,13 +298,13 @@
               <div>
                 
   <div class="section" id="ejercicios-adicionales">
-<h1>Ejercicios adicionales<a class="headerlink" href="#ejercicios-adicionales" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.12. </span>Ejercicios adicionales<a class="headerlink" href="#ejercicios-adicionales" title="Permalink to this headline">¶</a></h1>
 <div class="warning admonition">
 <p class="admonition-title">Versión borrador / preliminar</p>
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
 </div>
 <div class="section" id="conceptos-basicos">
-<h2>Conceptos básicos<a class="headerlink" href="#conceptos-basicos" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.12.1. </span>Conceptos básicos<a class="headerlink" href="#conceptos-basicos" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Defina y dé un ejemplo para cada uno de los siguientes conceptos que se estudiaron en este capítulo:</p>
 <ul class="simple">
@@ -303,7 +330,7 @@
 </ol>
 </div>
 <div class="section" id="lectura-de-programas">
-<h2>Lectura de programas<a class="headerlink" href="#lectura-de-programas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.12.2. </span>Lectura de programas<a class="headerlink" href="#lectura-de-programas" title="Permalink to this headline">¶</a></h2>
 <p>¿Qué imprimen los siguientes programas? Intente predecir qué van a imprimir los siguientes programas y depués copie el código al intérprete de Python y verifique sus respuestas.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">v2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">v2</span>
@@ -343,11 +370,11 @@
 </div>
 </div>
 <div class="section" id="busqueda-de-errores">
-<h2>Búsqueda de errores<a class="headerlink" href="#busqueda-de-errores" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.12.3. </span>Búsqueda de errores<a class="headerlink" href="#busqueda-de-errores" title="Permalink to this headline">¶</a></h2>
 <p>Revise con atención los siguientes enunciados y el programa que intenta resolverlos. Explique cuál es el problema del programa y corríjalo.</p>
 <p><em>Ayuda:</em> Si no encuentra los problemas leyendo el código, copie los programas a su IDE y ejecútelos para intentar diagnosticar los problemas. Para esto tendrá que identificar valores de los parámetros que le sean útiles y posiblemente hacer los cálculos <em>a mano</em> para ver qué podría estar mal.</p>
 <div class="section" id="tiempo-de-descarga">
-<h3>Tiempo de descarga<a class="headerlink" href="#tiempo-de-descarga" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.12.3.1. </span>Tiempo de descarga<a class="headerlink" href="#tiempo-de-descarga" title="Permalink to this headline">¶</a></h3>
 <p><strong>Enunciado:</strong>
 Escriba una función que reciba la velocidad del Internet de un usuario (en Mbps, es decir, Megabits por segundo), y el tamaño de un archivo a descargar (en GB, es decir, Gigabytes), y retorne el tiempo en minutos estimado (redondee al entero más cercano) para realizar la descarga de dicho archivo sobre esa red. Para esto, tenga en cuenta que el tiempo lo puede calcular como <em>t = tamaño archivo/velocidad descarga</em>. El tamaño y velocidad deben estar en unidades homogéneas (por ejemplo, MB y MB/s, o GB y GB/s) para que se puedan operar). <em>Nota</em>: Recuerde que un MB (Megabyte) equivale a 8 Mb (Megabits), y que un GB equivale a 1000 MB.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcular_tiempo_descarga</span><span class="p">(</span><span class="n">velocidad</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tamanio_archivo</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">int</span><span class="p">:</span>
@@ -366,7 +393,7 @@ Escriba una función que reciba la velocidad del Internet de un usuario (en Mbps
 </div>
 </div>
 <div class="section" id="iva-y-propina">
-<h3>IVA y propina<a class="headerlink" href="#iva-y-propina" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.12.3.2. </span>IVA y propina<a class="headerlink" href="#iva-y-propina" title="Permalink to this headline">¶</a></h3>
 <p><strong>Enunciado:</strong>
 Escriba una función que reciba el costo en pesos de una cuenta de restaurante, y luego calcule el impuesto IVA asociado y la propina para el mesero. La tasa del IVA corresponde al 19%, y la propina en el restaurante es del 10% del valor de la factura (sin impuestos). Debe retornar una cadena que muestre el IVA, propina y total de la siguiente manera: “X,Y,Z”, donde X es el IVA, Y la propina y Z el total. No olvide aproximar los números al entero más cercano.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcular_iva_propina_total_factura</span> <span class="p">(</span><span class="n">costo_factura</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -384,7 +411,7 @@ Escriba una función que reciba el costo en pesos de una cuenta de restaurante, 
 </div>
 </div>
 <div class="section" id="saludo-prolongado">
-<h3>Saludo prolongado<a class="headerlink" href="#saludo-prolongado" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.12.3.3. </span>Saludo prolongado<a class="headerlink" href="#saludo-prolongado" title="Permalink to this headline">¶</a></h3>
 <p><strong>Enunciado:</strong>
 Escriba una función que reciba un nombre y un entero, y retorne la cadena ‘Hola’ seguida del nombre recibido por parámetro, pero con la letra ‘o’ repetida tantas veces como indique el entero recibido, así como la letra ‘a’ la mitad de las veces que la ‘o’ (si la mitad no es exacta, se debe tomar la parte entera). Por ejemplo, si se reciben como parámetros ‘Egan’ y 5, la cadena a retornar será ‘Hooooolaa Egan’.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saludar_repetidas_veces</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">veces</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">str</span><span class="p">:</span>
@@ -403,7 +430,7 @@ Escriba una función que reciba un nombre y un entero, y retorne la cadena ‘Ho
 </div>
 </div>
 <div class="section" id="solucion-de-problemas">
-<h2>Solución de problemas<a class="headerlink" href="#solucion-de-problemas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.12.4. </span>Solución de problemas<a class="headerlink" href="#solucion-de-problemas" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p><strong>Enunciado:</strong> El volumen de un cilindro se puede calcular multiplicando el área de su base circular por su altura. Cree una función que reciba el radio de la base y la altura del cilindro, y calcule su volumen. Retorne el resultado redondeado a un solo decimal.</p></li>
 <li><p><strong>Enunciado:</strong> Cree una función que pueda calcular el índice de masa corporal (BMI) de una persona a partir de su peso en libras y su altura en pulgadas. La fórmula para calcular el BMI es la siguiente: <span class="math notranslate nohighlight">\(BMI = peso/(altura^{2})\)</span>, pero para que la fórmula funcione <span class="math notranslate nohighlight">\(peso\)</span> debe estar en kilogramos y <span class="math notranslate nohighlight">\(altura\)</span> en metros. Recuerde que 1 libra corresponde a 0.454 kg, y que 1 pulgada corresponde a 0.0254 metros. El valor de retorno debe estar redondeado a dos decimales.</p></li>
@@ -411,6 +438,25 @@ Escriba una función que reciba un nombre y un entero, y retorne la cadena ‘Ho
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nivel1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -420,8 +466,8 @@ Escriba una función que reciba un nombre y un entero, y retorne la cadena ‘Ho
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="seccion1-10.html" title="previous page">Errores frecuentes</a>
-    <a class='right-next' id="next-link" href="../nivel01a/index.html" title="next page">Interludio 1: Descomposición</a>
+    <a class='left-prev' id="prev-link" href="seccion1-10.html" title="previous page"><span class="section-number">2.10. </span>Errores frecuentes</a>
+    <a class='right-next' id="next-link" href="../nivel2/intro.html" title="next page"><span class="section-number">3. </span>Introducción</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

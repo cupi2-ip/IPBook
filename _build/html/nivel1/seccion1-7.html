@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Estilo de programación &#8212; Introducción a la Programación</title>
+    <title>2.7. Estilo de programación &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,11 +31,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel1/seccion1-7.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Un programa para leer (2)" href="seccion1-8.html" />
-    <link rel="prev" title="Definición de funciones" href="seccion1-6.html" />
+    <link rel="next" title="2.8. Un programa para leer (2)" href="seccion1-8.html" />
+    <link rel="prev" title="2.6. Definición de funciones" href="seccion1-6.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -47,7 +55,7 @@
 <meta property="og:description" content="Estilo de programación  Versión borrador / preliminar  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tien" />
 <meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -76,95 +84,108 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../portada.html">1. Portada</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Antes de empezar</p>
-</li>
-  <li class="">
-    <a href="../introduccion/index.html">2. Introducción</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 1</p>
-</li>
-  <li class="active">
-    <a href="intro.html">3. Empezando a programar</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="seccion1-1.html">3.1 Un programa para leer</a>
-    </li>
-    <li class="">
-      <a href="seccion1-2.html">3.2 Ambiente básico de trabajo</a>
-    </li>
-    <li class="">
-      <a href="seccion1-3.html">3.3 Valores y tipos de datos</a>
-    </li>
-    <li class="">
-      <a href="seccion1-4.html">3.4 Variables, expresiones y operadores</a>
-    </li>
-    <li class="">
-      <a href="seccion1-5.html">3.5 Funciones</a>
-    </li>
-    <li class="">
-      <a href="seccion1-6.html">3.6 Definición de funciones</a>
-    </li>
-    <li class="active">
-      <a href="">3.7 Estilo de programación</a>
-    </li>
-    <li class="">
-      <a href="seccion1-8.html">3.8 Un programa para leer (2)</a>
-    </li>
-    <li class="">
-      <a href="seccion1-9.html">3.9 Lógica vs. Interacción</a>
-    </li>
-    <li class="">
-      <a href="seccion1-10.html">3.10 Errores frecuentes</a>
-    </li>
-    <li class="">
-      <a href="seccion1-11.html">3.11 Ejercicios adicionales</a>
-    </li>
-  </ul>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 1</p>
-</li>
-  <li class="">
-    <a href="../nivel01a/index.html">4. Descomposición de programas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 2</p>
-</li>
-  <li class="">
-    <a href="../nivel2/intro.html">5. Tomando decisiones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 2</p>
-</li>
-  <li class="">
-    <a href="../nivel02a/index.html">6. Plan de Pruebas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 3</p>
-</li>
-  <li class="">
-    <a href="../nivel3/intro.html">7. Repitiendo acciones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 3</p>
-</li>
-  <li class="">
-    <a href="../nivel03a/index.html">8. Dividir y  Conquistar</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 4</p>
-</li>
-  <li class="">
-    <a href="../nivel4/intro.html">9. Matrices y Librerías</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portada.html">
+   Portada
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Contenido
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduccion/index.html">
+   1. Nivel 0 - Antes de empezar
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   2. Nivel 1 - Empezando a programar
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-1.html">
+     2.1. Un programa para leer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-2.html">
+     2.2. Ambiente básico de trabajo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-3.html">
+     2.3. Valores y tipos de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-4.html">
+     2.4. Variables, expresiones y operadores
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-5.html">
+     2.5. Funciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-6.html">
+     2.6. Definición de funciones
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.7. Estilo de programación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-8.html">
+     2.8. Un programa para leer (2)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-9.html">
+     2.9. Lógica vs. Interacción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-10.html">
+     2.10. Errores frecuentes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-10.html#para-no-olvidar">
+     2.11. Para no olvidar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-11.html">
+     2.12. Ejercicios adicionales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel2/intro.html">
+   3. Nivel 2 - Tomando decisiones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel3/intro.html">
+   4. Nivel 3 - Repitiendo acciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel4/intro.html">
+   5. Nivel 4 - Matrices y Librerías
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -221,46 +242,71 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nombramiento-de-variables-y-funciones">
+   2.7.1. Nombramiento de variables y funciones
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estandares">
+     2.7.1.1. Estándares
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documentacion-de-funciones">
+   2.7.2. Documentación de funciones
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicios">
+     2.7.2.1. Ejercicios
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descomposicion-de-funciones">
+   2.7.3. Descomposición de funciones
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#complejidad-de-las-instrucciones">
+   2.7.4. Complejidad de las instrucciones
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tipado-de-funciones-y-parametros">
+   2.7.5. Tipado de funciones y parámetros
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comentarios">
+   2.7.6. Comentarios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   2.7.7. Ejercicios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mas-alla-de-python">
+   2.7.8. Más allá de Python
+  </a>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#nombramiento-de-variables-y-funciones" class="nav-link">Nombramiento de variables y funciones</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#documentacion-de-funciones" class="nav-link">Documentación de funciones</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#descomposicion-de-funciones" class="nav-link">Descomposición de funciones</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#complejidad-de-las-instrucciones" class="nav-link">Complejidad de las instrucciones</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#tipado-de-funciones" class="nav-link">Tipado de funciones</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#ejercicios" class="nav-link">Ejercicios</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#mas-alla-de-python" class="nav-link">Más allá de Python</a>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -269,7 +315,7 @@
               <div>
                 
   <div class="section" id="estilo-de-programacion">
-<h1>Estilo de programación<a class="headerlink" href="#estilo-de-programacion" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.7. </span>Estilo de programación<a class="headerlink" href="#estilo-de-programacion" title="Permalink to this headline">¶</a></h1>
 <div class="warning admonition">
 <p class="admonition-title">Versión borrador / preliminar</p>
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
@@ -311,26 +357,48 @@
 23
 24
 25
-26</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">area_cuadrado</span><span class="p">(</span><span class="n">lado</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">       Calcula el área de un cuadrado dada la medida de su lado</span>
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">area_cuadrado</span><span class="p">(</span><span class="n">lado</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot; Calcula el área de un cuadrado dada la medida de su lado</span>
+<span class="sd">    Parámetros:</span>
+<span class="sd">        lado (int): La medida del cuadrado</span>
+<span class="sd">    Retorno:</span>
+<span class="sd">        (int): El valor del área del cuadrado. Es siempre un número entero.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">lado</span> <span class="o">*</span> <span class="n">lado</span>
 
 
 <span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">altura</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Calcula el área de un triángulo dada la medida de la base y de la altura.</span>
+    <span class="sd">&quot;&quot;&quot; Calcula el área de un triángulo.</span>
+<span class="sd">    Parámetros:</span>
+<span class="sd">        base (int): La medida de la base del triángulo.</span>
+<span class="sd">        altura (int): La medida de la altura del triángulo.        </span>
+<span class="sd">    Retorno:</span>
+<span class="sd">        (float): El valor del área del triángulo. Es siempre un número decimal.    </span>
 <span class="sd">    &quot;&quot;&quot;</span>   
     <span class="k">return</span> <span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">altura</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 
 
 <span class="k">def</span> <span class="nf">area_casa</span><span class="p">(</span><span class="n">frente</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">techo</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Calcula el área del dibujo de una casa que se forma con un cuadrado</span>
+    <span class="sd">&quot;&quot;&quot; Calcula el área del dibujo de una casa que se forma con un cuadrado</span>
 <span class="sd">        y un triángulo encima (el techo).</span>
 <span class="sd">        El frente de la casa será igual al lado del cuadrado y a la base del triángulo.</span>
 <span class="sd">        La altura del techo será la altura del triángulo.</span>
+<span class="sd">    Parámetros:</span>
+<span class="sd">        frente (int): La medida del frente de la casa.</span>
+<span class="sd">        techo (int): La medida de la altura del techo de la casa.        </span>
+<span class="sd">    Retorno:</span>
+<span class="sd">        (float): El valor del área del dibujo de la casa.        </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">cuadrado</span> <span class="o">=</span> <span class="n">area_cuadrado</span><span class="p">(</span><span class="n">frente</span><span class="p">)</span>
     <span class="n">triangulo</span> <span class="o">=</span> <span class="n">area_triangulo</span><span class="p">(</span><span class="n">frente</span><span class="p">,</span> <span class="n">techo</span><span class="p">)</span>
@@ -351,7 +419,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>    
 </pre></div>
 </td></tr></table></div>
-<p>Aunque a primera vista no es evidente, los dos programas son equivalentes en el sentido de que al ejecutarlos el resultado será el mismo: imprimirán el valor <code class="docutils literal notranslate"><span class="pre">125.0</span></code> en la consola. Evidentemente el segundo programa es mucho más corto que el primero, pero esto no necesariamente es una ventaja. Particularmente, en este caso es difícil entender que la función <code class="docutils literal notranslate"><span class="pre">f</span></code> sirve para calcular el área del dibujo de la casa y requiere como parámetro las medidas del frente y del techo, en ese orden.</p>
+<p>Aunque a primera vista no es evidente, los dos programas son equivalentes en el sentido de que al ejecutarlos el resultado será el mismo: imprimirán el valor <code class="docutils literal notranslate"><span class="pre">125.0</span></code> en la consola. Evidentemente el segundo programa es mucho más corto que el primero, pero esto no necesariamente es una ventaja. En este caso es difícil entender que la función <code class="docutils literal notranslate"><span class="pre">f</span></code> sirve para calcular el área del dibujo de la casa y requiere como parámetro las medidas del frente y del techo, en ese orden.</p>
 <p>Podemos decir que las diferencias entre los dos programas se reducen a los siguientes 5 aspectos:</p>
 <ol class="simple">
 <li><p>Utilizar nombres claros para las variables, las funciones y los parámetros.</p></li>
@@ -362,7 +430,7 @@
 </ol>
 <p>A continuación revisaremos cada uno de estos puntos con un poco más de detalle.</p>
 <div class="section" id="nombramiento-de-variables-y-funciones">
-<h2>Nombramiento de variables y funciones<a class="headerlink" href="#nombramiento-de-variables-y-funciones" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.7.1. </span>Nombramiento de variables y funciones<a class="headerlink" href="#nombramiento-de-variables-y-funciones" title="Permalink to this headline">¶</a></h2>
 <p>Uno de los factores que más incide en la facilidad para comprender un programa es la selección de nombres para variables y funciones: si el nombre que utilizamos para una variable o una función es bueno, no tendremos que pensar mucho para recordar qué rol tiene dentro del programa y podremos concentrarnos en los aspectos importantes.</p>
 <p>En el ejemplo que presentamos antes podemos ver esto claramente:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -376,36 +444,176 @@
 <span class="hll">    <span class="k">return</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
 </span></pre></div>
 </td></tr></table></div>
-<p>Las dos funciones anteriores hacen los mismos cálculos,</p>
+<p>Las dos funciones anteriores hacen los mismos cálculos, pero la primera es claramente más explícita: no tenemos que hacer un gran esfuerzo para descubrir cuál es su objetivo.</p>
 <div class="tip admonition">
-<p class="admonition-title">Tip</p>
-<p>Para las variables, utilice nombres que indiquen con claridad qué es lo que va a guardar dentro de ellas. Evite nombres cortos a menos que no haya ninguna ambigüedad posible.</p>
+<p class="admonition-title">Use buenos nombres de variables</p>
+<p>Para las variables, utilice nombres que indiquen con claridad qué es lo que va a guardar dentro de ellas. Evite nombres muy cortos a menos que no haya ninguna ambigüedad posible.</p>
 </div>
 <div class="tip admonition">
-<p class="admonition-title">Tip</p>
+<p class="admonition-title">Use buenos nombres de funciones</p>
 <p>Para las funciones, utilice nombres que indiquen qué es lo que hará la función.
 Incluya verbos en los nombres de funciones (ej. <code class="docutils literal notranslate"><span class="pre">guardar_resultado</span></code> ), a menos que se pueda sobreentender con facilidad (ej. <code class="docutils literal notranslate"><span class="pre">calcular_area_triangulo</span></code> vs. <code class="docutils literal notranslate"><span class="pre">area_triangulo</span></code>).</p>
 </div>
-<p>estándares (snake_case, mayúsculas, minúsculas)</p>
+<div class="section" id="estandares">
+<h3><span class="section-number">2.7.1.1. </span>Estándares<a class="headerlink" href="#estandares" title="Permalink to this headline">¶</a></h3>
+<p>Más allá de los nombres y de lo que significan, en cada lenguaje también hay estándares para el uso de mayúsculas y minúsculas y la separación de palabras en los nombres de variables y funciones. Estos estándares pueden parecer arbitrarios (¡y lo son!) pero es importante respetarlos porque seguirlos consistentemente hace mucho más sencilla la lectura del código.</p>
+<p>En Python, las reglas más importantes en este sentido son las siguientes:</p>
+<ol class="simple">
+<li><p>Usar <em>snake_case</em>. Esto significa que las palabras de un identificador deberían separarse usando el caracter <code class="docutils literal notranslate"><span class="pre">'_'</span></code>. Por ejemplo, en Python se prefiere usar <code class="docutils literal notranslate"><span class="pre">calcular_area_triangulo</span></code> mientras que en Java se usaría <code class="docutils literal notranslate"><span class="pre">calcularAreaTriangulo</span></code>.</p></li>
+<li><p>Usar <em>minúsculas</em> para los identificadores. Tanto funciones como variables y parámetros deberían nombrarse usando minúsculas.</p></li>
+<li><p>Usar <em>Mayúscula Inicial</em> para los nombres de clases <a class="footnote-reference brackets" href="#clases" id="id1">1</a>.</p></li>
+<li><p>Usar <em>MAYÚSCULAS SOSTENIDAS</em> para las constantes. Aunque estrictamente hablando en Python no existe el concepto de constante, se suelen usar mayúsculas sostenidas para indicar que el valor de una variable no debería cambiar su valor. Por ejemplo, <code class="docutils literal notranslate"><span class="pre">ROJO</span></code> o <code class="docutils literal notranslate"><span class="pre">IVA</span></code>. Desafortunadamente una de las constantes más útiles, <code class="docutils literal notranslate"><span class="pre">math.pi</span></code>, no sigue este estándar.</p></li>
+</ol>
+<div class="warning admonition">
+<p class="admonition-title">Use el alfabeto inglés</p>
+<p>Aunque en Python es posible utilizar en los identificadores caracteres que existen en el español pero no existen en inglés, como la <code class="docutils literal notranslate"><span class="pre">ñ</span></code> y las vocales acentuadas, es recomendable evitarlo para evitar problemas de codificación. Esto es especialmente importante si se va a usar el mismo código en máquinas Windows, Linux y Mac.</p>
+</div>
+</div>
 </div>
 <div class="section" id="documentacion-de-funciones">
-<h2>Documentación de funciones<a class="headerlink" href="#documentacion-de-funciones" title="Permalink to this headline">¶</a></h2>
-<p>docstring</p>
+<h2><span class="section-number">2.7.2. </span>Documentación de funciones<a class="headerlink" href="#documentacion-de-funciones" title="Permalink to this headline">¶</a></h2>
+<p>Un segundo aspecto para facilitar el uso de nuestro código es documentar las funciones con un comentario que le sirva a potenciales usuarios o a nosotros mismos. De esta forma no será necesario estudiar con detenimiento el cuerpo de la función para saber qué hace.</p>
+<p>Para cada función usualmente queremos saber 4 cosas:</p>
+<ol class="simple">
+<li><p>cuál es su objetivo</p></li>
+<li><p>cómo se debe usar</p></li>
+<li><p>qué pasará cuando se use</p></li>
+<li><p>cómo deben usarse y qué representan los parámetros</p></li>
+</ol>
+<p>En Python el comentario con múltiples líneas que se encuentre justo después de la signatura de una función es considerado la documentación de la función. Esto usualmente se conoce como el <code class="docutils literal notranslate"><span class="pre">docstring</span></code> de una función y tiene una característica muy importante: cuando busquemos ayuda sobre una función, usando la función nativa <code class="docutils literal notranslate"><span class="pre">help</span></code>, recibiremos el <code class="docutils literal notranslate"><span class="pre">docstring</span></code>. Veamos un ejemplo en el que primero definiremos una nueva función y especificaremos su <code class="docutils literal notranslate"><span class="pre">docstring</span></code>.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">altura</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot; Calcula el área de un triángulo a partir de su base y su altura.</span>
+<span class="sd">        Tanto la base como la altura deben ser números enteros.</span>
+<span class="sd">        El resultado es un número decimal aunque los parámetros sean enteros.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">altura</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</td></tr></table></div>
+<p>Si después de definir nuestra función invocamos la función nativa <code class="docutils literal notranslate"><span class="pre">help</span></code> usando nuestra función como parámetro, obtendremos la documentación que especificamos.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">area_triangulo</span><span class="p">)</span>
+<span class="go">Help on function area_triangulo in module __main__:</span>
+
+<span class="go">area_triangulo(base: int, altura: int) -&gt; float</span>
+<span class="go">    Calcula el área de un triángulo a partir de su base y su altura.</span>
+<span class="go">    Tanto la base como la altura deben ser números enteros.</span>
+<span class="go">    El resultado es un número decimal aunque los parámetros sean enteros.</span>
+</pre></div>
 </div>
-<div class="section" id="descomposicion-de-funciones">
-<h2>Descomposición de funciones<a class="headerlink" href="#descomposicion-de-funciones" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="complejidad-de-las-instrucciones">
-<h2>Complejidad de las instrucciones<a class="headerlink" href="#complejidad-de-las-instrucciones" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="tipado-de-funciones">
-<h2>Tipado de funciones<a class="headerlink" href="#tipado-de-funciones" title="Permalink to this headline">¶</a></h2>
-<p>Sobre los <em>type-hints</em></p>
-<p>Si usted utiliza otros libros o si consulta en Internet, es muy posible que se encuentre con definiciones de funciones en las que no aparecen los tipos de los parámetros ni el tipo de los resultados. Esto se debe a que en Python el uso de estos elementos es opcional. De hecho, el nombre específico de estos elementos es <em>type-hints</em> y las herramientas (IDE, intérprete, compilador, etc.) los utilizan sólo como sugerencias.</p>
-<p>En este libro vamos a usar <em>type-hints</em> en la definición de todas las funciones y esperamos que usted haga uso de ellos también. Por una parte, esto le facilitará aprender a usar otros lenguajes de programación como C, C++, Java, o TypeScript. Por otro lado, razonar sobre los tipos de datos debería ayudarlo a estructurar mejor sus programas, especialmente mientras adquiere una cierta destreza programando.</p>
+<p>Ahora bien, a diferencia de otros lenguajes Python no especifica cómo deben describirse los detalles de una función: sólo nos da el espacio para que escribamos la documentación y nos da total libertad para que nosotros decidamos qué aspectos queremos documentar. Es nuestra responsabilidad decidir qué incluir y asegurarnos de que la documentación sea suficiente para que alguien más pueda usar nuestra función. También es nuestra responsabilidad definir cómo vamos a organizar la información para que esté organizada y sea fácil de encontrar y utilizar.</p>
+<p>Toda esta libertad que da el lenguaje ha llevado a que existan varios estándares para documentar las funciones sin que ninguno sea claramente superior a los otros. Aunque le recomendamos que más adelante escoja uno de los estándares, por ahora le recomendamos utilizar la versión simplificada que se ilustra en el siguiente ejemplo:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="sd">&quot;&quot;&quot; Calcula el área de un triángulo a partir de su base y su altura.</span>
+<span class="sd">    Parámetros:</span>
+<span class="sd">        base (int): La medida de la base del triángulo.</span>
+<span class="sd">                    Debe ser un número estrictamente positivo (mayor o igual a 1).</span>
+<span class="sd">        altura (int): La medida de la altura del triángulo. </span>
+<span class="sd">                    Debe ser un número estrictamente positivo (mayor o igual a 1).      </span>
+<span class="sd">    Retorno:</span>
+<span class="sd">        (float): El valor del área del triángulo. Es siempre un número decimal.    </span>
+<span class="sd">    &quot;&quot;&quot;</span>   
+</pre></div>
+</td></tr></table></div>
+<p>Esta documentación incluye los siguientes elementos:</p>
+<ol class="simple">
+<li><p><strong>Descripción de la función</strong>. Acá explicamos cuál es el objetivo de la función para que sea fácil saber si es la función que necesitamos usar. Además, si la función es muy complicada, explicamos qué es lo que hace la función por dentro. Esta descripción puede ocupar múltiples líneas: le recomendamos que no use líneas muy largas y que intente que el texto quede bien alineado a la izquierda.</p></li>
+<li><p><strong>Parámetros</strong>. Si la función tiene parámetros, especificamos el nombre y el tipo de cada uno, seguidos de una descripción. La idea es que quien vaya a utilizar la función se entere de qué representa el parámetro y de todas las reglas que deberían aplicarse.</p></li>
+<li><p><strong>Retorno</strong>. Acá explicamos qué es lo que retorna la función.</p></li>
+</ol>
+<p>Para una función tan sencilla como la del ejemplo, puede parece que esta descripción tan grande es exagerada. Pronto estaremos trabajando con funciones mucho más complicadas en las que será muy importante que escribamos una documentación muy completa para que no nos confundamos nosotros mismos o confundamos a las personas con las que estemos trabajando.</p>
+<div class="tip admonition">
+<p class="admonition-title">Documente sus funciones</p>
+<p>Documente siempre sus funciones utilizando un formato consistente que incluya una descripción general y la explicación detallada de los parámetros y el retorno.</p>
 </div>
 <div class="section" id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">2.7.2.1. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Use la función <code class="docutils literal notranslate"><span class="pre">help</span></code> para consultar la documentación de algunas de las funciones nativas que ya ha estudiado.</p></li>
+<li><p>Escriba la documentación de alguna función que haya desarrollado en un ejercicio previo. Revise en el intérprete de Python que pueda leer la documentación de la función usando la función <code class="docutils literal notranslate"><span class="pre">help</span></code>.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="descomposicion-de-funciones">
+<h2><span class="section-number">2.7.3. </span>Descomposición de funciones<a class="headerlink" href="#descomposicion-de-funciones" title="Permalink to this headline">¶</a></h2>
+<p>Aunque no se puede generalizar, en lo posible deberíamos tener funciones sencillas que se compongan poco a poco para formar funciones más complicadas. Esto es preferible a tener funciones extremadamente complicadas que se tengan que leer con muchísima atención: al leer el código de una función debería ser claro cuál es su objetivo principal y cómo lo está logrando.</p>
+<p>Para lograr una buena descomposición es necesario primero hacer abstracción de las funciones, separando la signatura de la implementación. Es decir, debemos pensar en qué se quiere lograr con una función independientemente de cómo se vaya a implementar. El proceso se debe repetir identificando funciones cada vez más sencillas que sirvan para explicar cómo se resuelven las funciones más grandes, pero sin entrar en detalles, hasta que lleguemos a funciones triviales. En una sección posterior estudiaremos en mucho más detalle este proceso que se conoce como <em>refinamiento a pasos</em>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Simplifique sus funciones</p>
+<p>Intente tener funciones que tengan un único objetivo y que sean fáciles de explicar. Si usted descubre que el objetivo o la implementación de una función son muy complicados de explicar, posiblemente sea una señal de que debe descomponerla en funciones más pequeñas.</p>
+</div>
+<p>El siguiente motivo por el cual tiene sentido descomponer las funciones es para evitar la repetición de código. En general, tener código repetido es mala idea porque  aumenta la posibilidad de tener errores y porque, en caso de querer corregir un error, será necesario hacerlo en muchos lugares.</p>
+<div class="tip admonition">
+<p class="admonition-title">Use funciones para evitar repeticiones</p>
+<p>Si está repitiendo el mismo código en varios lugares, considere construir una función que encapsule esa funcionalidad y que pueda llamar en todos los lugares donde lo requiera.</p>
+</div>
+</div>
+<div class="section" id="complejidad-de-las-instrucciones">
+<h2><span class="section-number">2.7.4. </span>Complejidad de las instrucciones<a class="headerlink" href="#complejidad-de-las-instrucciones" title="Permalink to this headline">¶</a></h2>
+<p>Una razón por la cual muchas veces el código es mucho más difícil de leer y entender de lo necesario es porque se hacen muchas acciones dentro de la misma instrucción. A manera de ejemplo a continuación presentamos dos funciones equivalentes que calculan el área de un polígono regular a partir de la longitud de un lado y de la cantidad de lados:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">area_poligono</span><span class="p">(</span><span class="n">lado</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">num_lados</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">num_lados</span> <span class="o">*</span> <span class="n">lado</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">num_lados</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">area_poligono2</span><span class="p">(</span><span class="n">lado</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">num_lados</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="n">angulo_interno_radianes</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">num_lados</span>
+    <span class="n">numerador</span> <span class="o">=</span> <span class="n">num_lados</span> <span class="o">*</span> <span class="n">lado</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">denominador</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">angulo_interno_radianes</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">numerador</span> <span class="o">/</span> <span class="n">denominador</span>
+</pre></div>
+</td></tr></table></div>
+<p>Aunque el primer ejemplo no es extremadamente complicado, la única instrucción que tiene es mucho más complicada que cualquiera de las instrucciones del segundo ejemplo. Esto significa que el segundo ejemplo será más fácil de leer y probablemente fue más fácil de construir que el primero.</p>
+<div class="tip admonition">
+<p class="admonition-title">Simplifique las instrucciones</p>
+<p>Escriba instrucciones que sean lo más sencillas posibles.</p>
+<p>Idealmente, cada línea de código debería hacer una sola cosa.</p>
+</div>
+</div>
+<div class="section" id="tipado-de-funciones-y-parametros">
+<h2><span class="section-number">2.7.5. </span>Tipado de funciones y parámetros<a class="headerlink" href="#tipado-de-funciones-y-parametros" title="Permalink to this headline">¶</a></h2>
+<p>Si usted utiliza otros libros o si consulta en Internet, es muy posible que se encuentre con definiciones de funciones en las que no aparecen los tipos de los parámetros ni el tipo de los resultados. Esto se debe a que en Python el uso de estos elementos es opcional. De hecho, el nombre específico de estos elementos es <em>type-hints</em> y las herramientas (IDE, intérprete, compilador, etc.) los utilizan sólo como sugerencias.</p>
+<p>En este libro vamos a usar <em>type-hints</em> en la definición de todas las funciones y esperamos que usted haga uso de ellos también. Por una parte, esto le facilitará aprender a usar otros lenguajes de programación como C, C++, Java, o TypeScript. Por otro lado, razonar sobre los tipos de datos debería ayudarlo a estructurar mejor sus programas, especialmente mientras adquiere una cierta destreza programando.</p>
+<div class="tip admonition">
+<p class="admonition-title">Utilice <em>type-hints</em></p>
+<p>Utilice los <em>type-hints</em> para todos los parámetros y los retornos de las funciones. No sólo harán que su código sea más legible y fácil de usar, sino que además lo prepararán a usted para utilizar otros lenguajes.</p>
+</div>
+</div>
+<div class="section" id="comentarios">
+<h2><span class="section-number">2.7.6. </span>Comentarios<a class="headerlink" href="#comentarios" title="Permalink to this headline">¶</a></h2>
+<p>Por último, hay un aspecto adicional que es muy sencillo pero tiende a mejorar la calidad del código: introducir comentarios dentro de las instrucciones. En los ejemplos que introducimos al principio de la sección eso no se estaba haciendo porque las funciones utilizadas eran muy sencillas, pero en funciones como las que estudiaremos a partir de la próxima sección esto será mucho más importante.</p>
+<p>En general deberían incluirse comentarios dentro del código para explicar el funcionamiento de bloques de código que sean particularmente complicados. No existe ningún estándar sobre esos comentarios, pero a continuación le damos algunas recomendaciones:</p>
+<ol class="simple">
+<li><p>No exagere con los comentarios. Así como la falta de comentarios es grave, el exceso de comentarios puede terminar en código muy difícil de leer.</p></li>
+<li><p>Escriba comentarios que expliquen lo que hacen fragmentos significativos de código y/o su justificación, en lugar de hacer una traducción de Python a español de las instrucciones realizadas.</p></li>
+<li><p>Identifique las instrucciones particularmente complicadas y documéntelas.</p></li>
+<li><p>En funciones medianas o largas que no pueda o no quiera descomponer, enumere las grandes etapas usando comentarios.</p></li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2><span class="section-number">2.7.7. </span>Ejercicios<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Revise detenidamente la siguiente función para descubrir su objetivo. Reescríbalo aplicando las recomendaciones que se estudiaron en esta sección.</p></li>
 </ol>
@@ -424,14 +632,37 @@ Incluya verbos en los nombres de funciones (ej. <code class="docutils literal no
 </div>
 </div>
 <div class="section" id="mas-alla-de-python">
-<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
-<p>Estándares de documentación</p>
+<h2><span class="section-number">2.7.8. </span>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
+<p>Comparado con otros lenguajes, el formato para la documentación de funciones en Python es relativamente pobre y desestructurado. En Java existe el formato <em>Javadoc</em> que es muy estructurado y permite generar automáticamente compendios con la documentación de un programa o una librería. Esquemas similares existen para otros lenguajes como JavaScript (<em>JSDoc</em>) y Scala (<em>Scaladoc</em>). Aunque no se puedan usar directamente en Python, vale la pena conocer un poco sobre las características de estos formatos (y las limitaciones que tienen) para mejorar la documentación que escribamos de las funciones Python.</p>
 <p>La discusión sobre los <em>type-hints</em> tiene que ver con una discusión mucho más extensa sobre la conveniencia de tener <em>tipado dinámico</em> en los lenguajes de programación. Por un lado, cuando los lenguajes son fuertemente tipados se cometen menos errores o, al menos, las herramientas de edición capturan más errores de forma temprana. Por otro lado, cuando el tipado es dinámico los errores de tipo se capturan en tiempo de ejecución, pero el desarrollo de los programas es más rápido. En este momento hay fuertes discusiones sobre la conveniencia o no de cada sistema, pero hay un hecho que encontramos muy diciente: JavaScript, que tiene tipado dinámico, está incluyendo progresivamente más elementos para escribir programas fuertemente tipados (el crecimiento de TypeScript es evidencia indiscutible), mientras que Python está empezando a incluir elementos para poder incluir verificaciones de tipos.</p>
-<p>PEP8</p>
-<p>PEP8 – Style Guide for Python Code: <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a></p>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="clases"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Esto no es realmente relevante para este libro, pero lo mencionamos por completitud.</p>
+</dd>
+</dl>
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nivel1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -441,8 +672,8 @@ Incluya verbos en los nombres de funciones (ej. <code class="docutils literal no
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="seccion1-6.html" title="previous page">Definición de funciones</a>
-    <a class='right-next' id="next-link" href="seccion1-8.html" title="next page">Un programa para leer (2)</a>
+    <a class='left-prev' id="prev-link" href="seccion1-6.html" title="previous page"><span class="section-number">2.6. </span>Definición de funciones</a>
+    <a class='right-next' id="next-link" href="seccion1-8.html" title="next page"><span class="section-number">2.8. </span>Un programa para leer (2)</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

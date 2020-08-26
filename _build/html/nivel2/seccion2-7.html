@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Diccionarios &#8212; Introducción a la Programación</title>
+    <title>3.7. Diccionarios &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,11 +31,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel2/seccion2-7.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Paso de parámetros" href="seccion2-8.html" />
-    <link rel="prev" title="Módulos de la librería estándar" href="seccion2-6.html" />
+    <link rel="next" title="3.8. Paso de parámetros" href="seccion2-8.html" />
+    <link rel="prev" title="3.6. Módulos de la librería estándar" href="seccion2-6.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -47,7 +55,7 @@
 <meta property="og:description" content="Diccionarios  Versión borrador / preliminar  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún co" />
 <meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -76,92 +84,103 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../portada.html">1. Portada</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Antes de empezar</p>
-</li>
-  <li class="">
-    <a href="../introduccion/index.html">2. Introducción</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 1</p>
-</li>
-  <li class="">
-    <a href="../nivel1/intro.html">3. Empezando a programar</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 1</p>
-</li>
-  <li class="">
-    <a href="../nivel01a/index.html">4. Descomposición de programas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 2</p>
-</li>
-  <li class="active">
-    <a href="intro.html">5. Tomando decisiones</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="seccion2-1.html">5.1 Un programa para leer</a>
-    </li>
-    <li class="">
-      <a href="seccion2-2.html">5.2 Lógica y valores de verdad</a>
-    </li>
-    <li class="">
-      <a href="seccion2-3.html">5.3 Valores de verdad en Python</a>
-    </li>
-    <li class="">
-      <a href="seccion2-4.html">5.4 Instrucciones condicionales</a>
-    </li>
-    <li class="">
-      <a href="seccion2-5.html">5.5 Más sobre cadenas de caracteres</a>
-    </li>
-    <li class="">
-      <a href="seccion2-6.html">5.6 Módulos de la librería estándar</a>
-    </li>
-    <li class="active">
-      <a href="">5.7 Diccionarios</a>
-    </li>
-    <li class="">
-      <a href="seccion2-8.html">5.8 Paso de parámetros</a>
-    </li>
-    <li class="">
-      <a href="seccion2-9.html">5.9 Errores frecuentes</a>
-    </li>
-    <li class="">
-      <a href="seccion2-10.html">5.10 Ejercicios adicionales</a>
-    </li>
-  </ul>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 2</p>
-</li>
-  <li class="">
-    <a href="../nivel02a/index.html">6. Plan de Pruebas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 3</p>
-</li>
-  <li class="">
-    <a href="../nivel3/intro.html">7. Repitiendo acciones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 3</p>
-</li>
-  <li class="">
-    <a href="../nivel03a/index.html">8. Dividir y  Conquistar</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 4</p>
-</li>
-  <li class="">
-    <a href="../nivel4/intro.html">9. Matrices y Librerías</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portada.html">
+   Portada
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Contenido
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduccion/index.html">
+   1. Nivel 0 - Antes de empezar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel1/intro.html">
+   2. Nivel 1 - Empezando a programar
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   3. Nivel 2 - Tomando decisiones
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-1.html">
+     3.1. Un programa para leer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-2.html">
+     3.2. Lógica y valores de verdad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-3.html">
+     3.3. Valores de verdad en Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-4.html">
+     3.4. Instrucciones condicionales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-5.html">
+     3.5. Más sobre cadenas de caracteres
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-6.html">
+     3.6. Módulos de la librería estándar
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.7. Diccionarios
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-8.html">
+     3.8. Paso de parámetros
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-9.html">
+     3.9. Errores frecuentes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-9.html#para-no-olvidar">
+     3.10. Para no olvidar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-10.html">
+     3.11. Ejercicios adicionales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel3/intro.html">
+   4. Nivel 3 - Repitiendo acciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel4/intro.html">
+   5. Nivel 4 - Matrices y Librerías
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -218,148 +237,194 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
-
-<nav id="bd-toc-nav">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-concepto-de-diccionario">
+   3.7.1. El concepto de diccionario
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-tipo-dict-en-python">
+   3.7.2. El tipo
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dict
+    </span>
+   </code>
+   en Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nombres-y-valores-de-variables-vs-nombres-de-llave">
+     3.7.2.1. Nombres y valores de variables vs. nombres de llave
+    </a>
     <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#el-concepto-de-diccionario" class="nav-link">El concepto de diccionario</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#el-tipo-dict-en-python" class="nav-link">El tipo dict en Python</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#nombres-y-valores-de-variables-vs-nombres-de-llave" class="nav-link">Nombres y valores de variables vs. nombres de llave</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#diccionario-llave" class="nav-link">1. diccionario[“llave”]</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#id3" class="nav-link">2. diccionario[llave]</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#diccionario-llave-segunda-parte" class="nav-link">3. diccionario[llave] (segunda parte)</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#diccionario-palabra" class="nav-link">4. diccionario[“palabra”]</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#id4" class="nav-link">5. diccionario[palabra]</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#tipos-de-llaves-y-valores" class="nav-link">Tipos de llaves y valores</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#el-metodo-get" class="nav-link">El método get</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#el-valor-none" class="nav-link">El valor None</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#el-metodo-get-y-el-valor-none" class="nav-link">El método get y el valor None</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#modificacion-de-diccionarios" class="nav-link">Modificación de diccionarios</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#agregar-una-definicion-primera-version" class="nav-link">Agregar una definición: primera versión</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#agregar-una-definicion-segunda-version" class="nav-link">Agregar una definición: segunda versión</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#agregar-una-definicion-tercera-version" class="nav-link">Agregar una definición: tercera versión</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#eliminar-una-definicion" class="nav-link">Eliminar una definición</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#uso-del-operador-del-para-eliminar-un-valor" class="nav-link">Uso del operador del para eliminar un valor</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#uso-del-metodo-pop-para-eliminar-un-valor" class="nav-link">Uso del método pop para eliminar un valor</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#eliminar-todas-las-definiciones" class="nav-link">Eliminar todas las definiciones</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#usos-de-los-diccionarios" class="nav-link">Usos de los diccionarios</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#histogramas-basados-en-diccionarios" class="nav-link">Histogramas basados en diccionarios</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#diccionarios-como-conjuntos" class="nav-link">Diccionarios como conjuntos</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#diccionarios-como-estructuras" class="nav-link">Diccionarios como estructuras</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#diccionarios-de-diccionarios" class="nav-link">Diccionarios de diccionarios</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#mutabilidad-en-diccionarios" class="nav-link">Mutabilidad en diccionarios</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#copias-de-diccionarios" class="nav-link">Copias de diccionarios</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#ejercicios" class="nav-link">Ejercicios</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#mas-alla-de-python" class="nav-link">Más allá de Python</a>
-        </li>
-    
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#diccionario-llave">
+       3.7.2.1.1. 1. diccionario[“llave”]
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       3.7.2.1.2. 2. diccionario[llave]
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#diccionario-llave-segunda-parte">
+       3.7.2.1.3. 3. diccionario[llave] (segunda parte)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#diccionario-palabra">
+       3.7.2.1.4. 4. diccionario[“palabra”]
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       3.7.2.1.5. 5. diccionario[palabra]
+      </a>
+     </li>
     </ul>
-</nav>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tipos-de-llaves-y-valores">
+     3.7.2.2. Tipos de llaves y valores
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-metodo-get">
+   3.7.3. El método get
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#el-valor-none">
+     3.7.3.1. El valor None
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#el-metodo-get-y-el-valor-none">
+     3.7.3.2. El método get y el valor None
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modificacion-de-diccionarios">
+   3.7.4. Modificación de diccionarios
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#agregar-una-definicion-primera-version">
+     3.7.4.1. Agregar una definición: primera versión
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#agregar-una-definicion-segunda-version">
+     3.7.4.2. Agregar una definición: segunda versión
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#agregar-una-definicion-tercera-version">
+     3.7.4.3. Agregar una definición: tercera versión
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eliminar-una-definicion">
+     3.7.4.4. Eliminar una definición
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#uso-del-operador-del-para-eliminar-un-valor">
+       3.7.4.4.1. Uso del operador
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         del
+        </span>
+       </code>
+       para eliminar un valor
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#uso-del-metodo-pop-para-eliminar-un-valor">
+       3.7.4.4.2. Uso del método
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         pop
+        </span>
+       </code>
+       para eliminar un valor
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eliminar-todas-las-definiciones">
+     3.7.4.5. Eliminar todas las definiciones
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#usos-de-los-diccionarios">
+   3.7.5. Usos de los diccionarios
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#histogramas-basados-en-diccionarios">
+     3.7.5.1. Histogramas basados en diccionarios
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diccionarios-como-conjuntos">
+     3.7.5.2. Diccionarios como conjuntos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diccionarios-como-estructuras">
+     3.7.5.3. Diccionarios como estructuras
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diccionarios-de-diccionarios">
+     3.7.5.4. Diccionarios de diccionarios
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mutabilidad-en-diccionarios">
+   3.7.6. Mutabilidad en diccionarios
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#copias-de-diccionarios">
+     3.7.6.1. Copias de diccionarios
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   3.7.7. Ejercicios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mas-alla-de-python">
+   3.7.8. Más allá de Python
+  </a>
+ </li>
+</ul>
 
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -368,7 +433,7 @@
               <div>
                 
   <div class="section" id="diccionarios">
-<h1>Diccionarios<a class="headerlink" href="#diccionarios" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.7. </span>Diccionarios<a class="headerlink" href="#diccionarios" title="Permalink to this headline">¶</a></h1>
 <div class="warning admonition">
 <p class="admonition-title">Versión borrador / preliminar</p>
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
@@ -381,7 +446,7 @@
 <p>Por ejemplo, si quisiéramos hacer una función que compare tres celulares con base en la velocidad del procesador, la cantidad de memoria, la calidad de la cámara, la tecnología de la pantalla, el tamaño de la pantalla, la capacidad de la pila, el sistema operativo y su versión, necesitaríamos 27 parámetros!<a class="footnote-reference brackets" href="#pantalla" id="id1">1</a> Además de que sería <em>incómodo</em> declarar e implementar esta función, también sería incómodo<a class="footnote-reference brackets" href="#incomodo" id="id2">2</a> invocarla: sería muy fácil olvidar un parámetro y más aún intercambiar el orden de dos parámetros, llevando a erorres difíciles de diagnosticar.</p>
 <p>En esta sección vamos a introducir un nuevo concepto que nos permitirá simplificar un poco el problema anterior: en lugar de requerir 27 parámetros usaremos sólo 3. Este concepto, que en Python se llama <strong>diccionario</strong> y que en otros lenguajes se conoce como <strong>mapa</strong>, es parte básica del lenguaje y, como no requiere de librerías adicionales, se usa de manera extremadamente frecuente.</p>
 <div class="section" id="el-concepto-de-diccionario">
-<h2>El concepto de diccionario<a class="headerlink" href="#el-concepto-de-diccionario" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.7.1. </span>El concepto de diccionario<a class="headerlink" href="#el-concepto-de-diccionario" title="Permalink to this headline">¶</a></h2>
 <p>Un <strong>diccionario</strong> es una <strong>estructura de datos</strong> que contiene muchos <strong>valores</strong>, identificados cada uno con una <strong>llave</strong> que es única.</p>
 <p>El término <strong>estructura de datos</strong> hace referencia a una forma de organizar datos para poder almacenarlos, modificarlos y consultarlos. Técnicamente, las variables que hemos venido utilizando son estructuras de datos pero, como sólo tienen un valor, raramente se les aplica el término a estas.</p>
 <p>Un diccionario es entonces una estructura de datos (una forma de organizar datos), donde a cada valor que queramos almacenar se le asigna una llave (una llave es también un valor, pero además es único dentro del diccionario). Un buen ejemplo de esto es el diccionario de un lenguaje como el Español: a cada palabra (una llave) le corresponde una definición (un valor). Otro ejemplo es una red social como Twitter: a cada nombre de usuario (una llave) le corresponde un usuario (un valor) con toda su información.</p>
@@ -389,7 +454,7 @@
 <p>En las siguientes secciones mostraremos cómo usar este concepto en Python y mostraremos también cómo podemos construir y modificar nuestros propios diccionarios.</p>
 </div>
 <div class="section" id="el-tipo-dict-en-python">
-<h2>El tipo <code class="docutils literal notranslate"><span class="pre">dict</span></code> en Python<a class="headerlink" href="#el-tipo-dict-en-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.7.2. </span>El tipo <code class="docutils literal notranslate"><span class="pre">dict</span></code> en Python<a class="headerlink" href="#el-tipo-dict-en-python" title="Permalink to this headline">¶</a></h2>
 <p>En Python los diccionarios son un elemento básico del lenguaje que, así como las cadenas, está perfectamente integrado dentro de la sintaxis del lenguaje. Para crear un diccionario basta con indicar que se quiere crear un diccionario (usando los caracteres <code class="docutils literal notranslate"><span class="pre">{}</span></code>) y separar las parejas <code class="docutils literal notranslate"><span class="pre">llave:valor</span></code> usando comas. Tomemos como ejemplo el siguiente fragmento, en el cual se han incluido cambios de línea para facilitar la lectura:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">palabras</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;imagen&#39;</span> <span class="p">:</span> <span class="s1">&#39;Figura, representación, semejanza y apariencia de algo&#39;</span><span class="p">,</span>
              <span class="s1">&#39;figura&#39;</span> <span class="p">:</span> <span class="s1">&#39;Forma exterior de alguien o de algo&#39;</span><span class="p">,</span> 
@@ -399,7 +464,7 @@
 </div>
 <div class="figure align-default" id="palabras">
 <a class="reference internal image-reference" href="../_images/diccionarios_figura1.png"><img alt="../_images/diccionarios_figura1.png" src="../_images/diccionarios_figura1.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">Representación gráfica del diccionario palabras</span><a class="headerlink" href="#palabras" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Representación gráfica del diccionario palabras</span><a class="headerlink" href="#palabras" title="Permalink to this image">¶</a></p>
 </div>
 <p>Este fragmento crea una nueva variable con el nombre <code class="docutils literal notranslate"><span class="pre">palabras</span></code>. A diferencia de variables más sencillas que sólo tienen un valor, esta nueva variable es un diccionario y contiene 4 parejas llave-valor. También habríamos podido crear un diccionario vacío con la expresión <code class="docutils literal notranslate"><span class="pre">palabras</span> <span class="pre">=</span> <span class="pre">{}</span></code>. Observe lo que pasa si aplicamos las funciones <code class="docutils literal notranslate"><span class="pre">type()</span></code> y <code class="docutils literal notranslate"><span class="pre">len()</span></code> a nuestra nueva variable:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">palabras</span><span class="p">)</span>
@@ -433,7 +498,7 @@
 </div>
 <p>A diferencia del ejemplo pasado, en este no se va a producir un error porque sólo consultamos el valor de la llave si estamos seguros de que se encuentra dentro del diccionario.</p>
 <div class="section" id="nombres-y-valores-de-variables-vs-nombres-de-llave">
-<h3>Nombres y valores de variables vs. nombres de llave<a class="headerlink" href="#nombres-y-valores-de-variables-vs-nombres-de-llave" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.2.1. </span>Nombres y valores de variables vs. nombres de llave<a class="headerlink" href="#nombres-y-valores-de-variables-vs-nombres-de-llave" title="Permalink to this headline">¶</a></h3>
 <p>En la sección mostramos el uso básico de los diccionarios y la forma en la que se extrae un valor. En esta sección vamos a explorar uno de los errores más comunes que ocurren al utilizar diccionarios: confundir el nombre de una variable, con el valor de una variable y con el nombre de una llave.</p>
 <p>En primer lugar, estudie con atención el siguiente fragmento de código y escriba los valores que debería imprimir. Si se produce algún error en alguna parte, explíquelo.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -456,37 +521,37 @@
 <p>Gráficamente, el diccionario que se construye con el código anterior se ve como en la siguiente figura.</p>
 <div class="figure align-default" id="diccionario">
 <img alt="../_images/diccionarios_figura2.png" src="../_images/diccionarios_figura2.png" />
-<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">Representación gráfica del diccionario del ejemplo</span><a class="headerlink" href="#diccionario" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3 </span><span class="caption-text">Representación gráfica del diccionario del ejemplo</span><a class="headerlink" href="#diccionario" title="Permalink to this image">¶</a></p>
 </div>
 <p>A continuación explicamos qué imprime cada llamado a la función <code class="docutils literal notranslate"><span class="pre">print</span></code> pero lo invitamos a intentar resolverlo usted antes de mirar la solución.</p>
 <div class="section" id="diccionario-llave">
-<h4>1. diccionario[“llave”]<a class="headerlink" href="#diccionario-llave" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.7.2.1.1. </span>1. diccionario[“llave”]<a class="headerlink" href="#diccionario-llave" title="Permalink to this headline">¶</a></h4>
 <p>En el primer caso, se imprime en la consola lo siguiente: <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">valor</span></code>.</p>
 <p>Esto no debería ser una sorpresa porque se está utilizando explícitamente el nombre de la llave que está almacenada en el diccionario.</p>
 </div>
 <div class="section" id="id3">
-<h4>2. diccionario[llave]<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.7.2.1.2. </span>2. diccionario[llave]<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <p>En el segundo caso, se imprime en la consola lo siguiente: <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">valor</span></code>.</p>
 <p>En este caso, se está usando la variable <code class="docutils literal notranslate"><span class="pre">llave</span></code> para indicar cuál es la llave que nos interesa en el diccionario. El punto importante acá es que <strong>no nos interesa el nombre de la variable</strong>. Lo que es importante es el valor que tiene la variable. En este caso, el valor de la variable es la cadena <code class="docutils literal notranslate"><span class="pre">'llave'</span></code> y por eso el valor que se imprime es la cadena <code class="docutils literal notranslate"><span class="pre">'valor'</span></code>.</p>
 </div>
 <div class="section" id="diccionario-llave-segunda-parte">
-<h4>3. diccionario[llave] (segunda parte)<a class="headerlink" href="#diccionario-llave-segunda-parte" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.7.2.1.3. </span>3. diccionario[llave] (segunda parte)<a class="headerlink" href="#diccionario-llave-segunda-parte" title="Permalink to this headline">¶</a></h4>
 <p>En el tercer caso, se imprime en la consola lo siguiente: <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">definición</span></code>.</p>
 <p>Este caso refuerza lo que dijimos en el punto anterior: aunque la variable se llama <code class="docutils literal notranslate"><span class="pre">llave</span></code>,  el nombre no es importante sino el valor almacenado en ella. En este caso, la variable almacena la cadena <code class="docutils literal notranslate"><span class="pre">'palabra'</span></code>, así que lo que sacamos del diccionario es el valor asociado a la llave <code class="docutils literal notranslate"><span class="pre">'palabra'</span></code>.</p>
 </div>
 <div class="section" id="diccionario-palabra">
-<h4>4. diccionario[“palabra”]<a class="headerlink" href="#diccionario-palabra" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.7.2.1.4. </span>4. diccionario[“palabra”]<a class="headerlink" href="#diccionario-palabra" title="Permalink to this headline">¶</a></h4>
 <p>En el cuarto caso, se imprime en la consola lo siguiente: <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">definición</span></code>.</p>
 <p>Esta es la versión equivalente del primer caso: usamos una cadena que es idéntica a una cadena que se encuentra dentro del diccionario.</p>
 </div>
 <div class="section" id="id4">
-<h4>5. diccionario[palabra]<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.7.2.1.5. </span>5. diccionario[palabra]<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <p>En el quinto caso, no se imprime nada en la consola porque se produce un error.</p>
 <p>Fíjese que hasta el momento no hemos definido ninguna variable con el nombre <code class="docutils literal notranslate"><span class="pre">palabra</span></code>, así que cuando se intenta consultar el valor de esta variable, se produce un error.</p>
 </div>
 </div>
 <div class="section" id="tipos-de-llaves-y-valores">
-<h3>Tipos de llaves y valores<a class="headerlink" href="#tipos-de-llaves-y-valores" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.2.2. </span>Tipos de llaves y valores<a class="headerlink" href="#tipos-de-llaves-y-valores" title="Permalink to this headline">¶</a></h3>
 <p>En Python, las llaves y valores en un diccionario pueden ser prácticamente de cualquier tipo. Podemos tener diccionarios cuyas llaves y valores son cadenas, como en el caso de nuestro ejemplo de las palabras en Español. Podemos tener también diccionarios cuyas llaves son cadenas y sus valores son números, como en el caso de las notas que obtuvieron los estudiantes de algún curso (los nombres son las llaves y las notas son los valores). Aunque es menos usual, las llaves de un diccionario también pueden ser números, como en el caso de un diccionario que represente un edificio (las llaves son los números de los apartamentos y los valores son los nombres de quienes viven en esos apartamentos). Finalmente, los tipos de los valores pueden combinarse: más adelante exploraremos ejemplos donde las llaves son cadenas y los valores son de varios tipos diferentes.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -496,7 +561,7 @@ Aunque no está prohibido en el lenguaje, es recomendable evitar tener llaves de
 </div>
 </div>
 <div class="section" id="el-metodo-get">
-<h2>El método get<a class="headerlink" href="#el-metodo-get" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.7.3. </span>El método get<a class="headerlink" href="#el-metodo-get" title="Permalink to this headline">¶</a></h2>
 <p>Como ya vimos, cuando se intenta consultar un diccionario usando una llave que no existe se produce un error. Una forma de evitar esto es consultar primero si la llave existe usando el operador <code class="docutils literal notranslate"><span class="pre">in</span></code>. Otra alternativa, muy usada porque reduce el tamaño del código, es usar el <em>método</em><a class="footnote-reference brackets" href="#metodos" id="id5">3</a> <code class="docutils literal notranslate"><span class="pre">get</span></code>. Este método, que se aplica sobre un diccionario, recibe como parámetros una llave y el valor que se debería retornar si la llave no existe en el diccionario.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">llave</span> <span class="o">=</span> <span class="s1">&#39;IMAGEN&#39;</span>
 <span class="n">definicion</span> <span class="o">=</span> <span class="n">palabras</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">llave</span><span class="p">,</span> <span class="s2">&quot;La palabra &#39;&quot;</span> <span class="o">+</span> <span class="n">llave</span> <span class="o">+</span> <span class="s2">&quot;&#39; no se encuentra en el diccionario&quot;</span><span class="p">)</span>
@@ -504,7 +569,7 @@ Aunque no está prohibido en el lenguaje, es recomendable evitar tener llaves de
 </div>
 <p>El fragmento anterior es equivalente al que usamos en la sección pasada: si la palabra existe en el diccionario, en la variable <code class="docutils literal notranslate"><span class="pre">definicion</span></code> queda el valor contenido en el diccionario; de lo contrario, en la variable <code class="docutils literal notranslate"><span class="pre">definicion</span></code> queda un mensaje anunciando que la palabra no existía.</p>
 <div class="section" id="el-valor-none">
-<h3>El valor None<a class="headerlink" href="#el-valor-none" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.3.1. </span>El valor None<a class="headerlink" href="#el-valor-none" title="Permalink to this headline">¶</a></h3>
 <p>El valor <code class="docutils literal notranslate"><span class="pre">None</span></code>, que se puede traducir como <code class="docutils literal notranslate"><span class="pre">ninguno</span></code>, es un valor que se usa en Python para denotar la “ausencia de un valor”. El tipo de <code class="docutils literal notranslate"><span class="pre">None</span></code> es <code class="docutils literal notranslate"><span class="pre">NoneType</span></code> y es ese nombre el que se menciona cuando se hace una operación con este valor:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kc">None</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="gt">Traceback (most recent call last):</span>
@@ -568,7 +633,7 @@ Cuando vaya a revisar si un valor es <code class="docutils literal notranslate">
 </div>
 </div>
 <div class="section" id="el-metodo-get-y-el-valor-none">
-<h3>El método get y el valor None<a class="headerlink" href="#el-metodo-get-y-el-valor-none" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.3.2. </span>El método get y el valor None<a class="headerlink" href="#el-metodo-get-y-el-valor-none" title="Permalink to this headline">¶</a></h3>
 <p>La explicación anterior sobre el valor <code class="docutils literal notranslate"><span class="pre">None</span></code> es relevante porque se usa muy frecuentemente con el método <code class="docutils literal notranslate"><span class="pre">get</span></code>: si una llave no se encuentra en un diccionario, usar <code class="docutils literal notranslate"><span class="pre">None</span></code> como valor por defecto es lo más natural en muchos casos y es mucho mejor que usar cosas como cadenas vacías o sólo con espacios. Observemos el uso de <code class="docutils literal notranslate"><span class="pre">get</span></code> y <code class="docutils literal notranslate"><span class="pre">None</span></code> en un ejemplo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">imprimir_definicion</span><span class="p">(</span><span class="n">diccionario</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">palabra</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot; Imprime la definición de una palabra o, si la palabra no existe,</span>
@@ -587,11 +652,11 @@ Cuando vaya a revisar si un valor es <code class="docutils literal notranslate">
 </div>
 </div>
 <div class="section" id="modificacion-de-diccionarios">
-<h2>Modificación de diccionarios<a class="headerlink" href="#modificacion-de-diccionarios" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.7.4. </span>Modificación de diccionarios<a class="headerlink" href="#modificacion-de-diccionarios" title="Permalink to this headline">¶</a></h2>
 <p>Ya vimos cómo implementar en Python los dos usos que usualmente le damos al diccionario de un idioma como el Español. Veamos ahora cómo harían los miembros de la RAE para modificar el diccionario agregando nuevos términos y definiciones y eliminando términos en desuso.</p>
 <p>Para explicar cómo se modifica un diccionario, y mostrar de paso que un diccionario se utiliza igual que cualquier otra variable, vamos a crear una nueva función que agrega definiciones al diccionario. Empezaremos con una versión sencilla y la iremos volviendo progresivamente más compleja.</p>
 <div class="section" id="agregar-una-definicion-primera-version">
-<h3>Agregar una definición: primera versión<a class="headerlink" href="#agregar-una-definicion-primera-version" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.4.1. </span>Agregar una definición: primera versión<a class="headerlink" href="#agregar-una-definicion-primera-version" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">agregar_definicion</span><span class="p">(</span><span class="n">diccionario</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">palabra</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">definicion</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
   <span class="n">diccionario</span><span class="p">[</span><span class="n">palabra</span><span class="p">]</span> <span class="o">=</span> <span class="n">definicion</span>
 </pre></div>
@@ -605,12 +670,12 @@ Cuando vaya a revisar si un valor es <code class="docutils literal notranslate">
 <p>Después de ejecutar estas 3 instrucciones, vamos a tener un nuevo diccionario llamado <code class="docutils literal notranslate"><span class="pre">palabras</span></code> que va a tener las definiciones de <code class="docutils literal notranslate"><span class="pre">imagen</span></code> y <code class="docutils literal notranslate"><span class="pre">figura</span></code>.</p>
 <div class="figure align-default" id="palabras-2">
 <img alt="../_images/diccionarios_figura3.png" src="../_images/diccionarios_figura3.png" />
-<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">Representación gráfica del diccionario palabras (2).</span><a class="headerlink" href="#palabras-2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.4 </span><span class="caption-text">Representación gráfica del diccionario palabras (2).</span><a class="headerlink" href="#palabras-2" title="Permalink to this image">¶</a></p>
 </div>
 <p>La pregunta que debería surgir en este punto es: ¿Por qué se modifica el diccionario palabras si la función no retorna nada? La respuesta a esta pregunta la revisaremos en una sección posterior en la que entraremos en detalle sobre la <strong>mutabilidad</strong> de los diccionarios.</p>
 </div>
 <div class="section" id="agregar-una-definicion-segunda-version">
-<h3>Agregar una definición: segunda versión<a class="headerlink" href="#agregar-una-definicion-segunda-version" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.4.2. </span>Agregar una definición: segunda versión<a class="headerlink" href="#agregar-una-definicion-segunda-version" title="Permalink to this headline">¶</a></h3>
 <p>Para la segunda versión de la función, vamos a cambiar la signatura para que nuestra función retorne un valor de verdad indicando si se pudo agregar la definición o no. Si la palabra ya existía en el diccionario, no debería agregarse y la función debería retornar el valor <code class="docutils literal notranslate"><span class="pre">False</span></code>. De lo contrario, debería agregarse y el resultado debería ser <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">agregar_definicion</span><span class="p">(</span><span class="n">diccionario</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">palabra</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">definicion</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
   <span class="n">definicion_agregada</span> <span class="o">=</span> <span class="kc">False</span>
@@ -636,7 +701,7 @@ Cuando vaya a revisar si un valor es <code class="docutils literal notranslate">
 <p>En este fragmento usamos la nueva función y guardamos el resultado de cada invocación en una variable. Cuando imprimimos las tres variables el resultado que vemos en la consola es <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">True</span> <span class="pre">False</span></code>. Esto nos indica que las dos primeras invocaciones fueron exitosas y que la tercera falló.</p>
 </div>
 <div class="section" id="agregar-una-definicion-tercera-version">
-<h3>Agregar una definición: tercera versión<a class="headerlink" href="#agregar-una-definicion-tercera-version" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.4.3. </span>Agregar una definición: tercera versión<a class="headerlink" href="#agregar-una-definicion-tercera-version" title="Permalink to this headline">¶</a></h3>
 <p>En la tercera y última versión vamos a ofrecer la posibilidad de tener varias definiciones para una palabra. Para lograr esto vamos a concatenar las definiciones a medida que las vayamos agregando, pero sólo si no habíamos almacenado antes esa misma definición. Para verificar este último punto usaremos la operación <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> aplicada sobre un <code class="docutils literal notranslate"><span class="pre">str</span></code> (la definición que ya teníamos almacenada).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">agregar_definicion</span><span class="p">(</span><span class="n">diccionario</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">palabra</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">definicion</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
   <span class="n">definicion_agregada</span> <span class="o">=</span> <span class="kc">False</span>
@@ -668,10 +733,10 @@ Cuando vaya a revisar si un valor es <code class="docutils literal notranslate">
 <p>Si ejecutamos este último fragmento usando la nueva definición de la función encontraremos que el resultado que se imprime en la consola es <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">True</span> <span class="pre">False</span></code>. Esto significa que las dos primeras definiciones se pudieron agregar, mientras que la tercera fue rechazada porque estaba repetida.</p>
 </div>
 <div class="section" id="eliminar-una-definicion">
-<h3>Eliminar una definición<a class="headerlink" href="#eliminar-una-definicion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.4.4. </span>Eliminar una definición<a class="headerlink" href="#eliminar-una-definicion" title="Permalink to this headline">¶</a></h3>
 <p>La última operación para estudiar es la que nos permite eliminar definiciones de un diccionario. Esto se puede lograr de dos formas: con el operador <code class="docutils literal notranslate"><span class="pre">del</span></code> o con el método <code class="docutils literal notranslate"><span class="pre">pop</span></code>. Tenga en cuenta que en ambos casos es necesario verificar que la llave exista en el diccionario antes de intentar eliminarla. De lo contrario se producirá un error.</p>
 <div class="section" id="uso-del-operador-del-para-eliminar-un-valor">
-<h4>Uso del operador <code class="docutils literal notranslate"><span class="pre">del</span></code> para eliminar un valor<a class="headerlink" href="#uso-del-operador-del-para-eliminar-un-valor" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.7.4.4.1. </span>Uso del operador <code class="docutils literal notranslate"><span class="pre">del</span></code> para eliminar un valor<a class="headerlink" href="#uso-del-operador-del-para-eliminar-un-valor" title="Permalink to this headline">¶</a></h4>
 <p>En la siguiente función se usa el operador <code class="docutils literal notranslate"><span class="pre">del</span></code> para eliminar una palabra del diccionario. Tenga en cuenta que esto eliminará tanto la palabra como su definición. Para evitar que se produzca un error, el llamado a <code class="docutils literal notranslate"><span class="pre">del</span></code> ocurre dentro del cuerpo de un condicional que se asegura que la palabra sí exista en el diccionario.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">eliminar_palabra</span><span class="p">(</span><span class="n">diccionario</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">palabra</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="n">palabra_eliminada</span> <span class="o">=</span> <span class="kc">False</span>
@@ -693,7 +758,7 @@ Cuando vaya a revisar si un valor es <code class="docutils literal notranslate">
 </div>
 </div>
 <div class="section" id="uso-del-metodo-pop-para-eliminar-un-valor">
-<h4>Uso del método <code class="docutils literal notranslate"><span class="pre">pop</span></code> para eliminar un valor<a class="headerlink" href="#uso-del-metodo-pop-para-eliminar-un-valor" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.7.4.4.2. </span>Uso del método <code class="docutils literal notranslate"><span class="pre">pop</span></code> para eliminar un valor<a class="headerlink" href="#uso-del-metodo-pop-para-eliminar-un-valor" title="Permalink to this headline">¶</a></h4>
 <p>En la segunda versión de la función se remplazó el operador <code class="docutils literal notranslate"><span class="pre">del</span></code> por un llamado al método <code class="docutils literal notranslate"><span class="pre">pop</span></code>. Al igual que antes, es necesario verificar que la llave efectivamente exista dentro del diccionario antes de hacer el llamado para que no se produzca ningún error.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">eliminar_palabra</span><span class="p">(</span><span class="n">diccionario</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">palabra</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="n">palabra_eliminada</span> <span class="o">=</span> <span class="kc">False</span>
@@ -717,7 +782,7 @@ Cuando vaya a revisar si un valor es <code class="docutils literal notranslate">
 </div>
 </div>
 <div class="section" id="eliminar-todas-las-definiciones">
-<h3>Eliminar todas las definiciones<a class="headerlink" href="#eliminar-todas-las-definiciones" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.4.5. </span>Eliminar todas las definiciones<a class="headerlink" href="#eliminar-todas-las-definiciones" title="Permalink to this headline">¶</a></h3>
 <p>Finalmente, Python ofrece una manera para eliminar con facilidad todos los elementos de un diccionario: el método <code class="docutils literal notranslate"><span class="pre">clear</span></code>. Por ejemplo, si queremos eliminar todos los elementos del diccionario <code class="docutils literal notranslate"><span class="pre">palabras</span></code> sólo debemos ejecutar la siguiente instrucción:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">palabras</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 </pre></div>
@@ -725,15 +790,15 @@ Cuando vaya a revisar si un valor es <code class="docutils literal notranslate">
 </div>
 </div>
 <div class="section" id="usos-de-los-diccionarios">
-<h2>Usos de los diccionarios<a class="headerlink" href="#usos-de-los-diccionarios" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.7.5. </span>Usos de los diccionarios<a class="headerlink" href="#usos-de-los-diccionarios" title="Permalink to this headline">¶</a></h2>
 <p>Ya estudiamos todos los mecanismos para construir diccionarios, consultar y modificar valores, agregar nuevos valores y eliminar valores. Ahora vamos a estudiar algunos usos interesantes de los diccionarios.</p>
 <div class="section" id="histogramas-basados-en-diccionarios">
-<h3>Histogramas basados en diccionarios<a class="headerlink" href="#histogramas-basados-en-diccionarios" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.5.1. </span>Histogramas basados en diccionarios<a class="headerlink" href="#histogramas-basados-en-diccionarios" title="Permalink to this headline">¶</a></h3>
 <p>Una problemática relativamente común es la de contar cuántas veces aparecen ciertos valores dentro de algo más grande. Por ejemplo, cuántas veces aparece cada uno de los dígitos entre 0 y 9 dentro de un número entero, cuántas veces aparece cada letra dentro de una palabra, o cuántas veces aparece cada palabra dentro de un texto. Un problema relacionado es el de contar cuántos elementos de un conjunto caen dentro de unas ciertas categorías (ej. cuántas personas de un grupo nacieron en cada uno de los meses del año, cuántos estudiantes aprobaron un curso, cuántos reprobaron, etc.).</p>
 <p>Matemáticamente, un histograma le asigna un número a cada uno de los valores posibles de un grupo: el número indica cuántas veces apareció el valor que estábamos contando (dígitos, letras, palabras, meses, etc.). Gráficamente, un histograma se representa con un gráfico de barras en el cual el tamaño de cada barra es proporcional a la cantidad de veces en que apareció cada uno de los valores.</p>
 <div class="figure align-default" id="histograma">
 <a class="reference internal image-reference" href="../_images/diccionarios_figura4.png"><img alt="../_images/diccionarios_figura4.png" src="../_images/diccionarios_figura4.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Ejemplo gráfico de un histograma</span><a class="headerlink" href="#histograma" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.5 </span><span class="caption-text">Ejemplo gráfico de un histograma</span><a class="headerlink" href="#histograma" title="Permalink to this image">¶</a></p>
 </div>
 <p>Los diccionarios se prestan perfectamente para construir histogramas: las llaves serán los valores que queremos contar y los valores del diccionario indicarán la cantidad de veces que apareció cada uno. La siguiente función ilustra esto:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">contar_vocales</span><span class="p">(</span><span class="n">texto</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
@@ -763,11 +828,11 @@ Cuando vaya a revisar si un valor es <code class="docutils literal notranslate">
 </div>
 <div class="figure align-default" id="diccionario-histograma">
 <a class="reference internal image-reference" href="../_images/diccionarios_figura5.png"><img alt="../_images/diccionarios_figura5.png" src="../_images/diccionarios_figura5.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">Diccionario con el histograma y representación gráfica</span><a class="headerlink" href="#diccionario-histograma" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.6 </span><span class="caption-text">Diccionario con el histograma y representación gráfica</span><a class="headerlink" href="#diccionario-histograma" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="diccionarios-como-conjuntos">
-<h3>Diccionarios como conjuntos<a class="headerlink" href="#diccionarios-como-conjuntos" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.5.2. </span>Diccionarios como conjuntos<a class="headerlink" href="#diccionarios-como-conjuntos" title="Permalink to this headline">¶</a></h3>
 <p>Un segundo uso posible de los diccionarios es representar conjuntos <a class="footnote-reference brackets" href="#sets" id="id8">6</a>. En un conjunto, cada valor puede aparecer máximo una vez y la pregunta más interesante es si un valor pertenece o no pertenece al conjunto. Cuando un conjunto se representa usando un diccionario, sólo nos interesan las llaves y no los valores.</p>
 <p>El siguiente ejemplo ilustrará este punto usando números como llaves en un diccionario y el valor booleano <code class="docutils literal notranslate"><span class="pre">True</span></code> como único valor del diccionario.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -835,7 +900,7 @@ Cuando vaya a revisar si un valor es <code class="docutils literal notranslate">
 <p>La función <code class="docutils literal notranslate"><span class="pre">contar_resultados_diferentes</span></code> revisa cuáles de los números entre 1 y 6 aparecen en el diccionario usando el operador <code class="docutils literal notranslate"><span class="pre">in</span></code> y retorna la cantidad. Por fuera de las funciones se llama a las últimas dos funciones y finalmente se imprime un mensaje informando cuántos valores diferentes se encontraron. Note que la tercera función podría haberse implementado fácilmente aplicando la función <code class="docutils literal notranslate"><span class="pre">len</span></code> sobre el conjunto para saber cuántos valores diferentes quedaron en este.</p>
 </div>
 <div class="section" id="diccionarios-como-estructuras">
-<h3>Diccionarios como estructuras<a class="headerlink" href="#diccionarios-como-estructuras" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.5.3. </span>Diccionarios como estructuras<a class="headerlink" href="#diccionarios-como-estructuras" title="Permalink to this headline">¶</a></h3>
 <p>Un tercer uso posible de los diccionarios es modelar elementos de la realidad que tienen estructuras complejas y que además deben tener la misma estructura. Por ejemplo, al principio del capítulo hablamos de celulares que se describen con la velocidad del procesador, cantidad de memoria, calidad de la cámara, tecnología de la pantalla, tamaño de la pantalla, capacidad de la pila, sistema operativo y versión del sistema operativo. Si queremos manejar la información de muchos celulares, tiene sentido organizar la información de cada uno dentro de un diccionario. Con esto nuestros programas quedarán mejor organizados, necesitaremos menos variables, y nos podremos asegurar de que no nos haga falta ningún atributo para un celular.</p>
 <p>Para empezar a modelar nuestros celulares, listaremos sus características y le daremos un nombre sencillo a cada una:</p>
 <ul class="simple">
@@ -875,7 +940,7 @@ Cuando vaya a revisar si un valor es <code class="docutils literal notranslate">
 </div>
 <div class="figure align-default" id="celulares">
 <a class="reference internal image-reference" href="../_images/diccionarios_figura6.png"><img alt="../_images/diccionarios_figura6.png" src="../_images/diccionarios_figura6.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Representación gráfica de los 4 diccionarios para representar celulares</span><a class="headerlink" href="#celulares" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.7 </span><span class="caption-text">Representación gráfica de los 4 diccionarios para representar celulares</span><a class="headerlink" href="#celulares" title="Permalink to this image">¶</a></p>
 </div>
 <p>Ahora bien, lo realmente interesante es que ahora podemos construir funciones que conozcan la estructura de estos diccionarios y hagan operaciones sobre los celulares aprovechandose de esta información. Por ejemplo, la siguiente función nos permite comparar los dos celulares para saber cuál tiene la mejor cámara:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mejor_camara</span><span class="p">(</span><span class="n">celular1</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">celular2</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -970,7 +1035,7 @@ Cuando vaya a revisar si un valor es <code class="docutils literal notranslate">
 </div>
 </div>
 <div class="section" id="diccionarios-de-diccionarios">
-<h3>Diccionarios de diccionarios<a class="headerlink" href="#diccionarios-de-diccionarios" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.5.4. </span>Diccionarios de diccionarios<a class="headerlink" href="#diccionarios-de-diccionarios" title="Permalink to this headline">¶</a></h3>
 <p>Por último, vamos a describir un uso de los diccionarios que empieza a mostrar el verdadero poder de estas estructuras de datos. Hasta el momento, los valores que hemos introducido dentro de los diccionarios han sido tipos simples: <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> y <code class="docutils literal notranslate"><span class="pre">bool</span></code>. Ahora vamos a introducir también <em>diccionarios</em> dentro de los <em>diccionarios</em>.</p>
 <p>Para ilustrar este punto vamos a continuar con el ejemplo de los celulares y construir un diccionario que va a contener todos los celulares que queremos comparar. En este diccionario las <em>llaves</em> serán los <em>nombres de los celulares</em> y los <em>valores</em> serán los <em>diccionarios con el resto de características</em>.</p>
 <p>Suponiendo que ya tenemos nuestros cuatro celulares (<code class="docutils literal notranslate"><span class="pre">cel1</span></code>, <code class="docutils literal notranslate"><span class="pre">cel2</span></code>, <code class="docutils literal notranslate"><span class="pre">cel3</span></code> y <code class="docutils literal notranslate"><span class="pre">cel4</span></code>), podemos armar nuestro diccionario de celulares usando las siguientes instrucciones:</p>
@@ -984,7 +1049,7 @@ Cuando vaya a revisar si un valor es <code class="docutils literal notranslate">
 <p>La siguiente imagen muestra gráficamente el resultado de esta ejecución. En la parte superior podemos ver las cuatro variables anteriores apuntando a cada uno de los diccionarios que representan celulares. En la parte inferior podemos ver que los valores en el nuevo diccionario <code class="docutils literal notranslate"><span class="pre">celulares</span></code> <em>apuntan</em> a los mismos diccionarios que identificamos con las variables.</p>
 <div class="figure align-default" id="diccionario-diccionarios">
 <a class="reference internal image-reference" href="../_images/diccionarios_figura7.png"><img alt="../_images/diccionarios_figura7.png" src="../_images/diccionarios_figura7.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Representación gráfica del diccionario de celulares</span><a class="headerlink" href="#diccionario-diccionarios" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.8 </span><span class="caption-text">Representación gráfica del diccionario de celulares</span><a class="headerlink" href="#diccionario-diccionarios" title="Permalink to this image">¶</a></p>
 </div>
 <p>Observe ahora lo que pasa si intentamos extraer un valor del diccionario <code class="docutils literal notranslate"><span class="pre">celulares</span></code> usando el nombre de un celular (los cambios de línea los agregamos para facilitar la lectura):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">celulares</span><span class="p">[</span><span class="s1">&#39;AmazingCel&#39;</span><span class="p">])</span>
@@ -1056,7 +1121,7 @@ Los diccionarios sólo pueden usarse como valores dentro de otros diccionarios. 
 </div>
 </div>
 <div class="section" id="mutabilidad-en-diccionarios">
-<h2>Mutabilidad en diccionarios<a class="headerlink" href="#mutabilidad-en-diccionarios" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.7.6. </span>Mutabilidad en diccionarios<a class="headerlink" href="#mutabilidad-en-diccionarios" title="Permalink to this headline">¶</a></h2>
 <p>Para cerrar este capítulo sobre diccionarios vamos a volver a la discusión que habíamos iniciado sobre la <em>mutabilidad</em> de los diccionarios. A diferencia de otros tipos de datos, los diccionarios pueden cambiar. Esto significa que, cuando se agrega, se modifica o se elimina una llave de un diccionario, el diccionario se modifica pero sigue siendo <em>el mismo diccionario</em>.</p>
 <p>Esta característica es muy importante y hay que tenerla muy en cuenta cuando se utilizan diccionarios en los parámetros de una función. En síntesis, el hecho de que los diccionarios sean mutables hace que todos los cambios que se hacen a un diccionario que llegue a una función como un parámetro, se vean reflejados también fuera de la función.</p>
 <p>Veamos esto con un ejemplo sencillo:</p>
@@ -1094,7 +1159,7 @@ Los diccionarios sólo pueden usarse como valores dentro de otros diccionarios. 
 </div>
 <p>La primera línea se imprime desde adentro de la función y demuestra que los parámetros <code class="docutils literal notranslate"><span class="pre">entero</span></code> y <code class="docutils literal notranslate"><span class="pre">cadena</span></code> se modificaron dentro de la función. La segunda línea muestra que las variables con las que se invocó la función, <code class="docutils literal notranslate"><span class="pre">numero</span></code> y <code class="docutils literal notranslate"><span class="pre">texto</span></code>, no sufrieron ningún cambio.</p>
 <div class="section" id="copias-de-diccionarios">
-<h3>Copias de diccionarios<a class="headerlink" href="#copias-de-diccionarios" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.6.1. </span>Copias de diccionarios<a class="headerlink" href="#copias-de-diccionarios" title="Permalink to this headline">¶</a></h3>
 <p>Finalmente, vamos a desarrollar una función en la que no queremos que se modifique el diccionario original, sino que queremos que se construya uno nuevo. La nueva función <code class="docutils literal notranslate"><span class="pre">agregar_definicion_con_copia</span></code> logra este resultado y retorna un diccionario con todos los elementos que tenía el diccionario original y también con el elemento adicional que se está agregando.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">agregar_definicion_con_copia</span><span class="p">(</span><span class="n">diccionario</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">palabra</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">definicion</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
   <span class="n">copia</span> <span class="o">=</span> <span class="n">diccionario</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -1119,7 +1184,7 @@ El método <code class="docutils literal notranslate"><span class="pre">copy()</
 </div>
 </div>
 <div class="section" id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.7.7. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Construya un diccionario con las alturas sobre el nivel del mar de las capitales de los países suramericanos. Use los nombres de las ciudades, usando mayúsculas al principio de las palabras, como llaves y las alturas como valores. Es decir, las llaves deben ser ‘Bogotá’, ‘Buenos Aires’. etc.</p></li>
 <li><p>Escriba una función que reciba el diccionario con las alturas de las ciudades y los nombres de dos ciudades y que retorne el nombre de la ciudad que esté ubicada a una mayor altura. La función debe ser capaz de funcionar incluso si en el nombre de las ciudades se usan mayúsculas y minúsculas de forma diferente a como están en el diccionario (por ejemplo, ‘BoGoTá’ y ‘BUENOS aires’). Si alguno de los dos nombres no corresponde a una ciudad, la función debe retornar el valor <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
@@ -1132,7 +1197,7 @@ El método <code class="docutils literal notranslate"><span class="pre">copy()</
 </ol>
 </div>
 <div class="section" id="mas-alla-de-python">
-<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.7.8. </span>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
 <p>No en todos los lenguajes de programación existe algo equivalente a los diccionarios como un tipo de datos básico. Por ejemplo, en Java es necesario utilizar clases que implementen la interfaz <code class="docutils literal notranslate"><span class="pre">Map</span></code> que es parte del framework de colecciones: aunque es parte de la librería básica de Java, la integración con el lenguaje no es igual de estrecha que en el caso de los diccionarios de Python.</p>
 <p>En otros lenguajes, como PHP o Perl hay estructuras de datos prácticamente equivalentes a los diccionarios pero reciben el nombre de <em>mapas</em>.</p>
 <p>En esta sección estudiamos el uso de los diccionarios como estructuras: esto es una referencia a las estructuras (<code class="docutils literal notranslate"><span class="pre">struct</span></code>) disponibles en C o C++, las cuales sirven para organizar información exactamente igual que como vimos con los diccionarios. Las estructuras pueden considerarse precursoras de los objetos, aunque sin comportamiento asociado.</p>
@@ -1161,6 +1226,25 @@ El método <code class="docutils literal notranslate"><span class="pre">copy()</
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nivel2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -1170,8 +1254,8 @@ El método <code class="docutils literal notranslate"><span class="pre">copy()</
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="seccion2-6.html" title="previous page">Módulos de la librería estándar</a>
-    <a class='right-next' id="next-link" href="seccion2-8.html" title="next page">Paso de parámetros</a>
+    <a class='left-prev' id="prev-link" href="seccion2-6.html" title="previous page"><span class="section-number">3.6. </span>Módulos de la librería estándar</a>
+    <a class='right-next' id="next-link" href="seccion2-8.html" title="next page"><span class="section-number">3.8. </span>Paso de parámetros</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

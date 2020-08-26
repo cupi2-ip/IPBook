@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Instrucciones condicionales &#8212; Introducción a la Programación</title>
+    <title>3.4. Instrucciones condicionales &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,11 +31,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel2/seccion2-4.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Más sobre cadenas de caracteres" href="seccion2-5.html" />
-    <link rel="prev" title="Valores de verdad en Python" href="seccion2-3.html" />
+    <link rel="next" title="3.5. Más sobre cadenas de caracteres" href="seccion2-5.html" />
+    <link rel="prev" title="3.3. Valores de verdad en Python" href="seccion2-3.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -47,7 +55,7 @@
 <meta property="og:description" content="Instrucciones condicionales  Versión borrador / preliminar  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si" />
 <meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -76,92 +84,103 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../portada.html">1. Portada</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Antes de empezar</p>
-</li>
-  <li class="">
-    <a href="../introduccion/index.html">2. Introducción</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 1</p>
-</li>
-  <li class="">
-    <a href="../nivel1/intro.html">3. Empezando a programar</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 1</p>
-</li>
-  <li class="">
-    <a href="../nivel01a/index.html">4. Descomposición de programas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 2</p>
-</li>
-  <li class="active">
-    <a href="intro.html">5. Tomando decisiones</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="seccion2-1.html">5.1 Un programa para leer</a>
-    </li>
-    <li class="">
-      <a href="seccion2-2.html">5.2 Lógica y valores de verdad</a>
-    </li>
-    <li class="">
-      <a href="seccion2-3.html">5.3 Valores de verdad en Python</a>
-    </li>
-    <li class="active">
-      <a href="">5.4 Instrucciones condicionales</a>
-    </li>
-    <li class="">
-      <a href="seccion2-5.html">5.5 Más sobre cadenas de caracteres</a>
-    </li>
-    <li class="">
-      <a href="seccion2-6.html">5.6 Módulos de la librería estándar</a>
-    </li>
-    <li class="">
-      <a href="seccion2-7.html">5.7 Diccionarios</a>
-    </li>
-    <li class="">
-      <a href="seccion2-8.html">5.8 Paso de parámetros</a>
-    </li>
-    <li class="">
-      <a href="seccion2-9.html">5.9 Errores frecuentes</a>
-    </li>
-    <li class="">
-      <a href="seccion2-10.html">5.10 Ejercicios adicionales</a>
-    </li>
-  </ul>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 2</p>
-</li>
-  <li class="">
-    <a href="../nivel02a/index.html">6. Plan de Pruebas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 3</p>
-</li>
-  <li class="">
-    <a href="../nivel3/intro.html">7. Repitiendo acciones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 3</p>
-</li>
-  <li class="">
-    <a href="../nivel03a/index.html">8. Dividir y  Conquistar</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 4</p>
-</li>
-  <li class="">
-    <a href="../nivel4/intro.html">9. Matrices y Librerías</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portada.html">
+   Portada
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Contenido
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduccion/index.html">
+   1. Nivel 0 - Antes de empezar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel1/intro.html">
+   2. Nivel 1 - Empezando a programar
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   3. Nivel 2 - Tomando decisiones
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-1.html">
+     3.1. Un programa para leer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-2.html">
+     3.2. Lógica y valores de verdad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-3.html">
+     3.3. Valores de verdad en Python
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.4. Instrucciones condicionales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-5.html">
+     3.5. Más sobre cadenas de caracteres
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-6.html">
+     3.6. Módulos de la librería estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-7.html">
+     3.7. Diccionarios
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-8.html">
+     3.8. Paso de parámetros
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-9.html">
+     3.9. Errores frecuentes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-9.html#para-no-olvidar">
+     3.10. Para no olvidar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion2-10.html">
+     3.11. Ejercicios adicionales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel3/intro.html">
+   4. Nivel 3 - Repitiendo acciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel4/intro.html">
+   5. Nivel 4 - Matrices y Librerías
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -218,98 +237,115 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivacion">
+   3.4.1. Motivación
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#condicionales-en-python-if-else">
+   3.4.2. Condicionales en Python: IF-ELSE
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alternativas">
+     3.4.2.1. Alternativas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicios">
+     3.4.2.2. Ejercicios
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#condicionales-en-python-if-elif-else">
+   3.4.3. Condicionales en Python: IF-ELIF-ELSE
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#condicionales-consecutivos">
+     3.4.3.1. Condicionales consecutivos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     3.4.3.2. Ejercicios
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aspectos-metodologicos">
+   3.4.4. Aspectos metodológicos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#condicionales-anidados">
+     3.4.4.1. Condicionales anidados
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#returns">
+     3.4.4.2. Returns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expresiones-vs-condicionales">
+     3.4.4.3. Expresiones vs. condicionales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#caso-de-estudio-el-mayor-de-4-numeros">
+   3.4.5. Caso de estudio: el mayor de 4 números
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enunciado-del-problema">
+     3.4.5.1. Enunciado del problema
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solucion-1-multiples-returns">
+     3.4.5.2. Solución 1: múltiples returns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solucion-2-un-solo-return">
+     3.4.5.3. Solución 2: un solo return
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solucion-3-aproximacion-algoritmica">
+     3.4.5.4. Solución 3: aproximación algorítmica
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   3.4.6. Ejercicios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mas-alla-de-python">
+   3.4.7. Más allá de Python
+  </a>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#motivacion" class="nav-link">Motivación</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#condicionales-en-python-if-else" class="nav-link">Condicionales en Python: IF-ELSE</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#alternativas" class="nav-link">Alternativas</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#ejercicios" class="nav-link">Ejercicios</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#condicionales-en-python-if-elif-else" class="nav-link">Condicionales en Python: IF-ELIF-ELSE</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#condicionales-consecutivos" class="nav-link">Condicionales consecutivos</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id2" class="nav-link">Ejercicios</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#aspectos-metodologicos" class="nav-link">Aspectos metodológicos</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#condicionales-anidados" class="nav-link">Condicionales anidados</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#returns" class="nav-link">Returns</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#expresiones-vs-condicionales" class="nav-link">Expresiones vs. condicionales</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#caso-de-estudio-el-mayor-de-4-numeros" class="nav-link">Caso de estudio: el mayor de 4 números</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#enunciado-del-problema" class="nav-link">Enunciado del problema</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#solucion-1-multiples-returns" class="nav-link">Solución 1: múltiples returns</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#solucion-2-un-solo-return" class="nav-link">Solución 2: un solo return</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#solucion-3-aproximacion-algoritmica" class="nav-link">Solución 3: aproximación algorítmica</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id3" class="nav-link">Ejercicios</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#mas-alla-de-python" class="nav-link">Más allá de Python</a>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -318,7 +354,7 @@
               <div>
                 
   <div class="section" id="instrucciones-condicionales">
-<h1>Instrucciones condicionales<a class="headerlink" href="#instrucciones-condicionales" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.4. </span>Instrucciones condicionales<a class="headerlink" href="#instrucciones-condicionales" title="Permalink to this headline">¶</a></h1>
 <div class="warning admonition">
 <p class="admonition-title">Versión borrador / preliminar</p>
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
@@ -337,7 +373,7 @@
 </ul>
 <p>Aunque no parece mucho, este reducido conjunto de elementos son la base para construir cualquier tipo de programas. En esta sección vamos a introducir un nuevo tipo de instrucción, los condicionales, con el cual incrementaremos enormemente el potencial de problemas que podemos solucionar y de programas que podemos construir.</p>
 <div class="section" id="motivacion">
-<h2>Motivación<a class="headerlink" href="#motivacion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.1. </span>Motivación<a class="headerlink" href="#motivacion" title="Permalink to this headline">¶</a></h2>
 <p>La gran limitación que tienen los programas que podemos construir hasta el momento es que siempre van a ejecutar las mismas instrucciones. Esto implica que no pueden tomar ninguna decisión y que incluso funcionalidades pequeñas son imposibles de implementar.</p>
 <p>Tomemos como ejemplo la funcionalidad de verificar si la contraseña introducida por un usuario es correcta o no: si es correcta, quisiéramos informarle al usuario que sí es correcta; si no es correcta, quisiéramos decirle que no es correcta y que debe volver a intentarlo. En la sección anterior aprendimos a comparar cadenas de caracteres, así que ya podríamos saber si la contraseña es correcta o no:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contrasena_correcta</span> <span class="o">=</span> <span class="n">contrasena_almacenada</span> <span class="o">==</span> <span class="n">contrasena_ingresada</span>
@@ -357,7 +393,7 @@
 </div>
 </div>
 <div class="section" id="condicionales-en-python-if-else">
-<h2>Condicionales en Python: IF-ELSE<a class="headerlink" href="#condicionales-en-python-if-else" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.2. </span>Condicionales en Python: IF-ELSE<a class="headerlink" href="#condicionales-en-python-if-else" title="Permalink to this headline">¶</a></h2>
 <p>Una instrucción condicional es una instrucción cuya ejecución depende del valor que resulte de evaluar una expresión booleana. Esta evaluación se hace durante la ejecución de un programa, así que cuando estamos programando nosotros no podemos saber a ciencia cierta qué es lo que va a ejecutarse. Además, ejecuciones sucesivas del mismo programa no necesariamente van a comportarse de la misma manera.</p>
 <p>En Python, las instrucciones condicionales se usan utilizando la siguiente estructura:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">expresion_booleana</span><span class="p">:</span>
@@ -398,7 +434,7 @@
 <p>Un aspecto muy importante para tener en cuenta acá es la <strong>indentación</strong>: así como cuando definimos una función tenemos que indentar el cuerpo de la función, cuando usamos instrucciones condicionales el cuerpo del if y el cuerpo del else tienen que estar consistentemente indentados.</p>
 <p>Cuando se termine de ejecutar bien sea el cuerpo del if o el cuerpo del else, se considerará que la instrucción condicional terminó de ejecutarse y Python podrá pasar a la siguiente instrucción, que en este imprime el mensaje para el usuario.</p>
 <div class="section" id="alternativas">
-<h3>Alternativas<a class="headerlink" href="#alternativas" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.2.1. </span>Alternativas<a class="headerlink" href="#alternativas" title="Permalink to this headline">¶</a></h3>
 <p>Veamos ahora otras dos maneras en las que habríamos podido escribir el mismo programa.</p>
 <p>En la primera alternativa vamos a extraer la instrucción condicional y convertirla en una función que calcule el mensaje.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">revisar</span><span class="p">(</span><span class="n">contrasena_almacenada</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">contrasena_ingresada</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">str</span><span class="p">:</span>
@@ -436,14 +472,14 @@
 </div>
 </div>
 <div class="section" id="ejercicios">
-<h3>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.2.2. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Queremos escribir una función que nos diga quién ganará en el lanzamiento de una moneda. Escriba una función que reciba el nombre de la persona que pidió ‘cara’, el nombre de la persona que pidió ‘sello’ y el resultado del lanzamiento (‘cara’ o ‘sello’) y responda con el nombre de la persona que haya acertado.</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="condicionales-en-python-if-elif-else">
-<h2>Condicionales en Python: IF-ELIF-ELSE<a class="headerlink" href="#condicionales-en-python-if-elif-else" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.3. </span>Condicionales en Python: IF-ELIF-ELSE<a class="headerlink" href="#condicionales-en-python-if-elif-else" title="Permalink to this headline">¶</a></h2>
 <p>Vimos ya que una instrucción condicional puede tener una pareja de bloques if y else, o puede tener sólo un bloque if. Ahora agregaremos la posibilidad de tener más de una condición, para lo cual tenemos que introducir los bloques que en Python se llaman <code class="docutils literal notranslate"><span class="pre">elif</span></code> y que en muchos otros lenguajes se conocen como <strong>else if</strong>.</p>
 <p>Veamos un ejemplo de una instrucción que incluya varias condiciones. Suponga que las funciones <code class="docutils literal notranslate"><span class="pre">longitud</span></code>, <code class="docutils literal notranslate"><span class="pre">tiene_numeros</span></code>, <code class="docutils literal notranslate"><span class="pre">tiene_minusculas</span></code>, <code class="docutils literal notranslate"><span class="pre">tiene_mayusculas</span></code> y <code class="docutils literal notranslate"><span class="pre">cambiar_contrasena</span></code> ya están definidas en alguna otra parte del programa. El bloque condicional empieza con la palabra reservada <code class="docutils literal notranslate"><span class="pre">if</span></code> y una condición; de ahí en adelante, cada condición se acompaña de la palabra reservada <code class="docutils literal notranslate"><span class="pre">elif</span></code>. Al final encontramos un bloque ELSE que, como todos los bloques ELSE que hemos estudiado, incluye la palabra <code class="docutils literal notranslate"><span class="pre">else</span></code> pero no tiene una condición asociada.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nueva</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Introduzca su nueva contraseña:&quot;</span><span class="p">)</span>
@@ -501,7 +537,7 @@
 <p>En este segundo caso se remplazaron los bloques ELIF por bloques IF y se volvieron mucho más complejas las condiciones. Por ejemplo, en la primera estructura el llamado <code class="docutils literal notranslate"><span class="pre">bloque2()</span></code> sólo se podía ejecutar si la condición <code class="docutils literal notranslate"><span class="pre">cond1</span></code> no había sido verdadera y si la condición <code class="docutils literal notranslate"><span class="pre">cond2</span></code> sí lo había sido. En la segunda estructura encontramos exactamente las mismas condiciones, pero de una manera mucho más explícita que se va complicando progresivamente.</p>
 <p>Esto nos demuestra la ventaja que nos trae utilizar bloques ELIF para ayudar a simplificar y hacer más comprensible el código.</p>
 <div class="section" id="condicionales-consecutivos">
-<h3>Condicionales consecutivos<a class="headerlink" href="#condicionales-consecutivos" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.3.1. </span>Condicionales consecutivos<a class="headerlink" href="#condicionales-consecutivos" title="Permalink to this headline">¶</a></h3>
 <p>Suponga ahora que queremos cambiar nuestro programa para que al usuario no se le informe sólo el primer problema que se encuentre con su nueva contraseña, sino que se le digan de una vez todos los problemas que tenga. En este caso la estructura basada en IF-ELIF-ELSE ya no nos sirve porque necesitamos que <em>siempre</em> se verifiquen <em>todas</em> las condiciones.</p>
 <p>Para lograr que esto pase, lo único que podemos hacer es separar las condiciones en instrucciones diferentes, asegurando así que todas sean verificadas. Es decir que, en lugar de tener un IF seguido de varios ELIF, en los cuales sólo 1 condición puede ser cierta a la vez, vamos a tener varios IF totalmente desconectados. Observe esto en la siguiente versión de nuestro programa:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nueva</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Introduzca su nueva contraseña:&quot;</span><span class="p">)</span>
@@ -554,7 +590,7 @@
 <p><strong>Recuerde</strong>: un <code class="docutils literal notranslate"><span class="pre">elif</span></code> depende del <code class="docutils literal notranslate"><span class="pre">if</span></code> anterior mientras que un <code class="docutils literal notranslate"><span class="pre">if</span></code> es independiente de lo que haya pasado antes.</p>
 </div>
 <div class="section" id="id2">
-<h3>Ejercicios<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.3.2. </span>Ejercicios<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Modifique el programa que cambia la contraseña para que en caso de que no se pueda cambiar la contraseña se le informe al usuario no sólo las restricciones que no se cumplieron sino también las condiciones que sí se cumplieron.</p></li>
 <li><p>El valor de un peaje depende del tipo de vehículo (categoría) que pase y de la cantidad de ejes que tenga: automóviles, camionetas y camperos (AUTO) deben pagar 10000; buses y busetas (BUS), 14300; camiones grandes de 2 ejes (CAMION), 16000; camiones de 3 y 4 ejes (CAMION), 28100; camiones de 5 ejes (CAMION), 37700; y camiones de 6 o más ejes (CAMION) deben pagar 41400. Adicionalmente, un vehículo podría tener un descuento especial del 15% por paso frecuente. Escriba una función que reciba el tipo de un vehículo (‘AUTO’, ‘BUS’ o ‘CAMION’) y si tiene descuento especial y calcule el valor que debe pagar en el peaje.</p></li>
@@ -562,10 +598,10 @@
 </div>
 </div>
 <div class="section" id="aspectos-metodologicos">
-<h2>Aspectos metodológicos<a class="headerlink" href="#aspectos-metodologicos" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.4. </span>Aspectos metodológicos<a class="headerlink" href="#aspectos-metodologicos" title="Permalink to this headline">¶</a></h2>
 <p>Como hemos visto con algunos de los ejemplos anteriores, usualmente el mismo problema puede resolverse correctamente usando estructuras diferentes. A continuación exploramos cuatro formas de resolver el mismo problema: queremos saber si un número es positivo y además es menor de 10.</p>
 <div class="section" id="condicionales-anidados">
-<h3>Condicionales anidados<a class="headerlink" href="#condicionales-anidados" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.4.1. </span>Condicionales anidados<a class="headerlink" href="#condicionales-anidados" title="Permalink to this headline">¶</a></h3>
 <p>El siguiente bloque muestra la definición de una función que resuelve el problema utilizando condicionales anidados:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">es_positivo_de_un_solo_digito_v1</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -592,7 +628,7 @@
 <p>Como siempre, mantener la claridad del código debería ser una prioridad para tomar decisiones con respecto a su estructura.</p>
 </div>
 <div class="section" id="returns">
-<h3>Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.4.2. </span>Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a></h3>
 <p>A pesar de sus diferencias, los dos ejemplos anteriores coinciden en un aspecto: tan pronto encuentran la respuesta, retornan verdadero o falso y terminan la ejecución de la función. Aunque esto no está necesariamente mal, una práctica que suele hacer el código más fácil de entender y por ende mucho más mantenible, es limitar la cantidad de puntos en los cuales se utilice la instrucción <code class="docutils literal notranslate"><span class="pre">return</span></code>. Por ejemplo, la última versión de la función puede remplazarse por la siguiente versión remplazando los <code class="docutils literal notranslate"><span class="pre">return</span></code> por asignaciones a una variable y dejando sólo un <code class="docutils literal notranslate"><span class="pre">return</span></code> al final de la función.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">es_positivo_de_un_solo_digito_v3</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
    <span class="n">resultado</span> <span class="o">=</span> <span class="kc">False</span>
@@ -605,7 +641,7 @@
 <p>En esta función tan pequeña no es fácil apreciar que esta nueva versión es mucho más fácil de mantener que la versión anterior. Sin embargo, nuestra recomendación es que minimice la cantidad de puntos en los cuales usted retorne un valor desde una función.</p>
 </div>
 <div class="section" id="expresiones-vs-condicionales">
-<h3>Expresiones vs. condicionales<a class="headerlink" href="#expresiones-vs-condicionales" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.4.3. </span>Expresiones vs. condicionales<a class="headerlink" href="#expresiones-vs-condicionales" title="Permalink to this headline">¶</a></h3>
 <p>En varios casos, incluyendo el que hemos estado trabajando, existen formas de remplazar las instrucciones condicionales por expresiones booleanas. Eso es lo que hemos hecho en la cuarta y última versión de la función: en lugar de calcular un resultado y luego retornarlo, acá el valor mismo de la expresión es el retorno de la función.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">es_positivo_de_un_solo_digito_v4</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
    <span class="k">return</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span>
@@ -615,10 +651,10 @@
 </div>
 </div>
 <div class="section" id="caso-de-estudio-el-mayor-de-4-numeros">
-<h2>Caso de estudio: el mayor de 4 números<a class="headerlink" href="#caso-de-estudio-el-mayor-de-4-numeros" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.5. </span>Caso de estudio: el mayor de 4 números<a class="headerlink" href="#caso-de-estudio-el-mayor-de-4-numeros" title="Permalink to this headline">¶</a></h2>
 <p>En esta sección vamos a estudiar un problema recurrente y muy importante que debe resolverse utilizando instrucciones condicionales, pero puede resolverse de maneras diferentes. Empezaremos planteándole el problema para que usted lo resuelva y luego pasaremos a discutir nuestras alternativas de solución. Esperamos que usted vaya comparando nuestras soluciones con la suya.</p>
 <div class="section" id="enunciado-del-problema">
-<h3>Enunciado del problema<a class="headerlink" href="#enunciado-del-problema" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.5.1. </span>Enunciado del problema<a class="headerlink" href="#enunciado-del-problema" title="Permalink to this headline">¶</a></h3>
 <p>Escriba una función que reciba por parámetro cuatro números enteros y devuelva el mayor de estos. Si hay dos o más iguales y mayores, retorna cualquiera de estos. La signatura de la función debe ser:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mayor</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">int</span><span class="p">:</span>
 </pre></div>
@@ -626,7 +662,7 @@
 <p>Escriba su solución y compárela con las que nosotros proponemos a continuación.</p>
 </div>
 <div class="section" id="solucion-1-multiples-returns">
-<h3>Solución 1: múltiples returns<a class="headerlink" href="#solucion-1-multiples-returns" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.5.2. </span>Solución 1: múltiples returns<a class="headerlink" href="#solucion-1-multiples-returns" title="Permalink to this headline">¶</a></h3>
 <p>La primera solución es la solución que es más natural para este problema: si nos damos cuenta que el valor <code class="docutils literal notranslate"><span class="pre">a</span></code> es mayor al valor <code class="docutils literal notranslate"><span class="pre">b</span></code> y es mayor al valor <code class="docutils literal notranslate"><span class="pre">c</span></code> y es mayor al valor <code class="docutils literal notranslate"><span class="pre">d</span></code>, entonces tiene que se que <code class="docutils literal notranslate"><span class="pre">a</span></code> es el mayor valor. Algo similar se hace con los otros parámetros.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mayor</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">int</span><span class="p">:</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="n">c</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="n">d</span><span class="p">):</span>
@@ -642,7 +678,7 @@
 <p>El problema con esta solución es que requiere mucho cuidado en su elaboración: es fácil tanto intercambiar dos variables como olvidar hacer una de las comparaciones. Esta solución además tiene como limitante que agregar un nuevo elemento para calificar requiere modificaciones sobre prácticamente toda la función.</p>
 </div>
 <div class="section" id="solucion-2-un-solo-return">
-<h3>Solución 2: un solo return<a class="headerlink" href="#solucion-2-un-solo-return" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.5.3. </span>Solución 2: un solo return<a class="headerlink" href="#solucion-2-un-solo-return" title="Permalink to this headline">¶</a></h3>
 <p>La segunda solución no dista mucho de la primera: el único cambio que se hizo fue eliminar las instrucciones <code class="docutils literal notranslate"><span class="pre">return</span></code> que estaban dentro de cada IF.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mayor</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">int</span><span class="p">:</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="n">c</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="n">d</span><span class="p">):</span>
@@ -659,7 +695,7 @@
 </div>
 </div>
 <div class="section" id="solucion-3-aproximacion-algoritmica">
-<h3>Solución 3: aproximación algorítmica<a class="headerlink" href="#solucion-3-aproximacion-algoritmica" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.5.4. </span>Solución 3: aproximación algorítmica<a class="headerlink" href="#solucion-3-aproximacion-algoritmica" title="Permalink to this headline">¶</a></h3>
 <p>La tercera solución es muy diferente de las anteriores y tiene una aproximación mucho más algorítmica, en la que los cuatro valores van analizándose uno por uno. Primero observemos con cuidado la nueva función hasta estar convencidos de que funciona.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mayor</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">int</span><span class="p">:</span>
     <span class="n">mayor</span> <span class="o">=</span> <span class="n">a</span>
@@ -683,7 +719,7 @@
 </div>
 </div>
 <div class="section" id="id3">
-<h2>Ejercicios<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.6. </span>Ejercicios<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Modifique el ejercicio que retorna el número mayor para que retorne el número del parámetro en el que se encuentra el número mayor. Si hay dos o más iguales y mayores, debe retornar el número de parámetro menor (ej. si el primer y el tercer parámetro eran los mayores, debe retornar el número 1).</p></li>
 <li><p>La calificación final de un estudiante en un curso depende de las calificaciones que obtenga en 3 exámenes, pero con unas reglas especiales. Si el estudiante sacó más de 4.0 sobre 5.00 en el tercer examen (el examen final), la nota en el curso será la nota del examen final. Si el estudiante saca menos de 2.0 en el examen final, ese examen valdrá el 50% de la nota y los otros dos exámenes valdrán el 25% cada uno. En cualquier otro caso, los exámenes pesarán lo mismo para calcular la nota final. Escriba una función que dadas las notas de los tres exámenes calcule la nota del estudiante en el curso.</p></li>
@@ -696,7 +732,7 @@
 </ol>
 </div>
 <div class="section" id="mas-alla-de-python">
-<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.7. </span>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
 <p>Además de las estructuras basadas en IF-ELIF-ELSE, muchos lenguajes ofrecen instrucciones condicionales basados en <em>switch</em> y en <em>operadores ternarios</em>. Estos últimos son de mucha utilidad porque permiten seleccionar valores basados en condiciones, pero sin tener que utilizar demasiado espacio. Por ejemplo, este código se podría usar en Java para seleccionar una cadena de caracteres basado en el valor de la variable booleana <code class="docutils literal notranslate"><span class="pre">exito</span></code>:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">respuesta</span> <span class="o">=</span> <span class="n">exito</span> <span class="o">?</span> <span class="s">&quot;sí&quot;</span><span class="p">:</span><span class="s">&quot;no&quot;</span><span class="p">;</span>
 </pre></div>
@@ -716,6 +752,25 @@
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nivel2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -725,8 +780,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="seccion2-3.html" title="previous page">Valores de verdad en Python</a>
-    <a class='right-next' id="next-link" href="seccion2-5.html" title="next page">Más sobre cadenas de caracteres</a>
+    <a class='left-prev' id="prev-link" href="seccion2-3.html" title="previous page"><span class="section-number">3.3. </span>Valores de verdad en Python</a>
+    <a class='right-next' id="next-link" href="seccion2-5.html" title="next page"><span class="section-number">3.5. </span>Más sobre cadenas de caracteres</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

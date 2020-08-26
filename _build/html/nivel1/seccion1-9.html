@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Lógica vs. Interacción &#8212; Introducción a la Programación</title>
+    <title>2.9. Lógica vs. Interacción &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,11 +31,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel1/seccion1-9.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Errores frecuentes" href="seccion1-10.html" />
-    <link rel="prev" title="Un programa para leer (2)" href="seccion1-8.html" />
+    <link rel="next" title="2.10. Errores frecuentes" href="seccion1-10.html" />
+    <link rel="prev" title="2.8. Un programa para leer (2)" href="seccion1-8.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -47,7 +55,7 @@
 <meta property="og:description" content="Lógica vs. Interacción  Versión borrador / preliminar  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tien" />
 <meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -76,95 +84,108 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../portada.html">1. Portada</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Antes de empezar</p>
-</li>
-  <li class="">
-    <a href="../introduccion/index.html">2. Introducción</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 1</p>
-</li>
-  <li class="active">
-    <a href="intro.html">3. Empezando a programar</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="seccion1-1.html">3.1 Un programa para leer</a>
-    </li>
-    <li class="">
-      <a href="seccion1-2.html">3.2 Ambiente básico de trabajo</a>
-    </li>
-    <li class="">
-      <a href="seccion1-3.html">3.3 Valores y tipos de datos</a>
-    </li>
-    <li class="">
-      <a href="seccion1-4.html">3.4 Variables, expresiones y operadores</a>
-    </li>
-    <li class="">
-      <a href="seccion1-5.html">3.5 Funciones</a>
-    </li>
-    <li class="">
-      <a href="seccion1-6.html">3.6 Definición de funciones</a>
-    </li>
-    <li class="">
-      <a href="seccion1-7.html">3.7 Estilo de programación</a>
-    </li>
-    <li class="">
-      <a href="seccion1-8.html">3.8 Un programa para leer (2)</a>
-    </li>
-    <li class="active">
-      <a href="">3.9 Lógica vs. Interacción</a>
-    </li>
-    <li class="">
-      <a href="seccion1-10.html">3.10 Errores frecuentes</a>
-    </li>
-    <li class="">
-      <a href="seccion1-11.html">3.11 Ejercicios adicionales</a>
-    </li>
-  </ul>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 1</p>
-</li>
-  <li class="">
-    <a href="../nivel01a/index.html">4. Descomposición de programas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 2</p>
-</li>
-  <li class="">
-    <a href="../nivel2/intro.html">5. Tomando decisiones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 2</p>
-</li>
-  <li class="">
-    <a href="../nivel02a/index.html">6. Plan de Pruebas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 3</p>
-</li>
-  <li class="">
-    <a href="../nivel3/intro.html">7. Repitiendo acciones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 3</p>
-</li>
-  <li class="">
-    <a href="../nivel03a/index.html">8. Dividir y  Conquistar</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 4</p>
-</li>
-  <li class="">
-    <a href="../nivel4/intro.html">9. Matrices y Librerías</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portada.html">
+   Portada
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Contenido
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduccion/index.html">
+   1. Nivel 0 - Antes de empezar
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   2. Nivel 1 - Empezando a programar
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-1.html">
+     2.1. Un programa para leer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-2.html">
+     2.2. Ambiente básico de trabajo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-3.html">
+     2.3. Valores y tipos de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-4.html">
+     2.4. Variables, expresiones y operadores
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-5.html">
+     2.5. Funciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-6.html">
+     2.6. Definición de funciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-7.html">
+     2.7. Estilo de programación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-8.html">
+     2.8. Un programa para leer (2)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.9. Lógica vs. Interacción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-10.html">
+     2.10. Errores frecuentes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-10.html#para-no-olvidar">
+     2.11. Para no olvidar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-11.html">
+     2.12. Ejercicios adicionales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel2/intro.html">
+   3. Nivel 2 - Tomando decisiones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel3/intro.html">
+   4. Nivel 3 - Repitiendo acciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel4/intro.html">
+   5. Nivel 4 - Matrices y Librerías
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -221,48 +242,54 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#separacion-de-la-logica-y-la-interfaz">
+   2.9.1. Separación de la lógica y la interfaz
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementacion-de-modulos-separados">
+   2.9.2. Implementación de módulos separados
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funciones-de-la-interfaz">
+   2.9.3. Funciones de la interfaz
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funciones-sin-parametros">
+     2.9.3.1. Funciones sin parámetros
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funciones-sin-retorno">
+     2.9.3.2. Funciones sin retorno
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   2.9.4. Ejercicios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mas-alla-de-python">
+   2.9.5. Más allá de Python
+  </a>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#separacion-de-la-logica-y-la-interfaz" class="nav-link">Separación de la lógica y la interfaz</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#implementacion-de-modulos-separados" class="nav-link">Implementación de módulos separados</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#funciones-de-la-interfaz" class="nav-link">Funciones de la interfaz</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#funciones-sin-parametros" class="nav-link">Funciones sin parámetros</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#funciones-sin-retorno" class="nav-link">Funciones sin retorno</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#ejercicios" class="nav-link">Ejercicios</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#mas-alla-de-python" class="nav-link">Más allá de Python</a>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -271,7 +298,7 @@
               <div>
                 
   <div class="section" id="logica-vs-interaccion">
-<h1>Lógica vs. Interacción<a class="headerlink" href="#logica-vs-interaccion" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.9. </span>Lógica vs. Interacción<a class="headerlink" href="#logica-vs-interaccion" title="Permalink to this headline">¶</a></h1>
 <div class="warning admonition">
 <p class="admonition-title">Versión borrador / preliminar</p>
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
@@ -288,8 +315,8 @@
 <p>Es posible que en este momento sea difícil para usted imaginarse la complejidad de un gran desarrollo porque hasta ahora sólo ha trabajado con pequeños programas. Con el tiempo se dará cuenta que las recomendaciones para organizar sus programas son tremendamente valiosas y que le ahorrarán mucho trabajo en el futuro. <strong>Acostúmbrese a estructurar bien sus programas mientras sean pequeños, para que sea natural hacerlo cuando sean grandes.</strong></p>
 <p>En esta sección estudiaremos una primera técnica para propiciar la mantenibilidad de los programas. Incidentalmente, para explicar esta técnica tendremos que introducir el concepto de <em>módulo</em> en Python.</p>
 <div class="section" id="separacion-de-la-logica-y-la-interfaz">
-<h2>Separación de la lógica y la interfaz<a class="headerlink" href="#separacion-de-la-logica-y-la-interfaz" title="Permalink to this headline">¶</a></h2>
-<p>Como hasta el momento hemos construido programas relativamente pequeños, hemos usado un solo archivo para cada uno. A partir de este momento vamos a empezar a separar programa en dos módulos: uno para manejar la interacción con el usuario (pedirle datos, mostrarle información, etc.) y otro para manejar todo lo que consideramos la lógica del programa, es decir las instrucciones que son realmente el centro conceptual del programa.</p>
+<h2><span class="section-number">2.9.1. </span>Separación de la lógica y la interfaz<a class="headerlink" href="#separacion-de-la-logica-y-la-interfaz" title="Permalink to this headline">¶</a></h2>
+<p>Como hasta el momento hemos construido programas relativamente pequeños, hemos usado un solo archivo para cada uno. A partir de este momento vamos a empezar a separar los programas en dos módulos: uno para manejar la interacción con el usuario (pedirle datos, mostrarle información, etc.) y otro para manejar todo lo que consideramos la lógica del programa, es decir las instrucciones que son realmente el centro conceptual del programa.</p>
 <p>Consideremos a modo de ejemplo, un programa que sirva para procesar información de un censo de población. El módulo con la interfaz de este programa servirá para que el usuario seleccione qué información quiere consultar y le mostrará las gráficas y tablas correspondientes. Por otro lado, la lógica del programa se encargará de calcular estadísticas, procesar los archivos y generar (¡no visualizar!) las gráficas que requiera el usuario.</p>
 <p>Hay múltiples razones por los cuales esta separación es adecuada para programas como los que vamos a construir en este curso. La primera tiene que ver con el tipo de cosas que se hace en cada parte: mientras que en la interfaz todas las acciones deberían estar orientadas a interactuar con el usuario, en la lógica del programa hacemos cosas mucho más variadas. Con esto logramos que en cada módulo todo lo que hacemos esté relacionado: en lugar de tener funciones que le pidan información al usuario, hagan cálculos complejos y luego muestren el resultado, podemos tener en un módulo funciones dedicadas a la interacción y en otro módulo funciones dedicadas a hacer los cálculos.</p>
 <p>Esta coherencia (o cohesión) termina llevando a programas que son mucho más fáciles de mantener porque dependiendo del tipo de error que se presente sabremos mejor dónde se debe corregir el código. La coherencia también se puede ver en el tipo de funciones que se utilizan: mientras en una interfaz basada en consola encontraremos muchos llamados a las funciones <code class="docutils literal notranslate"><span class="pre">print</span></code> e <code class="docutils literal notranslate"><span class="pre">input</span></code>, dentro de la lógica del programa encontraremos llamados muy diferentes que dependerán del problema que estemos resolviendo.</p>
@@ -297,7 +324,7 @@
 <p>Otro motivo para utilizar esta separación tiene que ver con la reutilización. Veremos más adelante que las interfaces de muchos programas son muy similares y que hay mucho código que fácilmente se puede adaptar para utilizar en un nuevo programa. Si la interfaz estuviera mezclada con la lógica, esta reutilización sería mucho más difícil.</p>
 </div>
 <div class="section" id="implementacion-de-modulos-separados">
-<h2>Implementación de módulos separados<a class="headerlink" href="#implementacion-de-modulos-separados" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.9.2. </span>Implementación de módulos separados<a class="headerlink" href="#implementacion-de-modulos-separados" title="Permalink to this headline">¶</a></h2>
 <p>Veamos ahora cómo se implementa en Python la separación  entre la interfaz y la lógica de los programas. Para esto, tomaremos el programa ‘saludar.py’ que ya conocemos de una sección anterior:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
    <span class="k">return</span> <span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span>
@@ -366,10 +393,10 @@
 <p><img alt="" src="../_images/interfaz_saludar.png" /></p>
 </div>
 <div class="section" id="funciones-de-la-interfaz">
-<h2>Funciones de la interfaz<a class="headerlink" href="#funciones-de-la-interfaz" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.9.3. </span>Funciones de la interfaz<a class="headerlink" href="#funciones-de-la-interfaz" title="Permalink to this headline">¶</a></h2>
 <p>En una sección anterior hablamos de la conveniencia de tener funciones sin parámetros o funciones sin retorno. En esta sección podemos retomar la discusión puesto que es precisamente en el módulo que implementa la interfaz de un programa donde tiene más sentido incluir este tipo de funciones.</p>
 <div class="section" id="funciones-sin-parametros">
-<h3>Funciones sin parámetros<a class="headerlink" href="#funciones-sin-parametros" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.9.3.1. </span>Funciones sin parámetros<a class="headerlink" href="#funciones-sin-parametros" title="Permalink to this headline">¶</a></h3>
 <p>Como dijimos antes, una función sin parámetros no tendría sentido dentro de la definición matemática de función. En el caso de Python, una función cuyo resultado no dependiera de ningún valor externo tampoco tendría mucho sentido; sería mucho más eficiente y claro implementarlo como una constante.</p>
 <p>Sin embargo, dentro del módulo de la interfaz sí puede ser conveniente tener funciones sin parámetros. Tomemos como ejemplo el siguiente fragmento de código:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">libreria</span>
@@ -385,7 +412,7 @@
 <p>Esta situación es muy frecuente dentro de los módulos que implementan la interfaz y que reciben información del usuario. Desconfíe de una función que no reciba parámetros y se encuentre mezclada con funciones que tengan que ver con la lógica de la aplicación: probablemente sea un error de diseño y sea necesario cambiar la signatura de la función.</p>
 </div>
 <div class="section" id="funciones-sin-retorno">
-<h3>Funciones sin retorno<a class="headerlink" href="#funciones-sin-retorno" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.9.3.2. </span>Funciones sin retorno<a class="headerlink" href="#funciones-sin-retorno" title="Permalink to this headline">¶</a></h3>
 <p>En el módulo donde se implementa la interfaz también es posible tener funciones que no tengan un retorno. Estas funciones se suelen llamar <em>procedimientos</em> porque no cumplen con la característica básica de una función de producir un resultado.</p>
 <p>El siguiente fragmento nos muestra una función de la interfaz que no tiene un retorno:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mostrar_resultado</span><span class="p">(</span><span class="n">resultado</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -397,7 +424,7 @@
 </div>
 </div>
 <div class="section" id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.9.4. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>¿Sólo con base en la signatura y lo que sabe hasta ahora, usted pondría las siguientes funciones en el módulo de la interfaz o en la librería de su programa?</p></li>
 </ol>
@@ -409,7 +436,7 @@
 </ul>
 </div>
 <div class="section" id="mas-alla-de-python">
-<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.9.5. </span>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
 <p>La primera parte de esta sección introdujo algunos temas relativamente avanzados que tienen que ver con una gran área de trabajo dentro de la informática llamada <em>Ingeniería de Software</em>. La principal preocupación de esta área es cómo hacer para construir de forma eficiente software con calidad, lo cual implica considerar aspectos como la forma de estructurar el software, las metodologías de trabajo en los proyectos de desarrollo, las técnicas para diseñar interfaces que ofrezcan una buena experiencia a los usuarios, y hasta la psicología de los desarrolladores.</p>
 <p>Es indudable que la selección de los lenguajes de programación que se usen tiene un impacto en muchos de los otros aspectos que son de interés para la Ingeniería de Software. Por ejemplo, el uso de un lenguaje como Python parece acelerar el desarrollo de programas pequeños, pero complica el mantenimiento de programas grandes debido a factores como el uso de un sistema de tipado dinámico.</p>
 <p>Esto no quiere decir que no se pueda usar Python exitosamente para proyectos grandes. Lo que queremos decir es que la selección del lenguaje de programación debe tener en cuenta una gran cantidad de factores que van mucho más allá de cuál es el lenguaje de moda, cuál es el lenguaje que conocemos o cuál es el lenguaje que nos gustaría aprender. Todos los lenguajes tienen ventajas y desventajas que se deben sopesar cuidadosamente, y después de tomar una decisión cualquier proyecto debería introducir instrumentos para mitigar los riesgos o el impacto cuando se materialicen esos riesgos.</p>
@@ -433,6 +460,25 @@
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nivel1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -442,8 +488,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="seccion1-8.html" title="previous page">Un programa para leer (2)</a>
-    <a class='right-next' id="next-link" href="seccion1-10.html" title="next page">Errores frecuentes</a>
+    <a class='left-prev' id="prev-link" href="seccion1-8.html" title="previous page"><span class="section-number">2.8. </span>Un programa para leer (2)</a>
+    <a class='right-next' id="next-link" href="seccion1-10.html" title="next page"><span class="section-number">2.10. </span>Errores frecuentes</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

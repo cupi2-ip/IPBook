@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Ambiente básico de trabajo &#8212; Introducción a la Programación</title>
+    <title>2.2. Ambiente básico de trabajo &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,11 +31,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel1/seccion1-2.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Valores y tipos de datos" href="seccion1-3.html" />
-    <link rel="prev" title="Un programa para leer" href="seccion1-1.html" />
+    <link rel="next" title="2.3. Valores y tipos de datos" href="seccion1-3.html" />
+    <link rel="prev" title="2.1. Un programa para leer" href="seccion1-1.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -47,7 +55,7 @@
 <meta property="og:description" content="Ambiente básico de trabajo  Versión borrador / preliminar  Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si " />
 <meta property="og:image"       content="http://cupi2-ip.github.io/IPBook/_static/uniandes_logo.jpeg" />
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -76,95 +84,108 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../portada.html">1. Portada</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Antes de empezar</p>
-</li>
-  <li class="">
-    <a href="../introduccion/index.html">2. Introducción</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 1</p>
-</li>
-  <li class="active">
-    <a href="intro.html">3. Empezando a programar</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="seccion1-1.html">3.1 Un programa para leer</a>
-    </li>
-    <li class="active">
-      <a href="">3.2 Ambiente básico de trabajo</a>
-    </li>
-    <li class="">
-      <a href="seccion1-3.html">3.3 Valores y tipos de datos</a>
-    </li>
-    <li class="">
-      <a href="seccion1-4.html">3.4 Variables, expresiones y operadores</a>
-    </li>
-    <li class="">
-      <a href="seccion1-5.html">3.5 Funciones</a>
-    </li>
-    <li class="">
-      <a href="seccion1-6.html">3.6 Definición de funciones</a>
-    </li>
-    <li class="">
-      <a href="seccion1-7.html">3.7 Estilo de programación</a>
-    </li>
-    <li class="">
-      <a href="seccion1-8.html">3.8 Un programa para leer (2)</a>
-    </li>
-    <li class="">
-      <a href="seccion1-9.html">3.9 Lógica vs. Interacción</a>
-    </li>
-    <li class="">
-      <a href="seccion1-10.html">3.10 Errores frecuentes</a>
-    </li>
-    <li class="">
-      <a href="seccion1-11.html">3.11 Ejercicios adicionales</a>
-    </li>
-  </ul>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 1</p>
-</li>
-  <li class="">
-    <a href="../nivel01a/index.html">4. Descomposición de programas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 2</p>
-</li>
-  <li class="">
-    <a href="../nivel2/intro.html">5. Tomando decisiones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 2</p>
-</li>
-  <li class="">
-    <a href="../nivel02a/index.html">6. Plan de Pruebas</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 3</p>
-</li>
-  <li class="">
-    <a href="../nivel3/intro.html">7. Repitiendo acciones</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interludio 3</p>
-</li>
-  <li class="">
-    <a href="../nivel03a/index.html">8. Dividir y  Conquistar</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Nivel 4</p>
-</li>
-  <li class="">
-    <a href="../nivel4/intro.html">9. Matrices y Librerías</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portada.html">
+   Portada
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Contenido
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduccion/index.html">
+   1. Nivel 0 - Antes de empezar
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   2. Nivel 1 - Empezando a programar
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-1.html">
+     2.1. Un programa para leer
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.2. Ambiente básico de trabajo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-3.html">
+     2.3. Valores y tipos de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-4.html">
+     2.4. Variables, expresiones y operadores
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-5.html">
+     2.5. Funciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-6.html">
+     2.6. Definición de funciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-7.html">
+     2.7. Estilo de programación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-8.html">
+     2.8. Un programa para leer (2)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-9.html">
+     2.9. Lógica vs. Interacción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-10.html">
+     2.10. Errores frecuentes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-10.html#para-no-olvidar">
+     2.11. Para no olvidar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="seccion1-11.html">
+     2.12. Ejercicios adicionales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel2/intro.html">
+   3. Nivel 2 - Tomando decisiones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel3/intro.html">
+   4. Nivel 3 - Repitiendo acciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../nivel4/intro.html">
+   5. Nivel 4 - Matrices y Librerías
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -221,48 +242,54 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ide-integrated-development-environment">
+   2.2.1. IDE - Integrated Development Environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interprete">
+   2.2.2. Intérprete
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repl-para-python">
+   2.2.3. REPL para Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linea-de-comandos-terminal-consola">
+   2.2.4. Línea de comandos / terminal / consola
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#otras-herramientas">
+   2.2.5. Otras herramientas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#manejador-de-paquetes">
+     2.2.5.1. Manejador de paquetes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notebooks">
+     2.2.5.2. Notebooks
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#ide-integrated-development-environment" class="nav-link">IDE - Integrated Development Environment</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#interprete" class="nav-link">Intérprete</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#repl-para-python" class="nav-link">REPL para Python</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#linea-de-comandos-terminal-consola" class="nav-link">Línea de comandos / terminal / consola</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#otras-herramientas" class="nav-link">Otras herramientas</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#manejador-de-paquetes" class="nav-link">Manejador de paquetes</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#notebooks" class="nav-link">Notebooks</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -271,7 +298,7 @@
               <div>
                 
   <div class="section" id="ambiente-basico-de-trabajo">
-<h1>Ambiente básico de trabajo<a class="headerlink" href="#ambiente-basico-de-trabajo" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.2. </span>Ambiente básico de trabajo<a class="headerlink" href="#ambiente-basico-de-trabajo" title="Permalink to this headline">¶</a></h1>
 <div class="warning admonition">
 <p class="admonition-title">Versión borrador / preliminar</p>
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
@@ -283,10 +310,10 @@
 <p>Para escribir programas es necesario utilizar unas herramientas que pueden variar dependiendo del lenguaje de programación. Incluso, para el mismo lenguaje es normal que existan muchas alternativas: no es necesario conocerlas todas, pero sí es importante poder utilizar al menos una con destreza.</p>
 <p>En el caso de Python, lo usual es que se utilicen los siguientes elementos.</p>
 <div class="section" id="ide-integrated-development-environment">
-<h2>IDE - Integrated Development Environment<a class="headerlink" href="#ide-integrated-development-environment" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.1. </span>IDE - Integrated Development Environment<a class="headerlink" href="#ide-integrated-development-environment" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="spyder">
 <a class="reference internal image-reference" href="../_images/spyder.png"><img alt="../_images/spyder.png" src="../_images/spyder.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Captura de pantalla de Spyder</span><a class="headerlink" href="#spyder" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Captura de pantalla de Spyder</span><a class="headerlink" href="#spyder" title="Permalink to this image">¶</a></p>
 </div>
 <p>Un ambiente integrado de desarrollo es un programa que integra muchas herramientas que se requieren para programar con facilidad. El elemento más importante de un IDE es un editor enriquecido para el lenguaje, que es capaz de marcar errores de sintaxis y que utilice colores, entre otras ayudas, para facilitar la comprensión del código. Otras herramientas que se encuentran usualmente en un IDE son un depurador (para seguir la traza de una ejecución), un explorador de archivos y un mecanismo para ejecutar los programas con facilidad.</p>
 <p>En este libro utilizaremos un IDE para Python llamado Spyder que, aunque no es el IDE más poderoso disponible, tiene muchas características que lo hacen propicio para aprender a programar:</p>
@@ -301,19 +328,19 @@
 <p>Otros IDE populares que están disponibles en este momento para desarrollar programas en Python incluyen Visual Studio Code, PyCharm, Eclipse (+PyDev) y VIM. Si tiene la oportunidad de escoger el IDE que va a usar, asegúrese de entender las capacidades que tenga (por ejemplo para completar código y hacer <em>debugging</em>), la compatibilidad con otras herramientas, y el tipo de licencia que esté disponible.</p>
 </div>
 <div class="section" id="interprete">
-<h2>Intérprete<a class="headerlink" href="#interprete" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.2. </span>Intérprete<a class="headerlink" href="#interprete" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/hola_mundo1.png"><img alt="../_images/hola_mundo1.png" src="../_images/hola_mundo1.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Ejecución del primer programa</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Ejecución del primer programa</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Python es un lenguaje interpretado <a class="footnote-reference brackets" href="#interpretado" id="id2">1</a>: esto significa que para correr los programas escritos en Python es necesario que otro programa llamado intérprete los ejecute. En la <a class="reference internal" href="#id1"><span class="std std-numref">figura 7</span></a> se puede ver que se corrió un programa que se escribió en el archivo <code class="docutils literal notranslate"><span class="pre">hola_mundo.py</span></code> usando el intérprete de Python que se invocó con el comando <code class="docutils literal notranslate"><span class="pre">python</span></code>.</p>
+<p>Python es un lenguaje interpretado <a class="footnote-reference brackets" href="#interpretado" id="id2">1</a>: esto significa que para correr los programas escritos en Python es necesario que otro programa llamado intérprete los ejecute. En la <a class="reference internal" href="#id1"><span class="std std-numref">figura 2.2</span></a> se puede ver que se corrió un programa que se escribió en el archivo <code class="docutils literal notranslate"><span class="pre">hola_mundo.py</span></code> usando el intérprete de Python que se invocó con el comando <code class="docutils literal notranslate"><span class="pre">python</span></code>.</p>
 <p>Cada lenguaje de programación interpretado tiene su propio intérprete, e incluso puede haber varios intérpretes diferentes para el mismo lenguaje. En este libro vamos a suponer que usted está usando el intérprete básico, pero para Python hay varios adicionales que tienen características especiales como ser más rápidos, o requerir menos memoria, o incluso correr en plataformas especiales como plataformas de prototipado electrónico (ej. ESP8266 y ESP32) <a class="footnote-reference brackets" href="#js" id="id3">2</a>.</p>
 </div>
 <div class="section" id="repl-para-python">
-<h2>REPL para Python<a class="headerlink" href="#repl-para-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.3. </span>REPL para Python<a class="headerlink" href="#repl-para-python" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="repl">
 <a class="reference internal image-reference" href="../_images/repl.png"><img alt="../_images/repl.png" src="../_images/repl.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">REPL de Python</span><a class="headerlink" href="#repl" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">REPL de Python</span><a class="headerlink" href="#repl" title="Permalink to this image">¶</a></p>
 </div>
 <p>Como en el caso de otros lenguajes interpretados, Python ofrece una herramienta de tipo <strong>REPL</strong>, la cual permite que un usuario interactúe con el lenguaje y vaya ejecutando instrucciones una por una. La sigla REPL hace referencia al orden en el que se van realizando las operaciones:</p>
 <ul class="simple">
@@ -331,7 +358,7 @@
 <p>El otro REPL para Python ampliamente utilizado se llama IPython y es el que está embebido dentro de Spyder. También puede ejecutarse desde la línea de comandos usando el comando <code class="docutils literal notranslate"><span class="pre">ipython</span></code>. Aunque IPython tiene algunas ventajas sobre el REPL normal, no son realmente significativas cuando apenas se está aprendiendo a programar. Usted reconocerá que estamos usando IPython en lugar del REPL normal porque en lugar de los caracter <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> aparece el número de la instrucción que se está ejecutando y se separan las instrucciones ingresadas (<code class="docutils literal notranslate"><span class="pre">IN</span></code>) del resultado de la ejecución (<code class="docutils literal notranslate"><span class="pre">OUT</span></code>) :</p>
 <div class="figure align-default" id="ipython">
 <a class="reference internal image-reference" href="../_images/ipython.png"><img alt="../_images/ipython.png" src="../_images/ipython.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Captura de pantalla de IPython</span><a class="headerlink" href="#ipython" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4 </span><span class="caption-text">Captura de pantalla de IPython</span><a class="headerlink" href="#ipython" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Actividades:</strong></p>
 <ol class="simple">
@@ -341,40 +368,40 @@
 </ol>
 </div>
 <div class="section" id="linea-de-comandos-terminal-consola">
-<h2>Línea de comandos / terminal / consola<a class="headerlink" href="#linea-de-comandos-terminal-consola" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.4. </span>Línea de comandos / terminal / consola<a class="headerlink" href="#linea-de-comandos-terminal-consola" title="Permalink to this headline">¶</a></h2>
 <p>La última herramienta que probablemente tenga que usar cuando esté programando es la línea de comandos del sistema operativo. Esto también se conoce como la terminal o la consola y es un ambiente <em>no gráfico</em> interactivo que le permite ejecutar comandos directamente sobre el sistema operativo. Entre otras muchas opciones, desde la línea de comandos usted puede ejecutar programas, trabajar con el sistema de archivos (crear, renombrar, mover, eliminar y hasta editar archivos) y utilizar una gran cantidad de utilidades.</p>
 <p>Para los que nunca la han utilizado, usar la línea de comandos suele parecer incómodo y difícil. La realidad es que su uso eficiente requiere un tiempo de práctica, pero después termina siendo mucho más rápido para hacer ciertas tareas que utilizar un ambiente gráfico y el mouse. Por ejemplo, imagine que en una carpeta suya hubiera una colección de 500 fotos y que usted quisiera tener versiones reducidas de esas imágenes (<em>previews</em>, <em>thumbnails</em>). Normalmente a usted le tomaría una buena cantidad de clics abrir cada una de esas fotos y cambiarle el tamaño. Desde la línea de comandos de OS X usted simplemente puede usar el comando <code class="docutils literal notranslate"><span class="pre">sips</span> <span class="pre">-Z</span> <span class="pre">120</span> <span class="pre">*.png</span></code> y realizar la operación sobre todas las imágenes.</p>
 <p>El objetivo de esta sección no es explicar en detalle el funcionamiento de las líneas de comandos de cada sistema operativo, sino mostrarle que existen e invitarlo para que estudie por su cuenta su funcionamiento.</p>
 <p>En Windows, la línea de comandos se invoca corriendo el programa <code class="docutils literal notranslate"><span class="pre">cmd</span></code>.</p>
 <div class="figure align-default" id="cmd">
 <a class="reference internal image-reference" href="../_images/cmd.png"><img alt="../_images/cmd.png" src="../_images/cmd.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Línea de comandos en Windows: cmd</span><a class="headerlink" href="#cmd" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.5 </span><span class="caption-text">Línea de comandos en Windows: cmd</span><a class="headerlink" href="#cmd" title="Permalink to this image">¶</a></p>
 </div>
 <p>En MacOS X, la línea de comandos se invoca corriendo el programa <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>.</p>
 <div class="figure align-default" id="terminal">
 <a class="reference internal image-reference" href="../_images/terminal.png"><img alt="../_images/terminal.png" src="../_images/terminal.png" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Línea de comandos en MacOS X: Terminal</span><a class="headerlink" href="#terminal" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.6 </span><span class="caption-text">Línea de comandos en MacOS X: Terminal</span><a class="headerlink" href="#terminal" title="Permalink to this image">¶</a></p>
 </div>
 <p>En Linux, la línea de comandos suele estar corriendo todo el tiempo, pero dependiendo de la distribución que esté usando se llega a ella de formas diferentes.</p>
 </div>
 <div class="section" id="otras-herramientas">
-<h2>Otras herramientas<a class="headerlink" href="#otras-herramientas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.5. </span>Otras herramientas<a class="headerlink" href="#otras-herramientas" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="manejador-de-paquetes">
-<h3>Manejador de paquetes<a class="headerlink" href="#manejador-de-paquetes" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.5.1. </span>Manejador de paquetes<a class="headerlink" href="#manejador-de-paquetes" title="Permalink to this headline">¶</a></h3>
 <p>En el mundo de la programación, una de las cosas más complejas de manejar son las dependencias hacia otros programas. En este libro veremos cómo nuestros programas poco a poco van a volverse más complicados y vamos a empezar a integrar programas construidos por otros desarrolladores. Para lidiar con esa complejidad existen herramientas llamadas <em>manejadores de paquetes</em>.</p>
-<p>En el mundo de Python hay dos manejadores de paquetes que se usan principalmente. El primero se llama <code class="docutils literal notranslate"><span class="pre">pip</span></code> <a class="reference external" href="https://pypi.org/">https://pypi.org/</a> y es capaz de buscar, instalar, actualizar y desinstalar paquetes disponibles en el Python Package Index <a class="reference external" href="https://pypi.org/">https://pypi.org/</a>. Como se ve en la <a class="reference internal" href="#pip"><span class="std std-numref">figura 12</span></a>, usando <code class="docutils literal notranslate"><span class="pre">pip</span></code> es posible instalar un paquete y todas sus dependencias utilizando un solo comando.</p>
+<p>En el mundo de Python hay dos manejadores de paquetes que se usan principalmente. El primero se llama <code class="docutils literal notranslate"><span class="pre">pip</span></code> y es capaz de buscar, instalar, actualizar y desinstalar paquetes disponibles en el Python Package Index <a class="reference external" href="https://pypi.org/">https://pypi.org/</a>. Como se ve en la <a class="reference internal" href="#pip"><span class="std std-numref">figura 2.7</span></a>, usando <code class="docutils literal notranslate"><span class="pre">pip</span></code> es posible instalar un paquete y todas sus dependencias utilizando un solo comando.</p>
 <div class="figure align-default" id="pip">
 <a class="reference internal image-reference" href="../_images/pip.png"><img alt="../_images/pip.png" src="../_images/pip.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Ejemplo de uso de pip para instalar el paquete ‘pyroids’ y sus dependencias.</span><a class="headerlink" href="#pip" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.7 </span><span class="caption-text">Ejemplo de uso de pip para instalar el paquete ‘pyroids’ y sus dependencias.</span><a class="headerlink" href="#pip" title="Permalink to this image">¶</a></p>
 </div>
 <p>El otro manejador de paquetes ampliamente utilizado es <code class="docutils literal notranslate"><span class="pre">conda</span></code>, que utiliza el repositorio de paquetes de Anaconda <a class="reference external" href="https://repo.anaconda.com/">https://repo.anaconda.com/</a>: si usted instaló Python en su computador utilizando Anaconda, probablemente sea buena idea que utilice <code class="docutils literal notranslate"><span class="pre">conda</span></code> para manejar la instalación de paquetes en su máquina.</p>
 </div>
 <div class="section" id="notebooks">
-<h3>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this headline">¶</a></h3>
-<p>En el mundo Python es frecuente que en lugar de utilizar un IDE, donde cada programa se construye en uno o varios archivos python, se utilicen unas estructuras llamadas <strong>notebooks</strong>. En síntesis, un <strong>notebook</strong> es un archivo  que se lee y se edita a través de una aplicación web y que puede mezclar texto con fragmentos de código que se pueden ejecutar dentro del notebook. La <a class="reference internal" href="#id4"><span class="std std-numref">figura 13</span></a> muestra una captura de pantalla de un notebook en uso: tiene una <em>celda</em> en la que hay un texto con formato y luego tiene una <em>celda</em> con un fragmento de un programa y con el resultado de su ejecución abajo.</p>
+<h3><span class="section-number">2.2.5.2. </span>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this headline">¶</a></h3>
+<p>En el mundo Python es frecuente que en lugar de utilizar un IDE, donde cada programa se construye en uno o varios archivos python, se utilicen unas estructuras llamadas <strong>notebooks</strong>. En síntesis, un <strong>notebook</strong> es un archivo  que se lee y se edita a través de una aplicación web y que puede mezclar texto con fragmentos de código que se pueden ejecutar dentro del notebook. La <a class="reference internal" href="#id4"><span class="std std-numref">figura 2.8</span></a> muestra una captura de pantalla de un notebook en uso: tiene una <em>celda</em> en la que hay un texto con formato y luego tiene una <em>celda</em> con un fragmento de un programa y con el resultado de su ejecución abajo.</p>
 <div class="figure align-default" id="id4">
 <a class="reference internal image-reference" href="../_images/notebooks.png"><img alt="../_images/notebooks.png" src="../_images/notebooks.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Captura de pantalla de un <em>notebook</em> con Jupyter</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.8 </span><span class="caption-text">Captura de pantalla de un <em>notebook</em> con Jupyter</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>Si quiere saber más sobre notebooks puede visitar la página del proyecto Jupyter, los cuales desarrollan la principal herramienta para soportar notebooks: <a class="reference external" href="https://jupyter.org/">https://jupyter.org/</a>. Sin embargo, su instalación y uso puede no ser tan fácil para un principiante.</p>
 <hr class="docutils" />
@@ -390,6 +417,25 @@
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nivel1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -399,8 +445,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="seccion1-1.html" title="previous page">Un programa para leer</a>
-    <a class='right-next' id="next-link" href="seccion1-3.html" title="next page">Valores y tipos de datos</a>
+    <a class='left-prev' id="prev-link" href="seccion1-1.html" title="previous page"><span class="section-number">2.1. </span>Un programa para leer</a>
+    <a class='right-next' id="next-link" href="seccion1-3.html" title="next page"><span class="section-number">2.3. </span>Valores y tipos de datos</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
