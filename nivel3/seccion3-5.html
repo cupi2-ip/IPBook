@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>4.5. Recorrido de secuencias &#8212; Introducción a la Programación</title>
+    <title>Recorrido de secuencias &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -41,8 +41,6 @@
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel3/seccion3-5.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.6. Más algorítmica" href="seccion3-6.html" />
-    <link rel="prev" title="4.4. Slicing" href="seccion3-4.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -96,7 +94,7 @@
   Contenido
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../introduccion/index.html">
    1. Nivel 0 - Antes de empezar
@@ -112,77 +110,10 @@
    3. Nivel 2 - Tomando decisiones
   </a>
  </li>
- <li class="toctree-l1 current active">
+ <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    4. Nivel 3 - Repitiendo acciones
   </a>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-1.html">
-     4.1. Un programa para leer
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-2.html">
-     4.2. Instrucciones repetidas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-3.html">
-     4.3. Listas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-4.html">
-     4.4. Slicing
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     4.5. Recorrido de secuencias
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-6.html">
-     4.6. Más algorítmica
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-7.html">
-     4.7. Archivos
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-8.html">
-     4.8. Nociones de complejidad
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-9.html">
-     4.9. Un programa para leer (2)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-10.html">
-     4.10. Más sobre parámetros en Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-11.html">
-     4.11. Errores frecuentes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-11.html#para-no-olvidar">
-     4.12. Para no olvidar
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-12.html">
-     4.13. Ejercicios adicionales
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../nivel4/intro.html">
@@ -257,73 +188,73 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#for-in-secuencia">
-   4.5.1. For-in-secuencia
+   For-in-secuencia
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#recorrido-con-elemento-y-posicion">
-   4.5.2. Recorrido con elemento y posición
+   Recorrido con elemento y posición
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#opcion-1-usando-un-while">
-     4.5.2.1. Opción 1: Usando un while
+     Opción 1: Usando un while
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#opcion-2-usando-un-for-in-range">
-     4.5.2.2. Opción 2: Usando un for-in-range
+     Opción 2: Usando un for-in-range
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#opcion-3-usando-enumerate">
-     4.5.2.3. Opción 3: Usando enumerate
+     Opción 3: Usando enumerate
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#recorrido-de-diccionarios">
-   4.5.3. Recorrido de diccionarios
+   Recorrido de diccionarios
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#recorrido-natural-llaves">
-     4.5.3.1. Recorrido natural (llaves)
+     Recorrido natural (llaves)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#recorrido-de-los-valores">
-     4.5.3.2. Recorrido de los valores
+     Recorrido de los valores
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#recorrido-de-las-parejas">
-     4.5.3.3. Recorrido de las parejas
+     Recorrido de las parejas
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#estructuras-complejas">
-   4.5.4. Estructuras complejas
+   Estructuras complejas
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#diccionario-de-diccionarios">
-     4.5.4.1. Diccionario de diccionarios
+     Diccionario de diccionarios
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios">
-   4.5.5. Ejercicios
+   Ejercicios
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mas-alla-de-python">
-   4.5.6. Más allá de Python
+   Más allá de Python
   </a>
  </li>
 </ul>
@@ -341,7 +272,7 @@
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
 </div>
 <div class="section" id="recorrido-de-secuencias">
-<h1><span class="section-number">4.5. </span>Recorrido de secuencias<a class="headerlink" href="#recorrido-de-secuencias" title="Permalink to this headline">¶</a></h1>
+<h1>Recorrido de secuencias<a class="headerlink" href="#recorrido-de-secuencias" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-objetivo-de-la-seccion admonition">
 <p class="admonition-title">Objetivo de la sección</p>
 <p>El objetivo de esta sección es …</p>
@@ -349,44 +280,44 @@
 <p>Intro: for-each
 OJO: no podemos usar un centinela</p>
 <div class="section" id="for-in-secuencia">
-<h2><span class="section-number">4.5.1. </span>For-in-secuencia<a class="headerlink" href="#for-in-secuencia" title="Permalink to this headline">¶</a></h2>
+<h2>For-in-secuencia<a class="headerlink" href="#for-in-secuencia" title="Permalink to this headline">¶</a></h2>
 <p>sobre una lista</p>
 <p>sobre una cadena de caracteres</p>
 <p>OJO: nombre de los dummy!!</p>
 </div>
 <div class="section" id="recorrido-con-elemento-y-posicion">
-<h2><span class="section-number">4.5.2. </span>Recorrido con elemento y posición<a class="headerlink" href="#recorrido-con-elemento-y-posicion" title="Permalink to this headline">¶</a></h2>
+<h2>Recorrido con elemento y posición<a class="headerlink" href="#recorrido-con-elemento-y-posicion" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="p">:</span> <span class="n">elem1</span>
 <span class="mi">2</span><span class="p">:</span> <span class="n">elem2</span> 
 <span class="mi">3</span><span class="p">:</span> <span class="n">elem3</span>
 </pre></div>
 </div>
 <div class="section" id="opcion-1-usando-un-while">
-<h3><span class="section-number">4.5.2.1. </span>Opción 1: Usando un while<a class="headerlink" href="#opcion-1-usando-un-while" title="Permalink to this headline">¶</a></h3>
+<h3>Opción 1: Usando un while<a class="headerlink" href="#opcion-1-usando-un-while" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="opcion-2-usando-un-for-in-range">
-<h3><span class="section-number">4.5.2.2. </span>Opción 2: Usando un for-in-range<a class="headerlink" href="#opcion-2-usando-un-for-in-range" title="Permalink to this headline">¶</a></h3>
+<h3>Opción 2: Usando un for-in-range<a class="headerlink" href="#opcion-2-usando-un-for-in-range" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="opcion-3-usando-enumerate">
-<h3><span class="section-number">4.5.2.3. </span>Opción 3: Usando enumerate<a class="headerlink" href="#opcion-3-usando-enumerate" title="Permalink to this headline">¶</a></h3>
+<h3>Opción 3: Usando enumerate<a class="headerlink" href="#opcion-3-usando-enumerate" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="recorrido-de-diccionarios">
-<h2><span class="section-number">4.5.3. </span>Recorrido de diccionarios<a class="headerlink" href="#recorrido-de-diccionarios" title="Permalink to this headline">¶</a></h2>
+<h2>Recorrido de diccionarios<a class="headerlink" href="#recorrido-de-diccionarios" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="recorrido-natural-llaves">
-<h3><span class="section-number">4.5.3.1. </span>Recorrido natural (llaves)<a class="headerlink" href="#recorrido-natural-llaves" title="Permalink to this headline">¶</a></h3>
+<h3>Recorrido natural (llaves)<a class="headerlink" href="#recorrido-natural-llaves" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="recorrido-de-los-valores">
-<h3><span class="section-number">4.5.3.2. </span>Recorrido de los valores<a class="headerlink" href="#recorrido-de-los-valores" title="Permalink to this headline">¶</a></h3>
+<h3>Recorrido de los valores<a class="headerlink" href="#recorrido-de-los-valores" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="recorrido-de-las-parejas">
-<h3><span class="section-number">4.5.3.3. </span>Recorrido de las parejas<a class="headerlink" href="#recorrido-de-las-parejas" title="Permalink to this headline">¶</a></h3>
+<h3>Recorrido de las parejas<a class="headerlink" href="#recorrido-de-las-parejas" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="estructuras-complejas">
-<h2><span class="section-number">4.5.4. </span>Estructuras complejas<a class="headerlink" href="#estructuras-complejas" title="Permalink to this headline">¶</a></h2>
+<h2>Estructuras complejas<a class="headerlink" href="#estructuras-complejas" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="diccionario-de-diccionarios">
-<h3><span class="section-number">4.5.4.1. </span>Diccionario de diccionarios<a class="headerlink" href="#diccionario-de-diccionarios" title="Permalink to this headline">¶</a></h3>
+<h3>Diccionario de diccionarios<a class="headerlink" href="#diccionario-de-diccionarios" title="Permalink to this headline">¶</a></h3>
 <p>Un diccionario cuyas llaves son cursos y cuyos valores son listas de diccionarios: la llave es una actividad y el valor es un porcentaje</p>
 <p>Otro diccionario donde las llaves son nombres de estudiantes y los valores son diccionarios: cada diccionario tiene una llave por curso del estudiante y asociado a esa llave hay una lista de actividades (diccionarios): la llave es el nombre de la actividad y el valor es la nota que obtuvo el estudiante en esa actividad, de ese curso).</p>
 <p>Verificar que los porcentajes de las actividades de un curso sumen 100%</p>
@@ -394,7 +325,7 @@ OJO: no podemos usar un centinela</p>
 </div>
 </div>
 <div class="section" id="ejercicios">
-<h2><span class="section-number">4.5.5. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Sumar elementos de la lista</p></li>
 <li><p>Palíndrome, pero sin slices</p></li>
@@ -410,7 +341,7 @@ OJO: no podemos usar un centinela</p>
 </ol>
 </div>
 <div class="section" id="mas-alla-de-python">
-<h2><span class="section-number">4.5.6. </span>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
+<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
 <p>Además de …</p>
 </div>
 </div>
@@ -443,8 +374,6 @@ OJO: no podemos usar un centinela</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="seccion3-4.html" title="previous page"><span class="section-number">4.4. </span>Slicing</a>
-    <a class='right-next' id="next-link" href="seccion3-6.html" title="next page"><span class="section-number">4.6. </span>Más algorítmica</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

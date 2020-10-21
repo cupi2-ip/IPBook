@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>4.4. Slicing &#8212; Introducción a la Programación</title>
+    <title>4.1. Slicing &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -41,8 +41,8 @@
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel3/seccion3-4.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.5. Recorrido de secuencias" href="seccion3-5.html" />
-    <link rel="prev" title="4.3. Listas" href="seccion3-3.html" />
+    <link rel="next" title="5. Introducción" href="../nivel4/intro.html" />
+    <link rel="prev" title="4. Introducción" href="intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -117,69 +117,9 @@
    4. Nivel 3 - Repitiendo acciones
   </a>
   <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-1.html">
-     4.1. Un programa para leer
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-2.html">
-     4.2. Instrucciones repetidas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-3.html">
-     4.3. Listas
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.4. Slicing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-5.html">
-     4.5. Recorrido de secuencias
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-6.html">
-     4.6. Más algorítmica
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-7.html">
-     4.7. Archivos
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-8.html">
-     4.8. Nociones de complejidad
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-9.html">
-     4.9. Un programa para leer (2)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-10.html">
-     4.10. Más sobre parámetros en Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-11.html">
-     4.11. Errores frecuentes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-11.html#para-no-olvidar">
-     4.12. Para no olvidar
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-12.html">
-     4.13. Ejercicios adicionales
+     4.1. Slicing
     </a>
    </li>
   </ul>
@@ -257,49 +197,49 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#slicing-basico-inicio-y-fin">
-   4.4.1. Slicing básico: inicio y fin
+   4.1.1. Slicing básico: inicio y fin
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#slicing-intermedio-posiciones-negativas">
-   4.4.2. Slicing intermedio: posiciones negativas
+   4.1.2. Slicing intermedio: posiciones negativas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#slicing-avanzado-cambiando-el-paso">
-   4.4.3. Slicing avanzado: cambiando el paso
+   4.1.3. Slicing avanzado: cambiando el paso
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#slices-sobre-listas">
-   4.4.4. Slices sobre listas
+   4.1.4. Slices sobre listas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reemplazando-slices-por-ciclos">
-   4.4.5. Reemplazando slices por ciclos
+   4.1.5. Reemplazando slices por ciclos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modificar-listas-usando-slices">
-   4.4.6. Modificar listas usando slices
+   4.1.6. Modificar listas usando slices
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#minimo-comun-multiplo">
-     4.4.6.1. Mínimo Común Múltiplo
+     4.1.6.1. Mínimo Común Múltiplo
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios">
-   4.4.7. Ejercicios
+   4.1.7. Ejercicios
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mas-alla-de-python">
-   4.4.8. Más allá de Python
+   4.1.8. Más allá de Python
   </a>
  </li>
 </ul>
@@ -317,7 +257,7 @@
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
 </div>
 <div class="section" id="slicing">
-<h1><span class="section-number">4.4. </span>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.1. </span>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-objetivo-de-la-seccion admonition">
 <p class="admonition-title">Objetivo de la sección</p>
 <p>El objetivo de esta sección es presentar la herramienta de <em>slicing</em> ofrecida por Python y demostrar su uso sobre listas y cadenas.</p>
@@ -325,7 +265,7 @@
 <p>La expresión <em>slicing</em> hace referencia a la operación por medio de la cual se extraen elementos de una secuencia, tal como una lista o una cadena de caracteres. Dependiendo del caso, los elementos podrían ser consecutivos o podrían estar separados dentro de la secuencia original. Dado que esta operación es de uso bastante frecuente, Python ofrece características que hacen posible construir <em>slices</em> de forma breve, sin tener que construir funciones especializadas para hacerlo.</p>
 <p>Esta sección explica cómo crear <em>slices</em> en Python a partir de listas y cadenas de caracteres <a class="footnote-reference brackets" href="#tipos" id="id1">1</a>. Además, se presentará la forma en la cual se podrían implementar funcionalidades equivalentes utlizando ciclos.</p>
 <div class="section" id="slicing-basico-inicio-y-fin">
-<h2><span class="section-number">4.4.1. </span>Slicing básico: inicio y fin<a class="headerlink" href="#slicing-basico-inicio-y-fin" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.1. </span>Slicing básico: inicio y fin<a class="headerlink" href="#slicing-basico-inicio-y-fin" title="Permalink to this headline">¶</a></h2>
 <p>Supongamos que tenemos la siguiente cadena de caracteres con la que inicia el himno de Colombia:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cadena</span> <span class="o">=</span> <span class="s1">&#39;¡Oh, gloria inmarcesible! ¡Oh, júbilo inmortal!&#39;</span>
 </pre></div>
@@ -374,7 +314,7 @@
 </div>
 </div>
 <div class="section" id="slicing-intermedio-posiciones-negativas">
-<h2><span class="section-number">4.4.2. </span>Slicing intermedio: posiciones negativas<a class="headerlink" href="#slicing-intermedio-posiciones-negativas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.2. </span>Slicing intermedio: posiciones negativas<a class="headerlink" href="#slicing-intermedio-posiciones-negativas" title="Permalink to this headline">¶</a></h2>
 <p>Algo muy interesante en Python con respecto a los <em>slices</em>, es que las posiciones de inicio y de fin no necesariamente tienen que ser números positivos: si se usan números negativos, Python asume que se están referenciando las posiciones numeradas desde la última hasta la primera, empezando con -1. Esto se presenta claramente en la <a class="reference internal" href="#id2"><span class="std std-numref">figura 4.1</span></a>, en la que hemos numerado las posiciones:</p>
 <div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="../_images/slicing.png"><img alt="../_images/slicing.png" src="../_images/slicing.png" style="width: 100%;" /></a>
@@ -403,7 +343,7 @@
 </div>
 </div>
 <div class="section" id="slicing-avanzado-cambiando-el-paso">
-<h2><span class="section-number">4.4.3. </span>Slicing avanzado: cambiando el paso<a class="headerlink" href="#slicing-avanzado-cambiando-el-paso" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.3. </span>Slicing avanzado: cambiando el paso<a class="headerlink" href="#slicing-avanzado-cambiando-el-paso" title="Permalink to this headline">¶</a></h2>
 <p>Estudiaremos ahora el tercer parámetro disponible para describir un <em>slice</em> en Python, el cual también se separa usando el caracter <code class="docutils literal notranslate"><span class="pre">':'</span></code>. Este tercer parámetro, que tiene como valor por defecto <code class="docutils literal notranslate"><span class="pre">1</span></code>, indica cómo se deben recorrer las posiciones desde el inicio hasta el fin. Así, cuando su valor es <code class="docutils literal notranslate"><span class="pre">1</span></code> con cada <em>paso</em> se va a sumar <code class="docutils literal notranslate"><span class="pre">1</span></code> a la posición actual, mientras que cuando el valor es <code class="docutils literal notranslate"><span class="pre">-2</span></code> con cada <em>paso</em> se resta <code class="docutils literal notranslate"><span class="pre">2</span></code> a la posición actual.</p>
 <p>Veamos cómo funciona esto sobre nuestra cadena de ejemplo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
@@ -421,7 +361,7 @@
 <p>Al usar el parámetro del <em>paso</em>, se debe tener cuidado de construir una expresión coherente. Por ejemplo, si se quiere recorrer desde la posición <code class="docutils literal notranslate"><span class="pre">0</span></code> hasta la <code class="docutils literal notranslate"><span class="pre">5</span></code>, el paso no podría ser <code class="docutils literal notranslate"><span class="pre">-1</span></code> porque desde <code class="docutils literal notranslate"><span class="pre">0</span></code> sería imposible llegar a <code class="docutils literal notranslate"><span class="pre">5</span></code> restando <code class="docutils literal notranslate"><span class="pre">1</span></code>cada vez. Tampoco tendría sentido intentar ir de <code class="docutils literal notranslate"><span class="pre">-1</span></code> a <code class="docutils literal notranslate"><span class="pre">0</span></code> con un paso de <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
 </div>
 <div class="section" id="slices-sobre-listas">
-<h2><span class="section-number">4.4.4. </span>Slices sobre listas<a class="headerlink" href="#slices-sobre-listas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.4. </span>Slices sobre listas<a class="headerlink" href="#slices-sobre-listas" title="Permalink to this headline">¶</a></h2>
 <p>En las secciones anteriores hemos ilustrado el uso de <em>slices</em> sólo sobre cadenas de caracteres. Sin embargo, es posible también aplicar estas mismas técnicas sobre listas, como se muestra a continuación:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span>
 <span class="go">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
@@ -440,7 +380,7 @@
 <p>Aunque sencillos, estos ejemplos muestran que el mecanismo de <em>slicing</em> se aplica exactamente igual sobre listas que sobre cadenas de caracteres.</p>
 </div>
 <div class="section" id="reemplazando-slices-por-ciclos">
-<h2><span class="section-number">4.4.5. </span>Reemplazando slices por ciclos<a class="headerlink" href="#reemplazando-slices-por-ciclos" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.5. </span>Reemplazando slices por ciclos<a class="headerlink" href="#reemplazando-slices-por-ciclos" title="Permalink to this headline">¶</a></h2>
 <p>La funcionlidad de <em>slicing</em> de Python es muy útil porque simplifica el uso de operaciones que se requieren frecuentemente. Sin embargo, no muchos lenguajes ofrecen capacidades comparables para describir <em>slices</em> como en Python, así que es conveniente saber cómo reemplazar esta funcionalidad con funciones basadas en ciclos.</p>
 <p>En el siguiente fragmento de código mostramos la función <code class="docutils literal notranslate"><span class="pre">extraer_slice</span></code>, la cual permite construir <em>slices</em> de forma prácticamente equivalente a como lo hace Python con su sintaxis especializada.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extraer_slice</span><span class="p">(</span><span class="n">elementos</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">inicio</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">fin</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">paso</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
@@ -500,7 +440,7 @@
 </div>
 </div>
 <div class="section" id="modificar-listas-usando-slices">
-<h2><span class="section-number">4.4.6. </span>Modificar listas usando slices<a class="headerlink" href="#modificar-listas-usando-slices" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.6. </span>Modificar listas usando slices<a class="headerlink" href="#modificar-listas-usando-slices" title="Permalink to this headline">¶</a></h2>
 <p>Además de permitir la extracción de partes de una cadena o de una lista, los <em>slices</em> también tienen un rol importante en la modificación de los elementos de una lista.</p>
 <p>Empecemos por el caso más sencillo, en el cual se calcula un slice con sólo una posición:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
@@ -541,7 +481,7 @@
 </pre></div>
 </div>
 <div class="section" id="minimo-comun-multiplo">
-<h3><span class="section-number">4.4.6.1. </span>Mínimo Común Múltiplo<a class="headerlink" href="#minimo-comun-multiplo" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.6.1. </span>Mínimo Común Múltiplo<a class="headerlink" href="#minimo-comun-multiplo" title="Permalink to this headline">¶</a></h3>
 <p>Para cerrar esta sección vamos a presentar un ejercicio en el cual la modificación de listas son <em>slices</em> resulta de mucha utilidad.</p>
 <p>El <strong>mínimo común múltiplo</strong> de dos enteros es el número menor que es múltiplo de ambos enteros. Existen varios algoritmos para encontrar este número, pero acá vamos a presentar una propuesta que basada en el uso de <em>slices</em> y en la idea de que el mínimo común múltiplo nunca puede ser superior a la multiplicación de los dos enteros.</p>
 <p>El algoritmo que vamos a utilizar se basa en el siguiente esquema:</p>
@@ -620,7 +560,7 @@ mcm(a, b)= \frac{|a·b|}{MCD(a, b)}
 </div>
 </div>
 <div class="section" id="ejercicios">
-<h2><span class="section-number">4.4.7. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.7. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Escriba una función que le sirva para <em>reconocer</em> si una palabra es o no palíndrome (se lee igual al derecho y al revés). Su función sólo debe utilizar slices.</p></li>
 <li><p>Escriba una función que le permita reconocer si una frase es palíndrome (se deben ignorar los espacios, signos de puntuación y mayúsculas o minúsculas). Por ejemplo, “Anita lava la tina” es una frase palíndrome. <em>Ayuda</em>: el módulo <code class="docutils literal notranslate"><span class="pre">string</span></code> declara el valor <code class="docutils literal notranslate"><span class="pre">ascii_letters</span></code> que podría serle de utilidad. Eliminar los caracteres que no le sirvan probablemente requerirá de un ciclo.</p></li>
@@ -631,7 +571,7 @@ mcm(a, b)= \frac{|a·b|}{MCD(a, b)}
 </ol>
 </div>
 <div class="section" id="mas-alla-de-python">
-<h2><span class="section-number">4.4.8. </span>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.8. </span>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
 <p>Otros lenguajes, como Julia o Go, ofrecen capacidades similares a las que ofrece Python para hacer <em>slicing</em>. Sin embargo, al no ser una característica particularmente difundida, es importante tener la capacidad para escribir los algoritmos equivalentes.</p>
 <hr class="docutils" />
 <dl class="footnote brackets">
@@ -670,8 +610,8 @@ mcm(a, b)= \frac{|a·b|}{MCD(a, b)}
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="seccion3-3.html" title="previous page"><span class="section-number">4.3. </span>Listas</a>
-    <a class='right-next' id="next-link" href="seccion3-5.html" title="next page"><span class="section-number">4.5. </span>Recorrido de secuencias</a>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page"><span class="section-number">4. </span>Introducción</a>
+    <a class='right-next' id="next-link" href="../nivel4/intro.html" title="next page"><span class="section-number">5. </span>Introducción</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

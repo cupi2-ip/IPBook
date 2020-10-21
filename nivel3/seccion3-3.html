@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>4.3. Listas &#8212; Introducción a la Programación</title>
+    <title>Listas &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -41,8 +41,6 @@
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel3/seccion3-3.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.4. Slicing" href="seccion3-4.html" />
-    <link rel="prev" title="4.2. Instrucciones repetidas" href="seccion3-2.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -96,7 +94,7 @@
   Contenido
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../introduccion/index.html">
    1. Nivel 0 - Antes de empezar
@@ -112,77 +110,10 @@
    3. Nivel 2 - Tomando decisiones
   </a>
  </li>
- <li class="toctree-l1 current active">
+ <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    4. Nivel 3 - Repitiendo acciones
   </a>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-1.html">
-     4.1. Un programa para leer
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-2.html">
-     4.2. Instrucciones repetidas
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     4.3. Listas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-4.html">
-     4.4. Slicing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-5.html">
-     4.5. Recorrido de secuencias
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-6.html">
-     4.6. Más algorítmica
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-7.html">
-     4.7. Archivos
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-8.html">
-     4.8. Nociones de complejidad
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-9.html">
-     4.9. Un programa para leer (2)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-10.html">
-     4.10. Más sobre parámetros en Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-11.html">
-     4.11. Errores frecuentes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-11.html#para-no-olvidar">
-     4.12. Para no olvidar
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-12.html">
-     4.13. Ejercicios adicionales
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../nivel4/intro.html">
@@ -257,54 +188,54 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#el-tipo-list-en-python">
-   4.3.1. El tipo list en Python
+   El tipo list en Python
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modificar-listas">
-   4.3.2. Modificar listas
+   Modificar listas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funciones-metodos-y-operadores-interesantes">
-   4.3.3. Funciones, métodos y operadores interesantes
+   Funciones, métodos y operadores interesantes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#split-join">
-   4.3.4. Split &amp; Join
+   Split &amp; Join
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#listas-complejas">
-   4.3.5. Listas complejas
+   Listas complejas
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#listas-de-listas">
-     4.3.5.1. Listas de listas
+     Listas de listas
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#listas-de-diccionarios">
-     4.3.5.2. Listas de diccionarios
+     Listas de diccionarios
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#diccionario-con-listas">
-     4.3.5.3. Diccionario con listas
+     Diccionario con listas
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios">
-   4.3.6. Ejercicios
+   Ejercicios
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mas-alla-de-python">
-   4.3.7. Más allá de Python
+   Más allá de Python
   </a>
  </li>
 </ul>
@@ -322,14 +253,14 @@
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
 </div>
 <div class="section" id="listas">
-<h1><span class="section-number">4.3. </span>Listas<a class="headerlink" href="#listas" title="Permalink to this headline">¶</a></h1>
+<h1>Listas<a class="headerlink" href="#listas" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-objetivo-de-la-seccion admonition">
 <p class="admonition-title">Objetivo de la sección</p>
 <p>El objetivo de esta sección es …</p>
 </div>
 <p>Intro: un tipo de secuencia, mutable</p>
 <div class="section" id="el-tipo-list-en-python">
-<h2><span class="section-number">4.3.1. </span>El tipo list en Python<a class="headerlink" href="#el-tipo-list-en-python" title="Permalink to this headline">¶</a></h2>
+<h2>El tipo list en Python<a class="headerlink" href="#el-tipo-list-en-python" title="Permalink to this headline">¶</a></h2>
 <p>crear: list() + append, [], list(range), *</p>
 <p>indexar: [i]</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">imprimir_elementos</span><span class="p">(</span><span class="n">lista</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -342,7 +273,7 @@
 <p>ejemplo: calcular el promedio de los elementos de una lista</p>
 </div>
 <div class="section" id="modificar-listas">
-<h2><span class="section-number">4.3.2. </span>Modificar listas<a class="headerlink" href="#modificar-listas" title="Permalink to this headline">¶</a></h2>
+<h2>Modificar listas<a class="headerlink" href="#modificar-listas" title="Permalink to this headline">¶</a></h2>
 <p>append
 insert
 eliminar: remove, del
@@ -351,7 +282,7 @@ copy</p>
 Referencias vs valores</p>
 </div>
 <div class="section" id="funciones-metodos-y-operadores-interesantes">
-<h2><span class="section-number">4.3.3. </span>Funciones, métodos y operadores interesantes<a class="headerlink" href="#funciones-metodos-y-operadores-interesantes" title="Permalink to this headline">¶</a></h2>
+<h2>Funciones, métodos y operadores interesantes<a class="headerlink" href="#funciones-metodos-y-operadores-interesantes" title="Permalink to this headline">¶</a></h2>
 <p>len
 min
 max</p>
@@ -364,25 +295,25 @@ sort
 reverse</p>
 </div>
 <div class="section" id="split-join">
-<h2><span class="section-number">4.3.4. </span>Split &amp; Join<a class="headerlink" href="#split-join" title="Permalink to this headline">¶</a></h2>
+<h2>Split &amp; Join<a class="headerlink" href="#split-join" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="listas-complejas">
-<h2><span class="section-number">4.3.5. </span>Listas complejas<a class="headerlink" href="#listas-complejas" title="Permalink to this headline">¶</a></h2>
+<h2>Listas complejas<a class="headerlink" href="#listas-complejas" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="listas-de-listas">
-<h3><span class="section-number">4.3.5.1. </span>Listas de listas<a class="headerlink" href="#listas-de-listas" title="Permalink to this headline">¶</a></h3>
+<h3>Listas de listas<a class="headerlink" href="#listas-de-listas" title="Permalink to this headline">¶</a></h3>
 <p>una lista de estudiantes, donde cada uno es una lista que tiene un nombre y una nota</p>
 </div>
 <div class="section" id="listas-de-diccionarios">
-<h3><span class="section-number">4.3.5.2. </span>Listas de diccionarios<a class="headerlink" href="#listas-de-diccionarios" title="Permalink to this headline">¶</a></h3>
+<h3>Listas de diccionarios<a class="headerlink" href="#listas-de-diccionarios" title="Permalink to this headline">¶</a></h3>
 <p>Una lista de actividades, donde cada actividad es un diccionario con tres llaves: actividad, curso y nota</p>
 </div>
 <div class="section" id="diccionario-con-listas">
-<h3><span class="section-number">4.3.5.3. </span>Diccionario con listas<a class="headerlink" href="#diccionario-con-listas" title="Permalink to this headline">¶</a></h3>
+<h3>Diccionario con listas<a class="headerlink" href="#diccionario-con-listas" title="Permalink to this headline">¶</a></h3>
 <p>Un diccionario donde las llaves son actividades y los valores son listas con las notas de los estudiantes en esa actividad. Podemos tener también una lista con los nombres de las actividades para no tener que recorrer el diccionario</p>
 </div>
 </div>
 <div class="section" id="ejercicios">
-<h2><span class="section-number">4.3.6. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Crear una lista sólo con números pares</p></li>
 <li><p>Crear una lista con los números invertidos</p></li>
@@ -396,7 +327,7 @@ reverse</p>
 </ol>
 </div>
 <div class="section" id="mas-alla-de-python">
-<h2><span class="section-number">4.3.7. </span>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
+<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
 <p>Además de …</p>
 </div>
 </div>
@@ -429,8 +360,6 @@ reverse</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="seccion3-2.html" title="previous page"><span class="section-number">4.2. </span>Instrucciones repetidas</a>
-    <a class='right-next' id="next-link" href="seccion3-4.html" title="next page"><span class="section-number">4.4. </span>Slicing</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>5.2. Tuplas &#8212; Introducción a la Programación</title>
+    <title>5.1. Tuplas &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -41,8 +41,8 @@
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel4/seccion4-2.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.3. Matrices" href="seccion4-3.html" />
-    <link rel="prev" title="5.1. Un programa para leer" href="seccion4-1.html" />
+    <link rel="next" title="5.2. Imágenes RGB" href="seccion4-4.html" />
+    <link rel="prev" title="5. Introducción" href="intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -122,54 +122,14 @@
    5. Nivel 4 - Matrices y Librerías
   </a>
   <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion4-1.html">
-     5.1. Un programa para leer
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.2. Tuplas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion4-3.html">
-     5.3. Matrices
+     5.1. Tuplas
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="seccion4-4.html">
-     5.4. Imágenes RGB
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion4-5.html">
-     5.5. Análisis de datos con Pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion4-6.html">
-     5.6. Gráficas usando Pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion4-7.html">
-     5.7. Un programa para leer (2)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion4-8.html">
-     5.8. Errores frecuentes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion4-8.html#para-no-olvidar">
-     5.9. Para no olvidar
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion4-9.html">
-     5.10. Ejercicios adicionales
+     5.2. Imágenes RGB
     </a>
    </li>
   </ul>
@@ -242,39 +202,39 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#el-tipo-tuple-en-python">
-   5.2.1. El tipo tuple en Python
+   5.1.1. El tipo tuple en Python
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#empaquetado-y-desempaquetado">
-   5.2.2. Empaquetado y desempaquetado
+   5.1.2. Empaquetado y desempaquetado
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#uso-de-tuplas">
-   5.2.3. Uso de tuplas
+   5.1.3. Uso de tuplas
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#creacion-de-rectangulos">
-     5.2.3.1. Creación de rectángulos
+     5.1.3.1. Creación de rectángulos
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#estadisticas-de-una-lista">
-     5.2.3.2. Estadísticas de una lista
+     5.1.3.2. Estadísticas de una lista
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios">
-   5.2.4. Ejercicios
+   5.1.4. Ejercicios
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mas-alla-de-python">
-   5.2.5. Más allá de Python
+   5.1.5. Más allá de Python
   </a>
  </li>
 </ul>
@@ -292,7 +252,7 @@
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
 </div>
 <div class="section" id="tuplas">
-<h1><span class="section-number">5.2. </span>Tuplas<a class="headerlink" href="#tuplas" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.1. </span>Tuplas<a class="headerlink" href="#tuplas" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-objetivo-de-la-seccion admonition">
 <p class="admonition-title">Objetivo de la sección</p>
 <p>El objetivo de esta sección es presentar el tipo de dato <em>tupla</em> y explicar cuáles son las ventajas que trae su uso en casos muy particulares.</p>
@@ -301,7 +261,7 @@
 <p>Par ilustrar el problema, tomemos el caso de una coordenada cartesiana <em>(x,y)</em>. Si queremos representar esta coordenada, podríamos utilizar dos variables de tipo <strong>float</strong>, o podríamos utilizar una lista con dos números flotantes. En el primer caso, el problema es que estaríamos usando dos valores para representar una sola coordenada. Así, consturir una función que retornara una coordenada sería un problema porque una función sólo puede retornar un valor. En el segundo caso, tendríamos una sola lista con los dos valores así que el problema del retorno no se presentaría. El problema acá sería que no habría ninguna garantía de que la lista retornada tenga exactamente 2 posiciones: podría tener 1, 2, 3, más de 3 o incluso podría ser una lista vacía. Aunque nosotros podríamos verificar el tamaño, sería mucho más conveniente tener un tipo de dato que nos permita agrupar múltiples valores y al mismo tiempo nos dé un poco más de garantía con respecto a la cantidad y a su orden.</p>
 <p>En Python, esto lo vamos a lograr con el tipo de dato <strong>tuple</strong>, llamado <em>tupla</em> en español, el cual sirve para representar una secuencia inmutable de valores. A continuación estudiaremos este tipo de datos e ilustraremos su uso con varios ejemplos.</p>
 <div class="section" id="el-tipo-tuple-en-python">
-<h2><span class="section-number">5.2.1. </span>El tipo tuple en Python<a class="headerlink" href="#el-tipo-tuple-en-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1.1. </span>El tipo tuple en Python<a class="headerlink" href="#el-tipo-tuple-en-python" title="Permalink to this headline">¶</a></h2>
 <p>Para ilustrar el uso del tipo <strong>tuple</strong>, usaremos el ejemplo de las coordenadas cartesianas que introducimos más arriba.</p>
 <p>En primer lugar, veamos que la construcción de una nueva tupla requiere que se especifique desde el inicio cuáles van a ser sus valores:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">coordenada</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)</span>
@@ -336,7 +296,7 @@
 </div>
 </div>
 <div class="section" id="empaquetado-y-desempaquetado">
-<h2><span class="section-number">5.2.2. </span>Empaquetado y desempaquetado<a class="headerlink" href="#empaquetado-y-desempaquetado" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1.2. </span>Empaquetado y desempaquetado<a class="headerlink" href="#empaquetado-y-desempaquetado" title="Permalink to this headline">¶</a></h2>
 <p>Una característica muy útil de las tuplas en Python es que permiten hacer lo que denomina <em>empaquetado</em> y <em>desempaquetado</em> de valores. <em>Empaquetado</em> hace referencia a lo que ya vimos: tomar varios valores y agruparlos en una única tupla. El <em>desempaquetado</em> es el proceso inverso de tomar los valores contenidos en una tupla y dejarlos en variables separadas. Lo que hace esto  interesante es que, en lugar de requerir varias instrucciones con asignaciones, se puede hacer en una sola instrucción.</p>
 <p>El siguiente fragmento muestra cómo se podrían desempaquetar los valores de una coordenada sin tener que acceder a cada una de las posiciones en la tupla:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">coordenada</span>
@@ -349,7 +309,7 @@
 </div>
 </div>
 <div class="section" id="uso-de-tuplas">
-<h2><span class="section-number">5.2.3. </span>Uso de tuplas<a class="headerlink" href="#uso-de-tuplas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1.3. </span>Uso de tuplas<a class="headerlink" href="#uso-de-tuplas" title="Permalink to this headline">¶</a></h2>
 <p>Las tuplas en Python pueden utilizarse en muchas situaciones diferente en las que también podrían utilizarse listas. Sin embargo, es recomendable que se usen cuando se requieran las siguientes características:</p>
 <ul class="simple">
 <li><p>Agrupar varios valores, asegurando la cantidad de valores</p></li>
@@ -359,7 +319,7 @@
 <p>Otro uso muy común es agrupar valores que siempre deberían estar juntos. Por ejemplo, si se está trabajando con coordenadas cartesianas las tuplas servirán para agrupar los valores para cada uno de los ejes.</p>
 <p>Veamos a continuación otros ejemplos de uso de tuplas.</p>
 <div class="section" id="creacion-de-rectangulos">
-<h3><span class="section-number">5.2.3.1. </span>Creación de rectángulos<a class="headerlink" href="#creacion-de-rectangulos" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.1.3.1. </span>Creación de rectángulos<a class="headerlink" href="#creacion-de-rectangulos" title="Permalink to this headline">¶</a></h3>
 <p>En este caso tenemos una función que recibe las coordenadas <em>(x,y)</em> de dos puntos y encuentra el rectángulo delimitado por esos puntos. Para esto, la función busca la esquina del rectángulo con menor coordenadas <em>x</em> y <em>y</em>, y calcula el ancho y alto del rectángulo.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">crear_rectangulo</span><span class="p">(</span><span class="n">punto1</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">punto2</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
   <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">punto1</span>
@@ -377,7 +337,7 @@
 </div>
 </div>
 <div class="section" id="estadisticas-de-una-lista">
-<h3><span class="section-number">5.2.3.2. </span>Estadísticas de una lista<a class="headerlink" href="#estadisticas-de-una-lista" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.1.3.2. </span>Estadísticas de una lista<a class="headerlink" href="#estadisticas-de-una-lista" title="Permalink to this headline">¶</a></h3>
 <p>En este caso tenemos una función que calcula 3 estadísticas sobre una lista: el menor valor, el mayor valor y el valor promedio. Esta función recibe la lista de valores y retorna una tupla con los tres números calculados. Lo interesante de este ejemplo es que normalmente se habrían necesitado 3 funciones, cada una con su propio recorrido sobre la lista, para calular los tres valores. En este caso estamos aprovechando para calcular todo lo que necesitamos con un único recorrido.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">estadisticas</span><span class="p">(</span><span class="n">valores</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
   <span class="n">mayor</span> <span class="o">=</span> <span class="n">valores</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -400,7 +360,7 @@
 </div>
 </div>
 <div class="section" id="ejercicios">
-<h2><span class="section-number">5.2.4. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1.4. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Construya una función que reciba dos vectores y retorne un nuevo vector que sea la suma de los dos vectores recibidos. Cada vector debe recibirse como una tupla con dos valores flotantes.</p></li>
 <li><p>Construya una función que reciba una cadena de caracteres y retorne una lista de parejas (tuplas) donde la primera posición corresponda a una palabra que aparezca en la cadena y la segunda posición corresponda a la cantidad de veces que aparece la palabra en la cadena. La lista retornada tiene que tener tatas parejas como palabras <em>diferentes</em> haya en la cadena original.</p></li>
@@ -410,7 +370,7 @@
 </ol>
 </div>
 <div class="section" id="mas-alla-de-python">
-<h2><span class="section-number">5.2.5. </span>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1.5. </span>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
 <p>No es usual que los lenguajes de programación ofrezcan un tipo básico para manejar tuplas, así que aprender a utilizar este nuevo tipo no necesariamente será de utilidad en otros lenguajes. Sin embargo, muchas librerías de Python utilizan tuplas de forma frecuente, así que es conveniente adquirir destreza en  su uso.</p>
 </div>
 </div>
@@ -443,8 +403,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="seccion4-1.html" title="previous page"><span class="section-number">5.1. </span>Un programa para leer</a>
-    <a class='right-next' id="next-link" href="seccion4-3.html" title="next page"><span class="section-number">5.3. </span>Matrices</a>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page"><span class="section-number">5. </span>Introducción</a>
+    <a class='right-next' id="next-link" href="seccion4-4.html" title="next page"><span class="section-number">5.2. </span>Imágenes RGB</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

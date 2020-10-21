@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>4.8. Nociones de complejidad &#8212; Introducción a la Programación</title>
+    <title>Nociones de complejidad &#8212; Introducción a la Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -41,8 +41,6 @@
     <link rel="canonical" href="http://cupi2-ip.github.io/IPBook/nivel3/seccion3-8.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.9. Un programa para leer (2)" href="seccion3-9.html" />
-    <link rel="prev" title="4.7. Archivos" href="seccion3-7.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -96,7 +94,7 @@
   Contenido
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../introduccion/index.html">
    1. Nivel 0 - Antes de empezar
@@ -112,77 +110,10 @@
    3. Nivel 2 - Tomando decisiones
   </a>
  </li>
- <li class="toctree-l1 current active">
+ <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    4. Nivel 3 - Repitiendo acciones
   </a>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-1.html">
-     4.1. Un programa para leer
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-2.html">
-     4.2. Instrucciones repetidas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-3.html">
-     4.3. Listas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-4.html">
-     4.4. Slicing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-5.html">
-     4.5. Recorrido de secuencias
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-6.html">
-     4.6. Más algorítmica
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-7.html">
-     4.7. Archivos
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     4.8. Nociones de complejidad
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-9.html">
-     4.9. Un programa para leer (2)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-10.html">
-     4.10. Más sobre parámetros en Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-11.html">
-     4.11. Errores frecuentes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-11.html#para-no-olvidar">
-     4.12. Para no olvidar
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="seccion3-12.html">
-     4.13. Ejercicios adicionales
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../nivel4/intro.html">
@@ -257,88 +188,88 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#numero-de-operaciones-y-tiempo">
-   4.8.1. Número de operaciones y tiempo
+   Número de operaciones y tiempo
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#medir-tiempos-en-python">
-     4.8.1.1. Medir tiempos en Python
+     Medir tiempos en Python
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#formas-basicas">
-   4.8.2. Formas básicas
+   Formas básicas
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algoritmos-constantes">
-     4.8.2.1. Algoritmos constantes
+     Algoritmos constantes
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algoritmos-lineales">
-     4.8.2.2. Algoritmos lineales
+     Algoritmos lineales
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algoritmos-cuadraticos">
-     4.8.2.3. Algoritmos cuadráticos
+     Algoritmos cuadráticos
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algoritmos-cubicos">
-     4.8.2.4. Algoritmos cúbicos
+     Algoritmos cúbicos
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#vision-global">
-     4.8.2.5. Visión global
+     Visión global
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algoritmos-logaritmicos">
-     4.8.2.6. Algoritmos logarítmicos
+     Algoritmos logarítmicos
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algoritmos-exponenciales">
-     4.8.2.7. Algoritmos exponenciales
+     Algoritmos exponenciales
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reglas-basicas">
-   4.8.3. Reglas básicas
+   Reglas básicas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#complejidad-en-memoria">
-   4.8.4. Complejidad en memoria
+   Complejidad en memoria
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#uso-de-memoria-constante">
-     4.8.4.1. Uso de memoria constante
+     Uso de memoria constante
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#uso-de-memoria-lineal">
-     4.8.4.2. Uso de memoria lineal
+     Uso de memoria lineal
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ejercicios">
-   4.8.5. Ejercicios
+   Ejercicios
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mas-alla-de-python">
-   4.8.6. Más allá de Python
+   Más allá de Python
   </a>
  </li>
 </ul>
@@ -356,76 +287,76 @@
 <p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
 </div>
 <div class="section" id="nociones-de-complejidad">
-<h1><span class="section-number">4.8. </span>Nociones de complejidad<a class="headerlink" href="#nociones-de-complejidad" title="Permalink to this headline">¶</a></h1>
+<h1>Nociones de complejidad<a class="headerlink" href="#nociones-de-complejidad" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-objetivo-de-la-seccion admonition">
 <p class="admonition-title">Objetivo de la sección</p>
 <p>El objetivo de esta sección es …</p>
 </div>
 <p>por qué estudiar complejidad: tiempo, memoria, energía</p>
 <div class="section" id="numero-de-operaciones-y-tiempo">
-<h2><span class="section-number">4.8.1. </span>Número de operaciones y tiempo<a class="headerlink" href="#numero-de-operaciones-y-tiempo" title="Permalink to this headline">¶</a></h2>
+<h2>Número de operaciones y tiempo<a class="headerlink" href="#numero-de-operaciones-y-tiempo" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="medir-tiempos-en-python">
-<h3><span class="section-number">4.8.1.1. </span>Medir tiempos en Python<a class="headerlink" href="#medir-tiempos-en-python" title="Permalink to this headline">¶</a></h3>
+<h3>Medir tiempos en Python<a class="headerlink" href="#medir-tiempos-en-python" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="formas-basicas">
-<h2><span class="section-number">4.8.2. </span>Formas básicas<a class="headerlink" href="#formas-basicas" title="Permalink to this headline">¶</a></h2>
+<h2>Formas básicas<a class="headerlink" href="#formas-basicas" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="algoritmos-constantes">
-<h3><span class="section-number">4.8.2.1. </span>Algoritmos constantes<a class="headerlink" href="#algoritmos-constantes" title="Permalink to this headline">¶</a></h3>
+<h3>Algoritmos constantes<a class="headerlink" href="#algoritmos-constantes" title="Permalink to this headline">¶</a></h3>
 <p>pop</p>
 </div>
 <div class="section" id="algoritmos-lineales">
-<h3><span class="section-number">4.8.2.2. </span>Algoritmos lineales<a class="headerlink" href="#algoritmos-lineales" title="Permalink to this headline">¶</a></h3>
+<h3>Algoritmos lineales<a class="headerlink" href="#algoritmos-lineales" title="Permalink to this headline">¶</a></h3>
 <p>buscar cuántos valen X</p>
 </div>
 <div class="section" id="algoritmos-cuadraticos">
-<h3><span class="section-number">4.8.2.3. </span>Algoritmos cuadráticos<a class="headerlink" href="#algoritmos-cuadraticos" title="Permalink to this headline">¶</a></h3>
+<h3>Algoritmos cuadráticos<a class="headerlink" href="#algoritmos-cuadraticos" title="Permalink to this headline">¶</a></h3>
 <p>buscar cuántas parejas sumadas valen X</p>
 </div>
 <div class="section" id="algoritmos-cubicos">
-<h3><span class="section-number">4.8.2.4. </span>Algoritmos cúbicos<a class="headerlink" href="#algoritmos-cubicos" title="Permalink to this headline">¶</a></h3>
+<h3>Algoritmos cúbicos<a class="headerlink" href="#algoritmos-cubicos" title="Permalink to this headline">¶</a></h3>
 <p>buscar cuántas tripletas sumadas valen X</p>
 </div>
 <div class="section" id="vision-global">
-<h3><span class="section-number">4.8.2.5. </span>Visión global<a class="headerlink" href="#vision-global" title="Permalink to this headline">¶</a></h3>
+<h3>Visión global<a class="headerlink" href="#vision-global" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="algoritmos-logaritmicos">
-<h3><span class="section-number">4.8.2.6. </span>Algoritmos logarítmicos<a class="headerlink" href="#algoritmos-logaritmicos" title="Permalink to this headline">¶</a></h3>
+<h3>Algoritmos logarítmicos<a class="headerlink" href="#algoritmos-logaritmicos" title="Permalink to this headline">¶</a></h3>
 <p>búsqueda binaria</p>
 </div>
 <div class="section" id="algoritmos-exponenciales">
-<h3><span class="section-number">4.8.2.7. </span>Algoritmos exponenciales<a class="headerlink" href="#algoritmos-exponenciales" title="Permalink to this headline">¶</a></h3>
+<h3>Algoritmos exponenciales<a class="headerlink" href="#algoritmos-exponenciales" title="Permalink to this headline">¶</a></h3>
 <p>TSP</p>
 </div>
 </div>
 <div class="section" id="reglas-basicas">
-<h2><span class="section-number">4.8.3. </span>Reglas básicas<a class="headerlink" href="#reglas-basicas" title="Permalink to this headline">¶</a></h2>
+<h2>Reglas básicas<a class="headerlink" href="#reglas-basicas" title="Permalink to this headline">¶</a></h2>
 <p>constantes</p>
 <p>mayor predomina</p>
 <p>OJO: las librerías cuentan!</p>
 </div>
 <div class="section" id="complejidad-en-memoria">
-<h2><span class="section-number">4.8.4. </span>Complejidad en memoria<a class="headerlink" href="#complejidad-en-memoria" title="Permalink to this headline">¶</a></h2>
+<h2>Complejidad en memoria<a class="headerlink" href="#complejidad-en-memoria" title="Permalink to this headline">¶</a></h2>
 <p>Por qué es importante</p>
 <div class="section" id="uso-de-memoria-constante">
-<h3><span class="section-number">4.8.4.1. </span>Uso de memoria constante<a class="headerlink" href="#uso-de-memoria-constante" title="Permalink to this headline">¶</a></h3>
+<h3>Uso de memoria constante<a class="headerlink" href="#uso-de-memoria-constante" title="Permalink to this headline">¶</a></h3>
 <p>mayor</p>
 </div>
 <div class="section" id="uso-de-memoria-lineal">
-<h3><span class="section-number">4.8.4.2. </span>Uso de memoria lineal<a class="headerlink" href="#uso-de-memoria-lineal" title="Permalink to this headline">¶</a></h3>
+<h3>Uso de memoria lineal<a class="headerlink" href="#uso-de-memoria-lineal" title="Permalink to this headline">¶</a></h3>
 <p>contar repetidos</p>
 <p>OJO: trampa de dict</p>
 </div>
 </div>
 <div class="section" id="ejercicios">
-<h2><span class="section-number">4.8.5. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Construya …</p></li>
 <li><p>En un …</p></li>
 </ol>
 </div>
 <div class="section" id="mas-alla-de-python">
-<h2><span class="section-number">4.8.6. </span>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
+<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Permalink to this headline">¶</a></h2>
 <p>Además de …</p>
 </div>
 </div>
@@ -458,8 +389,6 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="seccion3-7.html" title="previous page"><span class="section-number">4.7. </span>Archivos</a>
-    <a class='right-next' id="next-link" href="seccion3-9.html" title="next page"><span class="section-number">4.9. </span>Un programa para leer (2)</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
