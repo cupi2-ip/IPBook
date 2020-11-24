@@ -192,7 +192,7 @@ def sharpening(imagen: list) -> list:
         for j_mascara in range(-1, 2):
           # Se consultan los colores originales del pixel vecino
           rojo_vecino, verde_vecino, azul_vecino = imagen[i+i_mascara][j+j_mascara]
-          valor_mascara = mascara[i_mascara][j_mascara]
+          valor_mascara = mascara[i_mascara+1][j_mascara+1]
           
           # Los colores originales se multiplican por el valor de la máscara
           # y se van sumando para encontrar el nuevo valor del color para
@@ -209,7 +209,7 @@ def sharpening(imagen: list) -> list:
 El resultado de aplicar la función anterior a la imagen de muestra se puede apreciar en la siguiente figura. Como dijimos antes, esta es una simplificación del algoritmo para corregir fotos borrosas, así que el resultado no es muy impresionante, pero a partir de esta función usted puede intentar refinar y mejorar los algoritmos para lograr resultados realmente útiles. Por ejemplo, usted puede probar a implementar el mismo algoritmo utilizando una máscara diferente para observar cómo cambia el resultado.
 
 
-![Imagen en escala de grises](./images/sharpen.png)
+![Imagen en escala de grises](./images/sharpen_2.png)
 
 
 
