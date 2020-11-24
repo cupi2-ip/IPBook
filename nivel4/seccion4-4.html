@@ -455,7 +455,7 @@
         <span class="k">for</span> <span class="n">j_mascara</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
           <span class="c1"># Se consultan los colores originales del pixel vecino</span>
           <span class="n">rojo_vecino</span><span class="p">,</span> <span class="n">verde_vecino</span><span class="p">,</span> <span class="n">azul_vecino</span> <span class="o">=</span> <span class="n">imagen</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">i_mascara</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="n">j_mascara</span><span class="p">]</span>
-          <span class="n">valor_mascara</span> <span class="o">=</span> <span class="n">mascara</span><span class="p">[</span><span class="n">i_mascara</span><span class="p">][</span><span class="n">j_mascara</span><span class="p">]</span>
+          <span class="n">valor_mascara</span> <span class="o">=</span> <span class="n">mascara</span><span class="p">[</span><span class="n">i_mascara</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j_mascara</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
           
           <span class="c1"># Los colores originales se multiplican por el valor de la máscara</span>
           <span class="c1"># y se van sumando para encontrar el nuevo valor del color para</span>
@@ -470,7 +470,7 @@
 </pre></div>
 </div>
 <p>El resultado de aplicar la función anterior a la imagen de muestra se puede apreciar en la siguiente figura. Como dijimos antes, esta es una simplificación del algoritmo para corregir fotos borrosas, así que el resultado no es muy impresionante, pero a partir de esta función usted puede intentar refinar y mejorar los algoritmos para lograr resultados realmente útiles. Por ejemplo, usted puede probar a implementar el mismo algoritmo utilizando una máscara diferente para observar cómo cambia el resultado.</p>
-<p><img alt="Imagen en escala de grises" src="../_images/sharpen.png" /></p>
+<p><img alt="Imagen en escala de grises" src="../_images/sharpen_2.png" /></p>
 </div>
 </div>
 <div class="section" id="visualizacion-con-matplotlib">
