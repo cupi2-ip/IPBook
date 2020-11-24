@@ -201,7 +201,7 @@ def sharpening(imagen: list) -> list:
           verde += verde_vecino * valor_mascara
           azul += azul_vecino * valor_mascara
           
-      nuevo_pixel = (rojo, verde, azul)    
+      nuevo_pixel = (max(rojo, 0.0), max(verde, 0.0), max(azul, 0.0))   
       copia[i][j] = nuevo_pixel
   return copia
 ```
