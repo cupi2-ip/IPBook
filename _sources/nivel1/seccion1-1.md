@@ -126,7 +126,7 @@ cat_1 = float(cadena_cat_1)
 cat_2 = float(cadena_cat_2)
 
 # Llamar a la función con los valores recibidos
-perimetro = perimetro_triangulo(3,4)
+perimetro = perimetro_triangulo(cat_1,cat_2)
 
 # Mostrarle al usuario el resultado de la operación
 print("El perímetro de un triángulo rectángulo que tenga catetos de longitud", cat_1, "y", cat_2, "es", perimetro)
